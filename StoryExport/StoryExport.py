@@ -38,7 +38,12 @@ from gramps.gen.proxy import LivingProxyDb, PrivateProxyDb
 from gramps.gui.dialog import ErrorDialog, OkDialog
 from gramps.gui.plug import tool
 
-from storyexport_builder import StoryExportError, build_story, no_living_in_photo
+from storyexport_builder import (
+    StoryExportError,
+    build_story,
+    left_out_reason,
+    no_living_in_photo,
+)
 
 _ = glocale.get_addon_translator(__file__).gettext
 LOG = logging.getLogger(__name__)
@@ -131,6 +136,11 @@ class StoryExport(tool.Tool):
 
     def export(self, person_handle, path, include_private, include_living):
         """Write the story; return its number of slides."""
+        reason = left_out_reason(
+            self.db, person_handle, include_private, include_living
+        )
+        if reason:
+            raise StoryExportError(reason)
         db = self.db
         if not include_private:
             db = PrivateProxyDb(db)

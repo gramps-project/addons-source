@@ -62,6 +62,7 @@ from gramps.gen.proxy import LivingProxyDb, PrivateProxyDb
 from storyexport_builder import (
     StoryExportError,
     build_story,
+    left_out_reason,
     no_living_in_photo,
     sort_year,
     to_edtf,
@@ -312,6 +313,14 @@ class StoryExportTest(unittest.TestCase):
         db = LivingProxyDb(self.db, LivingProxyDb.MODE_EXCLUDE_ALL)
         with self.assertRaises(StoryExportError):
             build_story(db, self.anna)
+
+    def test_left_out_reason_names_the_option(self):
+        self.assertIn(
+            "Include living people",
+            left_out_reason(self.db, self.anna, True, False),
+        )
+        self.assertIsNone(left_out_reason(self.db, self.anna, False, True))
+        self.assertIsNone(left_out_reason(self.db, self.josef, False, False))
 
     def test_edtf(self):
         self.assertEqual(to_edtf(date(1850)), "1850")

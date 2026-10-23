@@ -156,6 +156,33 @@ def no_living_in_photo(db):
     return allowed
 
 
+def left_out_reason(db, person_handle, include_private, include_living):
+    """Why the chosen privacy settings leave this person out, saying which
+    option would include them; None if they're included. ``db`` must be
+    the real database, as for no_living_in_photo()."""
+    person = db.get_person_from_handle(person_handle)
+    if person is None:
+        return None
+    name = name_displayer.display(person)
+    if not include_private and person.get_privacy():
+        return (
+            _(
+                '%s is marked private. To export their story, check "Include data '
+                'marked private".'
+            )
+            % name
+        )
+    if not include_living and probably_alive(person, db):
+        return (
+            _(
+                '%s is probably living. To export their story, check "Include '
+                'living people".'
+            )
+            % name
+        )
+    return None
+
+
 def build_story(db, person_handle, photo_allowed=None):
     """
     The story of one person: their own events (where they're the primary
