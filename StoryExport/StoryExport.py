@@ -29,7 +29,7 @@ import logging
 import os
 import re
 
-from gi.repository import Gtk
+from gi.repository import GLib, Gtk
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.const import USER_HOME
@@ -60,7 +60,7 @@ def default_file_name(name):
 
 
 class StoryExport(tool.Tool):
-    """Asks where to save, and what to include, then writes the story."""
+    """Asks what to include, then where to save, then writes the story."""
 
     def __init__(self, dbstate, user, options_class, name, callback=None):
         tool.Tool.__init__(self, dbstate, options_class, name)
@@ -79,37 +79,17 @@ class StoryExport(tool.Tool):
             )
             return
 
-        dialog = Gtk.FileChooserDialog(
-            title=_("Export Story"),
-            transient_for=parent,
-            action=Gtk.FileChooserAction.SAVE,
-        )
-        dialog.add_buttons(
-            _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Save"), Gtk.ResponseType.OK
-        )
-        dialog.set_do_overwrite_confirmation(True)
-        dialog.set_current_folder(USER_HOME)
-        dialog.set_current_name(default_file_name(name_displayer.display(person)))
-        stories = Gtk.FileFilter()
-        stories.set_name(_("Stories (*.story.zip)"))
-        stories.add_pattern("*" + SUFFIX)
-        dialog.add_filter(stories)
-
-        options = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
-        include_private = Gtk.CheckButton(label=_("Include data marked private"))
-        include_living = Gtk.CheckButton(
-            label=_("Include living people (and photos they appear in)")
-        )
-        options.pack_start(include_private, False, False, 0)
-        options.pack_start(include_living, False, False, 0)
-        options.show_all()
-        dialog.set_extra_widget(options)
-
-        response = dialog.run()
-        path = dialog.get_filename()
-        private, living = include_private.get_active(), include_living.get_active()
-        dialog.destroy()
-        if response != Gtk.ResponseType.OK or not path:
+        name = name_displayer.display(person)
+        choice = self.ask_options(parent, name)
+        if choice is None:
+            return
+        private, living = choice
+        reason = left_out_reason(self.db, person_handle, private, living)
+        if reason:
+            ErrorDialog(_("Couldn't export the story"), reason, parent=parent)
+            return
+        path = self.ask_file(parent, name)
+        if not path:
             return
         if not path.endswith(SUFFIX):
             path = (
@@ -133,6 +113,55 @@ class StoryExport(tool.Tool):
             % {"count": count, "path": path},
             parent=parent,
         )
+
+    def ask_options(self, parent, name):
+        """(include private, include living) from the options dialog, or
+        None if cancelled."""
+        dialog = Gtk.Dialog(title=_("Export Story"), transient_for=parent, modal=True)
+        dialog.add_buttons(
+            _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Next"), Gtk.ResponseType.OK
+        )
+        dialog.set_default_response(Gtk.ResponseType.OK)
+        box = dialog.get_content_area()
+        box.set_spacing(8)
+        box.set_border_width(12)
+        heading = Gtk.Label(xalign=0)
+        heading.set_markup(
+            "<b>%s</b>" % GLib.markup_escape_text(_("The Story of %s") % name)
+        )
+        include_private = Gtk.CheckButton(label=_("Include data marked private"))
+        include_living = Gtk.CheckButton(
+            label=_("Include living people (and photos they appear in)")
+        )
+        for widget in (heading, include_private, include_living):
+            box.pack_start(widget, False, False, 0)
+        dialog.show_all()
+        response = dialog.run()
+        choice = (include_private.get_active(), include_living.get_active())
+        dialog.destroy()
+        return choice if response == Gtk.ResponseType.OK else None
+
+    def ask_file(self, parent, name):
+        """Where to save the story, or None if cancelled."""
+        dialog = Gtk.FileChooserDialog(
+            title=_("Export Story"),
+            transient_for=parent,
+            action=Gtk.FileChooserAction.SAVE,
+        )
+        dialog.add_buttons(
+            _("_Cancel"), Gtk.ResponseType.CANCEL, _("_Save"), Gtk.ResponseType.OK
+        )
+        dialog.set_do_overwrite_confirmation(True)
+        dialog.set_current_folder(USER_HOME)
+        dialog.set_current_name(default_file_name(name))
+        stories = Gtk.FileFilter()
+        stories.set_name(_("Stories (*.story.zip)"))
+        stories.add_pattern("*" + SUFFIX)
+        dialog.add_filter(stories)
+        response = dialog.run()
+        path = dialog.get_filename()
+        dialog.destroy()
+        return path if response == Gtk.ResponseType.OK else None
 
     def export(self, person_handle, path, include_private, include_living):
         """Write the story; return its number of slides."""
