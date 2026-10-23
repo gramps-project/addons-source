@@ -59,6 +59,8 @@ FORMAT_VERSION = "1.0"
 
 #: Long edge, in pixels, photos are scaled down to (with Pillow).
 PHOTO_MAX_EDGE = 1600
+#: The same for an image overlay (an old map), which needs more detail.
+OVERLAY_MAX_EDGE = 2048
 
 _ID = re.compile(r"^[A-Za-z0-9_-]{1,64}$")
 _LANGUAGE = re.compile(r"^[A-Za-z]{2,8}(-[A-Za-z0-9]{1,8})*$")
@@ -79,16 +81,16 @@ def bcp47(language):
     return tag if _LANGUAGE.match(tag) else None
 
 
-def optimize_photo(data):
+def optimize_photo(data, max_edge=PHOTO_MAX_EDGE):
     """
     Size a photo for viewing: EXIF rotation applied, long edge at most
-    PHOTO_MAX_EDGE, re-encoded (WebP, else JPEG; PNG if it has
+    ``max_edge``, re-encoded (WebP, else JPEG; PNG if it has
     transparency and WebP isn't available), with all metadata dropped.
     Returns (bytes, mime, extension, width, height). Needs Pillow.
     """
     with Image.open(io.BytesIO(data)) as original:
         image = ImageOps.exif_transpose(original)
-        image.thumbnail((PHOTO_MAX_EDGE, PHOTO_MAX_EDGE))
+        image.thumbnail((max_edge, max_edge))
         has_alpha = image.mode in ("RGBA", "LA") or (
             image.mode == "P" and "transparency" in image.info
         )
@@ -124,17 +126,18 @@ class Story:
         self._media = {}  # key -> {"item": {...}, "data": bytes}
         self._media_by_source = {}
 
-    def add_media(self, source, mime=None, alt=None):
+    def add_media(self, source, mime=None, alt=None, max_edge=PHOTO_MAX_EDGE):
         """
         Add a photo, from a file path or bytes, and return its media key.
         The same path added twice is stored once. With Pillow the photo is
-        optimized (see optimize_photo); without it, stored as is, so
-        ``mime`` is needed for bytes.
+        optimized (see optimize_photo; pass ``max_edge=OVERLAY_MAX_EDGE``
+        for an overlay's image); without it, stored as is, so ``mime`` is
+        needed for bytes.
         """
         if isinstance(source, (str, os.PathLike)):
             path = os.fspath(source)
-            if path in self._media_by_source:
-                return self._media_by_source[path]
+            if (path, max_edge) in self._media_by_source:
+                return self._media_by_source[(path, max_edge)]
             with open(path, "rb") as handle:
                 data = handle.read()
             mime = mime or mimetypes.guess_type(path)[0]
@@ -145,7 +148,7 @@ class Story:
         key = "m%d" % (len(self._media) + 1)
         item = {}
         if _HAVE_PIL:
-            data, mime, ext, width, height = optimize_photo(data)
+            data, mime, ext, width, height = optimize_photo(data, max_edge)
             item.update(width=width, height=height)
         else:
             if not mime:
@@ -156,7 +159,7 @@ class Story:
             item["alt"] = alt
         self._media[key] = {"item": item, "data": data}
         if path is not None:
-            self._media_by_source[path] = key
+            self._media_by_source[(path, max_edge)] = key
         return key
 
     def add_slide(
@@ -175,7 +178,8 @@ class Story:
 
         date:   {"text": ..., "edtf": ..., "sortYear": ...}; text required.
         place:  {"name": ..., "lat": ..., "lon": ...}; all optional, but
-                lat and lon go together.
+                lat and lon go together. May also hold "geometry" (GeoJSON)
+                and "overlays" (images by media key; see the spec).
         photo:  a path, bytes, or a key from add_media().
         people: names of the people the slide is about.
         """

@@ -19,7 +19,7 @@
 #
 
 """
-Tests for the Export Story addon's builder, against a real temporary
+Tests for the Generate Story addon's builder, against a real temporary
 database. Run from the addons-source root::
 
     python3 -m unittest StoryExport.tests.test_storyexport -v
@@ -43,6 +43,7 @@ if ADDON_DIR not in sys.path:
 from gramps.gen.db import DbTxn
 from gramps.gen.db.utils import make_database
 from gramps.gen.lib import (
+    ChildRef,
     Date,
     Event,
     EventRef,
@@ -56,12 +57,14 @@ from gramps.gen.lib import (
     Place,
     PlaceName,
     Surname,
+    Tag,
 )
 from gramps.gen.proxy import LivingProxyDb, PrivateProxyDb
 
 from storyexport_builder import (
     StoryExportError,
-    build_story,
+    build_family_story,
+    build_person_story,
     left_out_reason,
     no_living_in_photo,
     sort_year,
@@ -111,11 +114,29 @@ def date(
     return result
 
 
+KML = """<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+<Placemark><name>Old town</name><MultiGeometry>
+  <Polygon><outerBoundaryIs><LinearRing><coordinates>
+    7.4,46.9 7.5,46.9 7.5,47.0 7.4,46.9
+  </coordinates></LinearRing></outerBoundaryIs></Polygon>
+  <LineString><coordinates>7.4,46.9,0 7.5,47.0,0</coordinates></LineString>
+</MultiGeometry></Placemark>
+<Placemark><Point><coordinates>7.45,46.95</coordinates></Point></Placemark>
+</Document></kml>
+"""
+
+
 class StoryExportTest(unittest.TestCase):
     """Josef Meyer (1850-1920): a dated birth at Zürich with its own photo,
     a private christening, a death, an undated census, and a marriage to
     Anna, who is living. A photo of the two of them is on the marriage and
-    the census. He has a portrait."""
+    the census. He has a portrait. Their son Karl (1880-1950) has a
+    portrait, and a baptism besides his birth and death.
+
+    Zürich (so named 1800-1900) has a Gramps Connect map overlay (a shape
+    and an old map) and a KML file, which the overlay supersedes. Bern,
+    where Josef died, has only a KML file."""
 
     @classmethod
     def setUpClass(cls):
@@ -155,17 +176,97 @@ class StoryExportTest(unittest.TestCase):
             e.set_description(description)
             return e
 
+        def map_file(name, text, mime, tags=()):
+            path = os.path.join(cls.tmp, name)
+            with open(path, "w", encoding="utf-8") as handle:
+                handle.write(text)
+            media = Media()
+            media.set_path(path)
+            media.set_mime_type(mime)
+            for tag in tags:
+                media.add_tag(tag)
+            return media
+
         with DbTxn("build test tree", db) as txn:
+            overlay_tag = Tag()
+            overlay_tag.set_name("Map overlay")
+            db.add_tag(overlay_tag, txn)
+            old_map = image("old-map.png", b"\xd0\xc0\xb0")
+            db.add_media(old_map, txn)
+            overlay = map_file(
+                "zurich.geojson",
+                json.dumps(
+                    {
+                        "type": "FeatureCollection",
+                        "features": [
+                            {
+                                "type": "Feature",
+                                "geometry": {
+                                    "type": "Polygon",
+                                    "coordinates": [
+                                        [
+                                            [8.5, 47.3],
+                                            [8.6, 47.3],
+                                            [8.6, 47.4],
+                                            [8.5, 47.3],
+                                        ]
+                                    ],
+                                },
+                                "properties": {"fill": "#aa0000"},
+                            },
+                            {
+                                "type": "Feature",
+                                "geometry": {
+                                    "type": "Polygon",
+                                    "coordinates": [
+                                        [
+                                            [8.5, 47.4],
+                                            [8.6, 47.4],
+                                            [8.6, 47.3],
+                                            [8.5, 47.3],
+                                            [8.5, 47.4],
+                                        ]
+                                    ],
+                                },
+                                "properties": {
+                                    "gramps:image-overlay": True,
+                                    "image": old_map.handle,
+                                    "opacity": 0.6,
+                                    "order": 3,
+                                },
+                            },
+                        ],
+                    }
+                ),
+                "application/geo+json",
+                [overlay_tag.handle],
+            )
+            zurich_kml = map_file(
+                "zurich.kml", KML, "application/vnd.google-earth.kml+xml"
+            )
+            bern_kml = map_file("bern.kml", KML, "application/vnd.google-earth.kml+xml")
+            for media in (overlay, zurich_kml, bern_kml):
+                db.add_media(media, txn)
+
             zurich = Place()
-            zurich.set_name(PlaceName(value="Zürich"))
+            name = PlaceName(value="Zürich")
+            name.set_date_object(date(1800, Date.MOD_SPAN, stop=1900))
+            zurich.set_name(name)
             zurich.set_latitude("47.3769")
             zurich.set_longitude("8.5417")
+            zurich.add_media_reference(media_ref(overlay.handle))
+            zurich.add_media_reference(media_ref(zurich_kml.handle))
             db.add_place(zurich, txn)
+            bern = Place()
+            bern.set_name(PlaceName(value="Bern"))
+            bern.add_media_reference(media_ref(bern_kml.handle))
+            db.add_place(bern, txn)
 
             portrait = image("portrait.png", b"\x10\x20\x30")
             birth_photo = image("birth.png", b"\x40\x50\x60")
             couple_photo = image("couple.png", b"\x70\x80\x90")
-            for media in (portrait, birth_photo, couple_photo):
+            karl_photo = image("karl.png", b"\xa0\xb0\xc0")
+            for media in (portrait, birth_photo, couple_photo, karl_photo):
                 db.add_media(media, txn)
 
             birth = event(
@@ -178,13 +279,20 @@ class StoryExportTest(unittest.TestCase):
             christening = event(
                 EventType.CHRISTEN, date(1850, month=3, day=12), private=True
             )
-            death = event(EventType.DEATH, date(1920))
+            death = event(EventType.DEATH, date(1920), bern)
             census = event(EventType.CENSUS, None)
             census.add_media_reference(media_ref(couple_photo.handle))
             marriage = event(EventType.MARRIAGE, date(1878))
             marriage.add_media_reference(media_ref(couple_photo.handle))
             anna_birth = event(EventType.BIRTH, date(1990))
-            for e in (birth, christening, death, census, marriage, anna_birth):
+            karl_events = [
+                event(EventType.BIRTH, date(1880)),
+                event(EventType.BAPTISM, date(1880, month=6)),
+                event(EventType.DEATH, date(1950)),
+            ]
+            for e in [birth, christening, death, census, marriage, anna_birth]:
+                db.add_event(e, txn)
+            for e in karl_events:
                 db.add_event(e, txn)
 
             josef = person("Josef", "Meyer")
@@ -206,6 +314,15 @@ class StoryExportTest(unittest.TestCase):
             db.add_person(josef, txn)
             db.add_person(anna, txn)
 
+            karl = person("Karl", "Meyer")
+            for e in karl_events:
+                ref = EventRef()
+                ref.set_reference_handle(e.handle)
+                ref.set_role(EventRoleType.PRIMARY)
+                karl.add_event_ref(ref)
+            karl.add_media_reference(media_ref(karl_photo.handle))
+            db.add_person(karl, txn)
+
             family = Family()
             family.set_father_handle(josef.handle)
             family.set_mother_handle(anna.handle)
@@ -213,17 +330,24 @@ class StoryExportTest(unittest.TestCase):
             marriage_ref.set_reference_handle(marriage.handle)
             marriage_ref.set_role(EventRoleType.FAMILY)
             family.add_event_ref(marriage_ref)
+            child_ref = ChildRef()
+            child_ref.set_reference_handle(karl.handle)
+            family.add_child_ref(child_ref)
             db.add_family(family, txn)
             josef.add_family_handle(family.handle)
             anna.add_family_handle(family.handle)
+            karl.add_parent_family_handle(family.handle)
             db.commit_person(josef, txn)
             db.commit_person(anna, txn)
+            db.commit_person(karl, txn)
 
-        cls.josef, cls.anna = josef.handle, anna.handle
+        cls.josef, cls.anna, cls.karl = josef.handle, anna.handle, karl.handle
+        cls.family = family.handle
         cls.media = {
             "portrait": portrait.handle,
             "birth": birth_photo.handle,
             "couple": couple_photo.handle,
+            "karl": karl_photo.handle,
         }
 
     @classmethod
@@ -237,98 +361,200 @@ class StoryExportTest(unittest.TestCase):
         with zipfile.ZipFile(io.BytesIO(out.getvalue())) as archive:
             return json.loads(archive.read("story.json")), set(archive.namelist())
 
-    def test_the_whole_story(self):
-        doc, files = self.written(build_story(self.db, self.josef))
+    def titles(self, doc):
+        return [s.get("title") for s in doc["slides"]]
+
+    def test_a_person_story(self):
+        doc, files = self.written(build_person_story(self.db, self.josef))
         self.assertEqual(doc["format"], "gramps-connect-story")
-        self.assertEqual(doc["title"], "The Story of Meyer, Josef")
-        titles = [s.get("title") for s in doc["slides"]]
-        # Opening slide, then by date (the christening shares the birth's
-        # year), then the undated census last.
+        self.assertEqual(doc["title"], "The Story of Josef Meyer")
+        # His own events: by date (the christening shares the birth's
+        # year), then the undated census last. No family events.
         self.assertEqual(
-            titles,
+            self.titles(doc),
             [
-                "The Story of Meyer, Josef",
-                "Birth",
-                "Christening",
-                "Marriage",
-                "Death",
-                "Census",
+                "The Story of Josef Meyer",
+                "Birth of Josef Meyer",
+                "Christening of Josef Meyer",
+                "Death of Josef Meyer",
+                "Census of Josef Meyer",
             ],
         )
         self.assertEqual(
-            doc["slides"][0]["text"], "5 events from the life of Meyer, Josef."
+            doc["slides"][0]["text"], "4 moments from Josef Meyer's recorded life."
         )
         self.assertEqual(
-            [s["id"] for s in doc["slides"]], ["s0", "s1", "s2", "s3", "s4", "s5"]
+            [s["id"] for s in doc["slides"]], ["s0", "s1", "s2", "s3", "s4"]
         )
 
         birth = doc["slides"][1]
-        self.assertEqual(birth["text"], "Born at home.")
+        self.assertEqual(
+            birth["text"], "Josef Meyer was born about 1850 in Zürich. Born at home."
+        )
         self.assertEqual(birth["date"]["edtf"], "1850~")
         self.assertEqual(birth["date"]["sortYear"], 1850)
-        self.assertTrue(birth["date"]["text"])
         self.assertEqual(birth["place"]["name"], "Zürich")
         self.assertAlmostEqual(birth["place"]["lat"], 47.3769)
         self.assertAlmostEqual(birth["place"]["lon"], 8.5417)
-        self.assertEqual(birth["people"], [{"name": "Meyer, Josef"}])
-        self.assertEqual(doc["slides"][2]["date"]["edtf"], "1850-03-12")
-        self.assertNotIn("date", doc["slides"][5])
-        self.assertEqual(
-            doc["slides"][3]["people"],
-            [{"name": "Meyer, Josef"}, {"name": "Keller, Anna"}],
+        self.assertEqual(birth["people"], [{"name": "Josef Meyer"}])
+        self.assertTrue(
+            doc["slides"][2]["text"].startswith("Josef Meyer was christened on ")
         )
+        self.assertEqual(doc["slides"][2]["date"]["edtf"], "1850-03-12")
+        self.assertEqual(doc["slides"][3]["text"], "Josef Meyer died in 1920 in Bern.")
+        self.assertEqual(doc["slides"][4]["text"], "Census of Josef Meyer.")
+        self.assertNotIn("date", doc["slides"][4])
 
         # Photos: the birth's own; the portrait on the opening slide and as
-        # every other slide's fallback; the couple's on the marriage. Each
-        # file stored once.
+        # the fallback; the couple's on the census. Each file stored once.
         refs = [s.get("media", [{}])[0].get("ref") for s in doc["slides"]]
-        self.assertEqual(refs[0], refs[2])
-        self.assertEqual(refs[0], refs[4])
         self.assertNotEqual(refs[0], refs[1])
-        self.assertNotEqual(refs[0], refs[3])
-        self.assertEqual(refs[3], refs[5])
-        self.assertEqual(len(doc["media"]), 3)
+        self.assertEqual(refs[0], refs[2])
+        self.assertEqual(refs[0], refs[3])
+        self.assertNotIn(refs[4], (refs[0], refs[1]))
+        self.assertEqual(len(doc["media"]), 4)  # and the old map
         for item in doc["media"].values():
             self.assertIn(item["src"], files)
 
+    def test_map_overlays(self):
+        doc, files = self.written(build_person_story(self.db, self.josef))
+        zurich = doc["slides"][1]["place"]
+        # The overlay file's shape (its fill as the color the player
+        # reads), not the KML beside it.
+        self.assertEqual(
+            [f["geometry"]["type"] for f in zurich["geometry"]["features"]],
+            ["Polygon"],
+        )
+        self.assertEqual(
+            zurich["geometry"]["features"][0]["properties"]["color"], "#aa0000"
+        )
+        (overlay,) = zurich["overlays"]
+        self.assertEqual(
+            overlay["corners"], [[8.5, 47.4], [8.6, 47.4], [8.6, 47.3], [8.5, 47.3]]
+        )
+        self.assertEqual((overlay["opacity"], overlay["order"]), (0.6, 3))
+        self.assertEqual(overlay["date"]["edtf"], "1800/1900")
+        self.assertIn(doc["media"][overlay["media"]]["src"], files)
+
+        # Bern has no coordinates, just its KML: two placemarks, the
+        # first a polygon and a line together.
+        bern = doc["slides"][3]["place"]
+        self.assertEqual(bern["name"], "Bern")
+        self.assertNotIn("lat", bern)
+        self.assertNotIn("overlays", bern)
+        features = bern["geometry"]["features"]
+        self.assertEqual(
+            [f["geometry"]["type"] for f in features], ["GeometryCollection", "Point"]
+        )
+        self.assertEqual(
+            [g["type"] for g in features[0]["geometry"]["geometries"]],
+            ["Polygon", "LineString"],
+        )
+        self.assertEqual(features[0]["properties"], {"name": "Old town"})
+        self.assertEqual(features[1]["geometry"]["coordinates"], [7.45, 46.95])
+
+    def test_a_person_story_with_families(self):
+        doc, _ = self.written(
+            build_person_story(self.db, self.josef, include_families=True)
+        )
+        self.assertEqual(
+            self.titles(doc),
+            [
+                "The Story of Josef Meyer",
+                "Birth of Josef Meyer",
+                "Christening of Josef Meyer",
+                "Marriage of Josef Meyer & Anna Keller",
+                "Birth of Karl Meyer",
+                "Death of Josef Meyer",
+                "Death of Karl Meyer",
+                "Birth of Anna Keller",
+                "Census of Josef Meyer",
+            ],
+        )
+        marriage = doc["slides"][3]
+        self.assertEqual(
+            marriage["text"], "Josef Meyer and Anna Keller were married in 1878."
+        )
+        self.assertEqual(
+            marriage["people"], [{"name": "Josef Meyer"}, {"name": "Anna Keller"}]
+        )
+
+    def test_a_family_story(self):
+        doc, _ = self.written(build_family_story(self.db, self.family))
+        self.assertEqual(doc["title"], "The Story of Josef Meyer & Anna Keller")
+        # The couple's events and everyone's births and deaths; not Karl's
+        # baptism or Josef's christening and census.
+        self.assertEqual(
+            self.titles(doc),
+            [
+                "The Story of Josef Meyer & Anna Keller",
+                "Birth of Josef Meyer",
+                "Marriage of Josef Meyer & Anna Keller",
+                "Birth of Karl Meyer",
+                "Death of Josef Meyer",
+                "Death of Karl Meyer",
+                "Birth of Anna Keller",
+            ],
+        )
+        self.assertEqual(
+            doc["slides"][0]["text"],
+            "6 moments from the life of Josef Meyer & Anna Keller and their child.",
+        )
+        refs = {s["title"]: s.get("media", [{}])[0].get("ref") for s in doc["slides"]}
+        # Karl's slides show Karl; the opening slide a parent's portrait.
+        self.assertEqual(refs["Birth of Karl Meyer"], refs["Death of Karl Meyer"])
+        self.assertNotEqual(refs["Birth of Karl Meyer"], refs[doc["title"]])
+        self.assertEqual(refs[doc["title"]], refs["Death of Josef Meyer"])
+
+    def test_a_family_story_leaves_out_who_isnt_wanted(self):
+        doc, _ = self.written(
+            build_family_story(self.db, self.family, excluded={self.anna})
+        )
+        self.assertNotIn("Birth of Anna Keller", self.titles(doc))
+        self.assertIn("Marriage of Josef Meyer & Anna Keller", self.titles(doc))
+
     def test_private_records_left_out(self):
-        doc, _ = self.written(build_story(PrivateProxyDb(self.db), self.josef))
-        self.assertNotIn("Christening", [s.get("title") for s in doc["slides"]])
+        doc, _ = self.written(build_person_story(PrivateProxyDb(self.db), self.josef))
+        self.assertNotIn("Christening of Josef Meyer", self.titles(doc))
 
     def test_living_people_left_out(self):
         db = LivingProxyDb(self.db, LivingProxyDb.MODE_EXCLUDE_ALL)
-        doc, _ = self.written(build_story(db, self.josef, no_living_in_photo(self.db)))
-        titles = [s.get("title") for s in doc["slides"]]
+        allowed = no_living_in_photo(self.db)
+        doc, _ = self.written(
+            build_person_story(db, self.josef, True, photo_allowed=allowed)
+        )
+        titles = self.titles(doc)
         # Gramps clears the events of a family with a living parent
-        # (LivingProxyDb), so the marriage goes...
-        self.assertNotIn("Marriage", titles)
+        # (LivingProxyDb), and hides Anna herself...
+        self.assertNotIn("Marriage of Josef Meyer & Anna Keller", titles)
+        self.assertNotIn("Birth of Anna Keller", titles)
         # ...and the census keeps its slide but not the photo Anna is in:
         # it falls back to Josef's portrait.
-        census = doc["slides"][titles.index("Census")]
+        census = doc["slides"][titles.index("Census of Josef Meyer")]
         self.assertEqual(census["media"], doc["slides"][0]["media"])
-        self.assertEqual(len(doc["media"]), 2)
-        self.assertTrue(no_living_in_photo(self.db)(self.media["birth"]))
-        self.assertFalse(no_living_in_photo(self.db)(self.media["couple"]))
+        self.assertTrue(allowed(self.media["birth"]))
+        self.assertFalse(allowed(self.media["couple"]))
 
     def test_a_living_subject_is_refused(self):
         db = LivingProxyDb(self.db, LivingProxyDb.MODE_EXCLUDE_ALL)
         with self.assertRaises(StoryExportError):
-            build_story(db, self.anna)
+            build_person_story(db, self.anna)
 
     def test_left_out_reason_names_the_option(self):
         self.assertIn(
             "Include living people",
-            left_out_reason(self.db, self.anna, True, False),
+            left_out_reason(self.db, "person", self.anna, True, False),
         )
-        self.assertIsNone(left_out_reason(self.db, self.anna, False, True))
-        self.assertIsNone(left_out_reason(self.db, self.josef, False, False))
+        self.assertIsNone(left_out_reason(self.db, "person", self.anna, False, True))
+        self.assertIsNone(left_out_reason(self.db, "person", self.josef, False, False))
+        self.assertIsNone(left_out_reason(self.db, "family", self.family, False, False))
 
     def test_viewer_page_holds_the_story(self):
         import base64
         import re
 
         out = io.BytesIO()
-        build_story(self.db, self.josef).write(out)
+        build_person_story(self.db, self.josef).write(out)
         page = viewer_page(out.getvalue(), "Josef <Meyer>", "de")
         self.assertIn("Josef &lt;Meyer&gt;", page)
         self.assertIn('<html lang="de">', page)
