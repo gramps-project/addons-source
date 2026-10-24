@@ -829,7 +829,7 @@ class SharedDBAPI(DbGeneric):
                 f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?"
                 % table
             )
-            self.dbapi.execute(
+            self.dbapi.execute_prepared(
                 sql,
                 [self.serializer.object_to_string(obj), obj.handle, self.dbapi.treeid],
             )
@@ -878,7 +878,7 @@ class SharedDBAPI(DbGeneric):
                 f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?"
                 % table
             )
-            self.dbapi.execute(
+            self.dbapi.execute_prepared(
                 sql, [self.serializer.data_to_string(data), handle, self.dbapi.treeid]
             )
         else:
@@ -896,7 +896,7 @@ class SharedDBAPI(DbGeneric):
 
         # Find existing references
         sql = "SELECT ref_class, ref_handle FROM reference WHERE obj_handle = ? AND treeid = ?"
-        self.dbapi.execute(sql, [obj.handle, self.dbapi.treeid])
+        self.dbapi.execute_prepared(sql, [obj.handle, self.dbapi.treeid])
         existing_references = set(self.dbapi.fetchall())
 
         # Once we have the list of rows that already have a reference
@@ -909,7 +909,7 @@ class SharedDBAPI(DbGeneric):
         new_references = current_references.difference(existing_references)
 
         # Delete the existing references
-        self.dbapi.execute(
+        self.dbapi.execute_prepared(
             "DELETE FROM reference WHERE obj_handle = ? AND treeid = ?",
             [obj.handle, self.dbapi.treeid],
         )
@@ -959,7 +959,7 @@ class SharedDBAPI(DbGeneric):
             self._remove_backlinks(obj_class, handle, transaction)
             table = KEY_TO_NAME_MAP[obj_key]
             sql = "DELETE FROM %s WHERE handle = ? AND treeid = ?" % table
-            self.dbapi.execute(sql, [handle, self.dbapi.treeid])
+            self.dbapi.execute_prepared(sql, [handle, self.dbapi.treeid])
             if not transaction.batch:
                 transaction.add(obj_key, TXNDEL, handle, data, None)
 
@@ -968,13 +968,13 @@ class SharedDBAPI(DbGeneric):
         Removes all references from this object (backlinks).
         """
         # collect backlinks from this object for undo
-        self.dbapi.execute(
+        self.dbapi.execute_prepared(
             "SELECT ref_class, ref_handle FROM reference WHERE obj_handle = ? AND treeid = ?",
             [obj_handle, self.dbapi.treeid],
         )
         rows = self.dbapi.fetchall()
         # Now, delete backlinks from this object:
-        self.dbapi.execute(
+        self.dbapi.execute_prepared(
             "DELETE FROM reference WHERE obj_handle = ? AND treeid = ?;",
             [obj_handle, self.dbapi.treeid],
         )
@@ -1002,7 +1002,7 @@ class SharedDBAPI(DbGeneric):
 
             result_list = list(find_backlink_handles(handle))
         """
-        self.dbapi.execute(
+        self.dbapi.execute_prepared(
             "SELECT obj_class, obj_handle FROM reference WHERE ref_handle = ? AND treeid = ?",
             [handle, self.dbapi.treeid],
         )
@@ -1182,13 +1182,13 @@ class SharedDBAPI(DbGeneric):
     def _has_handle(self, obj_key, handle):
         table = KEY_TO_NAME_MAP[obj_key]
         sql = "SELECT 1 FROM %s WHERE handle = ? AND treeid = ?" % table
-        self.dbapi.execute(sql, [handle, self.dbapi.treeid])
+        self.dbapi.execute_prepared(sql, [handle, self.dbapi.treeid])
         return self.dbapi.fetchone() is not None
 
     def _has_gramps_id(self, obj_key, gramps_id):
         table = KEY_TO_NAME_MAP[obj_key]
         sql = "SELECT 1 FROM %s WHERE gramps_id = ? AND treeid = ?" % table
-        self.dbapi.execute(sql, [gramps_id, self.dbapi.treeid])
+        self.dbapi.execute_prepared(sql, [gramps_id, self.dbapi.treeid])
         return self.dbapi.fetchone() != None
 
     def _get_gramps_ids(self, obj_key):
@@ -1204,7 +1204,7 @@ class SharedDBAPI(DbGeneric):
             f"SELECT {self.serializer.data_field} FROM %s WHERE handle = ? AND treeid = ?"
             % table
         )
-        self.dbapi.execute(sql, [handle, self.dbapi.treeid])
+        self.dbapi.execute_prepared(sql, [handle, self.dbapi.treeid])
         row = self.dbapi.fetchone()
         if row:
             return self.serializer.string_to_data(row[0])
@@ -1215,7 +1215,7 @@ class SharedDBAPI(DbGeneric):
             f"SELECT {self.serializer.data_field} FROM %s WHERE gramps_id = ? AND treeid = ?"
             % table
         )
-        self.dbapi.execute(sql, [gramps_id, self.dbapi.treeid])
+        self.dbapi.execute_prepared(sql, [gramps_id, self.dbapi.treeid])
         row = self.dbapi.fetchone()
         if row:
             return self.serializer.string_to_data(row[0])
@@ -1255,7 +1255,7 @@ class SharedDBAPI(DbGeneric):
         """
         if data is None:
             sql = "DELETE FROM reference WHERE obj_handle = ? AND ref_handle = ? AND treeid = ?"
-            self.dbapi.execute(sql, [handle[0], handle[1], self.dbapi.treeid])
+            self.dbapi.execute_prepared(sql, [handle[0], handle[1], self.dbapi.treeid])
         else:
             sql = (
                 "INSERT INTO reference "
@@ -1272,14 +1272,14 @@ class SharedDBAPI(DbGeneric):
         table = cls.lower()
         if data is None:
             sql = "DELETE FROM %s WHERE handle = ? AND treeid = ?" % table
-            self.dbapi.execute(sql, [handle, self.dbapi.treeid])
+            self.dbapi.execute_prepared(sql, [handle, self.dbapi.treeid])
         else:
             if self._has_handle(obj_key, handle):
                 sql = (
                     f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?"
                     % table
                 )
-                self.dbapi.execute(
+                self.dbapi.execute_prepared(
                     sql,
                     [self.serializer.data_to_string(data), handle, self.dbapi.treeid],
                 )
@@ -1399,7 +1399,7 @@ class SharedDBAPI(DbGeneric):
 
         if len(values) > 0:
             table_name = table.lower()
-            self.dbapi.execute(
+            self.dbapi.execute_prepared(
                 "UPDATE %s SET %s where handle = ? AND treeid = ?"
                 % (table_name, ", ".join(sets)),
                 self._sql_cast_list(values) + [obj.handle, self.dbapi.treeid],
