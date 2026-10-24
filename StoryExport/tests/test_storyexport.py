@@ -558,7 +558,7 @@ class StoryExportTest(unittest.TestCase):
         page = viewer_page(out.getvalue(), "Josef <Meyer>", "de")
         self.assertIn("Josef &lt;Meyer&gt;", page)
         self.assertIn('<html lang="de">', page)
-        self.assertIn("@gramps-connect/story@0.1/dist/embed.js", page)
+        self.assertIn("@gramps-connect/story@0/dist/embed.js", page)
         data = re.search(r'<script id="story"[^>]*>([^<]*)</script>', page)
         self.assertEqual(base64.b64decode(data.group(1)), out.getvalue())
 
