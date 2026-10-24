@@ -49,8 +49,10 @@ _ = _trans.gettext
 ngettext = _trans.ngettext
 
 
-#: The story player, from the @gramps-connect/story npm package (any 0.1.x).
-PLAYER_URL = "https://cdn.jsdelivr.net/npm/@gramps-connect/story@0.1/dist/embed.js"
+#: The story player, from the @gramps-connect/story npm package: its
+#: latest 0.x release, so pages get each new player (0.x releases only
+#: add to the <gramps-connect-story> element this page uses).
+PLAYER_URL = "https://cdn.jsdelivr.net/npm/@gramps-connect/story@0/dist/embed.js"
 
 _VIEWER_PAGE = """<!doctype html>
 <html lang="%(lang)s"><head><meta charset="utf-8">
