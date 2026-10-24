@@ -162,15 +162,16 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
             have already been run (source_db present in its context).
         :param parent: Parent window.
         """
+        source_db = gwizard.context.get("source_db")
+        if source_db is None:
+            raise HandleError(_("No source database available for comparison"))
+
         Gtk.Window.__init__(self)
         ManagedWindow.__init__(self, uistate, [], self.__class__)
         self.set_window(self, None, _("GWizard Compare"), isWindow=True)
 
         self.dbstate = dbstate
         self.gwizard = gwizard
-        source_db = gwizard.context.get("source_db")
-        if source_db is None:
-            raise HandleError(_("No source database available for comparison"))
         self.source_db: Any = source_db
         self.current_category = "person"
         self.diff_list: list[dict[str, Any]] = []
@@ -201,7 +202,7 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         main_box.set_border_width(6)
         outer.pack_start(main_box, True, True, 0)
 
-        self.paned = Gtk.HPaned()
+        self.paned = Gtk.Paned(orientation=Gtk.Orientation.HORIZONTAL)
         main_box.pack_start(self.paned, True, True, 0)
 
         source_path = gwizard.context.get("gedcom_path")
@@ -373,7 +374,11 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
                     "Compare window fit: no monitor found; size=%s", self.get_size()
                 )
                 return False
-            geometry = monitor.get_geometry()
+            geometry = (
+                monitor.get_workarea()
+                if hasattr(monitor, "get_workarea")
+                else monitor.get_geometry()
+            )
 
             usable_w = max(320, geometry.width - 40)
             usable_h = max(240, geometry.height - 80)
@@ -396,6 +401,10 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         except Exception:  # pragma: no cover - depends on the GTK/display setup
             LOG.warning("Unable to clamp compare window size", exc_info=True)
 
+        # The initial fit has completed (or at least been attempted); from now
+        # on a maximized window-state change is the user's own action and must
+        # not be undone by cb_window_state_changed.
+        self._user_resized = True
         return False
 
     # ------------------------------------------------------------------
@@ -480,6 +489,25 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         group = store.get_value(parent, 1) or ""
         return (group, name)
 
+    def _find_insertion_path(self, store: Any, target: tuple[str, str]) -> Any:
+        """Find the insertion path by walking every row (including children)."""
+        best_path: Gtk.TreePath | None = None
+        last_path: Gtk.TreePath | None = None
+
+        def cb(_model: Any, path: Gtk.TreePath, iter_: Gtk.TreeIter) -> bool:
+            nonlocal best_path, last_path
+            last_path = path.copy()
+            key = self._row_sort_key(store, iter_)
+            probe = (key[0].lower(), key[1].lower())
+            if best_path is None and probe >= target:
+                best_path = path.copy()
+            return False
+
+        store.foreach(cb)
+        if best_path is None:
+            best_path = last_path
+        return best_path
+
     def _scroll_to_position(
         self,
         panel: dict[str, Any],
@@ -493,17 +521,10 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         be added as new instead of looking like a matched pair.
         """
         store = panel["store"]
-        best_path: Gtk.TreePath | None = None
-        last_path: Gtk.TreePath | None = None
         target = (group.lower(), name_str.lower())
-        for row in store:
-            last_path = row.path
-            key = self._row_sort_key(store, store.get_iter(row.path))
-            probe = (key[0].lower(), key[1].lower())
-            if not best_path and probe >= target:
-                best_path = row.path
+        best_path = self._find_insertion_path(store, target)
         if best_path is None:
-            best_path = last_path
+            best_path = None
         selection = panel["tree"].get_selection()
         selection.unselect_all()
         if best_path is not None:
@@ -527,17 +548,8 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
             return
 
         # The TreeStore is sorted, so iteration order matches the view.
-        best_path: Gtk.TreePath | None = None
-        last_path: Gtk.TreePath | None = None
         target = (group.lower(), name_str.lower())
-        for row in store:
-            last_path = row.path
-            key = self._row_sort_key(store, store.get_iter(row.path))
-            probe = (key[0].lower(), key[1].lower())
-            if not best_path and probe >= target:
-                best_path = row.path
-        if best_path is None:
-            best_path = last_path
+        best_path = self._find_insertion_path(store, target)
         if best_path is not None:
             panel["tree"].set_cursor(best_path)
             panel["tree"].scroll_to_cell(best_path, None, False, 0, 0)
@@ -594,14 +606,35 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         # so panel mirroring can always find the counterpart person.
         self._pair_map: dict[str, PersonHandle | None] = {}
         self._pair_map_rev: dict[PersonHandle, str] = {}
+        # Greedy one-to-one matching: collect best candidate per source with
+        # its score, then assign highest scores first, skipping targets that
+        # have already been claimed.
+        candidates: list[tuple[float, str, PersonHandle]] = []
         for handle in source_db.iter_person_handles():
             person = safe_get_person(source_db, handle)
             if not person:
                 continue
-            target_handle = self._best_match(matcher, person)
-            self._pair_map[handle] = target_handle
+            target_handle, score = self._best_match_with_score(matcher, person)
             if target_handle:
-                self._pair_map_rev[target_handle] = handle
+                candidates.append((score, handle, target_handle))
+        candidates.sort(key=lambda item: item[0], reverse=True)
+        taken: set[PersonHandle] = set()
+        for score, handle, target_handle in candidates:
+            if handle in self._pair_map:
+                continue
+            if target_handle in taken:
+                continue
+            self._pair_map[handle] = target_handle
+            self._pair_map_rev[target_handle] = handle
+            taken.add(target_handle)
+        for handle in source_db.iter_person_handles():
+            if handle not in self._pair_map:
+                self._pair_map[handle] = None
+        for handle in source_db.iter_person_handles():
+            person = safe_get_person(source_db, handle)
+            if not person:
+                continue
+            target_handle = self._pair_map.get(handle)
             try:
                 if target_handle is None:
                     self.diff_list.append(
@@ -679,7 +712,7 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         initial = (name.first_name or " ").strip()[:1].lower()
         return (sdx, initial)
 
-    def _best_match(
+    def _best_match_with_score(
         self, matcher: CandidateMatcher, source: Person
     ) -> PersonHandle | None:
         """
@@ -700,10 +733,7 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
                 if handle not in rejected
             ]
         best_handle: PersonHandle | None = None
-        # Default match threshold – can be tuned later via a class attribute
-        # or configuration. Raising it from 0.5 to 0.7 makes spurious
-        # Soundex‑only matches less likely to be accepted.
-        best_score = getattr(self, "match_threshold", 0.7)
+        best_score = self.match_threshold
         for handle in candidate_handles:
             target = safe_get_person(self.dbstate.db, handle)
             if not target:
@@ -764,7 +794,11 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
             if score > best_score:
                 best_score = score
                 best_handle = handle
-        return best_handle
+        return best_handle, best_score
+
+    def _best_match(self, matcher: Any, source: Any) -> PersonHandle | None:
+        handle, _ = self._best_match_with_score(matcher, source)
+        return handle
 
     @staticmethod
     def _add_person_row(
@@ -834,12 +868,12 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
                     [
                         handle,
                         self._describe_object(obj),
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
                         obj.gramps_id or "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
                     ],
                 )
 
@@ -1364,7 +1398,6 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         other = self.right_panel if is_left else self.left_panel
 
         self._set_detail_sections(panel, handle)
-        self._update_diff_status()
 
         # Mirror the selection into the other panel: same handle when it
         # exists there, otherwise the matched counterpart person, and as a
@@ -1400,6 +1433,7 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
                 )
         finally:
             self._syncing = False
+        self._update_diff_status()
 
     def _get_counterpart(self, handle: str) -> str | None:
         """
@@ -1536,7 +1570,7 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         if not cleaned:
             return ""
         escaped = [GLib.markup_escape_text(line) for line in cleaned]
-        if not other_lines:
+        if other_lines is None:
             return "\n".join(escaped)
         other_cleaned = [" ".join(line.split()) for line in other_lines if line.strip()]
         other_set = set(other_cleaned)
@@ -1603,7 +1637,7 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         for i, (word, other_word) in enumerate(zip(words, other_words)):
             # Strip punctuation from the UNESCAPED word
             left_content, left_punct = _strip_trailing_punct(word)
-            right_content, _ = _strip_trailing_punct(other_word)
+            right_content, _unused = _strip_trailing_punct(other_word)
 
             # Compare unescaped content
             if left_content == right_content:
