@@ -22,7 +22,7 @@ if (5, 2, 0) <= VERSION_TUPLE <= (6, 2, 0):
             "(GEDCOM, Gramps XML, ...) side-by-side with the open Family Tree "
             "and merge selected differences person by person."
         ),
-        version = '0.0.2',
+        version="0.0.1",
         gramps_target_version=major_version,
         status=EXPERIMENTAL,
         audience=EXPERT,

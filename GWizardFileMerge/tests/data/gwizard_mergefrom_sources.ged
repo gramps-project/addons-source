@@ -1,0 +1,213 @@
+0 HEAD
+1 SOUR Gramps
+2 VERS 6.0
+2 NAME Gramps
+1 DATE 15 OCT 2026
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 LANG English
+0 @I1@ INDI
+1 NAME Erik /Lindqvist/
+2 GIVN Erik
+2 SURN Lindqvist
+1 SEX M
+1 BIRT
+2 DATE 14 MAR 1910
+2 PLAC Loderup, Malmohus Lan, Sweden
+2 SOUR @S1@
+3 PAGE Certificate No. 1910-0042, Anna Lindqvist (recorded as male in index)
+3 QUAY 3
+3 DATA
+4 TEXT Transcription: born 14 March 1910, Loderup parish, father Erik, mother Maria.
+3 OBJE @M1@
+3 NOTE @N1@
+1 DEAT
+2 DATE 3 JUN 1988
+2 PLAC Chicago, Cook County, IL
+2 SOUR @S2@
+3 PAGE Certificate No. 1988-14205
+3 QUAY 3
+3 OBJE @M2@
+1 BURI
+2 DATE 8 JUN 1988
+2 PLAC Rosehill Cemetery, Chicago, IL
+2 SOUR @S3@
+3 PAGE Section 12, Lot 44, marker photo
+3 QUAY 2
+3 OBJE @M3@
+1 FAMS @F1@
+1 CHAN
+2 DATE 15 OCT 2026
+0 @I2@ INDI
+1 NAME Anna /Svensson/
+2 GIVN Anna
+2 SURN Svensson
+1 SEX F
+1 BIRT
+2 DATE 2 MAY 1912
+2 PLAC Goteborg, Sweden
+1 MARR
+2 DATE 12 MAY 1934
+2 PLAC First Lutheran Church, Chicago, IL
+2 SOUR @S4@
+3 PAGE Marriage License No. M-1934-8891; Cook County, Illinois, Marriage Records, 1871-1942
+3 QUAY 3
+3 NOTE @N2@
+3 OBJE @M4@
+2 SOUR @S7@
+3 PAGE The Daily Chronicle, 20 May 1934, p. 7, marriage announcement
+3 QUAY 2
+3 OBJE @M7@
+1 DEAT
+2 DATE 1 FEB 1975
+2 PLAC Chicago, Cook County, IL
+2 SOUR @S8@
+3 PAGE The Daily Chronicle, 4 Feb 1975, p. 14, obituary of Anna Lindqvist
+3 QUAY 2
+3 OBJE @M8@
+1 FAMS @F1@
+1 CHAN
+2 DATE 15 OCT 2026
+0 @I3@ INDI
+1 NAME Nils /Lindqvist/
+2 GIVN Nils
+2 SURN Lindqvist
+1 SEX M
+1 BIRT
+2 DATE 2 FEB 1938
+2 PLAC Chicago, Cook County, IL
+1 ADOP
+2 DATE 9 NOV 1940
+2 PLAC Cook County Court, Chicago, IL
+2 SOUR @S5@
+3 PAGE Adoption decree, Case A-1940-311
+3 QUAY 3
+3 OBJE @M5@
+1 CHR
+2 DATE 24 MAY 1936
+2 PLAC Community Church, Chicago, IL
+2 SOUR @S6@
+3 PAGE The Daily Chronicle, 24 May 1936, christening notice for Ingrid Maria Lindqvist
+3 QUAY 1
+3 OBJE @M6@
+1 CENS
+2 DATE 1930
+2 PLAC Chicago, Ward 12, Cook County, IL
+2 SOUR @S9@
+3 PAGE Illinois, Cook County, Chicago, Ward 12, ED 16-432, Sheet 4B, household 92, line 14
+3 QUAY 2
+3 OBJE @M9@
+1 FAMC @F1@
+1 CHAN
+2 DATE 15 OCT 2026
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 MARR
+2 DATE 12 MAY 1934
+2 PLAC First Lutheran Church, Chicago, IL
+2 SOUR @S4@
+3 PAGE Marriage License No. M-1934-8891
+3 QUAY 3
+3 OBJE @M4@
+1 CHAN
+2 DATE 15 OCT 2026
+0 @S1@ SOUR
+1 TITL Illinois, Cook County, Birth Certificates, 1878-1940
+1 AUTH Illinois. Cook County. County Clerk
+1 PUBL Chicago: Cook County Clerk's Office. Certificate No. 1910-0042 (1910), Anna Lindqvist.
+1 REPO @R1@
+0 @S2@ SOUR
+1 TITL Illinois Death Certificates, 1916-1950
+1 AUTH Illinois Department of Public Health
+1 PUBL Springfield: Illinois State Archives. Certificate No. 1988-14205 (1988), Anna Lindqvist.
+1 REPO @R2@
+1 NOTE @N3@
+0 @S3@ SOUR
+1 TITL findagrave.com memorial 44120987, Anna Lindqvist (1910-1988)
+1 PUBL Database and images, Find A Grave (https://www.findagrave.com : accessed 15 Oct 2026), memorial page for Anna Lindqvist.
+0 @S4@ SOUR
+1 TITL Cook County, Illinois, Marriage Records, 1871-1942
+1 AUTH Illinois. Cook County. County Clerk
+1 PUBL Chicago: Cook County Clerk's Office. License No. M-1934-8891 (1934), Lindqvist-Svensson.
+1 REPO @R1@
+0 @S5@ SOUR
+1 TITL Cook County, Illinois, Adoption Case Files, 1900-1945
+1 AUTH Illinois. Cook County. County Court
+1 PUBL Chicago: Cook County Circuit Court Archives. Case A-1940-311 (1940), Nils Lindqvist.
+1 REPO @R1@
+0 @S6@ SOUR
+1 TITL The Daily Chronicle, christening notice, 24 May 1936
+1 PUBL The Daily Chronicle (Chicago, IL), 24 May 1936, p. 9, col. 3.
+0 @S7@ SOUR
+1 TITL The Daily Chronicle, marriage announcement, 20 May 1934
+1 PUBL The Daily Chronicle (Chicago, IL), 20 May 1934, p. 7, society section.
+0 @S8@ SOUR
+1 TITL The Daily Chronicle, obituary, 4 Feb 1975
+1 PUBL The Daily Chronicle (Chicago, IL), 4 Feb 1975, p. 14, obituary of Anna Lindqvist.
+0 @S9@ SOUR
+1 TITL United States Census, 1930
+1 AUTH United States. Bureau of the Census
+1 PUBL Washington, D.C.: National Archives and Records Administration, microfilm publication T626.
+1 REPO @R3@
+0 @R1@ REPO
+1 NAME Cook County Clerk's Office (Chicago, IL)
+1 ADDR 69 W. Washington Street, Chicago, IL 60602
+0 @R2@ REPO
+1 NAME Illinois State Archives
+1 ADDR Margaret Cross Norton Building, Springfield, IL 62756
+0 @R3@ REPO
+1 NAME National Archives and Records Administration
+1 ADDR 8601 Adelphi Road, College Park, MD 20740
+0 @N1@ NOTE Citation justification: primary information, direct evidence of birth date and place.
+0 @N2@ NOTE Citation justification: primary information, direct evidence of marriage date and place.
+0 @N3@ NOTE Source comment: delayed filing noted by registrar; treat birthplace as secondary.
+0 @M1@ OBJE
+1 FILE media/birth_certificate.png
+2 FORM png
+3 MEDI image
+1 TITL Birth certificate scan for Anna Lindqvist, 1910
+0 @M2@ OBJE
+1 FILE media/death_certificate.png
+2 FORM png
+3 MEDI image
+1 TITL Death certificate scan for Anna Lindqvist, 1988
+0 @M3@ OBJE
+1 FILE media/grave_marker.png
+2 FORM png
+3 MEDI image
+1 TITL Grave marker photo, Rosehill Cemetery
+0 @M4@ OBJE
+1 FILE media/marriage_certificate.png
+2 FORM png
+3 MEDI image
+1 TITL Marriage certificate scan, Lindqvist-Svensson, 1934
+0 @M5@ OBJE
+1 FILE media/adoption_certificate.png
+2 FORM png
+3 MEDI image
+1 TITL Adoption decree scan, Nils Lindqvist, 1940
+0 @M6@ OBJE
+1 FILE media/newspaper_christening.png
+2 FORM png
+3 MEDI image
+1 TITL Newspaper christening notice, 1936
+0 @M7@ OBJE
+1 FILE media/newspaper_marriage.png
+2 FORM png
+3 MEDI image
+1 TITL Newspaper marriage announcement, 1934
+0 @M8@ OBJE
+1 FILE media/newspaper_obituary.png
+2 FORM png
+3 MEDI image
+1 TITL Newspaper obituary, 1975
+0 @M9@ OBJE
+1 FILE media/census_record.png
+2 FORM png
+3 MEDI image
+1 TITL 1930 census page image, ED 16-432, Sheet 4B
+0 TRLR

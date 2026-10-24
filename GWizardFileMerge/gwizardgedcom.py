@@ -159,6 +159,8 @@ class GedGWizard(GWizardBase):
             config.get("preferences.eprefix"),
             config.get("preferences.rprefix"),
             config.get("preferences.nprefix"),
+            config.get("preferences.tprefix"),
+            config.get("preferences.mprefix"),
         )
         pmgr = BasePluginManager.get_instance()
         for pdata in pmgr.get_reg_importers():

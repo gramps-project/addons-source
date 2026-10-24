@@ -448,10 +448,10 @@ class GWizardMergeDialog(Gtk.Dialog):
         # If values are the same, just return plain text (no highlighting)
         if left_val == right_val:
             if show_label:
-                plain_text = glocale.translation.gettext("%s: %s") % (
-                    label,
-                    left_val,
-                )
+                plain_text = glocale.translation.gettext("%(label)s: %(value)s") % {
+                    "label": label,
+                    "value": left_val,
+                }
             else:
                 plain_text = left_val
             return GLib.markup_escape_text(plain_text)
