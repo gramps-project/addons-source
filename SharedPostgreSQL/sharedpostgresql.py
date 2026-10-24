@@ -169,6 +169,12 @@ class Connection:
         self.__connection = psycopg2.connect(*args, **kwargs)
         self.__connection.autocommit = True
         self.__cursor = self.__connection.cursor()
+        # Prepared statements (see execute_prepared()) get one generic plan
+        # per session instead of a fresh plan for each set of parameters.
+        # Statements sent through execute() aren't prepared, so this
+        # doesn't affect them.
+        self.__cursor.execute("SET plan_cache_mode = force_generic_plan")
+        self.__prepared = {}
         self.uuid = uuid
         self._treeid = ""
         self.check_collation(glocale)
@@ -254,6 +260,38 @@ class Connection:
         except:
             self.__cursor.execute("rollback")
             raise
+
+    def execute_prepared(self, query, args):
+        """
+        Execute a statement that looks rows up by treeid plus a per-tree key
+        (handle, gramps_id, ...) as a prepared statement with a generic plan.
+
+        A custom plan uses the statistics for the given treeid. A tree that
+        isn't in them yet -- one being imported, whose rows are still
+        uncommitted -- is estimated to hold about one row, so the planner
+        may pick a (treeid, <other column>) index and filter every row of
+        the tree on each lookup, making an import quadratic in its size. A
+        generic plan can't see the treeid value, so it estimates an average
+        tree and uses the index on the whole key.
+
+        Each distinct query is prepared once per connection. Prepared
+        statements belong to the session, so they survive a rollback.
+
+        :param query: SQLite-flavoured statement with ``?`` placeholders.
+        :type query: str
+        :param args: the statement's parameters.
+        :type args: list
+        """
+        name = self.__prepared.get(query)
+        if name is None:
+            name = "gramps_stmt_%d" % len(self.__prepared)
+            parts = _translate_sql(query).split("%s")
+            sql = parts[0] + "".join(
+                "$%d%s" % (number, part) for number, part in enumerate(parts[1:], 1)
+            )
+            self.execute("PREPARE %s AS %s" % (name, sql))
+            self.__prepared[query] = name
+        self.execute("EXECUTE %s (%s)" % (name, ", ".join(["?"] * len(args))), args)
 
     def fetchone(self):
         try:
