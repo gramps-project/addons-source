@@ -76,7 +76,7 @@ if "GRAMPS_RESOURCES" not in os.environ:
     os.environ["GRAMPS_RESOURCES"] = os.path.dirname(os.path.dirname(gramps.__file__))
 
 try:
-    from SharedPostgreSQL.sharedpostgresql import Connection
+    from SharedPostgreSQL.sharedpostgresql import REPLAN_INTERVAL, Connection
 except Exception as _err:
     raise unittest.SkipTest("SharedPostgreSQL module unavailable: %s" % _err)
 
@@ -94,6 +94,7 @@ def _make_connection():
     cursor = mock.MagicMock()
     conn._Connection__cursor = cursor
     conn._Connection__prepared = {}
+    conn._Connection__next_statement = 0
     return conn, cursor
 
 
@@ -151,6 +152,35 @@ class TestExecutePrepared(unittest.TestCase):
         cursor.reset_mock(side_effect=True)
         conn.execute_prepared(LOOKUP, ["h1", 4])
         self.assertTrue(_sent(cursor)[0][0].startswith("PREPARE gramps_stmt_0 AS"))
+
+    def test_replans_after_interval(self):
+        # A plan made while the table was empty must not stay for the
+        # whole import.
+        conn, cursor = _make_connection()
+        for _ in range(REPLAN_INTERVAL):
+            conn.execute_prepared(LOOKUP, ["h1", 4])
+        cursor.reset_mock()
+        conn.execute_prepared(LOOKUP, ["h2", 4])
+        self.assertEqual(
+            _sent(cursor),
+            [
+                ("DEALLOCATE gramps_stmt_0", None),
+                (
+                    "PREPARE gramps_stmt_1 AS "
+                    "SELECT 1 FROM person WHERE handle = $1 AND treeid = $2",
+                    None,
+                ),
+                ("EXECUTE gramps_stmt_1 (%s, %s)", ["h2", 4]),
+            ],
+        )
+
+    def test_no_replan_before_interval(self):
+        conn, cursor = _make_connection()
+        for _ in range(REPLAN_INTERVAL):
+            conn.execute_prepared(LOOKUP, ["h1", 4])
+        statements = [args[0] for args in _sent(cursor)]
+        self.assertEqual(sum(s.startswith("PREPARE") for s in statements), 1)
+        self.assertFalse(any(s.startswith("DEALLOCATE") for s in statements))
 
 
 class TestGenericPlanSession(unittest.TestCase):
