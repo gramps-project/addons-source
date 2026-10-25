@@ -47,6 +47,11 @@ from shareddbapi import SharedDBAPI
 
 psycopg2.paramstyle = "format"
 
+# How many times a prepared statement runs before it is prepared again, so
+# that its generic plan follows the tables as they grow (see
+# Connection.execute_prepared()).
+REPLAN_INTERVAL = 1000
+
 
 # -------------------------------------------------------------------------
 #
@@ -104,7 +109,9 @@ class SharedPostgreSQL(SharedDBAPI):
         config_mgr.register("tree.uuid", "")
 
         if not os.path.exists(config_file):
-            self._create_settings(config_file, config_mgr, directory, username, password)
+            self._create_settings(
+                config_file, config_mgr, directory, username, password
+            )
 
         config_mgr.load()
 
@@ -175,6 +182,7 @@ class Connection:
         # doesn't affect them.
         self.__cursor.execute("SET plan_cache_mode = force_generic_plan")
         self.__prepared = {}
+        self.__next_statement = 0
         self.uuid = uuid
         self._treeid = ""
         self.check_collation(glocale)
@@ -274,24 +282,36 @@ class Connection:
         generic plan can't see the treeid value, so it estimates an average
         tree and uses the index on the whole key.
 
-        Each distinct query is prepared once per connection. Prepared
-        statements belong to the session, so they survive a rollback.
+        The generic plan is built from the table sizes at the time, so a
+        statement prepared while a table is still empty (an import into a
+        new database) can get a plan that only suits a few rows. Each
+        statement is therefore prepared again every REPLAN_INTERVAL runs,
+        which picks up the current table sizes; the planner reads those
+        from the table itself, so this works before any ANALYZE and sees
+        the import's uncommitted rows. Prepared statements belong to the
+        session, so they survive a rollback.
 
         :param query: SQLite-flavoured statement with ``?`` placeholders.
         :type query: str
         :param args: the statement's parameters.
         :type args: list
         """
-        name = self.__prepared.get(query)
-        if name is None:
-            name = "gramps_stmt_%d" % len(self.__prepared)
+        entry = self.__prepared.get(query)
+        if entry is not None and entry[1] >= REPLAN_INTERVAL:
+            del self.__prepared[query]
+            self.execute("DEALLOCATE %s" % entry[0])
+            entry = None
+        if entry is None:
+            name = "gramps_stmt_%d" % self.__next_statement
             parts = _translate_sql(query).split("%s")
             sql = parts[0] + "".join(
                 "$%d%s" % (number, part) for number, part in enumerate(parts[1:], 1)
             )
             self.execute("PREPARE %s AS %s" % (name, sql))
-            self.__prepared[query] = name
-        self.execute("EXECUTE %s (%s)" % (name, ", ".join(["?"] * len(args))), args)
+            self.__next_statement += 1
+            entry = self.__prepared[query] = [name, 0]
+        entry[1] += 1
+        self.execute("EXECUTE %s (%s)" % (entry[0], ", ".join(["?"] * len(args))), args)
 
     def fetchone(self):
         try:
