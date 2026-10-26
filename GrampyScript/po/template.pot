@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-07 07:13-0700\n"
+"POT-Creation-Date: 2026-10-26 10:06-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,84 +25,90 @@ msgstr ""
 msgid "Run a special Gramps Python script"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:91
+#: GrampyScript/goql_support.py:115
+msgid ""
+"where= and order= need the GOQL Filter addon; install it from the Addon "
+"Manager."
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:92
 msgid "Load query from a .script file"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:97 GrampyScript/GrampyScript.py:127
-#: GrampyScript/GrampyScript.py:147
+#: GrampyScript/GrampyScript.py:98 GrampyScript/GrampyScript.py:128
+#: GrampyScript/GrampyScript.py:148
 msgid "_Cancel"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:97
+#: GrampyScript/GrampyScript.py:98
 msgid "Load"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:121
+#: GrampyScript/GrampyScript.py:122
 msgid "Save query to a .script file"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:127 GrampyScript/GrampyScript.py:147
-#: GrampyScript/GrampyScript.py:304
+#: GrampyScript/GrampyScript.py:128 GrampyScript/GrampyScript.py:148
+#: GrampyScript/GrampyScript.py:306
 msgid "Save"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:141
+#: GrampyScript/GrampyScript.py:142
 msgid "Download results as a CSV file"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:300
+#: GrampyScript/GrampyScript.py:302
 msgid "Script"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:302
+#: GrampyScript/GrampyScript.py:304
 msgid "New"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:303
+#: GrampyScript/GrampyScript.py:305
 msgid "Open..."
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:305
+#: GrampyScript/GrampyScript.py:307
 msgid "Save as..."
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:317
+#: GrampyScript/GrampyScript.py:319
 msgid "Data"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:319
+#: GrampyScript/GrampyScript.py:321
 msgid "Save as CSV"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:320
+#: GrampyScript/GrampyScript.py:322
 msgid "Copy to clipboard"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:382
+#: GrampyScript/GrampyScript.py:384
 msgid "Table"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:386
+#: GrampyScript/GrampyScript.py:388
 msgid "Output"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:395
+#: GrampyScript/GrampyScript.py:397
 msgid "Chart"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:400
+#: GrampyScript/GrampyScript.py:402
 msgid "Execute <Alt+Enter>"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:402
+#: GrampyScript/GrampyScript.py:404
 msgid "Execute the script"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:416
+#: GrampyScript/GrampyScript.py:418
 msgid "Ready..."
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:1028
+#: GrampyScript/GrampyScript.py:1030
 msgid "Gram.py Script Edited Data"
 msgstr ""
