@@ -36,7 +36,7 @@ PRODUCTION-PATH NOTE (brief.md / principles.md §3.4): this test drives
 generator the gramplet runs in production -- not a copy of its loop.  A
 lightweight harness subclass overrides only the GUI surface
 (``append_text``/``link``/``pretty_print``/progress widgets/``pause``...), so
-``main`` runs the real queue/cache/``get_relatives`` path-construction code
+``main`` runs the real ``deep_connections`` search and path-construction code
 against a tiny in-memory database.  Because the harness's ``pause`` is a no-op,
 iterating the generator to exhaustion runs the whole search and captures every
 connection path it would hand the user across successive "Continue" presses.
@@ -87,6 +87,9 @@ class _Person:
 
     def get_primary_name(self):
         return self.handle
+
+    def get_gender(self):
+        return 2  # Person.UNKNOWN
 
 
 class _Family:
@@ -160,9 +163,8 @@ class _Widget:
 class _Harness(dcg_mod.DeepConnectionsGramplet):
     """
     Drives the real ``DeepConnectionsGramplet.main`` generator without a GTK
-    context.  Only the GUI surface is overridden; ``main``, ``get_relatives``,
-    ``get_links_from_notes`` and ``_calculate_path_depth`` are the inherited
-    production implementations.  ``pause`` is a no-op so iterating the generator
+    context.  Only the GUI surface is overridden; ``main`` is the inherited production
+    implementation, running the real ``deep_connections`` search.  ``pause`` is a no-op so iterating the generator
     to exhaustion walks every "Continue" step and captures every path produced.
     """
 
@@ -207,7 +209,7 @@ class _Harness(dcg_mod.DeepConnectionsGramplet):
         pass
 
     # -- capture each produced path instead of rendering it ----------------
-    def pretty_print(self, path):
+    def pretty_print(self, path, gender):
         self.captured_paths.append(path)
 
 
