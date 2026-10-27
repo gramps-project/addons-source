@@ -34,16 +34,52 @@ from gi.repository import Gtk, GLib
 #
 # ------------------------------------------------------------------------
 from gramps.gen.relationship import get_relationship_calculator
-from gramps.gen.lib import EventType, FamilyRelType
 from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.lib import Person
 from gramps.gen.plug import Gramplet
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+# ------------------------------------------------------------------------
+#
+# Addon modules
+#
+# ------------------------------------------------------------------------
+from deep_connections import (
+    ASSOCIATION,
+    CHILD,
+    NOTE,
+    PARENT,
+    SELF,
+    SIBLING,
+    SPOUSE,
+    ConnectionSearch,
+)
 
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
+# relation -> {gender: text}; gender None is used for any other gender
+RELATION_LABELS = {
+    CHILD: {None: _("child")},
+    SIBLING: {None: _("sibling")},
+    PARENT: {Person.MALE: _("father"), Person.FEMALE: _("mother"), None: _("parent")},
+    SPOUSE: {Person.MALE: _("husband"), Person.FEMALE: _("wife"), None: _("spouse")},
+    NOTE: {None: _("mentioned in note")},
+}
+
+
+def relation_label(step, gender):
+    """
+    Return the display text for the relation of a path step, for a person
+    of the given gender (the person the relation describes).
+    """
+    if step.relation == ASSOCIATION:
+        return _("%s (association)") % step.detail
+    labels = RELATION_LABELS[step.relation]
+    return labels.get(gender, labels[None])
 
 
 # ------------------------------------------------------------------------
@@ -147,9 +183,6 @@ class DeepConnectionsGramplet(Gramplet):
 
         # Initialize search state
         self.search_active = False
-        self.search_depth = 0
-        self.people_processed = 0
-        self.queue_size = 0
 
     def clear_results(self, widget=None):
         """Clear the current results and reset the display."""
@@ -201,133 +234,35 @@ class DeepConnectionsGramplet(Gramplet):
         self.connect(self.dbstate.db, "person-rebuild", self.update)
         self.connect(self.dbstate.db, "family-rebuild", self.update)
 
-    def get_links_from_notes(self, obj, path, relation, person_handle):
-        """
-        Get anyone mentioned in any note attached to this object.
-        """
-        retval = []
-        note_list = obj.get_note_list()
-        for note_handle in note_list:
-            note = self.dbstate.db.get_note_from_handle(note_handle)
-            if note:
-                links = note.get_links()
-                for link in links:
-                    if link[0] == "gramps" and link[1] == "Person":
-                        relation = _("mentioned in note")
-                        if link[2] == "handle":
-                            retval += [(link[3], (path, (relation, person_handle)))]
-        return retval
-
-    def get_relatives(self, person_handle, path, start_handle=None):
-        """
-        Gets all of the relations of person_handle.
-
-        ``start_handle`` is the Home/start person's handle, passed in by the
-        caller (:meth:`main`) *after* its "No Home Person set" guard so this
-        method never has to re-dereference ``self.default_person``.  When it is
-        given, the Home person is kept out of the body of every produced path
-        (issue 8653) -- see the post-processing at the end of this method.
-        """
-        retval = []
-        person = self.dbstate.db.get_person_from_handle(person_handle)
-        if person is None:
-            return []
-        family_list = person.get_family_handle_list()
-        for family_handle in family_list:
-            family = self.dbstate.db.get_family_from_handle(family_handle)
-            if family:
-                children = family.get_child_ref_list()
-                husband = family.get_father_handle()
-                wife = family.get_mother_handle()
-                retval.extend(
-                    (child_ref.ref, (path, (_("child"), person_handle, husband, wife)))
-                    for child_ref in children
-                )
-                if husband and husband != person_handle:
-                    retval += [(husband, (path, (_("husband"), person_handle)))]
-                if wife and wife != person_handle:
-                    retval += [(wife, (path, (_("wife"), person_handle)))]
-                retval += self.get_links_from_notes(
-                    family, path, _("Note on Family"), person_handle
-                )
-
-        parent_family_list = person.get_parent_family_handle_list()
-        for family_handle in parent_family_list:
-            family = self.dbstate.db.get_family_from_handle(family_handle)
-            if family:
-                children = family.get_child_ref_list()
-                husband = family.get_father_handle()
-                wife = family.get_mother_handle()
-                retval.extend(
-                    (
-                        child_ref.ref,
-                        (path, (_("sibling"), person_handle, husband, wife)),
-                    )
-                    for child_ref in children
-                    if child_ref.ref != person_handle
-                )
-                if husband and husband != person_handle:
-                    retval += [(husband, (path, (_("father"), person_handle, wife)))]
-                if wife and wife != person_handle:
-                    retval += [(wife, (path, (_("mother"), person_handle, husband)))]
-                retval += self.get_links_from_notes(
-                    family, path, _("Note on Parent Family"), person_handle
-                )
-        assoc_list = person.get_person_ref_list()
-        for assoc in assoc_list:
-            relation = _("%s (association)") % assoc.get_relation()
-            assoc_handle = assoc.get_reference_handle()
-            retval += [(assoc_handle, (path, (relation, person_handle)))]
-
-        retval += self.get_links_from_notes(
-            person, path, _("Note on Person"), person_handle
-        )
-
-        # Issue 8653: the Home (start) person is the search origin, so it may
-        # appear in a produced path only as its terminal "self" root -- never
-        # as, nor as the anchor of, an intermediate relationship step.  Two
-        # cases, applied only once the caller has supplied the start handle:
-        #   * drop a relative that *is* the start person, so the origin is never
-        #     re-entered as an interior node of a path; and
-        #   * when the start person itself is being expanded, attach its
-        #     relatives straight to the root node (``path`` is that root here)
-        #     instead of through a redundant "(relation, start)" step that would
-        #     render the Home person mid-path (the reporter's
-        #     "... / sibling of <Home>" chain).
-        if start_handle is not None:
-            retval = [item for item in retval if item[0] != start_handle]
-            if person_handle == start_handle:
-                retval = [(item[0], path) for item in retval]
-        return retval
-
     def active_changed(self, handle):
         """
         Update the gramplet on active person change.
         """
         self.update()
 
-    def pretty_print(self, path):
+    def pretty_print(self, path, gender):
         """
         Print a path to a person, with links.
+
+        ``gender`` is the gender of the person whose relation the first step
+        describes (the person printed just before it).
         """
-        # (path, (relation_text, handle, [p1, [p2]]))
-        more_path = path[0]
-        text = path[1][0]
-        handle = path[1][1]
-        parents = path[1][2:]
+        # (more_path, Step(relation, handle, parents, detail))
+        more_path, step = path
+        handle = step.handle
         person = self.dbstate.db.get_person_from_handle(handle)
         if person is None:
             return
         name = person.get_primary_name()
         self.selected_handles.add(person.handle)
-        for parent in parents:
+        for parent in step.parents:
             if parent:
                 p = self.dbstate.db.get_person_from_handle(parent)
                 if p:
                     self.selected_handles.add(p.handle)
 
-        if text != "self":
-            self.append_text(_("\n   %s of ") % text)
+        if step.relation != SELF:
+            self.append_text(_("\n   %s of ") % relation_label(step, gender))
             self.link(name_displayer.display_name(name), "Person", handle)
             relationship = self.relationship_calc.get_one_relationship(
                 self.dbstate.db, self.default_person, person
@@ -335,7 +270,7 @@ class DeepConnectionsGramplet(Gramplet):
             if relationship:
                 self.append_text(" [%s]" % relationship)
             if more_path is not None:
-                self.pretty_print(more_path)
+                self.pretty_print(more_path, person.get_gender())
 
     def main(self):
         """
@@ -343,9 +278,6 @@ class DeepConnectionsGramplet(Gramplet):
         """
         self.total_relations_found = 0
         self.search_active = True
-        self.search_depth = 0
-        self.people_processed = 0
-        self.queue_size = 0
 
         yield True
 
@@ -371,13 +303,9 @@ class DeepConnectionsGramplet(Gramplet):
             self.pause_button.set_sensitive(True)
             self.copy_button.set_sensitive(False)
 
-            self.cache = set()
-            self.queue = [
-                (
-                    self.default_person.handle,
-                    (None, (_("self"), self.default_person.handle, [])),
-                )
-            ]
+            search = ConnectionSearch(
+                self.dbstate.db, self.default_person.handle, active_person.handle
+            )
 
             default_name = self.default_person.get_primary_name()
             active_name = active_person.get_primary_name()
@@ -403,22 +331,20 @@ class DeepConnectionsGramplet(Gramplet):
 
             self.update_status(_("Searching for connections..."))
 
-            while self.queue:
-                current_handle, current_path = self.queue.pop(0)
-                self.queue_size = len(self.queue)
-                self.people_processed += 1
-
+            last_update = 0
+            for current_path in search.steps():
                 # Update progress every 10 people processed
-                if self.people_processed % 10 == 0:
+                if search.people_processed - last_update >= 10:
+                    last_update = search.people_processed
                     self.update_progress(
-                        self.people_processed, self.people_processed + self.queue_size
+                        search.people_processed,
+                        search.people_processed + search.queue_size,
                     )
                     self.update_search_info(
-                        self.search_depth, self.people_processed, self.queue_size
+                        search.depth, search.people_processed, search.queue_size
                     )
-                    yield True
 
-                if current_handle == active_person.handle:
+                if current_path is not None:
                     self.total_relations_found += 1
                     self.append_text(
                         _("Found relation #%d: \n   ") % self.total_relations_found
@@ -433,7 +359,7 @@ class DeepConnectionsGramplet(Gramplet):
                         self.append_text(" [%s]" % relationship)
                     self.selected_handles.clear()
                     self.selected_handles.add(active_person.handle)
-                    self.pretty_print(current_path)
+                    self.pretty_print(current_path, active_person.get_gender())
                     self.append_text("\n")
 
                     # Enable copy button when we have results
@@ -452,40 +378,10 @@ class DeepConnectionsGramplet(Gramplet):
                         self.pause_button.set_sensitive(False)
                         self.pause()
                         yield False
-                        # The active person is the search *target*, not a
-                        # waypoint: expanding it (the fall-through below) feeds
-                        # its own relatives back into the queue, which then
-                        # re-reach the target and re-emit the connection just
-                        # reported -- the "same path returned every time you
-                        # press Continue" of issue 10628.  Skip straight to the
-                        # next queued candidate so each Continue advances to a
-                        # genuinely different connection; the distinct paths
-                        # other relatives already queued before the target was
-                        # found are still reported.
-                        continue
                     else:
                         break
-                elif current_handle in self.cache:
-                    continue
-
-                self.cache.add(current_handle)
-                relatives = self.get_relatives(
-                    current_handle, current_path, self.default_person.handle
-                )
-
-                # Track search depth
-                if current_path[0] is not None:
-                    self.search_depth = max(
-                        self.search_depth, self._calculate_path_depth(current_path)
-                    )
-
-                for items in relatives:
-                    person_handle = items[0]
-                    path = items[1]
-                    if person_handle is not None:
-                        self.queue.append((person_handle, path))
-
-                yield True
+                else:
+                    yield True
 
             self.append_text(
                 _("\nSearch completed. %d relation paths found.")
@@ -525,12 +421,3 @@ class DeepConnectionsGramplet(Gramplet):
             self.pause_button.set_sensitive(False)
             self.continue_button.set_sensitive(True)
             self.interrupt()
-
-    def _calculate_path_depth(self, path):
-        """Calculate the depth of a relationship path."""
-        depth = 0
-        current_path = path
-        while current_path[0] is not None:
-            depth += 1
-            current_path = current_path[0]
-        return depth
