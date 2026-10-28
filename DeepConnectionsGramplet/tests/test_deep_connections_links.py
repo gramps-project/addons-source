@@ -231,6 +231,19 @@ class TestDescent(_Base):
                 self.assertEqual(label, self.calculator("C", name))
         self.assertEqual(labels[0], "")
 
+    def test_fewest_non_birth_links(self):
+        # T is a stepchild of K, so every line from A down to T has a step
+        # link.  K's parents are A's stepchild S and birth child B; the line
+        # through B, with only that one step link, is preferred, so K is
+        # still A's grandchild by birth on the path.
+        links = dc.FamilyLinks()
+        birth, step = 1, 3  # ChildRefType values
+        links.add_family("FA", "A", None, [("S", step, step), ("B", birth, birth)])
+        links.add_family("FK", "S", "B", [("K", birth, birth)])
+        links.add_family("FT", "K", None, [("T", step, step)])
+        path = dc.shortest_connection(links, "A", "T")
+        self.assertEqual([link.handle for link in path], ["A", "B", "K", "T"])
+
 
 class TestInLaws(_Base):
     def test_in_law_labels(self):

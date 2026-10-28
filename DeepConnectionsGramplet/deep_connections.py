@@ -518,14 +518,15 @@ def _ancestors(links, handle, max_generations):
     Map each ancestor (and the person) to (generations, previous, Link).
 
     Breadth first, so each ancestor is reached by a shortest line; among
-    equally short lines a birth line is kept.
+    equally short lines the one with the fewest non-birth links is kept.
     """
-    found = {handle: (0, None, None, True)}  # -> (gens, previous, link, birth)
+    # -> (gens, previous, link, number of non-birth links)
+    found = {handle: (0, None, None, 0)}
     level = [handle]
     for generation in range(1, max_generations + 1):
         found_now = {}
         for person in level:
-            line_birth = found[person][3]
+            non_birth = found[person][3]
             for parent, family, birth in links.parents(person):
                 if parent in found:
                     continue
@@ -533,10 +534,10 @@ def _ancestors(links, handle, max_generations):
                     generation,
                     person,
                     Link(parent, PARENT, birth, family),
-                    line_birth and birth,
+                    non_birth + (not birth),
                 )
                 old = found_now.get(parent)
-                if old is None or (candidate[3] and not old[3]):
+                if old is None or candidate[3] < old[3]:
                     found_now[parent] = candidate
         if not found_now:
             break
@@ -561,8 +562,8 @@ def descent_path(links, start, target, max_generations=MAX_GENERATIONS):
     The path from ``start`` up to their nearest common ancestor with
     ``target`` and down to ``target``, or None.
 
-    Among common ancestors at the same total distance, one reached by birth
-    lines from both people is preferred.
+    Among common ancestors at the same total distance, the one reached with
+    the fewest non-birth links is preferred.
     """
     up = _ancestors(links, start, max_generations)
     down = _ancestors(links, target, max_generations)
@@ -573,7 +574,7 @@ def descent_path(links, start, target, max_generations=MAX_GENERATIONS):
     def rank(ancestor):
         return (
             up[ancestor][0] + down[ancestor][0],
-            not (up[ancestor][3] and down[ancestor][3]),
+            up[ancestor][3] + down[ancestor][3],
             ancestor,
         )
 
