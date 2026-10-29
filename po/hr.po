@@ -6,13 +6,14 @@
 # Milo Ivir <mail@milotype.de>, 2025, 2026.
 # Nick Hall <nick-h@gramps-project.org>, 2025.
 # Juha Mäkeläinen <juha.makelainen@iki.fi>, 2025.
+# Milo Ivir <milotype@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-18 11:42-0700\n"
-"PO-Revision-Date: 2026-10-07 16:52+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"PO-Revision-Date: 2026-10-25 15:51+0000\n"
+"Last-Translator: Milo Ivir <milotype@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.10.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -287,7 +288,7 @@ msgstr "Provjeri podatke veza"
 
 #: AssociationsTool/associationstool.gpr.py:44
 msgid "Display all person Associations in a sortable, hotlinked table"
-msgstr ""
+msgstr "Prikaži sve veze osoba u razvrstavajućoj tablici s poveznicama"
 
 #: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
@@ -1387,10 +1388,8 @@ msgstr ""
 "tvoj izbor putem izbornika „Uredi > Postavi početnu osobu”."
 
 #: CombinedView/personpage.py:306 CombinedView/personpage.py:368
-#, fuzzy
-#| msgid "Adding Tags to family (%s)"
 msgid "Add existing child to family"
-msgstr "Dodavanje oznaka obitelji (%s)"
+msgstr "Dodaj postojeće dijete u obitelj"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -1421,7 +1420,7 @@ msgstr ": "
 
 #: ContextView/ContextView.gpr.py:29 ContextView/ContextView.py:502
 msgid "Context"
-msgstr ""
+msgstr "Kontekst"
 
 #: ContextView/ContextView.gpr.py:31
 msgid ""
@@ -1431,16 +1430,20 @@ msgid ""
 "the top. Click any box to re-centre the chart on that person; the name in "
 "bold marks the way back to the home person."
 msgstr ""
+"Grafički prikaz koji osobu smješta u kontekst njezine uže obitelji: bračni "
+"par se nalazi u sredini, roditelji svakog partnera iznad njih, njihova djeca "
+"ispod, a braća i sestre svakog partnera u stupcu s njegove strane, poredani "
+"od najstarijeg na vrhu. Klikom na bilo koji okvir se prikaz ponovo centrira "
+"na tu osobu, a ime napisano podebljanim slovima označava poveznicu za "
+"povratak na početnu osobu."
 
 #: ContextView/ContextView.py:572
 msgid "Show the previous family"
-msgstr ""
+msgstr "Prikaži prethodnu obitelj"
 
 #: ContextView/ContextView.py:575
-#, fuzzy
-#| msgid "Show more details"
 msgid "Show the next family"
-msgstr "Prikaži više detalja"
+msgstr "Prikaži sljedeću obitelj"
 
 #: ContextView/ContextView.py:899
 msgid "No person is active."
@@ -1449,7 +1452,7 @@ msgstr "Nijedna osoba nije aktivna."
 #: ContextView/ContextView.py:915
 #, python-format
 msgid "Family %(current)d of %(total)d"
-msgstr ""
+msgstr "Obitelj %(current)d od %(total)d"
 
 #: ContextView/ContextView.py:922
 #, python-format
@@ -1458,46 +1461,36 @@ msgstr "obitelj %d leži u smjeru početne osobe"
 
 #: ContextView/ContextView.py:980
 msgid "<b>Bold</b> marks the way to the home person"
-msgstr ""
+msgstr "<b>Podebljano</b> označava put do početne osobe"
 
 #: ContextView/ContextView.py:1389 ContextView/ContextView.py:1599
 #: LifeLineChartView/lifelinechart.py:2622
 msgid "Show siblings"
-msgstr "Prikaži braću/sestre"
+msgstr "Prikaži braću"
 
 #: ContextView/ContextView.py:1402
-#, fuzzy
-#| msgid "About Quilt View"
 msgid "About Context View"
-msgstr "O poplunastom dijagramu"
+msgstr "O dodatku Prikaz konteksta"
 
 #: ContextView/ContextView.py:1592
-#, fuzzy
-#| msgid "Show places"
 msgid "Show tag colour"
-msgstr "Prikaži mjesta"
+msgstr "Prikaži boju oznaka"
 
 #: ContextView/ContextView.py:1613
 msgid "Details in each box"
-msgstr ""
+msgstr "Detalji u svakom okviru"
 
 #: ContextView/ContextView.py:1617
-#, fuzzy
-#| msgid "Name of City"
 msgid "Name only"
-msgstr "Ime grada"
+msgstr "Samo ime"
 
 #: ContextView/ContextView.py:1618
-#, fuzzy
-#| msgid "Maiden Surname"
 msgid "Name and dates"
-msgstr "Djevojačko prezime"
+msgstr "Ime i datumi"
 
 #: ContextView/ContextView.py:1619
-#, fuzzy
-#| msgid "Full date and place"
 msgid "Name, dates and places"
-msgstr "Potpuni datum i mjesto"
+msgstr "Ime, datumi i mjesta"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -2454,7 +2447,7 @@ msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
-msgstr "naveden/a u zabilješki"
+msgstr "naveden/a u zabilješci"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:251
 msgid "Note on Family"
@@ -2620,11 +2613,11 @@ msgstr "Pitagorino stablo"
 
 #: DenominoViso/DenominoViso.py:222
 msgid "right to left"
-msgstr "sdesna na lijevo"
+msgstr "s desna na lijevo"
 
 #: DenominoViso/DenominoViso.py:223
 msgid "left to right"
-msgstr "slijeva na desno"
+msgstr "s lijeva na desno"
 
 #: DenominoViso/DenominoViso.py:224
 msgid "top to bottom"
@@ -3681,7 +3674,7 @@ msgstr "PS format"
 
 #: DescendantsLines/DescendantsLines.py:1550
 msgid "The output format to be used"
-msgstr "Izlazni format, koji se koristi"
+msgstr "Korišten izlazni format"
 
 #: DescendantsLines/DescendantsLines.py:1555
 msgid "The destination file for the content."
@@ -4622,7 +4615,7 @@ msgstr "Odaberi vrstu dijagrama"
 #: DynamicWeb/dynamicweb.py:3096
 msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr ""
-"Višestruka poklapanja.<br>Preciziraj pretragu ili odaberi iz doljnjeg popisa."
+"Višestruka poklapanja.<br>Preciziraj pretragu ili odaberi iz donjeg popisa."
 
 #: DynamicWeb/dynamicweb.py:3099
 msgid "Show _MENU_ entries"
@@ -4952,7 +4945,7 @@ msgstr "Da li stvoriti kopije medija"
 
 #: DynamicWeb/dynamicweb.py:4874
 msgid "Print the notes type"
-msgstr "Ispiši vrstu zabilješki"
+msgstr "Ispiši vrstu zabilješke"
 
 #: DynamicWeb/dynamicweb.py:4876
 msgid "Whether to print the notes type in the notes text"
@@ -5631,7 +5624,7 @@ msgstr ""
 #: ExcludeSubtreeFilter/excludesubtree.py:121
 #: FilterRules/isrelatedwithfiltermatch.py:80
 msgid "Retrieving all sub-filter matches"
-msgstr ""
+msgstr "Dohvaćanje svih poklapanja podfiltra"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:28
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:174
@@ -6375,7 +6368,7 @@ msgstr "Aktivna osoba"
 
 #: FilterRules/activepersonrule.py:58
 msgid "Matches the active person"
-msgstr "Poklapa se s aktivnom osobom"
+msgstr "Odgovara aktivnoj osobi"
 
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:90
 #: FilterRules/ageatdeath.py:92
@@ -6384,7 +6377,7 @@ msgstr "Filtriraj ljude prema dobi u trenutku smrti"
 
 #: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
-msgstr "Pravilo filtriranja koje uspoređuje ljude prema dobi u trenutku smrti"
+msgstr "Pravilo filtrira koje uspoređuje ljude prema dobi u trenutku smrti"
 
 #: FilterRules/ageatdeath.py:65
 msgid "Age in years at person's death."
@@ -6531,16 +6524,12 @@ msgstr ""
 "pomoću filtra za osobe"
 
 #: FilterRules/matcheventfilterrole.gpr.py:7
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "People from event with role"
-msgstr "Osobe s događajima s <ulogom>"
+msgstr "Osobe iz događaja s ulogom"
 
 #: FilterRules/matcheventfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches people of event filter with role"
-msgstr "Uspoređuje filtar događaja osoba s ulogom"
+msgstr "Pronalazi osobe filtra događaja s ulogom"
 
 #: FilterRules/matcheventfilterrole.py:55
 #: FilterRules/matchpersonfilterrole.py:69
@@ -6548,26 +6537,20 @@ msgid "Role:"
 msgstr "Uloga:"
 
 #: FilterRules/matcheventfilterrole.py:56
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "Persons with events matching the <event filter> with role"
-msgstr "Osobe s događajima s <ulogom>"
+msgstr "Osobe s događajima koji se poklapaju s <filtrom događaja> s ulogom"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:7
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Parents of family filter"
-msgstr "Obitelj roditelja"
+msgstr "Roditelji filtra obitelji"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches parent of family filter"
-msgstr "Uspoređuje filtar događaja osoba s ulogom"
+msgstr "Pronalazi roditelje filtra obitelji"
 
 #: FilterRules/matchparentoffilterfamily.py:60
 msgid "Parents of <filter> family match"
-msgstr ""
+msgstr "Roditelji od <filtra> obitelji odgovaraju"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
@@ -6583,11 +6566,11 @@ msgstr "Filtar višebrojnih roditelja"
 
 #: FilterRules/multipleparents.py:55
 msgid "People with multiple parent records"
-msgstr "Osobe s višestrukim roditeljskim zapisa"
+msgstr "Osobe s višestrukim roditeljskim zapisima"
 
 #: FilterRules/multipleparents.py:56
 msgid "Matches people who have more than one set of parents"
-msgstr "Odgovara osobama koje imaju više od jednog para roditelja"
+msgstr "Pronalazi osobe koje imaju više od jednog para roditelja"
 
 #: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:71
 msgid "People with <count> of <event>"
@@ -6595,7 +6578,7 @@ msgstr "Osobe s <brojem> <događaja>"
 
 #: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:72
 msgid "Matches persons which have events of given type and number."
-msgstr "Odgovara osobama koje imaju događaje zadane vrste i broja."
+msgstr "Pronalazi osobe koje imaju događaje zadane vrste i broja."
 
 #: FilterRules2/matrilinealprogenitrix.gpr.py:25
 #: FilterRules2/matrilinealprogenitrix.py:62
@@ -6649,7 +6632,7 @@ msgstr "X-kromosomski predak od <osoba>"
 #: FilterRules2/xchromancestors.gpr.py:27 FilterRules2/xchromancestors.py:70
 msgid ""
 "Matches ancestors of <person> following a X-chromosomal inheritance pattern."
-msgstr "Pronalazi pretke od <osoba>, prateći mustru nasljeđivanja X-kromosoma."
+msgstr "Pronalazi pretke od <osobe>, prateći mustru nasljeđivanja X-kromosoma."
 
 #: FilterRules2/xchromdescendants.gpr.py:25
 #: FilterRules2/xchromdescendants.py:66
@@ -6660,15 +6643,14 @@ msgstr "X-kromosomski potomak od <osoba>"
 msgid ""
 "Matches descendants of <person> following a X-chromosomal inheritance "
 "pattern."
-msgstr ""
-"Pronalazi potomke od <osoba>, prateći mustru nasljeđivanja X-kromosoma."
+msgstr "Pronalazi potomke od <osobe>, prateći mustru nasljeđivanja X-kromosoma."
 
 #: FilterRules2/xchromdescendants.py:69
 msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
-"Pronalazi sve potomke od <osoba>, prateći mustru nasljeđivanja X-kromosoma."
+"Pronalazi sve potomke od <osobe>, prateći mustru nasljeđivanja X-kromosoma."
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:62
 msgid "Y-chromosomal inheritance of <person>"
@@ -10260,10 +10242,8 @@ msgid "Name of Public Institution"
 msgstr "Hotel ili institucija"
 
 #: Form/form_ie.xml.h:16 Form/form_ie.xml.h:113
-#, fuzzy
-#| msgid "Maiden Surname"
 msgid "Name and Surname"
-msgstr "Djevojačko prezime"
+msgstr "Ime i prezime"
 
 #: Form/form_ie.xml.h:18
 #, fuzzy
@@ -10424,74 +10404,56 @@ msgid "Certificate number"
 msgstr "Broj certifikata"
 
 #: Form/form_ie.xml.h:77 Form/form_ie.xml.h:108
-#, fuzzy
-#| msgid "Show page numbers"
 msgid "Page number"
-msgstr "Prikaži brojeve stranica"
+msgstr "Broj stranice"
 
 #: Form/form_ie.xml.h:78 Form/form_ie.xml.h:109
 msgid "(1.) Entry No."
-msgstr ""
+msgstr "(1.) Broj unosa"
 
 #: Form/form_ie.xml.h:79
-#, fuzzy
-#| msgid "Years Married"
 msgid "(2.) When Married"
-msgstr "Broj godina braka"
+msgstr "(2.) Datum braka"
 
 #: Form/form_ie.xml.h:81
-#, fuzzy
-#| msgid "Maiden Surname"
 msgid "(3.) Name and Surname"
-msgstr "Djevojačko prezime"
+msgstr "(3.) Ime i prezime"
 
 #: Form/form_ie.xml.h:83
 msgid "(4.) Full or Minor"
-msgstr ""
+msgstr "(4.) Punoljetan/na ili maloljetan/na"
 
 #: Form/form_ie.xml.h:85
 msgid "(5.) Bachelor or Spinster"
-msgstr ""
+msgstr "(5.) Neoženjen ili neudana"
 
 #: Form/form_ie.xml.h:87
 msgid "(6.) Rank or Profession"
-msgstr ""
+msgstr "(6.) Čin ili zanimanje"
 
 #: Form/form_ie.xml.h:89
-#, fuzzy
-#| msgid "Date of Marriage"
 msgid "Residence at the Time of Marriage"
-msgstr "Datum sklapanja braka"
+msgstr "Prebivalište u vrijeme sklapanja braka"
 
 #: Form/form_ie.xml.h:91 Form/form_ie.xml.h:95
-#, fuzzy
-#| msgid "Father's Name"
 msgid "(8.) Father's Name and Surname"
-msgstr "Ime oca"
+msgstr "(8.) Ime i prezime oca"
 
 #: Form/form_ie.xml.h:93 Form/form_ie.xml.h:97
-#, fuzzy
-#| msgid "Rank, Profession, or Occupation"
 msgid "(9.) Rank or Profession of Father"
-msgstr "Titula, profesija ili zanimanje"
+msgstr "(9.) Čin ili zanimanje oca"
 
 #: Form/form_ie.xml.h:110
-#, fuzzy
-#| msgid "Date Registered"
 msgid "(10.) When Registered"
-msgstr "Datum prijave"
+msgstr "(10.) Datum prijave"
 
 #: Form/form_ie.xml.h:111
-#, fuzzy
-#| msgid "Date of Registration"
 msgid "(11.) Signature of Registrar"
-msgstr "Datum registracije"
+msgstr "(11.) Potpis matičara"
 
 #: Form/form_ie.xml.h:115 Form/form_ie.xml.h:117
-#, fuzzy
-#| msgid "Place of Death"
 msgid "(2.) Date and Place of Death"
-msgstr "Mjesto smrti"
+msgstr "(2.) Datum i mjesto smrti"
 
 #: Form/form_ie.xml.h:116 Form/form_us.xml.h:2432 Form/form_us.xml.h:2495
 msgid "Place of Death"
@@ -10499,49 +10461,39 @@ msgstr "Mjesto smrti"
 
 #: Form/form_ie.xml.h:119
 msgid "(4.) M or F for Male or Female"
-msgstr ""
+msgstr "(4.) M ili Ž za muško ili žensko"
 
 #: Form/form_ie.xml.h:121
-#, fuzzy
-#| msgid "Widowed, divorced"
 msgid "(5.) Widowed or Married"
-msgstr "Obudovjeli, razvedeni"
+msgstr "(5.) Obudovjeli ili oženjeni"
 
 #: Form/form_ie.xml.h:123
-#, fuzzy
-#| msgid "6. Age at Next Birthday"
 msgid "(6.) Age last Birthday"
-msgstr "6. Starost na sljedeći rođendan"
+msgstr "(6.) Starost pri zadnjem rođendanu"
 
 #: Form/form_ie.xml.h:125
-#, fuzzy
-#| msgid "Rank, Profession, or Occupation"
 msgid "(7.) Rank, Profession, or Occupation"
-msgstr "Titula, profesija ili zanimanje"
+msgstr "(7.) Čin, profesija ili zanimanje"
 
 #: Form/form_ie.xml.h:127 Form/form_ie.xml.h:129
 msgid "(8.) Certified Cause of Death and Duration of Illness"
-msgstr ""
+msgstr "(8.) Potvrđeni uzrok smrti i trajanje bolesti"
 
 #: Form/form_ie.xml.h:128
-#, fuzzy
-#| msgid "Direction of time"
 msgid "Duration of Illness"
-msgstr "Smjer vremena"
+msgstr "Trajanje bolesti"
 
 #: Form/form_ie.xml.h:132
-#, fuzzy
-#| msgid "Relation to Head"
 msgid "Relation to deceased"
-msgstr "Odnos prema glavi obitelji"
+msgstr "Srodstvo s pokojnikom"
 
 #: Form/form_ie.xml.h:133
 msgid "(9.) e.g. Son, Daughter"
-msgstr ""
+msgstr "(9.) npr. sin ili kćer"
 
 #: Form/form_ie.xml.h:135
 msgid "(9.) e.g. Present at death"
-msgstr ""
+msgstr "(9.) npr. prisutan/na pri smrti"
 
 #: Form/form_pl.xml.h:5
 msgid "Event Place (Original)"
@@ -10602,11 +10554,11 @@ msgstr "Kućni broj"
 
 #: Form/form_pl.xml.h:28
 msgid "Volume Beginning Year"
-msgstr "Početna godina svezaka"
+msgstr "Početna godina sveska"
 
 #: Form/form_pl.xml.h:29
 msgid "Volume Ending Year"
-msgstr "Završna godina svezaka"
+msgstr "Završna godina sveska"
 
 #: Form/form_us.xml.h:1 Form/form_us.xml.h:14 Form/form_us.xml.h:35
 #: Form/form_us.xml.h:56 Form/form_us.xml.h:96 Form/form_us.xml.h:165
@@ -15929,10 +15881,8 @@ msgid ""
 msgstr ""
 
 #: GWizardFileMerge/GWizardFileMerge.gpr.py:19
-#, fuzzy
-#| msgid "Command Line Merge"
 msgid "GWizard File Merge"
-msgstr "Spajanje pomoću naredbenog retka"
+msgstr "GWizard spajanje datoteka"
 
 #: GWizardFileMerge/GWizardFileMerge.gpr.py:21
 msgid ""
@@ -15942,32 +15892,22 @@ msgid ""
 msgstr ""
 
 #: GWizardFileMerge/gwizard.py:120
-#, fuzzy
-#| msgid "Deep Connections"
 msgid "Configure Connection"
-msgstr "Duboke veze"
+msgstr "Konfiguriraj vezu"
 
 #: GWizardFileMerge/gwizard.py:121
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Load Data"
-msgstr "Učitavanje podataka"
+msgstr "Učitaj podatke"
 
 #: GWizardFileMerge/gwizard.py:122
-#, fuzzy
-#| msgid "Edit Starting Person"
 msgid "Find Matching Persons"
-msgstr "Uredi početnu osobu"
+msgstr "Pronađi odgovarajuću osobu"
 
 #: GWizardFileMerge/gwizard.py:123
-#, fuzzy
-#| msgid "Differences"
 msgid "Compare Differences"
-msgstr "Razlike"
+msgstr "Usporedi razlike"
 
 #: GWizardFileMerge/gwizard.py:124
-#, fuzzy
-#| msgid "Apply changes"
 msgid "Apply Changes"
 msgstr "Primijeni promjene"
 
@@ -15981,7 +15921,7 @@ msgstr ""
 
 #: GWizardFileMerge/gwizard.py:139
 msgid "Search for potential matches in your database."
-msgstr ""
+msgstr "Traži potencijalna poklapanja u svojoj bazi podataka."
 
 #: GWizardFileMerge/gwizard.py:140
 msgid "Compare fields side-by-side between the source and target."
@@ -15994,233 +15934,185 @@ msgstr ""
 #: GWizardFileMerge/gwizardcompare.py:167
 #: GWizardFileMerge/gwizardcompare.py:187
 msgid "GWizard Compare"
-msgstr ""
+msgstr "GWizard usporedba"
 
 #: GWizardFileMerge/gwizardcompare.py:173
 msgid "No source database available for comparison"
-msgstr ""
+msgstr "Nema izvorne baze podataka za usporedbu"
 
 #: GWizardFileMerge/gwizardcompare.py:208
 #: GWizardFileMerge/gwizardmergedialog.py:586
-#, fuzzy
-#| msgid "Importing GEDCOM..."
 msgid "Incoming GEDCOM"
-msgstr "Uvoz GEDCOM-a …"
+msgstr "Dolazna GEDCOM datoteka"
 
 #: GWizardFileMerge/gwizardcompare.py:213
 #: GWizardFileMerge/gwizardmergedialog.py:593
-#, fuzzy, python-format
-#| msgid "Importing GEDCOM..."
+#, python-format
 msgid "Incoming GEDCOM: %s"
-msgstr "Uvoz GEDCOM-a …"
+msgstr "Dolazna GEDCOM datoteka: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:215
 #: GWizardFileMerge/gwizardmergedialog.py:597
-#, fuzzy, python-format
-#| msgid "Error creating Family Tree: %s"
+#, python-format
 msgid "Current Family Tree: %s"
-msgstr "Greška prilikom stvaranja rodoslova: %s"
+msgstr "Trenutačni rodoslov: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:426
-#, fuzzy
-#| msgid "Populated"
 msgid "Populate Failed"
-msgstr "Naseljeno"
+msgstr "Popunjavanje neuspjelo"
 
 #: GWizardFileMerge/gwizardcompare.py:876
-#, fuzzy
-#| msgid "Merge"
 msgid "Merge..."
-msgstr "Spoji"
+msgstr "Spoji …"
 
 #: GWizardFileMerge/gwizardcompare.py:878
 msgid "Open the field-by-field merge dialog for the selected pair"
-msgstr ""
+msgstr "Otvori dijalog za spajanje polja za odabrani par"
 
 #: GWizardFileMerge/gwizardcompare.py:883
 #: GWizardFileMerge/gwizardcompare.py:1224
-#, fuzzy
-#| msgid "Add as a Wife"
 msgid "Add as New..."
-msgstr "Dodaj kao ženu"
+msgstr "Dodaj kao novu …"
 
 #: GWizardFileMerge/gwizardcompare.py:885
 #: GWizardFileMerge/gwizardcompare.py:1226
 msgid "Add the selected incoming person as a new person"
-msgstr ""
+msgstr "Dodaj odabranu dolaznu osobu kao novu osobu"
 
 #: GWizardFileMerge/gwizardcompare.py:926
-#, fuzzy
-#| msgid "All Records"
 msgid "Record"
-msgstr "Svi zapisi"
+msgstr "Zapis"
 
 #: GWizardFileMerge/gwizardcompare.py:932
 msgid "Born"
-msgstr ""
+msgstr "Rođen/a"
 
 #: GWizardFileMerge/gwizardcompare.py:933
 msgid "Died"
-msgstr ""
+msgstr "Umro/la"
 
 #: GWizardFileMerge/gwizardcompare.py:975
 #: GWizardFileMerge/gwizardmergedialog.py:740
-#, fuzzy
-#| msgid "India"
 msgid "Individual Details"
-msgstr "Indija"
+msgstr "Detalji osobe"
 
 #: GWizardFileMerge/gwizardcompare.py:976
 #: GWizardFileMerge/gwizardmergedialog.py:813
-#, fuzzy
-#| msgid "Family Relation Types"
 msgid "Family Relations"
-msgstr "Vrste obiteljske veze"
+msgstr "Obiteljske veze"
 
 #: GWizardFileMerge/gwizardcompare.py:978
 #: GWizardFileMerge/gwizardmergedialog.py:859
 msgid "Events & Other Records"
-msgstr ""
+msgstr "Događaji i drugi zapisi"
 
 #: GWizardFileMerge/gwizardcompare.py:1216
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "Not a Match"
-msgstr ""
-"Nema\n"
-"podudaranja"
+msgstr "Ne podudara se"
 
 #: GWizardFileMerge/gwizardcompare.py:1219
 msgid ""
 "These are different people: unpair them so the incoming person can be added "
 "as new"
 msgstr ""
+"To su različite osobe: raspari ih kako bi se dolazna osoba mogla dodati kao "
+"nova"
 
 #: GWizardFileMerge/gwizardcompare.py:1232
-#, fuzzy, python-format
-#| msgid "Differences"
+#, python-format
 msgid "Differences: %d of %d"
-msgstr "Razlike"
+msgstr "Razlike: %d od %d"
 
 #: GWizardFileMerge/gwizardcompare.py:1484
-#, fuzzy
-#| msgid "none"
 msgid "(none)"
-msgstr "bez"
+msgstr "(bez)"
 
 #: GWizardFileMerge/gwizardcompare.py:1648
-#, fuzzy, python-format
-#| msgid "found: %s"
+#, python-format
 msgid "Gender: %s"
-msgstr "pronađeno: %s"
+msgstr "Spol: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:1650
-#, fuzzy, python-format
-#| msgid "   N-ID: %s"
+#, python-format
 msgid "ID: %s"
-msgstr "   N-ID: %s"
+msgstr "ID: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:1677
-#, fuzzy, python-format
-#| msgid "FamilySearch.org"
+#, python-format
 msgid "FamilySearch: %s"
-msgstr "FamilySearch.org"
+msgstr "FamilySearch: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:1751
 #: GWizardFileMerge/gwizardcompare.py:1768
 #: GWizardFileMerge/gwizardmergedialog.py:451
-#, fuzzy, python-format
-#| msgid "Added %s: %s "
+#, python-format
 msgid "%s: %s"
-msgstr "Dodano %s: %s "
+msgstr "%s: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:2008
-#, fuzzy
-#| msgid "Add as a Child"
 msgid "Add as New failed"
-msgstr "Dodaj kao dijete"
+msgstr "Dodaj kao novu neuspjelo"
 
 #: GWizardFileMerge/gwizardgedcom.py:351
 #: GWizardFileMerge/gwizardmergedialog.py:745
-#, fuzzy
-#| msgid "Checking Given Names"
 msgid "Given Name"
-msgstr "Provjeravanje imena"
+msgstr "Ime"
 
 #: GWizardFileMerge/gwizardgedcom.py:377
 #: GWizardFileMerge/gwizardmergedialog.py:761
-#, fuzzy
-#| msgid "Surnames Index"
 msgid "Surname Prefix"
-msgstr "Indeks prezimena"
+msgstr "Prefiks prezimena"
 
 #: GWizardFileMerge/gwizardgedcom.py:1068
 msgid "GWizard Data Merge"
-msgstr ""
+msgstr "Spajanje podataka GWizard-om"
 
 #: GWizardFileMerge/gwizardlauncher.py:113
-#, fuzzy
-#| msgid "Genealogy Online"
 msgid "Genealogy files"
-msgstr "Genealogija online"
+msgstr "Genealoške datoteke"
 
 #: GWizardFileMerge/gwizardlauncher.py:129
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select File to Compare"
-msgstr "Odaberi filtar za ograničavanje osoba"
+msgstr "Odaberi datoteku za usporedbu"
 
 #: GWizardFileMerge/gwizardlauncher.py:158
-#, fuzzy
-#| msgid "The selected file is a directory, not a file."
 msgid "The selected file is missing."
-msgstr "Odabrana datoteka je mapa, a ne datoteka."
+msgstr "Odabrana datoteka nedostaje."
 
 #: GWizardFileMerge/gwizardlauncher.py:161
-#, fuzzy
-#| msgid "Could not create the directory: %(path)s"
 msgid "Could not read the selected file."
-msgstr "Nije bilo moguće stvoriti direktorij: %(path)s"
+msgstr "Nije bilo moguće čitati odabranu datoteku."
 
 #: GWizardFileMerge/gwizardlauncher.py:201
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Loading Data Merge"
-msgstr "Učitavanje podataka"
+msgstr "Učitavanje spoja podataka"
 
 #: GWizardFileMerge/gwizardlauncher.py:202
 #: GWizardFileMerge/gwizardlauncher.py:206
-#, fuzzy
-#| msgid "Reading file list..."
 msgid "Reading the selected file..."
-msgstr "Čitanje popisa datoteka …"
+msgstr "Čitanje odabrane datoteke …"
 
 #: GWizardFileMerge/gwizardlauncher.py:214
 msgid "Load Failed"
-msgstr ""
+msgstr "Učitavanje neuspjelo"
 
 #: GWizardFileMerge/gwizardlauncher.py:216
 msgid "Building the comparison window..."
-msgstr ""
+msgstr "Izrada prozora usporedbe …"
 
 #: GWizardFileMerge/gwizardmergedialog.py:256
-#, fuzzy
-#| msgid "No title"
 msgid "Untitled source"
-msgstr "Nema naslova"
+msgstr "Izvor bez naslova"
 
 #: GWizardFileMerge/gwizardmergedialog.py:265
-#, fuzzy, python-format
-#| msgid ", page %s"
+#, python-format
 msgid "page %s"
-msgstr ", stranica %s"
+msgstr "stranica %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:287
 #, python-format
 msgid "via %s"
-msgstr ""
+msgstr "preko %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:315
 #: GWizardFileMerge/gwizardmergedialog.py:327
@@ -16229,102 +16121,81 @@ msgid "none"
 msgstr "bez"
 
 #: GWizardFileMerge/gwizardmergedialog.py:327
-#, fuzzy, python-format
-#| msgid "Sources?"
+#, python-format
 msgid "Sources: %s"
-msgstr "Izvori?"
+msgstr "Izvori: %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:377
-#, fuzzy
-#| msgid "Media Merge"
 msgid "GWizard Merge"
-msgstr "Spajanje medija"
+msgstr "Spajanje GWizard-om"
 
 #: GWizardFileMerge/gwizardmergedialog.py:385
-#, fuzzy
-#| msgid "No data available in table"
 msgid "No source database available for merge"
-msgstr "Nema podataka u tablici"
+msgstr "Izvorna baza podataka za spajanje nije dostupna"
 
 #: GWizardFileMerge/gwizardmergedialog.py:394
-#, fuzzy, python-format
-#| msgid "Note no longer exists. The extra icon is removed"
+#, python-format
 msgid "Source person no longer exists: %s"
-msgstr "Zabilješka više ne postoji. Dodatna ikona je uklonjena"
+msgstr "Izvorna osoba više ne postoji: %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:400
-#, fuzzy, python-format
-#| msgid "Note no longer exists. The extra icon is removed"
+#, python-format
 msgid "Target person no longer exists: %s"
-msgstr "Zabilješka više ne postoji. Dodatna ikona je uklonjena"
+msgstr "Ciljana osoba više ne postoji: %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:531
 msgid "→"
-msgstr ""
+msgstr "→"
 
 #: GWizardFileMerge/gwizardmergedialog.py:599
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Current Family Tree"
-msgstr "Obitelj roditelja"
+msgstr "Trenutačni rodoslov"
 
 #: GWizardFileMerge/gwizardmergedialog.py:767
-#, fuzzy
-#| msgid "No Source"
 msgid "Name Sources"
-msgstr "Nema izvora"
+msgstr "Izvori imena"
 
 #: GWizardFileMerge/gwizardmergedialog.py:807
-#, fuzzy
-#| msgid "No Source"
 msgid "Person Sources"
-msgstr "Nema izvora"
+msgstr "Izvori osoba"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1093
-#, fuzzy
-#| msgid "="
 msgid "=>"
-msgstr "="
+msgstr "=>"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1094
-#, fuzzy, python-format
-#| msgid "The center family for the tree"
+#, python-format
 msgid "Move %s to current family tree"
-msgstr "Središnja obitelj za rodoslov"
+msgstr "Premjesti %s u trenutačni rodoslov"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1102
 msgid "✓"
-msgstr ""
+msgstr "✓"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1286
-#, fuzzy, python-format
-#| msgid "Citations:"
+#, python-format
 msgid "%d Citations"
-msgstr "Citati:"
+msgstr "%d Citati"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1288
-#, fuzzy, python-format
-#| msgid "Sources?"
+#, python-format
 msgid "%d Sources"
-msgstr "Izvori?"
+msgstr "%d Izvori"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1290
-#, fuzzy, python-format
-#| msgid "Notes:"
+#, python-format
 msgid "%d Notes"
-msgstr "Zabilješke:"
+msgstr "%d Zabilješke"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1292
-#, fuzzy, python-format
-#| msgid "Media Report"
+#, python-format
 msgid "%d Media Records"
-msgstr "Izvještaj o medijima"
+msgstr "%d Medijski zapisi"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1294
-#, fuzzy, python-format
-#| msgid "repositories"
+#, python-format
 msgid "%d Repositories"
-msgstr "spremišta"
+msgstr "%d Spremišta"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1297
 #, python-format
@@ -16338,6 +16209,14 @@ msgid ""
 "with your selected details. Do you confirm importing these missing "
 "references?"
 msgstr ""
+"Podaci koji se spajaju sadrže reference na eksterne objekte koji ne postoje "
+"u tvom rodoslovu:\n"
+"\n"
+"%s\n"
+"\n"
+"Za sprečavanje pokvarenih poveznica, ove se nedostajuće reference moraju "
+"uvesti zajedno s odabranim detaljima. Potvrđuješ li uvoz ovih nedostajućih "
+"referenci?"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1310
 #, python-format
@@ -16348,12 +16227,18 @@ msgid_plural ""
 "%d sources already in your family tree will be reused (matched by title, "
 "author and publication info)."
 msgstr[0] ""
+"%d izvor koji se već nalazi u tvom rodoslovu će se ponovo koristiti "
+"(podudara se po naslovu, autoru i podacima publikacije)."
 msgstr[1] ""
+"%d izvora koji se već nalaze u tvom rodoslovu će se ponovo koristiti "
+"(podudaraju se po naslovu, autoru i podacima publikacije)."
 msgstr[2] ""
+"%d izvora koji se već nalaze u tvom rodoslovu će se ponovo koristiti "
+"(podudaraju se po naslovu, autoru i podacima publikacije)."
 
 #: GWizardFileMerge/gwizardmergedialog.py:1324
 msgid "Confirm Importing Missing References"
-msgstr ""
+msgstr "Potvrdi uvoz nedostajućih referenci"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
@@ -16758,14 +16643,12 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.gpr.py:26
 #: GrampsAssistant/grampsassistant.py:1428
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant"
-msgstr "Gramps verzija"
+msgstr "Gramps pomoćnik"
 
 #: GrampsAssistant/grampsassistant.gpr.py:27
 msgid "AI assistant for querying your Gramps family tree"
-msgstr ""
+msgstr "Pomoćnik s umjetnom inteligencijom za ispitivanje Gramps rodoslova"
 
 #: GrampsAssistant/grampsassistant.py:61
 msgid ""
@@ -16777,27 +16660,21 @@ msgid ""
 msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:212
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Gramps Assistant settings"
-msgstr "Dodatne postavke stilova:"
+msgstr "Postavke Gramps pomoćnika"
 
 #: GrampsAssistant/grampsassistant.py:216
 msgid "Clear conversation and context"
-msgstr ""
+msgstr "Isprazni razgovor i kontekst"
 
 #: GrampsAssistant/grampsassistant.py:220
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Open the Gramps Assistant wiki page"
-msgstr "Dodatne postavke stilova:"
+msgstr "Otvori wiki stranicu Gramps pomoćnika"
 
 #: GrampsAssistant/grampsassistant.py:396
 #: GrampsAssistant/grampsassistant.py:760
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant:"
-msgstr "Gramps verzija"
+msgstr "Gramps pomoćnik:"
 
 #: GrampsAssistant/grampsassistant.py:398
 msgid ""
@@ -16831,10 +16708,8 @@ msgid ""
 msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:984
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done.\n"
-msgstr "Gotovo!\n"
+msgstr "Gotovo.\n"
 
 #: GrampsAssistant/grampsassistant.py:1214
 msgid "System Prompt:"
@@ -16842,7 +16717,7 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:1228
 msgid "Simplify tools (recommended for smaller/local models)"
-msgstr ""
+msgstr "Pojednostavi alate (preporučuje se za manje/lokalne modele)"
 
 #: GrampsAssistant/grampsassistant.py:1232
 msgid ""
@@ -16851,10 +16726,8 @@ msgid ""
 msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:1241
-#, fuzzy
-#| msgid "Mistral Model"
 msgid "Use Local Model"
-msgstr "Mistral model"
+msgstr "Koristi lokalni model"
 
 #: GrampsAssistant/grampsassistant.py:1260
 msgid ""
@@ -16864,7 +16737,7 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:1268
 msgid "model name (leave blank for LM Studio / llama.cpp)"
-msgstr ""
+msgstr "ime modela (ostavi prazno za LM Studio / llama.cpp)"
 
 #: GrampsAssistant/grampsassistant.py:1271
 msgid ""
@@ -16874,44 +16747,36 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:1278
 #: GrampsAssistant/grampsassistant.py:1322
-#, fuzzy
-#| msgid "Modern"
 msgid "Model:"
-msgstr "Moderno"
+msgstr "Model:"
 
 #: GrampsAssistant/grampsassistant.py:1284
-#, fuzzy
-#| msgid "Foundation date:"
 msgid "Use Foundational Model"
-msgstr "Datum osnutka:"
+msgstr "Koristi temeljni model"
 
 #: GrampsAssistant/grampsassistant.py:1326
 msgid "e.g. OPENAI_API_KEY"
-msgstr ""
+msgstr "npr. OPENAI_API_KEY"
 
 #: GrampsAssistant/grampsassistant.py:1328
 msgid "Name of the environment variable holding your API key."
-msgstr ""
+msgstr "Ime varijable okruženja koja sadrži tvoj API ključ."
 
 #: GrampsAssistant/grampsassistant.py:1330
 msgid "API key env var:"
-msgstr ""
+msgstr "API ključ varijable okruženja:"
 
 #: GrampsAssistant/grampsassistant.py:1333
 msgid "Backend:"
-msgstr ""
+msgstr "Pozadinski sustav:"
 
 #: GrampsAssistant/grampsassistant.py:1345
-#, fuzzy
-#| msgid "Website URL"
 msgid "Base URL:"
-msgstr "URL web-stranice"
+msgstr "Osnovni URL:"
 
 #: GrampsAssistant/grampsassistant.py:1349
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Model name:"
-msgstr "Ime supružnika:"
+msgstr "Ime modela:"
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
@@ -17008,22 +16873,16 @@ msgid "e.g. https://your-server/api"
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:143
-#, fuzzy
-#| msgid "Username:"
 msgid "Username"
-msgstr "Korisničko ime:"
+msgstr "Korisničko ime"
 
 #: GrampsWebApiDb/mintapikeytool.py:144
-#, fuzzy
-#| msgid "Password:"
 msgid "Password"
-msgstr "Lozinka:"
+msgstr "Lozinka"
 
 #: GrampsWebApiDb/mintapikeytool.py:153
-#, fuzzy
-#| msgid "Generate"
 msgid "Generate API Key"
-msgstr "Generiraj"
+msgstr "Generiraj API ključ"
 
 #: GrampsWebApiDb/mintapikeytool.py:162
 msgid ""
@@ -17688,10 +17547,8 @@ msgid "Ready... (Tab for completions)"
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:505
-#, fuzzy
-#| msgid "No title"
 msgid "Untitled"
-msgstr "Nema naslova"
+msgstr "Bez naslova"
 
 #: GrampyScript/GrampyScript.py:534
 msgid ""
@@ -17726,6 +17583,8 @@ msgid ""
 "List only the people whose surname matches a given value — a starting point "
 "for narrowing any report down by a condition."
 msgstr ""
+"Prikaži popis samo osoba čije prezime odgovara zadanoj vrijednosti – početna "
+"točka za sužavanje bilo kojeg izvještaja prema uvjetu."
 
 #: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -17822,10 +17681,8 @@ msgid ""
 msgstr ""
 
 #: GrampyScript/script_descriptions.py:130
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Custom Filter Example"
-msgstr "Ime filtra obitelji:"
+msgstr "Primjer prilagođenog filtra"
 
 #: GrampyScript/script_descriptions.py:132
 msgid ""
@@ -18321,17 +18178,15 @@ msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:26 HasTagSubstr/hastagsubstr.py:94
 msgid "Matches people with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Pronalazi osobe s oznakom čije ime sadrži zadani podniz"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:40 HasTagSubstr/hastagsubstr.py:102
 msgid "Families with a tag containing <substring>"
 msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:42 HasTagSubstr/hastagsubstr.py:104
-#, fuzzy
-#| msgid "Matches families that are matched by an event filter"
 msgid "Matches families with a tag whose name contains the given substring"
-msgstr "Pronalazi obitelji koje odgovaraju filtru događaja"
+msgstr "Pronalazi obitelji s oznakom čije ime sadrži zadani podniz"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:57 HasTagSubstr/hastagsubstr.py:113
 msgid "Events with a tag containing <substring>"
@@ -18339,7 +18194,7 @@ msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:59 HasTagSubstr/hastagsubstr.py:115
 msgid "Matches events with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Pronalazi događaje s oznakom čije ime sadrži zadani podniz"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:74 HasTagSubstr/hastagsubstr.py:124
 msgid "Places with a tag containing <substring>"
@@ -18347,17 +18202,15 @@ msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:76 HasTagSubstr/hastagsubstr.py:126
 msgid "Matches places with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Pronalazi mjesta s oznakom čije ime sadrži zadani podniz"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:91 HasTagSubstr/hastagsubstr.py:135
 msgid "Sources with a tag containing <substring>"
 msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:93 HasTagSubstr/hastagsubstr.py:137
-#, fuzzy
-#| msgid "Matches Sources with values containing the chosen parameters"
 msgid "Matches sources with a tag whose name contains the given substring"
-msgstr "Pronalazi izvore s vrijednostima koje sadrže odabrane parametre"
+msgstr "Pronalazi izvore s oznakom čije ime sadrži zadani podniz"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:108 HasTagSubstr/hastagsubstr.py:146
 msgid "Citations with a tag containing <substring>"
@@ -18365,7 +18218,7 @@ msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:110 HasTagSubstr/hastagsubstr.py:148
 msgid "Matches citations with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Pronalazi citate s oznakom čije ime sadrži zadani podniz"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:125 HasTagSubstr/hastagsubstr.py:157
 msgid "Repositories with a tag containing <substring>"
@@ -18373,7 +18226,7 @@ msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:127 HasTagSubstr/hastagsubstr.py:159
 msgid "Matches repositories with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Pronalazi spremišta s oznakom čije ime sadrži zadani podniz"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:142 HasTagSubstr/hastagsubstr.py:168
 msgid "Media objects with a tag containing <substring>"
@@ -18382,7 +18235,7 @@ msgstr ""
 #: HasTagSubstr/hastagsubstr.gpr.py:144 HasTagSubstr/hastagsubstr.py:170
 msgid ""
 "Matches media objects with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Pronalazi medijske objekte s oznakom čije ime sadrži zadani podniz"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:159 HasTagSubstr/hastagsubstr.py:179
 msgid "Notes with a tag containing <substring>"
@@ -18390,7 +18243,7 @@ msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:161 HasTagSubstr/hastagsubstr.py:181
 msgid "Matches notes with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Pronalazi zabilješke s oznakom čije ime sadrži zadani podniz"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
@@ -20003,10 +19856,8 @@ msgid "Who (re)searches who?"
 msgstr "Tko istražuje/traži koga?"
 
 #: NameSuite/name_processor.gpr.py:26
-#, fuzzy
-#| msgid "Patronymic names:"
 msgid "Audit Given and Patronymic Names"
-msgstr "Patronimička imena:"
+msgstr "Provjera imena i patronimičkih imena"
 
 #: NameSuite/name_processor.gpr.py:29
 msgid ""
@@ -20014,10 +19865,8 @@ msgid ""
 msgstr ""
 
 #: NameSuite/name_processor.gpr.py:45 NameSuite/name_processor.gpr.py:57
-#, fuzzy
-#| msgid "Patronymic names:"
 msgid "Patronymic Suggestion"
-msgstr "Patronimička imena:"
+msgstr "Prijedlog za patronim"
 
 #: NameSuite/name_processor.gpr.py:47
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
@@ -20081,16 +19930,12 @@ msgid "Infer East Slavic Patronymics"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool.py:125
-#, fuzzy
-#| msgid "Checking Given Names"
 msgid "Rename Given Names"
-msgstr "Provjeravanje imena"
+msgstr "Preimenuj imena"
 
 #: NameSuite/name_processor/views/tool.py:128
-#, fuzzy
-#| msgid "Patronymic names:"
 msgid "Audit Patronymics"
-msgstr "Patronimička imena:"
+msgstr "Provjera patronima"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:80
 msgid "Auditing Settings"
@@ -20139,10 +19984,8 @@ msgstr "Konfiguriraj pravila"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:198
 #: NameSuite/name_processor/views/tool_rename_tab.py:168
-#, fuzzy
-#| msgid "India"
 msgid "Individual"
-msgstr "Indija"
+msgstr "Pojedinac"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:202
 #: NameSuite/name_processor/views/tool_rename_tab.py:170
@@ -20166,10 +20009,8 @@ msgid "Explanation"
 msgstr "Obrazloženje"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:255
-#, fuzzy
-#| msgid "Migration completed!"
 msgid "Audit Complete!"
-msgstr "Migracija završena!"
+msgstr "Provjera završena!"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:260
 msgid "No Results"
@@ -20180,64 +20021,52 @@ msgid "No issues found."
 msgstr "Nijedan problem nije pronađen."
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:75
-#, fuzzy
-#| msgid "Search result places"
 msgid "Search and Replace Options"
-msgstr "Rezultat pretraživanja mjesta"
+msgstr "Opcije za Traži i zamijeni"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:82
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Source Name:"
-msgstr "Ime supružnika:"
+msgstr "Ime izvora:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:84
 msgid "e.g. Иоанн"
-msgstr ""
+msgstr "npr. Иоанн"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:87
-#, fuzzy
-#| msgid "Street Name"
 msgid "Target Name:"
-msgstr "Ime ulice"
+msgstr "Ime cilja:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:89
 msgid "e.g. Иван"
-msgstr ""
+msgstr "npr. Иван"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:92
 msgid "Match Mode:"
-msgstr ""
+msgstr "Modus poklapanja:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:94
 msgid "Exact Match"
-msgstr ""
+msgstr "Točno poklapanje"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:95
-#, fuzzy
-#| msgid "SubDistrict"
 msgid "Substring"
-msgstr "Pod-kotar"
+msgstr "Podniz znakova"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:96
 msgid "Regular Expression"
 msgstr "Regularni izraz"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:100
-#, fuzzy
-#| msgid "Index of Names"
 msgid "Scan for Names"
-msgstr "Indeks imena"
+msgstr "Pretraži imena"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:105
 msgid "Preserve original name as alternative"
-msgstr ""
+msgstr "Zadrži izvorno ime kao alternativu"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:172
-#, fuzzy
-#| msgid "Proposed sort"
 msgid "Proposed"
-msgstr "Predloženo razvrstavanje"
+msgstr "Predloženo"
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
@@ -20285,7 +20114,7 @@ msgstr "Odaberi format linija spojnica u dijagramu."
 
 #: NetworkChart/NetworkChart.py:930
 msgid "Left to Right"
-msgstr "Slijeva na desno"
+msgstr "S lijeva na desno"
 
 #: NetworkChart/NetworkChart.py:930
 msgid "Top to Bottom"
@@ -20297,7 +20126,7 @@ msgstr "Odozdo prema gore"
 
 #: NetworkChart/NetworkChart.py:931
 msgid "Right to Left"
-msgstr "Sdesna na lijevo"
+msgstr "S desna na lijevo"
 
 #: NetworkChart/NetworkChart.py:933
 msgid "Default (Top to Bottom)"
@@ -20317,11 +20146,11 @@ msgstr "Uključi URL-ove iz baze podataka."
 
 #: NetworkChart/NetworkChart.py:942
 msgid "Dynamic URL = Prefix + GrampID + Suffix"
-msgstr "Dinamičan URL = prefiks + GrampID + sufiks"
+msgstr "Dinamični URL = prefiks + GrampID + sufiks"
 
 #: NetworkChart/NetworkChart.py:943
 msgid "Static URL = Prefix"
-msgstr "Statičan URL = prefiks"
+msgstr "Statični URL = prefiks"
 
 #: NetworkChart/NetworkChart.py:944
 msgid "Don't include URLs"
@@ -20372,7 +20201,7 @@ msgstr "Razmak (u inčima)"
 #: NetworkChart/NetworkChart.py:965
 msgid ""
 "Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
-msgstr "Dodaj razmak između generecija u inčima (0.1 do 5.0)."
+msgstr "Dodaj razmak između generacija u inčima (0,1 do 5,0)."
 
 #: NetworkChart/NetworkChart.py:969
 msgid "Enter Chart Title"
@@ -20429,7 +20258,7 @@ msgstr "Prozirnost pozadine polja muških osoba (prozirno=0, neprozirno=255)."
 
 #: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
-msgstr "Rub polja muške osobe"
+msgstr "Rub polja muških osoba"
 
 #: NetworkChart/NetworkChart.py:1019
 msgid "RGB-color for Male box edge."
@@ -20437,7 +20266,7 @@ msgstr "RGB-boja za rubove polja muških osoba."
 
 #: NetworkChart/NetworkChart.py:1023
 msgid "RGB-color for Female box background."
-msgstr "RGB-boja pozadine polja ženskih osoba."
+msgstr "RGB-boja za pozadine polja ženskih osoba."
 
 # added:
 #: NetworkChart/NetworkChart.py:1026
@@ -20446,11 +20275,12 @@ msgstr "Prozirnost pozadine ženskih osoba"
 
 #: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
-msgstr "Prozirnost pozadine polja ženskih osoba (prozirno=0, neprozirno=255)."
+msgstr ""
+"Prozirnost za pozadine polja ženskih osoba (prozirno=0, neprozirno=255)."
 
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
-msgstr "Rub polja ženske osobe"
+msgstr "Rub polja ženskih osoba"
 
 #: NetworkChart/NetworkChart.py:1034
 msgid "RGB-color for Female box edge."
@@ -20458,19 +20288,19 @@ msgstr "RGB-boja za rubove polja ženskih osoba."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
-msgstr "Pozadina za druge osobe"
+msgstr "Pozadina drugih osoba"
 
 #: NetworkChart/NetworkChart.py:1038
 msgid "RGB-color for other box background."
-msgstr "RGB-boja pozadine za polja drugih osoba."
+msgstr "RGB-boja za pozadinu polja drugih osoba."
 
 #: NetworkChart/NetworkChart.py:1041
 msgid "Other Background Alpha"
-msgstr "Prozirnost pozadine ostalih osoba"
+msgstr "Prozirnost pozadine drugih osoba"
 
 #: NetworkChart/NetworkChart.py:1043
 msgid "Alpha for Other box background (transparent=0, solid=255)."
-msgstr "Prozirnost pozadine polja ostalih osoba (prozirno=0, neprozirno=255)."
+msgstr "Prozirnost za pozadinu polja drugih osoba (prozirno=0, neprozirno=255)."
 
 #: NetworkChart/NetworkChart.py:1047
 msgid "Family Connector Line"
@@ -20536,8 +20366,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1080
 msgid "Round birthday to year after year entered (above)."
-msgstr ""
-"Prikaži rođendan samo godinom, nakon upisivanja godine (iznad), zaokruži ."
+msgstr "Zaokruži rođendan na godinu nakon upisivanja godine (iznad)."
 
 #: NetworkChart/NetworkChart.py:1082
 msgid "Represent birthday by year only."
@@ -20563,12 +20392,11 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1092
 msgid "Round marriage to year after year entered (above)."
-msgstr ""
-"Zaokruži sklapanje brakova samo na godinu nakon upisivanja godine (iznad)."
+msgstr "Zaokruži sklapanje braka na godinu nakon upisivanja godine (iznad)."
 
 #: NetworkChart/NetworkChart.py:1094
 msgid "Represent marriage by year only."
-msgstr "Prikaži samo godine sklapanja braka."
+msgstr "Prikaži samo godinu sklapanja braka."
 
 #: NetworkChart/NetworkChart.py:1099
 msgid ""
@@ -20607,7 +20435,7 @@ msgid ""
 "You must enter valid person(s) before \n"
 "enabling trimming of descendants from tree."
 msgstr ""
-"Moraš upisati valjanu osobu/osobe\n"
+"Moraš upisati valjane osobe\n"
 "prije odrezivanja potomaka iz stabla."
 
 #: NetworkChart/NetworkChart.py:1134
@@ -20768,7 +20596,7 @@ msgstr "Aktiviraj/deaktiviraj potvrdu za prepisivanje datoteke."
 
 #: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
-msgstr "Čišćenje zabilješki"
+msgstr "Čišćenje zabilježaka"
 
 #: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
@@ -20776,11 +20604,11 @@ msgstr "Počisti zabilješke koje sadrže HTML oznake"
 
 #: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
-msgstr "Alat za čišćenje zabilješki"
+msgstr "Alat za čišćenje zabilježaka"
 
 #: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
-msgstr "Zabilješke su počišćene"
+msgstr "Počišćene zabilješke"
 
 #: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
@@ -20792,7 +20620,7 @@ msgstr "Problemi"
 
 #: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
-msgstr "Zatvori alat za čišćenje zabilješki"
+msgstr "Zatvori alat za čišćenje zabilježaka"
 
 #: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
@@ -20817,8 +20645,8 @@ msgid ""
 "database or delete them later."
 msgstr ""
 "Generiraj testne zabilješke u rasponu N99996-N99999.\n"
-"Te će se zabilješke dodati u tvoju bazu podataka. Stoga bi možda bilo dobro "
-"da radiš s testnom bazom podataka ili ih kasnije izbriši."
+"One se dodaju u tvoju bazu podataka. Stoga bi možda bilo dobro da radiš s "
+"testnom bazom podataka ili ih kasnije izbriši."
 
 #: NoteCleanup/NoteCleanup.py:181
 msgid ""
@@ -20833,7 +20661,7 @@ msgstr ""
 "\n"
 "Pokreni alat pritiskom gumba „Traži”, zatim pregledaj rezultate.\n"
 "Ako je sve u redu, spremi pritiskom na gumb „Spremi sve”.\n"
-"Popis sažetka pronađenih zabilješki možeš izvesti koristeći gumb „Izvoz”."
+"Popis sažetka pronađenih zabilježaka možeš izvesti koristeći gumb „Izvezi”."
 
 #: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
@@ -20870,20 +20698,20 @@ msgstr ""
 "\n"
 "Odabrane zabilješke na lijevoj strani se prikazuju nakon čišćenja u ovom "
 "okviru.\n"
-"Ako želiš učiniti promjene, njih možeš učiniti ovdje, te korsititi "
-"upravljače stilova u gornjoj alatnoj traci."
+"Ako želiš učiniti promjene, njih možeš učiniti ovdje te korsititi upravljače "
+"stilova u gornjoj alatnoj traci."
 
 #: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
-msgstr "Spremanje zabilješki"
+msgstr "Spremanje zabilježaka"
 
 #: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
-msgstr "Spremanje počišćenih zabilješki"
+msgstr "Spremanje počišćenih zabilježaka"
 
 #: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
-msgstr "Pretraživanje zabilješki"
+msgstr "Pretraživanje zabilježaka"
 
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
@@ -20891,7 +20719,7 @@ msgstr "Zabilješke – Gramplet"
 
 #: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
-msgstr "Gramplet za uređivanje zabilješki aktivne osobe"
+msgstr "Gramplet za uređivanje zabilježaka aktivne osobe"
 
 #: NoteGramplet/NoteGramplet.py:255
 msgid "Save Note"
@@ -20984,42 +20812,40 @@ msgstr "Gramplet prikazuje pregled događaja za jednu obitelj"
 
 #: PDFForms/PDFForms.gpr.py:24 PDFForms/generatepdfform.py:57
 #: PDFForms/generatepdfform.py:63
-#, fuzzy
-#| msgid "Generate Test Notes"
 msgid "Generate PDF Forms"
-msgstr "Generiraj testne zabilješke"
+msgstr "Generiraj PDF obrasce"
 
 #: PDFForms/PDFForms.gpr.py:26
 msgid ""
 "Generate blank fillable PDF forms: census/event forms or Ahnentafel pedigree "
 "charts."
 msgstr ""
+"Generiraj prazne ispunjive PDF obrasce: obrasce za popis stanovništva/"
+"događaje ili ploču predaka."
 
 #: PDFForms/PDFForms.gpr.py:47
 msgid "Import Fillable PDF Forms"
-msgstr ""
+msgstr "Uvezi ispunjive PDF obrasce"
 
 #: PDFForms/PDFForms.gpr.py:49
 msgid ""
 "Import genealogy data from a PDF form. Send the PDF template to others to "
 "fill out and return."
 msgstr ""
+"Uvezi genealoške podatke iz PDF obrasca. Pošalji PDF predložak drugima da ga "
+"ispune i pošalju natrag."
 
 #: PDFForms/generatepdfform.py:77
 msgid "Census / Event Form"
-msgstr ""
+msgstr "Obrazac za popis stanovništva / događaje"
 
 #: PDFForms/generatepdfform.py:79
-#, fuzzy
-#| msgid "Pedigree Chart"
 msgid "Ahnentafel Pedigree Chart"
-msgstr "Dijagram porijekla"
+msgstr "Dijagram porijekla / ploča predaka"
 
 #: PDFForms/generatepdfform.py:99
-#, fuzzy
-#| msgid "Output format"
 msgid "Output file:"
-msgstr "Izlazni format"
+msgstr "Datoteka rezultata:"
 
 #: PDFForms/generatepdfform.py:107
 msgid "Browse…"
@@ -21401,7 +21227,7 @@ msgstr "Ukupno djece"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:84
 msgid "Matches children of anybody with a given name"
-msgstr ""
+msgstr "Pronalazi djecu bilo koga sa zadanim imenom"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:251
 #, fuzzy
@@ -21851,7 +21677,7 @@ msgid ""
 "Matches"
 msgstr ""
 "Nema\n"
-"podudaranja"
+"poklapanja"
 
 #: PlaceCleanup/placecleanup.glade:1099
 msgid ""
@@ -21911,7 +21737,7 @@ msgid ""
 msgstr ""
 "%s\n"
 "Lokalna\n"
-"podudaranja"
+"poklapanja"
 
 #: PlaceCleanup/placecleanup.py:295
 msgid "Find GeoNames"
@@ -21942,12 +21768,12 @@ msgid ""
 msgstr ""
 "%s\n"
 "GeoNames\n"
-"podudaranja"
+"poklapanja"
 
 #: PlaceCleanup/placecleanup.py:353
 #, python-format
 msgid "%s matches were found"
-msgstr "%s podudaranja su pronađena"
+msgstr "Pronađena su %s poklapanja"
 
 #: PlaceCleanup/placecleanup.py:354
 msgid ""
@@ -21955,7 +21781,7 @@ msgid ""
 "To see additional results, press the search button again.\n"
 "Or try changing the Title with more detail, such as a country."
 msgstr ""
-"Prikazuje se samo deset podudaranja.\n"
+"Prikazuje se samo deset poklapanja.\n"
 "Za prikaz više rezultata, ponovo pritisni gumb za traženje.\n"
 "Ili pokušaj promijeniti naslov, koristeći više detalja, npr. zemlju."
 
@@ -24011,7 +23837,7 @@ msgstr "Izbornik konfiguracije grampleta za pretraživanje"
 
 #: SearchGramplet/SearchGramplet.py:261
 msgid "No matches..."
-msgstr "Nema podudaranja …"
+msgstr "Nema poklapanja …"
 
 #: SearchGramplet/SearchGramplet.py:353
 msgid "Start type to search"
@@ -26032,8 +25858,8 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"Stvara popis svih zabilješki sa zadanom oznakom, zajedno sa zapisima na koje "
-"se referenciraju, npr. osobu, obitelj, događaj, itd."
+"Stvara popis svih zabilježaka sa zadanom oznakom, zajedno sa zapisima na "
+"koje se referenciraju, npr. osobu, obitelj, događaj, itd."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -26192,7 +26018,7 @@ msgstr "Vrste imena"
 
 #: TypeCleanup/type_cleanup.py:107
 msgid "Note Types"
-msgstr "Vrste zabilješki"
+msgstr "Vrste zabilježaka"
 
 #: TypeCleanup/type_cleanup.py:108
 msgid "Place Types"
@@ -26441,30 +26267,24 @@ msgid "Edit Note with the Link"
 msgstr "Uredi zabilješku s poveznicom"
 
 #: WebSearch/WebSearch.py:1658
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Internet link"
-msgstr "Uredi odabir"
+msgstr "Uredi internetsku poveznicu"
 
 #: WebSearch/WebSearch.py:1661
 msgid "🔍 AI Suggestions"
 msgstr "🔍 Prijedlozi umjetne inteligencije"
 
 #: WebSearch/WebSearch.py:1915
-#, fuzzy
-#| msgid "Attribute no longer exists. The extra icon is removed"
 msgid "Attribute no longer matches this WebSearch row"
-msgstr "Svojstvo više ne postoji. Dodatna ikona je uklonjena"
+msgstr "Atribut se više poklapa s ovim retkom WebSearcha"
 
 #: WebSearch/WebSearch.py:1942
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr "Svojstvo više ne postoji. Dodatna ikona je uklonjena"
 
 #: WebSearch/WebSearch.py:1983
-#, fuzzy
-#| msgid "Note no longer exists. The extra icon is removed"
 msgid "Note no longer exists"
-msgstr "Zabilješka više ne postoji. Dodatna ikona je uklonjena"
+msgstr "Zabilješka više ne postoji"
 
 #: WebSearch/WebSearch.py:2005
 msgid "Note no longer exists. The extra icon is removed"
@@ -26472,7 +26292,7 @@ msgstr "Zabilješka više ne postoji. Dodatna ikona je uklonjena"
 
 #: WebSearch/WebSearch.py:2057
 msgid "Internet link no longer matches this WebSearch row"
-msgstr ""
+msgstr "Internetska veza se više poklapa s ovim retkom WebSearcha"
 
 #: WebSearch/WebSearch.py:2148
 #, python-brace-format
@@ -27019,7 +26839,7 @@ msgstr "Prikaži poveznice iz kartice „Internet”"
 
 #: WebSearch/settings_ui_manager.py:201
 msgid "Show Links From the Notes"
-msgstr "Prikaži poveznice iz zabilješki"
+msgstr "Prikaži poveznice iz zabilježaka"
 
 #: WebSearch/settings_ui_manager.py:209
 msgid "Enable AI-generated historical place data"
@@ -27317,7 +27137,7 @@ msgid ""
 "Number of notes : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Broj zabilješki: \n"
+"Broj zabilježaka: \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:581
@@ -27491,14 +27311,12 @@ msgstr[1] "\t{number} mjesta"
 msgstr[2] "\t{number} mjesta"
 
 #: lxml/lxmlGramplet.py:669 lxml/lxmlGramplet.py:679
-#, fuzzy, python-brace-format
-#| msgid "\t{number} note"
-#| msgid_plural "\t{number} notes\n"
+#, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} zabilješka"
 msgstr[1] "\t{number} zabilješke"
-msgstr[2] "\t{number} zabilješki"
+msgstr[2] "\t{number} zabilježaka"
 
 #: lxml/lxmlGramplet.py:683
 #, fuzzy, python-brace-format
@@ -27525,7 +27343,7 @@ msgstr "Greška XML sintakse"
 
 #: lxml/lxmlGramplet.py:731
 msgid "Matches XSD schema."
-msgstr "Odgovara XSD shemi."
+msgstr "Poklapa se s XSD shemom."
 
 #: lxml/lxmlGramplet.py:771
 msgid "xmllint: skip DTD validation"
