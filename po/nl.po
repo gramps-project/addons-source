@@ -8,13 +8,15 @@
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 # Stephan Paternotte <stephan@paternottes.net>, 2025, 2026.
+# Stephan Paternotte <stephan-p@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-18 11:42-0700\n"
-"PO-Revision-Date: 2026-09-25 18:51+0000\n"
-"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"PO-Revision-Date: 2026-10-19 08:00+0000\n"
+"Last-Translator: Stephan Paternotte <stephan-"
+"p@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
 "Language: nl\n"
@@ -22,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -1332,7 +1334,7 @@ msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
-"Een verbeterde citatenopmaak die een bibliotheek en een aanroepnummer "
+"Een verbeterde citatenopmaak die een opslagplaats en een aanroepnummer "
 "toevoegt aan de standaardfunctionaliteit."
 
 #: CliMerge/CliMerge.gpr.py:9
@@ -4608,7 +4610,7 @@ msgstr "Verwantschap met moeder"
 
 #: DynamicWeb/dynamicweb.py:3058
 msgid "Repositories Index"
-msgstr "Bibliothekenindex"
+msgstr "Index van opslagplaatsen"
 
 #: DynamicWeb/dynamicweb.py:3061
 msgid "Restore"
@@ -4982,7 +4984,7 @@ msgstr "Of adressen naar de webpagina's moeten worden geëxporteerd"
 
 #: DynamicWeb/dynamicweb.py:4853
 msgid "Whether or not to include the Repository Pages."
-msgstr "Of de bibliotheekpagina's moeten worden opgenomen."
+msgstr "Of de opslagplaatspagina's moeten worden opgenomen."
 
 #: DynamicWeb/dynamicweb.py:4856
 msgid "Include images and media"
@@ -16122,10 +16124,8 @@ msgstr ""
 "'where'-expressie evalueert tot waar"
 
 #: GWizardFileMerge/GWizardFileMerge.gpr.py:19
-#, fuzzy
-#| msgid "Command Line Merge"
 msgid "GWizard File Merge"
-msgstr "Opdrachtregel samenvoegen"
+msgstr "GWizard Bestand Samenvoegen"
 
 #: GWizardFileMerge/GWizardFileMerge.gpr.py:21
 msgid ""
@@ -16133,288 +16133,235 @@ msgid ""
 "Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
 "differences person by person."
 msgstr ""
+"Family Tree Processing Tool om een ander genealogisch bestand (GEDCOM, "
+"Gramps XML, ...) zij aan zij te vergelijken met de open Family Tree en "
+"geselecteerde verschillen persoon voor persoon samen te voegen."
 
 #: GWizardFileMerge/gwizard.py:120
-#, fuzzy
-#| msgid "Deep Connections"
 msgid "Configure Connection"
-msgstr "Verre relaties"
+msgstr "Verbinding configureren"
 
 #: GWizardFileMerge/gwizard.py:121
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Load Data"
-msgstr "Laden van de gegevens"
+msgstr "Gegevens laden"
 
 #: GWizardFileMerge/gwizard.py:122
-#, fuzzy
-#| msgid "Edit Starting Person"
 msgid "Find Matching Persons"
-msgstr "Startpersoon bewerken"
+msgstr "Overeenkomende personen vinden"
 
 #: GWizardFileMerge/gwizard.py:123
-#, fuzzy
-#| msgid "Differences"
 msgid "Compare Differences"
-msgstr "Verschillen"
+msgstr "Verschillen vergelijken"
 
 #: GWizardFileMerge/gwizard.py:124
-#, fuzzy
-#| msgid "Apply changes"
 msgid "Apply Changes"
 msgstr "Wijziging toepassen"
 
 #: GWizardFileMerge/gwizard.py:137
 msgid "Configure file path or authenticate with online service."
-msgstr ""
+msgstr "Bestandspad configureren of authenticeren met online service."
 
 #: GWizardFileMerge/gwizard.py:138
 msgid "Load/parse the external genealogy data into memory."
-msgstr ""
+msgstr "De externe genealogische gegevens in het geheugen laden/lezen."
 
 #: GWizardFileMerge/gwizard.py:139
 msgid "Search for potential matches in your database."
-msgstr ""
+msgstr "Zoeken naar potentiële overeenkomsten in uw database."
 
 #: GWizardFileMerge/gwizard.py:140
 msgid "Compare fields side-by-side between the source and target."
-msgstr ""
+msgstr "Velden naast elkaar vergelijken tussen bron en doel."
 
 #: GWizardFileMerge/gwizard.py:141
 msgid "Merge selected changes or add new records to the database."
 msgstr ""
+"Geselecteerde wijzigingen samenvoegen of nieuwe records toevoegen aan de "
+"database."
 
 #: GWizardFileMerge/gwizardcompare.py:167
 #: GWizardFileMerge/gwizardcompare.py:187
 msgid "GWizard Compare"
-msgstr ""
+msgstr "GWizard Vergelijken"
 
 #: GWizardFileMerge/gwizardcompare.py:173
 msgid "No source database available for comparison"
-msgstr ""
+msgstr "Geen bronnendatabase beschikbaar ter vergelijking"
 
 #: GWizardFileMerge/gwizardcompare.py:208
 #: GWizardFileMerge/gwizardmergedialog.py:586
-#, fuzzy
-#| msgid "Importing GEDCOM..."
 msgid "Incoming GEDCOM"
-msgstr "GEDCOM importeren..."
+msgstr "GEDCOM-invoer"
 
 #: GWizardFileMerge/gwizardcompare.py:213
 #: GWizardFileMerge/gwizardmergedialog.py:593
-#, fuzzy, python-format
-#| msgid "Importing GEDCOM..."
+#, python-format
 msgid "Incoming GEDCOM: %s"
-msgstr "GEDCOM importeren..."
+msgstr "GEDCOM-invoer: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:215
 #: GWizardFileMerge/gwizardmergedialog.py:597
-#, fuzzy, python-format
-#| msgid "Error creating Family Tree: %s"
+#, python-format
 msgid "Current Family Tree: %s"
-msgstr "Fout bij aanmaken van stamboom: %s"
+msgstr "Huidige Family Tree: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:426
-#, fuzzy
-#| msgid "Populated"
 msgid "Populate Failed"
-msgstr "Bewoond"
+msgstr "Populatie mislukt"
 
 #: GWizardFileMerge/gwizardcompare.py:876
-#, fuzzy
-#| msgid "Merge"
 msgid "Merge..."
-msgstr "Samenvoegen"
+msgstr "Samenvoegen…"
 
 #: GWizardFileMerge/gwizardcompare.py:878
 msgid "Open the field-by-field merge dialog for the selected pair"
-msgstr ""
+msgstr "Open Veld voor veld samenvoegen voor het geselecteerde paar"
 
 #: GWizardFileMerge/gwizardcompare.py:883
 #: GWizardFileMerge/gwizardcompare.py:1224
-#, fuzzy
-#| msgid "Add as a Wife"
 msgid "Add as New..."
-msgstr "Als vrouw toevoegen"
+msgstr "Toevoegen als nieuw…"
 
 #: GWizardFileMerge/gwizardcompare.py:885
 #: GWizardFileMerge/gwizardcompare.py:1226
 msgid "Add the selected incoming person as a new person"
-msgstr ""
+msgstr "Voeg de geselecteerde inkomende persoon toe als nieuwe persoon"
 
 #: GWizardFileMerge/gwizardcompare.py:926
-#, fuzzy
-#| msgid "All Records"
 msgid "Record"
-msgstr "Alle registraties"
+msgstr "Registratie"
 
 #: GWizardFileMerge/gwizardcompare.py:932
 msgid "Born"
-msgstr ""
+msgstr "Geboren"
 
 #: GWizardFileMerge/gwizardcompare.py:933
 msgid "Died"
-msgstr ""
+msgstr "Overleden"
 
 #: GWizardFileMerge/gwizardcompare.py:975
 #: GWizardFileMerge/gwizardmergedialog.py:740
-#, fuzzy
-#| msgid "Individual"
 msgid "Individual Details"
-msgstr "Individu"
+msgstr "Individuele details"
 
 #: GWizardFileMerge/gwizardcompare.py:976
 #: GWizardFileMerge/gwizardmergedialog.py:813
-#, fuzzy
-#| msgid "Family Relation Types"
 msgid "Family Relations"
-msgstr "Gezinsrelatietypen"
+msgstr "Familierelaties"
 
 #: GWizardFileMerge/gwizardcompare.py:978
 #: GWizardFileMerge/gwizardmergedialog.py:859
 msgid "Events & Other Records"
-msgstr ""
+msgstr "Gebeurtenissen & andere registraties"
 
 #: GWizardFileMerge/gwizardcompare.py:1216
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "Not a Match"
-msgstr ""
-"Geen\n"
-"overeenkomsten"
+msgstr "Geen overeenkomst"
 
 #: GWizardFileMerge/gwizardcompare.py:1219
 msgid ""
 "These are different people: unpair them so the incoming person can be added "
 "as new"
 msgstr ""
+"Dit zijn verschillende personen: ontkoppel ze zodat de inkomende persoon als "
+"nieuw kan worden toegevoegd"
 
 #: GWizardFileMerge/gwizardcompare.py:1232
-#, fuzzy, python-format
-#| msgid "Differences"
+#, python-format
 msgid "Differences: %d of %d"
-msgstr "Verschillen"
+msgstr "Verschillen: %d of %d"
 
 # niet/geen
 #: GWizardFileMerge/gwizardcompare.py:1484
-#, fuzzy
-#| msgid "none"
 msgid "(none)"
-msgstr "geen"
+msgstr "(geen)"
 
 #: GWizardFileMerge/gwizardcompare.py:1648
-#, fuzzy, python-format
-#| msgid "found: %s"
+#, python-format
 msgid "Gender: %s"
-msgstr "gevonden: %s"
+msgstr "Gender: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:1650
-#, fuzzy, python-format
-#| msgid "   N-ID: %s"
+#, python-format
 msgid "ID: %s"
-msgstr "   N-ID: %s"
+msgstr "ID: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:1677
-#, fuzzy, python-format
-#| msgid "FamilySearch.org"
+#, python-format
 msgid "FamilySearch: %s"
-msgstr "FamilySearch.org"
+msgstr "FamilySearch: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:1751
 #: GWizardFileMerge/gwizardcompare.py:1768
 #: GWizardFileMerge/gwizardmergedialog.py:451
-#, fuzzy, python-format
-#| msgid "Added %s: %s "
+#, python-format
 msgid "%s: %s"
-msgstr "Toegevoegd %s: %s "
+msgstr "%s: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:2008
-#, fuzzy
-#| msgid "Add as a Child"
 msgid "Add as New failed"
-msgstr "Als kind toevoegen"
+msgstr "Toevoegen als nieuw mislukt"
 
 #: GWizardFileMerge/gwizardgedcom.py:351
 #: GWizardFileMerge/gwizardmergedialog.py:745
-#, fuzzy
-#| msgid "Rename Given Names"
 msgid "Given Name"
-msgstr "Voornamen vervangen"
+msgstr "Voornaam"
 
 #: GWizardFileMerge/gwizardgedcom.py:377
 #: GWizardFileMerge/gwizardmergedialog.py:761
-#, fuzzy
-#| msgid "Surnames Index"
 msgid "Surname Prefix"
-msgstr "Achternamenindex"
+msgstr "Tussenvoegsel"
 
 #: GWizardFileMerge/gwizardgedcom.py:1068
 msgid "GWizard Data Merge"
-msgstr ""
+msgstr "GWizard Gegevens Samenvoegen"
 
 #: GWizardFileMerge/gwizardlauncher.py:113
-#, fuzzy
-#| msgid "Genealogy Online"
 msgid "Genealogy files"
-msgstr "Genealogie online"
+msgstr "Genealogiebestanden"
 
 #: GWizardFileMerge/gwizardlauncher.py:129
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select File to Compare"
-msgstr "Selecteer filter om aantal mensen te beperken"
+msgstr "Selecteer bestand om te vergelijken"
 
 #: GWizardFileMerge/gwizardlauncher.py:158
-#, fuzzy
-#| msgid "The selected file is a directory, not a file."
 msgid "The selected file is missing."
-msgstr "Het geselecteerde bestand is een map, geen bestand."
+msgstr "Het geselecteerde bestand ontbreekt."
 
 #: GWizardFileMerge/gwizardlauncher.py:161
-#, fuzzy
-#| msgid "Could not reach the server: check the Server URL. (%s)"
 msgid "Could not read the selected file."
-msgstr "Kon de server niet bereiken: controleer de server-URL. (%s)"
+msgstr "Kon het geselecteerde bestand niet lezen."
 
 #: GWizardFileMerge/gwizardlauncher.py:201
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Loading Data Merge"
-msgstr "Laden van de gegevens"
+msgstr "Gegevens Samenvoegen laden"
 
 #: GWizardFileMerge/gwizardlauncher.py:202
 #: GWizardFileMerge/gwizardlauncher.py:206
-#, fuzzy
-#| msgid "Reading file list..."
 msgid "Reading the selected file..."
-msgstr "Bestandslijst lezen..."
+msgstr "Het geselecteerde bestand lezen..."
 
 #: GWizardFileMerge/gwizardlauncher.py:214
 msgid "Load Failed"
-msgstr ""
+msgstr "Leden is mislukt"
 
 #: GWizardFileMerge/gwizardlauncher.py:216
 msgid "Building the comparison window..."
-msgstr ""
+msgstr "Vergelijkingsvenster bouwen…"
 
 #: GWizardFileMerge/gwizardmergedialog.py:256
-#, fuzzy
-#| msgid "Untitled"
 msgid "Untitled source"
-msgstr "Zonder titel"
+msgstr "Bron zonder titel"
 
 #: GWizardFileMerge/gwizardmergedialog.py:265
-#, fuzzy, python-format
-#| msgid ", page %s"
+#, python-format
 msgid "page %s"
-msgstr ", pagina %s"
+msgstr "pagina %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:287
 #, python-format
 msgid "via %s"
-msgstr ""
+msgstr "via %s"
 
 # niet/geen
 #: GWizardFileMerge/gwizardmergedialog.py:315
@@ -16424,104 +16371,81 @@ msgid "none"
 msgstr "geen"
 
 #: GWizardFileMerge/gwizardmergedialog.py:327
-#, fuzzy, python-format
-#| msgid "Sources?"
+#, python-format
 msgid "Sources: %s"
-msgstr "Bronnen?"
+msgstr "Bronnen: %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:377
-#, fuzzy
-#| msgid "Media Merge"
 msgid "GWizard Merge"
-msgstr "Media samenvoegen"
+msgstr "GWizard Samenvoegen"
 
 #: GWizardFileMerge/gwizardmergedialog.py:385
-#, fuzzy
-#| msgid "No data available in table"
 msgid "No source database available for merge"
-msgstr "Geen data beschikbaar in de tabel"
+msgstr "Geen bronnendatabase beschikbaar voor samenvoegen"
 
 #: GWizardFileMerge/gwizardmergedialog.py:394
-#, fuzzy, python-format
-#| msgid "Note no longer exists"
+#, python-format
 msgid "Source person no longer exists: %s"
-msgstr "Notitie bestaat niet meer"
+msgstr "Bronpersoon bestaat niet meer: %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:400
-#, fuzzy, python-format
-#| msgid "Note no longer exists"
+#, python-format
 msgid "Target person no longer exists: %s"
-msgstr "Notitie bestaat niet meer"
+msgstr "Doelpersoon bestaat niet meer: %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:531
-#, fuzzy
-#| msgid "→ %s"
 msgid "→"
-msgstr "→ %s"
+msgstr "→"
 
 #: GWizardFileMerge/gwizardmergedialog.py:599
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Current Family Tree"
-msgstr "Bovenliggende familie"
+msgstr "Huidige Family Tree"
 
 #: GWizardFileMerge/gwizardmergedialog.py:767
-#, fuzzy
-#| msgid "No Source"
 msgid "Name Sources"
-msgstr "Geen bron"
+msgstr "Bronnen van namen"
 
 #: GWizardFileMerge/gwizardmergedialog.py:807
-#, fuzzy
-#| msgid "No Source"
 msgid "Person Sources"
-msgstr "Geen bron"
+msgstr "Bronnen van personen"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1093
-#, fuzzy
-#| msgid "="
 msgid "=>"
-msgstr "="
+msgstr "=>"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1094
-#, fuzzy, python-format
-#| msgid "The center family for the tree"
+#, python-format
 msgid "Move %s to current family tree"
-msgstr "Het centrale gezin voor de boom"
+msgstr "%s verplaatsen naar de huidige stamboom"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1102
 msgid "✓"
-msgstr ""
+msgstr "✓"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1286
-#, fuzzy, python-format
-#| msgid "Citations:"
+#, python-format
 msgid "%d Citations"
-msgstr "Citaten:"
+msgstr "%d Citaten"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1288
-#, fuzzy, python-format
-#| msgid "Sources?"
+#, python-format
 msgid "%d Sources"
-msgstr "Bronnen?"
+msgstr "%d Bronnen"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1290
-#, fuzzy, python-format
-#| msgid "Notes:"
+#, python-format
 msgid "%d Notes"
-msgstr "Opmerkingen:"
+msgstr "%d Opmerkingen"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1292
-#, fuzzy, python-format
-#| msgid "Media Report"
+#, python-format
 msgid "%d Media Records"
-msgstr "Media Rapport"
+msgstr "%d Mediaregistraties"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1294
-#, fuzzy, python-format
-#| msgid "repositories"
+#, python-format
 msgid "%d Repositories"
-msgstr "bibliotheken"
+msgstr "%d Opslagplaatsen"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1297
 #, python-format
@@ -16535,6 +16459,14 @@ msgid ""
 "with your selected details. Do you confirm importing these missing "
 "references?"
 msgstr ""
+"De gegevens die worden samengevoegd bevatten verwijzingen naar externe "
+"objecten die niet in uw stamboom voorkomen:\n"
+"\n"
+"%s\n"
+"\n"
+"Om verbroken connecties te voorkomen, moeten deze ontbrekende referenties "
+"samen met de door u geselecteerde gegevens worden geïmporteerd. Bevestigt u "
+"het importeren van deze ontbrekende referenties?"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1310
 #, python-format
@@ -16545,11 +16477,15 @@ msgid_plural ""
 "%d sources already in your family tree will be reused (matched by title, "
 "author and publication info)."
 msgstr[0] ""
+"%d bron reeds in uw stamboom zal worden hergebruikt (gematcht op titel, "
+"auteur en publicatie info)."
 msgstr[1] ""
+"%d bronnen reeds in uw stamboom zullen worden hergebruikt (gematcht op "
+"titel, auteur en publicatie info)."
 
 #: GWizardFileMerge/gwizardmergedialog.py:1324
 msgid "Confirm Importing Missing References"
-msgstr ""
+msgstr "Bevestig het importeren van ontbrekende referenties"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
@@ -21626,11 +21562,11 @@ msgstr "Lengte-en breedtegraad"
 
 #: PersonEverything/PersonEverything.py:649
 msgid "Repository type"
-msgstr "Bibliotheektype"
+msgstr "Type opslagplaats"
 
 #: PersonEverything/PersonEverything.py:671
 msgid "Repository reference"
-msgstr "Bibliotheekreferentie"
+msgstr "Opslagplaatsreferentie"
 
 #: PersonEverything/PersonEverything.py:672
 msgid "Media type"
@@ -24065,23 +24001,23 @@ msgstr "Label '{}' was {} naar {} {} objecten.\n"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 msgid "Repositories Report Options"
-msgstr "Verslagopties voor bibliotheken"
+msgstr "Verslagopties voor opslagplaatsen"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:27
 #: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
-msgstr "Produceert een tekstueel bibliotheekverslag"
+msgstr "Produceert een tekstueel opslagplaatsverslag"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:45
 #: RepositoriesReport/RepositoriesReport.py:80
 #: RepositoriesReport/RepositoriesReportAlt.py:139
 msgid "Repositories Report"
-msgstr "Bibliotheekverslag"
+msgstr "Opslagplaatsverslag"
 
 #: RepositoriesReport/RepositoriesReport.py:189
 #: RepositoriesReport/RepositoriesReportAlt.py:523
 msgid "The style used for repository title."
-msgstr "De stijl die wordt gebruikt voor de titel van de bibliotheek."
+msgstr "De stijl die wordt gebruikt voor de titel van de opslagplaats."
 
 #: RepositoriesReport/RepositoriesReport.py:203
 #: RepositoriesReport/RepositoriesReportAlt.py:538
@@ -24111,19 +24047,19 @@ msgstr "Selectie met een filter"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Include repository's urls"
-msgstr "Voeg de urls van de bibliotheek toe"
+msgstr "Urls van opslagplaatsen toe voegen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:437
 msgid "Whether to include urls on repository."
-msgstr "Of URL's in de opslagplaats moeten worden opgenomen."
+msgstr "Of URL's naar de opslagplaats moeten worden opgenomen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Include repository's address"
-msgstr "Voeg het adres van de bibliotheek toe"
+msgstr "Adres van opslagplaats toevoegen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:441
 msgid "Whether to include addresses on repository."
-msgstr "Of adressen in de bibliotheek moeten worden opgenomen."
+msgstr "Of adressen naar de opslagplaatsen moeten worden opgenomen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Include source's author"
@@ -24159,7 +24095,7 @@ msgstr "Of sleutels en waarden moeten worden opgenomen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:461
 msgid "Whether to include notes on repositories and sources."
-msgstr "Of opmerkingen over bibliotheken en bronnen moeten worden opgenomen."
+msgstr "Of opmerkingen over opslagplaatsen en bronnen moeten worden opgenomen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:465
 msgid "Whether to include media."
@@ -24176,7 +24112,7 @@ msgstr "Of er broncitaten moeten worden opgenomen."
 #: RepositoriesReport/RepositoriesReportAlt.py:473
 msgid "Whether to include repositories and sources marked as private."
 msgstr ""
-"Of bibliotheken en bronnen die als privé zijn gemarkeerd moeten worden "
+"Of opslagplaatsen en bronnen die als privé zijn gemarkeerd moeten worden "
 "opgenomen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:476
@@ -24554,7 +24490,7 @@ msgstr "Overige:"
 
 #: SourceIndex/birth.glade:351
 msgid "Repository title"
-msgstr "Bibliotheektitel"
+msgstr "Titel van opslagplaats"
 
 #: SourceIndex/birth.glade:388 SourceIndex/census.glade:973
 #: SourceIndex/death.glade:589 SourceIndex/marriage.glade:234
@@ -24563,7 +24499,7 @@ msgstr "<b>Afbeelding</b>"
 
 #: SourceIndex/birth.glade:406
 msgid "<b><i>Repository</i></b>"
-msgstr "<b><i>Bibliotheek</i></b>"
+msgstr "<b><i>Opslagplaats</i></b>"
 
 #: SourceIndex/birth.glade:421
 msgid ""
@@ -24623,7 +24559,7 @@ msgstr "Belnummer:"
 
 #: SourceIndex/birth.glade:887
 msgid "The call number into the repository"
-msgstr "Het oproepnummer in de bibliotheek"
+msgstr "Het oproepnummer in de opslagplaats"
 
 #: SourceIndex/birth.glade:925
 msgid "<b><i>Data person</i></b>"
@@ -24700,7 +24636,7 @@ msgstr "<b>Volkstelling</b>"
 #: SourceIndex/census.glade:176 SourceIndex/death.glade:607
 #: SourceIndex/marriage.glade:185
 msgid "<b>Repository</b>"
-msgstr "<b>Bibliotheek</b>"
+msgstr "<b>Opslagplaats</b>"
 
 #: SourceIndex/census.glade:221 SourceIndex/death.glade:432
 #: SourceIndex/death.glade:636 SourceIndex/death.glade:873
@@ -24914,11 +24850,11 @@ msgstr "Selecteer een volkstellingsbron"
 
 #: SourceIndex/index.glade:800
 msgid "Select a repository storing a source"
-msgstr "Selecteer een bibliotheek dat een bron bevat"
+msgstr "Selecteer een opslagplaats dat een bron bevat"
 
 #: SourceIndex/index.glade:829
 msgid "repositories"
-msgstr "bibliotheken"
+msgstr "opslagplaatsen"
 
 #: SourceIndex/index.glade:869
 msgid "Selected view"
@@ -24930,8 +24866,8 @@ msgid ""
 "fields: id, repository, person name, birth date and place, parents."
 msgstr ""
 "Registreert transcripties ... geboorten/sterfgevallen/huwelijken/"
-"volkstellingen met gemeenschappelijke velden: id, bibliotheek, persoonsnaam, "
-"geboortedatum en -plaats, ouders."
+"volkstellingen met gemeenschappelijke velden: id, opslagplaats, "
+"persoonsnaam, geboortedatum en -plaats, ouders."
 
 #: SourceIndex/index.py:407
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -26487,7 +26423,7 @@ msgstr "Locatietypen"
 
 #: TypeCleanup/type_cleanup.py:109
 msgid "Repository Types"
-msgstr "Bibliotheektypen"
+msgstr "Typen opslagplaatsen"
 
 #: TypeCleanup/type_cleanup.py:111
 msgid "Source Media Types"
@@ -27576,7 +27512,7 @@ msgid ""
 "Number of repositories : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Aantal bibliotheken : \n"
+"Aantal opslagplaatsen : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:576
