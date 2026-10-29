@@ -7,13 +7,14 @@
 # Jozef Riha, 2017.
 # Milan <mobrcian@hotmail.com>, 2025, 2026.
 # Jozef Gaal <preklady@mayday.sk>, 2025.
+# Milan <milan@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-27 07:51+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-10-26 09:44-0700\n"
+"PO-Revision-Date: 2026-10-27 21:51+0000\n"
+"Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -2147,6 +2148,7 @@ msgid "Abandon"
 msgstr "Opustiť"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
+#: GWizardFileMerge/gwizardmergedialog.py:537
 msgid "New person"
 msgstr "Nová osoba"
 
@@ -3575,7 +3577,7 @@ msgstr ""
 "manželstvám medzi rodinami (napríklad medzi bratrancami a sesternicami).  V "
 "takomto prípade sa pre túto osobu zobrazí aj tlačidlo  "
 "___NAV_BUTTON_CONTINUE___ alebo ___NAV_BUTTON_ALT___  na prechod do inej "
-"vetvy.  Iba jedna vetva rozbalí potomkov tejto osoby. "
+"vetvy.  Potomkov tejto osoby rozbalí iba jedna vetva. "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
@@ -15983,6 +15985,369 @@ msgstr ""
 "Zodpovedá objektom, pre ktoré sa daný výraz WHERE v Gramps Object Query "
 "Language vyhodnotí ako pravdivý"
 
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:19
+msgid "GWizard File Merge"
+msgstr "GWizard Zlúčenie súborov"
+
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:21
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+"Nástroj na spracovanie rodostromu, ktorý umožňuje porovnať iný genealogický "
+"súbor (GEDCOM, Gramps XML, ...) vedľa otvoreného rodostromu a zlúčiť vybrané "
+"rozdiely po jednotlivých osobách."
+
+#: GWizardFileMerge/gwizard.py:120
+msgid "Configure Connection"
+msgstr "Konfigurácia pripojenia"
+
+#: GWizardFileMerge/gwizard.py:121
+msgid "Load Data"
+msgstr "Načítanie údajov"
+
+#: GWizardFileMerge/gwizard.py:122
+msgid "Find Matching Persons"
+msgstr "Vyhľadanie zodpovedajúcich osôb"
+
+#: GWizardFileMerge/gwizard.py:123
+msgid "Compare Differences"
+msgstr "Porovnanie rozdielov"
+
+#: GWizardFileMerge/gwizard.py:124
+msgid "Apply Changes"
+msgstr "Aplikovanie zmien"
+
+#: GWizardFileMerge/gwizard.py:137
+msgid "Configure file path or authenticate with online service."
+msgstr "Konfigurujte cestu k súboru alebo sa autentifikujte u online služby."
+
+#: GWizardFileMerge/gwizard.py:138
+msgid "Load/parse the external genealogy data into memory."
+msgstr "Načítajte/spracujte externé genealogické údaje do pamäte."
+
+#: GWizardFileMerge/gwizard.py:139
+msgid "Search for potential matches in your database."
+msgstr "Hľadajte potenciálne zhody vo svojej databáze."
+
+#: GWizardFileMerge/gwizard.py:140
+msgid "Compare fields side-by-side between the source and target."
+msgstr "Porovnajte vedľa seba polia medzi zdrojom a cieľom."
+
+#: GWizardFileMerge/gwizard.py:141
+msgid "Merge selected changes or add new records to the database."
+msgstr "Zlúčte vybrané zmeny alebo pridajte nové záznamy do databázy."
+
+#: GWizardFileMerge/gwizardcompare.py:167
+#: GWizardFileMerge/gwizardcompare.py:187
+msgid "GWizard Compare"
+msgstr "Porovnanie GWizard"
+
+#: GWizardFileMerge/gwizardcompare.py:173
+msgid "No source database available for comparison"
+msgstr "Na porovnanie nie je k dispozícii zdrojová databáza"
+
+#: GWizardFileMerge/gwizardcompare.py:208
+#: GWizardFileMerge/gwizardmergedialog.py:586
+msgid "Incoming GEDCOM"
+msgstr "Vstupný GEDCOM"
+
+#: GWizardFileMerge/gwizardcompare.py:213
+#: GWizardFileMerge/gwizardmergedialog.py:593
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr "Vstupný GEDCOM: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:215
+#: GWizardFileMerge/gwizardmergedialog.py:597
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr "Aktuálny rodostrom: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:426
+msgid "Populate Failed"
+msgstr "Naplnenie zlyhalo"
+
+#: GWizardFileMerge/gwizardcompare.py:876
+msgid "Merge..."
+msgstr "Zlúčiť..."
+
+#: GWizardFileMerge/gwizardcompare.py:878
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr "Otvorí dialóg zlúčenia po jednotlivých poliach pre vybranú dvojicu"
+
+#: GWizardFileMerge/gwizardcompare.py:883
+#: GWizardFileMerge/gwizardcompare.py:1224
+msgid "Add as New..."
+msgstr "Pridať ako novú..."
+
+#: GWizardFileMerge/gwizardcompare.py:885
+#: GWizardFileMerge/gwizardcompare.py:1226
+msgid "Add the selected incoming person as a new person"
+msgstr "Pridá vybranú vstupnú osobu ako novú osobu"
+
+#: GWizardFileMerge/gwizardcompare.py:926
+msgid "Record"
+msgstr "Záznam"
+
+#: GWizardFileMerge/gwizardcompare.py:932
+msgid "Born"
+msgstr "Narodenie"
+
+#: GWizardFileMerge/gwizardcompare.py:933
+msgid "Died"
+msgstr "Úmrtie"
+
+#: GWizardFileMerge/gwizardcompare.py:975
+#: GWizardFileMerge/gwizardmergedialog.py:740
+msgid "Individual Details"
+msgstr "Podrobnosti o osobe"
+
+#: GWizardFileMerge/gwizardcompare.py:976
+#: GWizardFileMerge/gwizardmergedialog.py:813
+msgid "Family Relations"
+msgstr "Rodinné vzťahy"
+
+#: GWizardFileMerge/gwizardcompare.py:978
+#: GWizardFileMerge/gwizardmergedialog.py:859
+msgid "Events & Other Records"
+msgstr "Udalosti a iné záznamy"
+
+#: GWizardFileMerge/gwizardcompare.py:1216
+msgid "Not a Match"
+msgstr "Nie je zhoda"
+
+#: GWizardFileMerge/gwizardcompare.py:1219
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+"Ide o rôznych ľudí: zrušte ich spárovanie, aby bolo možné vstupnú osobu "
+"pridať ako novú"
+
+#: GWizardFileMerge/gwizardcompare.py:1232
+#, python-format
+msgid "Differences: %d of %d"
+msgstr "Rozdiely: %d z %d"
+
+#: GWizardFileMerge/gwizardcompare.py:1484
+msgid "(none)"
+msgstr "(žiadne)"
+
+#: GWizardFileMerge/gwizardcompare.py:1648
+#, python-format
+msgid "Gender: %s"
+msgstr "Pohlavie: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1650
+#, python-format
+msgid "ID: %s"
+msgstr "ID: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1677
+#, python-format
+msgid "FamilySearch: %s"
+msgstr "FamilySearch: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1751
+#: GWizardFileMerge/gwizardcompare.py:1768
+#: GWizardFileMerge/gwizardmergedialog.py:451
+#, python-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:2008
+msgid "Add as New failed"
+msgstr "Pridanie ako novej osoby zlyhalo"
+
+#: GWizardFileMerge/gwizardgedcom.py:351
+#: GWizardFileMerge/gwizardmergedialog.py:745
+msgid "Given Name"
+msgstr "Dané (krstné) meno"
+
+#: GWizardFileMerge/gwizardgedcom.py:377
+#: GWizardFileMerge/gwizardmergedialog.py:761
+msgid "Surname Prefix"
+msgstr "Predpona priezviska"
+
+#: GWizardFileMerge/gwizardgedcom.py:1068
+msgid "GWizard Data Merge"
+msgstr "Zlúčenie údajov GWizard"
+
+#: GWizardFileMerge/gwizardlauncher.py:113
+msgid "Genealogy files"
+msgstr "Genealogické súbory"
+
+#: GWizardFileMerge/gwizardlauncher.py:129
+msgid "Select File to Compare"
+msgstr "Vyberte súbor na porovnanie"
+
+#: GWizardFileMerge/gwizardlauncher.py:158
+msgid "The selected file is missing."
+msgstr "Vybraný súbor chýba."
+
+#: GWizardFileMerge/gwizardlauncher.py:161
+msgid "Could not read the selected file."
+msgstr "Vybraný súbor se nepodarilo prečítať."
+
+#: GWizardFileMerge/gwizardlauncher.py:201
+msgid "Loading Data Merge"
+msgstr "Načítavanie zlúčenia údajov"
+
+#: GWizardFileMerge/gwizardlauncher.py:202
+#: GWizardFileMerge/gwizardlauncher.py:206
+msgid "Reading the selected file..."
+msgstr "Čítanie vybraného súboru..."
+
+#: GWizardFileMerge/gwizardlauncher.py:214
+msgid "Load Failed"
+msgstr "Načítanie zlyhalo"
+
+#: GWizardFileMerge/gwizardlauncher.py:216
+msgid "Building the comparison window..."
+msgstr "Vytváranie okna porovnania..."
+
+#: GWizardFileMerge/gwizardmergedialog.py:256
+msgid "Untitled source"
+msgstr "Zdroj bez názvu"
+
+#: GWizardFileMerge/gwizardmergedialog.py:265
+#, python-format
+msgid "page %s"
+msgstr "strana %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:287
+#, python-format
+msgid "via %s"
+msgstr "cez %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:315
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "žiadne"
+
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#, python-format
+msgid "Sources: %s"
+msgstr "Zdroje: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:377
+msgid "GWizard Merge"
+msgstr "Zlúčenie GWizard"
+
+#: GWizardFileMerge/gwizardmergedialog.py:385
+msgid "No source database available for merge"
+msgstr "Na zlúčenie nie je k dispozícii zdrojová databáza"
+
+#: GWizardFileMerge/gwizardmergedialog.py:394
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr "Zdrojová osoba už neexistuje: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:400
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr "Cieľová osoba už neexistuje: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:531
+msgid "→"
+msgstr "→"
+
+#: GWizardFileMerge/gwizardmergedialog.py:599
+msgid "Current Family Tree"
+msgstr "Aktuálny rodostrom"
+
+#: GWizardFileMerge/gwizardmergedialog.py:767
+msgid "Name Sources"
+msgstr "Zdroje mena"
+
+#: GWizardFileMerge/gwizardmergedialog.py:807
+msgid "Person Sources"
+msgstr "Zdroje osoby"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1093
+msgid "=>"
+msgstr "=>"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1094
+#, python-format
+msgid "Move %s to current family tree"
+msgstr "Presunúť %s do aktuálneho rodostromu"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1102
+msgid "✓"
+msgstr "✓"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1286
+#, python-format
+msgid "%d Citations"
+msgstr "Počet citácií: %d"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1288
+#, python-format
+msgid "%d Sources"
+msgstr "Počet zdrojov: %d"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1290
+#, python-format
+msgid "%d Notes"
+msgstr "Počet poznámok: %d"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1292
+#, python-format
+msgid "%d Media Records"
+msgstr "Počet mediálnych záznamov: %d"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1294
+#, python-format
+msgid "%d Repositories"
+msgstr "Počet repozitárov: %d"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1297
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+"Údaje, ktoré sa zlučujú, obsahujú odkazy na externé objekty, ktoré vo vašom "
+"rodostrome neexistujú:\n"
+"\n"
+"%s\n"
+"\n"
+"Aby sa predišlo nefunkčným odkazom, tieto chýbajúce odkazy musia byť "
+"importované spolu s vybranými detailami. Potvrdzujete import týchto "
+"chýbajúcich odkazov?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1310
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+"%d zdroj, ktorý je už vo vašom rodostromel, bude znovu použitý (zhoda podľa "
+"názvu, autora a publikačných informácií)."
+msgstr[1] ""
+"%d zdroje, ktoré sú už vo vašom rodostrome, budú znovu použité (zhoda podľa "
+"názvu, autora a publikačných informácií)."
+msgstr[2] ""
+"%d zdrojov, ktoré sú už vo vašom rodostrome, bude znovu použitých (zhoda "
+"podľa názvu, autora a publikačných informácií)."
+
+#: GWizardFileMerge/gwizardmergedialog.py:1324
+msgid "Confirm Importing Missing References"
+msgstr "Potvrdenie importovania chýbajúcich odkazov"
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "Export rozšíření GEDCOM (GED2)"
@@ -16594,8 +16959,8 @@ msgid ""
 "account's."
 msgstr ""
 "Tento rodostrom sa volá „%(actual)s“, ale GRAMPS_WEB_API_KEY ho momentálne "
-"overuje ako „%(expected)s“. Premenujte tento rodostrom na „%"
-"(expected_typeable)s“ (Rodostromy → Správa rodostromov), ak má zrkadliť "
+"overuje ako „%(expected)s“. Premenujte tento rodostrom na "
+"„%(expected_typeable)s“ (Rodostromy → Správa rodostromov), ak má zrkadliť "
 "tento účet, alebo otvorte/vytvorte rodostrom, ktorý už je tak pomenovaný -- "
 "opätovné použitie tohto stromu by zmiešalo jeho existujúce lokálne údaje s "
 "údajmi iného účtu."
@@ -16610,10 +16975,10 @@ msgid ""
 "incomplete or unable to save changes back."
 msgstr ""
 "Účet overujúci sa cez GRAMPS_WEB_API_KEY nemá serverové oprávnenia, ktoré "
-"tento doplnok vyžaduje: %(missing)s. Udeľte mu na serveri aspoň rolu „%(role)"
-"s“ (alebo požiadajte administrátora), potom znova otvorte tento rodostrom. "
-"Otvorenie v aktuálnom stave by spôsobilo, že lokálna kópia by zostala "
-"neúplná alebo by nebolo možné uložiť zmeny späť."
+"tento doplnok vyžaduje: %(missing)s. Udeľte mu na serveri aspoň rolu "
+"„%(role)s“ (alebo požiadajte administrátora), potom znova otvorte tento "
+"rodostrom. Otvorenie v aktuálnom stave by spôsobilo, že lokálna kópia by "
+"zostala neúplná alebo by nebolo možné uložiť zmeny späť."
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -19160,10 +19525,6 @@ msgstr "Odstupňovanie čiar"
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
 msgstr "Šírku čiar je možné konfigurovať."
-
-#: LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
-msgstr "žiadne"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
@@ -22624,10 +22985,10 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V "
-"posledných verziách programu Gramps nájdete v menu Rodostrom možnosť "
-"\"Vytvoriť zálohu...\", v opačnom prípade použite v tom istom menu možnosť "
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V posledných "
+"verziách programu Gramps nájdete v menu Rodostrom možnosť \"Vytvoriť "
+"zálohu...\", v opačnom prípade použite v tom istom menu možnosť "
 "\"Exportovať...\", ale zrušte označenie volieb ochrany osobných údajov v "
 "Asistentovi exportéra, aby ste exportovali všetky údaje.</i>\n"
 "\n"
@@ -24608,6 +24969,389 @@ msgstr "SQLite je bežný formát lokálnej databázy"
 msgid "SQLite Export"
 msgstr "Export SQLite"
 
+#: StoryExport/StoryExport.gpr.py:24 StoryExport/StoryExport.py:170
+#: StoryExport/StoryExport.py:281
+msgid "Generate Story"
+msgstr "Generovanie príbehu"
+
+#: StoryExport/StoryExport.gpr.py:26
+msgid ""
+"Generates the story of a person or a family (.story.zip): a slideshow of "
+"their events with dates, places and photos, for the Gramps Connect Story "
+"Viewer"
+msgstr ""
+"Vygeneruje príbeh osoby alebo rodiny (.story.zip): prezentáciu ich udalostí "
+"s dátumami, miestami a fotografiami pre Gramps Connect Story Viewer"
+
+#: StoryExport/StoryExport.py:82
+msgid "Select the person whose story to generate, then try again."
+msgstr "Vyberte osobu, ktorej príbeh chcete vygenerovať, a skúste to znova."
+
+#: StoryExport/StoryExport.py:98 StoryExport/StoryExport.py:114
+msgid "Couldn't generate the story"
+msgstr "Príbeh sa nepodarilo vygenerovať"
+
+#: StoryExport/StoryExport.py:117
+msgid "Story saved"
+msgstr "Príbeh bol uložený"
+
+#: StoryExport/StoryExport.py:120
+#, python-format
+msgid ""
+"%(count)d slides saved to %(path)s.\n"
+"\n"
+"Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+msgstr ""
+"%(count)d snímok uložených do %(path)s.\n"
+"\n"
+"Otvorte v Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+
+#: StoryExport/StoryExport.py:126
+msgid "_Open in Browser"
+msgstr "_Otvorenie v prehliadači"
+
+#: StoryExport/StoryExport.py:159
+msgid "Story"
+msgstr "Príbeh"
+
+#: StoryExport/StoryExport.py:180
+msgid "Generate the story of:"
+msgstr "Vygenerovať príbeh:"
+
+#: StoryExport/StoryExport.py:185
+#, python-format
+msgid "Family: %s"
+msgstr "Rodina: %s"
+
+#: StoryExport/StoryExport.py:195
+msgid "Include families"
+msgstr "Zahrnúť rodiny"
+
+#: StoryExport/StoryExport.py:198
+msgid ""
+"Also draw on this person's own families: a spouse's and children's births "
+"and deaths, and their parents' and siblings'."
+msgstr ""
+"Tiež zahrnúť vlastné rodiny tejto osoby: narodenie a úmrtie manžela/manželky "
+"a detí, ako aj ich rodičov a súrodencov."
+
+#: StoryExport/StoryExport.py:223
+msgid "Include each person's own birth and death in this family's story:"
+msgstr ""
+"Zahrnúť vlastné narodenie a úmrtie každej osoby do príbehu tejto rodiny:"
+
+#: StoryExport/StoryExport.py:248
+msgid "Include living people (and photos they appear in)"
+msgstr "Zahrnúť žijúce osoby (a fotografie, na ktorých sa vyskytujú)"
+
+#: StoryExport/StoryExport.py:292
+msgid "Stories (*.story.zip)"
+msgstr "Príbehy (*.story.zip)"
+
+#: StoryExport/storyexport_builder.py:427
+msgid ""
+"This family is marked private. To generate its story, check \"Include data "
+"marked private\"."
+msgstr ""
+"Táto rodina je označená ako súkromná. Na vygenerovanie jej príbehu "
+"začiarknite „Zahrnúť údaje označené ako súkromné“."
+
+#: StoryExport/storyexport_builder.py:438
+#, python-format
+msgid ""
+"%s is marked private. To generate their story, check \"Include data marked "
+"private\"."
+msgstr ""
+"%s je označená ako súkromná. Na vygenerovanie ich príbehu začiarknite „"
+"Zahrnúť údaje označené ako súkromné“."
+
+#: StoryExport/storyexport_builder.py:446
+#, python-format
+msgid ""
+"%s is probably living. To generate their story, check \"Include living "
+"people\"."
+msgstr ""
+"%s pravdepodobne žije. Na vygenerovanie ich príbehu začiarknite „Zahrnúť "
+"žijúce osoby“."
+
+#: StoryExport/storyexport_builder.py:460
+#, python-format
+msgid "%(who)s was born"
+msgstr "%(who)s sa narodil/a"
+
+#: StoryExport/storyexport_builder.py:461
+#, python-format
+msgid "%(who)s was stillborn"
+msgstr "%(who)s sa narodil/a mŕtvy/a"
+
+#: StoryExport/storyexport_builder.py:462
+#, python-format
+msgid "%(who)s was baptized"
+msgstr "%(who)s bol/a krstený/á"
+
+#: StoryExport/storyexport_builder.py:463
+#: StoryExport/storyexport_builder.py:464
+#, python-format
+msgid "%(who)s was christened"
+msgstr "%(who)s bol/a pokrstený/á"
+
+#: StoryExport/storyexport_builder.py:465
+#, python-format
+msgid "%(who)s was blessed"
+msgstr "%(who)s bol/a požehnaný/á"
+
+#: StoryExport/storyexport_builder.py:466
+#, python-format
+msgid "%(who)s was confirmed"
+msgstr "%(who)s bol/a birmovaný/á"
+
+#: StoryExport/storyexport_builder.py:467
+#, python-format
+msgid "%(who)s took First Communion"
+msgstr "%(who)s prijal/a prvé sväté prijímanie"
+
+#: StoryExport/storyexport_builder.py:468
+#, python-format
+msgid "%(who)s celebrated their Bar Mitzvah"
+msgstr "%(who)s slávil/a ich bar micvu"
+
+#: StoryExport/storyexport_builder.py:469
+#, python-format
+msgid "%(who)s celebrated their Bas Mitzvah"
+msgstr "%(who)s slávil/a ich bat micvu"
+
+#: StoryExport/storyexport_builder.py:470
+#, python-format
+msgid "%(who)s was adopted"
+msgstr "%(who)s bol/a adoptovaný/á"
+
+#: StoryExport/storyexport_builder.py:471
+#, python-format
+msgid "%(who)s graduated"
+msgstr "'%(who)s absolvoval/a"
+
+#: StoryExport/storyexport_builder.py:472
+#, python-format
+msgid "%(who)s was awarded a degree"
+msgstr "%(who)s získal/a titul"
+
+#: StoryExport/storyexport_builder.py:473
+#, python-format
+msgid "%(who)s emigrated"
+msgstr "%(who)s emigroval/a"
+
+#: StoryExport/storyexport_builder.py:474
+#, python-format
+msgid "%(who)s immigrated"
+msgstr "%(who)s imigroval/a"
+
+#: StoryExport/storyexport_builder.py:475
+#, python-format
+msgid "%(who)s was naturalized"
+msgstr "%(who)s bol/a naturalizovaný/á"
+
+#: StoryExport/storyexport_builder.py:476
+#, python-format
+msgid "%(who)s was ordained"
+msgstr "%(who)s bol/a vysvätený/á"
+
+#: StoryExport/storyexport_builder.py:477
+#, python-format
+msgid "%(who)s was elected"
+msgstr "%(who)s bol/a zvolený/á"
+
+#: StoryExport/storyexport_builder.py:478
+#, python-format
+msgid "%(who)s retired"
+msgstr "%(who)s odišiel/odišla do dôchodku"
+
+#: StoryExport/storyexport_builder.py:479
+#, python-format
+msgid "%(who)s died"
+msgstr "%(who)s zomrel/a"
+
+#: StoryExport/storyexport_builder.py:480
+#, python-format
+msgid "%(who)s was buried"
+msgstr "%(who)s bol/a pochovaný/á"
+
+#: StoryExport/storyexport_builder.py:481
+#, python-format
+msgid "%(who)s was cremated"
+msgstr "%(who)s bol/a spopolnený/á"
+
+#: StoryExport/storyexport_builder.py:482
+#, python-format
+msgid "%(who)s had their estate probated"
+msgstr "%(who)s mal/a dedičské konanie o ich majetku"
+
+#: StoryExport/storyexport_builder.py:487
+#: StoryExport/storyexport_builder.py:488
+#, python-format
+msgid "%(who)s were married"
+msgstr "%(who)s sa zosobášili"
+
+#: StoryExport/storyexport_builder.py:489
+#, python-format
+msgid "%(who)s had their banns read"
+msgstr "%(who)s mali vyhlásené ohlášky"
+
+#: StoryExport/storyexport_builder.py:490
+#, python-format
+msgid "%(who)s signed a marriage contract"
+msgstr "%(who)s uzavreli manželskú dohodu"
+
+#: StoryExport/storyexport_builder.py:491
+#, python-format
+msgid "%(who)s took out a marriage license"
+msgstr "%(who)s získali povolenie na sobáš"
+
+#: StoryExport/storyexport_builder.py:492
+#, python-format
+msgid "%(who)s agreed a marriage settlement"
+msgstr "%(who)s uzavreli manželskú dohodu o majetku"
+
+#: StoryExport/storyexport_builder.py:493
+#, python-format
+msgid "%(who)s were engaged"
+msgstr "%(who)s sa zasnúbili"
+
+#: StoryExport/storyexport_builder.py:494
+#, python-format
+msgid "%(who)s were divorced"
+msgstr "%(who)s sa rozviedli"
+
+#: StoryExport/storyexport_builder.py:495
+#, python-format
+msgid "%(who)s filed for divorce"
+msgstr "%(who)s podal/a žiadosť o rozvod"
+
+#: StoryExport/storyexport_builder.py:496
+#, python-format
+msgid "%(who)s had their marriage annulled"
+msgstr "%(who)s mali ich manželstvo anulované"
+
+#: StoryExport/storyexport_builder.py:497
+#, python-format
+msgid "%(who)s were recorded in the census"
+msgstr "%(who)s boli zaznamenaní v sčítaní ľudu"
+
+#: StoryExport/storyexport_builder.py:498
+#, python-format
+msgid "%(who)s lived"
+msgstr "%(who)s žili"
+
+#: StoryExport/storyexport_builder.py:530
+#, python-format
+msgid "%(names)s and %(last)s"
+msgstr "%(names)s a %(last)s"
+
+#: StoryExport/storyexport_builder.py:568
+#, python-format
+msgid "%(type)s (%(role)s)"
+msgstr "%(type)s (%(role)s)"
+
+#: StoryExport/storyexport_builder.py:570
+#: StoryExport/storyexport_builder.py:589
+#, python-format
+msgid "%(type)s of %(who)s"
+msgstr "%(type)s osoby %(who)s"
+
+#: StoryExport/storyexport_builder.py:581
+#, python-format
+msgid "%(who)s took part in this %(type)s as %(role)s"
+msgstr "%(who)s sa zúčastnil/a tejto udalosti %(type)s ako %(role)s"
+
+#: StoryExport/storyexport_builder.py:595
+#, python-format
+msgid "%(moment)s on %(date)s"
+msgstr "%(moment)s dňa %(date)s"
+
+#: StoryExport/storyexport_builder.py:597
+#, python-format
+msgid "%(moment)s in %(date)s"
+msgstr "%(moment)s v %(date)s"
+
+#: StoryExport/storyexport_builder.py:599
+#, python-format
+msgid "%(moment)s %(date)s"
+msgstr "%(moment)s %(date)s"
+
+#: StoryExport/storyexport_builder.py:602
+#, python-format
+msgid "%(moment)s in %(place)s"
+msgstr "%(moment)s v %(place)s"
+
+#: StoryExport/storyexport_builder.py:750
+#, python-format
+msgid "%d moment"
+msgid_plural "%d moments"
+msgstr[0] "%d moment"
+msgstr[1] "%d momenty"
+msgstr[2] "%d momentov"
+
+#: StoryExport/storyexport_builder.py:790
+msgid "This person isn't included with the chosen privacy settings."
+msgstr "Táto osoba nie je zahrnutá podľa zvolených nastavení súkromia."
+
+#: StoryExport/storyexport_builder.py:810
+#, python-format
+msgid "%s has no events to build a story from."
+msgstr "%s nemá žiadne udalosti, z ktorých by sa dal vytvoriť príbeh."
+
+#: StoryExport/storyexport_builder.py:813
+#: StoryExport/storyexport_builder.py:862
+#, python-format
+msgid "The Story of %s"
+msgstr "Príbeh osoby %s"
+
+#: StoryExport/storyexport_builder.py:817
+#, python-format
+msgid "%(moments)s from %(name)s's recorded life."
+msgstr "%(moments)s zo zaznamenaného života osoby %(name)s."
+
+#: StoryExport/storyexport_builder.py:840
+msgid "This family isn't included with the chosen privacy settings."
+msgstr "Táto rodina nie je zahrnutá podľa zvolených nastavení súkromia."
+
+#: StoryExport/storyexport_builder.py:844
+msgid "this family"
+msgstr "táto rodina"
+
+#: StoryExport/storyexport_builder.py:854
+msgid ""
+"This family has no events to build a story from: not on the family itself, "
+"and no births or deaths recorded for its members."
+msgstr ""
+"Táto rodina nemá žiadne udalosti, z ktorých by sa dal vytvoriť príbeh: ani "
+"samotná rodina, ani jej členovia nemajú zaznamenané žiadne narodenie či "
+"úmrtie."
+
+#: StoryExport/storyexport_builder.py:865
+#, python-format
+msgid "%(moments)s from the life of %(couple)s and %(children)s."
+msgstr "%(moments)s zo života páru %(couple)s a %(children)s."
+
+#: StoryExport/storyexport_builder.py:869
+#, python-format
+msgid "their child"
+msgid_plural "their %(count)d children"
+msgstr[0] "ich dieťa"
+msgstr[1] "ich %(count)d deti"
+msgstr[2] "ich %(count)d detí"
+
+#: StoryExport/storyexport_builder.py:874
+#, python-format
+msgid "%(moments)s from the life of %(couple)s."
+msgstr "%(moments)s zo života páru %(couple)s."
+
+#: StoryExport/storyexport_builder.py:888
+#, python-format
+msgid "Family %s"
+msgstr "Rodina %s"
+
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
 msgid "Surname Mapping"
@@ -25376,16 +26120,16 @@ msgstr ""
 #, python-format
 msgid "%(male_name)s obtained a marriage settlement in %(year)s at %(place)s."
 msgstr ""
-"%(male_name)s získal manželskú dohodu o vysporiadaní v roku %(year)s v "
-"mieste %(place)s."
+"%(male_name)s obdržal manželskú dohodu o majetku v roku %(year)s v mieste %"
+"(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:666
 #, python-format
 msgid ""
 "%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s získala manželskú dohodu o vysporiadaní v roku %(year)s v "
-"mieste %(place)s."
+"%(female_name)s obdržala manželskú dohodu o majetku v roku %(year)s v mieste "
+"%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:670
 #, python-format
@@ -27336,9 +28080,6 @@ msgstr ""
 
 #~ msgid "Search"
 #~ msgstr "Vyhľadávanie"
-
-#~ msgid "Merge"
-#~ msgstr "Zlúčiť"
 
 #~ msgid "Wordle"
 #~ msgstr "Wordle"
