@@ -368,6 +368,34 @@ class TestSuccessiveConnectionsAreDistinct(unittest.TestCase):
         self.assertEqual(len(paths), len({tuple(p) for p in paths}), paths)
         self.assertEqual(len(paths), 2)
 
+    def test_first_path_is_the_shortest_chain(self):
+        """
+        The first path is the shortest chain of links, as before the
+        in-memory search: A is D's wife and also his second cousin, and
+        the marriage is shown first.
+        """
+        families = {
+            "FG": _Family("FG", father="G", children=["P1", "Q1"]),
+            "FP1": _Family("FP1", father="P1", children=["P2"]),
+            "FP2": _Family("FP2", father="P2", children=["D"]),
+            "FQ1": _Family("FQ1", father="Q1", children=["Q2"]),
+            "FQ2": _Family("FQ2", father="Q2", children=["A"]),
+            "FDA": _Family("FDA", father="D", mother="A"),
+        }
+        people = {
+            "G": _Person("G", families=["FG"]),
+            "P1": _Person("P1", families=["FP1"], parent_families=["FG"]),
+            "P2": _Person("P2", families=["FP2"], parent_families=["FP1"]),
+            "D": _Person("D", families=["FDA"], parent_families=["FP2"]),
+            "Q1": _Person("Q1", families=["FQ1"], parent_families=["FG"]),
+            "Q2": _Person("Q2", families=["FQ2"], parent_families=["FQ1"]),
+            "A": _Person("A", families=["FDA"], parent_families=["FQ2"]),
+        }
+        paths = self._all_paths(_DB(people, families, default="D"), "A")
+        first = [anchor for (_relation, anchor) in paths[0]]
+        self.assertNotIn("G", first, paths)
+        self.assertEqual(len(first), min(len(p) for p in paths), paths)
+
 
 if __name__ == "__main__":
     unittest.main()

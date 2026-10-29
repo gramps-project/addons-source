@@ -54,6 +54,7 @@ from deep_connections import (
     SPOUSE,
     ConnectionSearch,
     FamilyLinks,
+    any_path,
     as_steps,
     connection_label,
     path_people,
@@ -428,7 +429,9 @@ class DeepConnectionsGramplet(Gramplet):
             self.update_status(_("Searching for connections..."))
 
             shown = None
-            fast = shortest_connection(
+            # the shortest chain of family links, as the full search would
+            # find first; the labels still give the blood relationship
+            fast = any_path(
                 self.family_links(), self.default_person.handle, active_person.handle
             )
             if fast is not None:
