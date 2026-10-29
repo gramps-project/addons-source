@@ -99,6 +99,9 @@ class _Harness(dcg_mod.DeepConnectionsGramplet):
     def link(self, text, _kind, _handle):
         self.text += text
 
+    def relationship_text(self, handle):
+        return ""
+
 
 def _path(*steps):
     """Build a path from steps listed root first."""

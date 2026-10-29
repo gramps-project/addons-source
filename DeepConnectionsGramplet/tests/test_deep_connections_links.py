@@ -54,6 +54,10 @@ from gramps.gen.relationship import get_relationship_calculator
 
 import deep_connections as dc
 
+# The addon directory and its implementation module share a name; use the
+# explicit submodule path (see test_deep_connections_labels.py).
+from DeepConnectionsGramplet import DeepConnectionsGramplet as dcg_mod
+
 MALE, FEMALE = Person.MALE, Person.FEMALE
 
 
@@ -274,6 +278,39 @@ class TestInLaws(_Base):
         self.assertEqual(
             dc.connection_label(self.links, path, self.genders, self.calc), ""
         )
+
+
+class _GrampletLabels(dcg_mod.DeepConnectionsGramplet):
+    """The gramplet's relationship_text on a real database, without GTK."""
+
+    def __init__(self, db, home, calc):
+        # Deliberately do NOT call Gramplet.__init__ (no GUI / GTK).
+        self.dbstate = type("DbState", (), {"db": db})()
+        self.default_person = db.get_person_from_handle(home)
+        self.relationship_calc = calc
+        self._family_links = None
+        self._relationships = {}
+        self._genders = dcg_mod._Genders(db)
+
+    def update_status(self, message):
+        pass
+
+
+class TestGrampletLabels(_Base):
+    def label(self, home, other):
+        gramplet = _GrampletLabels(self.db, self.p[home], self.calc)
+        return gramplet.relationship_text(self.p[other])
+
+    def test_same_as_the_calculator_for_blood_relatives_and_spouses(self):
+        for home, other in (("C", "D"), ("C", "GF"), ("A", "S"), ("A", "W")):
+            with self.subTest(home=home, other=other):
+                self.assertEqual(self.label(home, other), self.calculator(home, other))
+        self.assertTrue(self.label("A", "W"))  # spouse wording from the calculator
+
+    def test_in_laws_and_unrelated(self):
+        self.require_english()
+        self.assertEqual(self.label("A", "X"), "sister-in-law")
+        self.assertEqual(self.label("C", "G2"), "")
 
 
 class TestSearch(_Base):

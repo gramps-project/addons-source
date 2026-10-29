@@ -130,6 +130,34 @@ class _DB:
     def get_note_from_handle(self, handle):  # no notes in these fixtures
         return None
 
+    def get_family_cursor(self):
+        """Raw family data, all children by birth, for the fast search."""
+        birth = {"value": 1}  # ChildRefType.BIRTH
+        return _Cursor(
+            (
+                handle,
+                {
+                    "father_handle": family._father,
+                    "mother_handle": family._mother,
+                    "child_ref_list": [
+                        {"ref": child, "frel": birth, "mrel": birth}
+                        for child in family._children
+                    ],
+                },
+            )
+            for handle, family in self._families.items()
+        )
+
+
+class _Cursor(list):
+    """A list usable as ``with db.get_family_cursor() as cursor``."""
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
 
 class _DBState:
     def __init__(self, db):
@@ -179,6 +207,7 @@ class _Harness(dcg_mod.DeepConnectionsGramplet):
         self.pause_button = _Widget()
         self.continue_button = _Widget()
         self.copy_button = _Widget()
+        self._family_links = None
 
     # -- GUI surface stubbed out -------------------------------------------
     def get_active_object(self, _kind):
@@ -207,6 +236,9 @@ class _Harness(dcg_mod.DeepConnectionsGramplet):
 
     def pause(self, *args, **kwargs):
         pass
+
+    def relationship_text(self, handle):
+        return ""
 
     # -- capture each produced path instead of rendering it ----------------
     def pretty_print(self, path, gender):
@@ -326,6 +358,15 @@ class TestSuccessiveConnectionsAreDistinct(unittest.TestCase):
                 later,
                 "Continue returned the same path twice in a row; paths=%r" % (paths,),
             )
+
+    def test_first_path_is_not_shown_again(self):
+        """
+        The first path comes from the in-memory search; the search behind
+        Continue finds it again and must skip it.
+        """
+        paths = self._all_paths(_two_independent_paths_db(), "A")
+        self.assertEqual(len(paths), len({tuple(p) for p in paths}), paths)
+        self.assertEqual(len(paths), 2)
 
 
 if __name__ == "__main__":
