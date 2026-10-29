@@ -36,7 +36,7 @@ PRODUCTION-PATH NOTE (brief.md / principles.md §3.4): this test drives
 generator the gramplet runs in production -- not a copy of its loop.  A
 lightweight harness subclass overrides only the GUI surface
 (``append_text``/``link``/``pretty_print``/progress widgets/``pause``...), so
-``main`` runs the real queue/cache/``get_relatives`` path-construction code
+``main`` runs the real ``deep_connections`` search and path-construction code
 against a tiny in-memory database.  Because the harness's ``pause`` is a no-op,
 iterating the generator to exhaustion runs the whole search and captures every
 connection path it would hand the user across successive "Continue" presses.
@@ -88,6 +88,9 @@ class _Person:
     def get_primary_name(self):
         return self.handle
 
+    def get_gender(self):
+        return 2  # Person.UNKNOWN
+
 
 class _Family:
     def __init__(self, handle, father=None, mother=None, children=()):
@@ -127,6 +130,34 @@ class _DB:
     def get_note_from_handle(self, handle):  # no notes in these fixtures
         return None
 
+    def get_family_cursor(self):
+        """Raw family data, all children by birth, for the fast search."""
+        birth = {"value": 1}  # ChildRefType.BIRTH
+        return _Cursor(
+            (
+                handle,
+                {
+                    "father_handle": family._father,
+                    "mother_handle": family._mother,
+                    "child_ref_list": [
+                        {"ref": child, "frel": birth, "mrel": birth}
+                        for child in family._children
+                    ],
+                },
+            )
+            for handle, family in self._families.items()
+        )
+
+
+class _Cursor(list):
+    """A list usable as ``with db.get_family_cursor() as cursor``."""
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
 
 class _DBState:
     def __init__(self, db):
@@ -160,9 +191,8 @@ class _Widget:
 class _Harness(dcg_mod.DeepConnectionsGramplet):
     """
     Drives the real ``DeepConnectionsGramplet.main`` generator without a GTK
-    context.  Only the GUI surface is overridden; ``main``, ``get_relatives``,
-    ``get_links_from_notes`` and ``_calculate_path_depth`` are the inherited
-    production implementations.  ``pause`` is a no-op so iterating the generator
+    context.  Only the GUI surface is overridden; ``main`` is the inherited production
+    implementation, running the real ``deep_connections`` search.  ``pause`` is a no-op so iterating the generator
     to exhaustion walks every "Continue" step and captures every path produced.
     """
 
@@ -177,6 +207,7 @@ class _Harness(dcg_mod.DeepConnectionsGramplet):
         self.pause_button = _Widget()
         self.continue_button = _Widget()
         self.copy_button = _Widget()
+        self._family_links = None
 
     # -- GUI surface stubbed out -------------------------------------------
     def get_active_object(self, _kind):
@@ -206,8 +237,11 @@ class _Harness(dcg_mod.DeepConnectionsGramplet):
     def pause(self, *args, **kwargs):
         pass
 
+    def relationship_text(self, handle):
+        return ""
+
     # -- capture each produced path instead of rendering it ----------------
-    def pretty_print(self, path):
+    def pretty_print(self, path, gender):
         self.captured_paths.append(path)
 
 
@@ -324,6 +358,43 @@ class TestSuccessiveConnectionsAreDistinct(unittest.TestCase):
                 later,
                 "Continue returned the same path twice in a row; paths=%r" % (paths,),
             )
+
+    def test_first_path_is_not_shown_again(self):
+        """
+        The first path comes from the in-memory search; the search behind
+        Continue finds it again and must skip it.
+        """
+        paths = self._all_paths(_two_independent_paths_db(), "A")
+        self.assertEqual(len(paths), len({tuple(p) for p in paths}), paths)
+        self.assertEqual(len(paths), 2)
+
+    def test_first_path_is_the_shortest_chain(self):
+        """
+        The first path is the shortest chain of links, as before the
+        in-memory search: A is D's wife and also his second cousin, and
+        the marriage is shown first.
+        """
+        families = {
+            "FG": _Family("FG", father="G", children=["P1", "Q1"]),
+            "FP1": _Family("FP1", father="P1", children=["P2"]),
+            "FP2": _Family("FP2", father="P2", children=["D"]),
+            "FQ1": _Family("FQ1", father="Q1", children=["Q2"]),
+            "FQ2": _Family("FQ2", father="Q2", children=["A"]),
+            "FDA": _Family("FDA", father="D", mother="A"),
+        }
+        people = {
+            "G": _Person("G", families=["FG"]),
+            "P1": _Person("P1", families=["FP1"], parent_families=["FG"]),
+            "P2": _Person("P2", families=["FP2"], parent_families=["FP1"]),
+            "D": _Person("D", families=["FDA"], parent_families=["FP2"]),
+            "Q1": _Person("Q1", families=["FQ1"], parent_families=["FG"]),
+            "Q2": _Person("Q2", families=["FQ2"], parent_families=["FQ1"]),
+            "A": _Person("A", families=["FDA"], parent_families=["FQ2"]),
+        }
+        paths = self._all_paths(_DB(people, families, default="D"), "A")
+        first = [anchor for (_relation, anchor) in paths[0]]
+        self.assertNotIn("G", first, paths)
+        self.assertEqual(len(first), min(len(p) for p in paths), paths)
 
 
 if __name__ == "__main__":

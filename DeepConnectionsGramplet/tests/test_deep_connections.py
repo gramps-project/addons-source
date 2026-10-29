@@ -30,7 +30,7 @@ this test drives ``DeepConnectionsGramplet.main()`` itself -- the *actual*
 breadth-first search generator the gramplet runs in production -- not a copy of
 its loop.  A lightweight harness subclass overrides only the GUI surface
 (``append_text``/``link``/``pretty_print``/progress widgets/``pause``...), so
-``main`` runs the real queue/cache/``get_relatives`` path-construction code
+``main`` runs the real ``deep_connections`` search and path-construction code
 against a tiny in-memory database.  The produced path is captured at the point
 ``main`` hands it to ``pretty_print``.  Because the harness drives ``main``
 *outside* the broad ``try/except`` in production, any error in the search
@@ -84,6 +84,9 @@ class _Person:
     def get_primary_name(self):
         return self.handle
 
+    def get_gender(self):
+        return 2  # Person.UNKNOWN
+
 
 class _Family:
     def __init__(self, handle, father=None, mother=None, children=()):
@@ -123,6 +126,34 @@ class _DB:
     def get_note_from_handle(self, handle):  # no notes in these fixtures
         return None
 
+    def get_family_cursor(self):
+        """Raw family data, all children by birth, for the fast search."""
+        birth = {"value": 1}  # ChildRefType.BIRTH
+        return _Cursor(
+            (
+                handle,
+                {
+                    "father_handle": family._father,
+                    "mother_handle": family._mother,
+                    "child_ref_list": [
+                        {"ref": child, "frel": birth, "mrel": birth}
+                        for child in family._children
+                    ],
+                },
+            )
+            for handle, family in self._families.items()
+        )
+
+
+class _Cursor(list):
+    """A list usable as ``with db.get_family_cursor() as cursor``."""
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
 
 class _DBState:
     def __init__(self, db):
@@ -156,9 +187,8 @@ class _Widget:
 class _Harness(dcg_mod.DeepConnectionsGramplet):
     """
     Drives the real ``DeepConnectionsGramplet.main`` generator without a GTK
-    context.  Only the GUI surface is overridden; ``main``, ``get_relatives``,
-    ``get_links_from_notes`` and ``_calculate_path_depth`` are the inherited
-    production implementations.
+    context.  Only the GUI surface is overridden; ``main`` is the inherited production
+    implementation, running the real ``deep_connections`` search.
     """
 
     def __init__(self, db, active_handle):
@@ -172,6 +202,7 @@ class _Harness(dcg_mod.DeepConnectionsGramplet):
         self.pause_button = _Widget()
         self.continue_button = _Widget()
         self.copy_button = _Widget()
+        self._family_links = None
 
     # -- GUI surface stubbed out -------------------------------------------
     def get_active_object(self, _kind):
@@ -201,8 +232,11 @@ class _Harness(dcg_mod.DeepConnectionsGramplet):
     def pause(self, *args, **kwargs):
         pass
 
+    def relationship_text(self, handle):
+        return ""
+
     # -- capture the produced path instead of rendering it -----------------
-    def pretty_print(self, path):
+    def pretty_print(self, path, gender):
         self.captured_paths.append(path)
 
 
