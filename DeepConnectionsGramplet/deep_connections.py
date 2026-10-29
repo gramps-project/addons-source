@@ -659,6 +659,34 @@ def shortest_connection(links, start, target, max_people=None):
     )
 
 
+def as_steps(links, path):
+    """
+    The same connection as a :class:`ConnectionSearch` path, so both kinds
+    can be shown the same way: a linked list of ``(previous_node, Step)``
+    from the last person back to the first, with the first person's
+    relatives attached straight to the root (issue 8653).
+    """
+    node = (None, Step(SELF, path[0].handle))
+    for previous, link in zip(path[1:], path[2:]):
+        father, mother, _children = links.families[link.family]
+        if link.relation in (CHILD, SIBLING):
+            parents = (father, mother)
+        elif link.relation == PARENT:
+            parents = (mother,) if link.handle == father else (father,)
+        else:
+            parents = ()
+        node = (node, Step(link.relation, previous.handle, parents))
+    return node
+
+
+def path_people(target, path):
+    """
+    The people on a :class:`ConnectionSearch` path to ``target``, from
+    ``target`` back to the start person.
+    """
+    return [target] + [step.handle for step in path_steps(path)]
+
+
 # ------------------------------------------------------------------------
 #
 # Labels

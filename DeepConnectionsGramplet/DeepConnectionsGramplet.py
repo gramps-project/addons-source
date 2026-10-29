@@ -53,6 +53,11 @@ from deep_connections import (
     SIBLING,
     SPOUSE,
     ConnectionSearch,
+    FamilyLinks,
+    as_steps,
+    connection_label,
+    path_people,
+    shortest_connection,
 )
 
 try:
@@ -80,6 +85,20 @@ def relation_label(step, gender):
         return _("%s (association)") % step.detail
     labels = RELATION_LABELS[step.relation]
     return labels.get(gender, labels[None])
+
+
+class _Genders(dict):
+    """Gender of each person, read from the database when first needed."""
+
+    def __init__(self, db):
+        super().__init__()
+        self.db = db
+
+    def __missing__(self, handle):
+        person = self.db.get_person_from_handle(handle)
+        gender = person.get_gender() if person else Person.UNKNOWN
+        self[handle] = gender
+        return gender
 
 
 # ------------------------------------------------------------------------
@@ -183,6 +202,9 @@ class DeepConnectionsGramplet(Gramplet):
 
         # Initialize search state
         self.search_active = False
+        # all family links, loaded on the first search and kept until a
+        # family changes
+        self._family_links = None
 
     def clear_results(self, widget=None):
         """Clear the current results and reset the display."""
@@ -225,14 +247,56 @@ class DeepConnectionsGramplet(Gramplet):
         changed
         """
         self.selected_handles = set()
+        self._family_links = None
         self.connect(self.dbstate.db, "home-person-changed", self.update)
         self.connect(self.dbstate.db, "person-add", self.update)
         self.connect(self.dbstate.db, "person-delete", self.update)
         self.connect(self.dbstate.db, "person-update", self.update)
-        self.connect(self.dbstate.db, "family-add", self.update)
-        self.connect(self.dbstate.db, "family-delete", self.update)
         self.connect(self.dbstate.db, "person-rebuild", self.update)
-        self.connect(self.dbstate.db, "family-rebuild", self.update)
+        for signal in (
+            "family-add",
+            "family-update",
+            "family-delete",
+            "family-rebuild",
+        ):
+            self.connect(self.dbstate.db, signal, self.families_changed)
+
+    def families_changed(self, *args):
+        """Reload the family links on the next search."""
+        self._family_links = None
+        self.update()
+
+    def family_links(self):
+        """All family links of the database, loaded once."""
+        if self._family_links is None:
+            self.update_status(_("Loading family links..."))
+            self._family_links = FamilyLinks.load(self.dbstate.db)
+        return self._family_links
+
+    def relationship_text(self, handle):
+        """
+        The relationship of a person to the Home Person in Gramps' wording,
+        including in-laws, or "" if there is none.
+        """
+        if handle not in self._relationships:
+            path = shortest_connection(
+                self.family_links(), self.default_person.handle, handle
+            )
+            if path is None:
+                text = ""
+            elif len(path) == 2 and path[1].relation == SPOUSE:
+                # the calculator words spouses and partners
+                text = self.relationship_calc.get_one_relationship(
+                    self.dbstate.db,
+                    self.default_person,
+                    self.dbstate.db.get_person_from_handle(handle),
+                )
+            else:
+                text = connection_label(
+                    self.family_links(), path, self._genders, self.relationship_calc
+                )
+            self._relationships[handle] = text
+        return self._relationships[handle]
 
     def active_changed(self, handle):
         """
@@ -264,20 +328,54 @@ class DeepConnectionsGramplet(Gramplet):
         if step.relation != SELF:
             self.append_text(_("\n   %s of ") % relation_label(step, gender))
             self.link(name_displayer.display_name(name), "Person", handle)
-            relationship = self.relationship_calc.get_one_relationship(
-                self.dbstate.db, self.default_person, person
-            )
+            relationship = self.relationship_text(handle)
             if relationship:
                 self.append_text(" [%s]" % relationship)
             if more_path is not None:
                 self.pretty_print(more_path, person.get_gender())
 
+    def show_path(self, path, active_person, relationship):
+        """Show a found path from the active person back to the Home Person."""
+        self.total_relations_found += 1
+        self.append_text(_("Found relation #%d: \n   ") % self.total_relations_found)
+        self.link(
+            name_displayer.display_name(active_person.get_primary_name()),
+            "Person",
+            active_person.handle,
+        )
+        if relationship:
+            self.append_text(" [%s]" % relationship)
+        self.selected_handles.clear()
+        self.selected_handles.add(active_person.handle)
+        self.pretty_print(path, active_person.get_gender())
+        self.append_text("\n")
+
+        # Enable copy button when we have results
+        self.copy_button.set_sensitive(True)
+
+    def wait_for_continue(self):
+        """Pause the search until Continue is pressed."""
+        self.append_text(
+            _("Paused.\nPress Continue to search for additional relations.\n")
+        )
+        self.update_status(_("Paused - Press Continue to search for more relations"))
+        self.continue_button.set_sensitive(True)
+        self.pause_button.set_sensitive(False)
+        self.pause()
+
     def main(self):
         """
         Main method.
+
+        The first path comes from the in-memory family links: the closest
+        family connection, found quickly even in a large tree.  Continue
+        then searches person by person, also following associations and
+        people linked in notes, and skips the path already shown.
         """
         self.total_relations_found = 0
         self.search_active = True
+        self._relationships = {}
+        self._genders = _Genders(self.dbstate.db)
 
         yield True
 
@@ -325,14 +423,27 @@ class DeepConnectionsGramplet(Gramplet):
 
             yield True
 
-            relationship = self.relationship_calc.get_one_relationship(
-                self.dbstate.db, self.default_person, active_person
-            )
+            relationship = self.relationship_text(active_person.handle)
 
             self.update_status(_("Searching for connections..."))
 
+            shown = None
+            fast = shortest_connection(
+                self.family_links(), self.default_person.handle, active_person.handle
+            )
+            if fast is not None:
+                shown = [link.handle for link in reversed(fast)]
+                self.show_path(
+                    as_steps(self.family_links(), fast), active_person, relationship
+                )
+                if self.default_person.handle == active_person.handle:
+                    search = None
+                else:
+                    self.wait_for_continue()
+                    yield False
+
             last_update = 0
-            for current_path in search.steps():
+            for current_path in search.steps() if search else ():
                 # Update progress every 10 people processed
                 if search.people_processed - last_update >= 10:
                     last_update = search.people_processed
@@ -345,38 +456,12 @@ class DeepConnectionsGramplet(Gramplet):
                     )
 
                 if current_path is not None:
-                    self.total_relations_found += 1
-                    self.append_text(
-                        _("Found relation #%d: \n   ") % self.total_relations_found
-                    )
-
-                    self.link(
-                        name_displayer.display_name(active_name),
-                        "Person",
-                        active_person.handle,
-                    )
-                    if relationship:
-                        self.append_text(" [%s]" % relationship)
-                    self.selected_handles.clear()
-                    self.selected_handles.add(active_person.handle)
-                    self.pretty_print(current_path, active_person.get_gender())
-                    self.append_text("\n")
-
-                    # Enable copy button when we have results
-                    self.copy_button.set_sensitive(True)
+                    if path_people(active_person.handle, current_path) == shown:
+                        continue
+                    self.show_path(current_path, active_person, relationship)
 
                     if self.default_person.handle != active_person.handle:
-                        self.append_text(
-                            _(
-                                "Paused.\nPress Continue to search for additional relations.\n"
-                            )
-                        )
-                        self.update_status(
-                            _("Paused - Press Continue to search for more relations")
-                        )
-                        self.continue_button.set_sensitive(True)
-                        self.pause_button.set_sensitive(False)
-                        self.pause()
+                        self.wait_for_continue()
                         yield False
                     else:
                         break
