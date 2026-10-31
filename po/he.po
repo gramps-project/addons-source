@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-10-06 17:51+0000\n"
+"PO-Revision-Date: 2026-10-10 20:16+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -1424,10 +1424,9 @@ msgid "Family %(current)d of %(total)d"
 msgstr "משפחה %(current)d מתוך %(total)d"
 
 #: ContextView/ContextView.py:922
-#, fuzzy, python-format
-#| msgid "Highlight the home person"
+#, python-format
 msgid "family %d lies toward the home person"
-msgstr "הדגשת אדם הבית"
+msgstr "משפחה %d פונה אל אדם הבית"
 
 #: ContextView/ContextView.py:980
 msgid "<b>Bold</b> marks the way to the home person"
@@ -4338,7 +4337,7 @@ msgstr "הקשה על המפה תציג אותה במסך מלא"
 
 #: DynamicWeb/dynamicweb.py:2960
 msgid "Configure"
-msgstr "הגדרה"
+msgstr "לתצר"
 
 #: DynamicWeb/dynamicweb.py:2967
 msgid "DynamicWeb_report#Help"
@@ -6400,14 +6399,12 @@ msgid "Parents of family filter"
 msgstr "הורים ממסנן משפחה"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches parent of family filter"
-msgstr "התאמת אירוע של מסנן אנשים עם תפקיד"
+msgstr "התאמת הורה למסנן משפחה"
 
 #: FilterRules/matchparentoffilterfamily.py:60
 msgid "Parents of <filter> family match"
-msgstr ""
+msgstr "הורי משפחה שתואמת <מסנן>"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
@@ -16095,7 +16092,7 @@ msgstr "שגיאת GetGOV: %s"
 
 #: GetGOV/getgov.py:421
 msgid "GOV link"
-msgstr ""
+msgstr "קישור GOV"
 
 #: GetGOV/getgov.py:428
 #, python-format
@@ -16197,10 +16194,8 @@ msgid "Clear conversation and context"
 msgstr "ניקוי שיחה ותוכן"
 
 #: GrampsAssistant/grampsassistant.py:220
-#, fuzzy
-#| msgid "Gramps Assistant settings"
 msgid "Open the Gramps Assistant wiki page"
-msgstr "הגדרות סייען גרמפס"
+msgstr "פתיחת עמוד סייען גרמפס בויקי"
 
 #: GrampsAssistant/grampsassistant.py:396
 #: GrampsAssistant/grampsassistant.py:760
@@ -16385,6 +16380,11 @@ msgid ""
 "this Family Tree. Opening it as-is would leave the local mirror silently "
 "incomplete or unable to save changes back."
 msgstr ""
+"לחשבון שמזדהה באמצעות GRAMPS_WEB_API_KEY חסרות הרשאות שרת שהתוסף הזה דורש: %"
+"(missing)s. יש להעניק לו לפחות את תפקיד ה־\"%(role)s\" בשרת (או לבקש זאת "
+"ממנהלן), לאחר מכן לפתוח מחדש אילן־יוחסין זה. פתיחתו במצב הנוכחי תגרום לכך "
+"שהעותק המקומי (Local Mirror)לא יהיה שלם באופן סמוי, או שלא ניתן יהיה לשמור "
+"שינויים למקור."
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -16394,6 +16394,10 @@ msgid ""
 "history in a format it cannot read. Upgrade the Gramps installation behind "
 "the Gramps Web API server (or ask its administrator to)."
 msgstr ""
+"שרת זה מריץ גרמפס בגירסה %(actual)s, אך תוסף זה דורש שרת שמריץ גרמפס בגירסה %"
+"(required)s או חדשה יותר: שרתים ישנים יותר מקודדים (serialize) את היסטוריית "
+"השינויים בתסדיר שהתוסף אינו יכול לקרוא. יש לשדרג את התקנת גרמפס שמאחורי שרת "
+"גרמפס מרשתת API (או לבקש זאת ממנהל המערכת)."
 
 #: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
@@ -17117,8 +17121,6 @@ msgid "Ready... (Tab for completions)"
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:505
-#, fuzzy
-#| msgid "No title"
 msgid "Untitled"
 msgstr "ללא כותרת"
 
@@ -17126,35 +17128,35 @@ msgstr "ללא כותרת"
 msgid ""
 "If you continue without saving, the changes you have made to this script "
 "will be lost."
-msgstr ""
+msgstr "המשך מבלי לשמור, השינויים שבוצעו בתסריט זה יאבדו."
 
 #: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr "Gram.py תסריט ערוכים נתונים"
 
 #: GrampyScript/script_descriptions.py:44
-#, fuzzy
-#| msgid "All Names of All People"
 msgid "List All People"
-msgstr "כל השמות של כל האנשים"
+msgstr "הצגת כל האנשים"
 
 #: GrampyScript/script_descriptions.py:46
 msgid ""
 "Iterate over every person in the database and show their Gramps ID, given "
 "name, surname, and gender in the results table."
 msgstr ""
+"חזרור על אדם במסד הנתונים להצגת מזהה גרמפס שלו, שם פרטית שם משפחה ומגדר "
+"בטבלת התוצאות."
 
 #: GrampyScript/script_descriptions.py:51
-#, fuzzy
-#| msgid "Family Surname"
 msgid "Filter By Surname"
-msgstr "משפחה שם משפחה"
+msgstr "סינון לפי שם משפחה"
 
 #: GrampyScript/script_descriptions.py:53
 msgid ""
 "List only the people whose surname matches a given value — a starting point "
 "for narrowing any report down by a condition."
 msgstr ""
+"הצגת האנשים ששם משפחתם תואם ערך נתון בלבד – נקודת פתיחה לצמצום דוח כלשהו על "
+"ידי תנאי."
 
 #: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -17165,10 +17167,12 @@ msgid ""
 "List every family together with the father, the mother, and how many "
 "children they have — a quick way to spot families that look incomplete."
 msgstr ""
+"הצגת כל משפחה יחד עם האב, האם ומספר הצאצאים שלהם — דרך מהירה לזהות משפחות "
+"שנראות לא שלמות."
 
 #: GrampyScript/script_descriptions.py:66
 msgid "Gender Breakdown (Pie Chart)"
-msgstr ""
+msgstr "פלוח מגדר ‏(תרשים עוגה)"
 
 #: GrampyScript/script_descriptions.py:68
 msgid ""
@@ -23671,7 +23675,7 @@ msgstr "<b><i>מקור</i></b>"
 
 #: SourceIndex/census.glade:7 SourceIndex/index.glade:768
 msgid "census"
-msgstr "מפקד אוכלוסין"
+msgstr "מפקד"
 
 #: SourceIndex/census.glade:160
 msgid "<b>Census</b>"
