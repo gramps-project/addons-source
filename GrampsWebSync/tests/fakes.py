@@ -171,7 +171,7 @@ class FakeGrampsWebServer:
         self._enter("get_lang")
         return self.lang
 
-    def download_xml(self) -> Path:
+    def download_xml(self, progress_callback: Callable | None = None) -> Path:
         """Export the served database to a Gramps XML file.
 
         The caller owns the file and is expected to unlink it.

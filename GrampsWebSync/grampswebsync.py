@@ -471,7 +471,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def on_status(self, stage: str) -> None:
         """Render a status update from the session."""
-        self.working_pane.set_detail(status_message(stage))
+        self.working_pane.start_step(status_message(stage))
         self._pump()
 
     @staticmethod
@@ -979,6 +979,12 @@ class WorkingPane(Gtk.Box):
             else:
                 mark = MARK_PENDING
             self._rows[phase].set_marker(mark)
+        self._measurable = False
+        self.progressbar.set_fraction(0)
+
+    def start_step(self, text: str) -> None:
+        """Show the step now running, with a pulsing bar until it reports progress."""
+        self.set_detail(text)
         self._measurable = False
         self.progressbar.set_fraction(0)
 
