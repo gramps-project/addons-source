@@ -90,15 +90,18 @@ class DegreesOfSeparation(Rule):
         degrees = int(self.list[1])
 
         self.get_root_handle()
-        for i in range(degrees+1):
-            for handle in list(self.persons):
+        self.selected_handles.update(self.persons)
+        for i in range(degrees):
+            # Only expand people found in the previous round.
+            frontier, self.persons = self.persons, set()
+            for handle in frontier:
                 person = self.db.get_raw_person_data(handle)
                 self.get_parents(person)
                 self.get_children(person)
                 self.get_siblings(person)
                 self.get_partners(person)
-                self.persons.remove(handle)
-                self.selected_handles.add(handle)
+            self.persons -= self.selected_handles
+            self.selected_handles.update(self.persons)
 
     def get_root_handle(self):
         """Get the handle of the starting person."""
