@@ -284,6 +284,8 @@ def error_message(kind: ErrorKind, detail: str = "", auth: str = AUTH_PASSWORD) 
         )
     if kind is ErrorKind.SERVER_TASK_FAILED:
         return _("The server could not apply the changes: %s") % detail
+    if kind is ErrorKind.EXPORT_FAILED:
+        return _("The server could not export the family tree: %s") % detail
     if kind is ErrorKind.SERVER_ERROR:
         return _("Server error %s. Please check your connection.") % detail
     if kind is ErrorKind.UNEXPECTED:
