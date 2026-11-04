@@ -64,6 +64,7 @@ from gramps.gen.db import DbTxn
 from gramps.gen.db.utils import import_as_dict
 from gramps.gen.errors import HandleError
 from webapihandler import (
+    ExportFailed,
     ServerTaskFailed,
     SyncTokensUnsupported,
     device_label,
@@ -149,6 +150,7 @@ class ErrorKind(Enum):
     CONFLICT = auto()  # HTTP 409
     SERVER_ERROR = auto()
     SERVER_TASK_FAILED = auto()
+    EXPORT_FAILED = auto()
     CONNECTION_FAILED = auto()
     INVALID_RESPONSE = auto()
     INSUFFICIENT_PERMISSIONS = auto()
@@ -258,7 +260,7 @@ class Backend(Protocol):
 
     def get_lang(self) -> str | None: ...
 
-    def download_xml(self) -> Path: ...
+    def download_xml(self, progress_callback: Callable | None = None) -> Path: ...
 
     def commit(
         self,
@@ -623,6 +625,8 @@ class SyncSession:
             return SyncError(ErrorKind.XML_IMPORT_FAILED)
         if isinstance(exc, StaleLocalData):
             return SyncError(ErrorKind.STALE_LOCAL_DATA)
+        if isinstance(exc, ExportFailed):
+            return SyncError(ErrorKind.EXPORT_FAILED, str(exc))
         if isinstance(exc, ServerTaskFailed):
             return SyncError(ErrorKind.SERVER_TASK_FAILED, str(exc))
         if isinstance(exc, ApplyFailed):
@@ -952,7 +956,9 @@ class SyncSession:
         assert self.backend is not None
         LOG.info("Downloading Gramps XML file.")
         self._status_from_worker(STATUS_FETCHING)
-        path = self.backend.download_xml()
+        path = self.backend.download_xml(
+            lambda fraction: self._progress_from_worker("export", fraction)
+        )
         LOG.debug("Downloaded XML to %s", path)
         return path
 

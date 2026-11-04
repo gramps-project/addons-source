@@ -319,9 +319,9 @@ def jwt(**claims) -> str:
 class FakeHttp:
     """Answers the handler's requests and records them.
 
-    :param routes: ``(method, url)`` -> a JSON body, an HTTP status to fail
-        with, a ``(status, body)`` pair to fail with a JSON error body, or a
-        list of those, answered in turn.
+    :param routes: ``(method, url)`` -> a JSON body, raw ``bytes``, an HTTP
+        status to fail with, a ``(status, body)`` pair to fail with a JSON
+        error body, or a list of those, answered in turn.
     """
 
     def __init__(self, routes: dict) -> None:
@@ -339,6 +339,8 @@ class FakeHttp:
             status, body = answer
             fp = io.BytesIO(json.dumps(body).encode())
             raise HTTPError(req.full_url, status, "fake", {}, fp)  # type: ignore[arg-type]
+        if isinstance(answer, bytes):
+            return io.BytesIO(answer)
         return io.BytesIO(json.dumps(answer).encode() if answer is not None else b"")
 
     def calls(self) -> list[tuple[str, str]]:

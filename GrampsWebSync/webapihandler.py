@@ -66,6 +66,10 @@ class ServerTaskFailed(Exception):
     """
 
 
+class ExportFailed(Exception):
+    """The server's background task exporting the tree reported failure."""
+
+
 def describe_task_failure(task_status: dict[str, Any]) -> str:
     """Extract a readable reason from a failed task status.
 
@@ -395,9 +399,24 @@ class WebApiHandler:
         """Whether the server runs transactions on a background task queue."""
         return bool((self.metadata.get("server") or {}).get("task_queue"))
 
-    def download_xml(self) -> Path:
-        """Download an XML export and return the path of the temp file."""
-        url = f"{self.url}/exporters/gramps/file"
+    def download_xml(self, progress_callback: Callable | None = None) -> Path:
+        """Download an XML export and return the path of the temp file.
+
+        The server builds the export as a background task, so a large tree
+        does not keep one of its web workers busy while it is written.
+
+        :param progress_callback: Called with the export's progress as a
+            fraction, or -1 while the server reports none.
+        """
+        reply = self._call("POST", "exporters/gramps/file")
+        if "task" in reply:
+            try:
+                result = self.monitor_task_status(reply, progress_callback)
+            except ServerTaskFailed as exc:
+                raise ExportFailed(str(exc)) from exc
+        else:
+            result = reply  # the server ran the export straight away
+        url = f"{self.url}/exporters/gramps/file/processed/{result['file_name']}"
         temp = NamedTemporaryFile(delete=False)
         try:
             self._download_file(url=url, fobj=temp)
@@ -443,25 +462,25 @@ class WebApiHandler:
 
     def monitor_task_status(
         self, task_response: dict, progress_callback: Callable | None
-    ):
-        """Monitor the status of a background task."""
+    ) -> Any:
+        """Wait for a background task to finish and return its result."""
         task_id = task_response["task"]["id"]
         while True:
-            is_done = self.update_task_status(
+            task_status = self.update_task_status(
                 task_id, progress_callback=progress_callback
             )
-            if is_done:
+            if task_status is not None:
                 if progress_callback:
                     progress_callback(1)  # 100%
-                break
+                return task_status.get("result_object")
             sleep(1)
 
     def update_task_status(
         self, task_id: str, progress_callback: Callable | None
-    ) -> bool:
+    ) -> dict | None:
         """Update the status of a background task.
 
-        Returns True if the task is finished, False otherwise.
+        Returns the task status if the task is finished, None otherwise.
         """
         endpoint = f"{self.url}/tasks/{task_id}"
         req = Request(
@@ -474,7 +493,7 @@ class WebApiHandler:
         with self._open(req) as res:
             task_status = json.load(res)
             if task_status["state"] == "SUCCESS":
-                return True
+                return task_status
             if task_status["state"] in {"FAILURE", "REVOKED"}:
                 LOG.warning("Server task failed: %s", task_status)
                 raise ServerTaskFailed(describe_task_failure(task_status))
@@ -484,7 +503,7 @@ class WebApiHandler:
                 except (KeyError, TypeError):
                     progress = -1
                 progress_callback(progress)
-            return False
+            return None
 
     def get_missing_files(self, retry: bool = True) -> list:
         """Get a list of remote media objects with missing files."""
