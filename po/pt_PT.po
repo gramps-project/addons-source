@@ -3,13 +3,15 @@
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025, 2026.
 # Nick Hall <nick-h@gramps-project.org>, 2025.
+# Pedro Albuquerque <pedroalbuquerque@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-25 18:51+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2026-10-26 09:44-0700\n"
+"PO-Revision-Date: 2026-10-27 21:51+0000\n"
+"Last-Translator: Pedro Albuquerque "
+"<pedroalbuquerque@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -17,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -2140,6 +2142,7 @@ msgid "Abandon"
 msgstr "Abandonar"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
+#: GWizardFileMerge/gwizardmergedialog.py:537
 msgid "New person"
 msgstr "Novo indivíduo"
 
@@ -15984,6 +15987,366 @@ msgstr ""
 "Identifica os objectos para os quais a dada expressão-onde da gramps-object-"
 "query-language é verdadeira"
 
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:19
+msgid "GWizard File Merge"
+msgstr "União de ficheiros GWizard"
+
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:21
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+"Ferramenta para comparar com outro ficheiro de genealogia (GEDCOM, Gramps "
+"XML, ...) e unir as diferenças seleccionadas, indivíduo a indivíduo."
+
+#: GWizardFileMerge/gwizard.py:120
+msgid "Configure Connection"
+msgstr "Configurar ligação"
+
+#: GWizardFileMerge/gwizard.py:121
+msgid "Load Data"
+msgstr "Carregar dados"
+
+#: GWizardFileMerge/gwizard.py:122
+msgid "Find Matching Persons"
+msgstr "Localizar indivíduos parecidos"
+
+#: GWizardFileMerge/gwizard.py:123
+msgid "Compare Differences"
+msgstr "Comparar diferenças"
+
+#: GWizardFileMerge/gwizard.py:124
+msgid "Apply Changes"
+msgstr "Aplicar alterações"
+
+#: GWizardFileMerge/gwizard.py:137
+msgid "Configure file path or authenticate with online service."
+msgstr ""
+"Configure o caminho do ficheiro ou autentique-se através do serviço em linha."
+
+#: GWizardFileMerge/gwizard.py:138
+msgid "Load/parse the external genealogy data into memory."
+msgstr "Carregar/analisar os dados genealógicos externos na memória."
+
+#: GWizardFileMerge/gwizard.py:139
+msgid "Search for potential matches in your database."
+msgstr "Procurar possíveis correspondências na sua base de dados."
+
+#: GWizardFileMerge/gwizard.py:140
+msgid "Compare fields side-by-side between the source and target."
+msgstr "Comparar os campos lado a lado entre a fonte e o destino."
+
+#: GWizardFileMerge/gwizard.py:141
+msgid "Merge selected changes or add new records to the database."
+msgstr ""
+"Unir as alterações seleccionadas ou adicionar novos registos à base de dados."
+
+#: GWizardFileMerge/gwizardcompare.py:167
+#: GWizardFileMerge/gwizardcompare.py:187
+msgid "GWizard Compare"
+msgstr "Comparação GWizard"
+
+#: GWizardFileMerge/gwizardcompare.py:173
+msgid "No source database available for comparison"
+msgstr "Não há uma base de dados disponível para comparação"
+
+#: GWizardFileMerge/gwizardcompare.py:208
+#: GWizardFileMerge/gwizardmergedialog.py:586
+msgid "Incoming GEDCOM"
+msgstr "GEDCOM a receber"
+
+#: GWizardFileMerge/gwizardcompare.py:213
+#: GWizardFileMerge/gwizardmergedialog.py:593
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr "GEDCOM a receber: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:215
+#: GWizardFileMerge/gwizardmergedialog.py:597
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr "Árvore de família actual: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:426
+msgid "Populate Failed"
+msgstr "Falha ao povoar"
+
+#: GWizardFileMerge/gwizardcompare.py:876
+msgid "Merge..."
+msgstr "Unir..."
+
+#: GWizardFileMerge/gwizardcompare.py:878
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr "Abrir o diálogo de união campo a campo para o par seleccionado"
+
+#: GWizardFileMerge/gwizardcompare.py:883
+#: GWizardFileMerge/gwizardcompare.py:1224
+msgid "Add as New..."
+msgstr "Adicionar como novo..."
+
+#: GWizardFileMerge/gwizardcompare.py:885
+#: GWizardFileMerge/gwizardcompare.py:1226
+msgid "Add the selected incoming person as a new person"
+msgstr "Adicionar o indivíduo seleccionado como novo indivíduo"
+
+#: GWizardFileMerge/gwizardcompare.py:926
+msgid "Record"
+msgstr "Registo"
+
+#: GWizardFileMerge/gwizardcompare.py:932
+msgid "Born"
+msgstr "Nascido"
+
+#: GWizardFileMerge/gwizardcompare.py:933
+msgid "Died"
+msgstr "Falecido"
+
+#: GWizardFileMerge/gwizardcompare.py:975
+#: GWizardFileMerge/gwizardmergedialog.py:740
+msgid "Individual Details"
+msgstr "Detalhes individuais"
+
+#: GWizardFileMerge/gwizardcompare.py:976
+#: GWizardFileMerge/gwizardmergedialog.py:813
+msgid "Family Relations"
+msgstr "Relações familiares"
+
+#: GWizardFileMerge/gwizardcompare.py:978
+#: GWizardFileMerge/gwizardmergedialog.py:859
+msgid "Events & Other Records"
+msgstr "Eventos e outros registos"
+
+#: GWizardFileMerge/gwizardcompare.py:1216
+msgid "Not a Match"
+msgstr "Não corresponde"
+
+#: GWizardFileMerge/gwizardcompare.py:1219
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+"São pessoas diferentes: desassocie-as para que o indivíduo a receber possa "
+"ser adicionado como novo"
+
+#: GWizardFileMerge/gwizardcompare.py:1232
+#, python-format
+msgid "Differences: %d of %d"
+msgstr "Diferenças: %d de %d"
+
+#: GWizardFileMerge/gwizardcompare.py:1484
+msgid "(none)"
+msgstr "(nenhum)"
+
+#: GWizardFileMerge/gwizardcompare.py:1648
+#, python-format
+msgid "Gender: %s"
+msgstr "Sexo:%s"
+
+#: GWizardFileMerge/gwizardcompare.py:1650
+#, python-format
+msgid "ID: %s"
+msgstr "N-Id: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1677
+#, python-format
+msgid "FamilySearch: %s"
+msgstr "FamilySearch: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1751
+#: GWizardFileMerge/gwizardcompare.py:1768
+#: GWizardFileMerge/gwizardmergedialog.py:451
+#, python-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:2008
+msgid "Add as New failed"
+msgstr "Falha ao adicionar como novo"
+
+#: GWizardFileMerge/gwizardgedcom.py:351
+#: GWizardFileMerge/gwizardmergedialog.py:745
+msgid "Given Name"
+msgstr "Nome próprio"
+
+#: GWizardFileMerge/gwizardgedcom.py:377
+#: GWizardFileMerge/gwizardmergedialog.py:761
+msgid "Surname Prefix"
+msgstr "Prefixo do apelido"
+
+#: GWizardFileMerge/gwizardgedcom.py:1068
+msgid "GWizard Data Merge"
+msgstr "União de dados GWizard"
+
+#: GWizardFileMerge/gwizardlauncher.py:113
+msgid "Genealogy files"
+msgstr "Ficheiros de genealogia"
+
+#: GWizardFileMerge/gwizardlauncher.py:129
+msgid "Select File to Compare"
+msgstr "Seleccione o ficheiro a comparar"
+
+#: GWizardFileMerge/gwizardlauncher.py:158
+msgid "The selected file is missing."
+msgstr "O ficheiro seleccionado não existe."
+
+#: GWizardFileMerge/gwizardlauncher.py:161
+msgid "Could not read the selected file."
+msgstr "Impossível ler o ficheiro seleccionado."
+
+#: GWizardFileMerge/gwizardlauncher.py:201
+msgid "Loading Data Merge"
+msgstr "A carregar a união de dados"
+
+#: GWizardFileMerge/gwizardlauncher.py:202
+#: GWizardFileMerge/gwizardlauncher.py:206
+msgid "Reading the selected file..."
+msgstr "A ler o ficheiro seleccionado..."
+
+#: GWizardFileMerge/gwizardlauncher.py:214
+msgid "Load Failed"
+msgstr "Falha ao carregar"
+
+#: GWizardFileMerge/gwizardlauncher.py:216
+msgid "Building the comparison window..."
+msgstr "A construir a janela de comparação..."
+
+#: GWizardFileMerge/gwizardmergedialog.py:256
+msgid "Untitled source"
+msgstr "Fonte sem título"
+
+#: GWizardFileMerge/gwizardmergedialog.py:265
+#, python-format
+msgid "page %s"
+msgstr "página %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:287
+#, python-format
+msgid "via %s"
+msgstr "por meio de %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:315
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "nada"
+
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#, python-format
+msgid "Sources: %s"
+msgstr "Fontes: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:377
+msgid "GWizard Merge"
+msgstr "União GWizard"
+
+#: GWizardFileMerge/gwizardmergedialog.py:385
+msgid "No source database available for merge"
+msgstr "Não há base de dados fonte disponível para unir"
+
+#: GWizardFileMerge/gwizardmergedialog.py:394
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr "O indivíduo-fonte já não existe: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:400
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr "O indivíduo-destino já não existe: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:531
+msgid "→"
+msgstr "→"
+
+#: GWizardFileMerge/gwizardmergedialog.py:599
+msgid "Current Family Tree"
+msgstr "Árvore de família actual"
+
+#: GWizardFileMerge/gwizardmergedialog.py:767
+msgid "Name Sources"
+msgstr "Fontes de nomes"
+
+#: GWizardFileMerge/gwizardmergedialog.py:807
+msgid "Person Sources"
+msgstr "Fontes de indivíduos"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1093
+msgid "=>"
+msgstr "=>"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1094
+#, python-format
+msgid "Move %s to current family tree"
+msgstr "Mover %s para a árvore actual"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1102
+msgid "✓"
+msgstr "✓"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1286
+#, python-format
+msgid "%d Citations"
+msgstr "%d citações"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1288
+#, python-format
+msgid "%d Sources"
+msgstr "%d fontes"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1290
+#, python-format
+msgid "%d Notes"
+msgstr "%d notas"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1292
+#, python-format
+msgid "%d Media Records"
+msgstr "%d multimédia"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1294
+#, python-format
+msgid "%d Repositories"
+msgstr "%d repositórios"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1297
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+"Os dados a unir contêm referências a objectos externos que não existem na "
+"sua árvore genealógica:\n"
+"\n"
+"%s\n"
+"\n"
+"Para evitar ligações inválidas, estas referências têm de ser importadas com "
+"os dados que seleccionou. Confirma esta importação?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1310
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+"A fonte %d já na árvore genealógica será reutilizada (comparada com título, "
+"autor e informações de publicação)."
+msgstr[1] ""
+"As fontes %d já na árvore genealógica serão reutilizadas (comparadas com "
+"título, autor e informações de publicação)."
+
+#: GWizardFileMerge/gwizardmergedialog.py:1324
+msgid "Confirm Importing Missing References"
+msgstr "Confirme a importação de referências em falta"
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "Exportar extensões GEDCOM (GED2)"
@@ -17411,8 +17774,8 @@ msgid ""
 "pie chart of the totals. Check the Chart tab after running."
 msgstr ""
 "Conta quantos indivíduos são do sexo masculino, feminino ou desconhecido e "
-"depois desenhar um gráfico circular com os totais. Veja o separador «Gráfico"
-"» após a execução."
+"depois desenhar um gráfico circular com os totais. Veja o separador "
+"«Gráfico» após a execução."
 
 #: GrampyScript/script_descriptions.py:74
 msgid "Age At Death Histogram"
@@ -17519,8 +17882,8 @@ msgid ""
 "you've already created; if the name doesn't match one, a warning shows up in "
 "the Output tab instead."
 msgstr ""
-"Executa um dos seus próprios filtros personalizados (do gramplet/editor «"
-"Filtros») por nome, utilizando a função custom_filter(). Substitua «filtro "
+"Executa um dos seus próprios filtros personalizados (do gramplet/editor "
+"«Filtros») por nome, utilizando a função custom_filter(). Substitua «filtro "
 "de exemplo» pelo nome de um filtro que já tenha criado; se o nome não "
 "corresponder a nenhum filtro, será exibido um aviso no separador «Saída»."
 
@@ -19172,10 +19535,6 @@ msgstr "Peso da linha"
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
 msgstr "A espessura da linha pode ser configurada."
-
-#: LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
-msgstr "nada"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
@@ -24609,6 +24968,388 @@ msgstr "SQLite é um formato de base de dados comum"
 msgid "SQLite Export"
 msgstr "Exportação SQLite"
 
+#: StoryExport/StoryExport.gpr.py:24 StoryExport/StoryExport.py:170
+#: StoryExport/StoryExport.py:281
+msgid "Generate Story"
+msgstr "Gerar história"
+
+#: StoryExport/StoryExport.gpr.py:26
+msgid ""
+"Generates the story of a person or a family (.story.zip): a slideshow of "
+"their events with dates, places and photos, for the Gramps Connect Story "
+"Viewer"
+msgstr ""
+"Gera a história individual ou familiar (.story.zip): um diaporama dos seus "
+"eventos com datas, locais e fotografias, para o Gramps Connect Story Viewer"
+
+#: StoryExport/StoryExport.py:82
+msgid "Select the person whose story to generate, then try again."
+msgstr "Seleccione o indivíduo cuja história pretende gerar e tente novamente."
+
+#: StoryExport/StoryExport.py:98 StoryExport/StoryExport.py:114
+msgid "Couldn't generate the story"
+msgstr "Impossível gerar a história"
+
+#: StoryExport/StoryExport.py:117
+msgid "Story saved"
+msgstr "História gravada"
+
+#: StoryExport/StoryExport.py:120
+#, python-format
+msgid ""
+"%(count)d slides saved to %(path)s.\n"
+"\n"
+"Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+msgstr ""
+"%(count)d diapositivos gravados em %(path)s.\n"
+"\n"
+"Abrir no visualizador de histórias do Gramps Connect: https://"
+"dsblank.github.io/gramps-connect-stories/"
+
+#: StoryExport/StoryExport.py:126
+msgid "_Open in Browser"
+msgstr "Abrir no navegad_or"
+
+#: StoryExport/StoryExport.py:159
+msgid "Story"
+msgstr "História"
+
+#: StoryExport/StoryExport.py:180
+msgid "Generate the story of:"
+msgstr "Gerar a história de:"
+
+#: StoryExport/StoryExport.py:185
+#, python-format
+msgid "Family: %s"
+msgstr "Família: %s"
+
+#: StoryExport/StoryExport.py:195
+msgid "Include families"
+msgstr "Incluir famílias"
+
+#: StoryExport/StoryExport.py:198
+msgid ""
+"Also draw on this person's own families: a spouse's and children's births "
+"and deaths, and their parents' and siblings'."
+msgstr ""
+"Usar também dados relativos à família deste indivíduo: nascimentos e óbitos "
+"de cônjuges, filhos, pais e irmãos."
+
+#: StoryExport/StoryExport.py:223
+msgid "Include each person's own birth and death in this family's story:"
+msgstr ""
+"Incluir data de nascimento e óbito de cada pessoa na história desta família:"
+
+#: StoryExport/StoryExport.py:248
+msgid "Include living people (and photos they appear in)"
+msgstr "Incluir vivos (e as fotografias em que aparecem)"
+
+#: StoryExport/StoryExport.py:292
+msgid "Stories (*.story.zip)"
+msgstr "Histórias (*.story.zip)"
+
+#: StoryExport/storyexport_builder.py:427
+msgid ""
+"This family is marked private. To generate its story, check \"Include data "
+"marked private\"."
+msgstr ""
+"Esta família está marcada como privada. Para gerar a sua história, marque "
+"\"Incluir dados marcados como privados\"."
+
+#: StoryExport/storyexport_builder.py:438
+#, python-format
+msgid ""
+"%s is marked private. To generate their story, check \"Include data marked "
+"private\"."
+msgstr ""
+"%s está marcado como privado. Para gerar a sua história, marque \"Incluir "
+"dados marcados como privados\"."
+
+#: StoryExport/storyexport_builder.py:446
+#, python-format
+msgid ""
+"%s is probably living. To generate their story, check \"Include living "
+"people\"."
+msgstr ""
+"É provável que %s esteja vivo. Para criar a sua história, marque \"Incluir "
+"vivos\"."
+
+#: StoryExport/storyexport_builder.py:460
+#, python-format
+msgid "%(who)s was born"
+msgstr "%(who)s nasceu"
+
+#: StoryExport/storyexport_builder.py:461
+#, python-format
+msgid "%(who)s was stillborn"
+msgstr "%(who)s nasceu morto"
+
+#: StoryExport/storyexport_builder.py:462
+#, python-format
+msgid "%(who)s was baptized"
+msgstr "%(who)s foi baptizado"
+
+#: StoryExport/storyexport_builder.py:463
+#: StoryExport/storyexport_builder.py:464
+#, python-format
+msgid "%(who)s was christened"
+msgstr "%(who)s foi baptizado"
+
+#: StoryExport/storyexport_builder.py:465
+#, python-format
+msgid "%(who)s was blessed"
+msgstr "%(who)s foi abençoado"
+
+#: StoryExport/storyexport_builder.py:466
+#, python-format
+msgid "%(who)s was confirmed"
+msgstr "%(who)s foi crismado"
+
+#: StoryExport/storyexport_builder.py:467
+#, python-format
+msgid "%(who)s took First Communion"
+msgstr "%(who)s fez a primeira comunhão"
+
+#: StoryExport/storyexport_builder.py:468
+#, python-format
+msgid "%(who)s celebrated their Bar Mitzvah"
+msgstr "%(who)s teve o Bar Mitzvah"
+
+#: StoryExport/storyexport_builder.py:469
+#, python-format
+msgid "%(who)s celebrated their Bas Mitzvah"
+msgstr "%(who)s teve o Bas Mitzvah"
+
+#: StoryExport/storyexport_builder.py:470
+#, python-format
+msgid "%(who)s was adopted"
+msgstr "%(who)s foi adoptado/a"
+
+#: StoryExport/storyexport_builder.py:471
+#, python-format
+msgid "%(who)s graduated"
+msgstr "%(who)s formou-se"
+
+#: StoryExport/storyexport_builder.py:472
+#, python-format
+msgid "%(who)s was awarded a degree"
+msgstr "%(who)s recebeu um grau"
+
+#: StoryExport/storyexport_builder.py:473
+#, python-format
+msgid "%(who)s emigrated"
+msgstr "%(who)s emigrou"
+
+#: StoryExport/storyexport_builder.py:474
+#, python-format
+msgid "%(who)s immigrated"
+msgstr "%(who)s imigrou"
+
+#: StoryExport/storyexport_builder.py:475
+#, python-format
+msgid "%(who)s was naturalized"
+msgstr "%(who)s foi naturalizado"
+
+#: StoryExport/storyexport_builder.py:476
+#, python-format
+msgid "%(who)s was ordained"
+msgstr "%(who)s foi ordenado"
+
+#: StoryExport/storyexport_builder.py:477
+#, python-format
+msgid "%(who)s was elected"
+msgstr "%(who)s foi eleito"
+
+#: StoryExport/storyexport_builder.py:478
+#, python-format
+msgid "%(who)s retired"
+msgstr "%(who)s reformou-se"
+
+#: StoryExport/storyexport_builder.py:479
+#, python-format
+msgid "%(who)s died"
+msgstr "%(who)s faleceu"
+
+#: StoryExport/storyexport_builder.py:480
+#, python-format
+msgid "%(who)s was buried"
+msgstr "%(who)s foi sepultado"
+
+#: StoryExport/storyexport_builder.py:481
+#, python-format
+msgid "%(who)s was cremated"
+msgstr "%(who)s foi cremado"
+
+#: StoryExport/storyexport_builder.py:482
+#, python-format
+msgid "%(who)s had their estate probated"
+msgstr "%(who)s teve herança sucessória"
+
+#: StoryExport/storyexport_builder.py:487
+#: StoryExport/storyexport_builder.py:488
+#, python-format
+msgid "%(who)s were married"
+msgstr "%(who)s foram casados"
+
+#: StoryExport/storyexport_builder.py:489
+#, python-format
+msgid "%(who)s had their banns read"
+msgstr "%(who)s tiveram os banhos lidos"
+
+#: StoryExport/storyexport_builder.py:490
+#, python-format
+msgid "%(who)s signed a marriage contract"
+msgstr "%(who)s fizeram contrato matrimonial"
+
+#: StoryExport/storyexport_builder.py:491
+#, python-format
+msgid "%(who)s took out a marriage license"
+msgstr "%(who)s tiraram licença de casamento"
+
+#: StoryExport/storyexport_builder.py:492
+#, python-format
+msgid "%(who)s agreed a marriage settlement"
+msgstr "%(who)s fizeram convenção ante-nupcial"
+
+#: StoryExport/storyexport_builder.py:493
+#, python-format
+msgid "%(who)s were engaged"
+msgstr "%(who)s foram noivos"
+
+#: StoryExport/storyexport_builder.py:494
+#, python-format
+msgid "%(who)s were divorced"
+msgstr "%(who)s divorciaram-se"
+
+#: StoryExport/storyexport_builder.py:495
+#, python-format
+msgid "%(who)s filed for divorce"
+msgstr "%(who)s pediram o divórcio"
+
+#: StoryExport/storyexport_builder.py:496
+#, python-format
+msgid "%(who)s had their marriage annulled"
+msgstr "%(who)s tiveram o casamento anulado"
+
+#: StoryExport/storyexport_builder.py:497
+#, python-format
+msgid "%(who)s were recorded in the census"
+msgstr "%(who)s constaram no censo"
+
+#: StoryExport/storyexport_builder.py:498
+#, python-format
+msgid "%(who)s lived"
+msgstr "%(who)s viveram"
+
+#: StoryExport/storyexport_builder.py:530
+#, python-format
+msgid "%(names)s and %(last)s"
+msgstr "%(names)s e %(last)s"
+
+#: StoryExport/storyexport_builder.py:568
+#, python-format
+msgid "%(type)s (%(role)s)"
+msgstr "%(type)s (%(role)s)"
+
+#: StoryExport/storyexport_builder.py:570
+#: StoryExport/storyexport_builder.py:589
+#, python-format
+msgid "%(type)s of %(who)s"
+msgstr "%(type)s de %(who)s"
+
+#: StoryExport/storyexport_builder.py:581
+#, python-format
+msgid "%(who)s took part in this %(type)s as %(role)s"
+msgstr "%(who)s participou em %(type)s como %(role)s"
+
+#: StoryExport/storyexport_builder.py:595
+#, python-format
+msgid "%(moment)s on %(date)s"
+msgstr "%(moment)s em %(date)s"
+
+#: StoryExport/storyexport_builder.py:597
+#, python-format
+msgid "%(moment)s in %(date)s"
+msgstr "%(moment)s em %(date)s"
+
+#: StoryExport/storyexport_builder.py:599
+#, python-format
+msgid "%(moment)s %(date)s"
+msgstr "%(moment)s, %(date)s"
+
+#: StoryExport/storyexport_builder.py:602
+#, python-format
+msgid "%(moment)s in %(place)s"
+msgstr "%(moment)s em %(place)s"
+
+#: StoryExport/storyexport_builder.py:750
+#, python-format
+msgid "%d moment"
+msgid_plural "%d moments"
+msgstr[0] "%d momento"
+msgstr[1] "%d momentos"
+
+#: StoryExport/storyexport_builder.py:790
+msgid "This person isn't included with the chosen privacy settings."
+msgstr ""
+"Este indivíduo não está incluído nas definições de privacidade escolhidas."
+
+#: StoryExport/storyexport_builder.py:810
+#, python-format
+msgid "%s has no events to build a story from."
+msgstr "%s não tem eventos para construir uma história."
+
+#: StoryExport/storyexport_builder.py:813
+#: StoryExport/storyexport_builder.py:862
+#, python-format
+msgid "The Story of %s"
+msgstr "Biografia de %s"
+
+#: StoryExport/storyexport_builder.py:817
+#, python-format
+msgid "%(moments)s from %(name)s's recorded life."
+msgstr "%(moments)s da vida de %(name)s."
+
+#: StoryExport/storyexport_builder.py:840
+msgid "This family isn't included with the chosen privacy settings."
+msgstr ""
+"Esta família não está incluída nas definições de privacidade escolhidas."
+
+#: StoryExport/storyexport_builder.py:844
+msgid "this family"
+msgstr "esta família"
+
+#: StoryExport/storyexport_builder.py:854
+msgid ""
+"This family has no events to build a story from: not on the family itself, "
+"and no births or deaths recorded for its members."
+msgstr ""
+"Esta família não tem eventos para construir uma história: nem sobre si "
+"própria, nem nascimentos ou óbitos dos seus membros."
+
+#: StoryExport/storyexport_builder.py:865
+#, python-format
+msgid "%(moments)s from the life of %(couple)s and %(children)s."
+msgstr "%(moments)s da vida de %(couple)s e %(children)s."
+
+#: StoryExport/storyexport_builder.py:869
+#, python-format
+msgid "their child"
+msgid_plural "their %(count)d children"
+msgstr[0] "o seu filho"
+msgstr[1] "os seus %(count)d filhos"
+
+#: StoryExport/storyexport_builder.py:874
+#, python-format
+msgid "%(moments)s from the life of %(couple)s."
+msgstr "%(moments)s da vida de %(couple)s."
+
+#: StoryExport/storyexport_builder.py:888
+#, python-format
+msgid "Family %s"
+msgstr "Família %s"
+
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
 msgid "Surname Mapping"
@@ -27320,9 +28061,6 @@ msgstr ""
 #~ msgid "Search"
 #~ msgstr "Procurar"
 
-#~ msgid "Merge"
-#~ msgstr "Unir"
-
 #~ msgid "Wordle"
 #~ msgstr "Wordle"
 
@@ -27559,9 +28297,6 @@ msgstr ""
 #~ msgid "You must first create a tag before running this report."
 #~ msgstr ""
 #~ "Tem primeiro de criar uma etiqueta antes de executar este relatório."
-
-#~ msgid "family"
-#~ msgstr "família"
 
 #~ msgid "Colors"
 #~ msgstr "Cores"

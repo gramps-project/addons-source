@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 10:14-0700\n"
+"POT-Creation-Date: 2026-10-26 09:44-0700\n"
 "PO-Revision-Date: 2026-08-28 06:51+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
@@ -2180,6 +2180,7 @@ msgid "Abandon"
 msgstr "Forlad"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
+#: GWizardFileMerge/gwizardmergedialog.py:537
 msgid "New person"
 msgstr "Ny person"
 
@@ -15920,6 +15921,428 @@ msgstr ""
 "Matcher objekter hvor det givne gramps-object-query-language where-udtryk er "
 "sandt"
 
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:19
+#, fuzzy
+#| msgid "Command Line Merge"
+msgid "GWizard File Merge"
+msgstr "Kommando Linie Sammenflet"
+
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:21
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:120
+#, fuzzy
+#| msgid "Deep Connections"
+msgid "Configure Connection"
+msgstr "Dybe Slægtskaber"
+
+#: GWizardFileMerge/gwizard.py:121
+#, fuzzy
+#| msgid "Loading the data"
+msgid "Load Data"
+msgstr "Indlæser data"
+
+#: GWizardFileMerge/gwizard.py:122
+#, fuzzy
+#| msgid "Edit referenced Person"
+msgid "Find Matching Persons"
+msgstr "Rediger den henviste person"
+
+#: GWizardFileMerge/gwizard.py:123
+#, fuzzy
+#| msgid "Differences"
+msgid "Compare Differences"
+msgstr "Forskelle"
+
+#: GWizardFileMerge/gwizard.py:124
+#, fuzzy
+#| msgid "No changes"
+msgid "Apply Changes"
+msgstr "Ingen ændringer"
+
+#: GWizardFileMerge/gwizard.py:137
+msgid "Configure file path or authenticate with online service."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:138
+msgid "Load/parse the external genealogy data into memory."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:139
+msgid "Search for potential matches in your database."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:140
+msgid "Compare fields side-by-side between the source and target."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:141
+msgid "Merge selected changes or add new records to the database."
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:167
+#: GWizardFileMerge/gwizardcompare.py:187
+msgid "GWizard Compare"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:173
+msgid "No source database available for comparison"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:208
+#: GWizardFileMerge/gwizardmergedialog.py:586
+#, fuzzy
+#| msgid "Importing GEDCOM..."
+msgid "Incoming GEDCOM"
+msgstr "Importerer GEDCOM..."
+
+#: GWizardFileMerge/gwizardcompare.py:213
+#: GWizardFileMerge/gwizardmergedialog.py:593
+#, fuzzy, python-format
+#| msgid "Importing GEDCOM..."
+msgid "Incoming GEDCOM: %s"
+msgstr "Importerer GEDCOM..."
+
+#: GWizardFileMerge/gwizardcompare.py:215
+#: GWizardFileMerge/gwizardmergedialog.py:597
+#, fuzzy, python-format
+#| msgid "Error in reading '%s'"
+msgid "Current Family Tree: %s"
+msgstr "Fejl ved læsning af '%s'"
+
+#: GWizardFileMerge/gwizardcompare.py:426
+#, fuzzy
+#| msgid "Populated"
+msgid "Populate Failed"
+msgstr "Befolket"
+
+#: GWizardFileMerge/gwizardcompare.py:876
+#, fuzzy
+#| msgid "Merge"
+msgid "Merge..."
+msgstr "Sammenføj"
+
+#: GWizardFileMerge/gwizardcompare.py:878
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:883
+#: GWizardFileMerge/gwizardcompare.py:1224
+#, fuzzy
+#| msgid "Add as a Wife"
+msgid "Add as New..."
+msgstr "Tilføj som en hustru"
+
+#: GWizardFileMerge/gwizardcompare.py:885
+#: GWizardFileMerge/gwizardcompare.py:1226
+msgid "Add the selected incoming person as a new person"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:926
+msgid "Record"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:932
+msgid "Born"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:933
+msgid "Died"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:975
+#: GWizardFileMerge/gwizardmergedialog.py:740
+#, fuzzy
+#| msgid "India"
+msgid "Individual Details"
+msgstr "Indien"
+
+#: GWizardFileMerge/gwizardcompare.py:976
+#: GWizardFileMerge/gwizardmergedialog.py:813
+#, fuzzy
+#| msgid "Family Relation Types"
+msgid "Family Relations"
+msgstr "Familie slægtskabstyper"
+
+#: GWizardFileMerge/gwizardcompare.py:978
+#: GWizardFileMerge/gwizardmergedialog.py:859
+msgid "Events & Other Records"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1216
+#, fuzzy
+#| msgid ""
+#| "No\n"
+#| "Matches"
+msgid "Not a Match"
+msgstr "Ingen passer"
+
+#: GWizardFileMerge/gwizardcompare.py:1219
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1232
+#, fuzzy, python-format
+#| msgid "Differences"
+msgid "Differences: %d of %d"
+msgstr "Forskelle"
+
+#: GWizardFileMerge/gwizardcompare.py:1484
+#, fuzzy
+#| msgid "none"
+msgid "(none)"
+msgstr "ingen"
+
+#: GWizardFileMerge/gwizardcompare.py:1648
+#, fuzzy, python-format
+#| msgid "found: %s"
+msgid "Gender: %s"
+msgstr "fandt: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1650
+#, fuzzy, python-format
+#| msgid "   N-ID: %s"
+msgid "ID: %s"
+msgstr "   N-ID: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1677
+#, fuzzy, python-format
+#| msgid "FamilySearch.org"
+msgid "FamilySearch: %s"
+msgstr "FamilySearch.org"
+
+#: GWizardFileMerge/gwizardcompare.py:1751
+#: GWizardFileMerge/gwizardcompare.py:1768
+#: GWizardFileMerge/gwizardmergedialog.py:451
+#, fuzzy, python-format
+#| msgid "Added %s: %s "
+msgid "%s: %s"
+msgstr "Tilføjet %s: %s "
+
+#: GWizardFileMerge/gwizardcompare.py:2008
+#, fuzzy
+#| msgid "Add as a Child"
+msgid "Add as New failed"
+msgstr "Tilføj som et barn"
+
+#: GWizardFileMerge/gwizardgedcom.py:351
+#: GWizardFileMerge/gwizardmergedialog.py:745
+#, fuzzy
+#| msgid "Checking Given Names"
+msgid "Given Name"
+msgstr "Kontrollerer fornavne"
+
+#: GWizardFileMerge/gwizardgedcom.py:377
+#: GWizardFileMerge/gwizardmergedialog.py:761
+#, fuzzy
+#| msgid "Surnames Index"
+msgid "Surname Prefix"
+msgstr "Efternavnindeks"
+
+#: GWizardFileMerge/gwizardgedcom.py:1068
+msgid "GWizard Data Merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:113
+#, fuzzy
+#| msgid "Generation "
+msgid "Genealogy files"
+msgstr "Generation"
+
+#: GWizardFileMerge/gwizardlauncher.py:129
+#, fuzzy
+#| msgid "Select filter to restrict people"
+msgid "Select File to Compare"
+msgstr "Vælg filter til personafgrænsning"
+
+#: GWizardFileMerge/gwizardlauncher.py:158
+#, fuzzy
+#| msgid "The selected file is a directory, not a file."
+msgid "The selected file is missing."
+msgstr "den valgte fil er en mappe, ikke en fil."
+
+#: GWizardFileMerge/gwizardlauncher.py:161
+#, fuzzy
+#| msgid "Could not create the directory: %(path)s"
+msgid "Could not read the selected file."
+msgstr "Kunne ikke oprette mappen: %(path)s"
+
+#: GWizardFileMerge/gwizardlauncher.py:201
+#, fuzzy
+#| msgid "Loading the data"
+msgid "Loading Data Merge"
+msgstr "Indlæser data"
+
+#: GWizardFileMerge/gwizardlauncher.py:202
+#: GWizardFileMerge/gwizardlauncher.py:206
+#, fuzzy
+#| msgid "Reading file list..."
+msgid "Reading the selected file..."
+msgstr "Læser fillisten..."
+
+#: GWizardFileMerge/gwizardlauncher.py:214
+msgid "Load Failed"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:216
+msgid "Building the comparison window..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:256
+#, fuzzy
+#| msgid "Without title"
+msgid "Untitled source"
+msgstr "Uden titel"
+
+#: GWizardFileMerge/gwizardmergedialog.py:265
+#, fuzzy, python-format
+#| msgid ", page %s"
+msgid "page %s"
+msgstr ", side %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:287
+#, python-format
+msgid "via %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:315
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "ingen"
+
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#, fuzzy, python-format
+#| msgid "Sources?"
+msgid "Sources: %s"
+msgstr "Kilder?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:377
+#, fuzzy
+#| msgid "Media Merge"
+msgid "GWizard Merge"
+msgstr "Sammenfletning af medier"
+
+#: GWizardFileMerge/gwizardmergedialog.py:385
+#, fuzzy
+#| msgid "No data available in table"
+msgid "No source database available for merge"
+msgstr "Ingen data tilgængeig i tabellen"
+
+#: GWizardFileMerge/gwizardmergedialog.py:394
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:400
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:531
+#, fuzzy
+#| msgid "→ %s"
+msgid "→"
+msgstr "→ %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:599
+#, fuzzy
+#| msgid "Parent Family"
+msgid "Current Family Tree"
+msgstr "Forældrefamilie"
+
+#: GWizardFileMerge/gwizardmergedialog.py:767
+#, fuzzy
+#| msgid "No Source"
+msgid "Name Sources"
+msgstr "Ingen Kilde"
+
+#: GWizardFileMerge/gwizardmergedialog.py:807
+#, fuzzy
+#| msgid "No Source"
+msgid "Person Sources"
+msgstr "Ingen Kilde"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1093
+#, fuzzy
+#| msgid "="
+msgid "=>"
+msgstr "="
+
+#: GWizardFileMerge/gwizardmergedialog.py:1094
+#, fuzzy, python-format
+#| msgid "The center family for the tree"
+msgid "Move %s to current family tree"
+msgstr "Fokusfamilie for træet"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1102
+msgid "✓"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1286
+#, fuzzy, python-format
+#| msgid "Citations:"
+msgid "%d Citations"
+msgstr "Kildehenvisninger:"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1288
+#, fuzzy, python-format
+#| msgid "Sources?"
+msgid "%d Sources"
+msgstr "Kilder?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1290
+#, fuzzy, python-format
+#| msgid "Notes:"
+msgid "%d Notes"
+msgstr "Noter:"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1292
+#, fuzzy, python-format
+#| msgid "Media Report"
+msgid "%d Media Records"
+msgstr "Medierapport"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1294
+#, fuzzy, python-format
+#| msgid "repositories"
+msgid "%d Repositories"
+msgstr "arkiver"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1297
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1310
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1324
+msgid "Confirm Importing Missing References"
+msgstr ""
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "Eksporter GEDCOM udvidelser (GED2)"
@@ -19052,10 +19475,6 @@ msgstr "Linjebredde"
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
 msgstr "Linjebredden kan konfigureres."
-
-#: LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
-msgstr "ingen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
@@ -24633,6 +25052,391 @@ msgstr "SQLite er et almindeligt lokalt databaseformat"
 msgid "SQLite Export"
 msgstr "SQLite Eksport"
 
+#: StoryExport/StoryExport.gpr.py:24 StoryExport/StoryExport.py:170
+#: StoryExport/StoryExport.py:281
+#, fuzzy
+#| msgid "Generate"
+msgid "Generate Story"
+msgstr "_Generér"
+
+#: StoryExport/StoryExport.gpr.py:26
+msgid ""
+"Generates the story of a person or a family (.story.zip): a slideshow of "
+"their events with dates, places and photos, for the Gramps Connect Story "
+"Viewer"
+msgstr ""
+
+#: StoryExport/StoryExport.py:82
+msgid "Select the person whose story to generate, then try again."
+msgstr ""
+
+#: StoryExport/StoryExport.py:98 StoryExport/StoryExport.py:114
+#, fuzzy
+#| msgid "Could not create the directory: %(path)s"
+msgid "Couldn't generate the story"
+msgstr "Kunne ikke oprette mappen: %(path)s"
+
+#: StoryExport/StoryExport.py:117
+msgid "Story saved"
+msgstr ""
+
+#: StoryExport/StoryExport.py:120
+#, python-format
+msgid ""
+"%(count)d slides saved to %(path)s.\n"
+"\n"
+"Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+msgstr ""
+
+#: StoryExport/StoryExport.py:126
+#, fuzzy
+#| msgid "Media Browser"
+msgid "_Open in Browser"
+msgstr "Media Browser"
+
+#: StoryExport/StoryExport.py:159
+msgid "Story"
+msgstr ""
+
+#: StoryExport/StoryExport.py:180
+#, fuzzy
+#| msgid "Generate Test Notes"
+msgid "Generate the story of:"
+msgstr "Dan testnoter"
+
+#: StoryExport/StoryExport.py:185
+#, fuzzy, python-format
+#| msgid "Family:"
+msgid "Family: %s"
+msgstr "Familie:"
+
+#: StoryExport/StoryExport.py:195
+#, fuzzy
+#| msgid "Include siblings"
+msgid "Include families"
+msgstr "Medtag søskende"
+
+#: StoryExport/StoryExport.py:198
+msgid ""
+"Also draw on this person's own families: a spouse's and children's births "
+"and deaths, and their parents' and siblings'."
+msgstr ""
+
+#: StoryExport/StoryExport.py:223
+msgid "Include each person's own birth and death in this family's story:"
+msgstr ""
+
+#: StoryExport/StoryExport.py:248
+msgid "Include living people (and photos they appear in)"
+msgstr ""
+
+#: StoryExport/StoryExport.py:292
+msgid "Stories (*.story.zip)"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:427
+msgid ""
+"This family is marked private. To generate its story, check \"Include data "
+"marked private\"."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:438
+#, python-format
+msgid ""
+"%s is marked private. To generate their story, check \"Include data marked "
+"private\"."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:446
+#, python-format
+msgid ""
+"%s is probably living. To generate their story, check \"Include living "
+"people\"."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:460
+#, python-format
+msgid "%(who)s was born"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:461
+#, python-format
+msgid "%(who)s was stillborn"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:462
+#, python-format
+msgid "%(who)s was baptized"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:463
+#: StoryExport/storyexport_builder.py:464
+#, python-format
+msgid "%(who)s was christened"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:465
+#, python-format
+msgid "%(who)s was blessed"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:466
+#, python-format
+msgid "%(who)s was confirmed"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:467
+#, python-format
+msgid "%(who)s took First Communion"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:468
+#, python-format
+msgid "%(who)s celebrated their Bar Mitzvah"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:469
+#, python-format
+msgid "%(who)s celebrated their Bas Mitzvah"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:470
+#, python-format
+msgid "%(who)s was adopted"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:471
+#, python-format
+msgid "%(who)s graduated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:472
+#, python-format
+msgid "%(who)s was awarded a degree"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:473
+#, python-format
+msgid "%(who)s emigrated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:474
+#, python-format
+msgid "%(who)s immigrated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:475
+#, python-format
+msgid "%(who)s was naturalized"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:476
+#, python-format
+msgid "%(who)s was ordained"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:477
+#, python-format
+msgid "%(who)s was elected"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:478
+#, python-format
+msgid "%(who)s retired"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:479
+#, python-format
+msgid "%(who)s died"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:480
+#, python-format
+msgid "%(who)s was buried"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:481
+#, python-format
+msgid "%(who)s was cremated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:482
+#, python-format
+msgid "%(who)s had their estate probated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:487
+#: StoryExport/storyexport_builder.py:488
+#, python-format
+msgid "%(who)s were married"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:489
+#, python-format
+msgid "%(who)s had their banns read"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:490
+#, python-format
+msgid "%(who)s signed a marriage contract"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:491
+#, python-format
+msgid "%(who)s took out a marriage license"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:492
+#, python-format
+msgid "%(who)s agreed a marriage settlement"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:493
+#, python-format
+msgid "%(who)s were engaged"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:494
+#, python-format
+msgid "%(who)s were divorced"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:495
+#, fuzzy, python-format
+#| msgid "Used for source"
+msgid "%(who)s filed for divorce"
+msgstr "Benyttet for kilde"
+
+#: StoryExport/storyexport_builder.py:496
+#, python-format
+msgid "%(who)s had their marriage annulled"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:497
+#, python-format
+msgid "%(who)s were recorded in the census"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:498
+#, python-format
+msgid "%(who)s lived"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:530
+#, fuzzy, python-format
+#| msgid "%(ancestor1)s and %(ancestor2)s"
+msgid "%(names)s and %(last)s"
+msgstr "%(ancestor1)s og %(ancestor2)s"
+
+#: StoryExport/storyexport_builder.py:568
+#, fuzzy, python-format
+#| msgid "%(type)s: %(value)s"
+msgid "%(type)s (%(role)s)"
+msgstr "%(type)s: %(value)s"
+
+#: StoryExport/storyexport_builder.py:570
+#: StoryExport/storyexport_builder.py:589
+#, fuzzy, python-format
+#| msgid "%(type)s: %(value)s"
+msgid "%(type)s of %(who)s"
+msgstr "%(type)s: %(value)s"
+
+#: StoryExport/storyexport_builder.py:581
+#, python-format
+msgid "%(who)s took part in this %(type)s as %(role)s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:595
+#, fuzzy, python-format
+#| msgid "%(event_type)s: %(date)s"
+msgid "%(moment)s on %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: StoryExport/storyexport_builder.py:597
+#, fuzzy, python-format
+#| msgid "%(event_type)s: %(date)s"
+msgid "%(moment)s in %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: StoryExport/storyexport_builder.py:599
+#, fuzzy, python-format
+#| msgid "%(event_type)s: %(date)s"
+msgid "%(moment)s %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: StoryExport/storyexport_builder.py:602
+#, fuzzy, python-format
+#| msgid "%(date)s, %(place)s"
+msgid "%(moment)s in %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#: StoryExport/storyexport_builder.py:750
+#, python-format
+msgid "%d moment"
+msgid_plural "%d moments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: StoryExport/storyexport_builder.py:790
+msgid "This person isn't included with the chosen privacy settings."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:810
+#, python-format
+msgid "%s has no events to build a story from."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:813
+#: StoryExport/storyexport_builder.py:862
+#, python-format
+msgid "The Story of %s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:817
+#, python-format
+msgid "%(moments)s from %(name)s's recorded life."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:840
+msgid "This family isn't included with the chosen privacy settings."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:844
+#, fuzzy
+#| msgid "Used for family"
+msgid "this family"
+msgstr "Benyttet for familie"
+
+#: StoryExport/storyexport_builder.py:854
+msgid ""
+"This family has no events to build a story from: not on the family itself, "
+"and no births or deaths recorded for its members."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:865
+#, python-format
+msgid "%(moments)s from the life of %(couple)s and %(children)s."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:869
+#, python-format
+msgid "their child"
+msgid_plural "their %(count)d children"
+msgstr[0] ""
+msgstr[1] ""
+
+#: StoryExport/storyexport_builder.py:874
+#, python-format
+msgid "%(moments)s from the life of %(couple)s."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:888
+#, fuzzy, python-format
+#| msgid "Family shape"
+msgid "Family %s"
+msgstr "Familieform"
+
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
 msgid "Surname Mapping"
@@ -27442,9 +28246,6 @@ msgstr ""
 
 #~ msgid "Search"
 #~ msgstr "Søg"
-
-#~ msgid "Merge"
-#~ msgstr "Sammenføj"
 
 #~ msgid "Wordle"
 #~ msgstr "Wordle"

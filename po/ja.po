@@ -4,13 +4,14 @@
 # Keiichiro Yamamoto <k.yanmar@gmail.com>, 2011.
 # coolz daddy <coolzdaddy55@gmail.com>, 2025.
 # coolvitto <coolzdaddy55@gmail.com>, 2026.
+# coolvitto <cool.vitto@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-30 15:23+0000\n"
-"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-10-26 09:44-0700\n"
+"PO-Revision-Date: 2026-10-29 15:51+0000\n"
+"Last-Translator: coolvitto <cool.vitto@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -640,12 +641,12 @@ msgstr ""
 " 👣 次のステップ :\n"
 " 家族とその家族内の人物を追加 :\n"
 "  • 家族は「追加」メニューから追加できます\n"
-"  • 配偶者 (「父/パートナー1」または「母/パートナー2」)パネルまたは「子供」"
-"タブで「+」 (プラス)を押すと、人物を追加できます。\n"
+"  • 配偶者 (「父/パートナー1」または「母/パートナー2」)パネルまたは「子供」タ"
+"ブで「+」 (プラス)を押すと、人物を追加できます。\n"
 "\n"
 "または外部ファイルから人物をインポートする :\n"
-"  • 「家系図」メニューの「インポート...」を使用して、外部ファイルを使用して"
-"ツリーを作成することができます。"
+"  • 「家系図」メニューの「インポート...」を使用して、外部ファイルを使用してツ"
+"リーを作成することができます。"
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
@@ -2128,6 +2129,7 @@ msgid "Abandon"
 msgstr "放棄"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
+#: GWizardFileMerge/gwizardmergedialog.py:537
 msgid "New person"
 msgstr "新しい人"
 
@@ -3545,9 +3547,9 @@ msgid ""
 "expand descendants of this person. "
 msgstr ""
 "人物が異なるブランチに現れることがあります。これは通常、家族間の結婚 (いとこ"
-"同士など)が原因です。この場合、その人物にもボタンが表示され"
-"、___NAV_BUTTON_CONTINUE___ または ___NAV_BUTTON_ALT___ で他のブランチに移動"
-"できます。この人物の子孫を展開するのは1つのブランチのみです。 "
+"同士など)が原因です。この場合、その人物にもボタンが表示され、"
+"___NAV_BUTTON_CONTINUE___ または ___NAV_BUTTON_ALT___ で他のブランチに移動で"
+"きます。この人物の子孫を展開するのは1つのブランチのみです。 "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
@@ -5257,8 +5259,8 @@ msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
-"画像がExifメタデータの読み取り/書き込みが可能な画像タイプでない場合、可能な"
-"タイプに変換しますか?"
+"画像がExifメタデータの読み取り/書き込みが可能な画像タイプでない場合、可能なタ"
+"イプに変換しますか?"
 
 #: EditExifMetadata/editexifmetadata.py:213
 msgid ""
@@ -5340,7 +5342,8 @@ msgstr "エラーが発生しました。ソースと宛先のファイルパス
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
-msgstr "元のファイルの削除中にエラーが発生しました。自分で削除する必要があります!"
+msgstr ""
+"元のファイルの削除中にエラーが発生しました。自分で削除する必要があります!"
 
 #: EditExifMetadata/editexifmetadata.py:838
 msgid "There was an error in converting your image file."
@@ -5668,7 +5671,8 @@ msgstr "Prologエクスポート"
 
 #: ExportProlog/ExportProlog.gpr.py:6
 msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
-msgstr "データをPrologファクト形式でエクスポートします。データはUnicode (utf-8)です"
+msgstr ""
+"データをPrologファクト形式でエクスポートします。データはUnicode (utf-8)です"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
@@ -5710,8 +5714,8 @@ msgid ""
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
-"選択された行のチェックマークを切り替えます。行は <ctrl> (グループに追加)"
-"、<shift> (グループを拡張)クリック、または <ctrl> や <shift> 矢印キーと "
+"選択された行のチェックマークを切り替えます。行は <ctrl> (グループに追加)、"
+"<shift> (グループを拡張)クリック、または <ctrl> や <shift> 矢印キーと "
 "'space' で選択できます。または <ctrl>'a' で全て選択します。"
 
 #: ExtractCity/extractcity.gpr.py:34
@@ -15824,6 +15828,365 @@ msgstr ""
 "指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価されるオブジェクトに"
 "一致します"
 
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:19
+msgid "GWizard File Merge"
+msgstr "GWizard ファイル統合"
+
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:21
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+"開いている家系図と別の系図ファイル（GEDCOM、Gramps XMLなど）を並べて比較し、"
+"選択した相違点を人物ごとに統合するための家系図処理ツール。"
+
+#: GWizardFileMerge/gwizard.py:120
+msgid "Configure Connection"
+msgstr "接続の設定"
+
+#: GWizardFileMerge/gwizard.py:121
+msgid "Load Data"
+msgstr "データの読み込み"
+
+#: GWizardFileMerge/gwizard.py:122
+msgid "Find Matching Persons"
+msgstr "一致する人物を検索"
+
+#: GWizardFileMerge/gwizard.py:123
+msgid "Compare Differences"
+msgstr "相違点を比較"
+
+#: GWizardFileMerge/gwizard.py:124
+msgid "Apply Changes"
+msgstr "変更を適用"
+
+#: GWizardFileMerge/gwizard.py:137
+msgid "Configure file path or authenticate with online service."
+msgstr "ファイルのパスを設定するか、オンラインサービスで認証を行ってください。"
+
+#: GWizardFileMerge/gwizard.py:138
+msgid "Load/parse the external genealogy data into memory."
+msgstr "外部の系図データをメモリに読み込み、解析する。"
+
+#: GWizardFileMerge/gwizard.py:139
+msgid "Search for potential matches in your database."
+msgstr "データベース内で該当する可能性のあるデータを検索します。"
+
+#: GWizardFileMerge/gwizard.py:140
+msgid "Compare fields side-by-side between the source and target."
+msgstr "ソースとターゲットのフィールドを並べて比較します。"
+
+#: GWizardFileMerge/gwizard.py:141
+msgid "Merge selected changes or add new records to the database."
+msgstr "選択した変更をマージするか、データベースに新しいレコードを追加します。"
+
+#: GWizardFileMerge/gwizardcompare.py:167
+#: GWizardFileMerge/gwizardcompare.py:187
+msgid "GWizard Compare"
+msgstr "GWizard の比較"
+
+#: GWizardFileMerge/gwizardcompare.py:173
+msgid "No source database available for comparison"
+msgstr "比較用のソースデータベースがありません"
+
+#: GWizardFileMerge/gwizardcompare.py:208
+#: GWizardFileMerge/gwizardmergedialog.py:586
+msgid "Incoming GEDCOM"
+msgstr "GEDCOM の取り込み"
+
+#: GWizardFileMerge/gwizardcompare.py:213
+#: GWizardFileMerge/gwizardmergedialog.py:593
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr "GEDCOM の取り込み: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:215
+#: GWizardFileMerge/gwizardmergedialog.py:597
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr "現在の家系図: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:426
+msgid "Populate Failed"
+msgstr "取り込みに失敗しました"
+
+#: GWizardFileMerge/gwizardcompare.py:876
+msgid "Merge..."
+msgstr "統合..."
+
+#: GWizardFileMerge/gwizardcompare.py:878
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr "選択したペアについて、フィールドごとのマージダイアログを開く"
+
+#: GWizardFileMerge/gwizardcompare.py:883
+#: GWizardFileMerge/gwizardcompare.py:1224
+msgid "Add as New..."
+msgstr "新規として追加..."
+
+#: GWizardFileMerge/gwizardcompare.py:885
+#: GWizardFileMerge/gwizardcompare.py:1226
+msgid "Add the selected incoming person as a new person"
+msgstr "選択した着信相手を新しい連絡先として追加する"
+
+#: GWizardFileMerge/gwizardcompare.py:926
+msgid "Record"
+msgstr "レコード"
+
+#: GWizardFileMerge/gwizardcompare.py:932
+msgid "Born"
+msgstr "生まれ"
+
+#: GWizardFileMerge/gwizardcompare.py:933
+msgid "Died"
+msgstr "死去"
+
+#: GWizardFileMerge/gwizardcompare.py:975
+#: GWizardFileMerge/gwizardmergedialog.py:740
+msgid "Individual Details"
+msgstr "個人の詳細"
+
+#: GWizardFileMerge/gwizardcompare.py:976
+#: GWizardFileMerge/gwizardmergedialog.py:813
+msgid "Family Relations"
+msgstr "家族関係"
+
+#: GWizardFileMerge/gwizardcompare.py:978
+#: GWizardFileMerge/gwizardmergedialog.py:859
+msgid "Events & Other Records"
+msgstr "イベントおよびその他の記録"
+
+#: GWizardFileMerge/gwizardcompare.py:1216
+msgid "Not a Match"
+msgstr "一致しない"
+
+#: GWizardFileMerge/gwizardcompare.py:1219
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+"これらは別の人物です: ペアを解除して、新しく参加する人を新規として追加できる"
+"ようにしてください"
+
+#: GWizardFileMerge/gwizardcompare.py:1232
+#, python-format
+msgid "Differences: %d of %d"
+msgstr "相違点: %d / %d"
+
+#: GWizardFileMerge/gwizardcompare.py:1484
+msgid "(none)"
+msgstr "(なし)"
+
+#: GWizardFileMerge/gwizardcompare.py:1648
+#, python-format
+msgid "Gender: %s"
+msgstr "性別: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1650
+#, python-format
+msgid "ID: %s"
+msgstr "ID: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1677
+#, python-format
+msgid "FamilySearch: %s"
+msgstr "FamilySearch : %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1751
+#: GWizardFileMerge/gwizardcompare.py:1768
+#: GWizardFileMerge/gwizardmergedialog.py:451
+#, python-format
+msgid "%s: %s"
+msgstr "%s : %s"
+
+#: GWizardFileMerge/gwizardcompare.py:2008
+msgid "Add as New failed"
+msgstr "新規追加に失敗"
+
+#: GWizardFileMerge/gwizardgedcom.py:351
+#: GWizardFileMerge/gwizardmergedialog.py:745
+msgid "Given Name"
+msgstr "名"
+
+#: GWizardFileMerge/gwizardgedcom.py:377
+#: GWizardFileMerge/gwizardmergedialog.py:761
+msgid "Surname Prefix"
+msgstr "姓の接頭辞"
+
+#: GWizardFileMerge/gwizardgedcom.py:1068
+msgid "GWizard Data Merge"
+msgstr "GWizard データ統合"
+
+#: GWizardFileMerge/gwizardlauncher.py:113
+msgid "Genealogy files"
+msgstr "系図ファイル"
+
+#: GWizardFileMerge/gwizardlauncher.py:129
+msgid "Select File to Compare"
+msgstr "比較するファイルの選択"
+
+#: GWizardFileMerge/gwizardlauncher.py:158
+msgid "The selected file is missing."
+msgstr "選択したファイルが見つかりません。"
+
+#: GWizardFileMerge/gwizardlauncher.py:161
+msgid "Could not read the selected file."
+msgstr "選択したファイルを読み込めませんでした。"
+
+#: GWizardFileMerge/gwizardlauncher.py:201
+msgid "Loading Data Merge"
+msgstr "データ結合の読み込み"
+
+#: GWizardFileMerge/gwizardlauncher.py:202
+#: GWizardFileMerge/gwizardlauncher.py:206
+msgid "Reading the selected file..."
+msgstr "選択したファイルを読み込み中..."
+
+#: GWizardFileMerge/gwizardlauncher.py:214
+msgid "Load Failed"
+msgstr "読み込みに失敗"
+
+#: GWizardFileMerge/gwizardlauncher.py:216
+msgid "Building the comparison window..."
+msgstr "比較ウィンドウを作成中..."
+
+#: GWizardFileMerge/gwizardmergedialog.py:256
+msgid "Untitled source"
+msgstr "無題のソース"
+
+#: GWizardFileMerge/gwizardmergedialog.py:265
+#, python-format
+msgid "page %s"
+msgstr "ページ %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:287
+#, python-format
+msgid "via %s"
+msgstr "経由 %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:315
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "なし"
+
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#, python-format
+msgid "Sources: %s"
+msgstr "ソース: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:377
+msgid "GWizard Merge"
+msgstr "GWizard 結合"
+
+#: GWizardFileMerge/gwizardmergedialog.py:385
+msgid "No source database available for merge"
+msgstr "マージに利用できるソースデータベースがありません"
+
+#: GWizardFileMerge/gwizardmergedialog.py:394
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr "参照元の人物は既に存在しません: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:400
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr "対象者はもはや存在しません: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:531
+msgid "→"
+msgstr "→"
+
+#: GWizardFileMerge/gwizardmergedialog.py:599
+msgid "Current Family Tree"
+msgstr "現在の家系図"
+
+#: GWizardFileMerge/gwizardmergedialog.py:767
+msgid "Name Sources"
+msgstr "名前のソース"
+
+#: GWizardFileMerge/gwizardmergedialog.py:807
+msgid "Person Sources"
+msgstr "人物のソース"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1093
+msgid "=>"
+msgstr "=>"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1094
+#, python-format
+msgid "Move %s to current family tree"
+msgstr "%s を現在の家系図に移動"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1102
+msgid "✓"
+msgstr "✓"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1286
+#, python-format
+msgid "%d Citations"
+msgstr "%d 件の引用"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1288
+#, python-format
+msgid "%d Sources"
+msgstr "%d ソース"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1290
+#, python-format
+msgid "%d Notes"
+msgstr "%d 件のメモ"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1292
+#, python-format
+msgid "%d Media Records"
+msgstr "%d 件のメディアレコード"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1294
+#, python-format
+msgid "%d Repositories"
+msgstr "%d 件のリポジトリ"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1297
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+"マージされるデータには、ご自身の家系図に存在しない外部オブジェクトへの参照が"
+"含まれています：\n"
+"\n"
+"%s\n"
+"\n"
+"リンク切れを防ぐため、これらの欠落している参照は、選択した詳細情報とともにイ"
+"ンポートする必要があります。これらの欠落している参照をインポートすることを確"
+"認しますか？"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1310
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+"%d 件のソースは、すでにあなたの家系図に含まれているため、再利用されます (タイ"
+"トル、著者、出版情報に基づいて照合されます）。"
+msgstr[1] ""
+"%d 件のソースは、すでにあなたの家系図に含まれているため、再利用されます (タイ"
+"トル、著者、出版情報に基づいて照合されます）。"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1324
+msgid "Confirm Importing Missing References"
+msgstr "欠落している参照のインポートを確認する"
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "GEDCOM拡張 (GED2)をエクスポート"
@@ -16348,8 +16711,8 @@ msgid ""
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
 "ローカルサーバーに要求するモデル。Ollamaの場合は必須 (例: llama3.1)。LM "
-"Studioまたはllama.cppの場合は空白にします。これらの場合は読み込まれている"
-"モデルが使用されます。"
+"Studioまたはllama.cppの場合は空白にします。これらの場合は読み込まれているモデ"
+"ルが使用されます。"
 
 #: GrampsAssistant/grampsassistant.py:1278
 #: GrampsAssistant/grampsassistant.py:1322
@@ -16405,8 +16768,8 @@ msgid ""
 "Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
 "database, mirrored locally for speed."
 msgstr ""
-"Gramps Web APIサーバー (例: gramps-connect または Gramps Web)を"
-"ライブデータベースとして使用し、速度のためにローカルにミラーリングします。"
+"Gramps Web APIサーバー (例: gramps-connect または Gramps Web)をライブデータ"
+"ベースとして使用し、速度のためにローカルにミラーリングします。"
 
 #: GrampsWebApiDb/grampswebapidb.py:447
 msgid ""
@@ -16417,8 +16780,8 @@ msgid ""
 msgstr ""
 "GRAMPS_WEB_API_KEY で認証しているアカウントには、この操作に対するサーバー上の"
 "権限がありません (HTTP 403 Forbidden)。十分な権限を持つアカウントのキーを生成"
-"するか、サーバー管理者にこのアカウントへのアクセス権の付与を依頼してください"
-"。"
+"するか、サーバー管理者にこのアカウントへのアクセス権の付与を依頼してくださ"
+"い。"
 
 #: GrampsWebApiDb/grampswebapidb.py:656
 #, python-format
@@ -16430,12 +16793,12 @@ msgid ""
 "that -- reusing this one would mix its existing local data with the other "
 "account's."
 msgstr ""
-"この家系図の名前は \"%(actual)s\" ですが、GRAMPS_WEB_API_KEY は現在 \"%"
-"(expected)s\" として認証されています。このアカウントをミラーリングすることを"
-"意図している場合は、この家系図の名前を \"%(expected_typeable)s\" に変更する"
-"か (家系図 -> 家系図の管理)、すでにその名前の家系図を開く/作成してくださ"
-"い -- これを再利用すると、既存のローカルデータと他のアカウントのデータが混ざ"
-"ってしまいます。"
+"この家系図の名前は \"%(actual)s\" ですが、GRAMPS_WEB_API_KEY は現在 "
+"\"%(expected)s\" として認証されています。このアカウントをミラーリングすること"
+"を意図している場合は、この家系図の名前を \"%(expected_typeable)s\" に変更する"
+"か (家系図 -> 家系図の管理)、すでにその名前の家系図を開く/作成してください "
+"-- これを再利用すると、既存のローカルデータと他のアカウントのデータが混ざって"
+"しまいます。"
 
 #: GrampsWebApiDb/grampswebapidb.py:703
 #, python-format
@@ -16446,11 +16809,11 @@ msgid ""
 "this Family Tree. Opening it as-is would leave the local mirror silently "
 "incomplete or unable to save changes back."
 msgstr ""
-"GRAMPS_WEB_API_KEYで認証されているアカウントに、このアドオンが必要とする"
-"サーバー権限が不足しています: %(missing)s。サーバー上で少なくとも\"%(role)"
-"s\"ロールを付与するか(または管理者に依頼して)、この家系図を開き直してください"
-"。このまま開くと、ローカルミラーが気付かないうちに不完全な状態になるか、変更"
-"をサーバーに保存できなくなります。"
+"GRAMPS_WEB_API_KEYで認証されているアカウントに、このアドオンが必要とするサー"
+"バー権限が不足しています: %(missing)s。サーバー上で少なくとも\"%(role)s\"ロー"
+"ルを付与するか(または管理者に依頼して)、この家系図を開き直してください。この"
+"まま開くと、ローカルミラーが気付かないうちに不完全な状態になるか、変更をサー"
+"バーに保存できなくなります。"
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -16460,9 +16823,9 @@ msgid ""
 "history in a format it cannot read. Upgrade the Gramps installation behind "
 "the Gramps Web API server (or ask its administrator to)."
 msgstr ""
-"このサーバーはGramps %(actual)sで動作していますが、このアドオンにはGramps %"
-"(required)s以降で動作するサーバーが必要です。古いサーバーはトランザクション履"
-"歴を、このアドオンが読み取れない形式でシリアライズします。Gramps Web API"
+"このサーバーはGramps %(actual)sで動作していますが、このアドオンにはGramps "
+"%(required)s以降で動作するサーバーが必要です。古いサーバーはトランザクション"
+"履歴を、このアドオンが読み取れない形式でシリアライズします。Gramps Web API"
 "サーバーの背後にあるGrampsをアップグレードしてください(または管理者に依頼して"
 "ください)。"
 
@@ -16543,12 +16906,14 @@ msgstr "APIキーを生成中…"
 #: GrampsWebApiDb/mintapikeytool.py:260
 #, python-format
 msgid "Login failed (HTTP %d): check your username and password."
-msgstr "ログインに失敗しました (HTTP %d): ユーザー名とパスワードを確認してください。"
+msgstr ""
+"ログインに失敗しました (HTTP %d): ユーザー名とパスワードを確認してください。"
 
 #: GrampsWebApiDb/mintapikeytool.py:263
 #, python-format
 msgid "Server returned an error (HTTP %d %s): check the Server URL."
-msgstr "サーバーがエラーを返しました (HTTP %d %s): サーバーURLを確認してください。"
+msgstr ""
+"サーバーがエラーを返しました (HTTP %d %s): サーバーURLを確認してください。"
 
 #: GrampsWebApiDb/mintapikeytool.py:271
 #, python-format
@@ -16699,8 +17064,8 @@ msgstr ""
 "れたものです。\n"
 "\n"
 "同期が成功すると、2つのツリーは同一になります。変更はタイムスタンプに基づいて"
-"伝播されます。ローカルまたはリモートのツリーに変更を加える前に確認を求める"
-"プロンプトが表示されます。\n"
+"伝播されます。ローカルまたはリモートのツリーに変更を加える前に確認を求めるプ"
+"ロンプトが表示されます。\n"
 "\n"
 "代わりに、手動で修正するオプションを付けて2つの大幅に異なるツリーをマージした"
 "い場合は、代わりにインポートマージツールを使用してください。"
@@ -17226,8 +17591,8 @@ msgid ""
 "Count how many people are male, female, or of unknown gender, then draw a "
 "pie chart of the totals. Check the Chart tab after running."
 msgstr ""
-"男性、女性、性別不明の人数を数え、合計を円グラフで描画します。実行後に"
-"チャートタブを確認してください。"
+"男性、女性、性別不明の人数を数え、合計を円グラフで描画します。実行後にチャー"
+"トタブを確認してください。"
 
 #: GrampyScript/script_descriptions.py:74
 msgid "Age At Death Histogram"
@@ -17253,9 +17618,9 @@ msgid ""
 "them as private, wrapped in begin_changes()/end_changes() so the edits "
 "happen inside a single, undoable transaction."
 msgstr ""
-"一括編集の例: 引用が1件も付いていないすべての人物を検索して非公開に設定します"
-"。begin_changes()/end_changes()で囲むことで、編集は1回の取り消し可能な"
-"トランザクション内で行われます。"
+"一括編集の例: 引用が1件も付いていないすべての人物を検索して非公開に設定しま"
+"す。begin_changes()/end_changes()で囲むことで、編集は1回の取り消し可能なトラ"
+"ンザクション内で行われます。"
 
 #: GrampyScript/script_descriptions.py:91
 msgid "CSV-Ready People Report"
@@ -17292,8 +17657,9 @@ msgid ""
 "List just the people currently selected (highlighted) in the People view. "
 "Select some rows in the People view before running this script."
 msgstr ""
-"人物ビューで現在選択されている(ハイライトされている)人物のみを一覧表示します"
-"。このスクリプトを実行する前に、人物ビューでいくつかの行を選択してください。"
+"人物ビューで現在選択されている(ハイライトされている)人物のみを一覧表示しま"
+"す。このスクリプトを実行する前に、人物ビューでいくつかの行を選択してくださ"
+"い。"
 
 #: GrampyScript/script_descriptions.py:114
 msgid "Find People Missing A Birth Date"
@@ -17332,10 +17698,10 @@ msgid ""
 "you've already created; if the name doesn't match one, a warning shows up in "
 "the Output tab instead."
 msgstr ""
-"custom_filter()を使って、自作のカスタムフィルター(フィルターのガジェット/"
-"エディターで作成したもの)を名前で実行します。'example filter'を作成済みの"
-"フィルター名に変更してください。名前が一致しない場合は、代わりに出力タブに警"
-"告が表示されます。"
+"custom_filter()を使って、自作のカスタムフィルター(フィルターのガジェット/エ"
+"ディターで作成したもの)を名前で実行します。'example filter'を作成済みのフィル"
+"ター名に変更してください。名前が一致しない場合は、代わりに出力タブに警告が表"
+"示されます。"
 
 #: GrampyScript/script_descriptions.py:140
 msgid "Delete Unused Repositories (Delete Example)"
@@ -17348,11 +17714,11 @@ msgid ""
 "unlikely to actually delete anything — it's meant to show the pattern, "
 "wrapped in begin_changes()/end_changes() as a single undoable transaction."
 msgstr ""
-"delete()のデモです: ツリー内のほかのどこからも参照されていない"
-"リポジトリレコードを削除します。ほとんどのツリーには未使用のリポジトリがない"
-"ため、実際に削除されることはまずありません。パターンを示すためのもので、"
-"begin_changes()/end_changes()で囲んで、1回の取り消し可能なトランザクションと"
-"して実行されます。"
+"delete()のデモです: ツリー内のほかのどこからも参照されていないリポジトリレ"
+"コードを削除します。ほとんどのツリーには未使用のリポジトリがないため、実際に"
+"削除されることはまずありません。パターンを示すためのもので、begin_changes()/"
+"end_changes()で囲んで、1回の取り消し可能なトランザクションとして実行されま"
+"す。"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -18952,10 +19318,6 @@ msgstr "線の重み付け"
 msgid "The line width can be configured."
 msgstr "線の幅を設定できます。"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
-msgstr "なし"
-
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
 msgstr "家系崩壊を表示"
@@ -19232,7 +19594,7 @@ msgstr "ブラウザ"
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
-msgstr "メディアの結合"
+msgstr "メディアの統合"
 
 #: MediaMerge/mediamerge.gpr.py:33
 msgid ""
@@ -19243,7 +19605,7 @@ msgstr ""
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
-msgstr "メディアの結合"
+msgstr "メディアの統合"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
@@ -22363,8 +22725,8 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
-"前提条件をチェックする理由がある場合は、系譜ファイルをバックアップし、"
-"バックアップをテストする良い機会です!\n"
+"前提条件をチェックする理由がある場合は、系譜ファイルをバックアップし、バック"
+"アップをテストする良い機会です!\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:326
@@ -22849,7 +23211,7 @@ msgstr "個人の読み込み"
 
 #: QuiltView/QuiltView.py:663
 msgid "Loading the data"
-msgstr "データの読み込み"
+msgstr "データの読み込み中"
 
 #: QuiltView/QuiltView.py:1053
 msgid "About Quilt View"
@@ -24351,6 +24713,386 @@ msgstr "SQLiteは一般的なローカルデータベース形式です"
 msgid "SQLite Export"
 msgstr "SQLite エクスポート"
 
+#: StoryExport/StoryExport.gpr.py:24 StoryExport/StoryExport.py:170
+#: StoryExport/StoryExport.py:281
+msgid "Generate Story"
+msgstr "ストーリーを生成"
+
+#: StoryExport/StoryExport.gpr.py:26
+msgid ""
+"Generates the story of a person or a family (.story.zip): a slideshow of "
+"their events with dates, places and photos, for the Gramps Connect Story "
+"Viewer"
+msgstr ""
+"人物または家族のストーリー（.story.zip）を生成します。出来事を日付・場所・写"
+"真とともにスライドショーにしたもので、Gramps Connect Story Viewer で表示でき"
+"ます"
+
+#: StoryExport/StoryExport.py:82
+msgid "Select the person whose story to generate, then try again."
+msgstr "ストーリーを生成する人物を選択してから、もう一度試してください。"
+
+#: StoryExport/StoryExport.py:98 StoryExport/StoryExport.py:114
+msgid "Couldn't generate the story"
+msgstr "ストーリーを生成できませんでした"
+
+#: StoryExport/StoryExport.py:117
+msgid "Story saved"
+msgstr "ストーリーを保存しました"
+
+#: StoryExport/StoryExport.py:120
+#, python-format
+msgid ""
+"%(count)d slides saved to %(path)s.\n"
+"\n"
+"Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+msgstr ""
+"%(count)d 枚のスライドを %(path)s に保存しました。\n"
+"\n"
+"Gramps Connect Story Viewer で開く: https://dsblank.github.io/gramps-connect-"
+"stories/"
+
+#: StoryExport/StoryExport.py:126
+msgid "_Open in Browser"
+msgstr "ブラウザで開く(_O)"
+
+#: StoryExport/StoryExport.py:159
+msgid "Story"
+msgstr "ストーリー"
+
+#: StoryExport/StoryExport.py:180
+msgid "Generate the story of:"
+msgstr "ストーリーを生成する対象："
+
+#: StoryExport/StoryExport.py:185
+#, python-format
+msgid "Family: %s"
+msgstr "家族：%s"
+
+#: StoryExport/StoryExport.py:195
+msgid "Include families"
+msgstr "家族を含める"
+
+#: StoryExport/StoryExport.py:198
+msgid ""
+"Also draw on this person's own families: a spouse's and children's births "
+"and deaths, and their parents' and siblings'."
+msgstr ""
+"この人物自身の家族からも取り込みます：配偶者と子どもの出生・死亡、およびその"
+"両親と兄弟姉妹の情報です。"
+
+#: StoryExport/StoryExport.py:223
+msgid "Include each person's own birth and death in this family's story:"
+msgstr "この家族のストーリーに各人物自身の出生と死亡を含める："
+
+#: StoryExport/StoryExport.py:248
+msgid "Include living people (and photos they appear in)"
+msgstr "存命の人物を含める（およびその人物が写っている写真）"
+
+#: StoryExport/StoryExport.py:292
+msgid "Stories (*.story.zip)"
+msgstr "ストーリー (*.story.zip)"
+
+#: StoryExport/storyexport_builder.py:427
+msgid ""
+"This family is marked private. To generate its story, check \"Include data "
+"marked private\"."
+msgstr ""
+"この家族は非公開に設定されています。ストーリーを生成するには、「非公開データ"
+"を含める」をオンにしてください。"
+
+#: StoryExport/storyexport_builder.py:438
+#, python-format
+msgid ""
+"%s is marked private. To generate their story, check \"Include data marked "
+"private\"."
+msgstr ""
+"%s は非公開に設定されています。ストーリーを生成するには、「非公開データを含め"
+"る」をオンにしてください。"
+
+#: StoryExport/storyexport_builder.py:446
+#, python-format
+msgid ""
+"%s is probably living. To generate their story, check \"Include living "
+"people\"."
+msgstr ""
+"%s はおそらく存命です。ストーリーを生成するには、「存命の人物を含める」をオン"
+"にしてください。"
+
+#: StoryExport/storyexport_builder.py:460
+#, python-format
+msgid "%(who)s was born"
+msgstr "%(who)s が誕生しました"
+
+#: StoryExport/storyexport_builder.py:461
+#, python-format
+msgid "%(who)s was stillborn"
+msgstr "%(who)s は死産でした"
+
+#: StoryExport/storyexport_builder.py:462
+#, python-format
+msgid "%(who)s was baptized"
+msgstr "%(who)s は洗礼を受けました"
+
+#: StoryExport/storyexport_builder.py:463
+#: StoryExport/storyexport_builder.py:464
+#, python-format
+msgid "%(who)s was christened"
+msgstr "%(who)s は洗礼命名を受けました"
+
+#: StoryExport/storyexport_builder.py:465
+#, python-format
+msgid "%(who)s was blessed"
+msgstr "%(who)s は祝福を受けました"
+
+#: StoryExport/storyexport_builder.py:466
+#, python-format
+msgid "%(who)s was confirmed"
+msgstr "%(who)s は堅信を受けました"
+
+#: StoryExport/storyexport_builder.py:467
+#, python-format
+msgid "%(who)s took First Communion"
+msgstr "%(who)s は初聖体を受けました"
+
+#: StoryExport/storyexport_builder.py:468
+#, python-format
+msgid "%(who)s celebrated their Bar Mitzvah"
+msgstr "%(who)s はバル・ミツワーを行いました"
+
+#: StoryExport/storyexport_builder.py:469
+#, python-format
+msgid "%(who)s celebrated their Bas Mitzvah"
+msgstr "%(who)s はバト・ミツワーを行いました"
+
+#: StoryExport/storyexport_builder.py:470
+#, python-format
+msgid "%(who)s was adopted"
+msgstr "%(who)s は養子縁組しました"
+
+#: StoryExport/storyexport_builder.py:471
+#, python-format
+msgid "%(who)s graduated"
+msgstr "%(who)s は卒業しました"
+
+#: StoryExport/storyexport_builder.py:472
+#, python-format
+msgid "%(who)s was awarded a degree"
+msgstr "\"%(who)s は学位を取得しました"
+
+#: StoryExport/storyexport_builder.py:473
+#, python-format
+msgid "%(who)s emigrated"
+msgstr "%(who)s は移住（出国）しました"
+
+#: StoryExport/storyexport_builder.py:474
+#, python-format
+msgid "%(who)s immigrated"
+msgstr "%(who)s は移住（入国）しました"
+
+#: StoryExport/storyexport_builder.py:475
+#, python-format
+msgid "%(who)s was naturalized"
+msgstr "%(who)s は帰化しました"
+
+#: StoryExport/storyexport_builder.py:476
+#, python-format
+msgid "%(who)s was ordained"
+msgstr "%(who)s は聖職に叙任されました"
+
+#: StoryExport/storyexport_builder.py:477
+#, python-format
+msgid "%(who)s was elected"
+msgstr "%(who)s は選出されました"
+
+#: StoryExport/storyexport_builder.py:478
+#, python-format
+msgid "%(who)s retired"
+msgstr "%(who)s は退職しました"
+
+#: StoryExport/storyexport_builder.py:479
+#, python-format
+msgid "%(who)s died"
+msgstr "%(who)s が死去しました"
+
+#: StoryExport/storyexport_builder.py:480
+#, python-format
+msgid "%(who)s was buried"
+msgstr "%(who)s は埋葬されました"
+
+#: StoryExport/storyexport_builder.py:481
+#, python-format
+msgid "%(who)s was cremated"
+msgstr "%(who)s は火葬されました"
+
+#: StoryExport/storyexport_builder.py:482
+#, python-format
+msgid "%(who)s had their estate probated"
+msgstr "%(who)s の遺産が検認されました"
+
+#: StoryExport/storyexport_builder.py:487
+#: StoryExport/storyexport_builder.py:488
+#, python-format
+msgid "%(who)s were married"
+msgstr "%(who)s は結婚しました"
+
+#: StoryExport/storyexport_builder.py:489
+#, python-format
+msgid "%(who)s had their banns read"
+msgstr "%(who)s の婚姻予告が読み上げられました"
+
+#: StoryExport/storyexport_builder.py:490
+#, python-format
+msgid "%(who)s signed a marriage contract"
+msgstr "%(who)s は婚姻契約を結びました"
+
+#: StoryExport/storyexport_builder.py:491
+#, python-format
+msgid "%(who)s took out a marriage license"
+msgstr "%(who)s は結婚許可証を取得しました"
+
+#: StoryExport/storyexport_builder.py:492
+#, python-format
+msgid "%(who)s agreed a marriage settlement"
+msgstr "%(who)s は婚姻財産契約に合意しました"
+
+#: StoryExport/storyexport_builder.py:493
+#, python-format
+msgid "%(who)s were engaged"
+msgstr "%(who)s は婚約しました"
+
+#: StoryExport/storyexport_builder.py:494
+#, python-format
+msgid "%(who)s were divorced"
+msgstr "%(who)s は離婚しました"
+
+#: StoryExport/storyexport_builder.py:495
+#, python-format
+msgid "%(who)s filed for divorce"
+msgstr "%(who)s は離婚を申請しました"
+
+#: StoryExport/storyexport_builder.py:496
+#, python-format
+msgid "%(who)s had their marriage annulled"
+msgstr "%(who)s の婚姻は無効とされました"
+
+#: StoryExport/storyexport_builder.py:497
+#, python-format
+msgid "%(who)s were recorded in the census"
+msgstr "%(who)s は国勢調査に記録されました"
+
+#: StoryExport/storyexport_builder.py:498
+#, python-format
+msgid "%(who)s lived"
+msgstr "%(who)s は住んでいました"
+
+#: StoryExport/storyexport_builder.py:530
+#, python-format
+msgid "%(names)s and %(last)s"
+msgstr "%(names)s と %(last)s"
+
+#: StoryExport/storyexport_builder.py:568
+#, python-format
+msgid "%(type)s (%(role)s)"
+msgstr "%(type)s（%(role)s）"
+
+#: StoryExport/storyexport_builder.py:570
+#: StoryExport/storyexport_builder.py:589
+#, python-format
+msgid "%(type)s of %(who)s"
+msgstr "%(who)s の %(type)s"
+
+#: StoryExport/storyexport_builder.py:581
+#, python-format
+msgid "%(who)s took part in this %(type)s as %(role)s"
+msgstr "%(who)s は %(role)s としてこの %(type)s に参加しました"
+
+#: StoryExport/storyexport_builder.py:595
+#, python-format
+msgid "%(moment)s on %(date)s"
+msgstr "%(date)s の %(moment)s"
+
+#: StoryExport/storyexport_builder.py:597
+#, python-format
+msgid "%(moment)s in %(date)s"
+msgstr "%(date)s における %(moment)s"
+
+#: StoryExport/storyexport_builder.py:599
+#, python-format
+msgid "%(moment)s %(date)s"
+msgstr "%(moment)s（%(date)s）"
+
+#: StoryExport/storyexport_builder.py:602
+#, python-format
+msgid "%(moment)s in %(place)s"
+msgstr "%(place)s での %(moment)s"
+
+#: StoryExport/storyexport_builder.py:750
+#, python-format
+msgid "%d moment"
+msgid_plural "%d moments"
+msgstr[0] "%d つの場面"
+msgstr[1] "%d つの場面"
+
+#: StoryExport/storyexport_builder.py:790
+msgid "This person isn't included with the chosen privacy settings."
+msgstr "この人物は、選択されたプライバシー設定では含まれません。"
+
+#: StoryExport/storyexport_builder.py:810
+#, python-format
+msgid "%s has no events to build a story from."
+msgstr "%s にはストーリーを組み立てるための出来事がありません。"
+
+#: StoryExport/storyexport_builder.py:813
+#: StoryExport/storyexport_builder.py:862
+#, python-format
+msgid "The Story of %s"
+msgstr "%s のストーリー"
+
+#: StoryExport/storyexport_builder.py:817
+#, python-format
+msgid "%(moments)s from %(name)s's recorded life."
+msgstr "%(name)s の記録された人生からの %(moments)s。"
+
+#: StoryExport/storyexport_builder.py:840
+msgid "This family isn't included with the chosen privacy settings."
+msgstr "この家族は、選択されたプライバシー設定では含まれません。"
+
+#: StoryExport/storyexport_builder.py:844
+msgid "this family"
+msgstr "この家族"
+
+#: StoryExport/storyexport_builder.py:854
+msgid ""
+"This family has no events to build a story from: not on the family itself, "
+"and no births or deaths recorded for its members."
+msgstr ""
+"この家族にはストーリーを組み立てるための出来事がありません：家族自体に出来事"
+"がなく、構成員の出生・死亡も記録されていません。"
+
+#: StoryExport/storyexport_builder.py:865
+#, python-format
+msgid "%(moments)s from the life of %(couple)s and %(children)s."
+msgstr "%(couple)s と %(children)s の人生からの %(moments)s。"
+
+#: StoryExport/storyexport_builder.py:869
+#, python-format
+msgid "their child"
+msgid_plural "their %(count)d children"
+msgstr[0] "その子ども"
+msgstr[1] "その %(count)d 子ども"
+
+#: StoryExport/storyexport_builder.py:874
+#, python-format
+msgid "%(moments)s from the life of %(couple)s."
+msgstr "%(couple)s の人生からの %(moments)s。"
+
+#: StoryExport/storyexport_builder.py:888
+#, python-format
+msgid "Family %s"
+msgstr "家族 %s"
+
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
 msgid "Surname Mapping"
@@ -25426,8 +26168,8 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"特定のタグが付いたすべてのメモと、それが参照するレコード (人物、家族、"
-"イベントなど)のリストを生成します。"
+"特定のタグが付いたすべてのメモと、それが参照するレコード (人物、家族、イベン"
+"トなど)のリストを生成します。"
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
