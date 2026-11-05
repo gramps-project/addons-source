@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 10:14-0700\n"
+"POT-Creation-Date: 2026-10-18 11:42-0700\n"
 "PO-Revision-Date: 2026-09-30 15:23+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
@@ -640,12 +640,12 @@ msgstr ""
 " 👣 次のステップ :\n"
 " 家族とその家族内の人物を追加 :\n"
 "  • 家族は「追加」メニューから追加できます\n"
-"  • 配偶者 (「父/パートナー1」または「母/パートナー2」)パネルまたは「子供」"
-"タブで「+」 (プラス)を押すと、人物を追加できます。\n"
+"  • 配偶者 (「父/パートナー1」または「母/パートナー2」)パネルまたは「子供」タ"
+"ブで「+」 (プラス)を押すと、人物を追加できます。\n"
 "\n"
 "または外部ファイルから人物をインポートする :\n"
-"  • 「家系図」メニューの「インポート...」を使用して、外部ファイルを使用して"
-"ツリーを作成することができます。"
+"  • 「家系図」メニューの「インポート...」を使用して、外部ファイルを使用してツ"
+"リーを作成することができます。"
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
@@ -2128,6 +2128,7 @@ msgid "Abandon"
 msgstr "放棄"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
+#: GWizardFileMerge/gwizardmergedialog.py:537
 msgid "New person"
 msgstr "新しい人"
 
@@ -3545,9 +3546,9 @@ msgid ""
 "expand descendants of this person. "
 msgstr ""
 "人物が異なるブランチに現れることがあります。これは通常、家族間の結婚 (いとこ"
-"同士など)が原因です。この場合、その人物にもボタンが表示され"
-"、___NAV_BUTTON_CONTINUE___ または ___NAV_BUTTON_ALT___ で他のブランチに移動"
-"できます。この人物の子孫を展開するのは1つのブランチのみです。 "
+"同士など)が原因です。この場合、その人物にもボタンが表示され、"
+"___NAV_BUTTON_CONTINUE___ または ___NAV_BUTTON_ALT___ で他のブランチに移動で"
+"きます。この人物の子孫を展開するのは1つのブランチのみです。 "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
@@ -5257,8 +5258,8 @@ msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
-"画像がExifメタデータの読み取り/書き込みが可能な画像タイプでない場合、可能な"
-"タイプに変換しますか?"
+"画像がExifメタデータの読み取り/書き込みが可能な画像タイプでない場合、可能なタ"
+"イプに変換しますか?"
 
 #: EditExifMetadata/editexifmetadata.py:213
 msgid ""
@@ -5340,7 +5341,8 @@ msgstr "エラーが発生しました。ソースと宛先のファイルパス
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
-msgstr "元のファイルの削除中にエラーが発生しました。自分で削除する必要があります!"
+msgstr ""
+"元のファイルの削除中にエラーが発生しました。自分で削除する必要があります!"
 
 #: EditExifMetadata/editexifmetadata.py:838
 msgid "There was an error in converting your image file."
@@ -5668,7 +5670,8 @@ msgstr "Prologエクスポート"
 
 #: ExportProlog/ExportProlog.gpr.py:6
 msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
-msgstr "データをPrologファクト形式でエクスポートします。データはUnicode (utf-8)です"
+msgstr ""
+"データをPrologファクト形式でエクスポートします。データはUnicode (utf-8)です"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
@@ -5710,8 +5713,8 @@ msgid ""
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
-"選択された行のチェックマークを切り替えます。行は <ctrl> (グループに追加)"
-"、<shift> (グループを拡張)クリック、または <ctrl> や <shift> 矢印キーと "
+"選択された行のチェックマークを切り替えます。行は <ctrl> (グループに追加)、"
+"<shift> (グループを拡張)クリック、または <ctrl> や <shift> 矢印キーと "
 "'space' で選択できます。または <ctrl>'a' で全て選択します。"
 
 #: ExtractCity/extractcity.gpr.py:34
@@ -15824,6 +15827,432 @@ msgstr ""
 "指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価されるオブジェクトに"
 "一致します"
 
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:19
+#, fuzzy
+#| msgid "Command Line Merge"
+msgid "GWizard File Merge"
+msgstr "コマンドライン統合"
+
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:21
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:120
+#, fuzzy
+#| msgid "Deep Connections"
+msgid "Configure Connection"
+msgstr "ディープコネクション"
+
+#: GWizardFileMerge/gwizard.py:121
+#, fuzzy
+#| msgid "Loading the data"
+msgid "Load Data"
+msgstr "データの読み込み"
+
+#: GWizardFileMerge/gwizard.py:122
+#, fuzzy
+#| msgid "Edit Starting Person"
+msgid "Find Matching Persons"
+msgstr "開始側の人物を編集"
+
+#: GWizardFileMerge/gwizard.py:123
+#, fuzzy
+#| msgid "Differences"
+msgid "Compare Differences"
+msgstr "相違点"
+
+#: GWizardFileMerge/gwizard.py:124
+#, fuzzy
+#| msgid "Apply changes"
+msgid "Apply Changes"
+msgstr "変更を適用"
+
+#: GWizardFileMerge/gwizard.py:137
+msgid "Configure file path or authenticate with online service."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:138
+msgid "Load/parse the external genealogy data into memory."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:139
+msgid "Search for potential matches in your database."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:140
+msgid "Compare fields side-by-side between the source and target."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:141
+msgid "Merge selected changes or add new records to the database."
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:167
+#: GWizardFileMerge/gwizardcompare.py:187
+msgid "GWizard Compare"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:173
+msgid "No source database available for comparison"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:208
+#: GWizardFileMerge/gwizardmergedialog.py:586
+#, fuzzy
+#| msgid "Importing GEDCOM..."
+msgid "Incoming GEDCOM"
+msgstr "GEDCOM をインポート中..."
+
+#: GWizardFileMerge/gwizardcompare.py:213
+#: GWizardFileMerge/gwizardmergedialog.py:593
+#, fuzzy, python-format
+#| msgid "Importing GEDCOM..."
+msgid "Incoming GEDCOM: %s"
+msgstr "GEDCOM をインポート中..."
+
+#: GWizardFileMerge/gwizardcompare.py:215
+#: GWizardFileMerge/gwizardmergedialog.py:597
+#, fuzzy, python-format
+#| msgid "Error creating Family Tree: %s"
+msgid "Current Family Tree: %s"
+msgstr "家系図の作成エラー: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:426
+#, fuzzy
+#| msgid "Populated"
+msgid "Populate Failed"
+msgstr "人口が多い"
+
+#: GWizardFileMerge/gwizardcompare.py:876
+msgid "Merge..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:878
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:883
+#: GWizardFileMerge/gwizardcompare.py:1224
+#, fuzzy
+#| msgid "Add as a Wife"
+msgid "Add as New..."
+msgstr "妻として追加"
+
+#: GWizardFileMerge/gwizardcompare.py:885
+#: GWizardFileMerge/gwizardcompare.py:1226
+msgid "Add the selected incoming person as a new person"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:926
+#, fuzzy
+#| msgid "All Records"
+msgid "Record"
+msgstr "すべてのレコード"
+
+#: GWizardFileMerge/gwizardcompare.py:932
+msgid "Born"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:933
+msgid "Died"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:975
+#: GWizardFileMerge/gwizardmergedialog.py:740
+#, fuzzy
+#| msgid "Individual"
+msgid "Individual Details"
+msgstr "個人"
+
+#: GWizardFileMerge/gwizardcompare.py:976
+#: GWizardFileMerge/gwizardmergedialog.py:813
+#, fuzzy
+#| msgid "Family Relation Types"
+msgid "Family Relations"
+msgstr "家族関係タイプ"
+
+#: GWizardFileMerge/gwizardcompare.py:978
+#: GWizardFileMerge/gwizardmergedialog.py:859
+msgid "Events & Other Records"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1216
+#, fuzzy
+#| msgid ""
+#| "No\n"
+#| "Matches"
+msgid "Not a Match"
+msgstr ""
+"いいえ\n"
+"一致"
+
+#: GWizardFileMerge/gwizardcompare.py:1219
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1232
+#, fuzzy, python-format
+#| msgid "Differences"
+msgid "Differences: %d of %d"
+msgstr "相違点"
+
+#: GWizardFileMerge/gwizardcompare.py:1484
+#, fuzzy
+#| msgid "none"
+msgid "(none)"
+msgstr "なし"
+
+#: GWizardFileMerge/gwizardcompare.py:1648
+#, fuzzy, python-format
+#| msgid "found: %s"
+msgid "Gender: %s"
+msgstr "検索結果: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1650
+#, fuzzy, python-format
+#| msgid "   N-ID: %s"
+msgid "ID: %s"
+msgstr "   N-ID: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1677
+#, fuzzy, python-format
+#| msgid "FamilySearch.org"
+msgid "FamilySearch: %s"
+msgstr "FamilySearch.org"
+
+#: GWizardFileMerge/gwizardcompare.py:1751
+#: GWizardFileMerge/gwizardcompare.py:1768
+#: GWizardFileMerge/gwizardmergedialog.py:451
+#, fuzzy, python-format
+#| msgid "Added %s: %s "
+msgid "%s: %s"
+msgstr "追加済み %s : %s "
+
+#: GWizardFileMerge/gwizardcompare.py:2008
+#, fuzzy
+#| msgid "Add as a Child"
+msgid "Add as New failed"
+msgstr "子供として追加"
+
+#: GWizardFileMerge/gwizardgedcom.py:351
+#: GWizardFileMerge/gwizardmergedialog.py:745
+#, fuzzy
+#| msgid "Rename Given Names"
+msgid "Given Name"
+msgstr "名を変更"
+
+#: GWizardFileMerge/gwizardgedcom.py:377
+#: GWizardFileMerge/gwizardmergedialog.py:761
+#, fuzzy
+#| msgid "Surnames Index"
+msgid "Surname Prefix"
+msgstr "姓インデックス"
+
+#: GWizardFileMerge/gwizardgedcom.py:1068
+msgid "GWizard Data Merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:113
+#, fuzzy
+#| msgid "Genealogy Online"
+msgid "Genealogy files"
+msgstr "系譜オンライン"
+
+#: GWizardFileMerge/gwizardlauncher.py:129
+#, fuzzy
+#| msgid "Select filter to restrict people"
+msgid "Select File to Compare"
+msgstr "人を制限するフィルターの選択"
+
+#: GWizardFileMerge/gwizardlauncher.py:158
+#, fuzzy
+#| msgid "The selected file is a directory, not a file."
+msgid "The selected file is missing."
+msgstr "選択されたファイルはディレクトリであり、ファイルではありません。"
+
+#: GWizardFileMerge/gwizardlauncher.py:161
+#, fuzzy
+#| msgid "Could not reach the server: check the Server URL. (%s)"
+msgid "Could not read the selected file."
+msgstr "サーバーに到達できませんでした: サーバーURLを確認してください。 (%s)"
+
+#: GWizardFileMerge/gwizardlauncher.py:201
+#, fuzzy
+#| msgid "Loading the data"
+msgid "Loading Data Merge"
+msgstr "データの読み込み"
+
+#: GWizardFileMerge/gwizardlauncher.py:202
+#: GWizardFileMerge/gwizardlauncher.py:206
+#, fuzzy
+#| msgid "Reading file list..."
+msgid "Reading the selected file..."
+msgstr "ファイルリストを読み取り中..."
+
+#: GWizardFileMerge/gwizardlauncher.py:214
+msgid "Load Failed"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:216
+msgid "Building the comparison window..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:256
+#, fuzzy
+#| msgid "Untitled"
+msgid "Untitled source"
+msgstr "無題"
+
+#: GWizardFileMerge/gwizardmergedialog.py:265
+#, fuzzy, python-format
+#| msgid ", page %s"
+msgid "page %s"
+msgstr ", ページ %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:287
+#, python-format
+msgid "via %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:315
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "なし"
+
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#, fuzzy, python-format
+#| msgid "Sources?"
+msgid "Sources: %s"
+msgstr "ソース?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:377
+#, fuzzy
+#| msgid "Media Merge"
+msgid "GWizard Merge"
+msgstr "メディアの結合"
+
+#: GWizardFileMerge/gwizardmergedialog.py:385
+#, fuzzy
+#| msgid "No data available in table"
+msgid "No source database available for merge"
+msgstr "表にデータがありません"
+
+#: GWizardFileMerge/gwizardmergedialog.py:394
+#, fuzzy, python-format
+#| msgid "Note no longer exists"
+msgid "Source person no longer exists: %s"
+msgstr "メモが存在しなくなりました"
+
+#: GWizardFileMerge/gwizardmergedialog.py:400
+#, fuzzy, python-format
+#| msgid "Note no longer exists"
+msgid "Target person no longer exists: %s"
+msgstr "メモが存在しなくなりました"
+
+#: GWizardFileMerge/gwizardmergedialog.py:531
+#, fuzzy
+#| msgid "→ %s"
+msgid "→"
+msgstr "→ %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:599
+#, fuzzy
+#| msgid "Parent Family"
+msgid "Current Family Tree"
+msgstr "親家族"
+
+#: GWizardFileMerge/gwizardmergedialog.py:767
+#, fuzzy
+#| msgid "No Source"
+msgid "Name Sources"
+msgstr "ソースなし"
+
+#: GWizardFileMerge/gwizardmergedialog.py:807
+#, fuzzy
+#| msgid "No Source"
+msgid "Person Sources"
+msgstr "ソースなし"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1093
+#, fuzzy
+#| msgid "="
+msgid "=>"
+msgstr "="
+
+#: GWizardFileMerge/gwizardmergedialog.py:1094
+#, fuzzy, python-format
+#| msgid "The center family for the tree"
+msgid "Move %s to current family tree"
+msgstr "ツリーの中心家族"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1102
+msgid "✓"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1286
+#, fuzzy, python-format
+#| msgid "Citations:"
+msgid "%d Citations"
+msgstr "引用 :"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1288
+#, fuzzy, python-format
+#| msgid "Sources?"
+msgid "%d Sources"
+msgstr "ソース?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1290
+#, fuzzy, python-format
+#| msgid "Notes:"
+msgid "%d Notes"
+msgstr "メモ:"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1292
+#, fuzzy, python-format
+#| msgid "Media Report"
+msgid "%d Media Records"
+msgstr "メディアレポート"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1294
+#, fuzzy, python-format
+#| msgid "repositories"
+msgid "%d Repositories"
+msgstr "リポジトリ"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1297
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1310
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1324
+msgid "Confirm Importing Missing References"
+msgstr ""
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "GEDCOM拡張 (GED2)をエクスポート"
@@ -16348,8 +16777,8 @@ msgid ""
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
 "ローカルサーバーに要求するモデル。Ollamaの場合は必須 (例: llama3.1)。LM "
-"Studioまたはllama.cppの場合は空白にします。これらの場合は読み込まれている"
-"モデルが使用されます。"
+"Studioまたはllama.cppの場合は空白にします。これらの場合は読み込まれているモデ"
+"ルが使用されます。"
 
 #: GrampsAssistant/grampsassistant.py:1278
 #: GrampsAssistant/grampsassistant.py:1322
@@ -16405,8 +16834,8 @@ msgid ""
 "Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
 "database, mirrored locally for speed."
 msgstr ""
-"Gramps Web APIサーバー (例: gramps-connect または Gramps Web)を"
-"ライブデータベースとして使用し、速度のためにローカルにミラーリングします。"
+"Gramps Web APIサーバー (例: gramps-connect または Gramps Web)をライブデータ"
+"ベースとして使用し、速度のためにローカルにミラーリングします。"
 
 #: GrampsWebApiDb/grampswebapidb.py:447
 msgid ""
@@ -16417,8 +16846,8 @@ msgid ""
 msgstr ""
 "GRAMPS_WEB_API_KEY で認証しているアカウントには、この操作に対するサーバー上の"
 "権限がありません (HTTP 403 Forbidden)。十分な権限を持つアカウントのキーを生成"
-"するか、サーバー管理者にこのアカウントへのアクセス権の付与を依頼してください"
-"。"
+"するか、サーバー管理者にこのアカウントへのアクセス権の付与を依頼してくださ"
+"い。"
 
 #: GrampsWebApiDb/grampswebapidb.py:656
 #, python-format
@@ -16430,12 +16859,12 @@ msgid ""
 "that -- reusing this one would mix its existing local data with the other "
 "account's."
 msgstr ""
-"この家系図の名前は \"%(actual)s\" ですが、GRAMPS_WEB_API_KEY は現在 \"%"
-"(expected)s\" として認証されています。このアカウントをミラーリングすることを"
-"意図している場合は、この家系図の名前を \"%(expected_typeable)s\" に変更する"
-"か (家系図 -> 家系図の管理)、すでにその名前の家系図を開く/作成してくださ"
-"い -- これを再利用すると、既存のローカルデータと他のアカウントのデータが混ざ"
-"ってしまいます。"
+"この家系図の名前は \"%(actual)s\" ですが、GRAMPS_WEB_API_KEY は現在 "
+"\"%(expected)s\" として認証されています。このアカウントをミラーリングすること"
+"を意図している場合は、この家系図の名前を \"%(expected_typeable)s\" に変更する"
+"か (家系図 -> 家系図の管理)、すでにその名前の家系図を開く/作成してください "
+"-- これを再利用すると、既存のローカルデータと他のアカウントのデータが混ざって"
+"しまいます。"
 
 #: GrampsWebApiDb/grampswebapidb.py:703
 #, python-format
@@ -16446,11 +16875,11 @@ msgid ""
 "this Family Tree. Opening it as-is would leave the local mirror silently "
 "incomplete or unable to save changes back."
 msgstr ""
-"GRAMPS_WEB_API_KEYで認証されているアカウントに、このアドオンが必要とする"
-"サーバー権限が不足しています: %(missing)s。サーバー上で少なくとも\"%(role)"
-"s\"ロールを付与するか(または管理者に依頼して)、この家系図を開き直してください"
-"。このまま開くと、ローカルミラーが気付かないうちに不完全な状態になるか、変更"
-"をサーバーに保存できなくなります。"
+"GRAMPS_WEB_API_KEYで認証されているアカウントに、このアドオンが必要とするサー"
+"バー権限が不足しています: %(missing)s。サーバー上で少なくとも\"%(role)s\"ロー"
+"ルを付与するか(または管理者に依頼して)、この家系図を開き直してください。この"
+"まま開くと、ローカルミラーが気付かないうちに不完全な状態になるか、変更をサー"
+"バーに保存できなくなります。"
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -16460,9 +16889,9 @@ msgid ""
 "history in a format it cannot read. Upgrade the Gramps installation behind "
 "the Gramps Web API server (or ask its administrator to)."
 msgstr ""
-"このサーバーはGramps %(actual)sで動作していますが、このアドオンにはGramps %"
-"(required)s以降で動作するサーバーが必要です。古いサーバーはトランザクション履"
-"歴を、このアドオンが読み取れない形式でシリアライズします。Gramps Web API"
+"このサーバーはGramps %(actual)sで動作していますが、このアドオンにはGramps "
+"%(required)s以降で動作するサーバーが必要です。古いサーバーはトランザクション"
+"履歴を、このアドオンが読み取れない形式でシリアライズします。Gramps Web API"
 "サーバーの背後にあるGrampsをアップグレードしてください(または管理者に依頼して"
 "ください)。"
 
@@ -16543,12 +16972,14 @@ msgstr "APIキーを生成中…"
 #: GrampsWebApiDb/mintapikeytool.py:260
 #, python-format
 msgid "Login failed (HTTP %d): check your username and password."
-msgstr "ログインに失敗しました (HTTP %d): ユーザー名とパスワードを確認してください。"
+msgstr ""
+"ログインに失敗しました (HTTP %d): ユーザー名とパスワードを確認してください。"
 
 #: GrampsWebApiDb/mintapikeytool.py:263
 #, python-format
 msgid "Server returned an error (HTTP %d %s): check the Server URL."
-msgstr "サーバーがエラーを返しました (HTTP %d %s): サーバーURLを確認してください。"
+msgstr ""
+"サーバーがエラーを返しました (HTTP %d %s): サーバーURLを確認してください。"
 
 #: GrampsWebApiDb/mintapikeytool.py:271
 #, python-format
@@ -16699,8 +17130,8 @@ msgstr ""
 "れたものです。\n"
 "\n"
 "同期が成功すると、2つのツリーは同一になります。変更はタイムスタンプに基づいて"
-"伝播されます。ローカルまたはリモートのツリーに変更を加える前に確認を求める"
-"プロンプトが表示されます。\n"
+"伝播されます。ローカルまたはリモートのツリーに変更を加える前に確認を求めるプ"
+"ロンプトが表示されます。\n"
 "\n"
 "代わりに、手動で修正するオプションを付けて2つの大幅に異なるツリーをマージした"
 "い場合は、代わりにインポートマージツールを使用してください。"
@@ -17226,8 +17657,8 @@ msgid ""
 "Count how many people are male, female, or of unknown gender, then draw a "
 "pie chart of the totals. Check the Chart tab after running."
 msgstr ""
-"男性、女性、性別不明の人数を数え、合計を円グラフで描画します。実行後に"
-"チャートタブを確認してください。"
+"男性、女性、性別不明の人数を数え、合計を円グラフで描画します。実行後にチャー"
+"トタブを確認してください。"
 
 #: GrampyScript/script_descriptions.py:74
 msgid "Age At Death Histogram"
@@ -17253,9 +17684,9 @@ msgid ""
 "them as private, wrapped in begin_changes()/end_changes() so the edits "
 "happen inside a single, undoable transaction."
 msgstr ""
-"一括編集の例: 引用が1件も付いていないすべての人物を検索して非公開に設定します"
-"。begin_changes()/end_changes()で囲むことで、編集は1回の取り消し可能な"
-"トランザクション内で行われます。"
+"一括編集の例: 引用が1件も付いていないすべての人物を検索して非公開に設定しま"
+"す。begin_changes()/end_changes()で囲むことで、編集は1回の取り消し可能なトラ"
+"ンザクション内で行われます。"
 
 #: GrampyScript/script_descriptions.py:91
 msgid "CSV-Ready People Report"
@@ -17292,8 +17723,9 @@ msgid ""
 "List just the people currently selected (highlighted) in the People view. "
 "Select some rows in the People view before running this script."
 msgstr ""
-"人物ビューで現在選択されている(ハイライトされている)人物のみを一覧表示します"
-"。このスクリプトを実行する前に、人物ビューでいくつかの行を選択してください。"
+"人物ビューで現在選択されている(ハイライトされている)人物のみを一覧表示しま"
+"す。このスクリプトを実行する前に、人物ビューでいくつかの行を選択してくださ"
+"い。"
 
 #: GrampyScript/script_descriptions.py:114
 msgid "Find People Missing A Birth Date"
@@ -17332,10 +17764,10 @@ msgid ""
 "you've already created; if the name doesn't match one, a warning shows up in "
 "the Output tab instead."
 msgstr ""
-"custom_filter()を使って、自作のカスタムフィルター(フィルターのガジェット/"
-"エディターで作成したもの)を名前で実行します。'example filter'を作成済みの"
-"フィルター名に変更してください。名前が一致しない場合は、代わりに出力タブに警"
-"告が表示されます。"
+"custom_filter()を使って、自作のカスタムフィルター(フィルターのガジェット/エ"
+"ディターで作成したもの)を名前で実行します。'example filter'を作成済みのフィル"
+"ター名に変更してください。名前が一致しない場合は、代わりに出力タブに警告が表"
+"示されます。"
 
 #: GrampyScript/script_descriptions.py:140
 msgid "Delete Unused Repositories (Delete Example)"
@@ -17348,11 +17780,11 @@ msgid ""
 "unlikely to actually delete anything — it's meant to show the pattern, "
 "wrapped in begin_changes()/end_changes() as a single undoable transaction."
 msgstr ""
-"delete()のデモです: ツリー内のほかのどこからも参照されていない"
-"リポジトリレコードを削除します。ほとんどのツリーには未使用のリポジトリがない"
-"ため、実際に削除されることはまずありません。パターンを示すためのもので、"
-"begin_changes()/end_changes()で囲んで、1回の取り消し可能なトランザクションと"
-"して実行されます。"
+"delete()のデモです: ツリー内のほかのどこからも参照されていないリポジトリレ"
+"コードを削除します。ほとんどのツリーには未使用のリポジトリがないため、実際に"
+"削除されることはまずありません。パターンを示すためのもので、begin_changes()/"
+"end_changes()で囲んで、1回の取り消し可能なトランザクションとして実行されま"
+"す。"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -18951,10 +19383,6 @@ msgstr "線の重み付け"
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
 msgstr "線の幅を設定できます。"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
-msgstr "なし"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
@@ -22363,8 +22791,8 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
-"前提条件をチェックする理由がある場合は、系譜ファイルをバックアップし、"
-"バックアップをテストする良い機会です!\n"
+"前提条件をチェックする理由がある場合は、系譜ファイルをバックアップし、バック"
+"アップをテストする良い機会です!\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:326
@@ -25426,8 +25854,8 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"特定のタグが付いたすべてのメモと、それが参照するレコード (人物、家族、"
-"イベントなど)のリストを生成します。"
+"特定のタグが付いたすべてのメモと、それが参照するレコード (人物、家族、イベン"
+"トなど)のリストを生成します。"
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
