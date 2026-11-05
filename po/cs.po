@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-26 09:44-0700\n"
-"PO-Revision-Date: 2026-10-20 16:15+0000\n"
+"PO-Revision-Date: 2026-10-31 09:51+0000\n"
 "Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -302,7 +302,7 @@ msgstr "Chyba při inicializaci údajů: %s"
 #: AssociationsTool/associationstool.py:222
 #, python-format
 msgid "Error processing person %s: %s"
-msgstr ""
+msgstr "Chyba při zpracování osoby %s: %s"
 
 #: AssociationsTool/associationstool.py:252
 msgid "Processing associations..."
@@ -738,7 +738,7 @@ msgstr "Rodičovská rodina není známa."
 #: Betawhatsnext/Betawhatsnext.py:670
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
-msgstr ""
+msgstr "„Přidat nové/existující rodiče“ z menu Upravit v pohledu Vztahy."
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
@@ -1685,7 +1685,7 @@ msgstr "Úroveň počátečního sbalení"
 
 #: D3Charts/DescendantIndentedTree.py:1817
 msgid "The number of descendant levels to contract on initial display."
-msgstr ""
+msgstr "Počet úrovní potomků, které se mají sbalit při počátečním zobrazení."
 
 #: D3Charts/DescendantIndentedTree.py:1824
 msgid "The font size in pixels for each node."
@@ -1970,7 +1970,7 @@ msgstr "Chromozom "
 
 #: DNA/dnasegmentmap.py:552
 msgid " Map for "
-msgstr ""
+msgstr " Mapa pro "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
@@ -2007,7 +2007,7 @@ msgstr " a končí na "
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
@@ -2026,7 +2026,7 @@ msgstr ""
 #: DNA/dnasegmentmap.py:1091
 #, python-brace-format
 msgid " Ancestor: {0}"
-msgstr ""
+msgstr " Předek: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -2999,24 +2999,31 @@ msgstr "Formát události"
 
 #: DenominoViso/DenominoViso.py:2751
 msgid "at"
-msgstr ""
+msgstr "v"
 
 #: DenominoViso/DenominoViso.py:2755
+#, fuzzy
 msgid ""
 "List os strings with placeholders for events. Known placeholders: <type>, "
 "<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
 "<attribute-value>."
 msgstr ""
+"Seznam řetězců s placeholdery pro události. Známé placeholdery: <type>, "
+"<role>, <date>, <place>, <description>, <witnesses>, <source> a jakýkoli "
+"<attribute-value>."
 
 #: DenominoViso/DenominoViso.py:2758
 msgid "Source format"
 msgstr "Formát pramene"
 
 #: DenominoViso/DenominoViso.py:2759
+#, fuzzy
 msgid ""
 "List of strings with placeholders for sources. Known placeholders: <title>, "
 "<volume>, <author>, <publication_info> and <abbreviation>."
 msgstr ""
+"Seznam řetězců s placeholdery pro prameny. Známé placeholdery: <title>, "
+"<volume>, <author>, <publication_info> a <abbreviation>."
 
 #: DenominoViso/DenominoViso.py:2820
 msgid "restricted to:"
@@ -3963,7 +3970,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Number of pages"
 msgid "The number of ??? pad"
-msgstr "Počet stránek"
+msgstr "Počet ??? odsazení"
 
 #: DescendantsLines/DescendantsLines.py:1761
 msgid "Vertical edge spouse-bar to child-bar"
@@ -3994,8 +4001,9 @@ msgid "MIN_C_WIDTH"
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1779
+#, fuzzy
 msgid "The number of ??? min width"
-msgstr ""
+msgstr "Počet ??? minimální šířky"
 
 #: DescendantsLines/DescendantsLines.py:1784
 msgid "Space around text"
@@ -6271,7 +6279,7 @@ msgstr "Import FamilyTree DNA"
 #, python-brace-format
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
-msgstr ""
+msgstr "Vytvořeno {} asociací s daty DNA. Vytvořeno {} atributů haploskupiny \n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
@@ -6310,7 +6318,7 @@ msgstr "Přidat poznámku k asociaci DNA – %s"
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr ""
+msgstr "Vytvořit citaci pramene pro asociaci DNA %s"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
@@ -6364,7 +6372,7 @@ msgstr "Vyhledat asociace osob odpovídajících <filtru osob>"
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:79
 msgid "People separated less than <N> degrees of <person>"
-msgstr ""
+msgstr "Osoby oddělené méně než <N> stupni od <osoby>"
 
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:81
@@ -6410,11 +6418,11 @@ msgstr "Vyhledá rodiny s událostí s vybranou rolí"
 
 #: FilterRules/hasrolerule.py:71
 msgid "Does NOT match with selected Role"
-msgstr ""
+msgstr "Neshoduje se s vybranou rolí"
 
 #: FilterRules/hasrolerule.py:73
 msgid "Finds the items that don't have event Roles of the selected type."
-msgstr ""
+msgstr "Najde položky, které nemají role událostí vybraného typu."
 
 #: FilterRules/hasrolerule.py:97 FilterRules/hasrolerule.py:112
 msgid "Inverse"
@@ -16584,7 +16592,7 @@ msgstr "GeoAncestor"
 #: GeoAncestor/GeoAncestor.py:304
 #, python-format
 msgid "Ancestors places for %s"
-msgstr ""
+msgstr "Místa předků pro %s"
 
 #: GeoAncestor/GeoAncestor.py:311
 msgid "Counting all places"
@@ -16693,7 +16701,7 @@ msgstr "Typ kroků"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
-msgstr ""
+msgstr "Kroky za milisekundu"
 
 #: GeoTimeLines/GeoTimeLines.py:1915
 msgid "Initial map view on Gramps startup"
@@ -16752,13 +16760,13 @@ msgstr "Odkaz GOV"
 #: GetGOV/getgov.py:428
 #, python-format
 msgid "GOV error on id %s with code: "
-msgstr ""
+msgstr "Chyba GOV na id %s s kódem: "
 
 #: GetGOV/getgov.py:562
 #, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
-msgstr ""
+msgstr "od %(begin)s do %(end)s"
 
 #: GetGOV/getgov.py:564
 #, python-format
@@ -17256,7 +17264,7 @@ msgstr "Heslo:"
 
 #: GrampsWebSync/grampswebsync.py:627
 msgid "Remember password"
-msgstr ""
+msgstr "Zapamatovat heslo"
 
 #: GrampsWebSync/grampswebsync.py:639
 msgid "Forget this server"
@@ -17813,6 +17821,8 @@ msgid ""
 "List only the people whose surname matches a given value — a starting point "
 "for narrowing any report down by a condition."
 msgstr ""
+"Seznam pouze těch osob, jejichž příjmení odpovídá dané hodnotě — výchozí bod "
+"pro zúžení jakéhokoli reportu podle podmínky."
 
 #: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -17906,7 +17916,7 @@ msgstr ""
 
 #: GrampyScript/script_descriptions.py:114
 msgid "Find People Missing A Birth Date"
-msgstr ""
+msgstr "Nalezení osob s chybějícím datem narození"
 
 #: GrampyScript/script_descriptions.py:116
 msgid ""
@@ -17948,7 +17958,7 @@ msgstr ""
 
 #: GrampyScript/script_descriptions.py:140
 msgid "Delete Unused Repositories (Delete Example)"
-msgstr "Odstranit nepoužívané archivy (ukázka odstranění)"
+msgstr "Odstranění nepoužívaných archivů (ukázka odstranění)"
 
 #: GrampyScript/script_descriptions.py:142
 msgid ""
@@ -17957,6 +17967,11 @@ msgid ""
 "unlikely to actually delete anything — it's meant to show the pattern, "
 "wrapped in begin_changes()/end_changes() as a single undoable transaction."
 msgstr ""
+"Demonstruje použití funkce delete(): odstraňuje jakýkoli záznam archivu, na "
+"který nic jiného ve stromu neodkazuje. Většina stromů nemá nepoužívané "
+"archivy, takže je nepravděpodobné, že by se něco skutečně smazalo — je to "
+"určeno k ukázání vzoru, zabaleného v begin_changes()/end_changes() jako "
+"jediné vratné transakce."
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -18260,6 +18275,9 @@ msgid ""
 "{people_missing} people won't be shown. You can change this limit in the "
 "view configuration."
 msgstr ""
+"Tento graf by obsahoval alespoň {people_count} osob, což překračuje limit "
+"{people_limit} osob. Z důvodů výkonu alespoň {people_missing} osob nebude "
+"zobrazeno. Tento limit můžete změnit v konfiguraci pohledu."
 
 #: GraphView/graphview.py:2671
 msgid "Incomplete graph"
@@ -18536,6 +18554,10 @@ msgid ""
 "has to start and end with an alphanumeric character.The file extention "
 "'.html' is added by the report."
 msgstr ""
+"Pro název souboru jsou povoleny pouze anglická písmena A-Z, a-z a čísla 0-9 "
+"stejně jako znaky mezera, podtržítko a pomlčka. Název souboru musí také "
+"začínat a končit alfanumerickým znakem. Přípona souboru '.html' je přidána "
+"sestavou."
 
 #: Heatmap/heatmap.py:103
 msgid "File name"
@@ -18666,7 +18688,7 @@ msgstr "Vybrat ze souborů"
 
 #: HistContext/HistContext.py:287
 msgid "Invalid date "
-msgstr ""
+msgstr "Neplatné datum "
 
 #: HistContext/HistContext.py:288
 msgid " in line: "
@@ -18710,7 +18732,7 @@ msgstr "Žádná osoba nemá údaje o adrese. Přidejte prosím k osobám adresy
 
 #: HouseTimelineGramplet/housetimeline.py:129
 msgid "Time In Family"
-msgstr ""
+msgstr "Čas v rodine"
 
 #: HouseTimelineGramplet/housetimeline.py:130
 msgid "First Resident"
@@ -18920,7 +18942,7 @@ msgstr "Zrušit označení"
 
 #: ImportMerge/importmerge.glade:353
 msgid "This button will add the imported data as a new object to your tree."
-msgstr ""
+msgstr "Toto tlačítko přidá importovaná data jako nový objekt do vašeho stromu."
 
 #: ImportMerge/importmerge.glade:368
 msgid ""
@@ -19687,7 +19709,7 @@ msgstr "Skrýt sourozence"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
-msgstr ""
+msgstr "Zobrazit předky nahoře "
 
 #: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"
@@ -21111,7 +21133,7 @@ msgstr "Generace:"
 
 #: PDFForms/generatepdfform.py:213
 msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
-msgstr ""
+msgstr "Zahrnuje subjekt plus až 5 generací předků (2–32 osob)."
 
 #: PDFForms/generatepdfform.py:252
 msgid "Save PDF as…"
@@ -22708,12 +22730,12 @@ msgstr "Zahajování migrace..."
 #: PostgreSQLEnhanced/migration.py:182
 #, python-format
 msgid "Migrating %s objects..."
-msgstr ""
+msgstr "Migrování %s objektů..."
 
 #: PostgreSQLEnhanced/migration.py:193
 #, python-format, python-brace-format
 msgid "Migrated %s {obj_type} objects"
-msgstr ""
+msgstr "Migrováno %s objektů typu {obj_type}"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
@@ -22726,7 +22748,7 @@ msgstr "Zahajuje se upgrade..."
 #: PostgreSQLEnhanced/migration.py:470
 #, python-format
 msgid "Upgrading %s objects..."
-msgstr ""
+msgstr "Aktualizováno %s objektů..."
 
 #: PostgreSQLEnhanced/migration.py:478
 msgid "Creating indexes..."
@@ -23051,6 +23073,9 @@ msgid ""
 "for contributing and testing; please report any issues. Backups are your "
 "friend.\n"
 msgstr ""
+"Máte nainstalovaný Gramps %s; neuvolněnou vývojovou verzi. Děkujeme za "
+"přispívání a testování; prosím hlaste jakékoli problémy. Zálohy jsou vaši "
+"přátelé.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:407
 #, python-format
@@ -23805,7 +23830,7 @@ msgstr "VAROVÁNÍ"
 #: RemoveTagTool/RemoveTagTool.py:234
 #, python-format
 msgid "No %s objects were found in database."
-msgstr ""
+msgstr "V databázi nebyly nalezeny žádné objekty %s."
 
 #: RemoveTagTool/RemoveTagTool.py:249
 msgid "Process tags..."
@@ -24980,10 +25005,8 @@ msgstr "Export SQLite"
 
 #: StoryExport/StoryExport.gpr.py:24 StoryExport/StoryExport.py:170
 #: StoryExport/StoryExport.py:281
-#, fuzzy
-#| msgid "Generate"
 msgid "Generate Story"
-msgstr "Vygenerovat"
+msgstr "Generování příběhu"
 
 #: StoryExport/StoryExport.gpr.py:26
 msgid ""
@@ -24991,20 +25014,20 @@ msgid ""
 "their events with dates, places and photos, for the Gramps Connect Story "
 "Viewer"
 msgstr ""
+"Vygeneruje příběh osoby nebo rodiny (.story.zip): prezentaci jejich událostí "
+"s daty, místy a fotografiemi pro Gramps Connect Story Viewer"
 
 #: StoryExport/StoryExport.py:82
 msgid "Select the person whose story to generate, then try again."
-msgstr ""
+msgstr "Vyberte osobu, jejíž příběh chcete vygenerovat, a zkuste to znovu."
 
 #: StoryExport/StoryExport.py:98 StoryExport/StoryExport.py:114
-#, fuzzy
-#| msgid "Could not create the directory: %(path)s"
 msgid "Couldn't generate the story"
-msgstr "Nezdařilo se vytvořit adresář: %(path)s"
+msgstr "Příběh se nepodařilo vygenerovat"
 
 #: StoryExport/StoryExport.py:117
 msgid "Story saved"
-msgstr ""
+msgstr "Příběh byl uložen"
 
 #: StoryExport/StoryExport.py:120
 #, python-format
@@ -25014,58 +25037,59 @@ msgid ""
 "Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
 "connect-stories/"
 msgstr ""
+"%(count)d snímků uloženo do %(path)s.\n"
+"\n"
+"Otevřete v Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
 
 #: StoryExport/StoryExport.py:126
-#, fuzzy
-#| msgid "Media Browser"
 msgid "_Open in Browser"
-msgstr "Prohlížeč médií"
+msgstr "_Otevření v prohlížeči"
 
 #: StoryExport/StoryExport.py:159
 msgid "Story"
-msgstr ""
+msgstr "Příběh"
 
 #: StoryExport/StoryExport.py:180
-#, fuzzy
-#| msgid "Generate Test Notes"
 msgid "Generate the story of:"
-msgstr "Vygenerovat testovací poznámky"
+msgstr "Generovat příběh:"
 
 #: StoryExport/StoryExport.py:185
-#, fuzzy, python-format
-#| msgid "Family:"
+#, python-format
 msgid "Family: %s"
-msgstr "Rodina:"
+msgstr "Rodina: %s"
 
 #: StoryExport/StoryExport.py:195
-#, fuzzy
-#| msgid "Include siblings"
 msgid "Include families"
-msgstr "Zahrnout sourozence"
+msgstr "Zahrnout rodiny"
 
 #: StoryExport/StoryExport.py:198
 msgid ""
 "Also draw on this person's own families: a spouse's and children's births "
 "and deaths, and their parents' and siblings'."
 msgstr ""
+"Také zahrnout vlastní rodiny této osoby: narození a úmrtí manžela/manželky a "
+"dětí, stejně jako jejich rodičů a sourozenců."
 
 #: StoryExport/StoryExport.py:223
 msgid "Include each person's own birth and death in this family's story:"
-msgstr ""
+msgstr "Zahrnout vlastní narození a úmrtí každé osoby do příběhu této rodiny:"
 
 #: StoryExport/StoryExport.py:248
 msgid "Include living people (and photos they appear in)"
-msgstr ""
+msgstr "Zahrnout žijící osoby (a fotografie, na kterých se vyskytují)"
 
 #: StoryExport/StoryExport.py:292
 msgid "Stories (*.story.zip)"
-msgstr ""
+msgstr "Příběhy (*.story.zip)"
 
 #: StoryExport/storyexport_builder.py:427
 msgid ""
 "This family is marked private. To generate its story, check \"Include data "
 "marked private\"."
 msgstr ""
+"Tato rodina je označena jako soukromá. Pro vygenerování jejího příběhu "
+"zaškrtněte „Zahrnout data označená jako soukromá“."
 
 #: StoryExport/storyexport_builder.py:438
 #, python-format
@@ -25073,6 +25097,8 @@ msgid ""
 "%s is marked private. To generate their story, check \"Include data marked "
 "private\"."
 msgstr ""
+"%s je označena jako soukromá. Pro vygenerování jejich příběhu zaškrtněte „"
+"Zahrnout data označená jako soukromá“."
 
 #: StoryExport/storyexport_builder.py:446
 #, python-format
@@ -25080,291 +25106,283 @@ msgid ""
 "%s is probably living. To generate their story, check \"Include living "
 "people\"."
 msgstr ""
+"%s pravděpodobně žije. Pro vygenerování jejich příběhu zaškrtněte „Zahrnout "
+"žijící osoby“."
 
 #: StoryExport/storyexport_builder.py:460
 #, python-format
 msgid "%(who)s was born"
-msgstr ""
+msgstr "%(who)s se narodil/a"
 
 #: StoryExport/storyexport_builder.py:461
 #, python-format
 msgid "%(who)s was stillborn"
-msgstr ""
+msgstr "%(who)s se narodil/a mrtvý/á"
 
 #: StoryExport/storyexport_builder.py:462
 #, python-format
 msgid "%(who)s was baptized"
-msgstr ""
+msgstr "%(who)s byl/a pokřtěn/a"
 
 #: StoryExport/storyexport_builder.py:463
 #: StoryExport/storyexport_builder.py:464
 #, python-format
 msgid "%(who)s was christened"
-msgstr ""
+msgstr "%(who)s byl/a pokřtěn/a"
 
 #: StoryExport/storyexport_builder.py:465
 #, python-format
 msgid "%(who)s was blessed"
-msgstr ""
+msgstr "%(who)s byl/a požehnán/a"
 
 #: StoryExport/storyexport_builder.py:466
 #, python-format
 msgid "%(who)s was confirmed"
-msgstr ""
+msgstr "%(who)s byl/a biřmován/a"
 
 #: StoryExport/storyexport_builder.py:467
 #, python-format
 msgid "%(who)s took First Communion"
-msgstr ""
+msgstr "%(who)s přijal/a první svaté přijímání"
 
 #: StoryExport/storyexport_builder.py:468
 #, python-format
 msgid "%(who)s celebrated their Bar Mitzvah"
-msgstr ""
+msgstr "%(who)s slavil/a jejich bar micvu"
 
 #: StoryExport/storyexport_builder.py:469
 #, python-format
 msgid "%(who)s celebrated their Bas Mitzvah"
-msgstr ""
+msgstr "%(who)s slavil/a jejich bat micvu"
 
 #: StoryExport/storyexport_builder.py:470
 #, python-format
 msgid "%(who)s was adopted"
-msgstr ""
+msgstr "%(who)s byl/a adoptován/a"
 
 #: StoryExport/storyexport_builder.py:471
 #, python-format
 msgid "%(who)s graduated"
-msgstr ""
+msgstr "%(who)s absolvoval/a"
 
 #: StoryExport/storyexport_builder.py:472
 #, python-format
 msgid "%(who)s was awarded a degree"
-msgstr ""
+msgstr "%(who)s získal/a titul"
 
 #: StoryExport/storyexport_builder.py:473
 #, python-format
 msgid "%(who)s emigrated"
-msgstr ""
+msgstr "%(who)s emigroval/a"
 
 #: StoryExport/storyexport_builder.py:474
 #, python-format
 msgid "%(who)s immigrated"
-msgstr ""
+msgstr "%(who)s imigroval/a"
 
 #: StoryExport/storyexport_builder.py:475
 #, python-format
 msgid "%(who)s was naturalized"
-msgstr ""
+msgstr "%(who)s byl/a naturalizován/a"
 
 #: StoryExport/storyexport_builder.py:476
 #, python-format
 msgid "%(who)s was ordained"
-msgstr ""
+msgstr "%(who)s byl/a vysvěcen/a"
 
 #: StoryExport/storyexport_builder.py:477
 #, python-format
 msgid "%(who)s was elected"
-msgstr ""
+msgstr "%(who)s byl/a zvolen/a"
 
 #: StoryExport/storyexport_builder.py:478
 #, python-format
 msgid "%(who)s retired"
-msgstr ""
+msgstr "%(who)s odešel/odešla do důchodu"
 
 #: StoryExport/storyexport_builder.py:479
 #, python-format
 msgid "%(who)s died"
-msgstr ""
+msgstr "%(who)s zemřel/a"
 
 #: StoryExport/storyexport_builder.py:480
 #, python-format
 msgid "%(who)s was buried"
-msgstr ""
+msgstr "%(who)s byl/a pohřben/a"
 
 #: StoryExport/storyexport_builder.py:481
 #, python-format
 msgid "%(who)s was cremated"
-msgstr ""
+msgstr "%(who)s byl/a zpopelněn/a"
 
 #: StoryExport/storyexport_builder.py:482
 #, python-format
 msgid "%(who)s had their estate probated"
-msgstr ""
+msgstr "%(who)s měl/a dědické řízení jejich majetku"
 
 #: StoryExport/storyexport_builder.py:487
 #: StoryExport/storyexport_builder.py:488
-#, fuzzy, python-format
-#| msgid "(5.) Widowed or Married"
+#, python-format
 msgid "%(who)s were married"
-msgstr "(5.) Vdovec/vdova nebo ženatý/vdaná"
+msgstr "%(who)s se vzali"
 
 #: StoryExport/storyexport_builder.py:489
 #, python-format
 msgid "%(who)s had their banns read"
-msgstr ""
+msgstr "%(who)s měli vyhlášené ohlášky"
 
 #: StoryExport/storyexport_builder.py:490
 #, python-format
 msgid "%(who)s signed a marriage contract"
-msgstr ""
+msgstr "%(who)s podepsali manželskou smlouvu"
 
 #: StoryExport/storyexport_builder.py:491
 #, python-format
 msgid "%(who)s took out a marriage license"
-msgstr ""
+msgstr "%(who)s získali povolení ke sňatku"
 
 #: StoryExport/storyexport_builder.py:492
 #, python-format
 msgid "%(who)s agreed a marriage settlement"
-msgstr ""
+msgstr "%(who)s uzavřeli předmanželskou majetkovou smlouvu"
 
 #: StoryExport/storyexport_builder.py:493
 #, python-format
 msgid "%(who)s were engaged"
-msgstr ""
+msgstr "%(who)s byli oddáni"
 
 #: StoryExport/storyexport_builder.py:494
 #, python-format
 msgid "%(who)s were divorced"
-msgstr ""
+msgstr "%(who)s byli rozvedeni"
 
 #: StoryExport/storyexport_builder.py:495
-#, fuzzy, python-format
-#| msgid "Used for source"
+#, python-format
 msgid "%(who)s filed for divorce"
-msgstr "Použito pro pramen"
+msgstr "%(who)s podal/a žádost o rozvod"
 
 #: StoryExport/storyexport_builder.py:496
 #, python-format
 msgid "%(who)s had their marriage annulled"
-msgstr ""
+msgstr "%(who)s měli jejich manželství anulováno"
 
 #: StoryExport/storyexport_builder.py:497
 #, python-format
 msgid "%(who)s were recorded in the census"
-msgstr ""
+msgstr "%(who)s byli zaznamenáni ve sčítání lidu"
 
 #: StoryExport/storyexport_builder.py:498
 #, python-format
 msgid "%(who)s lived"
-msgstr ""
+msgstr "%(who)s žili"
 
 #: StoryExport/storyexport_builder.py:530
-#, fuzzy, python-format
-#| msgid "%(ancestor1)s and %(ancestor2)s"
+#, python-format
 msgid "%(names)s and %(last)s"
-msgstr "%(ancestor1)s a %(ancestor2)s"
+msgstr "%(names)s a %(last)s"
 
 #: StoryExport/storyexport_builder.py:568
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(type)s (%(role)s)"
-msgstr "%(type)s: %(value)s"
+msgstr "%(type)s (%(role)s)"
 
 #: StoryExport/storyexport_builder.py:570
 #: StoryExport/storyexport_builder.py:589
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(type)s of %(who)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(type)s osoby %(who)s"
 
 #: StoryExport/storyexport_builder.py:581
 #, python-format
 msgid "%(who)s took part in this %(type)s as %(role)s"
-msgstr ""
+msgstr "%(who)s se zúčastnil/a této události %(type)s jako %(role)s"
 
 #: StoryExport/storyexport_builder.py:595
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s"
+#, python-format
 msgid "%(moment)s on %(date)s"
-msgstr "%(event_type)s: %(date)s"
+msgstr "%(moment)s dne %(date)s"
 
 #: StoryExport/storyexport_builder.py:597
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s"
+#, python-format
 msgid "%(moment)s in %(date)s"
-msgstr "%(event_type)s: %(date)s"
+msgstr "%(moment)s v %(date)s"
 
 #: StoryExport/storyexport_builder.py:599
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s"
+#, python-format
 msgid "%(moment)s %(date)s"
-msgstr "%(event_type)s: %(date)s"
+msgstr "%(moment)s %(date)s"
 
 #: StoryExport/storyexport_builder.py:602
-#, fuzzy, python-format
-#| msgid "%(date)s, %(place)s"
+#, python-format
 msgid "%(moment)s in %(place)s"
-msgstr "%(date)s, %(place)s"
+msgstr "%(moment)s v %(place)s"
 
 #: StoryExport/storyexport_builder.py:750
 #, python-format
 msgid "%d moment"
 msgid_plural "%d moments"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d moment"
+msgstr[1] "%d momenty"
+msgstr[2] "%d momentů"
 
 #: StoryExport/storyexport_builder.py:790
 msgid "This person isn't included with the chosen privacy settings."
-msgstr ""
+msgstr "Tato osoba není zahrnuta podle zvolených nastavení soukromí."
 
 #: StoryExport/storyexport_builder.py:810
 #, python-format
 msgid "%s has no events to build a story from."
-msgstr ""
+msgstr "%s nemá žádné události, ze kterých by se dal vytvořit příběh."
 
 #: StoryExport/storyexport_builder.py:813
 #: StoryExport/storyexport_builder.py:862
 #, python-format
 msgid "The Story of %s"
-msgstr ""
+msgstr "Příběh osoby %s"
 
 #: StoryExport/storyexport_builder.py:817
 #, python-format
 msgid "%(moments)s from %(name)s's recorded life."
-msgstr ""
+msgstr "%(moments)s ze zaznamenaného života osoby %(name)s."
 
 #: StoryExport/storyexport_builder.py:840
 msgid "This family isn't included with the chosen privacy settings."
-msgstr ""
+msgstr "Tato rodina není zahrnuta podle zvolených nastavení soukromí."
 
 #: StoryExport/storyexport_builder.py:844
-#, fuzzy
-#| msgid "Show the previous family"
 msgid "this family"
-msgstr "Zobrazit předchozí rodinu"
+msgstr "tato rodina"
 
 #: StoryExport/storyexport_builder.py:854
 msgid ""
 "This family has no events to build a story from: not on the family itself, "
 "and no births or deaths recorded for its members."
 msgstr ""
+"Tato rodina nemá žádné události pro vytvoření příběhu: ani v samotné rodině, "
+"ani není zaznamenáno narození či úmrtí jejích členů."
 
 #: StoryExport/storyexport_builder.py:865
 #, python-format
 msgid "%(moments)s from the life of %(couple)s and %(children)s."
-msgstr ""
+msgstr "%(moments)s ze života páru %(couple)s a %(children)s."
 
 #: StoryExport/storyexport_builder.py:869
 #, python-format
 msgid "their child"
 msgid_plural "their %(count)d children"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "jejich dítě"
+msgstr[1] "jejich %(count)d děti"
+msgstr[2] "jejich %(count)d dětí"
 
 #: StoryExport/storyexport_builder.py:874
 #, python-format
 msgid "%(moments)s from the life of %(couple)s."
-msgstr ""
+msgstr "%(moments)s ze života páru %(couple)s."
 
 #: StoryExport/storyexport_builder.py:888
-#, fuzzy, python-format
-#| msgid "Family shape"
+#, python-format
 msgid "Family %s"
-msgstr "Tvar zobrazení rodiny"
+msgstr "Rodina %s"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
@@ -25423,11 +25441,11 @@ msgstr "Přidat vzájemnou asociaci – %s"
 #: SyncAssociations/syncAssociations.py:131
 #, python-brace-format
 msgid "{} Reciprocal associations created"
-msgstr ""
+msgstr "Vytvořeny vzájemné asociace v počtu {}"
 
 #: SyncAssociations/syncAssociations.py:135
 msgid "All reciprocal associations exist, none created"
-msgstr ""
+msgstr "Všechny vzájemné asociace existují, žádné nebyly vytvořeny"
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
