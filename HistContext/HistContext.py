@@ -323,10 +323,18 @@ class HistContext(Gramplet):
         # Handle year-only dates (YYYY format) when __use_year is True
         # Support both positive and negative years (e.g., -55 for 55 BC)
         year_str = datest.lstrip("-")
+        is_negative = datest.startswith("-")
         if self.__use_year and len(year_str) == 4 and year_str.isdigit():
-            # When using year-only mode, year strings like "1750" or "-55" are already valid
+            # When using year-only mode, year strings like "1750" are already valid
             # No need to parse them as full dates
             self.sort_date = datest  # Use year as sort date (already sortable)
+            return datest
+        
+        # Handle negative years like "-55" (55 BC) - strip minus sign for Gramps
+        if self.__use_year and len(year_str) <= 4 and year_str.isdigit() and is_negative:
+            # Return as-is for negative years when in year-only mode
+            # The minus sign will be used for sorting (negative numbers sort first)
+            self.sort_date = datest
             return datest
         
         if len(datest) == 4 and not self.__use_year:
