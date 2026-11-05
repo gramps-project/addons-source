@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 10:14-0700\n"
+"POT-Creation-Date: 2026-10-18 11:42-0700\n"
 "PO-Revision-Date: 2026-01-04 20:01+0000\n"
 "Last-Translator: openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
@@ -2132,6 +2132,7 @@ msgid "Abandon"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
+#: GWizardFileMerge/gwizardmergedialog.py:537
 msgid "New person"
 msgstr "Naujas asmuo"
 
@@ -15732,6 +15733,401 @@ msgid ""
 "expression evaluates to true"
 msgstr ""
 
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:19
+msgid "GWizard File Merge"
+msgstr ""
+
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:21
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:120
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure Connection"
+msgstr "Nustatyti"
+
+#: GWizardFileMerge/gwizard.py:121
+msgid "Load Data"
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:122
+#, fuzzy
+#| msgid "Edit tags"
+msgid "Find Matching Persons"
+msgstr "Keisti gaires"
+
+#: GWizardFileMerge/gwizard.py:123
+#, fuzzy
+#| msgid "Differences"
+msgid "Compare Differences"
+msgstr "Skirtumai"
+
+#: GWizardFileMerge/gwizard.py:124
+#, fuzzy
+#| msgid "No changes"
+msgid "Apply Changes"
+msgstr "Nėra pakeitimų"
+
+#: GWizardFileMerge/gwizard.py:137
+msgid "Configure file path or authenticate with online service."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:138
+msgid "Load/parse the external genealogy data into memory."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:139
+msgid "Search for potential matches in your database."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:140
+msgid "Compare fields side-by-side between the source and target."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:141
+msgid "Merge selected changes or add new records to the database."
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:167
+#: GWizardFileMerge/gwizardcompare.py:187
+msgid "GWizard Compare"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:173
+msgid "No source database available for comparison"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:208
+#: GWizardFileMerge/gwizardmergedialog.py:586
+msgid "Incoming GEDCOM"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:213
+#: GWizardFileMerge/gwizardmergedialog.py:593
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:215
+#: GWizardFileMerge/gwizardmergedialog.py:597
+#, fuzzy, python-format
+#| msgid "Error creating note"
+msgid "Current Family Tree: %s"
+msgstr "Klaida sukuriant pastabą"
+
+#: GWizardFileMerge/gwizardcompare.py:426
+msgid "Populate Failed"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:876
+#, fuzzy
+#| msgid "Merge"
+msgid "Merge..."
+msgstr "Apjungti"
+
+#: GWizardFileMerge/gwizardcompare.py:878
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:883
+#: GWizardFileMerge/gwizardcompare.py:1224
+#, fuzzy
+#| msgid "Add as a Wife"
+msgid "Add as New..."
+msgstr "Pridėti kaip žmoną"
+
+#: GWizardFileMerge/gwizardcompare.py:885
+#: GWizardFileMerge/gwizardcompare.py:1226
+msgid "Add the selected incoming person as a new person"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:926
+#, fuzzy
+#| msgid "Record Number"
+msgid "Record"
+msgstr "Įrašo numeris"
+
+#: GWizardFileMerge/gwizardcompare.py:932
+msgid "Born"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:933
+msgid "Died"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:975
+#: GWizardFileMerge/gwizardmergedialog.py:740
+#, fuzzy
+#| msgid "India"
+msgid "Individual Details"
+msgstr "Indija"
+
+#: GWizardFileMerge/gwizardcompare.py:976
+#: GWizardFileMerge/gwizardmergedialog.py:813
+#, fuzzy
+#| msgid "Family Relation Types"
+msgid "Family Relations"
+msgstr "Šeimos ryšių rūšys"
+
+#: GWizardFileMerge/gwizardcompare.py:978
+#: GWizardFileMerge/gwizardmergedialog.py:859
+msgid "Events & Other Records"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1216
+msgid "Not a Match"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1219
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1232
+#, fuzzy, python-format
+#| msgid "Differences"
+msgid "Differences: %d of %d"
+msgstr "Skirtumai"
+
+#: GWizardFileMerge/gwizardcompare.py:1484
+msgid "(none)"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1648
+#, fuzzy, python-format
+#| msgid "found: %s"
+msgid "Gender: %s"
+msgstr "rasta: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1650
+#, fuzzy, python-format
+#| msgid "Death: %s"
+msgid "ID: %s"
+msgstr "Mirtis: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1677
+#, fuzzy, python-format
+#| msgid "Search:"
+msgid "FamilySearch: %s"
+msgstr "Ieškoti:"
+
+#: GWizardFileMerge/gwizardcompare.py:1751
+#: GWizardFileMerge/gwizardcompare.py:1768
+#: GWizardFileMerge/gwizardmergedialog.py:451
+#, fuzzy, python-format
+#| msgid "Added %s: %s "
+msgid "%s: %s"
+msgstr "Pridėta %s: %s "
+
+#: GWizardFileMerge/gwizardcompare.py:2008
+#, fuzzy
+#| msgid "Add as a Child"
+msgid "Add as New failed"
+msgstr "Pridėti kaip vaiką"
+
+#: GWizardFileMerge/gwizardgedcom.py:351
+#: GWizardFileMerge/gwizardmergedialog.py:745
+#, fuzzy
+#| msgid "Checking Place Titles"
+msgid "Given Name"
+msgstr "Tikrinti vietovių antraštes"
+
+#: GWizardFileMerge/gwizardgedcom.py:377
+#: GWizardFileMerge/gwizardmergedialog.py:761
+msgid "Surname Prefix"
+msgstr ""
+
+#: GWizardFileMerge/gwizardgedcom.py:1068
+msgid "GWizard Data Merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:113
+#, fuzzy
+#| msgid "Genealogy Online"
+msgid "Genealogy files"
+msgstr "Genealogija internete"
+
+#: GWizardFileMerge/gwizardlauncher.py:129
+#, fuzzy
+#| msgid "Select filter to restrict people"
+msgid "Select File to Compare"
+msgstr "Pasirinkite filtrą asmenų apribojimui"
+
+#: GWizardFileMerge/gwizardlauncher.py:158
+msgid "The selected file is missing."
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:161
+msgid "Could not read the selected file."
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:201
+msgid "Loading Data Merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:202
+#: GWizardFileMerge/gwizardlauncher.py:206
+#, fuzzy
+#| msgid "Remove selected image(s)."
+msgid "Reading the selected file..."
+msgstr "Pašalinti pasirinktus atvaizdus."
+
+#: GWizardFileMerge/gwizardlauncher.py:214
+msgid "Load Failed"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:216
+msgid "Building the comparison window..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:256
+#, fuzzy
+#| msgid "No title"
+msgid "Untitled source"
+msgstr "Be pavadinimo"
+
+#: GWizardFileMerge/gwizardmergedialog.py:265
+#, python-format
+msgid "page %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:287
+#, python-format
+msgid "via %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:315
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#, fuzzy, python-format
+#| msgid "Sources?"
+msgid "Sources: %s"
+msgstr "Šaltiniai?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:377
+msgid "GWizard Merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:385
+#, fuzzy
+#| msgid "No data available."
+msgid "No source database available for merge"
+msgstr "Duomenų nėra."
+
+#: GWizardFileMerge/gwizardmergedialog.py:394
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:400
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:531
+msgid "→"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:599
+#, fuzzy
+#| msgid "Error creating note"
+msgid "Current Family Tree"
+msgstr "Klaida sukuriant pastabą"
+
+#: GWizardFileMerge/gwizardmergedialog.py:767
+#, fuzzy
+#| msgid "No Source"
+msgid "Name Sources"
+msgstr "Nėra šaltinio"
+
+#: GWizardFileMerge/gwizardmergedialog.py:807
+#, fuzzy
+#| msgid "No Source"
+msgid "Person Sources"
+msgstr "Nėra šaltinio"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1093
+msgid "=>"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1094
+#, fuzzy, python-format
+#| msgid "The center family for the tree"
+msgid "Move %s to current family tree"
+msgstr "Centrinė medžio šeima"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1102
+msgid "✓"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1286
+#, fuzzy, python-format
+#| msgid "Citations:"
+msgid "%d Citations"
+msgstr "Citatos:"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1288
+#, fuzzy, python-format
+#| msgid "Sources?"
+msgid "%d Sources"
+msgstr "Šaltiniai?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1290
+#, fuzzy, python-format
+#| msgid "Notes:"
+msgid "%d Notes"
+msgstr "Pastabos:"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1292
+#, fuzzy, python-format
+#| msgid "Todo Report"
+msgid "%d Media Records"
+msgstr "Norėdami atlikti ataskaitą"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1294
+#, fuzzy, python-format
+#| msgid "repositories"
+msgid "%d Repositories"
+msgstr "saugyklos"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1297
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1310
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1324
+msgid "Confirm Importing Missing References"
+msgstr ""
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr ""
@@ -18724,10 +19120,6 @@ msgstr "Linijos storis"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
@@ -26541,9 +26933,6 @@ msgstr ""
 
 #~ msgid "Search"
 #~ msgstr "Paieška"
-
-#~ msgid "Merge"
-#~ msgstr "Apjungti"
 
 #~ msgid "Number of font sizes"
 #~ msgstr "Šrifto dydžių skaičius"
