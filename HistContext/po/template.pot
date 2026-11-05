@@ -8,92 +8,91 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2024-12-03 07:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
+#: HistContext.gpr.py:4 HistContext.gpr.py:14
 msgid "Historical Context"
 msgstr ""
 
-#: HistContext/HistContext.gpr.py:5
+#: HistContext.gpr.py:5
 msgid "Lists relevant historical events during the lifetime of a Person"
 msgstr ""
 
-#: HistContext/HistContext.py:123
+#: HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
 msgstr ""
 
-#: HistContext/HistContext.py:126
+#: HistContext.py:126
 msgid "Use filter "
 msgstr ""
 
-#: HistContext/HistContext.py:129
+#: HistContext.py:129
 msgid "Show outside life span "
 msgstr ""
 
-#: HistContext/HistContext.py:132
+#: HistContext.py:132
 msgid "Use full dates"
 msgstr ""
 
-#: HistContext/HistContext.py:135
+#: HistContext.py:135
 msgid "Foreground color items in lifespan"
 msgstr ""
 
-#: HistContext/HistContext.py:138
+#: HistContext.py:138
 msgid "Background color items in lifespan"
 msgstr ""
 
-#: HistContext/HistContext.py:141
+#: HistContext.py:141
 msgid "Foreground color items outside lifespan"
 msgstr ""
 
-#: HistContext/HistContext.py:144
+#: HistContext.py:144
 msgid "Background color items outside lifespan"
 msgstr ""
 
-#: HistContext/HistContext.py:149
+#: HistContext.py:149
 msgid "Select from files"
 msgstr ""
 
-#: HistContext/HistContext.py:287
+#: HistContext.py:287
 msgid "Invalid date "
 msgstr ""
 
-#: HistContext/HistContext.py:288
+#: HistContext.py:288
 msgid " in line: "
 msgstr ""
 
-#: HistContext/HistContext.py:289 HistContext/HistContext.py:333
-#: HistContext/HistContext.py:420
+#: HistContext.py:289 HistContext.py:333 HistContext.py:420
 msgid "Error:"
 msgstr ""
 
-#: HistContext/HistContext.py:327
-msgid ": line does not contain four sections separated by semicolons in : \""
+#: HistContext.py:327
+msgid ": not four semicolons in : \""
 msgstr ""
 
-#: HistContext/HistContext.py:419
+#: HistContext.py:419
 msgid "Cannot open URL: "
 msgstr ""
 
-#: HistContext/HistContext.py:427
+#: HistContext.py:427
 msgid "Double click row to follow link"
 msgstr ""
 
-#: HistContext/HistContext.py:438
+#: HistContext.py:438
 msgid "From"
 msgstr ""
 
-#: HistContext/HistContext.py:449
+#: HistContext.py:449
 msgid "To"
 msgstr ""
 
-#: HistContext/HistContext.py:458
+#: HistContext.py:458
 msgid "Text"
 msgstr ""
