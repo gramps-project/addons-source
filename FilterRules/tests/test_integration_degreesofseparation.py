@@ -40,11 +40,6 @@ ADDON_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ADDON_DIR not in sys.path:
     sys.path.insert(0, ADDON_DIR)
 
-try:
-    import gi
-except ImportError as err:
-    raise unittest.SkipTest("PyGObject not available: %s" % err)
-
 # -------------------------------------------------------------------------
 #
 # Gramps modules
