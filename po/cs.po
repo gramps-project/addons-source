@@ -7,13 +7,14 @@
 # Milan <mobrcian@hotmail.com>, 2025, 2026.
 # Jiri Svanda <svanda.jiri@gmail.com>, 2026.
 # Michal Várady <majkl82@users.noreply.hosted.weblate.org>, 2026.
+# Milan <milan@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-18 11:42-0700\n"
-"PO-Revision-Date: 2026-10-19 08:20+0000\n"
-"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-10-20 16:15+0000\n"
+"Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -25357,7 +25358,7 @@ msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:129
 msgid "September"
-msgstr ""
+msgstr "Září"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:130
 msgid "December"
