@@ -4,13 +4,14 @@
 # Keiichiro Yamamoto <k.yanmar@gmail.com>, 2011.
 # coolz daddy <coolzdaddy55@gmail.com>, 2025.
 # coolvitto <coolzdaddy55@gmail.com>, 2026.
+# coolvitto <cool.vitto@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-18 11:42-0700\n"
-"PO-Revision-Date: 2026-09-30 15:23+0000\n"
-"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"PO-Revision-Date: 2026-10-20 04:57+0000\n"
+"Last-Translator: coolvitto <cool.vitto@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -15828,10 +15829,8 @@ msgstr ""
 "一致します"
 
 #: GWizardFileMerge/GWizardFileMerge.gpr.py:19
-#, fuzzy
-#| msgid "Command Line Merge"
 msgid "GWizard File Merge"
-msgstr "コマンドライン統合"
+msgstr "GWizard ファイル統合"
 
 #: GWizardFileMerge/GWizardFileMerge.gpr.py:21
 msgid ""
@@ -15839,285 +15838,231 @@ msgid ""
 "Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
 "differences person by person."
 msgstr ""
+"開いている家系図と別の系図ファイル（GEDCOM、Gramps XMLなど）を並べて比較し、"
+"選択した相違点を人物ごとに統合するための家系図処理ツール。"
 
 #: GWizardFileMerge/gwizard.py:120
-#, fuzzy
-#| msgid "Deep Connections"
 msgid "Configure Connection"
-msgstr "ディープコネクション"
+msgstr "接続の設定"
 
 #: GWizardFileMerge/gwizard.py:121
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Load Data"
 msgstr "データの読み込み"
 
 #: GWizardFileMerge/gwizard.py:122
-#, fuzzy
-#| msgid "Edit Starting Person"
 msgid "Find Matching Persons"
-msgstr "開始側の人物を編集"
+msgstr "一致する人物を検索"
 
 #: GWizardFileMerge/gwizard.py:123
-#, fuzzy
-#| msgid "Differences"
 msgid "Compare Differences"
-msgstr "相違点"
+msgstr "相違点を比較"
 
 #: GWizardFileMerge/gwizard.py:124
-#, fuzzy
-#| msgid "Apply changes"
 msgid "Apply Changes"
 msgstr "変更を適用"
 
 #: GWizardFileMerge/gwizard.py:137
 msgid "Configure file path or authenticate with online service."
-msgstr ""
+msgstr "ファイルのパスを設定するか、オンラインサービスで認証を行ってください。"
 
 #: GWizardFileMerge/gwizard.py:138
 msgid "Load/parse the external genealogy data into memory."
-msgstr ""
+msgstr "外部の系図データをメモリに読み込み、解析する。"
 
 #: GWizardFileMerge/gwizard.py:139
 msgid "Search for potential matches in your database."
-msgstr ""
+msgstr "データベース内で該当する可能性のあるデータを検索します。"
 
 #: GWizardFileMerge/gwizard.py:140
 msgid "Compare fields side-by-side between the source and target."
-msgstr ""
+msgstr "ソースとターゲットのフィールドを並べて比較します。"
 
 #: GWizardFileMerge/gwizard.py:141
 msgid "Merge selected changes or add new records to the database."
-msgstr ""
+msgstr "選択した変更をマージするか、データベースに新しいレコードを追加します。"
 
 #: GWizardFileMerge/gwizardcompare.py:167
 #: GWizardFileMerge/gwizardcompare.py:187
 msgid "GWizard Compare"
-msgstr ""
+msgstr "GWizard の比較"
 
 #: GWizardFileMerge/gwizardcompare.py:173
 msgid "No source database available for comparison"
-msgstr ""
+msgstr "比較用のソースデータベースがありません"
 
 #: GWizardFileMerge/gwizardcompare.py:208
 #: GWizardFileMerge/gwizardmergedialog.py:586
-#, fuzzy
-#| msgid "Importing GEDCOM..."
 msgid "Incoming GEDCOM"
-msgstr "GEDCOM をインポート中..."
+msgstr "GEDCOM の取り込み"
 
 #: GWizardFileMerge/gwizardcompare.py:213
 #: GWizardFileMerge/gwizardmergedialog.py:593
-#, fuzzy, python-format
-#| msgid "Importing GEDCOM..."
+#, python-format
 msgid "Incoming GEDCOM: %s"
-msgstr "GEDCOM をインポート中..."
+msgstr "GEDCOM の取り込み: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:215
 #: GWizardFileMerge/gwizardmergedialog.py:597
-#, fuzzy, python-format
-#| msgid "Error creating Family Tree: %s"
+#, python-format
 msgid "Current Family Tree: %s"
-msgstr "家系図の作成エラー: %s"
+msgstr "現在の家系図: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:426
-#, fuzzy
-#| msgid "Populated"
 msgid "Populate Failed"
-msgstr "人口が多い"
+msgstr "取り込みに失敗しました"
 
 #: GWizardFileMerge/gwizardcompare.py:876
 msgid "Merge..."
-msgstr ""
+msgstr "統合..."
 
 #: GWizardFileMerge/gwizardcompare.py:878
 msgid "Open the field-by-field merge dialog for the selected pair"
-msgstr ""
+msgstr "選択したペアについて、フィールドごとのマージダイアログを開く"
 
 #: GWizardFileMerge/gwizardcompare.py:883
 #: GWizardFileMerge/gwizardcompare.py:1224
-#, fuzzy
-#| msgid "Add as a Wife"
 msgid "Add as New..."
-msgstr "妻として追加"
+msgstr "新規として追加..."
 
 #: GWizardFileMerge/gwizardcompare.py:885
 #: GWizardFileMerge/gwizardcompare.py:1226
 msgid "Add the selected incoming person as a new person"
-msgstr ""
+msgstr "選択した着信相手を新しい連絡先として追加する"
 
 #: GWizardFileMerge/gwizardcompare.py:926
-#, fuzzy
-#| msgid "All Records"
 msgid "Record"
-msgstr "すべてのレコード"
+msgstr "レコード"
 
 #: GWizardFileMerge/gwizardcompare.py:932
 msgid "Born"
-msgstr ""
+msgstr "生まれ"
 
 #: GWizardFileMerge/gwizardcompare.py:933
 msgid "Died"
-msgstr ""
+msgstr "死去"
 
 #: GWizardFileMerge/gwizardcompare.py:975
 #: GWizardFileMerge/gwizardmergedialog.py:740
-#, fuzzy
-#| msgid "Individual"
 msgid "Individual Details"
-msgstr "個人"
+msgstr "個人の詳細"
 
 #: GWizardFileMerge/gwizardcompare.py:976
 #: GWizardFileMerge/gwizardmergedialog.py:813
-#, fuzzy
-#| msgid "Family Relation Types"
 msgid "Family Relations"
-msgstr "家族関係タイプ"
+msgstr "家族関係"
 
 #: GWizardFileMerge/gwizardcompare.py:978
 #: GWizardFileMerge/gwizardmergedialog.py:859
 msgid "Events & Other Records"
-msgstr ""
+msgstr "イベントおよびその他の記録"
 
 #: GWizardFileMerge/gwizardcompare.py:1216
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "Not a Match"
-msgstr ""
-"いいえ\n"
-"一致"
+msgstr "一致しない"
 
 #: GWizardFileMerge/gwizardcompare.py:1219
 msgid ""
 "These are different people: unpair them so the incoming person can be added "
 "as new"
 msgstr ""
+"これらは別の人物です: ペアを解除して、新しく参加する人を新規として追加できる"
+"ようにしてください"
 
 #: GWizardFileMerge/gwizardcompare.py:1232
-#, fuzzy, python-format
-#| msgid "Differences"
+#, python-format
 msgid "Differences: %d of %d"
-msgstr "相違点"
+msgstr "相違点: %d / %d"
 
 #: GWizardFileMerge/gwizardcompare.py:1484
-#, fuzzy
-#| msgid "none"
 msgid "(none)"
-msgstr "なし"
+msgstr "(なし)"
 
 #: GWizardFileMerge/gwizardcompare.py:1648
-#, fuzzy, python-format
-#| msgid "found: %s"
+#, python-format
 msgid "Gender: %s"
-msgstr "検索結果: %s"
+msgstr "性別: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:1650
-#, fuzzy, python-format
-#| msgid "   N-ID: %s"
+#, python-format
 msgid "ID: %s"
-msgstr "   N-ID: %s"
+msgstr "ID: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:1677
-#, fuzzy, python-format
-#| msgid "FamilySearch.org"
+#, python-format
 msgid "FamilySearch: %s"
-msgstr "FamilySearch.org"
+msgstr "FamilySearch : %s"
 
 #: GWizardFileMerge/gwizardcompare.py:1751
 #: GWizardFileMerge/gwizardcompare.py:1768
 #: GWizardFileMerge/gwizardmergedialog.py:451
-#, fuzzy, python-format
-#| msgid "Added %s: %s "
+#, python-format
 msgid "%s: %s"
-msgstr "追加済み %s : %s "
+msgstr "%s : %s"
 
 #: GWizardFileMerge/gwizardcompare.py:2008
-#, fuzzy
-#| msgid "Add as a Child"
 msgid "Add as New failed"
-msgstr "子供として追加"
+msgstr "新規追加に失敗"
 
 #: GWizardFileMerge/gwizardgedcom.py:351
 #: GWizardFileMerge/gwizardmergedialog.py:745
-#, fuzzy
-#| msgid "Rename Given Names"
 msgid "Given Name"
-msgstr "名を変更"
+msgstr "名"
 
 #: GWizardFileMerge/gwizardgedcom.py:377
 #: GWizardFileMerge/gwizardmergedialog.py:761
-#, fuzzy
-#| msgid "Surnames Index"
 msgid "Surname Prefix"
-msgstr "姓インデックス"
+msgstr "姓の接頭辞"
 
 #: GWizardFileMerge/gwizardgedcom.py:1068
 msgid "GWizard Data Merge"
-msgstr ""
+msgstr "GWizard データ統合"
 
 #: GWizardFileMerge/gwizardlauncher.py:113
-#, fuzzy
-#| msgid "Genealogy Online"
 msgid "Genealogy files"
-msgstr "系譜オンライン"
+msgstr "系図ファイル"
 
 #: GWizardFileMerge/gwizardlauncher.py:129
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select File to Compare"
-msgstr "人を制限するフィルターの選択"
+msgstr "比較するファイルの選択"
 
 #: GWizardFileMerge/gwizardlauncher.py:158
-#, fuzzy
-#| msgid "The selected file is a directory, not a file."
 msgid "The selected file is missing."
-msgstr "選択されたファイルはディレクトリであり、ファイルではありません。"
+msgstr "選択したファイルが見つかりません。"
 
 #: GWizardFileMerge/gwizardlauncher.py:161
-#, fuzzy
-#| msgid "Could not reach the server: check the Server URL. (%s)"
 msgid "Could not read the selected file."
-msgstr "サーバーに到達できませんでした: サーバーURLを確認してください。 (%s)"
+msgstr "選択したファイルを読み込めませんでした。"
 
 #: GWizardFileMerge/gwizardlauncher.py:201
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Loading Data Merge"
-msgstr "データの読み込み"
+msgstr "データ結合の読み込み"
 
 #: GWizardFileMerge/gwizardlauncher.py:202
 #: GWizardFileMerge/gwizardlauncher.py:206
-#, fuzzy
-#| msgid "Reading file list..."
 msgid "Reading the selected file..."
-msgstr "ファイルリストを読み取り中..."
+msgstr "選択したファイルを読み込み中..."
 
 #: GWizardFileMerge/gwizardlauncher.py:214
 msgid "Load Failed"
-msgstr ""
+msgstr "読み込みに失敗"
 
 #: GWizardFileMerge/gwizardlauncher.py:216
 msgid "Building the comparison window..."
-msgstr ""
+msgstr "比較ウィンドウを作成中..."
 
 #: GWizardFileMerge/gwizardmergedialog.py:256
-#, fuzzy
-#| msgid "Untitled"
 msgid "Untitled source"
-msgstr "無題"
+msgstr "無題のソース"
 
 #: GWizardFileMerge/gwizardmergedialog.py:265
-#, fuzzy, python-format
-#| msgid ", page %s"
+#, python-format
 msgid "page %s"
-msgstr ", ページ %s"
+msgstr "ページ %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:287
 #, python-format
 msgid "via %s"
-msgstr ""
+msgstr "経由 %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:315
 #: GWizardFileMerge/gwizardmergedialog.py:327
@@ -16126,104 +16071,81 @@ msgid "none"
 msgstr "なし"
 
 #: GWizardFileMerge/gwizardmergedialog.py:327
-#, fuzzy, python-format
-#| msgid "Sources?"
+#, python-format
 msgid "Sources: %s"
-msgstr "ソース?"
+msgstr "ソース: %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:377
-#, fuzzy
-#| msgid "Media Merge"
 msgid "GWizard Merge"
-msgstr "メディアの結合"
+msgstr "GWizard 結合"
 
 #: GWizardFileMerge/gwizardmergedialog.py:385
-#, fuzzy
-#| msgid "No data available in table"
 msgid "No source database available for merge"
-msgstr "表にデータがありません"
+msgstr "マージに利用できるソースデータベースがありません"
 
 #: GWizardFileMerge/gwizardmergedialog.py:394
-#, fuzzy, python-format
-#| msgid "Note no longer exists"
+#, python-format
 msgid "Source person no longer exists: %s"
-msgstr "メモが存在しなくなりました"
+msgstr "参照元の人物は既に存在しません: %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:400
-#, fuzzy, python-format
-#| msgid "Note no longer exists"
+#, python-format
 msgid "Target person no longer exists: %s"
-msgstr "メモが存在しなくなりました"
+msgstr "対象者はもはや存在しません: %s"
 
 #: GWizardFileMerge/gwizardmergedialog.py:531
-#, fuzzy
-#| msgid "→ %s"
 msgid "→"
-msgstr "→ %s"
+msgstr "→"
 
 #: GWizardFileMerge/gwizardmergedialog.py:599
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Current Family Tree"
-msgstr "親家族"
+msgstr "現在の家系図"
 
 #: GWizardFileMerge/gwizardmergedialog.py:767
-#, fuzzy
-#| msgid "No Source"
 msgid "Name Sources"
-msgstr "ソースなし"
+msgstr "名前のソース"
 
 #: GWizardFileMerge/gwizardmergedialog.py:807
-#, fuzzy
-#| msgid "No Source"
 msgid "Person Sources"
-msgstr "ソースなし"
+msgstr "人物のソース"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1093
-#, fuzzy
-#| msgid "="
 msgid "=>"
-msgstr "="
+msgstr "=>"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1094
-#, fuzzy, python-format
-#| msgid "The center family for the tree"
+#, python-format
 msgid "Move %s to current family tree"
-msgstr "ツリーの中心家族"
+msgstr "%s を現在の家系図に移動"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1102
 msgid "✓"
-msgstr ""
+msgstr "✓"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1286
-#, fuzzy, python-format
-#| msgid "Citations:"
+#, python-format
 msgid "%d Citations"
-msgstr "引用 :"
+msgstr "%d 件の引用"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1288
-#, fuzzy, python-format
-#| msgid "Sources?"
+#, python-format
 msgid "%d Sources"
-msgstr "ソース?"
+msgstr "%d ソース"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1290
-#, fuzzy, python-format
-#| msgid "Notes:"
+#, python-format
 msgid "%d Notes"
-msgstr "メモ:"
+msgstr "%d 件のメモ"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1292
-#, fuzzy, python-format
-#| msgid "Media Report"
+#, python-format
 msgid "%d Media Records"
-msgstr "メディアレポート"
+msgstr "%d 件のメディアレコード"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1294
-#, fuzzy, python-format
-#| msgid "repositories"
+#, python-format
 msgid "%d Repositories"
-msgstr "リポジトリ"
+msgstr "%d 件のリポジトリ"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1297
 #, python-format
@@ -16237,6 +16159,14 @@ msgid ""
 "with your selected details. Do you confirm importing these missing "
 "references?"
 msgstr ""
+"マージされるデータには、ご自身の家系図に存在しない外部オブジェクトへの参照が"
+"含まれています：\n"
+"\n"
+"%s\n"
+"\n"
+"リンク切れを防ぐため、これらの欠落している参照は、選択した詳細情報とともに"
+"インポートする必要があります。これらの欠落している参照をインポートすることを"
+"確認しますか？"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1310
 #, python-format
@@ -16247,11 +16177,15 @@ msgid_plural ""
 "%d sources already in your family tree will be reused (matched by title, "
 "author and publication info)."
 msgstr[0] ""
+"%d 件のソースは、すでにあなたの家系図に含まれているため、再利用されます "
+"(タイトル、著者、出版情報に基づいて照合されます）。"
 msgstr[1] ""
+"%d 件のソースは、すでにあなたの家系図に含まれているため、再利用されます "
+"(タイトル、著者、出版情報に基づいて照合されます）。"
 
 #: GWizardFileMerge/gwizardmergedialog.py:1324
 msgid "Confirm Importing Missing References"
-msgstr ""
+msgstr "欠落している参照のインポートを確認する"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
@@ -19660,7 +19594,7 @@ msgstr "ブラウザ"
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
-msgstr "メディアの結合"
+msgstr "メディアの統合"
 
 #: MediaMerge/mediamerge.gpr.py:33
 msgid ""
@@ -19671,7 +19605,7 @@ msgstr ""
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
-msgstr "メディアの結合"
+msgstr "メディアの統合"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
@@ -23277,7 +23211,7 @@ msgstr "個人の読み込み"
 
 #: QuiltView/QuiltView.py:663
 msgid "Loading the data"
-msgstr "データの読み込み"
+msgstr "データの読み込み中"
 
 #: QuiltView/QuiltView.py:1053
 msgid "About Quilt View"
