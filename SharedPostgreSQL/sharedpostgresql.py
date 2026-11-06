@@ -25,6 +25,7 @@ Backend for PostgreSQL database.
 """
 
 import hashlib
+import logging
 import os
 import re
 from uuid import uuid4
@@ -43,7 +44,14 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-from shareddbapi import SharedDBAPI
+from shareddbapi import (
+    PER_TREE_TABLES,
+    SHARED_TABLE_ANALYZE_SCALE_FACTOR,
+    SHARED_TABLE_ANALYZE_THRESHOLD,
+    SharedDBAPI,
+)
+
+LOG = logging.getLogger(".sharedpostgresql")
 
 psycopg2.paramstyle = "format"
 
@@ -51,6 +59,20 @@ psycopg2.paramstyle = "format"
 # that its generic plan follows the tables as they grow (see
 # Connection.execute_prepared()).
 REPLAN_INTERVAL = 1000
+
+# The databases, as (host, port, dbname), that this process has already
+# checked for the per-tree tables' analyze settings (see
+# SharedPostgreSQL._backfill_analyze_settings()). The check runs once per
+# database per process, not on every open: a server such as gramps-web-api
+# opens the database for every request.
+_ANALYZE_SETTINGS_CHECKED = set()
+
+# How long adding the analyze settings to one table may wait for that
+# table's lock. ALTER TABLE ... SET (autovacuum_...) takes a SHARE UPDATE
+# EXCLUSIVE lock, which doesn't conflict with reads or writes but does wait
+# for a VACUUM or ANALYZE already running on the table; opening the database
+# shouldn't wait for that.
+ANALYZE_SETTINGS_LOCK_TIMEOUT = "2s"
 
 
 # -------------------------------------------------------------------------
@@ -133,6 +155,88 @@ class SharedPostgreSQL(SharedDBAPI):
             self.dbapi = Connection(uuid=uuid, **dbkwargs)
         except psycopg2.OperationalError as msg:
             raise DbConnectionError(str(msg), config_file)
+
+        database = tuple(dbkwargs.get(key) for key in ("host", "port", "dbname"))
+        if database not in _ANALYZE_SETTINGS_CHECKED:
+            # Marked before trying, so a database where the backfill fails
+            # (e.g. the role doesn't own the tables) isn't retried, and
+            # warned about, on every open.
+            _ANALYZE_SETTINGS_CHECKED.add(database)
+            self._backfill_analyze_settings()
+
+    def _backfill_analyze_settings(self):
+        """
+        Add the per-tree tables' autovacuum analyze settings where they are
+        missing.
+
+        _create_schema() sets them on a new database. One created before
+        they existed doesn't have them, so autovacuum re-analyzes a table
+        only after about a tenth of all trees' rows in it have changed. A
+        tree imported into such a database can then go unanalyzed
+        indefinitely, and the planner, estimating that the tree has about
+        one row, may look its related rows up through the wrong index
+        (e.g. a correlated birth-event lookup scanning all of the tree's
+        events through event_gramps_id instead of using the primary key).
+
+        Only settings that are absent are added, so values an operator has
+        chosen for a table are kept. Each table is altered in its own short
+        transaction with a lock timeout. Nothing here can stop the database
+        from opening: if a table can't be altered, a warning is logged and
+        the rest are still tried.
+        """
+        wanted = {
+            "autovacuum_analyze_scale_factor": SHARED_TABLE_ANALYZE_SCALE_FACTOR,
+            "autovacuum_analyze_threshold": SHARED_TABLE_ANALYZE_THRESHOLD,
+        }
+        try:
+            # to_regclass() resolves each name the way the addon's own
+            # unqualified SQL does (through search_path), and gives NULL for
+            # a table that doesn't exist yet -- a new database, whose
+            # _create_schema() will set these itself.
+            self.dbapi.execute(
+                "SELECT t.name, c.reloptions "
+                "FROM unnest(?::text[]) AS t(name) "
+                "JOIN pg_class AS c ON c.oid = to_regclass(t.name)",
+                [list(PER_TREE_TABLES)],
+            )
+            rows = self.dbapi.fetchall()
+        except Exception as err:
+            LOG.warning("Could not check the tables' analyze settings: %s", err)
+            return
+
+        for table, reloptions in rows:
+            present = {option.split("=", 1)[0] for option in reloptions or []}
+            missing = {
+                name: value for name, value in wanted.items() if name not in present
+            }
+            if not missing:
+                continue
+            settings = ", ".join(
+                "%s = %s" % (name, value) for name, value in missing.items()
+            )
+            try:
+                self.dbapi.begin()
+                self.dbapi.execute(
+                    "SET LOCAL lock_timeout = '%s'" % ANALYZE_SETTINGS_LOCK_TIMEOUT
+                )
+                self.dbapi.execute("ALTER TABLE %s SET (%s)" % (table, settings))
+                self.dbapi.commit()
+                LOG.info("Set %s on table %s", settings, table)
+            except Exception as err:
+                # Connection.execute() has already rolled back if the
+                # failure was in a statement; this covers begin()/commit().
+                try:
+                    self.dbapi.rollback()
+                except Exception:
+                    pass
+                LOG.warning(
+                    "Could not set %s on table %s: %s. See "
+                    "SHARED_TABLE_ANALYZE_* in shareddbapi.py to apply it "
+                    "by hand.",
+                    settings,
+                    table,
+                    err,
+                )
 
     def _create_settings(self, config_file, config_mgr, directory, username, password):
         """Create settings.ini for a tree that has not been initialized yet."""

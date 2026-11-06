@@ -82,9 +82,14 @@ _LOG = logging.getLogger(DBLOGNAME)
 # autovacuum globally will see no effect here unless they also change (or
 # reset, with "ALTER TABLE <table> RESET (...)") these table-level settings.
 #
-# They are applied only when a brand-new shared database's schema is first
-# created. To apply the same values to an existing deployment, run for each
-# of the 14 per-tree tables listed in the loop below:
+# A database created before these settings existed doesn't have them, so
+# SharedPostgreSQL also adds any that are missing when it first connects to
+# a database (see SharedPostgreSQL._backfill_analyze_settings()). Only a
+# setting that is absent is added: a table where an operator has set either
+# one to some other value is left alone. If that backfill can't run (most
+# often because the connecting role doesn't own the tables), it logs a
+# warning, and the same values can be applied by hand for each table in
+# PER_TREE_TABLES:
 #
 #   ALTER TABLE <table> SET (
 #       autovacuum_analyze_scale_factor = 0,
@@ -92,6 +97,26 @@ _LOG = logging.getLogger(DBLOGNAME)
 #   );
 SHARED_TABLE_ANALYZE_SCALE_FACTOR = 0
 SHARED_TABLE_ANALYZE_THRESHOLD = 1000
+
+# Every table that holds rows for all trees together, keyed by treeid -- the
+# tables _create_schema() creates, apart from "trees" itself. The tests
+# check that this matches what _create_schema() actually creates.
+PER_TREE_TABLES = (
+    "person",
+    "family",
+    "source",
+    "citation",
+    "event",
+    "media",
+    "place",
+    "repository",
+    "note",
+    "tag",
+    "reference",
+    "name_group",
+    "metadata",
+    "gender_stats",
+)
 
 
 class SharedDBAPI(DbGeneric):
