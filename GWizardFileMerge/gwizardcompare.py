@@ -1,6 +1,8 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
+# Copyright (C) 2026  Kevin White
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -1734,6 +1736,7 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
                 lines.append(self._format_event_line(event, db))
             except Exception as e:
                 LOG.warning("Detail lookup failed: %s", e)
+        lines.sort()
         return lines
 
     def _get_familysearch_id(self, person: Person, db: Any) -> str:

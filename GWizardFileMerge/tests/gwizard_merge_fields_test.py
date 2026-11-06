@@ -39,7 +39,7 @@ from unittest.mock import Mock
 # Gramps modules
 #
 # -------------------------------------------------------------------------
-from gramps.gen.lib import Name, Person, Surname
+from gramps.gen.lib import EventRef, Name, Person, Surname
 from gwizard import surname_prefix_text, surname_text
 from gwizardmergedialog import (
     citation_sources_summary,
@@ -280,6 +280,174 @@ class GWizardEventGroupingTest(unittest.TestCase):
             person_events_by_type(db, person),
             {"Birth": ["birth"], "Death": ["death"], "Occupation": ["occupation"]},
         )
+
+    def test_compare_event_lines_sorted_alphabetically(self) -> None:
+        from gwizardcompare import GWizardCompareWindow
+
+        window = Mock(spec=GWizardCompareWindow)
+        window._format_event_line = lambda event, db: str(event.get_type())
+
+        event_types = ["Residence", "Birth", "Occupation", "Census"]
+        events = {}
+        refs = []
+        for etype in event_types:
+            event = Mock()
+            event.handle = etype.lower()
+            event.get_type.return_value = etype
+            events[event.handle] = event
+            refs.append(Mock(ref=event.handle))
+
+        db = Mock()
+        db.get_event_from_handle.side_effect = events.__getitem__
+        person = Mock()
+        person.get_event_ref_list.return_value = refs
+
+        lines = GWizardCompareWindow._event_lines(window, person, db)
+        self.assertEqual(lines, ["Birth", "Census", "Occupation", "Residence"])
+
+    def test_merge_dialog_events_sorted_alphabetically(self) -> None:
+        from gwizardmergedialog import GWizardMergeDialog
+
+        dialog = Mock(spec=GWizardMergeDialog)
+        dialog.source_person = Person()
+        dialog.target_person = Person()
+        dialog.source_db = Mock()
+        dialog.target_db = Mock()
+        dialog.gwizard = Mock(context={})
+        dialog._grid = Mock()
+        dialog._value_column_size_group = Mock()
+        dialog._resolutions = {}
+        dialog._mergeable_count = 0
+        dialog._format_diff_line = lambda label, a, b, show_label, is_left: a
+        dialog._event_for = lambda db, person, kind: ("", None, None)
+        dialog._event_display_from = lambda event: ""
+        dialog._related_text = lambda rel, db: ""
+        dialog._spouses = lambda db, person: []
+        dialog._parents = lambda db, person, role: []
+        dialog._children = lambda db, person: []
+
+        s_events = {
+            "s_res": Mock(
+                handle="s_res",
+                get_type=Mock(return_value="Residence"),
+                get_citation_list=Mock(return_value=[]),
+            ),
+            "s_cen": Mock(
+                handle="s_cen",
+                get_type=Mock(return_value="Census"),
+                get_citation_list=Mock(return_value=[]),
+            ),
+        }
+        t_events = {
+            "t_cen": Mock(
+                handle="t_cen",
+                get_type=Mock(return_value="Census"),
+                get_citation_list=Mock(return_value=[]),
+            ),
+            "t_res": Mock(
+                handle="t_res",
+                get_type=Mock(return_value="Residence"),
+                get_citation_list=Mock(return_value=[]),
+            ),
+        }
+        dialog.source_db.get_event_from_handle.side_effect = s_events.get
+        dialog.target_db.get_event_from_handle.side_effect = t_events.get
+        dialog.source_db.get_dbname.return_value = "db"
+        dialog.target_db.get_dbname.return_value = "db"
+        dialog._event_line_from = lambda db, ev: ev.handle if ev else ""
+
+        ref_s1 = EventRef()
+        ref_s1.ref = "s_res"
+        dialog.source_person.add_event_ref(ref_s1)
+        ref_s2 = EventRef()
+        ref_s2.ref = "s_cen"
+        dialog.source_person.add_event_ref(ref_s2)
+
+        ref_t1 = EventRef()
+        ref_t1.ref = "t_cen"
+        dialog.target_person.add_event_ref(ref_t1)
+        ref_t2 = EventRef()
+        ref_t2.ref = "t_res"
+        dialog.target_person.add_event_ref(ref_t2)
+
+        recorded_labels = []
+
+        def record_diff_line(label, a, b, show_label, is_left):
+            if is_left and label in ("Census", "Residence"):
+                recorded_labels.append(label)
+            return a
+
+        dialog._format_diff_line = record_diff_line
+
+        GWizardMergeDialog._populate_fields(dialog)
+        self.assertEqual(
+            recorded_labels, ["Census", "Census", "Residence", "Residence"]
+        )
+
+    def test_merge_dialog_same_type_events_sorted_alphabetically(self) -> None:
+        from gwizardmergedialog import GWizardMergeDialog
+
+        dialog = Mock(spec=GWizardMergeDialog)
+        dialog.source_person = Person()
+        dialog.target_person = Person()
+        dialog.source_db = Mock()
+        dialog.target_db = Mock()
+        dialog.gwizard = Mock(context={})
+        dialog._grid = Mock()
+        dialog._value_column_size_group = Mock()
+        dialog._resolutions = {}
+        dialog._mergeable_count = 0
+        dialog._event_for = lambda db, person, kind: ("", None, None)
+        dialog._event_display_from = lambda event: ""
+        dialog._related_text = lambda rel, db: ""
+        dialog._spouses = lambda db, person: []
+        dialog._parents = lambda db, person, role: []
+        dialog._children = lambda db, person: []
+
+        s_events = {
+            "s_cen1920": Mock(
+                handle="s_cen1920",
+                get_type=Mock(return_value="Census"),
+                get_citation_list=Mock(return_value=[]),
+            ),
+            "s_cen1910": Mock(
+                handle="s_cen1910",
+                get_type=Mock(return_value="Census"),
+                get_citation_list=Mock(return_value=[]),
+            ),
+        }
+        event_lines = {
+            "s_cen1920": "1920 Census",
+            "s_cen1910": "1910 Census",
+        }
+
+        dialog.source_db.get_event_from_handle.side_effect = s_events.get
+        dialog.target_db.get_event_from_handle.return_value = None
+        dialog.source_db.get_dbname.return_value = "db"
+        dialog.target_db.get_dbname.return_value = "db"
+        dialog._event_line_from = lambda db, ev: (
+            event_lines.get(ev.handle, "") if ev else ""
+        )
+
+        # Added in reverse order: 1920 before 1910
+        ref_s1 = EventRef()
+        ref_s1.ref = "s_cen1920"
+        dialog.source_person.add_event_ref(ref_s1)
+        ref_s2 = EventRef()
+        ref_s2.ref = "s_cen1910"
+        dialog.source_person.add_event_ref(ref_s2)
+
+        rendered_events = []
+
+        def record_diff_line(label, a, b, show_label, is_left):
+            if is_left and label == "Census":
+                rendered_events.append(a)
+            return a
+
+        dialog._format_diff_line = record_diff_line
+
+        GWizardMergeDialog._populate_fields(dialog)
+        self.assertEqual(rendered_events, ["1910 Census", "1920 Census"])
 
 
 if __name__ == "__main__":
