@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-18 11:42-0700\n"
+"POT-Creation-Date: 2026-10-26 09:44-0700\n"
 "PO-Revision-Date: 2025-08-29 20:30+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
@@ -23830,6 +23830,371 @@ msgstr ""
 
 #: Sqlite/Sqlite.gpr.py:19
 msgid "SQLite Export"
+msgstr ""
+
+#: StoryExport/StoryExport.gpr.py:24 StoryExport/StoryExport.py:170
+#: StoryExport/StoryExport.py:281
+#, fuzzy
+#| msgid "Generation "
+msgid "Generate Story"
+msgstr "Generacio "
+
+#: StoryExport/StoryExport.gpr.py:26
+msgid ""
+"Generates the story of a person or a family (.story.zip): a slideshow of "
+"their events with dates, places and photos, for the Gramps Connect Story "
+"Viewer"
+msgstr ""
+
+#: StoryExport/StoryExport.py:82
+msgid "Select the person whose story to generate, then try again."
+msgstr ""
+
+#: StoryExport/StoryExport.py:98 StoryExport/StoryExport.py:114
+msgid "Couldn't generate the story"
+msgstr ""
+
+#: StoryExport/StoryExport.py:117
+msgid "Story saved"
+msgstr ""
+
+#: StoryExport/StoryExport.py:120
+#, python-format
+msgid ""
+"%(count)d slides saved to %(path)s.\n"
+"\n"
+"Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+msgstr ""
+
+#: StoryExport/StoryExport.py:126
+msgid "_Open in Browser"
+msgstr ""
+
+#: StoryExport/StoryExport.py:159
+msgid "Story"
+msgstr ""
+
+#: StoryExport/StoryExport.py:180
+msgid "Generate the story of:"
+msgstr ""
+
+#: StoryExport/StoryExport.py:185
+#, python-format
+msgid "Family: %s"
+msgstr ""
+
+#: StoryExport/StoryExport.py:195
+msgid "Include families"
+msgstr ""
+
+#: StoryExport/StoryExport.py:198
+msgid ""
+"Also draw on this person's own families: a spouse's and children's births "
+"and deaths, and their parents' and siblings'."
+msgstr ""
+
+#: StoryExport/StoryExport.py:223
+msgid "Include each person's own birth and death in this family's story:"
+msgstr ""
+
+#: StoryExport/StoryExport.py:248
+msgid "Include living people (and photos they appear in)"
+msgstr ""
+
+#: StoryExport/StoryExport.py:292
+msgid "Stories (*.story.zip)"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:427
+msgid ""
+"This family is marked private. To generate its story, check \"Include data "
+"marked private\"."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:438
+#, python-format
+msgid ""
+"%s is marked private. To generate their story, check \"Include data marked "
+"private\"."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:446
+#, python-format
+msgid ""
+"%s is probably living. To generate their story, check \"Include living "
+"people\"."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:460
+#, python-format
+msgid "%(who)s was born"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:461
+#, python-format
+msgid "%(who)s was stillborn"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:462
+#, python-format
+msgid "%(who)s was baptized"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:463
+#: StoryExport/storyexport_builder.py:464
+#, python-format
+msgid "%(who)s was christened"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:465
+#, python-format
+msgid "%(who)s was blessed"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:466
+#, python-format
+msgid "%(who)s was confirmed"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:467
+#, python-format
+msgid "%(who)s took First Communion"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:468
+#, python-format
+msgid "%(who)s celebrated their Bar Mitzvah"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:469
+#, python-format
+msgid "%(who)s celebrated their Bas Mitzvah"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:470
+#, python-format
+msgid "%(who)s was adopted"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:471
+#, python-format
+msgid "%(who)s graduated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:472
+#, python-format
+msgid "%(who)s was awarded a degree"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:473
+#, python-format
+msgid "%(who)s emigrated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:474
+#, python-format
+msgid "%(who)s immigrated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:475
+#, python-format
+msgid "%(who)s was naturalized"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:476
+#, python-format
+msgid "%(who)s was ordained"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:477
+#, python-format
+msgid "%(who)s was elected"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:478
+#, python-format
+msgid "%(who)s retired"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:479
+#, python-format
+msgid "%(who)s died"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:480
+#, python-format
+msgid "%(who)s was buried"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:481
+#, python-format
+msgid "%(who)s was cremated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:482
+#, python-format
+msgid "%(who)s had their estate probated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:487
+#: StoryExport/storyexport_builder.py:488
+#, python-format
+msgid "%(who)s were married"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:489
+#, python-format
+msgid "%(who)s had their banns read"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:490
+#, python-format
+msgid "%(who)s signed a marriage contract"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:491
+#, python-format
+msgid "%(who)s took out a marriage license"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:492
+#, python-format
+msgid "%(who)s agreed a marriage settlement"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:493
+#, python-format
+msgid "%(who)s were engaged"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:494
+#, python-format
+msgid "%(who)s were divorced"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:495
+#, python-format
+msgid "%(who)s filed for divorce"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:496
+#, python-format
+msgid "%(who)s had their marriage annulled"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:497
+#, python-format
+msgid "%(who)s were recorded in the census"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:498
+#, python-format
+msgid "%(who)s lived"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:530
+#, python-format
+msgid "%(names)s and %(last)s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:568
+#, python-format
+msgid "%(type)s (%(role)s)"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:570
+#: StoryExport/storyexport_builder.py:589
+#, python-format
+msgid "%(type)s of %(who)s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:581
+#, python-format
+msgid "%(who)s took part in this %(type)s as %(role)s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:595
+#, python-format
+msgid "%(moment)s on %(date)s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:597
+#, python-format
+msgid "%(moment)s in %(date)s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:599
+#, python-format
+msgid "%(moment)s %(date)s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:602
+#, python-format
+msgid "%(moment)s in %(place)s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:750
+#, python-format
+msgid "%d moment"
+msgid_plural "%d moments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: StoryExport/storyexport_builder.py:790
+msgid "This person isn't included with the chosen privacy settings."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:810
+#, python-format
+msgid "%s has no events to build a story from."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:813
+#: StoryExport/storyexport_builder.py:862
+#, python-format
+msgid "The Story of %s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:817
+#, python-format
+msgid "%(moments)s from %(name)s's recorded life."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:840
+msgid "This family isn't included with the chosen privacy settings."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:844
+msgid "this family"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:854
+msgid ""
+"This family has no events to build a story from: not on the family itself, "
+"and no births or deaths recorded for its members."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:865
+#, python-format
+msgid "%(moments)s from the life of %(couple)s and %(children)s."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:869
+#, python-format
+msgid "their child"
+msgid_plural "their %(count)d children"
+msgstr[0] ""
+msgstr[1] ""
+
+#: StoryExport/storyexport_builder.py:874
+#, python-format
+msgid "%(moments)s from the life of %(couple)s."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:888
+#, python-format
+msgid "Family %s"
 msgstr ""
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
