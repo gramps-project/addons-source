@@ -1,0 +1,140 @@
+# Datendatei mit deutschen historischen Ereignissen
+# Format: von_Jahr;bis_Jahr;Ereignisbeschreibung;Link
+
+# Antike
+-55;-54;Caesars erste Expedition nach Germanien;https://wikipedia.org/wiki/Julius_Caesar%27s_invasions_of_Germania
+-54;-53;Caesars zweite Expedition nach Germanien;https://wikipedia.org/wiki/Julius_Caesar%27s_invasions_of_Germania
+12;16;Germanenkriege unter Drusus;https://wikipedia.org/wiki/Drusus_the_Elder
+9;9;Varusschlacht (Schlacht im Teutoburger Wald);https://wikipedia.org/wiki/Battle_of_the_Teutoburg_Forest
+14;16;Tiberius' Feldzüge in Germanien;https://wikipedia.org/wiki/Tiberius
+21;26;Germanenfeldzüge des Caligula;https://wikipedia.org/wiki/Caligula
+50;50;Römische Eroberung der Alpen;https://wikipedia.org/wiki/Conquest_of_the_Alsace
+83;85;Domitians Dakerkriege;https://wikipedia.org/wiki/Dacian_Wars
+89;89;Domitians Sarmatenkrieg;https://wikipedia.org/wiki/Sarmatian_Wars
+101;102;Erster Dakerkrieg;https://wikipedia.org/wiki/First_Dacian_War
+105;106;Zweiter Dakerkrieg;https://wikipedia.org/wiki/Second_Dacian_War
+117;117;Trajans Dakerkriege;https://wikipedia.org/wiki/Trajan%27s_Dacian_Wars
+166;180;Markomannenkriege;https://wikipedia.org/wiki/Marcomannic_Wars
+170;175;Krieg gegen die Daker;https://wikipedia.org/wiki/Dacian_Wars
+180;180;Mark Aurels Germanenfeldzüge;https://wikipedia.org/wiki/Marcus_Aurelius
+251;251;Schlacht von Abrittus;https://wikipedia.org/wiki/Battle_of_Abrittus
+256;256;Schlacht von Naissus;https://wikipedia.org/wiki/Battle_of_Naissus
+260;260;Schlacht von Edessa;https://wikipedia.org/wiki/Battle_of_Edessa
+268;269;Schlacht von Naissus (zweite);https://wikipedia.org/wiki/Battle_of_Naissus
+270;271;Schlacht von Langobardum;https://wikipedia.org/wiki/Langobardum
+
+# Mittelalter
+406;406;Rheinübergang;https://wikipedia.org/wiki/Crossing_of_the_Rhine
+451;451;Schlacht auf den Katalaunischen Feldern;https://wikipedia.org/wiki/Battle_of_Catalaunian_Fields
+506;506;Schlacht von Vouillé;https://wikipedia.org/wiki/Battle_of_Vouillé
+732;732;Schlacht von Tours und Poitiers;https://wikipedia.org/wiki/Battle_of_Tours
+843;843;Vertrag von Verdun;https://wikipedia.org/wiki/Treaty_of_Verdun
+881;881;Schlacht bei Biengen;https://wikipedia.org/wiki/Battle_of_Biengen
+955;955;Schlacht auf dem Lechfeld;https://wikipedia.org/wiki/Battle_of_Lechfeld
+1099;1099;Erster Kreuzzug erobert Jerusalem;https://wikipedia.org/wiki/First_Crusade
+1158;1158;Reichstag von Mainz;https://wikipedia.org/wiki/Diet_of_Mainz
+1218;1254;Herrschaft der Staufer in Deutschland;https://wikipedia.org/wiki/Hohenstaufen
+1273;1291;Rudolf I. von Habsburg;https://wikipedia.org/wiki/Rudolf_I_of_Germany
+1314;1314;Schlacht bei Mühldorf;https://wikipedia.org/wiki/Battle_of_Mühldorf
+1346;1346;Der Schwarze Tod erreicht Deutschland;https://wikipedia.org/wiki/Black_Death
+1356;1356;Goldene Bulle erlassen;https://wikipedia.org/wiki/Golden_Bull_of_1356
+1396;1396;Schlacht von Nikopolis;https://wikipedia.org/wiki/Battle_of_Nicopolis
+1410;1410;Schlacht bei Grunwald;https://wikipedia.org/wiki/Battle_of_Grunwald
+1415;1415;Konzil von Konstanz;https://wikipedia.org/wiki/Council_of_Constance
+1455;1455;Gutenbergs Buchdruckerpresse;https://wikipedia.org/wiki/Johannes_Gutenberg
+1455;1455;Vertreibung der Juden aus Nürnberg;https://wikipedia.org/wiki/Nuremberg
+1474;1474;Erstes deutschsprachiges Buch;https://wikipedia.org/wiki/Early_printing_in_Germany
+1495;1495;Reichsreform;https://wikipedia.org/wiki/Imperial_Reform
+
+# Frühe Neuzeit
+1517;1517;Luthers 95 Thesen;https://wikipedia.org/wiki/95_Theses
+1524;1525;Deutscher Bauernkrieg;https://wikipedia.org/wiki/German_Peasants%27_War
+1529;1529;Reichstag zu Speyer;https://wikipedia.org/wiki/Diet_of_Speyer
+1530;1530;Augsburger Konfession;https://wikipedia.org/wiki/Augsburg_Confession
+1545;1563;Konzil von Trient;https://wikipedia.org/wiki/Council_of_Trent
+1555;1555;Augsburger Religionsfriede;https://wikipedia.org/wiki/Peace_of_Augsburg
+1618;1648;Dreißigjähriger Krieg;https://wikipedia.org/wiki/Thirty_Years%27_War
+1620;1620;Schlacht am Weißen Berg;https://wikipedia.org/wiki/Battle_of_White_Mountain
+1631;1631;Schlacht bei Breitenfeld;https://wikipedia.org/wiki/Battle_of_Breitenfeld
+1634;1634;Schlacht bei Nördlingen;https://wikipedia.org/wiki/Battle_of_Nördlingen
+1648;1648;Westfälischer Friede;https://wikipedia.org/wiki/Peace_of_Westphalia
+1655;1660;Zweiter Nordischer Krieg;https://wikipedia.org/wiki/Second_Northern_War
+1672;1678;Französisch-Niederländischer Krieg;https://wikipedia.org/wiki/Franco-Dutch_War
+1683;1683;Schlacht am Kahlenberg (Wien);https://wikipedia.org/wiki/Battle_of_Vienna
+1700;1721;Großer Nordischer Krieg;https://wikipedia.org/wiki/Great_Northern_War
+1701;1701;Königreich Preußen gegründet;https://wikipedia.org/wiki/Kingdom_of_Prussia
+1701;1714;Spanischer Erbfolgekrieg;https://wikipedia.org/wiki/War_of_the_Spanish_Succession
+1740;1748;Österreichischer Erbfolgekrieg;https://wikipedia.org/wiki/War_of_the_Austrian_Succession
+1756;1763;Siebenjähriger Krieg;https://wikipedia.org/wiki/Seven_Years%27_War
+1772;1795;Teilungen Polens;https://wikipedia.org/wiki/Partitions_of_Poland
+1789;1799;Französische Revolution;https://wikipedia.org/wiki/French_Revolution
+1792;1797;Französische Revolutionskriege;https://wikipedia.org/wiki/French_Revolutionary_Wars
+1803;1806;Deutsche Mediatisierung;https://wikipedia.org/wiki/German_Mediatization
+1806;1806;Auflösung des Heiligen Römischen Reiches;https://wikipedia.org/wiki/Dissolution_of_the_Holy_Roman_Empire
+
+# 19. Jahrhundert
+1813;1813;Völkerschlacht bei Leipzig;https://wikipedia.org/wiki/Battle_of_Leipzig
+1815;1815;Schlacht bei Waterloo;https://wikipedia.org/wiki/Battle_of_Waterloo
+1830;1830;Julirevolution in Frankreich;https://wikipedia.org/wiki/July_Revolution
+1832;1832;Hambacher Fest;https://wikipedia.org/wiki/Hambach_Festival
+1848;1849;Märzrevolutionen;https://wikipedia.org/wiki/March_Revolution
+1848;1848;Frankfurter Nationalversammlung;https://wikipedia.org/wiki/Frankfurt_Parliament
+1859;1859;Zweiter Italienischer Unabhängigkeitskrieg;https://wikipedia.org/wiki/Second_Italian_War_of_Independence
+1864;1864;Deutsch-Dänischer Krieg;https://wikipedia.org/wiki/Second_Schleswig_War
+1866;1866;Deutscher Krieg (Preußen gegen Österreich);https://wikipedia.org/wiki/Austro-Prussian_War
+1870;1871;Deutsch-Französischer Krieg;https://wikipedia.org/wiki/Franco-Prussian_War
+1871;1871;Proklamation des Deutschen Kaiserreichs;https://wikipedia.org/wiki/Proclamation_of_the_German_Empire
+1878;1878;Sozialistengesetze;https://wikipedia.org/wiki/Anti-Socialist_Laws
+1884;1885;Berliner Konferenz;https://wikipedia.org/wiki/Berlin_Conference
+1890;1890;Sozialistengesetze aufgehoben;https://wikipedia.org/wiki/History_of_Germany#German_Empire
+1897;1897;Junkerkrise;https://wikipedia.org/wiki/Junker
+1900;1900;Boxeraufstand;https://wikipedia.org/wiki/Boxer_Rebellion
+1905;1905;Erste Russische Revolution;https://wikipedia.org/wiki/1905_Revolution
+1911;1912;Erster Balkankrieg;https://wikipedia.org/wiki/First_Balkan_War
+1912;1913;Zweiter Balkankrieg;https://wikipedia.org/wiki/Second_Balkan_War
+
+# 20. Jahrhundert
+1914;1918;Erster Weltkrieg;https://wikipedia.org/wiki/World_War_I
+1918;1918;Novemberrevolution;https://wikipedia.org/wiki/German_Revolution
+1919;1919;Weimarer Verfassung;https://wikipedia.org/wiki/Weimar_Constitution
+1920;1920;Kapp-Putsch;https://wikipedia.org/wiki/Kapp_Putsch
+1923;1923;Hyperinflation in Deutschland;https://wikipedia.org/wiki/Hyperinflation_in_Weimar_Germany
+1923;1923;Hitlers Bierkellerputsch;https://wikipedia.org/wiki/Beer_Hall_Putsch
+1929;1929;Weltwirtschaftskrise;https://wikipedia.org/wiki/Great_Depression
+1933;1933;Hitler wird Reichskanzler;https://wikipedia.org/wiki/Adolf_Hitler
+1933;1933;Reichstagsbrand;https://wikipedia.org/wiki/Reichstag_fire
+1934;1934;Röhm-Putsch (Nacht der langen Messer);https://wikipedia.org/wiki/Night_of_the_Long_Knives
+1935;1935;Nürnberger Gesetze;https://wikipedia.org/wiki/Nuremberg_Laws
+1936;1936;Remilitarisierung des Rheinlands;https://wikipedia.org/wiki/Rhineland
+1938;1938;Anschluss Österreichs;https://wikipedia.org/wiki/Anschluss
+1938;1938;Novemberpogrome (Reichskristallnacht);https://wikipedia.org/wiki/Kristallnacht
+1939;1939;Überfall auf Polen;https://wikipedia.org/wiki/Invasion_of_Poland
+1939;1945;Zweiter Weltkrieg;https://wikipedia.org/wiki/World_War_II
+1941;1941;Unternehmen Barbarossa;https://wikipedia.org/wiki/Operation_Barbarossa
+1942;1942;Schlacht von Stalingrad;https://wikipedia.org/wiki/Battle_of_Stalingrad
+1943;1943;Schlacht bei Kursk;https://wikipedia.org/wiki/Battle_of_Kursk
+1944;1944;Attentat vom 20. Juli;https://wikipedia.org/wiki/20_July_assassination_attempt
+1945;1945;Schlacht um Berlin;https://wikipedia.org/wiki/Battle_of_Berlin
+1945;1945;Potsdamer Konferenz;https://wikipedia.org/wiki/Potsdam_Conference
+1948;1948;Berlin-Blockade;https://wikipedia.org/wiki/Berlin_Blockade
+1949;1949;Gründung der Bundesrepublik Deutschland;https://wikipedia.org/wiki/Federal_Republic_of_Germany
+1949;1949;Gründung der Deutschen Demokratischen Republik;https://wikipedia.org/wiki/German_Democratic_Republic
+1953;1953;Volksaufstand in der DDR;https://wikipedia.org/wiki/1953_Uprising_in_East_Germany
+1958;1958;Eden-Kampagne;https://wikipedia.org/wiki/Anthony_Eden
+1961;1961;Bau der Berliner Mauer;https://wikipedia.org/wiki/Berlin_Wall
+1968;1968;Studentenproteste in Deutschland;https://wikipedia.org/wiki/1968_movements#Germany
+1972;1972;Normalisierung der Beziehungen;https://wikipedia.org/wiki/Ostpolitik
+1975;1975;KSZE-Schlussakte von Helsinki;https://wikipedia.org/wiki/Helsinki_Accords
+1980;1980;Solidarność in Polen;https://wikipedia.org/wiki/Solidarity_(Polish_union)
+1989;1989;Fall der Berliner Mauer;https://wikipedia.org/wiki/Fall_of_the_Berlin_Wall
+1990;1990;Deutsche Wiedervereinigung;https://wikipedia.org/wiki/German_Reunification
+1991;1991;Golfkrieg;https://wikipedia.org/wiki/Gulf_War
+1999;1999;Kosovokrieg;https://wikipedia.org/wiki/Kosovo_War
+2001;2001;Anschläge vom 11. September;https://wikipedia.org/wiki/September_11_attacks
+2003;2003;Irakkrieg;https://wikipedia.org/wiki/Iraq_War
+2008;2009;Globale Finanzkrise;https://wikipedia.org/wiki/Global_financial_crisis
+2011;2011;Arabischer Frühling;https://wikipedia.org/wiki/Arab_Spring
+2014;2015;Euromaidan;https://wikipedia.org/wiki/Euromaidan
+2014;2015;Annexion der Krim;https://wikipedia.org/wiki/Annexation_of_Crimea
+2015;2015;Europäische Flüchtlingskrise;https://wikipedia.org/wiki/European_refugee_crisis
+2020;2020;Beginn der COVID-19-Pandemie;https://wikipedia.org/wiki/COVID-19_pandemic

@@ -28,7 +28,9 @@ The third is `deafult_data_v1_0.txt` which will be used as a fallback, if there 
 The fourth file is `custom_v1_0.txt`which can be used for adding your own data, which will be merged into the view.
 
 You can add and use any semi-colon delimited file, as long as it ends with `_v1_0.txt` 
-However, the entire list in the text file must be in the correct CSV format and include 4 semi-colon separated data items for each line. Otherwise, a separate error will be reported for each incorrect line and that data will be omitted from the list. 
+However, the entire list in the text file must be in the correct CSV format and include 4 or 5 semi-colon separated data items for each line. The optional fifth item is accepted for compatibility with other genealogy applications and is currently ignored by HistContext. Otherwise, a separate error will be reported for each incorrect line and that data will be omitted from the list.
+
+Empty lines, lines beginning with `#`, and an optional column header beginning with `From date;To date` are ignored. Comment lines can therefore contain metadata for other applications without affecting HistContext.
 
 The entire file is cached and you will be nagged about **each** bad line.  
 
