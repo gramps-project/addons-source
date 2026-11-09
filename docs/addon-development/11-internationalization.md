@@ -2,11 +2,13 @@
 
 [← Previous](10-code-analysis.md) · [Index](01-overview.md) · [Next →](12-packaging.md)
 
-## Overview
+## Summary
 
 Gramps is a highly globalized application, and addons should be fully translatable to support users worldwide. This guide covers how to prepare your addon for internationalization (i18n), manage translation strings using `gettext`, and package translations with your addon.
 
-See [the addon development overview](01-overview.md) for where this fits into the broader addon lifecycle.
+Marking strings is the part authors remember; the plumbing around it is where the surprises are, so the page covers both. It opens with a **working example** — the `.gpr.py` and implementation pair side by side — because the translation function is bound differently in each: in `.gpr.py` the loader injects `_` and importing it breaks things, while the implementation module must bind it explicitly through `glocale.get_addon_translator(__file__)`. Getting that one line wrong is the single most common reason an addon's strings never translate. **Translating UI files** covers the Glade case, where the strings live in XML rather than in Python.
+
+**String marking rules** is the reference part: `_()` for the ordinary case, `N_()` for strings extracted now but translated later at display time, `ngettext` for plurals, and the `"context|String"` convention that lets a translator tell a book's *Title* from a person's *Title* — two words that are identical in English and different in many other languages. The workflow half then splits in two. **Weblate** is the path for Gramps 6.0 and later — translators work in the web platform and you mostly stay out of their way. **Managing translations manually with `make.py`** is the fallback and the mechanism underneath: extracting a `template.pot` from your sources, adding a new language, updating existing catalogues after your strings change, compiling `.po` to `.mo`, and building for release. **Implementation notes** closes with the traps that survive everything else — chief among them that an f-string inside `_()` cannot be extracted at all, so `_("User %s") % name` is right where `_(f"User {name}")` silently yields nothing to translate.
 
 ## Working example
 
