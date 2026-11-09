@@ -27,6 +27,7 @@
 # File: HistContext.py
 # from gramps.gen.plug import Gramplet
 
+import csv
 import os
 import logging
 import glob
@@ -92,6 +93,7 @@ config.register("myopt.fg_usel_col", "#000000")
 config.register("myopt.bg_usel_col", "#ededed")
 config.register("myopt.fl_ar", ["default_data_v1_0.txt"])
 config.register("myopt.use_full_date", False)
+config.register("myopt.show_person_events", False)
 
 
 class HistContext(Gramplet):
@@ -105,6 +107,7 @@ class HistContext(Gramplet):
         local_log.info("--> dette var init")
         # local_log.info("version: %s",HistContext.)
         #        self.gui.model = Gtk.ListStore(str, str, str, str, str)
+        self.__show_person_events = False  # Default value
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add(self.gui.WIDGET)
@@ -144,6 +147,9 @@ class HistContext(Gramplet):
         name = _("Background color items outside lifespan")
         opt = ColorOption(name, self.__bg_not_sel)
         self.opts.append(opt)
+        name = _("Show person events in sorted order")
+        opt = BooleanOption(name, self.__show_person_events)
+        self.opts.append(opt)
         flnam = os.path.join(os.path.dirname(__file__), "*.txt")
         files = [f for f in glob.glob(flnam)]
         opt = BooleanListOption(_("Select from files"))
@@ -168,7 +174,8 @@ class HistContext(Gramplet):
         self.__bg_sel = self.opts[5].get_value()
         self.__fg_not_sel = self.opts[6].get_value()
         self.__bg_not_sel = self.opts[7].get_value()
-        self.__fl_ar = self.opts[8].get_selected()
+        self.__show_person_events = self.opts[8].get_value()
+        self.__fl_ar = self.opts[9].get_selected()
         config.set("myopt.filter_text", self.__start_filter_st)
         config.set("myopt.use_filter", self.__use_filter)
         config.set("myopt.show_outside_span", self.__show_it)
@@ -177,6 +184,7 @@ class HistContext(Gramplet):
         config.set("myopt.bg_sel_col", self.__bg_sel)
         config.set("myopt.fg_usel_col", self.__fg_not_sel)
         config.set("myopt.bg_usel_col", self.__bg_not_sel)
+        config.set("myopt.show_person_events", self.__show_person_events)
         config.set("myopt.fl_ar", self.__fl_ar)
         config.save()
 
@@ -202,10 +210,56 @@ class HistContext(Gramplet):
         self.__bg_sel = config.get("myopt.bg_sel_col")
         self.__fg_not_sel = config.get("myopt.fg_usel_col")
         self.__bg_not_sel = config.get("myopt.bg_usel_col")
+        try:
+            self.__show_person_events = config.get("myopt.show_person_events")
+        except AttributeError:
+            self.__show_person_events = False  # Default value
         self.__fl_ar = config.get("myopt.fl_ar")
 
     #        if self.__fl_ar[0] == "None":
     #           self.__fl_ar[0] = os.path.basename(self.__sel_file)
+
+    def get_person_events(self):
+        """
+        Get the birth, death, and other key events of the active person
+        Returns a list of (date, event_type, description) tuples sorted by date
+        """
+        active_person = self.get_active_object("Person")
+        events = []
+        
+        if not active_person:
+            return events
+        
+        # Get birth date
+        birth_ref = active_person.get_birth_ref()
+        if birth_ref:
+            birth_event = self.dbstate.db.get_event_from_handle(birth_ref.ref)
+            if birth_event:
+                date_str = str(birth_event.get_date_object())
+                events.append((date_str, _("Birth"), birth_event.get_description() or _("Birth")))
+        
+        # Get death date
+        death_ref = active_person.get_death_ref()
+        if death_ref:
+            death_event = self.dbstate.db.get_event_from_handle(death_ref.ref)
+            if death_event:
+                date_str = str(death_event.get_date_object())
+                events.append((date_str, _("Death"), death_event.get_description() or _("Death")))
+        
+        # Get other events associated with the person
+        for event_ref in active_person.get_event_ref_list():
+            event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+            if event:
+                date_str = str(event.get_date_object())
+                role = event_ref.get_role()
+                desc = event.get_description() or ""
+                # Skip birth and death as already handled
+                if event.get_type().get_label() not in ["Birth", "Death"]:
+                    events.append((date_str, event.get_type().get_label(), desc))
+        
+        # Sort events by date
+        events.sort(key=lambda x: x[0])
+        return events
 
     def get_birth_year(self):
         """
@@ -266,6 +320,23 @@ class HistContext(Gramplet):
         displays an error and sets today as day, if datest is not valid
         also used for returning a date in a sortable fasion
         """
+        # Handle year-only dates (YYYY format) when __use_year is True
+        # Support both positive and negative years (e.g., -55 for 55 BC)
+        year_str = datest.lstrip("-")
+        is_negative = datest.startswith("-")
+        if self.__use_year and len(year_str) == 4 and year_str.isdigit():
+            # When using year-only mode, year strings like "1750" are already valid
+            # No need to parse them as full dates
+            self.sort_date = datest  # Use year as sort date (already sortable)
+            return datest
+        
+        # Handle negative years like "-55" (55 BC) - strip minus sign for Gramps
+        if self.__use_year and len(year_str) <= 4 and year_str.isdigit() and is_negative:
+            # Return as-is for negative years when in year-only mode
+            # The minus sign will be used for sorting (negative numbers sort first)
+            self.sort_date = datest
+            return datest
+        
         if len(datest) == 4 and not self.__use_year:
             if start_date:
                 datest = datest + "-01-01"
@@ -288,7 +359,11 @@ class HistContext(Gramplet):
                 errormessage = errormessage + (_(" in line: ")) + str(self.linenbr)
                 ErrorDialog(_("Error:"), errormessage)
             self.__show_error = False
-            date1 = Today()
+            if start_date:
+                date1 = Today()
+            else:
+                self.sort_date = ""
+                return "0"
             if self.__use_year:
                 datest = str(date1.to_calendar("gregorian").get_year())
             else:
@@ -307,6 +382,38 @@ class HistContext(Gramplet):
         else:
             return new_datest
 
+    def add_person_events(self):
+        """
+        Add the active person's events to the model in sorted order.
+        """
+        local_log.info("Adding person events")
+        person_events = self.get_person_events()
+        
+        # Color for person events (yellow/greenish background)
+        fg_color = "#000000"
+        bg_color = "#e6ffe6"  # Light greenish background for person events
+        
+        for date_str, event_type, desc in person_events:
+            # Use a placeholder date that sorts first for "From"
+            from_year = date_str.split("-")[0] if "-" in date_str else date_str
+            to_year = from_year  # For single-date events
+            
+            # Create a sort-friendly format (YYYYMMDD)
+            sort_date = date_str.replace("-", "")
+            
+            mytupple = (
+                from_year,
+                to_year,
+                _("%s: %s") % (event_type, desc),
+                sort_date,
+                "",  # No URL for person events
+                fg_color,
+                bg_color,
+            )
+            self.model.append(mytupple)
+        
+        local_log.info("Person events added: %d", len(person_events))
+
     def load_file(self, flnm):
         """
         loading the file into the treeview
@@ -317,14 +424,25 @@ class HistContext(Gramplet):
 
         self.linenbr = 0
         with open(flnm, encoding="utf-8") as myfile:
-            for line in myfile:
+            for words in csv.reader(myfile, delimiter=";"):
                 self.linenbr += 1
-                line = line.rstrip() + ";"
-                words = line.split(";")
-                if len(words) != 5:
+                if (
+                    not words
+                    or not words[0].strip()
+                    or words[0].lstrip().startswith("#")
+                ):
+                    continue
+                if (
+                    len(words) >= 2
+                    and words[0].strip() == "From date"
+                    and words[1].strip() == "To date"
+                ):
+                    continue
+                line = ";".join(words)
+                if len(words) not in (4, 5):
                     if len(line) > 10:
                         errormessage = (
-                            _(': line does not contain four sections separated by semicolons in : "')
+                            _(': line does not contain four or five sections separated by semicolons in : "')
                             + line
                             + 'i" File: '
                             + flnm
@@ -334,17 +452,23 @@ class HistContext(Gramplet):
                 else:
                     words[0] = self.normalize_date(words[0], True, True)
                     local_sort_date = self.sort_date
-                    words[1] = self.normalize_date(words[1], True, False)
+                    normalized_from = words[0]  # Keep normalized version
+                    if words[1]:
+                        words[1] = self.normalize_date(words[1], True, False)
                     if words[1] == "0":
                         words[1] = ""
                     words[2] = words[2].replace('"', "")
-                    begin_year = str(self.normalize_date(words[0], False, True))
-                    local_sort_date = self.sort_date
-
+                    
+                    # Handle the case where to-date is empty (single-date event)
+                    # Use the already normalized value directly to avoid re-parsing
                     if words[1] == "":
-                        end_year = str(self.normalize_date(words[0], False, False))
+                        # For single-date events, use the already-normalized from-date
+                        end_year = normalized_from
                     else:
                         end_year = str(self.normalize_date(words[1], False, False))
+                    
+                    begin_year = str(self.normalize_date(normalized_from, False, True))
+                    local_sort_date = self.sort_date
                     begin_year = begin_year.replace("-", "")
                     end_year = end_year.replace("-", "")
 
@@ -386,6 +510,11 @@ class HistContext(Gramplet):
     def main(self):
         self.model.clear()
         local_log.info("Main kaldet")
+        
+        # Add person events if enabled
+        if self.__show_person_events:
+            self.add_person_events()
+        
         for flnm in self.__fl_ar:
             flnm = os.path.join(os.path.dirname(__file__), flnm)
             if not os.path.exists(flnm):
