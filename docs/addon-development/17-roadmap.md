@@ -2,11 +2,17 @@
 
 [← Previous](16-guidelines.md) · [Index](01-overview.md)
 
-## Overview
+## Summary
 
 Forward-looking view of the addon-development surface — what's planned, what's in flight, what's slated for deprecation, and what open questions will eventually become rules. The audience is an addon author asking "what do I need to plan around?"
 
-This page is the **prospective** counterpart to [What's new](https://gramps-project.org/wiki/index.php/Gramps_6.0_Wiki_Manual_-_Addon_Development_-_Whats_New), which is retrospective. An item moves from this page to *What's new* once it ships in a release.
+This page is the **prospective** counterpart to [What's new](15-whats-new.md), which is retrospective. An item moves from this page to *What's new* once it ships in a release.
+
+**How to read this page** comes first because entries here carry less certainty than elsewhere in the section, and the four fields on each — **Status**, **Target**, **Impact**, **Tracking** — are what let you judge how much weight to put on one. The rule the page holds itself to is worth knowing as a reader: an entry without a tracking link is a wish rather than a plan, and belongs somewhere other than a roadmap.
+
+Entries are then grouped by how settled they are. **In flight** is work already underway upstream. **Accepted but not yet implemented** is agreed in principle with nobody currently on it — the section where volunteering is most useful. **Deprecations and removals** is the one to check against your own addon, since it is where your future breakage is announced. **Open questions** are the genuinely undecided ones, which is also the invitation to weigh in before they harden into rules. **Deferred / rejected** exists so that a proposal that keeps resurfacing has a recorded answer and the reasoning behind it.
+
+A final section tracks the **documentation roadmap** — the state of this manual itself, page by page, and the publishing-pipeline conventions behind it. That is meta rather than API, but it is where to look before proposing a documentation change.
 
 ## How to read this page
 
@@ -19,7 +25,7 @@ Each entry should answer four things:
 | **Impact** | what addon authors need to do (rewrite / opt-in / nothing) |
 | **Tracking** | PR / Mantis bug / wiki RFC / mailing-list thread |
 
-A roadmap entry without a tracking link is a wish, not a plan; either add the link or move the entry to a separate "ideas" section.
+A roadmap entry without a tracking link is a wish, not a plan; either add the link or move the entry to a separate "ideas" section. *Open questions* are the one exception: a question that has not been raised upstream yet has nothing to link, and says so in its **Tracking** field rather than borrowing a citation that doesn't cover it.
 
 ## In flight
 
@@ -55,7 +61,11 @@ A roadmap entry without a tracking link is a wish, not a plan; either add the li
        - "Should addon `version` be author-managed or maintainer-managed
          per repo?" -->
 
-- _none recorded yet_
+- **Should CI flag an addon-root `__init__.py`?** Follows from the rule being a SHOULD NOT rather than a MUST NOT ([16-guidelines → Structure](16-guidelines.md#structure)).
+  - **Status** open · **Target** unscheduled · **Impact** none for authors unless it becomes gating · **Tracking** none yet — raise on `addons-source` before acting
+  - The case for a check: the seven current instances are mostly accidental — six of the seven files are empty, so nothing depends on them, and an advisory flag would stop the pattern spreading by imitation.
+  - The case against gating on it: `maintenance/gramps60` has seven violations today, so a blocking check starts red and pressures a change to working addons for no functional gain. A lint also cannot tell the deliberate case (`PostgreSQLEnhanced`, which exposes a package API and needs its `__init__.py`) from a cargo-culted empty file.
+  - If it lands, the shape that fits the rule's actual strength is **advisory** — report the file list, don't fail the build — or a gate with the existing seven grandfathered by allowlist. Gating a SHOULD is a contradiction; either the rule rises back to MUST on new evidence, or the check stays a warning.
 
 ## Deferred / rejected
 
@@ -68,7 +78,7 @@ A roadmap entry without a tracking link is a wish, not a plan; either add the li
 
 ## Documentation roadmap
 
-The doc set itself is in flight. Pages with `managed: false` front-matter are draft stubs and will not appear in published output until promoted. Current draft state — flip to `managed: true` page by page as content lands:
+The state of this manual itself. All seventeen pages are `managed: true` and publish; the only `managed: false` file in the section is the vault-internal sidebar. A page added later starts `managed: false` and is promoted once its content lands.
 
 ### Publishing-pipeline conventions (now supported)
 
@@ -90,6 +100,16 @@ What the pipeline already handled before these additions:
 - YAML front-matter → `title`, `categories`, `managed`.
 - Fenced code with language tags, tables.
 
+### Second publish target: `addons-source`
+
+Since 2026-07-24 this manual has two homes. Alongside the wiki, it is exported to GitHub-native Markdown and lives in the repository it documents, as `docs/addon-development/` on both `maintenance/gramps60` and `maintenance/gramps61` (addons-source PR [994](https://github.com/gramps-project/addons-source/pull/994); `README.md` and `CONTRIBUTING.md` point at it per PR [995](https://github.com/gramps-project/addons-source/pull/995)). The repository's `AGENTS.md` cites `docs/addon-development/16-guidelines.md` as the normative rule set (PR [991](https://github.com/gramps-project/addons-source/pull/991)).
+
+Consequences for anyone editing these pages:
+
+- The **vault stays the source of truth**; the in-repo copy is generated, never hand-edited. Drift is detected by re-running the exporter and diffing in the target checkout before committing.
+- A rules change here now lands in a repository whose agent guidelines *cite* it, so an error propagates further than the wiki. Verify a rule against the repository's actual implementation before stating it — the pins-location correction (per-addon versus repo-root `tests/__init__.py`) came from exactly this failure.
+- Where `AGENTS.md` and [Rules](16-guidelines.md) disagree, upstream's own documentation is inconsistent; the fix is a report upstream, not a silent divergence here.
+
 ### Page-by-page state
 
 The section is substantive across all seventeen pages. Open deepening work:
@@ -100,7 +120,7 @@ The section is substantive across all seventeen pages. Open deepening work:
 
 ## See also
 
-- [What's new](https://gramps-project.org/wiki/index.php/Gramps_6.0_Wiki_Manual_-_Addon_Development_-_Whats_New) — retrospective counterpart.
+- [What's new](15-whats-new.md) — retrospective counterpart.
 - [Compatibility](14-compatibility.md) — porting guidance once an item ships.
 - [Mantis bug tracker](https://gramps-project.org/bugs) — feature requests and design discussions originate here.
 - [Gramps mailing lists](https://gramps-project.org/contact/) — where larger design questions get hashed out.
