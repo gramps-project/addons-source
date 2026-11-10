@@ -1,0 +1,13 @@
+# Gramps Descendants Timeline
+
+# Notice
+
+Copyright © 2026 Philippe
+
+Projet développé avec l'assistance de ChatGPT (OpenAI).
+
+Ce logiciel est distribué sous licence GNU GPL v2.
+
+Aucune garantie n'est fournie.
+
+Voir le fichier LICENSE.
