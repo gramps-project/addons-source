@@ -279,4 +279,3 @@ class ConstraintResolver:
             strength=strength,
             constraints=winning_constraints,
         )
-

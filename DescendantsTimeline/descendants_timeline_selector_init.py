@@ -16,38 +16,27 @@ def load_on_reg(dbstate, uistate, initializer):
             Path(plugin.directory) != Path(initializer.directory)):
         return
     plugin.stock_icon = None
-    directory = Path(plugin.directory) / "icons"
-
     from gi.repository import GdkPixbuf, GLib, Gtk
 
     theme = Gtk.IconTheme.get_default()
     if theme is None:
         return
     icon_name = _startup_icon_name(Gtk)
-    expected = directory / (icon_name + ".svg")
+    expected = Path(plugin.directory) / (icon_name + ".svg")
     if not expected.is_file():
         return
-    flags = Gtk.IconLookupFlags.FORCE_SIZE
-    try:
-        existing = theme.lookup_icon(icon_name, 16, flags)
-        if existing and not _matches_file(existing, expected):
+    existing = theme.lookup_icon(icon_name, 16, Gtk.IconLookupFlags.FORCE_SIZE)
+    if existing is not None:
+        filename = existing.get_filename()
+        if not filename or Path(filename) != expected:
             return
-        # Reject invalid artwork before changing the process's icon search path.
+    try:
         GdkPixbuf.Pixbuf.new_from_file_at_scale(str(expected), 32, 32, True)
-        if directory not in map(Path, theme.get_search_path()):
-            theme.append_search_path(str(directory))
-        for size in (16, 32):
-            info = theme.lookup_icon(icon_name, size, flags)
-            if not info or not _matches_file(info, expected) or info.load_icon() is None:
-                return
     except (GLib.Error, OSError):
         return
+    # GuiPluginManager registers the declared icon directory before creating
+    # the selector. The initializer only chooses the appropriate icon name.
     plugin.stock_icon = icon_name
-
-
-def _matches_file(info, expected):
-    filename = info.get_filename()
-    return bool(filename) and Path(filename).samefile(expected)
 
 
 def _startup_icon_name(gtk):

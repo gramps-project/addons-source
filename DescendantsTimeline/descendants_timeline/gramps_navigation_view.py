@@ -1,5 +1,7 @@
 """Fabrique de vue avec une classe de base fournie par l'appelant."""
 
+from _i18n import _
+
 from descendants_timeline.gtk_timeline_widget import build_timeline_navigation_widget
 from descendants_timeline.gtk_draw_adapter import queue_timeline_draw
 from descendants_timeline.timeline.timeline_constructibility import has_admissible_temporal_anchor
@@ -215,8 +217,8 @@ def make_descendants_timeline_view_class(
                 flags=gtk_module.DialogFlags.MODAL,
                 message_type=gtk_module.MessageType.INFO,
                 buttons=gtk_module.ButtonsType.OK,
-                title="Vue impossible à construire",
-                text="Vue impossible à construire",
+                title=_("Cannot build the view"),
+                text=_("Cannot build the view"),
             )
             dialog.format_secondary_text(
                 "La descendance ne contient aucun ancrage temporel permettant de positionner les individus sur la chronologie."
@@ -538,4 +540,3 @@ def make_descendants_timeline_view_class(
             return widget
 
     return DescendantsTimelineView
-

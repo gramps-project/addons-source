@@ -118,7 +118,7 @@ class TemporalTargetIndexBuilder:
                 entries[divorce_entry.target] = divorce_entry
 
         return TemporalTargetIndex(entries=entries)
-    
+
     def _build_person_target_entry(
         self,
         person,

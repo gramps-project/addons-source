@@ -1,5 +1,7 @@
 """Main-context orchestration for a single DescendantsTimeline view."""
 
+from _i18n import _
+
 from dataclasses import dataclass, field
 import logging
 from time import perf_counter
@@ -43,7 +45,7 @@ class Attempt:
     started: float | None = None
     revision: tuple | None = None
     invalidated: str | None = None
-    phase: str = "Lecture de la généalogie"
+    phase: str = field(default_factory=lambda: _("Reading the family tree"))
     work_source: int = 0
     activity_source: int = 0
     connections: list = field(default_factory=list)
@@ -160,7 +162,7 @@ class CooperativeTimelineLoad:
         if self.disposed or self.attempt is None:
             return
         stale = self.attempt.published is None and hasattr(self.view, "_timeline_model")
-        self.cancel("Représentation précédente" if stale else "", stale=stale)
+        self.cancel(_("Previous view") if stale else "", stale=stale)
 
     def dispose(self, *_):
         self.disposed = True
@@ -184,7 +186,7 @@ class CooperativeTimelineLoad:
         if not self._current(attempt):
             return
         if hasattr(self.view, "_timeline_model"):
-            self._message("Représentation précédente")
+            self._message(_("Previous view"))
         if not self._current(attempt):
             return
         try:
@@ -244,18 +246,18 @@ class CooperativeTimelineLoad:
             if attempt.invalidated is None and attempt.revision == revision:
                 return True
         stale = hasattr(self.view, "_timeline_model")
-        message = "Données modifiées. Changez de personne ou revenez à cette vue."
+        message = _("Data changed. Select another person or return to this view.")
         if stale:
-            message = "Représentation précédente — " + message
+            message = _("Previous view — %(message)s") % {"message": message}
         self.cancel(message, stale=stale)
         return False
 
     def _fail(self, attempt):
         if self._current(attempt):
             stale = hasattr(self.view, "_timeline_model")
-            message = "Échec du chargement de la chronologie."
+            message = _("Could not load the timeline.")
             if stale:
-                message = "Représentation précédente — " + message
+                message = _("Previous view — %(message)s") % {"message": message}
             self.cancel(message, stale=stale)
             # Gramps displays ERROR logs in a modal dialog. The inline status
             # keeps recovery in this main-context turn.
@@ -296,7 +298,7 @@ class CooperativeTimelineLoad:
                     if not self._current(attempt):
                         return False
                     self.view._timeline_root_handle = attempt.root
-                    self.cancel("Vue impossible à construire : aucun ancrage temporel admissible.")
+                    self.cancel(_("Cannot build the view: no usable date anchor."))
                 else:
                     self.view.install_timeline(model, layout)
                     if not self._current(attempt):
@@ -304,7 +306,7 @@ class CooperativeTimelineLoad:
                     self.view._timeline_root_handle = attempt.root
                     attempt.published = (model, layout)
                     attempt.published_at = self.clock()
-                    attempt.phase = "Affichage de la chronologie"
+                    attempt.phase = _("Displaying the timeline")
             except Exception:
                 self._fail(attempt)
             return False
@@ -336,12 +338,12 @@ class CooperativeTimelineLoad:
             return False
         if attempt.published is not None and now - attempt.published_at >= self.draw_timeout:
             attempt.activity_source = 0
-            self.cancel("L’affichage de la chronologie n’a pas pu être confirmé.")
+            self.cancel(_("Could not confirm that the timeline was displayed."))
             return False
         if now - attempt.started >= self.show_after and now - attempt.last_pulse >= self.pulse_interval:
-            text = attempt.phase + "…"
+            text = _("%(phase)s…") % {"phase": attempt.phase}
             if attempt.published is None and hasattr(self.view, "_timeline_model"):
-                text += " · Représentation précédente"
+                text = _("%(phase)s · Previous view") % {"phase": text}
             self._message(text)
             if not self._current(attempt):
                 return False

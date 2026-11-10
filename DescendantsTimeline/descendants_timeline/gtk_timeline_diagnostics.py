@@ -1,8 +1,11 @@
 """Collecte ponctuelle de géométrie GTK, sans correction des widgets."""
 
 import json
+import logging
 import os
 from pathlib import Path
+
+LOG = logging.getLogger(__name__)
 
 
 def collect_gtk_geometry(root):
@@ -67,8 +70,8 @@ def enable_gtk_geometry_diagnostic(root):
         try:
             Path(report_path).write_text(text + "\n", encoding="utf-8")
         except OSError as error:
-            print("Z009-J : rapport non enregistré :", error, flush=True)
-        print(text, flush=True)
+            LOG.warning("Could not write the Descendants Timeline GTK diagnostic: %s", error)
+        LOG.debug("%s", text)
         return False
 
     def mapped(widget):

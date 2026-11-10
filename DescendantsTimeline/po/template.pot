@@ -1,0 +1,122 @@
+# DescendantsTimeline message catalog.
+# Copyright (C) 2026 Philippe
+# Distributed under GNU GPL version 2.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: DescendantsTimeline 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-10 04:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: DescendantsTimeline/descendants_timeline.gpr.py:4
+#: DescendantsTimeline/descendants_timeline.gpr.py:16
+#: DescendantsTimeline/descendants_timeline.gpr.py:17
+#: DescendantsTimeline/descendants_timeline/gramps_entrypoint.py:73
+msgid "Descendants Timeline"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline.gpr.py:5
+msgid "Timeline of descendants and their lifespans."
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline.gpr.py:11
+msgid "Charts"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline.gpr.py:27
+msgid "Descendants Timeline selector icon"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline.gpr.py:28
+msgid "Prepare the Descendants Timeline icon for the view selector."
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:48
+msgid "Reading the family tree"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:165
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:189
+msgid "Previous view"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:249
+msgid "Data changed. Select another person or return to this view."
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:251
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:260
+#, python-format
+msgid "Previous view — %(message)s"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:258
+msgid "Could not load the timeline."
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:301
+msgid "Cannot build the view: no usable date anchor."
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:309
+msgid "Displaying the timeline"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:341
+msgid "Could not confirm that the timeline was displayed."
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:344
+#, python-format
+msgid "%(phase)s…"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:346
+#, python-format
+msgid "%(phase)s · Previous view"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/gramps_entrypoint.py:31
+msgid "No genealogy database is open"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/gramps_entrypoint.py:49
+msgid "Traversing descendants"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/gramps_entrypoint.py:51
+msgid "Laying out the timeline"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/gramps_entrypoint.py:64
+msgid "Loading the timeline"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/gramps_navigation_view.py:220
+#: DescendantsTimeline/descendants_timeline/gramps_navigation_view.py:221
+msgid "Cannot build the view"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/gtk_timeline_widget.py:27
+msgid "Fit to window"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/timeline/timeline_model_composer.py:52
+msgid "Calculating dates"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/timeline/timeline_model_composer.py:54
+msgid "Building the model"
+msgstr ""
+
+#: DescendantsTimeline/descendants_timeline/timeline_renderer.py:802
+msgid "Descendants already shown above"
+msgstr ""

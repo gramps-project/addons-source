@@ -85,4 +85,3 @@ def install_timeline_in_viewport(controller, model, layout, *, diagnostics=None)
     """Installe les objets existants et transmet le diagnostic du cadrage initial."""
     arguments = {} if diagnostics is None else {"diagnostics": diagnostics}
     return controller.set_model_and_layout(model, layout, **arguments)
-

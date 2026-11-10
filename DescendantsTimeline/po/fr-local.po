@@ -1,0 +1,122 @@
+# DescendantsTimeline message catalog.
+# Copyright (C) 2026 Philippe
+# Distributed under GNU GPL version 2.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DescendantsTimeline 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-10 04:36+0100\n"
+"PO-Revision-Date: 2026-11-10 00:00+0100\n"
+"Last-Translator: DescendantsTimeline contributors\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: DescendantsTimeline/descendants_timeline.gpr.py:4
+#: DescendantsTimeline/descendants_timeline.gpr.py:16
+#: DescendantsTimeline/descendants_timeline.gpr.py:17
+#: DescendantsTimeline/descendants_timeline/gramps_entrypoint.py:73
+msgid "Descendants Timeline"
+msgstr "Chronologie des descendants"
+
+#: DescendantsTimeline/descendants_timeline.gpr.py:5
+msgid "Timeline of descendants and their lifespans."
+msgstr "Chronologie des descendants et de leurs durées de vie."
+
+#: DescendantsTimeline/descendants_timeline.gpr.py:11
+msgid "Charts"
+msgstr "Graphiques"
+
+#: DescendantsTimeline/descendants_timeline.gpr.py:27
+msgid "Descendants Timeline selector icon"
+msgstr "Icône du sélecteur de la chronologie des descendants"
+
+#: DescendantsTimeline/descendants_timeline.gpr.py:28
+msgid "Prepare the Descendants Timeline icon for the view selector."
+msgstr "Prépare l’icône de la chronologie des descendants pour le sélecteur de vues."
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:48
+msgid "Reading the family tree"
+msgstr "Lecture de la généalogie"
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:165
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:189
+msgid "Previous view"
+msgstr "Représentation précédente"
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:249
+msgid "Data changed. Select another person or return to this view."
+msgstr "Données modifiées. Changez de personne ou revenez à cette vue."
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:251
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:260
+#, python-format
+msgid "Previous view — %(message)s"
+msgstr "Représentation précédente — %(message)s"
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:258
+msgid "Could not load the timeline."
+msgstr "Échec du chargement de la chronologie."
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:301
+msgid "Cannot build the view: no usable date anchor."
+msgstr "Vue impossible à construire : aucun ancrage temporel admissible."
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:309
+msgid "Displaying the timeline"
+msgstr "Affichage de la chronologie"
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:341
+msgid "Could not confirm that the timeline was displayed."
+msgstr "L’affichage de la chronologie n’a pas pu être confirmé."
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:344
+#, python-format
+msgid "%(phase)s…"
+msgstr "%(phase)s…"
+
+#: DescendantsTimeline/descendants_timeline/cooperative_timeline_load.py:346
+#, python-format
+msgid "%(phase)s · Previous view"
+msgstr "%(phase)s · Représentation précédente"
+
+#: DescendantsTimeline/descendants_timeline/gramps_entrypoint.py:31
+msgid "No genealogy database is open"
+msgstr "Aucune base généalogique n’est ouverte"
+
+#: DescendantsTimeline/descendants_timeline/gramps_entrypoint.py:49
+msgid "Traversing descendants"
+msgstr "Parcours de la descendance"
+
+#: DescendantsTimeline/descendants_timeline/gramps_entrypoint.py:51
+msgid "Laying out the timeline"
+msgstr "Placement sur la chronologie"
+
+#: DescendantsTimeline/descendants_timeline/gramps_entrypoint.py:64
+msgid "Loading the timeline"
+msgstr "Chargement de la chronologie"
+
+#: DescendantsTimeline/descendants_timeline/gramps_navigation_view.py:220
+#: DescendantsTimeline/descendants_timeline/gramps_navigation_view.py:221
+msgid "Cannot build the view"
+msgstr "Vue impossible à construire"
+
+#: DescendantsTimeline/descendants_timeline/gtk_timeline_widget.py:27
+msgid "Fit to window"
+msgstr "Ajuster à la fenêtre"
+
+#: DescendantsTimeline/descendants_timeline/timeline/timeline_model_composer.py:52
+msgid "Calculating dates"
+msgstr "Calcul des dates"
+
+#: DescendantsTimeline/descendants_timeline/timeline/timeline_model_composer.py:54
+msgid "Building the model"
+msgstr "Assemblage du modèle"
+
+#: DescendantsTimeline/descendants_timeline/timeline_renderer.py:802
+msgid "Descendants already shown above"
+msgstr "Descendance déjà décrite plus haut"

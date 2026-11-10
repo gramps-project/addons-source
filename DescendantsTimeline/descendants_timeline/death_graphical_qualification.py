@@ -75,5 +75,3 @@ def qualify_death_graphically(
         maximum,
         shape,
     )
-
-

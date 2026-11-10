@@ -1,5 +1,7 @@
 """Composition pure du modèle de timeline à partir d'une photographie."""
 
+from _i18n import _
+
 from contextlib import nullcontext
 
 from descendants_timeline.inference.temporal_inference_engine import TemporalInferenceEngine
@@ -47,7 +49,7 @@ class TimelineModelComposer:
     def _iter_compose(self, data):
         """Keep DFS and model assembly whole, and resume inference in order."""
         traversal = self._traversal.traverse(data, data.root_person_id)
-        yield "Calcul des dates"
+        yield _("Calculating dates")
         results = yield from self._inference_engine._iter_run(data)
-        yield "Assemblage du modèle"
+        yield _("Building the model")
         return self._model_builder.build(data, traversal, results)

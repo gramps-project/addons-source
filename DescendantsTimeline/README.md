@@ -23,4 +23,4 @@ Ajouter avant présentation publique des captures issues d’une généalogie sy
 
 ## Langues et licence
 
-Interface comprenant des libellés anglais et des textes issus de Gramps. Aucun catalogue de traduction propre au greffon n’est fourni. Licence GNU GPL version 2, texte intégral dans LICENSE et attribution dans NOTICE.
+Les libellés du greffon sont disponibles en anglais et en français. Les autres textes de l’interface utilisent les traductions de Gramps. Licence GNU GPL version 2, texte intégral dans LICENSE et attribution dans NOTICE.

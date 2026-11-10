@@ -114,5 +114,5 @@ DescendantsTimeline/descendants_timeline/timeline_ticks.py
 DescendantsTimeline/descendants_timeline/traversal/descendance_traversal.py
 DescendantsTimeline/descendants_timeline/viewport_controller.py
 DescendantsTimeline/descendants_timeline/viewport_transform.py
-DescendantsTimeline/icons/gramps-descendants-timeline-view-dark.svg
-DescendantsTimeline/icons/gramps-descendants-timeline-view.svg
+DescendantsTimeline/gramps-descendants-timeline-view-dark.svg
+DescendantsTimeline/gramps-descendants-timeline-view.svg

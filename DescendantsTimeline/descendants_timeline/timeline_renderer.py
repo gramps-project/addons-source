@@ -1,5 +1,7 @@
 """Projection des primitives de la timeline, sans dépendance graphique."""
 
+from _i18n import _
+
 from collections.abc import Callable
 from colorsys import hsv_to_rgb
 from dataclasses import dataclass, field, replace
@@ -797,7 +799,7 @@ def render_branch_references(
     layout: TimelineLayout,
     transform: ViewportTransform,
 ) -> None:
-    text = "Descendance déjà décrite plus haut"
+    text = _("Descendants already shown above")
     for placement in layout.branch_reference_placements:
         if placement.x is None:
             continue
@@ -806,7 +808,7 @@ def render_branch_references(
         try:
             context.select_font_face("sans-serif")
             context.set_font_size(16.0 * transform.zoom_y)
-            x_bearing, y_bearing, width, height, _, _ = context.text_extents(text)
+            x_bearing, y_bearing, width, height, *_advances = context.text_extents(text)
             context.set_source_rgb(0.0, 0.0, 0.0)
             context.move_to(x - x_bearing, y - height / 2.0 - y_bearing)
             context.show_text(text)

@@ -1,5 +1,7 @@
 """Construction de la surface graphique avec un module GTK fourni."""
 
+from _i18n import _
+
 
 def _get_representation_diagnostics(widget, model, layout):
     provider = vars(widget).get("_timeline_diagnostics_provider")
@@ -22,7 +24,7 @@ def build_timeline_navigation_widget(
     header.set_size_request(-1, 36)
     header.connect("draw", make_timeline_header_draw_callback(controller))
     root = gtk_module.Box(orientation=gtk_module.Orientation.VERTICAL)
-    fit_button = gtk_module.Button(label="Ajuster à la fenêtre")
+    fit_button = gtk_module.Button(label=_("Fit to window"))
 
     def fit(widget):
         from descendants_timeline.gtk_draw_adapter import queue_timeline_draw
@@ -388,4 +390,3 @@ def create_configured_timeline_drawing_area(
         size_allocate_callback=size_allocate_callback,
         **hit_options,
     )
-
