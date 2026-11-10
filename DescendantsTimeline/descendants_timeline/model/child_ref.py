@@ -16,6 +16,7 @@ class ChildRelation(str, Enum):
     UNKNOWN = "UNKNOWN"
     BIRTH = "BIRTH"
     SPONSORED = "SPONSORED"
+    CUSTOM = "CUSTOM"
 
 
 @dataclass(frozen=True, slots=True)
@@ -41,6 +42,8 @@ class ChildRef:
     person_id: str
     relation_to_parent1: ChildRelation
     relation_to_parent2: ChildRelation
+    custom_relation_to_parent1: str | None = None
+    custom_relation_to_parent2: str | None = None
 
     def __post_init__(self) -> None:
         if not isinstance(self.person_id, str) or not self.person_id.strip():

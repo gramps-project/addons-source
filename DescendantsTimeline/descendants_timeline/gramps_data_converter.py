@@ -196,10 +196,18 @@ def convert_family_child_refs(family):
 
 
 def convert_family_child_ref(child_ref):
+    parent1 = convert_family_child_relation_to_parent1(child_ref)
+    parent2 = convert_family_child_relation_to_parent2(child_ref)
     return ChildRef(
         person_id=convert_family_child_ref_handle(child_ref),
-        relation_to_parent1=convert_family_child_relation_to_parent1(child_ref),
-        relation_to_parent2=convert_family_child_relation_to_parent2(child_ref),
+        relation_to_parent1=parent1,
+        relation_to_parent2=parent2,
+        custom_relation_to_parent1=(
+            child_ref.get_father_relation().xml_str() if parent1 is ChildRelation.CUSTOM else None
+        ),
+        custom_relation_to_parent2=(
+            child_ref.get_mother_relation().xml_str() if parent2 is ChildRelation.CUSTOM else None
+        ),
     )
 
 
@@ -218,7 +226,7 @@ def convert_family_child_relation_to_parent1(child_ref):
 def convert_family_child_relation(relation):
     relation_code = int(relation)
     if relation_code == 7:
-        raise ValueError("CUSTOM Gramps child relation is not representable")
+        return ChildRelation.CUSTOM
     if relation_code == 0:
         return ChildRelation.NONE
     if relation_code == 1:

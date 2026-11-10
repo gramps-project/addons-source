@@ -21,18 +21,20 @@ register(
     help_url="https://github.com/ph-plqn/DescendantsTimeline#descendantstimeline-100",
 )
 
-register(
-    GENERAL,
-    id="descendants_timeline_selector_init",
-    name=_("Descendants Timeline selector icon"),
-    description=_("Prepare the Descendants Timeline icon for the view selector."),
-    version="1.0.0",
-    gramps_target_version="6.0",
-    status=STABLE,
-    fname="descendants_timeline_selector_init.py",
-    authors=["Philippe"],
-    authors_email=["ph-plqn@users.noreply.github.com"],
-    load_on_reg=True,
-    include_in_listing=False,
-    requires_gi=[("Gtk", "3.0"), ("GdkPixbuf", "2.0"), ("GLib", "2.0")],
-)
+# The selector initializer is only needed by Gramps at runtime.
+if not locals().get("build_script", False):
+    register(
+        GENERAL,
+        id="descendants_timeline_selector_init",
+        name=_("Descendants Timeline selector icon"),
+        description=_("Prepare the Descendants Timeline icon for the view selector."),
+        version="1.0.0",
+        gramps_target_version="6.0",
+        status=STABLE,
+        fname="descendants_timeline_selector_init.py",
+        authors=["Philippe"],
+        authors_email=["ph-plqn@users.noreply.github.com"],
+        load_on_reg=True,
+        include_in_listing=False,
+        requires_gi=[("Gtk", "3.0"), ("GdkPixbuf", "2.0"), ("GLib", "2.0")],
+    )

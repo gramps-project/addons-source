@@ -7,7 +7,9 @@ from functools import partial
 from descendants_timeline.cooperative_steps import complete
 from descendants_timeline.gramps_data_adapter import GrampsDataAdapter
 from descendants_timeline.gramps_data_converter import convert_date_is_empty, convert_event, convert_event_date_object, convert_family, convert_person
-from descendants_timeline.gramps_date_normalization import normalize_gramps_date
+from descendants_timeline.gramps_date_normalization import (
+    DateNormalizationRejected, normalize_gramps_date,
+)
 from descendants_timeline.model.genealogy import RawGenealogyData
 from descendants_timeline.model.temporal import TemporalValue
 
@@ -92,12 +94,15 @@ class GrampsDataLoader:
                     date_object = convert_event_date_object(source)
                     temporal_value = TemporalValue.unknown()
                     if date_object is not None and not convert_date_is_empty(date_object):
-                        result = normalize_gramps_date(
-                            date_object, event_id=handle,
-                        )
-                        temporal_value = result.temporal_value
-                        if result.diagnostic is not None:
-                            date_normalization_diagnostics.append(result.diagnostic)
+                        try:
+                            result = normalize_gramps_date(date_object, event_id=handle)
+                        except DateNormalizationRejected as error:
+                            # Keep the document below, without promoting the rejected date to evidence.
+                            date_normalization_diagnostics.append(error.diagnostic)
+                        else:
+                            temporal_value = result.temporal_value
+                            if result.diagnostic is not None:
+                                date_normalization_diagnostics.append(result.diagnostic)
                     event = convert_event(source, temporal_value)
                     events[event.event_id] = event
                 yield None
