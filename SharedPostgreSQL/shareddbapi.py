@@ -326,6 +326,9 @@ class SharedDBAPI(DbGeneric):
         self.dbapi.execute(
             "CREATE INDEX reference_obj_handle " "ON reference(treeid,obj_handle)"
         )
+        self.dbapi.execute(
+            "CREATE INDEX gender_stats_given_name " "ON gender_stats(treeid,given_name)"
+        )
 
         self.dbapi.commit()
 
