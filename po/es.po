@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-26 09:44-0700\n"
+"POT-Creation-Date: 2026-11-14 11:59-0800\n"
 "PO-Revision-Date: 2026-07-24 05:14+0000\n"
 "Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -2473,43 +2473,68 @@ msgstr "Gramplet mostrando una relación profunda entre activo y gente inicial"
 msgid "Deep Connections"
 msgstr "Conexiones Profundas"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:73
+msgid "sibling"
+msgstr "hermano"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:74
+#, fuzzy
+#| msgid "Add parents"
+msgid "parent"
+msgstr "Añade parentescos"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:75
+#, fuzzy
+#| msgid "House"
+msgid "spouse"
+msgstr "Inmueble"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:76
+msgid "mentioned in note"
+msgstr "mencionado en nota"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:86
+#, python-format
+msgid "%s (association)"
+msgstr "%s (asociación)"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:162
 msgid "⏸ Pause"
 msgstr "⏸ Pausa"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:164
 msgid "Pause the current search"
 msgstr "Pausa la búsqueda en curso"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:167
 msgid "▶ Continue"
 msgstr "▶ Continuar"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:170
 msgid "Continue searching for more relations"
 msgstr "Continúe buscando más relaciones"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:174
 msgid "📋 Copy"
 msgstr "📋 Copiar"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
 msgid "Copy selected people to clipboard"
 msgstr "Copiar las personas seleccionadas al portapapeles"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:184
 msgid "🗑 Clear"
 msgstr "🗑 Limpiar"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 msgid "Clear all results and reset"
 msgstr "Limpiar todos los resultados y restablecer"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:214
 msgid "Ready to search"
 msgstr "Listo para buscar"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:241
 #, python-brace-format
 msgid ""
 "Search Depth: {depth} | People Processed: {processed} | Queue Size: "
@@ -2518,30 +2543,11 @@ msgstr ""
 "Profundidad de búsqueda: {depth} | Personas procesadas: {processed} | Tamaño "
 "de la cola: {queue_size}"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
-msgid "mentioned in note"
-msgstr "mencionado en nota"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:251
-msgid "Note on Family"
-msgstr "Nota en Familia"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:264
-msgid "sibling"
-msgstr "hermano"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:274
-msgid "Note on Parent Family"
-msgstr "Nota en Familia Antecesora"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:278
-#, python-format
-msgid "%s (association)"
-msgstr "%s (asociación)"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:283
-msgid "Note on Person"
-msgstr "Nota sobre persona"
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:273
+#, fuzzy
+#| msgid "Reading file list..."
+msgid "Loading family links..."
+msgstr "Lista de archivos de lectura…"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:330
 #, python-format
@@ -2552,41 +2558,7 @@ msgstr ""
 "\n"
 "   %s de "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:358
-msgid "Error: No Home Person set"
-msgstr "Error: No se ha definido una Persona Inicial"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:363
-msgid "No Active Person set."
-msgstr "Ninguna Persona Activa fijada."
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:364
-msgid "Error: No Active Person set"
-msgstr "Error: no se ha definido una Persona Activa"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:369
-msgid "Initializing search..."
-msgstr "Iniciando búsqueda..."
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:388
-msgid "Looking for relationship between\n"
-msgstr "Buscando relación entre\n"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:389
-#, python-format
-msgid "  <b>%s</b> (Home Person) and\n"
-msgstr "  <b>%s</b> (Persona Inicial) y\n"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:390
-#, python-format
-msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "  <b>%s</b> (Persona Activa)…\n"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:404
-msgid "Searching for connections..."
-msgstr "Buscando conexiones..."
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:424
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -2595,7 +2567,7 @@ msgstr ""
 "Relación nº %d encontrada: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:445
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:360
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -2603,11 +2575,45 @@ msgstr ""
 "Pausado.\n"
 "Presione Continuar para buscar relaciones adicionales.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:449
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:362
 msgid "Paused - Press Continue to search for more relations"
 msgstr "Pausado - Presione Continuar para buscar más relaciones"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:491
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:389
+msgid "Error: No Home Person set"
+msgstr "Error: No se ha definido una Persona Inicial"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:394
+msgid "No Active Person set."
+msgstr "Ninguna Persona Activa fijada."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:395
+msgid "Error: No Active Person set"
+msgstr "Error: no se ha definido una Persona Activa"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:400
+msgid "Initializing search..."
+msgstr "Iniciando búsqueda..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:415
+msgid "Looking for relationship between\n"
+msgstr "Buscando relación entre\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:416
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (Persona Inicial) y\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:417
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (Persona Activa)…\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:429
+msgid "Searching for connections..."
+msgstr "Buscando conexiones..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:475
 #, python-format
 msgid ""
 "\n"
@@ -2616,21 +2622,21 @@ msgstr ""
 "\n"
 "Búsqueda completada. %d caminos de relación encontrados."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:495
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:479
 #, python-brace-format
 msgid "Search completed - {} relation paths found"
 msgstr "Búsqueda completada - {} caminos de relación encontrados"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:506
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:490
 #, python-brace-format
 msgid "Error during search: {}"
 msgstr "Error durante la búsqueda: {}"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:516
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:500
 msgid "Resuming search..."
 msgstr "Reanudando búsqueda..."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:524
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:508
 msgid "Search interrupted by user"
 msgstr "Búsqueda interrumpida por el usuario"
 
@@ -6041,6 +6047,155 @@ msgstr "OpenCV‐Python no está instalado"
 #: FaceDetection/FaceDetection.py:72
 msgid "Detect New Faces"
 msgstr "Detectar rostros nuevos"
+
+#: FamilioPrepTool/FamilioPrepTool.gpr.py:22
+#: FamilioPrepTool/FamilioPrepTool.py:148
+msgid "Prepare for Familio export"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.gpr.py:24
+msgid ""
+"Adds a missing _UID attribute to persons (without overwriting existing ones) "
+"and adds missing 'Marriage' events to families, so that GEDCOM export "
+"produces the tags Familio expects."
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:101
+#: FamilioPrepTool/FamilioPrepTool.py:151
+#, fuzzy
+#| msgid "Set Attribute"
+msgid "_UID attribute"
+msgstr "Establecer atributo"
+
+#: FamilioPrepTool/FamilioPrepTool.py:103
+msgid "Add _UID attribute to persons who don't have one"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:104
+msgid "Existing _UID attributes are never modified or overwritten"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:107
+#, fuzzy
+#| msgid "Attribute: %s"
+msgid "Attribute type"
+msgstr "Atributo: %s"
+
+#: FamilioPrepTool/FamilioPrepTool.py:108
+#, fuzzy
+#| msgid "Attribute type to add or edit"
+msgid "Name of the attribute type to add"
+msgstr "Teclee atributo para agregar o editar"
+
+#: FamilioPrepTool/FamilioPrepTool.py:111
+#, fuzzy
+#| msgid "Web site template"
+msgid "Value template"
+msgstr "Plantilla de sitio web"
+
+#: FamilioPrepTool/FamilioPrepTool.py:113
+#, python-brace-format
+msgid ""
+"Supported macros: ${GUID} - a new random GUID, ${NAME} - the person's name"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:119
+#, fuzzy
+#| msgid "Marriage act:"
+msgid "Marriage events"
+msgstr "Act. Matrimonio:"
+
+#: FamilioPrepTool/FamilioPrepTool.py:121
+#, fuzzy
+#| msgid "Add missing partner using the Edit Family dialog."
+msgid "Add missing 'Marriage' events to families"
+msgstr ""
+"Agregue el miembro ausente mediante el cuadro de diálogo Editar Familia."
+
+#: FamilioPrepTool/FamilioPrepTool.py:123
+msgid ""
+"Gramps only writes the required MARR tags on GEDCOM export if the family has "
+"an explicit 'Marriage' event"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:128
+msgid "Fallback for unknown status (Unknown)"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:129
+msgid "marriage (legally married)"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:130
+msgid "not married (unmarried)"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:131
+msgid "civil (civil union)"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:132
+#, fuzzy
+#| msgid "unknown version"
+msgid "unknown (unknown)"
+msgstr "versión desconocida"
+
+#: FamilioPrepTool/FamilioPrepTool.py:134
+msgid ""
+"This value is written to MARR.TYPE when the family's relationship status in "
+"Gramps is 'Unknown'"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:189
+msgid "Prepare Familio export"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:194
+msgid "No attribute type set for _UID, skipping this step.\n"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:203
+#, fuzzy, python-format
+#| msgid "Setting attributes..."
+msgid "Adding attribute '%s'...\n"
+msgstr "Estableciendo atributos…"
+
+#: FamilioPrepTool/FamilioPrepTool.py:204
+#, fuzzy
+#| msgid "Processing...\n"
+msgid "Processing people..."
+msgstr "Procesando...\n"
+
+#: FamilioPrepTool/FamilioPrepTool.py:235
+#, python-format
+msgid ""
+"Added '%(attr_type)s' attributes: %(count)d\n"
+"\n"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:251
+#, fuzzy
+#| msgid "Adding events '%s'..."
+msgid "Adding 'Marriage' events...\n"
+msgstr "Agregando eventos '%s'…"
+
+#: FamilioPrepTool/FamilioPrepTool.py:252
+#, fuzzy
+#| msgid "Parsing file..."
+msgid "Processing families..."
+msgstr "Procesando archivo..."
+
+#: FamilioPrepTool/FamilioPrepTool.py:289
+#, python-format
+msgid "Added new 'Marriage' events: %d\n"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:302
+#, python-format
+msgid ""
+"\n"
+"Done. _UID added: %(uid_count)d, marriage events added: %(marriage_count)d\n"
+msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
@@ -16288,7 +16443,7 @@ msgstr "FamilySearch.org"
 
 #: GWizardFileMerge/gwizardcompare.py:1751
 #: GWizardFileMerge/gwizardcompare.py:1768
-#: GWizardFileMerge/gwizardmergedialog.py:451
+#: GWizardFileMerge/gwizardmergedialog.py:451 HistContext/HistContext.py:407
 #, fuzzy, python-format
 #| msgid "Added %s: %s "
 msgid "%s: %s"
@@ -17382,8 +17537,8 @@ msgstr ""
 "opción de realizar modificaciones manuales, utilice en su lugar la "
 "herramienta Importar fusión."
 
-#: GrampsWebSync/grampswebsync.py:758 HistContext/HistContext.py:289
-#: HistContext/HistContext.py:333 HistContext/HistContext.py:420
+#: GrampsWebSync/grampswebsync.py:758 HistContext/HistContext.py:360
+#: HistContext/HistContext.py:451 HistContext/HistContext.py:549
 msgid "Error:"
 msgstr "Error:"
 
@@ -18726,60 +18881,68 @@ msgid "Lists relevant historical events during the lifetime of a Person"
 msgstr ""
 "Listados relevantes de eventos históricos durante la vida de una Miembro"
 
-#: HistContext/HistContext.py:123
+#: HistContext/HistContext.py:126
 msgid "Rows starting with this in the text column will be hidden "
 msgstr "Filas iniciando con esto en la columna de texto estarán ocultas "
 
-#: HistContext/HistContext.py:126
+#: HistContext/HistContext.py:129
 msgid "Use filter "
 msgstr "Utilizar filtro "
 
-#: HistContext/HistContext.py:129
+#: HistContext/HistContext.py:132
 msgid "Show outside life span "
 msgstr "Mostrar expansión de vida en lado externo "
 
-#: HistContext/HistContext.py:132
+#: HistContext/HistContext.py:135
 msgid "Use full dates"
 msgstr "Utilizar fechas completas"
 
-#: HistContext/HistContext.py:135
+#: HistContext/HistContext.py:138
 msgid "Foreground color items in lifespan"
 msgstr "Color de elementos principales en duración de vida"
 
-#: HistContext/HistContext.py:138
+#: HistContext/HistContext.py:141
 msgid "Background color items in lifespan"
 msgstr "Color de fondo para elementos en duración de vida"
 
-#: HistContext/HistContext.py:141
+#: HistContext/HistContext.py:144
 msgid "Foreground color items outside lifespan"
 msgstr "Color principal de elementos fuera del historial de vida"
 
-#: HistContext/HistContext.py:144
+#: HistContext/HistContext.py:147
 msgid "Background color items outside lifespan"
 msgstr "Color de fondo de elementos fuera del historial de vida"
 
-#: HistContext/HistContext.py:149
+#: HistContext/HistContext.py:150
+msgid "Show person events in sorted order"
+msgstr ""
+
+#: HistContext/HistContext.py:155
 msgid "Select from files"
 msgstr "Seleccionar desde archivos"
 
-#: HistContext/HistContext.py:287
+#: HistContext/HistContext.py:358
 msgid "Invalid date "
 msgstr "Fecha no válida "
 
-#: HistContext/HistContext.py:288
+#: HistContext/HistContext.py:359
 msgid " in line: "
 msgstr " en línea: "
 
-#: HistContext/HistContext.py:327
-msgid ": line does not contain four sections separated by semicolons in : \""
+#: HistContext/HistContext.py:445
+#, fuzzy
+#| msgid ""
+#| ": line does not contain four sections separated by semicolons in : \""
+msgid ""
+": line does not contain four or five sections separated by semicolons in : \""
 msgstr ""
 ": la línea no contiene cuatro secciones separadas por punto y coma en : \""
 
-#: HistContext/HistContext.py:419
+#: HistContext/HistContext.py:548
 msgid "Cannot open URL: "
 msgstr "No se puede abrir URL: "
 
-#: HistContext/HistContext.py:427
+#: HistContext/HistContext.py:556
 msgid "Double click row to follow link"
 msgstr "Pulsación doble de fila para seguir enlace"
 
@@ -28317,6 +28480,15 @@ msgstr ""
 "Pruebe a abrir\n"
 " «%s»\n"
 " en su navegador web preferido…"
+
+#~ msgid "Note on Family"
+#~ msgstr "Nota en Familia"
+
+#~ msgid "Note on Parent Family"
+#~ msgstr "Nota en Familia Antecesora"
+
+#~ msgid "Note on Person"
+#~ msgstr "Nota sobre persona"
 
 #~ msgid "Will check the data on Association for people."
 #~ msgstr "Comprobar datos de la Relación entre personas."
