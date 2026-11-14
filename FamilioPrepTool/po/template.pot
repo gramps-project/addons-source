@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-20 15:48+0300\n"
+"POT-Creation-Date: 2026-11-14 11:52-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,132 +17,134 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FamilioPrepTool/FamilioPrepTool.gpr.py:13
-#: FamilioPrepTool/FamilioPrepTool.py:131
-msgid "Prepare for Familio export"
-msgstr ""
-
-#: FamilioPrepTool/FamilioPrepTool.gpr.py:15
-msgid ""
-"Adds a missing _UID attribute to persons (without overwriting existing ones) "
-"and adds missing 'Marriage' events to families, so that GEDCOM export "
-"produces the tags Familio expects."
-msgstr ""
-
-#: FamilioPrepTool/FamilioPrepTool.py:84 FamilioPrepTool/FamilioPrepTool.py:134
+#: FamilioPrepTool/FamilioPrepTool.py:101
+#: FamilioPrepTool/FamilioPrepTool.py:151
 msgid "_UID attribute"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:86
+#: FamilioPrepTool/FamilioPrepTool.py:103
 msgid "Add _UID attribute to persons who don't have one"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:87
+#: FamilioPrepTool/FamilioPrepTool.py:104
 msgid "Existing _UID attributes are never modified or overwritten"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:90
+#: FamilioPrepTool/FamilioPrepTool.py:107
 msgid "Attribute type"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:91
+#: FamilioPrepTool/FamilioPrepTool.py:108
 msgid "Name of the attribute type to add"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:94
+#: FamilioPrepTool/FamilioPrepTool.py:111
 msgid "Value template"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:96
+#: FamilioPrepTool/FamilioPrepTool.py:113
 #, python-brace-format
 msgid ""
 "Supported macros: ${GUID} - a new random GUID, ${NAME} - the person's name"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:102
+#: FamilioPrepTool/FamilioPrepTool.py:119
 msgid "Marriage events"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:104
+#: FamilioPrepTool/FamilioPrepTool.py:121
 msgid "Add missing 'Marriage' events to families"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:106
+#: FamilioPrepTool/FamilioPrepTool.py:123
 msgid ""
 "Gramps only writes the required MARR tags on GEDCOM export if the family has "
 "an explicit 'Marriage' event"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:111
+#: FamilioPrepTool/FamilioPrepTool.py:128
 msgid "Fallback for unknown status (Unknown)"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:112
+#: FamilioPrepTool/FamilioPrepTool.py:129
 msgid "marriage (legally married)"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:113
+#: FamilioPrepTool/FamilioPrepTool.py:130
 msgid "not married (unmarried)"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:114
+#: FamilioPrepTool/FamilioPrepTool.py:131
 msgid "civil (civil union)"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:115
+#: FamilioPrepTool/FamilioPrepTool.py:132
 msgid "unknown (unknown)"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:117
+#: FamilioPrepTool/FamilioPrepTool.py:134
 msgid ""
 "This value is written to MARR.TYPE when the family's relationship status in "
 "Gramps is 'Unknown'"
 msgstr ""
 
 #: FamilioPrepTool/FamilioPrepTool.py:148
+#: FamilioPrepTool/FamilioPrepTool.gpr.py:22
+msgid "Prepare for Familio export"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.py:156
+#: FamilioPrepTool/FamilioPrepTool.py:172
 msgid "Results"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:164
+#: FamilioPrepTool/FamilioPrepTool.py:189
 msgid "Prepare Familio export"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:169
+#: FamilioPrepTool/FamilioPrepTool.py:194
 msgid "No attribute type set for _UID, skipping this step.\n"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:178
+#: FamilioPrepTool/FamilioPrepTool.py:203
 #, python-format
 msgid "Adding attribute '%s'...\n"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:179
+#: FamilioPrepTool/FamilioPrepTool.py:204
 msgid "Processing people..."
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:209
+#: FamilioPrepTool/FamilioPrepTool.py:235
 #, python-format
 msgid ""
 "Added '%(attr_type)s' attributes: %(count)d\n"
 "\n"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:224
+#: FamilioPrepTool/FamilioPrepTool.py:251
 msgid "Adding 'Marriage' events...\n"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:225
+#: FamilioPrepTool/FamilioPrepTool.py:252
 msgid "Processing families..."
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:262
+#: FamilioPrepTool/FamilioPrepTool.py:289
 #, python-format
 msgid "Added new 'Marriage' events: %d\n"
 msgstr ""
 
-#: FamilioPrepTool/FamilioPrepTool.py:275
+#: FamilioPrepTool/FamilioPrepTool.py:302
 #, python-format
 msgid ""
 "\n"
 "Done. _UID added: %(uid_count)d, marriage events added: %(marriage_count)d\n"
+msgstr ""
+
+#: FamilioPrepTool/FamilioPrepTool.gpr.py:24
+msgid ""
+"Adds a missing _UID attribute to persons (without overwriting existing ones) "
+"and adds missing 'Marriage' events to families, so that GEDCOM export "
+"produces the tags Familio expects."
 msgstr ""
