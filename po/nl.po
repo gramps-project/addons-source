@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-26 09:44-0700\n"
-"PO-Revision-Date: 2026-10-19 08:00+0000\n"
+"PO-Revision-Date: 2026-10-27 21:51+0000\n"
 "Last-Translator: Stephan Paternotte <stephan-"
 "p@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
@@ -1744,7 +1744,7 @@ msgstr "RGB-kleur voor niet-uitbreidbare rij-achtergrond."
 
 #: D3Charts/DescendantIndentedTree.py:1871 DynamicWeb/dynamicweb.py:4806
 msgid "Include records marked private"
-msgstr "Neem records op die als privé zijn gemarkeerd"
+msgstr "Gegevens opnemen die als privé zijn gemarkeerd"
 
 #: D3Charts/DescendantIndentedTree.py:1873
 msgid "Whether to include private objects."
@@ -9445,7 +9445,7 @@ msgstr "Verhuisd van"
 #: Form/form_dk.xml.h:275 Form/form_us.xml.h:2095 Form/form_us.xml.h:2133
 #: Form/form_us.xml.h:2171 Form/form_us.xml.h:2209
 msgid "Year married"
-msgstr "Jaar getrouwd"
+msgstr "Huwelijksjaar"
 
 #: Form/form_dk.xml.h:276
 msgid "År gift"
@@ -25159,10 +25159,8 @@ msgstr "SQLite export"
 
 #: StoryExport/StoryExport.gpr.py:24 StoryExport/StoryExport.py:170
 #: StoryExport/StoryExport.py:281
-#, fuzzy
-#| msgid "Generate"
 msgid "Generate Story"
-msgstr "Genereer"
+msgstr "Verhaal genereren"
 
 #: StoryExport/StoryExport.gpr.py:26
 msgid ""
@@ -25170,20 +25168,23 @@ msgid ""
 "their events with dates, places and photos, for the Gramps Connect Story "
 "Viewer"
 msgstr ""
+"Genereert het verhaal van een persoon of een gezin (.story.zip): een "
+"diavoorstelling van hun evenementen met data, plaatsen en foto's, voor de "
+"Gramps Connect Story Viewer"
 
 #: StoryExport/StoryExport.py:82
 msgid "Select the person whose story to generate, then try again."
 msgstr ""
+"Selecteer de persoon wiens verhaal moet worden gegenereerd en probeer het "
+"vervolgens opnieuw."
 
 #: StoryExport/StoryExport.py:98 StoryExport/StoryExport.py:114
-#, fuzzy
-#| msgid "Could not create the directory: %(path)s"
 msgid "Couldn't generate the story"
-msgstr "Kan de directory niet maken: %(path)s"
+msgstr "Kan het verhaal niet genereren"
 
 #: StoryExport/StoryExport.py:117
 msgid "Story saved"
-msgstr ""
+msgstr "Verhaal opgeslagen"
 
 #: StoryExport/StoryExport.py:120
 #, python-format
@@ -25193,58 +25194,60 @@ msgid ""
 "Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
 "connect-stories/"
 msgstr ""
+"%(count)d dia's zijn opgeslagen in %(path)s.\n"
+"\n"
+"Open ze in de Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
 
 #: StoryExport/StoryExport.py:126
-#, fuzzy
-#| msgid "Media Browser"
 msgid "_Open in Browser"
-msgstr "Mediabrowser"
+msgstr "_Openen in Browser"
 
 #: StoryExport/StoryExport.py:159
 msgid "Story"
-msgstr ""
+msgstr "Verhaal"
 
 #: StoryExport/StoryExport.py:180
-#, fuzzy
-#| msgid "Generate Test Notes"
 msgid "Generate the story of:"
-msgstr "Genereer testopmerkingen"
+msgstr "Genereer het verhaal van:"
 
 #: StoryExport/StoryExport.py:185
-#, fuzzy, python-format
-#| msgid "Family:"
+#, python-format
 msgid "Family: %s"
-msgstr "Familie:"
+msgstr "Familie: %s"
 
 #: StoryExport/StoryExport.py:195
-#, fuzzy
-#| msgid "Include siblings"
 msgid "Include families"
-msgstr "Inclusief broers/zussen"
+msgstr "Inclusief gezinnen"
 
 #: StoryExport/StoryExport.py:198
 msgid ""
 "Also draw on this person's own families: a spouse's and children's births "
 "and deaths, and their parents' and siblings'."
 msgstr ""
+"Maak ook gebruik van de eigen gezinnen van deze persoon: de geboorten en "
+"sterfgevallen van een echtgenoot en kinderen, en die van hun ouders en "
+"broers en zussen."
 
 #: StoryExport/StoryExport.py:223
 msgid "Include each person's own birth and death in this family's story:"
-msgstr ""
+msgstr "Neem ieders eigen geboorte en dood op in het verhaal van deze familie:"
 
 #: StoryExport/StoryExport.py:248
 msgid "Include living people (and photos they appear in)"
-msgstr ""
+msgstr "Inclusief levende personen (en foto's waarop ze verschijnen)"
 
 #: StoryExport/StoryExport.py:292
 msgid "Stories (*.story.zip)"
-msgstr ""
+msgstr "Verhalen (*.story.zip)"
 
 #: StoryExport/storyexport_builder.py:427
 msgid ""
 "This family is marked private. To generate its story, check \"Include data "
 "marked private\"."
 msgstr ""
+"Dit gezin is gemarkeerd als privé. Om het verhaal te genereren, moet u "
+"\"Gegevens opnemen die als privé zijn gemarkeerd\" aanvinken."
 
 #: StoryExport/storyexport_builder.py:438
 #, python-format
@@ -25252,6 +25255,8 @@ msgid ""
 "%s is marked private. To generate their story, check \"Include data marked "
 "private\"."
 msgstr ""
+"%s is gemarkeerd als privé. Om hun verhaal te genereren moet u \"Gegevens "
+"opnemen die als privé zijn gemarkeerd\" aanvinken."
 
 #: StoryExport/storyexport_builder.py:446
 #, python-format
@@ -25259,291 +25264,282 @@ msgid ""
 "%s is probably living. To generate their story, check \"Include living "
 "people\"."
 msgstr ""
+"%s is waarschijnlijk nog in leven. Om het verhaal te genereren, moet u "
+"\"Inclusief levende personen\" aanvinken."
 
 #: StoryExport/storyexport_builder.py:460
 #, python-format
 msgid "%(who)s was born"
-msgstr ""
+msgstr "%(who)s is geboren"
 
 #: StoryExport/storyexport_builder.py:461
 #, python-format
 msgid "%(who)s was stillborn"
-msgstr ""
+msgstr "%(who)s is dood geboren"
 
 #: StoryExport/storyexport_builder.py:462
 #, python-format
 msgid "%(who)s was baptized"
-msgstr ""
+msgstr "%(who)s is gedoopt"
 
 #: StoryExport/storyexport_builder.py:463
 #: StoryExport/storyexport_builder.py:464
 #, python-format
 msgid "%(who)s was christened"
-msgstr ""
+msgstr "%(who)s is gedoopt"
 
 #: StoryExport/storyexport_builder.py:465
 #, python-format
 msgid "%(who)s was blessed"
-msgstr ""
+msgstr "%(who)s is gezegend"
 
 #: StoryExport/storyexport_builder.py:466
 #, python-format
 msgid "%(who)s was confirmed"
-msgstr ""
+msgstr "%(who)s is erkend"
 
 #: StoryExport/storyexport_builder.py:467
 #, python-format
 msgid "%(who)s took First Communion"
-msgstr ""
+msgstr "%(who)s nam de eerste communie"
 
 #: StoryExport/storyexport_builder.py:468
 #, python-format
 msgid "%(who)s celebrated their Bar Mitzvah"
-msgstr ""
+msgstr "%(who)s vierde hun Bar Mitzvah"
 
 #: StoryExport/storyexport_builder.py:469
 #, python-format
 msgid "%(who)s celebrated their Bas Mitzvah"
-msgstr ""
+msgstr "%(who)s vierde hun Bas Mitzvah"
 
 #: StoryExport/storyexport_builder.py:470
 #, python-format
 msgid "%(who)s was adopted"
-msgstr ""
+msgstr "%(who)s is geadopteerd"
 
 #: StoryExport/storyexport_builder.py:471
 #, python-format
 msgid "%(who)s graduated"
-msgstr ""
+msgstr "%(who)s is afgestudeerd"
 
 #: StoryExport/storyexport_builder.py:472
 #, python-format
 msgid "%(who)s was awarded a degree"
-msgstr ""
+msgstr "%(who)s is onderscheiden met een graad"
 
 #: StoryExport/storyexport_builder.py:473
 #, python-format
 msgid "%(who)s emigrated"
-msgstr ""
+msgstr "%(who)s is geëmigreerd"
 
 #: StoryExport/storyexport_builder.py:474
 #, python-format
 msgid "%(who)s immigrated"
-msgstr ""
+msgstr "%(who)s is geïmmigreerd"
 
 #: StoryExport/storyexport_builder.py:475
-#, fuzzy, python-format
-#| msgid "Is he naturalized?"
+#, python-format
 msgid "%(who)s was naturalized"
-msgstr "Is hij genaturaliseerd?"
+msgstr "%(who)s is genaturaliseerd"
 
 #: StoryExport/storyexport_builder.py:476
 #, python-format
 msgid "%(who)s was ordained"
-msgstr ""
+msgstr "%(who)s is gewijd"
 
 #: StoryExport/storyexport_builder.py:477
 #, python-format
 msgid "%(who)s was elected"
-msgstr ""
+msgstr "%(who)s is verkozen"
 
 #: StoryExport/storyexport_builder.py:478
 #, python-format
 msgid "%(who)s retired"
-msgstr ""
+msgstr "%(who)s is met pensioen gegaan"
 
 #: StoryExport/storyexport_builder.py:479
 #, python-format
 msgid "%(who)s died"
-msgstr ""
+msgstr "%(who)s is overleden"
 
 #: StoryExport/storyexport_builder.py:480
 #, python-format
 msgid "%(who)s was buried"
-msgstr ""
+msgstr "%(who)s is begraven"
 
 #: StoryExport/storyexport_builder.py:481
 #, python-format
 msgid "%(who)s was cremated"
-msgstr ""
+msgstr "%(who)s is gecremeerd"
 
 #: StoryExport/storyexport_builder.py:482
 #, python-format
 msgid "%(who)s had their estate probated"
-msgstr ""
+msgstr "%(who)s heeft de nalatenschap laten afhandelen"
 
 #: StoryExport/storyexport_builder.py:487
 #: StoryExport/storyexport_builder.py:488
-#, fuzzy, python-format
-#| msgid "Year married"
+#, python-format
 msgid "%(who)s were married"
-msgstr "Jaar getrouwd"
+msgstr "%(who)s is getrouwd"
 
 #: StoryExport/storyexport_builder.py:489
 #, python-format
 msgid "%(who)s had their banns read"
-msgstr ""
+msgstr "%(who)s is in ondertrouw gegaan"
 
 #: StoryExport/storyexport_builder.py:490
 #, python-format
 msgid "%(who)s signed a marriage contract"
-msgstr ""
+msgstr "%(who)s heeft een huwelijkscontract ondertekend"
 
 #: StoryExport/storyexport_builder.py:491
 #, python-format
 msgid "%(who)s took out a marriage license"
-msgstr ""
+msgstr "%(who)s heeft een huwelijksovereenkomst afgesloten"
 
 #: StoryExport/storyexport_builder.py:492
 #, python-format
 msgid "%(who)s agreed a marriage settlement"
-msgstr ""
+msgstr "%(who)s is een huwelijksregeling overeengekomen"
 
 #: StoryExport/storyexport_builder.py:493
 #, python-format
 msgid "%(who)s were engaged"
-msgstr ""
+msgstr "%(who)s zijn verloofd"
 
 #: StoryExport/storyexport_builder.py:494
-#, fuzzy, python-format
-#| msgid "Widowed, divorced"
+#, python-format
 msgid "%(who)s were divorced"
-msgstr "Weduwnaar, gescheiden"
+msgstr "%(who)s zijn gescheiden"
 
 #: StoryExport/storyexport_builder.py:495
-#, fuzzy, python-format
-#| msgid "Used for source"
+#, python-format
 msgid "%(who)s filed for divorce"
-msgstr "Gebruikt voor bron"
+msgstr "%(who)s hebben scheiding aangevraagd"
 
 #: StoryExport/storyexport_builder.py:496
 #, python-format
 msgid "%(who)s had their marriage annulled"
-msgstr ""
+msgstr "%(who)s hebben hun huwelijk laten ontbinden"
 
 #: StoryExport/storyexport_builder.py:497
 #, python-format
 msgid "%(who)s were recorded in the census"
-msgstr ""
+msgstr "%(who)s werden geregistreerd in de volkstelling"
 
 #: StoryExport/storyexport_builder.py:498
 #, python-format
 msgid "%(who)s lived"
-msgstr ""
+msgstr "%(who)s leefden"
 
 #: StoryExport/storyexport_builder.py:530
-#, fuzzy, python-format
-#| msgid "%(ancestor1)s and %(ancestor2)s"
+#, python-format
 msgid "%(names)s and %(last)s"
-msgstr "%(ancestor1)s en %(ancestor2)s"
+msgstr "%(names)s en %(last)s"
 
 #: StoryExport/storyexport_builder.py:568
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(type)s (%(role)s)"
-msgstr "%(type)s: %(value)s"
+msgstr "%(type)s (%(role)s)"
 
 #: StoryExport/storyexport_builder.py:570
 #: StoryExport/storyexport_builder.py:589
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(type)s of %(who)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(type)s vam %(who)s"
 
 #: StoryExport/storyexport_builder.py:581
 #, python-format
 msgid "%(who)s took part in this %(type)s as %(role)s"
-msgstr ""
+msgstr "%(who)s naam deel in dit %(type)s als %(role)s"
 
 #: StoryExport/storyexport_builder.py:595
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s"
+#, python-format
 msgid "%(moment)s on %(date)s"
-msgstr "%(event_type)s: %(date)s"
+msgstr "%(moment)s op %(date)s"
 
 #: StoryExport/storyexport_builder.py:597
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s"
+#, python-format
 msgid "%(moment)s in %(date)s"
-msgstr "%(event_type)s: %(date)s"
+msgstr "%(moment)s in %(date)s"
 
 #: StoryExport/storyexport_builder.py:599
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s"
+#, python-format
 msgid "%(moment)s %(date)s"
-msgstr "%(event_type)s: %(date)s"
+msgstr "%(moment)s %(date)s"
 
 #: StoryExport/storyexport_builder.py:602
-#, fuzzy, python-format
-#| msgid "%(date)s, %(place)s"
+#, python-format
 msgid "%(moment)s in %(place)s"
-msgstr "%(date)s, %(place)s"
+msgstr "%(moment)s in %(place)s"
 
 #: StoryExport/storyexport_builder.py:750
 #, python-format
 msgid "%d moment"
 msgid_plural "%d moments"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d moment"
+msgstr[1] "%d momenten"
 
 #: StoryExport/storyexport_builder.py:790
 msgid "This person isn't included with the chosen privacy settings."
-msgstr ""
+msgstr "Deze persoon is niet inbegrepen bij de gekozen privacy-instellingen."
 
 #: StoryExport/storyexport_builder.py:810
 #, python-format
 msgid "%s has no events to build a story from."
-msgstr ""
+msgstr "%s heeft geen gebeurtenissen om een verhaal van op te bouwen."
 
 #: StoryExport/storyexport_builder.py:813
 #: StoryExport/storyexport_builder.py:862
 #, python-format
 msgid "The Story of %s"
-msgstr ""
+msgstr "Het verhaal van %s"
 
 #: StoryExport/storyexport_builder.py:817
 #, python-format
 msgid "%(moments)s from %(name)s's recorded life."
-msgstr ""
+msgstr "%(moments)s uit het gedocumenteerde leven van %(name)s's."
 
 #: StoryExport/storyexport_builder.py:840
 msgid "This family isn't included with the chosen privacy settings."
-msgstr ""
+msgstr "Dit gezin is niet inbegrepen bij de gekozen privacy-instellingen."
 
 #: StoryExport/storyexport_builder.py:844
-#, fuzzy
-#| msgid "family"
 msgid "this family"
-msgstr "gezin"
+msgstr "dit gezin"
 
 #: StoryExport/storyexport_builder.py:854
 msgid ""
 "This family has no events to build a story from: not on the family itself, "
 "and no births or deaths recorded for its members."
 msgstr ""
+"Dit gezin heeft geen gebeurtenissen waaruit een verhaal kan worden "
+"opgebouwd: niet over het gezin zelf en er zijn ook geen geboorten of "
+"sterfgevallen geregistreerd voor haar leden."
 
 #: StoryExport/storyexport_builder.py:865
 #, python-format
 msgid "%(moments)s from the life of %(couple)s and %(children)s."
-msgstr ""
+msgstr "%(moments)s uit het leven van %(couple)s en %(children)s."
 
 #: StoryExport/storyexport_builder.py:869
 #, python-format
 msgid "their child"
 msgid_plural "their %(count)d children"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "hun kind"
+msgstr[1] "hun %(count)d kinderen"
 
 #: StoryExport/storyexport_builder.py:874
 #, python-format
 msgid "%(moments)s from the life of %(couple)s."
-msgstr ""
+msgstr "%(moments)s uit het leven van %(couple)s."
 
 #: StoryExport/storyexport_builder.py:888
-#, fuzzy, python-format
-#| msgid "Family shape"
+#, python-format
 msgid "Family %s"
-msgstr "Gezinsvorm"
+msgstr "Gezin %s"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
