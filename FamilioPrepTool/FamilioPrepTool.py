@@ -27,8 +27,6 @@
 import re
 import uuid
 
-from gi.repository import GLib
-
 #-------------------------------------------------
 #
 # GRAMPS modules
