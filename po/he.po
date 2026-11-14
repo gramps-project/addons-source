@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-26 09:44-0700\n"
-"PO-Revision-Date: 2026-10-16 14:21+0000\n"
+"PO-Revision-Date: 2026-10-29 15:51+0000\n"
 "Last-Translator: Avi Markovitz <avma@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -15765,10 +15765,8 @@ msgstr ""
 "התאמת עצמים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GWizardFileMerge/GWizardFileMerge.gpr.py:19
-#, fuzzy
-#| msgid "Command Line Merge"
 msgid "GWizard File Merge"
-msgstr "מיזוג משורת פקודה"
+msgstr "מיזוג קובץ GWizard"
 
 #: GWizardFileMerge/GWizardFileMerge.gpr.py:21
 msgid ""
@@ -15778,32 +15776,22 @@ msgid ""
 msgstr ""
 
 #: GWizardFileMerge/gwizard.py:120
-#, fuzzy
-#| msgid "Deep Connections"
 msgid "Configure Connection"
-msgstr "חיבורים עמוקים"
+msgstr "תיצור חיבורים"
 
 #: GWizardFileMerge/gwizard.py:121
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Load Data"
-msgstr "טעינת הנתונים"
+msgstr "טעינת נתונים"
 
 #: GWizardFileMerge/gwizard.py:122
-#, fuzzy
-#| msgid "Edit Starting Person"
 msgid "Find Matching Persons"
-msgstr "עריכת אדם התחלה"
+msgstr "חיפוש אדם תואם"
 
 #: GWizardFileMerge/gwizard.py:123
-#, fuzzy
-#| msgid "Differences"
 msgid "Compare Differences"
-msgstr "הבדלים"
+msgstr "השוואת הבדלים"
 
 #: GWizardFileMerge/gwizard.py:124
-#, fuzzy
-#| msgid "Apply changes"
 msgid "Apply Changes"
 msgstr "החלת שינויים"
 
@@ -15830,7 +15818,7 @@ msgstr ""
 #: GWizardFileMerge/gwizardcompare.py:167
 #: GWizardFileMerge/gwizardcompare.py:187
 msgid "GWizard Compare"
-msgstr ""
+msgstr "השוואת GWizard"
 
 #: GWizardFileMerge/gwizardcompare.py:173
 msgid "No source database available for comparison"
