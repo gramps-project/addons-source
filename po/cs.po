@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-18 11:42-0700\n"
+"POT-Creation-Date: 2026-10-26 09:44-0700\n"
 "PO-Revision-Date: 2026-10-20 16:15+0000\n"
 "Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
@@ -1126,7 +1126,8 @@ msgstr "Odhadované datum narození"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:531
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr "Přidána událost úmrtí na základě údaje %(evidence)s od osoby %(person)s"
+msgstr ""
+"Přidána událost úmrtí na základě údaje %(evidence)s od osoby %(person)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:534
 #, python-format
@@ -2563,8 +2564,8 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Vytváří webovou stránku (HTML) s grafickým zobrazením předků či potomků (SVG)"
-", kde se podrobnosti o osobách zobrazují při událostech myši."
+"Vytváří webovou stránku (HTML) s grafickým zobrazením předků či potomků "
+"(SVG), kde se podrobnosti o osobách zobrazují při událostech myši."
 
 #: DenominoViso/DenominoViso.py:180
 msgid "No Source"
@@ -5741,7 +5742,8 @@ msgstr "Rozšířené atributy rodiny"
 #: ExtendedAttributes/ExtendedAttributes.py:54
 msgid ""
 "Double-click on a row to edit the object containing the selected attribute."
-msgstr "Dvojitým kliknutím na řádek upravíte objekt obsahující vybraný atribut."
+msgstr ""
+"Dvojitým kliknutím na řádek upravíte objekt obsahující vybraný atribut."
 
 #: ExtractCity/changenames.glade:94
 msgid "_Toggle Selected"
@@ -8548,7 +8550,8 @@ msgstr ""
 
 #: Form/form_ca.xml.h:594
 msgid "27. Church or place of worship: Number of communicants"
-msgstr "27. Kostel nebo místo bohoslužeb: počet osob přistupujících k přijímání"
+msgstr ""
+"27. Kostel nebo místo bohoslužeb: počet osob přistupujících k přijímání"
 
 #: Form/form_ca.xml.h:595
 #, fuzzy
@@ -15840,7 +15843,8 @@ msgstr "Filtr GOQL pro citace"
 
 #: GOQLFilter/goql.gpr.py:148
 msgid "Gramplet providing a gramps-object-query-language citation filter"
-msgstr "Gramplet poskytující filtr citací v jazyce gramps-object-query-language"
+msgstr ""
+"Gramplet poskytující filtr citací v jazyce gramps-object-query-language"
 
 #: GOQLFilter/goql.gpr.py:166
 msgid "Media GOQL Filter"
@@ -16548,7 +16552,8 @@ msgstr "Strom ve tvaru přesýpacích hodin"
 
 #: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
-msgstr "Strom ve tvaru přesýpacích hodin pomocí balíčku genealogytree pro LaTeX"
+msgstr ""
+"Strom ve tvaru přesýpacích hodin pomocí balíčku genealogytree pro LaTeX"
 
 #: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
@@ -16922,8 +16927,9 @@ msgid ""
 "URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
 msgstr ""
-"URL místního serveru kompatibilního s OpenAI. Ollama: http://localhost:11434"
-"  LM Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
+"URL místního serveru kompatibilního s OpenAI. Ollama: http://"
+"localhost:11434  LM Studio: http://localhost:1234  llama.cpp: http://"
+"localhost:8080"
 
 #: GrampsAssistant/grampsassistant.py:1268
 msgid "model name (leave blank for LM Studio / llama.cpp)"
@@ -19387,7 +19393,8 @@ msgstr "Natočení popisku úmrtí"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
-msgstr "Popisek úmrtí je zapsán do textového rámečku natočeného o tuto hodnotu."
+msgstr ""
+"Popisek úmrtí je zapsán do textového rámečku natočeného o tuto hodnotu."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
@@ -20036,8 +20043,8 @@ msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
 msgstr ""
-"Cesta k médiím není nastavena. V předvolbách musíte nastavit položku „"
-"Výchozí cesta k médiím“."
+"Cesta k médiím není nastavena. V předvolbách musíte nastavit položku "
+"„Výchozí cesta k médiím“."
 
 #: MediaVerify/MediaVerify.py:306
 msgid "Finding files"
@@ -21014,7 +21021,8 @@ msgstr "Nyní žijící"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr "Narození za života = počet potomků, jejichž narození se osoba %s dožila"
+msgstr ""
+"Narození za života = počet potomků, jejichž narození se osoba %s dožila"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
@@ -22119,8 +22127,8 @@ msgstr ""
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
 msgstr ""
-"Výraz pro hledání zeměpisné šířky a délky musí obsahovat skupiny %(lat)s a %"
-"(lon)s. Ukončuji"
+"Výraz pro hledání zeměpisné šířky a délky musí obsahovat skupiny %(lat)s a "
+"%(lon)s. Ukončuji"
 
 #: PlaceCompletion/PlaceCompletion.py:424
 msgid "Non valid regex for match lat/lon"
@@ -22762,8 +22770,8 @@ msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
-"Verze psycopg3 %(installed)s je příliš stará. Je vyžadována verze %(required)"
-"s nebo novější."
+"Verze psycopg3 %(installed)s je příliš stará. Je vyžadována verze "
+"%(required)s nebo novější."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:212
 msgid "Database Backend"
@@ -22992,10 +23000,10 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=How_to_make_a_backup\">Záloha do Gramps XML</a> V novějších "
-"verzích Gramps najdete v nabídce Rodokmen příkaz \"Vytvořit zálohu...\". "
-"Jinak použijte \"Exportovat...\" ve stejné nabídce, ale v průvodci exportem "
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Záloha do Gramps XML</a> V novějších verzích "
+"Gramps najdete v nabídce Rodokmen příkaz \"Vytvořit zálohu...\". Jinak "
+"použijte \"Exportovat...\" ve stejné nabídce, ale v průvodci exportem "
 "vypněte volby ochrany soukromí, aby se exportovala všechna data.</i>\n"
 "\n"
 
@@ -23316,8 +23324,8 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=Gramps_5.0_Wiki_Manual_-"
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Nastavení "
 "národního prostředí:</a></b></u>\n"
 
@@ -23453,8 +23461,8 @@ msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
 "%(total)d people in your database."
 msgstr ""
-"Počet osob vybraných filtrem: %(filter)d, zobrazených v rodokmenu: %(count)"
-"d, celkem v databázi: %(total)d."
+"Počet osob vybraných filtrem: %(filter)d, zobrazených v rodokmenu: "
+"%(count)d, celkem v databázi: %(total)d."
 
 #: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
@@ -24970,6 +24978,394 @@ msgstr "SQLite je běžný formát místních databází"
 msgid "SQLite Export"
 msgstr "Export SQLite"
 
+#: StoryExport/StoryExport.gpr.py:24 StoryExport/StoryExport.py:170
+#: StoryExport/StoryExport.py:281
+#, fuzzy
+#| msgid "Generate"
+msgid "Generate Story"
+msgstr "Vygenerovat"
+
+#: StoryExport/StoryExport.gpr.py:26
+msgid ""
+"Generates the story of a person or a family (.story.zip): a slideshow of "
+"their events with dates, places and photos, for the Gramps Connect Story "
+"Viewer"
+msgstr ""
+
+#: StoryExport/StoryExport.py:82
+msgid "Select the person whose story to generate, then try again."
+msgstr ""
+
+#: StoryExport/StoryExport.py:98 StoryExport/StoryExport.py:114
+#, fuzzy
+#| msgid "Could not create the directory: %(path)s"
+msgid "Couldn't generate the story"
+msgstr "Nezdařilo se vytvořit adresář: %(path)s"
+
+#: StoryExport/StoryExport.py:117
+msgid "Story saved"
+msgstr ""
+
+#: StoryExport/StoryExport.py:120
+#, python-format
+msgid ""
+"%(count)d slides saved to %(path)s.\n"
+"\n"
+"Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+msgstr ""
+
+#: StoryExport/StoryExport.py:126
+#, fuzzy
+#| msgid "Media Browser"
+msgid "_Open in Browser"
+msgstr "Prohlížeč médií"
+
+#: StoryExport/StoryExport.py:159
+msgid "Story"
+msgstr ""
+
+#: StoryExport/StoryExport.py:180
+#, fuzzy
+#| msgid "Generate Test Notes"
+msgid "Generate the story of:"
+msgstr "Vygenerovat testovací poznámky"
+
+#: StoryExport/StoryExport.py:185
+#, fuzzy, python-format
+#| msgid "Family:"
+msgid "Family: %s"
+msgstr "Rodina:"
+
+#: StoryExport/StoryExport.py:195
+#, fuzzy
+#| msgid "Include siblings"
+msgid "Include families"
+msgstr "Zahrnout sourozence"
+
+#: StoryExport/StoryExport.py:198
+msgid ""
+"Also draw on this person's own families: a spouse's and children's births "
+"and deaths, and their parents' and siblings'."
+msgstr ""
+
+#: StoryExport/StoryExport.py:223
+msgid "Include each person's own birth and death in this family's story:"
+msgstr ""
+
+#: StoryExport/StoryExport.py:248
+msgid "Include living people (and photos they appear in)"
+msgstr ""
+
+#: StoryExport/StoryExport.py:292
+msgid "Stories (*.story.zip)"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:427
+msgid ""
+"This family is marked private. To generate its story, check \"Include data "
+"marked private\"."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:438
+#, python-format
+msgid ""
+"%s is marked private. To generate their story, check \"Include data marked "
+"private\"."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:446
+#, python-format
+msgid ""
+"%s is probably living. To generate their story, check \"Include living "
+"people\"."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:460
+#, python-format
+msgid "%(who)s was born"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:461
+#, python-format
+msgid "%(who)s was stillborn"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:462
+#, python-format
+msgid "%(who)s was baptized"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:463
+#: StoryExport/storyexport_builder.py:464
+#, python-format
+msgid "%(who)s was christened"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:465
+#, python-format
+msgid "%(who)s was blessed"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:466
+#, python-format
+msgid "%(who)s was confirmed"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:467
+#, python-format
+msgid "%(who)s took First Communion"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:468
+#, python-format
+msgid "%(who)s celebrated their Bar Mitzvah"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:469
+#, python-format
+msgid "%(who)s celebrated their Bas Mitzvah"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:470
+#, python-format
+msgid "%(who)s was adopted"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:471
+#, python-format
+msgid "%(who)s graduated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:472
+#, python-format
+msgid "%(who)s was awarded a degree"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:473
+#, python-format
+msgid "%(who)s emigrated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:474
+#, python-format
+msgid "%(who)s immigrated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:475
+#, python-format
+msgid "%(who)s was naturalized"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:476
+#, python-format
+msgid "%(who)s was ordained"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:477
+#, python-format
+msgid "%(who)s was elected"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:478
+#, python-format
+msgid "%(who)s retired"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:479
+#, python-format
+msgid "%(who)s died"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:480
+#, python-format
+msgid "%(who)s was buried"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:481
+#, python-format
+msgid "%(who)s was cremated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:482
+#, python-format
+msgid "%(who)s had their estate probated"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:487
+#: StoryExport/storyexport_builder.py:488
+#, fuzzy, python-format
+#| msgid "(5.) Widowed or Married"
+msgid "%(who)s were married"
+msgstr "(5.) Vdovec/vdova nebo ženatý/vdaná"
+
+#: StoryExport/storyexport_builder.py:489
+#, python-format
+msgid "%(who)s had their banns read"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:490
+#, python-format
+msgid "%(who)s signed a marriage contract"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:491
+#, python-format
+msgid "%(who)s took out a marriage license"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:492
+#, python-format
+msgid "%(who)s agreed a marriage settlement"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:493
+#, python-format
+msgid "%(who)s were engaged"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:494
+#, python-format
+msgid "%(who)s were divorced"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:495
+#, fuzzy, python-format
+#| msgid "Used for source"
+msgid "%(who)s filed for divorce"
+msgstr "Použito pro pramen"
+
+#: StoryExport/storyexport_builder.py:496
+#, python-format
+msgid "%(who)s had their marriage annulled"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:497
+#, python-format
+msgid "%(who)s were recorded in the census"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:498
+#, python-format
+msgid "%(who)s lived"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:530
+#, fuzzy, python-format
+#| msgid "%(ancestor1)s and %(ancestor2)s"
+msgid "%(names)s and %(last)s"
+msgstr "%(ancestor1)s a %(ancestor2)s"
+
+#: StoryExport/storyexport_builder.py:568
+#, fuzzy, python-format
+#| msgid "%(type)s: %(value)s"
+msgid "%(type)s (%(role)s)"
+msgstr "%(type)s: %(value)s"
+
+#: StoryExport/storyexport_builder.py:570
+#: StoryExport/storyexport_builder.py:589
+#, fuzzy, python-format
+#| msgid "%(type)s: %(value)s"
+msgid "%(type)s of %(who)s"
+msgstr "%(type)s: %(value)s"
+
+#: StoryExport/storyexport_builder.py:581
+#, python-format
+msgid "%(who)s took part in this %(type)s as %(role)s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:595
+#, fuzzy, python-format
+#| msgid "%(event_type)s: %(date)s"
+msgid "%(moment)s on %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: StoryExport/storyexport_builder.py:597
+#, fuzzy, python-format
+#| msgid "%(event_type)s: %(date)s"
+msgid "%(moment)s in %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: StoryExport/storyexport_builder.py:599
+#, fuzzy, python-format
+#| msgid "%(event_type)s: %(date)s"
+msgid "%(moment)s %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: StoryExport/storyexport_builder.py:602
+#, fuzzy, python-format
+#| msgid "%(date)s, %(place)s"
+msgid "%(moment)s in %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#: StoryExport/storyexport_builder.py:750
+#, python-format
+msgid "%d moment"
+msgid_plural "%d moments"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: StoryExport/storyexport_builder.py:790
+msgid "This person isn't included with the chosen privacy settings."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:810
+#, python-format
+msgid "%s has no events to build a story from."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:813
+#: StoryExport/storyexport_builder.py:862
+#, python-format
+msgid "The Story of %s"
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:817
+#, python-format
+msgid "%(moments)s from %(name)s's recorded life."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:840
+msgid "This family isn't included with the chosen privacy settings."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:844
+#, fuzzy
+#| msgid "Show the previous family"
+msgid "this family"
+msgstr "Zobrazit předchozí rodinu"
+
+#: StoryExport/storyexport_builder.py:854
+msgid ""
+"This family has no events to build a story from: not on the family itself, "
+"and no births or deaths recorded for its members."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:865
+#, python-format
+msgid "%(moments)s from the life of %(couple)s and %(children)s."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:869
+#, python-format
+msgid "their child"
+msgid_plural "their %(count)d children"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: StoryExport/storyexport_builder.py:874
+#, python-format
+msgid "%(moments)s from the life of %(couple)s."
+msgstr ""
+
+#: StoryExport/storyexport_builder.py:888
+#, fuzzy, python-format
+#| msgid "Family shape"
+msgid "Family %s"
+msgstr "Tvar zobrazení rodiny"
+
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
 msgid "Surname Mapping"
@@ -25035,7 +25431,8 @@ msgstr ""
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
-msgstr "Neexistují žádné asociace, není tedy potřeba vytvářet vzájemné asociace"
+msgstr ""
+"Neexistují žádné asociace, není tedy potřeba vytvářet vzájemné asociace"
 
 #: TMGimporter/importtmg.gpr.py:45
 msgid "TMG Project Backup"
@@ -25195,8 +25592,8 @@ msgid ""
 msgstr ""
 "Zálohu TMG nelze přečíst: informace o verzi PJC chybí nebo je nečitelná.\n"
 "\n"
-"Ověřte, že používáte zálohu vytvořenou v TMG 9.02 nebo novějším (PjcVersion >"
-"= 11.0)."
+"Ověřte, že používáte zálohu vytvořenou v TMG 9.02 nebo novějším (PjcVersion "
+">= 11.0)."
 
 #: TMGimporter/libtmg.py:2365
 msgid "TMG version not supported"
@@ -25718,8 +26115,8 @@ msgstr ""
 msgid ""
 "%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
 msgstr ""
-"Uzavření předmanželské majetkové dohody: %(female_name)s (%(year)s; %(place)"
-"s)."
+"Uzavření předmanželské majetkové dohody: %(female_name)s (%(year)s; "
+"%(place)s)."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:670
 #, python-format
