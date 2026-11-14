@@ -6,13 +6,14 @@
 # Petr Hejl <hejl.petr@gmail.com>, 2016.
 # Milan <mobrcian@hotmail.com>, 2025, 2026.
 # Jiri Svanda <svanda.jiri@gmail.com>, 2026.
+# Michal Várady <majkl82@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-15 13:51+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-10-15 01:14+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -35,10 +36,8 @@ msgid "Display all names of all people"
 msgstr ""
 
 #: AllNamesQuickview/AllNames.py:54
-#, fuzzy
-#| msgid "Media Type"
 msgid "Name Type"
-msgstr "Typ média"
+msgstr "Typ jména"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -132,17 +131,12 @@ msgstr ""
 #: LastChange/LastChangeReport.py:397
 #: LinesOfDescendency/lines-of-descendency.py:73
 #: PersonEverything/PersonEverything.py:1029 ToDoReport/TodoReport.py:903
-#, fuzzy
-#| msgid ""
-#| "Whether to use tabbed panels for the different sections of the pages."
 msgid "The style used for the title of the page."
-msgstr "Zda použít tabelované panely pro různé sekce stránek."
+msgstr "Styl použitý pro nadpis stránky."
 
 #: AncestryTableReport/AncestryTableReport.gpr.py:3
-#, fuzzy
-#| msgid "Restore"
 msgid "Ancestry Table"
-msgstr "Obnovit"
+msgstr "Tabulka předků"
 
 #: AncestryTableReport/AncestryTableReport.gpr.py:4
 msgid "Produces a table of ancestry about a person"
@@ -159,35 +153,29 @@ msgid "Ancestry Table Report for %(name)s"
 msgstr ""
 
 #: AncestryTableReport/AncestryTableReport.py:311
-#, fuzzy, python-format
-#| msgid "Generation "
+#, python-format
 msgid "Generation %(gen_number)d"
-msgstr "Generace "
+msgstr "Generace %(gen_number)d"
 
 #: AncestryTableReport/AncestryTableReport.py:360
-#, fuzzy, python-format
-#| msgid "Total Number of Ancestors found "
+#, python-format
 msgid "Number of Ancestors for %(name)s"
-msgstr "Celkový počet nalezených předků "
+msgstr "Počet předků – %(name)s"
 
 #: AncestryTableReport/AncestryTableReport.py:370
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-#, fuzzy
-#| msgid "General Data"
 msgid "Generation"
-msgstr "Obecná data"
+msgstr "Generace"
 
 #: AncestryTableReport/AncestryTableReport.py:472
 msgid "To start a new page after each generation."
 msgstr ""
 
 #: AncestryTableReport/AncestryTableReport.py:475
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of ancestors per generation"
-msgstr "Počet stránek"
+msgstr "Počet předků v jednotlivých generacích"
 
 #: AncestryTableReport/AncestryTableReport.py:476
 msgid "Add a page with tne number of ancestors per generation."
@@ -211,39 +199,24 @@ msgid "The style used for the title of the report."
 msgstr ""
 
 #: AncestryTableReport/AncestryTableReport.py:541
-#, fuzzy
-#| msgid ""
-#| "Whether to use tabbed panels for the different sections of the pages."
 msgid "The style used for the Sosa number of the paternal branch."
-msgstr "Zda použít tabelované panely pro různé sekce stránek."
+msgstr "Styl použitý pro číslo Sosa v otcovské větvi."
 
 #: AncestryTableReport/AncestryTableReport.py:552
-#, fuzzy
-#| msgid ""
-#| "Whether to use tabbed panels for the different sections of the pages."
 msgid "The style used for the Sosa number of the maternal branch."
-msgstr "Zda použít tabelované panely pro různé sekce stránek."
+msgstr "Styl použitý pro číslo Sosa v mateřské větvi."
 
 #: AncestryTableReport/AncestryTableReport.py:562
-#, fuzzy
-#| msgid ""
-#| "Whether to use tabbed panels for the different sections of the pages."
 msgid "The style used for the data of the males."
-msgstr "Zda použít tabelované panely pro různé sekce stránek."
+msgstr "Styl použitý pro údaje mužů."
 
 #: AncestryTableReport/AncestryTableReport.py:572
-#, fuzzy
-#| msgid ""
-#| "Whether to use tabbed panels for the different sections of the pages."
 msgid "The style used for the data of the females."
-msgstr "Zda použít tabelované panely pro různé sekce stránek."
+msgstr "Styl použitý pro údaje žen."
 
 #: AncestryTableReport/AncestryTableReport.py:583
-#, fuzzy
-#| msgid ""
-#| "Whether to use tabbed panels for the different sections of the pages."
 msgid "The style used for the marriage."
-msgstr "Zda použít tabelované panely pro různé sekce stránek."
+msgstr "Styl použitý pro údaje o sňatku."
 
 #: AncestryTableReport/AncestryTableReport.py:593
 msgid ""
@@ -252,26 +225,21 @@ msgid ""
 msgstr ""
 
 #: AncestryTableReport/AncestryTableReport.py:632
-#, fuzzy
-#| msgid "The style used for the table of contents header."
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
-msgstr "Styl použitý pro záhlaví obsahu."
+msgstr ""
+"Styl použitý pro záhlaví tabulky počtů předků v jednotlivých generacích."
 
 #: AncestryTableReport/AncestryTableReport.py:643
-#, fuzzy
-#| msgid "The style used for the table of contents header."
 msgid "The style used for the number of ancestors per generation."
-msgstr "Styl použitý pro záhlaví obsahu."
+msgstr "Styl použitý pro počty předků v jednotlivých generacích."
 
 #: AncestryTableReport/AncestryTableReport.py:654
-#, fuzzy
-#| msgid ""
-#| "Whether to use tabbed panels for the different sections of the pages."
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr "Zda použít tabelované panely pro různé sekce stránek."
+msgstr ""
+"Styl použitý pro řádek celkového počtu předků v jednotlivých generacích."
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
@@ -287,10 +255,8 @@ msgid "Double-click on a row to edit the event."
 msgstr ""
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:59
-#, fuzzy
-#| msgid "Other participants"
 msgid "Participant"
-msgstr "Ostatní účastníci"
+msgstr "Účastník"
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:22
 msgid ""
@@ -299,10 +265,8 @@ msgid ""
 msgstr ""
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:26
-#, fuzzy
-#| msgid "Archive file"
 msgid "Archive Assist"
-msgstr "Archivní soubor"
+msgstr "Archivní pomocník"
 
 #: AssociationsTool/associationstool.gpr.py:43
 msgid "Check Associations data"
@@ -327,16 +291,13 @@ msgid "Error processing person %s: %s"
 msgstr ""
 
 #: AssociationsTool/associationstool.py:252
-#, fuzzy
-#| msgid "Process relationships..."
 msgid "Processing associations..."
-msgstr "Zpracovat vztahy..."
+msgstr "Zpracování asociací..."
 
 #: AssociationsTool/associationstool.py:257
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Could not create progress dialog: %s"
-msgstr "Nezdařilo se vytvořit adresář: %(path)s"
+msgstr "Nepodařilo se vytvořit dialog průběhu: %s"
 
 #: AssociationsTool/associationstool.py:281
 #, python-format
@@ -350,10 +311,8 @@ msgstr ""
 
 #: AssociationsTool/associationstool.py:365
 #: AssociationsTool/associationstool.py:448
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Starting Name"
-msgstr "Alternativní jméno"
+msgstr "Jméno výchozí osoby"
 
 #: AssociationsTool/associationstool.py:368
 #: AssociationsTool/associationstool.py:451
@@ -362,10 +321,9 @@ msgstr ""
 
 #: AssociationsTool/associationstool.py:427
 #: AssociationsTool/associationstool.py:459
-#, fuzzy, python-format
-#| msgid "Total Number of Ancestors found "
+#, python-format
 msgid "Total associations found: %d"
-msgstr "Celkový počet nalezených předků "
+msgstr "Celkový počet nalezených asociací: %d"
 
 #: AssociationsTool/associationstool.py:553
 msgid "Edit Starting Person"
@@ -376,38 +334,28 @@ msgid "Edit Associate Person"
 msgstr ""
 
 #: AssociationsTool/associationstool.py:555
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Edit Association"
-msgstr "Výběr stránek"
+msgstr "Upravit asociaci"
 
 #: AssociationsTool/associationstool.py:557
 msgid "Copy row to clipboard"
 msgstr ""
 
 #: AssociationsTool/associationstool.py:558
-#, fuzzy
-#| msgid "Estimated date"
 msgid "Create Note from row"
-msgstr "Odhadovaná data"
+msgstr "Vytvořit poznámku z řádku"
 
 #: AssociationsTool/associationstool.py:672
-#, fuzzy
-#| msgid "Description: "
 msgid "Association:"
-msgstr "Popis: "
+msgstr "Asociace:"
 
 #: AssociationsTool/associationstool.py:673
-#, fuzzy
-#| msgid "Used for person"
 msgid "Starting Person"
-msgstr "Použito pro osobu"
+msgstr "Výchozí osoba"
 
 #: AssociationsTool/associationstool.py:675
-#, fuzzy
-#| msgid "Print the notes type"
 msgid "Link type"
-msgstr "Tisknout typ poznámek"
+msgstr "Typ vazby"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -428,28 +376,20 @@ msgid "Select filter to restrict people"
 msgstr "Vyberte filtr pro omezení osob"
 
 #: AttachSourceTool/AttachSourceTool.py:81
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Source type"
-msgstr "Rejtřík pramenů"
+msgstr "Typ pramene"
 
 #: AttachSourceTool/AttachSourceTool.py:82
-#, fuzzy
-#| msgid "Used for source"
 msgid "New source"
-msgstr "Použito pro pramen"
+msgstr "Nový pramen"
 
 #: AttachSourceTool/AttachSourceTool.py:83
-#, fuzzy
-#| msgid "Export sources"
 msgid "Existing source"
-msgstr "Exportovat prameny"
+msgstr "Existující pramen"
 
 #: AttachSourceTool/AttachSourceTool.py:84
-#, fuzzy
-#| msgid "Select the type of graph"
 msgid "Select the type of source to attach"
-msgstr "Zvolte typ grafu"
+msgstr "Zvolte typ pramene, který chcete připojit"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
@@ -480,11 +420,10 @@ msgstr ""
 
 #: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
-msgstr "Připojování zdrojů..."
+msgstr "Připojování pramenů..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
-#, fuzzy
 msgid "Done!\n"
 msgstr "Hotovo!\n"
 
@@ -714,10 +653,8 @@ msgid "Add via the Events tab of the Edit Person dialog."
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:582
-#, fuzzy
-#| msgid "Relationship to Mother"
 msgid "relationship type unknown"
-msgstr "Vztah k matce"
+msgstr "neznámý typ vztahu"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
@@ -775,15 +712,12 @@ msgid "Select the family you wish to examine."
 msgstr ""
 
 #: BirthOrder/birthorder.glade:155
-#, fuzzy
 msgid "Accept All"
-msgstr "Vybrat soubor"
+msgstr "Přijmout vše"
 
 #: BirthOrder/birthorder.glade:159
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
 msgid "This button will sort all of the families listed."
-msgstr "Toto tlačíko vymaže všechna datová pole zde zobrazená."
+msgstr "Toto tlačítko seřadí všechny uvedené rodiny."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
@@ -853,10 +787,8 @@ msgid "Edit Families"
 msgstr ""
 
 #: BirthOrder/birthorder.py:275
-#, fuzzy
-#| msgid "Looking for place fields"
 msgid "Looking for children birth order"
-msgstr "Hledají se pole míst"
+msgstr "Zjišťování pořadí narození dětí"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:34
@@ -868,10 +800,8 @@ msgid "a gramplet that displays the birthdays of the living people"
 msgstr ""
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:47
-#, fuzzy
-#| msgid "(sort by name)"
 msgid "Sort birthdays by"
-msgstr "(seřadit dle jména)"
+msgstr "Řadit narozeniny podle"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:49
 #: DateOfDeathGramplet/DateOfDeathGramplet.py:42
@@ -894,11 +824,11 @@ msgstr "Zobrazit pouze dny narození se štítkem"
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
-msgstr "Vypočítat odhadovaný datum"
+msgstr "Vypočítat odhadovaná data"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
-msgstr "Vypočítá odhadovaný datum narození a úmrtí."
+msgstr "Vypočítá odhadovaná data narození a úmrtí."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Calculated Date Estimates"
@@ -906,51 +836,46 @@ msgstr "Vypočtená odhadovaná data"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid "Source to remove and/or add"
-msgstr "Pramen o odebrání a/nebo přidání"
+msgstr "Pramen k odstranění a/nebo přidání"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:103
-#, fuzzy
 msgid "Remove previously added events, notes, and source"
-msgstr "Odstranit dříve přidané datumy"
+msgstr "Odstranit dříve přidané události, poznámky a pramen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
+"Odstraní vypočtené události, poznámky a pramen ihned po stisknutí tlačítka "
+"Spustit"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:108
-#, fuzzy
 msgid "Do not add birth events"
-msgstr "přidáno narození %s"
+msgstr "Nepřidávat události narození"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:109
-#, fuzzy
 msgid "Add birth events without dates"
-msgstr "událost narození bez data"
+msgstr "Přidat události narození bez dat"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:110
-#, fuzzy
 msgid "Add birth events with dates"
-msgstr "událost narození bez data"
+msgstr "Přidat události narození s daty"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Add a birth events with or without estimated dates"
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:115
-#, fuzzy
 msgid "Do not add death events"
-msgstr "přidáno úmrtí %s"
+msgstr "Nepřidávat události úmrtí"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:116
-#, fuzzy
 msgid "Add death events without dates"
-msgstr "Přidat odhadovaná data narození"
+msgstr "Přidat události úmrtí bez dat"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:117
-#, fuzzy
 msgid "Add death events with dates"
-msgstr "Přidat odhadovaná data narození"
+msgstr "Přidat události úmrtí s daty"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Add death events with or without estimated dates"
@@ -962,7 +887,7 @@ msgstr "Maximální věk"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:125
 msgid "Maximum age that one can live to"
-msgstr "Maximální věk, který může osoba žít"
+msgstr "Maximální věk, jehož se lze dožít"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:131
 msgid "Maximum age difference between siblings"
@@ -973,7 +898,6 @@ msgid "Average years between two generations"
 msgstr "Průměrný počet let mezi dvěma generacemi"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:140
-#, fuzzy
 msgid "Estimated Dates"
 msgstr "Odhadovaná data"
 
@@ -1011,19 +935,16 @@ msgid ""
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:204
-#, fuzzy
 msgid "Select None"
-msgstr "Vybrat poznámku"
+msgstr "Zrušit výběr"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:205
-#, fuzzy
 msgid "Toggle Selection"
-msgstr "Výběr nástroje"
+msgstr "Obrátit výběr"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:206
-#, fuzzy
 msgid "Add Selected Events"
-msgstr "Vybrat událost"
+msgstr "Přidat vybrané události"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:212
 msgid "Remove Events, Notes, and Source and Reselect Data"
@@ -1036,34 +957,28 @@ msgid ""
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
-#, fuzzy
 msgid "Remove and Run Select Again"
-msgstr "Odstranit vybranou osobu"
+msgstr "Odstranit a znovu spustit výběr"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:218
-#, fuzzy
 msgid "Reselect Data"
-msgstr "Vybrat otce"
+msgstr "Znovu vybrat údaje"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:219
-#, fuzzy
 msgid "Are you sure you want to reselect data?"
-msgstr "Jste si jistí že chcete vyčistit historii operací?"
+msgstr "Opravdu chcete znovu vybrat údaje?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:220
-#, fuzzy
 msgid "Run Select Again"
-msgstr "Výpis výběru"
+msgstr "Znovu spustit výběr"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:240
-#, fuzzy
 msgid "Evidence"
-msgstr "Bydliště"
+msgstr "Podklad"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:240
-#, fuzzy
 msgid "Relative"
-msgstr "Příbuzní"
+msgstr "Příbuzná osoba"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:261
 msgid "Removing old estimations... "
@@ -1075,7 +990,6 @@ msgid "Removing '%s'..."
 msgstr "Odstraňuji '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:338
-#, fuzzy
 msgid "done!\n"
 msgstr "Hotovo!\n"
 
@@ -1094,24 +1008,20 @@ msgstr ""
 "\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:395
-#, fuzzy
 msgid "Add birth and death events"
-msgstr "Přidat novou událost"
+msgstr "Přidat události narození a úmrtí"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:397
-#, fuzzy
 msgid "Add birth event"
-msgstr "chybí událost narození"
+msgstr "Přidat událost narození"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:399
-#, fuzzy
 msgid "Add death event"
-msgstr "Přidat novou událost"
+msgstr "Přidat událost úmrtí"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:445
-#, fuzzy
 msgid "No events to be added."
-msgstr "Nebyl přidán žádný popis události."
+msgstr "Nejsou žádné události k přidání."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:489
 msgid "Selecting... "
@@ -1128,13 +1038,13 @@ msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:519
-#, fuzzy, python-format
+#, python-format
 msgid "Added birth event based on %s"
-msgstr "přidáno narození %s"
+msgstr "Událost narození byla přidána na základě %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:521
 msgid "Estimated birth date"
-msgstr "Odhadovaný datum narození"
+msgstr "Odhadované datum narození"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:531
 #, python-format
@@ -1142,13 +1052,13 @@ msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:534
-#, fuzzy, python-format
+#, python-format
 msgid "Added death event based on %s"
-msgstr "přidáno úmrtí %s"
+msgstr "Událost úmrtí byla přidána na základě %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:536
 msgid "Estimated death date"
-msgstr "Odhadovaný datum úmrtí"
+msgstr "Odhadované datum úmrtí"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:553
 msgid " Done! Committing..."
@@ -1166,7 +1076,7 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
-msgstr "Odhadovaná data"
+msgstr "Odhadované datum"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
@@ -1183,20 +1093,16 @@ msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking Given Names"
-msgstr "Kontrolují se názvy míst"
+msgstr "Kontrolují se křestní jména"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
 msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Affected Names"
-msgstr "Alternativní jméno"
+msgstr "Dotčená jména"
 
 #: ChangeGivenNames/changenames.glade:32
 msgid ""
@@ -1206,10 +1112,8 @@ msgid ""
 msgstr ""
 
 #: ChangeGivenNames/changenames.glade:107
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Edit selection"
-msgstr "Výběr stránek"
+msgstr "Upravit výběr"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
 msgid "Chat With Tree Interactive Addon"
@@ -1370,9 +1274,8 @@ msgid "A view showing relationships and events for a person"
 msgstr ""
 
 #: CombinedView/combinedview.py:537
-#, fuzzy
 msgid "Edit the active event"
-msgstr "Přidat novou událost"
+msgstr "Upravit aktivní událost"
 
 #: CombinedView/combinedview.py:595
 msgid "Show Tags"
@@ -1442,16 +1345,12 @@ msgid "Show the previous family"
 msgstr ""
 
 #: ContextView/ContextView.py:575
-#, fuzzy
-#| msgid "Used for family"
 msgid "Show the next family"
-msgstr "Použito pro rodinu"
+msgstr "Zobrazit následující rodinu"
 
 #: ContextView/ContextView.py:899
-#, fuzzy
-#| msgid "Used for person"
 msgid "No person is active."
-msgstr "Použito pro osobu"
+msgstr "Není aktivní žádná osoba."
 
 #: ContextView/ContextView.py:915
 #, python-format
@@ -1477,32 +1376,24 @@ msgid "About Context View"
 msgstr ""
 
 #: ContextView/ContextView.py:1592
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show tag colour"
-msgstr "Zobrazit duplicity"
+msgstr "Zobrazit barvu štítku"
 
 #: ContextView/ContextView.py:1613
 msgid "Details in each box"
 msgstr ""
 
 #: ContextView/ContextView.py:1617
-#, fuzzy
-#| msgid "Media Type"
 msgid "Name only"
-msgstr "Typ média"
+msgstr "Pouze jméno"
 
 #: ContextView/ContextView.py:1618
-#, fuzzy
-#| msgid "Name and Surname"
 msgid "Name and dates"
-msgstr "Jméno a příjmení"
+msgstr "Jméno a data"
 
 #: ContextView/ContextView.py:1619
-#, fuzzy
-#| msgid "Full date and place"
 msgid "Name, dates and places"
-msgstr "Celé datum i místo"
+msgstr "Jméno, data a místa"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -1536,10 +1427,9 @@ msgstr "Nezdařilo se vytvořit strukturu adresáře: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:369 D3Charts/AncestralFanChart.py:444
 #: D3Charts/DescendantIndentedTree.py:1559
-#, fuzzy, python-format
-#| msgid "Unable to copy web site template files from \"%(path)s\""
+#, python-format
 msgid "Failed to copy web files : %s"
-msgstr "Nelze zkopírovat soubory šablony WWW stránek z \"%(path)s\""
+msgstr "Nepodařilo se zkopírovat webové soubory: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:817
 msgid "Ancestral Collapsible Tree Options"
@@ -1552,10 +1442,8 @@ msgid "Include Generations"
 msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:847
-#, fuzzy
-#| msgid "Select the background color scheme"
 msgid "Male Background Color"
-msgstr "Zvolte barevné schéma pozadí"
+msgstr "Barva pozadí mužů"
 
 #: D3Charts/AncestralCollapsibleTree.py:848 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
@@ -1629,10 +1517,8 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:914
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendant Indented Tree"
-msgstr "Strom potomků"
+msgstr "Strom potomků s odsazením"
 
 #: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
@@ -1745,10 +1631,8 @@ msgid "How to handle living people."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1892
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to include people who may have recently died."
-msgstr "Zda zahrnovat stránky archivů či nikoli."
+msgstr "Zda zahrnout osoby, které mohly nedávno zemřít."
 
 #: D3Charts/DescendantIndentedTree.py:1900
 msgid "Navigation"
@@ -1865,20 +1749,16 @@ msgid "Exclude center person"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1970
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to generate links for center person."
-msgstr "Zda zahrnovat stránky archivů či nikoli."
+msgstr "Zda generovat odkazy na výchozí osobu, či nikoli."
 
 #: D3Charts/DescendantIndentedTree.py:1975
 msgid "Exclude Spouses"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1976
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to generate links for spouses."
-msgstr "Zda zahrnovat stránky archivů či nikoli."
+msgstr "Zda generovat odkazy na partnery, či nikoli."
 
 #: D3Charts/DescendantIndentedTree.py:1983
 msgid "Biography Content"
@@ -2086,10 +1966,8 @@ msgid "Largest Segment"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:159
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Source(s)"
-msgstr "Rejtřík pramenů"
+msgstr "Pramen(y)"
 
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
@@ -2113,10 +1991,8 @@ msgid "Not specified"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
-#, fuzzy
-#| msgid "M"
 msgid "cM"
-msgstr "M"
+msgstr "cM"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
@@ -2141,10 +2017,8 @@ msgstr "Prameny?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
-#, fuzzy
-#| msgid "Surnames Index"
 msgid "Surname, Given"
-msgstr "Rejstřík příjmení"
+msgstr "Příjmení, křestní jméno"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:155
 #: GrampyScript/GrampyScript.py:175 GrampyScript/GrampyScript.py:337
@@ -2158,25 +2032,20 @@ msgid "Abandon"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
-#, fuzzy
-#| msgid "Used for person"
 msgid "New person"
-msgstr "Použito pro osobu"
+msgstr "Nová osoba"
 
 #: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:99
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "No relation to active person"
-msgstr "Vztah k otci"
+msgstr "Bez vazby na aktivní osobu"
 
 #: DataEntryGramplet/DataEntryGramplet.py:100
-#, fuzzy
 msgid "Add as a Parent"
-msgstr "Přidat novou událost"
+msgstr "Přidat jako rodiče"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
 msgid "Add as a Mother"
@@ -2438,10 +2307,8 @@ msgid "Clear all results and reset"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Ready to search"
-msgstr "Vyhledat osobu"
+msgstr "Připraveno k vyhledávání"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-brace-format
@@ -2455,10 +2322,8 @@ msgid "mentioned in note"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:251
-#, fuzzy
-#| msgid "Used for family"
 msgid "Note on Family"
-msgstr "Použito pro rodinu"
+msgstr "Poznámka k rodině"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:264
 msgid "sibling"
@@ -2474,10 +2339,8 @@ msgid "%s (association)"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:283
-#, fuzzy
-#| msgid "Used for person"
 msgid "Note on Person"
-msgstr "Použito pro osobu"
+msgstr "Poznámka k osobě"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:330
 #, python-format
@@ -2555,10 +2418,8 @@ msgid "Error during search: {}"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:516
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Resuming search..."
-msgstr "Odstraňuji '%s'..."
+msgstr "Pokračuje se ve vyhledávání..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:524
 msgid "Search interrupted by user"
@@ -2576,10 +2437,8 @@ msgid ""
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:180
-#, fuzzy
-#| msgid "Export sources"
 msgid "No Source"
-msgstr "Exportovat prameny"
+msgstr "Bez pramene"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onclick"
@@ -2591,16 +2450,12 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:209
 #: LinesOfDescendency/lines-of-descendency.py:56
-#, fuzzy
-#| msgid "Restore"
 msgid "Ancestor"
-msgstr "Obnovit"
+msgstr "Předek"
 
 #: DenominoViso/DenominoViso.py:210
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendant"
-msgstr "Strom potomků"
+msgstr "Potomek"
 
 #: DenominoViso/DenominoViso.py:215
 msgid "Fan"
@@ -2702,8 +2557,6 @@ msgid "The central person for the tree"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2564
-#, fuzzy
-#| msgid "The title of the web site"
 msgid "Title of the webpage"
 msgstr "Název webové stránky"
 
@@ -2767,10 +2620,8 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2608
 #: RepositoriesReport/RepositoriesReportAlt.py:472
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Include private records"
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zahrnout soukromé záznamy"
 
 #: DenominoViso/DenominoViso.py:2609
 msgid "Whether to leave out private data."
@@ -2802,9 +2653,8 @@ msgid ""
 msgstr "Zda zahrnout úmrtí příbuzných během života osoby."
 
 #: DenominoViso/DenominoViso.py:2630
-#, fuzzy
 msgid "Include witness note"
-msgstr "Zahrnout obrázky a mediální objekty"
+msgstr "Zahrnout poznámku svědka"
 
 #: DenominoViso/DenominoViso.py:2631
 msgid ""
@@ -2813,10 +2663,8 @@ msgid ""
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2636
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include a person's attributes"
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zda zahrnout atributy osoby"
 
 #: DenominoViso/DenominoViso.py:2640
 msgid "Whether to include a person's addresses."
@@ -2843,9 +2691,8 @@ msgid "Include URL description"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2652
-#, fuzzy
 msgid "Whether to include the description of the first URL"
-msgstr "Zda zahrnout mediální objekty do WWW stránek"
+msgstr "Zda zahrnout popis první adresy URL"
 
 #: DenominoViso/DenominoViso.py:2657
 msgid "Include Sources"
@@ -2853,7 +2700,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2658
 msgid "Whether to include a person's sources."
-msgstr "Zda zahrnout zdroje osoby."
+msgstr "Zda zahrnout prameny osoby."
 
 #: DenominoViso/DenominoViso.py:2661
 msgid "Image Options"
@@ -2864,10 +2711,8 @@ msgid "Include Photos/Images from Gallery"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2664
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include images"
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zda zahrnout obrázky"
 
 #: DenominoViso/DenominoViso.py:2667
 msgid "Copy Image"
@@ -2886,16 +2731,12 @@ msgid "Determine images with which attributes to in/exclude"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2679
-#, fuzzy
-#| msgid "Include references in indexes"
 msgid "Include Image source references"
-msgstr "Zahrnout odkazy v indexech"
+msgstr "Zahrnout odkazy na prameny obrázků"
 
 #: DenominoViso/DenominoViso.py:2680
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include references for images"
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zda zahrnout odkazy k obrázkům"
 
 #: DenominoViso/DenominoViso.py:2683
 msgid "Source reference attribute"
@@ -3041,10 +2882,8 @@ msgid "to directory:"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2862
-#, fuzzy
-#| msgid "Select an image to begin..."
 msgid "Save images in ..."
-msgstr "Vybrat obrázek kterým se začne..."
+msgstr "Uložit obrázky do..."
 
 #: DenominoViso/DenominoViso.py:2912
 msgid "should be"
@@ -3071,9 +2910,8 @@ msgid "Give a filename ..."
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:3115
-#, fuzzy
 msgid "Relation type"
-msgstr "Příbuzní"
+msgstr "Typ vztahu"
 
 #: DenominoViso/DenominoViso.py:3120
 msgid "Use dashed linestyle"
@@ -3134,10 +2972,8 @@ msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:374
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendants Report"
-msgstr "Strom potomků"
+msgstr "Sestava potomků"
 
 #: DescendantBooks/DescendantBookReport.py:423
 #: DescendantBooks/DetailedDescendantBookReport.py:423
@@ -3158,11 +2994,8 @@ msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1371
-#, fuzzy
-#| msgid "Select filter to restrict people that appear on web site"
 msgid "Select filter to restrict people that appear in the report"
-msgstr ""
-"Vyberte filtr pro omezení osob, které se objeví v na webových stránkách"
+msgstr "Vyberte filtr pro omezení osob, které se objeví v sestavě"
 
 #: DescendantBooks/DescendantBookReport.py:585
 msgid "The style used for the table of contents header."
@@ -3173,10 +3006,8 @@ msgid "The style used for the table of contents detail."
 msgstr "Styl použitý pro detaily obsahu."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendant Book"
-msgstr "Strom potomků"
+msgstr "Kniha potomků"
 
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
@@ -3206,22 +3037,16 @@ msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:521
-#, fuzzy
-#| msgid "Indexes pages"
 msgid "Index of Places"
-msgstr "Indexové stránky"
+msgstr "Rejstřík míst"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:544
-#, fuzzy
-#| msgid "Indexes pages"
 msgid "Index of Dates"
-msgstr "Indexové stránky"
+msgstr "Rejstřík dat"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:567
-#, fuzzy
-#| msgid "Indexes pages"
 msgid "Index of Names"
-msgstr "Indexové stránky"
+msgstr "Rejstřík jmen"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:573
 msgid "Report, Generation, Person, Name"
@@ -3414,20 +3239,16 @@ msgstr ""
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendant Count"
-msgstr "Strom potomků"
+msgstr "Počet potomků"
 
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendant Space Tree"
-msgstr "Strom potomků"
+msgstr "Strom potomků SpaceTree"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
 msgid ""
@@ -3445,38 +3266,28 @@ msgid "Matriarchal Line (Female ancestor)"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
-#, fuzzy
-#| msgid "Person page"
 msgid "Dark theme"
-msgstr "Stránka osoby"
+msgstr "Tmavý motiv"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
 msgid "Light theme"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Continue Descendant Tree"
-msgstr "Strom potomků"
+msgstr "Pokračovat ve stromu potomků"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:427
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Alternate Descendant Tree"
-msgstr "Alternativní jméno"
+msgstr "Alternativní strom potomků"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:455
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendant SpaceTree"
-msgstr "Strom potomků"
+msgstr "Strom potomků SpaceTree"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:635
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Total descendants"
-msgstr "Počet stránek"
+msgstr "Celkový počet potomků"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:659
 msgid "Marriages/Families:<ul>"
@@ -3490,16 +3301,14 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:787
-#, fuzzy, python-format
-#| msgid "Unable to copy web site template files from \"%(path)s\""
+#, python-format
 msgid "Failed to create %s: %s"
-msgstr "Nelze zkopírovat soubory šablony WWW stránek z \"%(path)s\""
+msgstr "Nepodařilo se vytvořit %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:816
-#, fuzzy, python-format
-#| msgid "Unable to copy web site template files from \"%(path)s\""
+#, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr "Nelze zkopírovat soubory šablony WWW stránek z \"%(path)s\""
+msgstr "Nepodařilo se přečíst soubor předlohy %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:827
 #, python-format
@@ -3513,10 +3322,8 @@ msgid "Failed writing file: "
 msgstr "Selhalo zapisování souboru: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:875
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendants of"
-msgstr "Strom potomků"
+msgstr "Potomci osoby:"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:879
 msgid "How to Use the DescendantSpaceTree Viewer"
@@ -3615,10 +3422,8 @@ msgid "Birth/death dates will not be displayed after this year"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1118
-#, fuzzy
-#| msgid "Media Index"
 msgid "Theme preference"
-msgstr "Rejstřík médií"
+msgstr "Preferovaný motiv"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1125
 msgid "Theme color preference for Space Tree"
@@ -3637,10 +3442,8 @@ msgid "Open generated HTML file with default browser."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendants Lines"
-msgstr "Strom potomků"
+msgstr "Linie potomků"
 
 #: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
@@ -3679,13 +3482,8 @@ msgid "The destination file for the content."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1559
-#, fuzzy
-#| msgid ""
-#| "The maximum number of generations to include in the ancestor and "
-#| "descendant trees and graphs"
 msgid "The number of generations to include in the chart. (0 for unlimited)"
-msgstr ""
-"Maximální počet generací obsažených ve stromech a grafech předků a potomků"
+msgstr "Počet generací zahrnutých do grafu. (0 znamená bez omezení)"
 
 #: DescendantsLines/DescendantsLines.py:1564
 msgid "Use d'Aboville descendant numbering system"
@@ -3696,9 +3494,8 @@ msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1569
-#, fuzzy
 msgid "Include an image"
-msgstr "Zahrnout obrázky a mediální objekty"
+msgstr "Zahrnout obrázek"
 
 #: DescendantsLines/DescendantsLines.py:1570
 msgid "Whether to include an image if one is available."
@@ -3721,10 +3518,8 @@ msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1584
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Image Location"
-msgstr "Výběr stránek"
+msgstr "Umístění obrázku"
 
 #: DescendantsLines/DescendantsLines.py:1585
 msgid "Above text"
@@ -3793,9 +3588,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1623
-#, fuzzy
 msgid "Font Name"
-msgstr "Bez příjmení"
+msgstr "Název písma"
 
 #: DescendantsLines/DescendantsLines.py:1625
 msgid ""
@@ -3804,9 +3598,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1628
-#, fuzzy
 msgid "Font base size"
-msgstr "Bez příjmení"
+msgstr "Základní velikost písma"
 
 #: DescendantsLines/DescendantsLines.py:1634
 msgid "Box around Person's block"
@@ -4144,21 +3937,17 @@ msgid "Added items in File that are missing in Database"
 msgstr ""
 
 #: Differences/differences.py:218
-#, fuzzy, python-format
+#, python-format
 msgid "Added %s: %s "
-msgstr "Přidat novou událost"
+msgstr "Přidáno %s: %s "
 
 #: Differences/differences.py:223
-#, fuzzy
-#| msgid "No matching surname."
 msgid "Nothing added"
-msgstr "Žádné odpovídající příjmení"
+msgstr "Nic nepřidáno"
 
 #: Differences/differences.py:337
-#, fuzzy
-#| msgid "Save tree as file"
 msgid "Family Tree file"
-msgstr "Uložit strom jako soubor"
+msgstr "Soubor rodokmenu"
 
 #: Differences/differences.py:339
 msgid "Select a .gpkg or .gramps file"
@@ -4169,9 +3958,8 @@ msgid "Show items that are different"
 msgstr ""
 
 #: Differences/differences.py:343
-#, fuzzy
 msgid "Include items that are different"
-msgstr "Zahrnout obrázky a mediální objekty"
+msgstr "Zahrnout odlišné položky"
 
 #: Differences/differences.py:346
 msgid "Show items missing from file"
@@ -4233,10 +4021,8 @@ msgid "Download media"
 msgstr ""
 
 #: DownloadMedia/DownloadMedia.py:87
-#, fuzzy
-#| msgid "Media Index"
 msgid "Media downloaded"
-msgstr "Rejstřík médií"
+msgstr "Média stažena"
 
 #: DownloadMedia/DownloadMedia.py:88
 #, python-format
@@ -4359,7 +4145,7 @@ msgstr "Rejstříky"
 
 #: DynamicWeb/dynamicweb.py:2913
 msgid "(filtered from _MAX_ total entries)"
-msgstr "(filtrováno z _MAX_ položek celkem)"
+msgstr "(filtrováno; celkový počet položek: _MAX_)"
 
 #: DynamicWeb/dynamicweb.py:2915
 #, python-format
@@ -4405,9 +4191,8 @@ msgid "Configure"
 msgstr "Nastavit"
 
 #: DynamicWeb/dynamicweb.py:2967
-#, fuzzy
 msgid "DynamicWeb_report#Help"
-msgstr "Dynamické WWW stránky"
+msgstr "DynamicWeb_report#Help"
 
 #: DynamicWeb/dynamicweb.py:2972
 msgid "Examples"
@@ -4430,14 +4215,12 @@ msgid "File ready"
 msgstr "Soubor připraven"
 
 #: DynamicWeb/dynamicweb.py:2986 DynamicWeb/dynamicweb.py:5037
-#, fuzzy
 msgid "Include dates columns on the index pages"
-msgstr "Zahrnout sloupec s daty úmrtí na indexových stránkách"
+msgstr "Zahrnout sloupce s daty na stránkách rejstříků"
 
 #: DynamicWeb/dynamicweb.py:2994 DynamicWeb/dynamicweb.py:5066
-#, fuzzy
 msgid "Include a column for media path on the index pages"
-msgstr "Zahrnout sloupec s daty úmrtí na indexových stránkách"
+msgstr "Zahrnout sloupec s cestou k médiu na stránkách rejstříků"
 
 #: DynamicWeb/dynamicweb.py:3002 DynamicWeb/dynamicweb.py:4898
 msgid "Include a map in the individuals and family pages"
@@ -4523,9 +4306,8 @@ msgid "Relationship to Mother"
 msgstr "Vztah k matce"
 
 #: DynamicWeb/dynamicweb.py:3058
-#, fuzzy
 msgid "Repositories Index"
-msgstr "Archivy"
+msgstr "Rejstřík archivů"
 
 #: DynamicWeb/dynamicweb.py:3061
 msgid "Restore"
@@ -4544,9 +4326,8 @@ msgid "SVG tree children distribution"
 msgstr "Rozdělení dětí v SVG stromu"
 
 #: DynamicWeb/dynamicweb.py:3065
-#, fuzzy
 msgid "SVG tree configuration"
-msgstr "Nastavení"
+msgstr "Nastavení SVG stromu"
 
 #: DynamicWeb/dynamicweb.py:3066 DynamicWeb/dynamicweb.py:5110
 msgid "SVG tree graph shape"
@@ -4602,7 +4383,7 @@ msgstr "Několik shod.<br>Upřesněte vyhledávání nebo vyberte ze seznamu ní
 
 #: DynamicWeb/dynamicweb.py:3099
 msgid "Show _MENU_ entries"
-msgstr "Zobrazi položky _MENU_"
+msgstr "Zobrazit položky: _MENU_"
 
 #: DynamicWeb/dynamicweb.py:3100 DynamicWeb/dynamicweb.py:5165
 msgid "Show duplicates"
@@ -4614,7 +4395,7 @@ msgstr "Zobrazuji 0 až 0 z 0 záznamů"
 
 #: DynamicWeb/dynamicweb.py:3104
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
-msgstr "Zobrazuji _START_ až _END_ z _TOTAL_ záznamů"
+msgstr "Zobrazený rozsah: _START_ až _END_; celkem položek: _TOTAL_"
 
 #: DynamicWeb/dynamicweb.py:3107
 msgid "Sort by:"
@@ -4640,7 +4421,7 @@ msgstr "N"
 
 #: DynamicWeb/dynamicweb.py:3122 DynamicWeb/dynamicweb.py:4967
 msgid "Use tabbed panels instead of sections"
-msgstr "Použít tabelované panely místo sekcí"
+msgstr "Použít panely s kartami místo sekcí"
 
 #: DynamicWeb/dynamicweb.py:3126
 msgid "Use the search box above in order to find a person."
@@ -4659,9 +4440,8 @@ msgid "Use a table format for the families index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3142
-#, fuzzy
 msgid "Use a table format for the sources index"
-msgstr "Vložit autora pramenů do názvu pramenů"
+msgstr "Použít tabulkový formát pro rejstřík pramenů"
 
 #: DynamicWeb/dynamicweb.py:3146
 msgid "Use a table format for the places index"
@@ -4700,18 +4480,16 @@ msgstr ""
 "několikrát"
 
 #: DynamicWeb/dynamicweb.py:3162
-#, fuzzy
 msgid "Without name"
-msgstr "Bez příjmení"
+msgstr "Bez jména"
 
 #: DynamicWeb/dynamicweb.py:3163
 msgid "Without surname"
 msgstr "Bez příjmení"
 
 #: DynamicWeb/dynamicweb.py:3164
-#, fuzzy
 msgid "Without title"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "Bez názvu"
 
 #: DynamicWeb/dynamicweb.py:3165 GraphView/graphview.py:1088
 #: LifeLineChartView/lifelinechartview.py:508
@@ -4770,15 +4548,14 @@ msgstr "DynamicWebReport ignoruje odkaz typu '%(class)s'"
 #: DynamicWeb/dynamicweb.py:4257
 #, python-format
 msgid "Family of %(father)s"
-msgstr "Rodina %(father)s"
+msgstr "Rodina – %(father)s"
 
 #: DynamicWeb/dynamicweb.py:4261
 #, python-format
 msgid "Family of %(mother)s"
-msgstr "Rodina %(mother)s"
+msgstr "Rodina – %(mother)s"
 
 #: DynamicWeb/dynamicweb.py:4655
-#, fuzzy
 msgid ""
 "In this note, the following special words are processed:\n"
 "__SEARCH_FORM__ is replaced by a search form.\n"
@@ -4834,16 +4611,15 @@ msgstr "Jméno archivního souboru (s příponou \".zip\" nebo \".tgz\")"
 
 #: DynamicWeb/dynamicweb.py:4730
 msgid "Web site title"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "Název webu"
 
 #: DynamicWeb/dynamicweb.py:4731
 msgid "The title of the web site"
-msgstr "Název webové stránky"
+msgstr "Název webu"
 
 #: DynamicWeb/dynamicweb.py:4736
 msgid "Select filter to restrict people that appear on web site"
-msgstr ""
-"Vyberte filtr pro omezení osob, které se objeví v na webových stránkách"
+msgstr "Vyberte filtr pro omezení osob, které se objeví na webových stránkách"
 
 #: DynamicWeb/dynamicweb.py:4750 DynamicWeb/dynamicweb.py:4773
 msgid "Name format (short)"
@@ -4869,7 +4645,7 @@ msgstr "Zda zahrnout soukromé objekty"
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
-msgstr "Umožní omezit informace na osoby, které nezemřely dávno"
+msgstr "Umožní omezit informace o osobách, které nezemřely dávno"
 
 #: DynamicWeb/dynamicweb.py:4834
 msgid "Export notes"
@@ -4900,14 +4676,12 @@ msgid "Whether or not to include the Repository Pages."
 msgstr "Zda zahrnovat stránky archivů či nikoli."
 
 #: DynamicWeb/dynamicweb.py:4856
-#, fuzzy
 msgid "Include images and media"
 msgstr "Zahrnout obrázky a mediální objekty"
 
 #: DynamicWeb/dynamicweb.py:4857
-#, fuzzy
 msgid "Whether to include images and media in the web pages"
-msgstr "Zda zahrnout mediální objekty do WWW stránek"
+msgstr "Zda zahrnout obrázky a mediální objekty do WWW stránek"
 
 #: DynamicWeb/dynamicweb.py:4862
 msgid "Copy, rename files with an internal Gramps identifier"
@@ -4922,9 +4696,8 @@ msgid "Do not copy, reference existing files"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4868
-#, fuzzy
 msgid "Images and media"
-msgstr "Zahrnout obrázky a mediální objekty"
+msgstr "Obrázky a mediální objekty"
 
 #: DynamicWeb/dynamicweb.py:4871
 msgid "Whether to make a copy of the media"
@@ -4978,7 +4751,7 @@ msgstr "Zda zapnout nastavení stránky"
 
 #: DynamicWeb/dynamicweb.py:4969
 msgid "Whether to use tabbed panels for the different sections of the pages."
-msgstr "Zda použít tabelované panely pro různé sekce stránek."
+msgstr "Zda použít panely s kartami pro různé sekce stránek."
 
 #: DynamicWeb/dynamicweb.py:4975
 msgid "Whether to show the last modification time in the pages footer"
@@ -4989,9 +4762,8 @@ msgid "Whether to insert sources author in the sources title"
 msgstr "Zda vložit autora pramene do názvu pramene"
 
 #: DynamicWeb/dynamicweb.py:4988
-#, fuzzy
 msgid "Whether to hide the Gramps ID"
-msgstr "Zda zobrazit stránky pro místa"
+msgstr "Zda skrýt ID Gramps"
 
 #: DynamicWeb/dynamicweb.py:4996
 msgid "List"
@@ -5026,9 +4798,8 @@ msgid "The default format for the families index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5021
-#, fuzzy
 msgid "Default format for the sources index"
-msgstr "Vložit autora pramenů do názvu pramenů"
+msgstr "Výchozí formát rejstříku pramenů"
 
 #: DynamicWeb/dynamicweb.py:5022
 msgid "The default format for the sources index"
@@ -5043,24 +4814,22 @@ msgid "The default format for the places index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5040
-#, fuzzy
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
-msgstr "Zahrnout sloupec s daty úmrtí na indexových stránkách"
+msgstr ""
+"Zda zahrnout sloupce s daty narození, úmrtí a sňatku na stránkách rejstříků"
 
 #: DynamicWeb/dynamicweb.py:5058
 msgid "Generate a families index page"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5061
-#, fuzzy
 msgid "Whether to generate an index page for families"
-msgstr "Zda zahrnout stránky rodin"
+msgstr "Zda vytvořit stránku rejstříku rodin"
 
 #: DynamicWeb/dynamicweb.py:5068
-#, fuzzy
 msgid "Whether to include a column showing the media path"
-msgstr "Zda zahrnout mediální objekty do WWW stránek"
+msgstr "Zda zahrnout sloupec s cestou k médiu"
 
 #: DynamicWeb/dynamicweb.py:5074
 msgid ""
@@ -5068,14 +4837,12 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"Zda vložit odkazy na položky v indexových stránkách. Například ve stránce "
-"rejstříku médií jména jednotlivců, rodiny, místa, pramene odkazující na "
-"médium."
+"Zda zahrnout odkazy na položky na stránkách rejstříků. Například v rejstříku "
+"médií jména osob, rodin, míst a pramenů, které na médium odkazují."
 
 #: DynamicWeb/dynamicweb.py:5080
-#, fuzzy
 msgid "Default number of entries in the indexes"
-msgstr "Počet položek v tabulkách"
+msgstr "Výchozí počet položek v rejstřících"
 
 #: DynamicWeb/dynamicweb.py:5085
 msgid "The default number of entries shown in one index page"
@@ -5125,15 +4892,15 @@ msgstr "Stránky"
 
 #: DynamicWeb/dynamicweb.py:5189
 msgid "A note to be used as the page header"
-msgstr "Záznam použitý jako hlavička stránky"
+msgstr "Poznámka použitá jako hlavička stránky"
 
 #: DynamicWeb/dynamicweb.py:5192
 msgid "HTML user brand name / icon"
-msgstr "Užitalská HTML značka / ikona"
+msgstr "Uživatelská HTML značka / ikona"
 
 #: DynamicWeb/dynamicweb.py:5194
 msgid "A note to be used as the brand name or image in the menu"
-msgstr "Záznam použitý jako značka nebo obrázek v menu"
+msgstr "Poznámka použitá jako značka nebo obrázek v menu"
 
 #: DynamicWeb/dynamicweb.py:5203
 msgid "Custom pages"
@@ -5156,7 +4923,7 @@ msgstr "Poznámka pro vlastní stránku %(index)i"
 
 #: DynamicWeb/dynamicweb.py:5220
 msgid "A note to be used for the custom page content.\n"
-msgstr "Záznam použitý pro obsah vlastní stránky.\n"
+msgstr "Poznámka použitá pro obsah vlastní stránky.\n"
 
 #: DynamicWeb/dynamicweb.py:5225
 #, python-format
@@ -5197,7 +4964,7 @@ msgstr "Upravit Exif metadata obrázku"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
-msgstr "Gramplet pro prohlížení, úpravy a uložení Exif metadata obrázku"
+msgstr "Gramplet pro prohlížení, úpravy a uložení Exif metadat obrázku"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
@@ -5224,8 +4991,8 @@ msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
 msgstr ""
-"Vložte autora obrázku. Osoba nebo společnost která je odpovědná za vytvoření "
-"obrázku."
+"Zadejte autora obrázku: jméno osoby nebo název společnosti, která obrázek "
+"vytvořila."
 
 #: EditExifMetadata/editexifmetadata.py:171
 msgid "Enter the copyright information for this image. \n"
@@ -5237,7 +5004,7 @@ msgid ""
 "photograph.\n"
 "Example: 1830-01-1 09:30:59"
 msgstr ""
-"Původní datum/čas kdy byl obrázek vytvořen/vyfotografován.\n"
+"Původní datum/čas, kdy byl obrázek vytvořen/vyfotografován.\n"
 "Příklad: 1830-01-1 09:30:59"
 
 #: EditExifMetadata/editexifmetadata.py:177
@@ -5245,7 +5012,7 @@ msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
 msgstr ""
-"Toto je datum/čas kdy byl obrázek naposledy změněn.\n"
+"Toto je datum/čas, kdy byl obrázek naposledy změněn.\n"
 "Příklad: 2011-05-24 14:30:00"
 
 #: EditExifMetadata/editexifmetadata.py:180
@@ -5282,7 +5049,7 @@ msgid ""
 msgstr ""
 "Bude otevřeno nové okno, které vám umožní upravit/měnit Exif metadata tohoto "
 "obrázku.\n"
-" Provedené změny samozřejmě umožní také uložit."
+" V tomto okně bude také možné uložit upravená metadata."
 
 #: EditExifMetadata/editexifmetadata.py:202
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
@@ -5293,7 +5060,7 @@ msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
 msgstr ""
-"Z rozbalovacího seznamu zvolte typ souboru do kterého chcete zkonvertovat "
+"Z rozbalovacího seznamu zvolte typ souboru, do kterého chcete zkonvertovat "
 "Exiv2 nekompatibilní objekt média."
 
 #: EditExifMetadata/editexifmetadata.py:209
@@ -5301,7 +5068,7 @@ msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
-"Pokud váš obrázek není ve formátu který může nést metadata Exif, převedete "
+"Pokud váš obrázek není ve formátu, který může nést metadata Exif, převedete "
 "jej do jiného, který to umožní?"
 
 #: EditExifMetadata/editexifmetadata.py:213
@@ -5322,7 +5089,7 @@ msgstr "Náhled"
 
 #: EditExifMetadata/editexifmetadata.py:406
 msgid "Select an image to begin..."
-msgstr "Vybrat obrázek kterým se začne..."
+msgstr "Vyberte obrázek, kterým se začne..."
 
 #: EditExifMetadata/editexifmetadata.py:425
 msgid ""
@@ -5330,7 +5097,7 @@ msgid ""
 "Please choose a different image..."
 msgstr ""
 "Obrázek není čitelný,\n"
-"Vyberte prosím jiný obrázek..."
+"vyberte prosím jiný obrázek..."
 
 #: EditExifMetadata/editexifmetadata.py:445
 msgid "Please convert this image to an Exiv2- compatible image type..."
@@ -5348,7 +5115,7 @@ msgid ""
 "You will NOT be able to save Exif metadata...."
 msgstr ""
 "Do obrázku nelze zapsat,\n"
-"nebude možné uložit Exif metadata...Vyberte prosím jiný obrázek..."
+"nebude možné uložit Exif metadata...."
 
 #: EditExifMetadata/editexifmetadata.py:652
 msgid "Click Close to close this Thumbnail View Area."
@@ -5398,7 +5165,7 @@ msgstr "Při konverzi vašeho obrázku došlo k chybě."
 
 #: EditExifMetadata/editexifmetadata.py:848
 msgid "Media Path Update"
-msgstr "Aktualizace cest k médiím"
+msgstr "Aktualizace cesty k médiu"
 
 #: EditExifMetadata/editexifmetadata.py:857
 msgid "There has been an error in updating the image file's path!"
@@ -5422,13 +5189,11 @@ msgstr "Znovu zobrazit datová pole, která byla v oblasti úprav vyčištěna."
 
 #: EditExifMetadata/editexifmetadata.py:936
 msgid "This button will clear all of the data fields shown here."
-msgstr "Toto tlačíko vymaže všechna datová pole zde zobrazená."
+msgstr "Toto tlačítko vymaže všechna datová pole zde zobrazená."
 
 #: EditExifMetadata/editexifmetadata.py:940
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
 msgid "This button will clear all of the GPS fields shown here."
-msgstr "Toto tlačíko vymaže všechna datová pole zde zobrazená."
+msgstr "Toto tlačítko vymaže všechna zde zobrazená pole GPS."
 
 #: EditExifMetadata/editexifmetadata.py:944
 msgid ""
@@ -5442,7 +5207,7 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:973
 msgid "Media Object Title"
-msgstr "Titulek objektu médií"
+msgstr "Titulek mediálního objektu"
 
 #: EditExifMetadata/editexifmetadata.py:982
 msgid "media Title: "
@@ -5458,7 +5223,7 @@ msgstr "Popis: "
 
 #: EditExifMetadata/editexifmetadata.py:1008
 msgid "Artist: "
-msgstr "Umělec: "
+msgstr "Autor: "
 
 #: EditExifMetadata/editexifmetadata.py:1009
 msgid "Copyright: "
@@ -5470,7 +5235,7 @@ msgstr "Datum/čas"
 
 #: EditExifMetadata/editexifmetadata.py:1038
 msgid "Original: "
-msgstr "Původ: "
+msgstr "Původní: "
 
 #: EditExifMetadata/editexifmetadata.py:1039
 msgid "Modified: "
@@ -5497,16 +5262,14 @@ msgid "Bad Date/Time"
 msgstr "Nesprávné datum/čas"
 
 #: EditExifMetadata/editexifmetadata.py:1126
-#, fuzzy
-#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 nebo -18:9:48.21)"
+msgstr ""
+"Neplatná zeměpisná šířka (syntax: 18°9′48.21″S, -18.2412 nebo -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1131
-#, fuzzy
-#| msgid "Invalid longitude (syntax: 18°9'"
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr "Neplatná zeměpisná délka (syntax: 18°9'"
+msgstr ""
+"Neplatná zeměpisná délka (syntax: 18°9′48.21″E, -18.2412 nebo -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1140
 msgid ""
@@ -5531,7 +5294,7 @@ msgstr "Aktualizovat titulek média"
 
 #: EditExifMetadata/editexifmetadata.py:1361
 msgid "Media Object Date Created"
-msgstr "Datum objektu média vytvořen"
+msgstr "Datum vytvoření mediálního objektu"
 
 #: EditExifMetadata/editexifmetadata.py:1426
 msgid "Saving Exif metadata to this image..."
@@ -5557,9 +5320,8 @@ msgid ""
 msgstr ""
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
-#, fuzzy
 msgid "Search substring..."
-msgstr "Vybrat..."
+msgstr "Hledá se podřetězec..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
@@ -5611,10 +5373,8 @@ msgstr ""
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:174
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:973
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Ancestor Tree Expanded"
-msgstr "Generací předků"
+msgstr "Rozšířený strom předků"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
 msgid ""
@@ -5643,24 +5403,18 @@ msgid ""
 msgstr ""
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
-#, fuzzy
-#| msgid "Select the number of descending generations"
 msgid "Include descendants of the center person"
-msgstr "Zvolte počet generací potomků"
+msgstr "Zahrnout potomky výchozí osoby"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
-#, fuzzy
-#| msgid "Select the number of descending generations"
 msgid ""
 "Whether to display the children and full descending lines of the center "
 "person"
-msgstr "Zvolte počet generací potomků"
+msgstr "Zda zobrazit děti a celé potomkovské linie výchozí osoby"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Include siblings of ancestors"
-msgstr "Počet stránek"
+msgstr "Zahrnout sourozence předků"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
 msgid "Whether to display the siblings of direct ancestors"
@@ -5682,44 +5436,32 @@ msgid "Descendant Generations"
 msgstr "Generací potomků"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
-#, fuzzy
-#| msgid "Select the number of descending generations"
 msgid "The number of descendant generations to include"
 msgstr "Zvolte počet generací potomků"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
-#, fuzzy
-#| msgid "Whether to include the index of Names at the end of the report."
 msgid "Whether to resize the page to fit the size of the tree."
-msgstr "Zda zahrnout rejstřík jmen na konec zprávy."
+msgstr "Zda přizpůsobit velikost stránky velikosti stromu."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
-#, fuzzy
-#| msgid "Used for family"
 msgid "Use random colors for family lines"
-msgstr "Použito pro rodinu"
+msgstr "Použít náhodné barvy rodinných linií"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
 msgid "Draw each family's connecting lines with a distinct color."
 msgstr ""
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The bold style used for the names."
-msgstr "Styl použitý pro jména."
+msgstr "Tučný styl použitý pro jména."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
-#, fuzzy
-#| msgid "Persons"
 msgid "Person GEXF"
-msgstr "Osoby"
+msgstr "Osoby GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:31
-#, fuzzy
-#| msgid "Persons"
 msgid "_Person GEXF"
-msgstr "Osoby"
+msgstr "_Osoby GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
@@ -5768,9 +5510,8 @@ msgid ""
 msgstr ""
 
 #: ExtractCity/changenames.glade:94
-#, fuzzy
 msgid "_Toggle Selected"
-msgstr "Výběr nástroje"
+msgstr "Přepnout zaškrtnutí vybraných _řádků"
 
 #: ExtractCity/changenames.glade:98
 msgid ""
@@ -5868,10 +5609,8 @@ msgstr ""
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:103
-#, fuzzy
-#| msgid "Relationship to Mother"
 msgid "Family Relationship Tool"
-msgstr "Family Relationship Tool"
+msgstr "Nástroj pro rodinné vztahy"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
@@ -5888,10 +5627,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:70
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship Type"
-msgstr "Relationship Type"
+msgstr "Typ vztahu"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:71
 msgid ""
@@ -5901,7 +5638,7 @@ msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
 msgid "Process relationships..."
-msgstr "Zpracovat vztahy..."
+msgstr "Zpracovávají se vztahy..."
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
@@ -5912,7 +5649,8 @@ msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
 msgstr ""
-"Vytvoří rodinný list se všemi informacemi o osobě jejích partnerech a dětech."
+"Vytvoří rodinný list se všemi informacemi o osobě, jejích partnerech a "
+"dětech."
 
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
@@ -5932,11 +5670,11 @@ msgstr "Adresa: %(location)s"
 #: FamilySheet/FamilySheet.py:469
 #, python-format
 msgid "; %(type)s: %(value)s"
-msgstr ";%(type)s: %(value)s"
+msgstr "; %(type)s: %(value)s"
 
 #: FamilySheet/FamilySheet.py:557
 msgid "Source references:"
-msgstr "Odkazy na zdroje:"
+msgstr "Odkazy na prameny:"
 
 #: FamilySheet/FamilySheet.py:575
 #, python-format
@@ -5970,7 +5708,7 @@ msgstr "%(placeholder)s"
 #: FamilySheet/FamilySheet.py:779 FamilyTree/FamilyTree.py:943
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
-msgstr "%(placeholder)s %(partial)s"
+msgstr "%(placeholder)s (%(partial)s)"
 
 #: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #: FamilyTree/FamilyTree.py:960
@@ -6022,7 +5760,7 @@ msgstr "Zda zahrnout volací jméno a jakým způsobem."
 
 #: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
-msgstr "Zobrazit prázdné pole při chybějících udajích"
+msgstr "Tisknout prázdná pole pro chybějící údaje"
 
 #: FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"
@@ -6030,7 +5768,7 @@ msgstr "Základní styl použitý na zobrazení textu"
 
 #: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
-msgstr "Styl použitý pro klávesu stránky nahoře"
+msgstr "Styl použitý pro identifikační klíč v záhlaví stránky"
 
 #: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
@@ -6042,7 +5780,7 @@ msgstr "Styl použitý pro čísla"
 
 #: FamilySheet/FamilySheet.py:948
 msgid "The style used for footnotes (notes and source references)"
-msgstr "Styl použitý pro poznámky pod čarou (poznámky a odkazy na zdroje)"
+msgstr "Styl použitý pro poznámky pod čarou (poznámky a odkazy na prameny)"
 
 #: FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
@@ -6079,7 +5817,7 @@ msgstr "úmrtí"
 
 #: FamilyTree/FamilyTree.py:917
 msgid "buried"
-msgstr "pohřeb"
+msgstr "pohřbení"
 
 #: FamilyTree/FamilyTree.py:919
 msgid "cremated"
@@ -6112,17 +5850,10 @@ msgid "Ancestor Generations"
 msgstr "Generací předků"
 
 #: FamilyTree/FamilyTree.py:1048
-#, fuzzy
-#| msgid ""
-#| "The maximum number of generations to include in the ancestor and "
-#| "descendant trees and graphs"
 msgid "The number of ancestor generations to include in the tree"
-msgstr ""
-"Maximální počet generací obsažených ve stromech a grafech předků a potomků"
+msgstr "Počet generací předků zahrnutých do stromu"
 
 #: FamilyTree/FamilyTree.py:1052
-#, fuzzy
-#| msgid "Select the number of descending generations"
 msgid "The number of descendant generations to include in the tree"
 msgstr "Zvolte počet generací potomků"
 
@@ -6136,7 +5867,7 @@ msgid ""
 "numbers"
 msgstr ""
 "Kekuléovo číslo manžela (ústřední rodina). Nastavte hodnotu 0, aby se "
-"Kekuléova čísla nezobrazovaly"
+"Kekuléova čísla nezobrazovala"
 
 #: FamilyTree/FamilyTree.py:1059
 msgid "Scale to fit on a single page"
@@ -6216,7 +5947,7 @@ msgstr "Použít křest, pokud chybí narození"
 
 #: FamilyTree/FamilyTree.py:1119
 msgid "Fall back to burial or cremation if death event missing"
-msgstr "Použít pohřeb nebo kremaci, pokud chybí úmrtí"
+msgstr "Použít pohřbení nebo kremaci, pokud chybí úmrtí"
 
 #: FamilyTree/FamilyTree.py:1122
 msgid "Protect private items"
@@ -6236,7 +5967,7 @@ msgstr "Styl použitý pro jména."
 
 #: FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "Styl použitý po údaje (narození, úmrtí, svatba, rozvod)."
+msgstr "Styl použitý pro údaje (narození, úmrtí, svatba, rozvod)."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
 msgid "FamilyTree DNA"
@@ -6415,9 +6146,8 @@ msgid "Matches families matched by an event filter"
 msgstr ""
 
 #: FilterRules/hasrolerule.gpr.py:27
-#, fuzzy
 msgid "People with events with a selected role"
-msgstr "událost narození bez data"
+msgstr "Osoby s vybranou rolí v událostech"
 
 #: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:99
 msgid "Matches people with an event with a selected role"
@@ -6444,20 +6174,16 @@ msgid "Inverse"
 msgstr ""
 
 #: FilterRules/hasrolerule.py:98
-#, fuzzy
 msgid "People with events with the <role>"
-msgstr "událost narození bez data"
+msgstr "Osoby s <rolí> v událostech"
 
 #: FilterRules/hasrolerule.py:113
-#, fuzzy
 msgid "Families with events with the <role>"
-msgstr "událost narození bez data"
+msgstr "Rodiny s <rolí> v událostech"
 
 #: FilterRules/hassourcefilter.gpr.py:28
-#, fuzzy
-#| msgid "No matching surname."
 msgid "Source matching parameters"
-msgstr "Žádné odpovídající příjmení"
+msgstr "Pramen odpovídající parametrům"
 
 #: FilterRules/hassourcefilter.gpr.py:29
 msgid "Matches Sources with values containing the chosen parameters"
@@ -6478,7 +6204,7 @@ msgstr ""
 
 #: FilterRules/infamilyrule.py:68
 msgid "Include the children in the matching families."
-msgstr "Zahrnout děti do odpovídajících rodin."
+msgstr "Zahrnout děti z odpovídajících rodin."
 
 #: FilterRules/infamilyrule.py:94 FilterRules/infamilyrule.py:143
 msgid "Include Parents"
@@ -6486,7 +6212,7 @@ msgstr ""
 
 #: FilterRules/infamilyrule.py:95
 msgid "Include the parents in the matching families."
-msgstr "Zahrnout rodiče do odpovídajících rodin."
+msgstr "Zahrnout rodiče z odpovídajících rodin."
 
 #: FilterRules/infamilyrule.py:141 FilterRules/isfamilyfiltermatchevent.py:81
 msgid "Family Filter name:"
@@ -6510,14 +6236,12 @@ msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 
 #: FilterRules/matcheventfilterrole.gpr.py:7
-#, fuzzy
 msgid "People from event with role"
-msgstr "událost narození bez data"
+msgstr "Osoby s rolí v události"
 
 #: FilterRules/matcheventfilterrole.gpr.py:8
-#, fuzzy
 msgid "Matches people of event filter with role"
-msgstr "událost narození bez data"
+msgstr "Vybere osoby podle filtru událostí a role"
 
 #: FilterRules/matcheventfilterrole.py:55
 #: FilterRules/matchpersonfilterrole.py:69
@@ -6525,9 +6249,8 @@ msgid "Role:"
 msgstr ""
 
 #: FilterRules/matcheventfilterrole.py:56
-#, fuzzy
 msgid "Persons with events matching the <event filter> with role"
-msgstr "událost narození bez data"
+msgstr "Osoby s rolí v událostech odpovídajících <filtru událostí>"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:7
 msgid "Parents of family filter"
@@ -6681,10 +6404,8 @@ msgid "Fix coords"
 msgstr ""
 
 #: Form/CensusCheckQuickview.gpr.py:9
-#, fuzzy
-#| msgid "Persons Index"
 msgid "CensusCheck"
-msgstr "Rejstřík osob"
+msgstr "Kontrola sčítání lidu"
 
 #: Form/CensusCheckQuickview.gpr.py:10
 msgid ""
@@ -6694,7 +6415,7 @@ msgstr ""
 
 #: Form/CensusCheckQuickview.gpr.py:23
 msgid "CensusCheckUp"
-msgstr ""
+msgstr "Kontrola sčítání lidu směrem k předkům"
 
 #: Form/CensusCheckQuickview.gpr.py:24
 msgid ""
@@ -6743,10 +6464,8 @@ msgid "XML syntax error in Form definition file"
 msgstr ""
 
 #: Form/form.py:184
-#, fuzzy
-#| msgid "Unable to copy web site template files from \"%(path)s\""
 msgid "Failed to read Form definition file"
-msgstr "Nelze zkopírovat soubory šablony WWW stránek z \"%(path)s\""
+msgstr "Nepodařilo se načíst soubor s definicí formuláře"
 
 #: Form/form.py:193
 msgid "Invalid Form definition file"
@@ -7809,10 +7528,8 @@ msgid "5. Dwelling houses inhabited"
 msgstr ""
 
 #: Form/form_ca.xml.h:307
-#, fuzzy
-#| msgid "Families Index"
 msgid "6.Families"
-msgstr "Rejstřík rodin"
+msgstr "6. Rodiny"
 
 #: Form/form_ca.xml.h:309 Form/form_ca.xml.h:363
 msgid "7. Names"
@@ -7868,10 +7585,8 @@ msgid "12. Religion"
 msgstr ""
 
 #: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
-#, fuzzy
-#| msgid "Original: "
 msgid "13. Origin"
-msgstr "Původ: "
+msgstr "13. Původ"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
@@ -7934,10 +7649,8 @@ msgid "5. Houses inhabited"
 msgstr ""
 
 #: Form/form_ca.xml.h:361
-#, fuzzy
-#| msgid "Families Index"
 msgid "6. Families"
-msgstr "Rejstřík rodin"
+msgstr "6. Rodiny"
 
 #: Form/form_ca.xml.h:368
 msgid "Birth1881"
@@ -7980,10 +7693,8 @@ msgid "4. Houses inhabited"
 msgstr ""
 
 #: Form/form_ca.xml.h:408
-#, fuzzy
-#| msgid "Families Index"
 msgid "5. Families"
-msgstr "Rejstřík rodin"
+msgstr "5. Rodiny"
 
 #: Form/form_ca.xml.h:410
 msgid "6. Names"
@@ -8030,10 +7741,8 @@ msgid "Relation"
 msgstr "Příbuzní"
 
 #: Form/form_ca.xml.h:418
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "10. Relationship to Head of Family"
-msgstr "Vztah k otci"
+msgstr "10. Vztah k hlavě rodiny"
 
 #: Form/form_ca.xml.h:422
 msgid "12. FrenchCanadian"
@@ -9858,10 +9567,8 @@ msgid "Whether Employer, Worker or Working on Own Account"
 msgstr ""
 
 #: Form/form_gb.xml.h:223 Form/form_gb.xml.h:356
-#, fuzzy
-#| msgid "Whether to include a birth column"
 msgid "Whether Working at Home"
-msgstr "Zda zahrnout sloupec narození"
+msgstr "Zda pracuje doma"
 
 #: Form/form_gb.xml.h:225 Form/form_gb.xml.h:358
 msgid "BIRTHPLACE of every Person."
@@ -15675,15 +15382,12 @@ msgid "Forms"
 msgstr ""
 
 #: Form/selectform.py:74 Form/selectform.py:81
-#, fuzzy
 msgid "Select Form"
-msgstr "Vybrat poznámku"
+msgstr "Vybrat formulář"
 
 #: GOQLFilter/goql.gpr.py:31
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Person GOQL Filter"
-msgstr "Vztah k otci"
+msgstr "Filtr GOQL pro osoby"
 
 #: GOQLFilter/goql.gpr.py:32
 msgid "Gramplet providing a gramps-object-query-language person filter"
@@ -15698,10 +15402,8 @@ msgid "GOQL Filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:50
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Family GOQL Filter"
-msgstr "Název filtru rodin:"
+msgstr "Filtr GOQL pro rodiny"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
@@ -15716,60 +15418,48 @@ msgid "Gramplet providing a gramps-object-query-language event filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:88
-#, fuzzy
-#| msgid "Place title"
 msgid "Place GOQL Filter"
-msgstr "Název místa"
+msgstr "Filtr GOQL pro místa"
 
 #: GOQLFilter/goql.gpr.py:89
 msgid "Gramplet providing a gramps-object-query-language place filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:107
-#, fuzzy
-#| msgid "Web site title"
 msgid "Repository GOQL Filter"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "Filtr GOQL pro archivy"
 
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:128
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Source GOQL Filter"
-msgstr "Rejtřík pramenů"
+msgstr "Filtr GOQL pro prameny"
 
 #: GOQLFilter/goql.gpr.py:129
 msgid "Gramplet providing a gramps-object-query-language source filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:147
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Citation GOQL Filter"
-msgstr "Vztah k otci"
+msgstr "Filtr GOQL pro citace"
 
 #: GOQLFilter/goql.gpr.py:148
 msgid "Gramplet providing a gramps-object-query-language citation filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:166
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media GOQL Filter"
-msgstr "Titulek objektu médií"
+msgstr "Filtr GOQL pro média"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:185
-#, fuzzy
-#| msgid "Used for family"
 msgid "Note GOQL Filter"
-msgstr "Použito pro rodinu"
+msgstr "Filtr GOQL pro poznámky"
 
 #: GOQLFilter/goql.gpr.py:186
 msgid "Gramplet providing a gramps-object-query-language note filter"
@@ -15813,10 +15503,8 @@ msgid "SQL"
 msgstr ""
 
 #: GOQLFilter/goql.py:403
-#, fuzzy
-#| msgid "Person page"
 msgid "Python evaluation"
-msgstr "Stránka osoby"
+msgstr "Vyhodnocení v Pythonu"
 
 #: GOQLFilter/goql.py:523
 #, python-format
@@ -15893,10 +15581,8 @@ msgid ""
 msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
-#, fuzzy
-#| msgid "No matching surname."
 msgid "Sources matching the <GOQL expression>"
-msgstr "Žádné odpovídající příjmení"
+msgstr "Prameny odpovídající <výrazu GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:132
 msgid ""
@@ -15966,7 +15652,6 @@ msgstr ""
 
 #: GedcomExtensions/GedcomExtensions.py:198
 #: RepositoriesReport/RepositoriesReportAlt.py:464
-#, fuzzy
 msgid "Include media"
 msgstr "Zahrnout obrázky a mediální objekty"
 
@@ -15992,16 +15677,13 @@ msgid "Type of surname:"
 msgstr ""
 
 #: GedcomExtensions/GedcomExtensions.py:261
-#, fuzzy
-#| msgid "Export notes"
 msgid "Export failed"
-msgstr "Exportovat poznámky"
+msgstr "Export selhal"
 
 #: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
 #: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:269
-#, fuzzy
 msgid "Include images"
-msgstr "Zahrnout obrázky a mediální objekty"
+msgstr "Zahrnout obrázky"
 
 #: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
 #: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:270
@@ -16120,10 +15802,8 @@ msgid "Counting all places"
 msgstr ""
 
 #: GeoAncestor/GeoAncestor.py:314
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Showing all places"
-msgstr "Zobrazit duplicity"
+msgstr "Zobrazují se všechna místa"
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:25 GeoTimeLines/GeoTimeLines.py:233
 #: GeoTimeLines/GeoTimeLines.py:339
@@ -16152,10 +15832,9 @@ msgid "Gathering data"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr "Počet stránek"
+msgstr "Počet osob: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -16200,10 +15879,8 @@ msgid ""
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1875
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of steps"
-msgstr "Počet stránek"
+msgstr "Počet kroků"
 
 #: GeoTimeLines/GeoTimeLines.py:1883
 msgid "Type of steps"
@@ -16295,10 +15972,8 @@ msgid "Creates data file for GoogleEarth and opens it"
 msgstr ""
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
-#, fuzzy
-#| msgid "Description: "
 msgid "No place description"
-msgstr "Description: "
+msgstr "Bez popisu místa"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
 msgid "GoogleEarth not installed!"
@@ -16398,7 +16073,6 @@ msgid ""
 msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:984
-#, fuzzy
 msgid "Done.\n"
 msgstr "Hotovo!\n"
 
@@ -16462,16 +16136,12 @@ msgid "Backend:"
 msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:1345
-#, fuzzy
-#| msgid "Web site title"
 msgid "Base URL:"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "Základní URL:"
 
 #: GrampsAssistant/grampsassistant.py:1349
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Model name:"
-msgstr "Rejtřík pramenů"
+msgstr "Název modelu:"
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
@@ -16561,20 +16231,16 @@ msgid "e.g. https://your-server/api"
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:143
-#, fuzzy
-#| msgid "researcher name"
 msgid "Username"
-msgstr "jméno badatele"
+msgstr "Uživatelské jméno"
 
 #: GrampsWebApiDb/mintapikeytool.py:144
 msgid "Password"
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:153
-#, fuzzy
-#| msgid "General Data"
 msgid "Generate API Key"
-msgstr "Obecná data"
+msgstr "Vygenerovat klíč API"
 
 #: GrampsWebApiDb/mintapikeytool.py:162
 msgid ""
@@ -16586,10 +16252,8 @@ msgid "GRAMPS_WEB_API_KEY"
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:182
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "Create Synced Family Tree for this key"
-msgstr "Rodinný strom pro %s"
+msgstr "Vytvořit synchronizovaný rodokmen pro tento klíč"
 
 #: GrampsWebApiDb/mintapikeytool.py:197
 #, python-format
@@ -16603,10 +16267,8 @@ msgid "Please fill in the server URL, username, and password."
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:229
-#, fuzzy
-#| msgid "Generation "
 msgid "Generating API key…"
-msgstr "Generace "
+msgstr "Generuje se klíč API…"
 
 #: GrampsWebApiDb/mintapikeytool.py:260
 #, python-format
@@ -16652,10 +16314,9 @@ msgid ""
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:352
-#, fuzzy, python-format
-#| msgid "Exporting family tree data ..."
+#, python-format
 msgid "Error creating Family Tree: %s"
-msgstr "Exportují se data rodokmenu..."
+msgstr "Chyba při vytváření rodokmenu: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:358
 #, python-format
@@ -16678,9 +16339,8 @@ msgid "_Try again"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:276
-#, fuzzy
 msgid "C_onnect"
-msgstr "Vybrat..."
+msgstr "Přip_ojit"
 
 #: GrampsWebSync/grampswebsync.py:371
 msgid "Forget this server?"
@@ -16708,10 +16368,8 @@ msgid "Change server…"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:620
-#, fuzzy
-#| msgid "Web site title"
 msgid "Server URL:"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "URL serveru:"
 
 #: GrampsWebSync/grampswebsync.py:622 PhpGedView/phpgedview.glade:170
 msgid "Username:"
@@ -16771,10 +16429,8 @@ msgid "Synchronization complete"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:1136
-#, fuzzy
-#| msgid "Generation "
 msgid "Synchronization failed"
-msgstr "Generace "
+msgstr "Synchronizace selhala"
 
 #: GrampsWebSync/presentation.py:128
 #, python-format
@@ -16932,9 +16588,8 @@ msgid "Uploading media files…"
 msgstr ""
 
 #: GrampsWebSync/presentation.py:293
-#, fuzzy
 msgid "Connect"
-msgstr "Vybrat..."
+msgstr "Připojení"
 
 #: GrampsWebSync/presentation.py:295
 msgid "Apply changes"
@@ -17168,15 +16823,12 @@ msgid "Run a special Gramps Python script"
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:88
-#, fuzzy
 msgid "Load query from a .script file"
-msgstr "Vybrat poznámku"
+msgstr "Načíst dotaz ze souboru .script"
 
 #: GrampyScript/GrampyScript.py:149
-#, fuzzy
-#| msgid "Save tree as file"
 msgid "Save query to a .script file"
-msgstr "Uložit strom jako soubor"
+msgstr "Uložit dotaz do souboru .script"
 
 #: GrampyScript/GrampyScript.py:169
 msgid "Download results as a CSV file"
@@ -17187,10 +16839,8 @@ msgid "Open..."
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:338
-#, fuzzy
-#| msgid "Select an image to begin..."
 msgid "Save as..."
-msgstr "Vybrat obrázek kterým se začne..."
+msgstr "Uložit jako..."
 
 #: GrampyScript/GrampyScript.py:356
 msgid "Save as CSV"
@@ -17217,9 +16867,8 @@ msgid "Ready... (Tab for completions)"
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:505
-#, fuzzy
 msgid "Untitled"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "Bez názvu"
 
 #: GrampyScript/GrampyScript.py:534
 msgid ""
@@ -17232,10 +16881,8 @@ msgid "Gram.py Script Edited Data"
 msgstr ""
 
 #: GrampyScript/script_descriptions.py:44
-#, fuzzy
-#| msgid "All Names of All People"
 msgid "List All People"
-msgstr "Všechna jména všech lidí"
+msgstr "Vypsat všechny osoby"
 
 #: GrampyScript/script_descriptions.py:46
 msgid ""
@@ -17244,10 +16891,8 @@ msgid ""
 msgstr ""
 
 #: GrampyScript/script_descriptions.py:51
-#, fuzzy
-#| msgid "Family Nick Name"
 msgid "Filter By Surname"
-msgstr "Přezdívka rodiny"
+msgstr "Filtrovat podle příjmení"
 
 #: GrampyScript/script_descriptions.py:53
 msgid ""
@@ -17350,10 +16995,8 @@ msgid ""
 msgstr ""
 
 #: GrampyScript/script_descriptions.py:130
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Custom Filter Example"
-msgstr "Název filtru rodin:"
+msgstr "Příklad vlastního filtru"
 
 #: GrampyScript/script_descriptions.py:132
 msgid ""
@@ -17425,16 +17068,12 @@ msgid "Highlight the home person"
 msgstr ""
 
 #: GraphView/graphview.py:757 GraphView/graphview.py:3747
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show full dates"
-msgstr "Zobrazit duplicity"
+msgstr "Zobrazit úplná data"
 
 #: GraphView/graphview.py:761 GraphView/graphview.py:3755
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show places"
-msgstr "Zobrazit duplicity"
+msgstr "Zobrazit místa"
 
 #: GraphView/graphview.py:777
 msgid "Horizontal: Left to Right"
@@ -17453,19 +17092,16 @@ msgid "Vertical: Top to Bottom"
 msgstr ""
 
 #: GraphView/graphview.py:779
-#, fuzzy
 msgid "Time Direction"
-msgstr "Výběr nástroje"
+msgstr "Směr času"
 
 #: GraphView/graphview.py:784
 msgid "Limit number of people displayed (use 0 for unlimited)"
 msgstr ""
 
 #: GraphView/graphview.py:805
-#, fuzzy
-#| msgid "Person page"
 msgid "Person theme"
-msgstr "Stránka osoby"
+msgstr "Motiv osoby"
 
 #: GraphView/graphview.py:810
 msgid "Path color to home person"
@@ -17552,10 +17188,8 @@ msgid "Also apply search by all database."
 msgstr ""
 
 #: GraphView/graphview.py:950
-#, fuzzy
-#| msgid "Person page"
 msgid "Show person images"
-msgstr "Stránka osoby"
+msgstr "Zobrazit obrázky osob"
 
 #: GraphView/graphview.py:953
 msgid "Show persons thumbnails in search result list."
@@ -17570,15 +17204,12 @@ msgid "Show bookmarked persons first in search result list."
 msgstr ""
 
 #: GraphView/graphview.py:992
-#, fuzzy
 msgid "Select a dot file name"
-msgstr "Vybrat poznámku"
+msgstr "Vybrat název souboru dot"
 
 #: GraphView/graphview.py:1102 LifeLineChartView/lifelinechartview.py:527
-#, fuzzy
-#| msgid "Zoom in"
 msgid "Zoom to original"
-msgstr "Přiblížit"
+msgstr "Obnovit původní přiblížení"
 
 #: GraphView/graphview.py:1109 LifeLineChartView/lifelinechartview.py:534
 msgid "Zoom to best fit"
@@ -17605,16 +17236,12 @@ msgid "Other Bookmarks"
 msgstr ""
 
 #: GraphView/graphview.py:1172
-#, fuzzy
-#| msgid "Average years between two generations"
 msgid "Vertical spacing between generations"
-msgstr "Průměrný počet let mezi dvěma generacemi"
+msgstr "Svislé rozestupy mezi generacemi"
 
 #: GraphView/graphview.py:1177
-#, fuzzy
-#| msgid "Average years between two generations"
 msgid "Horizontal spacing between generations"
-msgstr "Průměrný počet let mezi dvěma generacemi"
+msgstr "Vodorovné rozestupy mezi generacemi"
 
 #: GraphView/graphview.py:1181
 msgid "Spacings"
@@ -17710,10 +17337,8 @@ msgid "<b>Tags:</b>"
 msgstr ""
 
 #: GraphView/graphview.py:3782
-#, fuzzy
-#| msgid "Print the notes type"
 msgid "Lines type"
-msgstr "Tisknout typ poznámek"
+msgstr "Typ čar"
 
 #: GraphView/graphview.py:3786 NetworkChart/NetworkChart.py:1174
 #: NetworkChart/NetworkChart.py:1188
@@ -17729,33 +17354,24 @@ msgid "Ortho"
 msgstr ""
 
 #: GraphView/graphview.py:3878
-#, fuzzy
-#| msgid "Used for person"
 msgid "No Events for this person"
-msgstr "Použito pro osobu"
+msgstr "Tato osoba nemá žádné události"
 
 #: GraphView/graphview.py:3899
-#, fuzzy
-#| msgid "Used for person"
 msgid "Select tags for person"
-msgstr "Použito pro osobu"
+msgstr "Vybrat štítky pro osobu"
 
 #: GraphView/graphview.py:3910
-#, fuzzy
-#| msgid "Used for family"
 msgid "Add new family"
-msgstr "Použito pro rodinu"
+msgstr "Přidat novou rodinu"
 
 #: GraphView/graphview.py:4028
-#, fuzzy
 msgid "Add parents"
-msgstr "chybí událost narození"
+msgstr "Přidat rodiče"
 
 #: GraphView/graphview.py:4051 QuiltView/QuiltView.py:1445
-#, fuzzy
-#| msgid "Used for person"
 msgid "Set as home person"
-msgstr "Použito pro osobu"
+msgstr "Nastavit jako výchozí osobu"
 
 #: GraphView/graphview.py:4054
 msgid "Show path to home person"
@@ -17774,21 +17390,16 @@ msgid "Add to bookmarks"
 msgstr ""
 
 #: GraphView/graphview.py:4164
-#, fuzzy
-#| msgid "Used for family"
 msgid "No Events for this family"
-msgstr "Použito pro rodinu"
+msgstr "Tato rodina nemá žádné události"
 
 #: GraphView/graphview.py:4185
-#, fuzzy
-#| msgid "Used for family"
 msgid "Select tags for family"
-msgstr "Použito pro rodinu"
+msgstr "Vybrat štítky pro rodinu"
 
 #: GraphView/graphview.py:4204
-#, fuzzy
 msgid "Add father"
-msgstr "Přidat novou událost"
+msgstr "Přidat otce"
 
 #: GraphView/graphview.py:4213
 msgid "Add mother"
@@ -17962,10 +17573,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:93
-#, fuzzy
-#| msgid "File ready"
 msgid "File path"
-msgstr "Soubor připraven"
+msgstr "Adresář souboru"
 
 #: Heatmap/heatmap.py:98
 msgid ""
@@ -17976,10 +17585,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:103
-#, fuzzy
-#| msgid "File ready"
 msgid "File name"
-msgstr "Soubor připraven"
+msgstr "Název souboru"
 
 #: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
@@ -18093,9 +17700,8 @@ msgid "Background color items outside lifespan"
 msgstr ""
 
 #: HistContext/HistContext.py:149
-#, fuzzy
 msgid "Select from files"
-msgstr "Vybrat poznámku"
+msgstr "Vybrat ze souborů"
 
 #: HistContext/HistContext.py:287
 msgid "Invalid date "
@@ -18278,10 +17884,8 @@ msgid "_Import"
 msgstr ""
 
 #: ImportGramplet/ImportGramplet.py:218
-#, fuzzy
-#| msgid "Export notes"
 msgid "Import done"
-msgstr "Exportovat poznámky"
+msgstr "Import dokončen"
 
 #: ImportGramplet/ImportGramplet.py:228
 msgid "Importing Text..."
@@ -18306,10 +17910,8 @@ msgid "Select the difference you wish to examine."
 msgstr ""
 
 #: ImportMerge/importmerge.glade:180
-#, fuzzy
-#| msgid "Description: "
 msgid "Object Name/Description"
-msgstr "Description: "
+msgstr "Název/popis objektu"
 
 #: ImportMerge/importmerge.glade:227
 msgid ""
@@ -18318,10 +17920,8 @@ msgid ""
 msgstr ""
 
 #: ImportMerge/importmerge.glade:248
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Object and item"
-msgstr "Titulek objektu médií"
+msgstr "Objekt a položka"
 
 #: ImportMerge/importmerge.glade:293 ImportMerge/importmerge.py:116
 msgid ""
@@ -18352,10 +17952,8 @@ msgid ""
 msgstr ""
 
 #: ImportMerge/importmerge.glade:392
-#, fuzzy
-#| msgid "Original: "
 msgid "Merge Original"
-msgstr "Původ: "
+msgstr "Sloučit do původních dat"
 
 #: ImportMerge/importmerge.glade:396
 msgid ""
@@ -18364,10 +17962,8 @@ msgid ""
 msgstr ""
 
 #: ImportMerge/importmerge.glade:411
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
 msgid "This button will replace your tree data with the imported data."
-msgstr "Toto tlačíko vymaže všechna datová pole zde zobrazená."
+msgstr "Toto tlačítko nahradí data vašeho rodokmenu importovanými daty."
 
 #: ImportMerge/importmerge.glade:422
 msgid "Merge Import"
@@ -18441,10 +18037,8 @@ msgid "Replace with import"
 msgstr ""
 
 #: ImportMerge/importmerge.py:115
-#, fuzzy
-#| msgid "Original: "
 msgid "Keep original"
-msgstr "Původ: "
+msgstr "Ponechat původní"
 
 #: ImportMerge/importmerge.py:119
 msgid ""
@@ -18508,10 +18102,8 @@ msgstr ""
 
 #: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:962
 #: ImportMerge/importmerge.py:983
-#, fuzzy
-#| msgid "Original: "
 msgid "Original"
-msgstr "Původ: "
+msgstr "Původní"
 
 #: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:963
 #: ImportMerge/importmerge.py:984
@@ -18588,16 +18180,12 @@ msgid "Changed On"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:201
-#, fuzzy
-#| msgid "Families Index"
 msgid "Families Changed"
-msgstr "Rejstřík rodin"
+msgstr "Změněné rodiny"
 
 #: LastChange/LastChangeReport.py:202
-#, fuzzy
-#| msgid "Family Nick Name"
 msgid "Family Surname"
-msgstr "Přezdívka rodiny"
+msgstr "Příjmení rodiny"
 
 #: LastChange/LastChangeReport.py:219
 #, python-format
@@ -18609,22 +18197,16 @@ msgid "Events Changed"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:257
-#, fuzzy
-#| msgid "Places Index"
 msgid "Places Changed"
-msgstr "Rejstřík míst"
+msgstr "Změněná místa"
 
 #: LastChange/LastChangeReport.py:277
-#, fuzzy
-#| msgid "Media Index"
 msgid "Media Changed"
-msgstr "Rejstřík médií"
+msgstr "Změněná média"
 
 #: LastChange/LastChangeReport.py:298
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Sources Changed"
-msgstr "Rejtřík pramenů"
+msgstr "Změněné prameny"
 
 #: LastChange/LastChangeReport.py:316
 msgid "Notes Changed"
@@ -18635,9 +18217,8 @@ msgid "Citations Changed"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:362
-#, fuzzy
 msgid "Select From"
-msgstr "Vybrat poznámku"
+msgstr "Vybrat z"
 
 #: LastChange/LastChangeReport.py:422
 msgid "The style used for normal text"
@@ -18664,10 +18245,8 @@ msgid "Triangular shape"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:15
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show photos"
-msgstr "Zobrazit duplicity"
+msgstr "Zobrazit fotografie"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:16
 msgid "Photos of the individual are shown."
@@ -18741,10 +18320,8 @@ msgstr ""
 #: LifeLineChartView/_dummy_translation_string_po.py:74
 #: LifeLineChartView/_dummy_translation_string_po.py:77
 #: LifeLineChartView/lifelinechartview.py:884
-#, fuzzy
-#| msgid "Enable page configuration"
 msgid "Label Configuration"
-msgstr "Zapnout nastavení stránky"
+msgstr "Nastavení popisků"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 msgid "Birth label rotation"
@@ -18864,28 +18441,24 @@ msgid "The color of the individuals is faded to black with increasing age."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
-#, fuzzy
 msgid "Font name"
-msgstr "Bez příjmení"
+msgstr "Název písma"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:73
 msgid "Name of the font family used for labels."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:75
-#, fuzzy
 msgid "Relative font size"
-msgstr "Příbuzní"
+msgstr "Relativní velikost písma"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:76
 msgid "The font size is given relatively to the line thickness."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
-#, fuzzy
-#| msgid "Family Nick Name"
 msgid "Family shape"
-msgstr "Přezdívka rodiny"
+msgstr "Tvar zobrazení rodiny"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:79
 msgid "The shape of the families can be varied."
@@ -18948,10 +18521,8 @@ msgid "Unique"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:93
-#, fuzzy
-#| msgid "Used for source"
 msgid "Based on surname"
-msgstr "Použito pro pramen"
+msgstr "Podle příjmení"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:94
 msgid "Flip vertically"
@@ -19001,20 +18572,16 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
-#, fuzzy
-#| msgid "Maximum number of generations"
 msgid "Maximum number of compression steps"
-msgstr "Maximální počet generací"
+msgstr "Maximální počet kroků komprese"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:106
 msgid "Debugging of the compression algorithm. Abort after x steps."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:107
-#, fuzzy
-#| msgid "Maximum number of generations"
 msgid "Maximum number of flipping steps"
-msgstr "Maximální počet generací"
+msgstr "Maximální počet kroků překlápění"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:108
 msgid "Debugging of the flipping algorithm. Abort after x steps."
@@ -19052,20 +18619,16 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:115
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of descendants"
-msgstr "Počet stránek"
+msgstr "Počet potomků"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:116
 msgid "Very soft"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:117
-#, fuzzy
-#| msgid "General Data"
 msgid "General chart layout"
-msgstr "Obecná data"
+msgstr "Obecné rozložení grafu"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:118
 msgid "There are different layouts for descendant charts."
@@ -19091,16 +18654,12 @@ msgid "cursor position at {date}"
 msgstr ""
 
 #: LifeLineChartView/lifelinechart.py:2591
-#, fuzzy
-#| msgid "Used for person"
 msgid "Hide person"
-msgstr "Použito pro osobu"
+msgstr "Skrýt osobu"
 
 #: LifeLineChartView/lifelinechart.py:2597
-#, fuzzy
-#| msgid "Used for person"
 msgid "Show person"
-msgstr "Použito pro osobu"
+msgstr "Zobrazit osobu"
 
 #: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
@@ -19131,10 +18690,8 @@ msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:386
 #: LifeLineChartView/lifelinechartview.py:883
-#, fuzzy
-#| msgid "General Data"
 msgid "General Layout"
-msgstr "Obecná data"
+msgstr "Obecné rozložení"
 
 #: LifeLineChartView/lifelinechartview.py:509
 #: LifeLineChartView/lifelinechartview.py:510
@@ -19161,14 +18718,10 @@ msgid "Open Life Line Chart help"
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:831
-#, fuzzy
-#| msgid "Export notes"
 msgid "Export View as SVG"
-msgstr "Exportovat poznámky"
+msgstr "Exportovat pohled jako SVG"
 
 #: LifeLineChartView/lifelinechartview.py:946
-#, fuzzy
-#| msgid "Restore default settings"
 msgid "Reset all settings"
 msgstr "Obnovit výchozí nastavení"
 
@@ -19187,10 +18740,8 @@ msgid "The ancestor from which to start the line"
 msgstr ""
 
 #: LinesOfDescendency/lines-of-descendency.py:60
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendent"
-msgstr "Strom potomků"
+msgstr "Potomek"
 
 #: LinesOfDescendency/lines-of-descendency.py:61
 msgid "The descendent to which to build the line"
@@ -19236,9 +18787,8 @@ msgid "Type de liste"
 msgstr ""
 
 #: ListeEclair/ListeEclair.py:284
-#, fuzzy
 msgid "Include private data"
-msgstr "Zahrnout obrázky a mediální objekty"
+msgstr "Zahrnout soukromé údaje"
 
 #: ListeEclair/ListeEclair.py:301
 msgid "The style used for the liste eclair."
@@ -19249,10 +18799,8 @@ msgid "The style used for place title."
 msgstr ""
 
 #: MediaBrowser/MediaBrowser.gpr.py:31
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media Browser"
-msgstr "Typ média"
+msgstr "Prohlížeč médií"
 
 #: MediaBrowser/MediaBrowser.gpr.py:39
 msgid "Browser"
@@ -19269,10 +18817,8 @@ msgid ""
 msgstr ""
 
 #: MediaMerge/mediamerge.py:104
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media Merge"
-msgstr "Typ média"
+msgstr "Sloučení médií"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
@@ -19287,10 +18833,8 @@ msgid "No media items merged."
 msgstr ""
 
 #: MediaReport/media_report.gpr.py:24
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media Report"
-msgstr "Typ média"
+msgstr "Sestava médií"
 
 #: MediaReport/media_report.gpr.py:25
 msgid "Generates report including images, image data and notes."
@@ -19312,7 +18856,7 @@ msgstr ""
 
 #: MediaReport/media_report.py:229
 msgid "General:"
-msgstr "Hlavní"
+msgstr "Obecné:"
 
 #: MediaReport/media_report.py:250
 msgid "Image type:"
@@ -19327,49 +18871,40 @@ msgid "Select a media file for this report"
 msgstr ""
 
 #: MediaReport/media_report.py:433
-#, fuzzy
-#| msgid "Custom pages"
 msgid "Custom note"
-msgstr "Vlastní stránky"
+msgstr "Vlastní poznámka"
 
 #: MediaReport/media_report.py:434
 msgid "Select a note for this report"
 msgstr ""
 
 #: MediaReport/media_report.py:437
-#, fuzzy
-#| msgid "Include Last Name Only"
 msgid "Include custom note"
-msgstr "Zahrnout pouze příjmení"
+msgstr "Zahrnout vlastní poznámku"
 
 #: MediaReport/media_report.py:438
 msgid "The custom note will be included"
 msgstr ""
 
 #: MediaReport/media_report.py:442
-#, fuzzy
-#| msgid "Include references in indexes"
 msgid "Include referenced people"
-msgstr "Zahrnout odkazy v indexech"
+msgstr "Zahrnout odkazované osoby"
 
 #: MediaReport/media_report.py:443
 msgid "Referenced people will be included"
 msgstr ""
 
 #: MediaReport/media_report.py:446
-#, fuzzy
 msgid "Include media data"
-msgstr "Zahrnout obrázky a mediální objekty"
+msgstr "Zahrnout údaje o médiu"
 
 #: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
 msgstr ""
 
 #: MediaReport/media_report.py:450
-#, fuzzy
-#| msgid "Media Index"
 msgid "Media width"
-msgstr "Rejstřík médií"
+msgstr "Šířka média"
 
 #: MediaReport/media_report.py:452
 #, no-python-format
@@ -19377,10 +18912,8 @@ msgid "Maximum media width in % of available page width."
 msgstr ""
 
 #: MediaReport/media_report.py:456
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media height"
-msgstr "Typ média"
+msgstr "Výška média"
 
 #: MediaReport/media_report.py:458
 #, no-python-format
@@ -19388,10 +18921,8 @@ msgid "Maximum media height in % of available page height."
 msgstr ""
 
 #: MediaVerify/MediaVerify.gpr.py:31
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media Verify"
-msgstr "Typ média"
+msgstr "Ověření médií"
 
 #: MediaVerify/MediaVerify.gpr.py:32
 msgid "Verify that media is present in the correct path"
@@ -19410,10 +18941,8 @@ msgid "Moved/Renamed Files"
 msgstr ""
 
 #: MediaVerify/MediaVerify.py:83
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Duplicate Files"
-msgstr "Zobrazit duplicity"
+msgstr "Duplicitní soubory"
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Extra Files"
@@ -19432,10 +18961,8 @@ msgid "Close the Media Verify Tool"
 msgstr ""
 
 #: MediaVerify/MediaVerify.py:102 PDFForms/generatepdfform.py:129
-#, fuzzy
-#| msgid "General Data"
 msgid "Generate"
-msgstr "Obecná data"
+msgstr "Vygenerovat"
 
 #: MediaVerify/MediaVerify.py:103
 msgid "Generate md5 hashes for media objects"
@@ -19497,10 +19024,8 @@ msgid "Finding files"
 msgstr ""
 
 #: MediaVerify/MediaVerify.py:334
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking paths"
-msgstr "Kontrolují se názvy míst"
+msgstr "Kontrolují se cesty"
 
 #: MediaVerify/MediaVerify.py:387
 msgid "Fixing file paths"
@@ -19576,10 +19101,8 @@ msgid "Navigate to an individual to check patronymic status."
 msgstr ""
 
 #: NameSuite/name_processor/views/gramplet.py:48
-#, fuzzy
-#| msgid "Used for person"
 msgid "No active person selected."
-msgstr "Použito pro osobu"
+msgstr "Není vybraná žádná aktivní osoba."
 
 #: NameSuite/name_processor/views/gramplet.py:50
 msgid ""
@@ -19615,10 +19138,8 @@ msgid "Infer East Slavic Patronymics"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool.py:125
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Rename Given Names"
-msgstr "Kontrolují se názvy míst"
+msgstr "Přejmenovat křestní jména"
 
 #: NameSuite/name_processor/views/tool.py:128
 msgid "Audit Patronymics"
@@ -19633,22 +19154,16 @@ msgid "All Records"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:89
-#, fuzzy
-#| msgid "Male line"
 msgid "Males Only"
-msgstr "Mužská linie"
+msgstr "Pouze muži"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:90
-#, fuzzy
-#| msgid "Female line"
 msgid "Females Only"
-msgstr "Ženská linie"
+msgstr "Pouze ženy"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:94
-#, fuzzy
-#| msgid "Configure"
 msgid "Configure Rules..."
-msgstr "Nastavit"
+msgstr "Nastavit pravidla..."
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:99
 msgid "Match Pre-Revolutionary Orthography"
@@ -19659,22 +19174,17 @@ msgid "Audit Database"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:129
-#, fuzzy
-#| msgid "Select the type of graph"
 msgid "Select All Safe Corrections"
-msgstr "Zvolte typ grafu"
+msgstr "Vybrat všechny bezpečné opravy"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:134
 #: NameSuite/name_processor/views/tool_rename_tab.py:128
-#, fuzzy
 msgid "Apply Selected Corrections"
-msgstr "Vybrat událost"
+msgstr "Použít vybrané opravy"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:174
-#, fuzzy
-#| msgid "Configure"
 msgid "Configure Rules"
-msgstr "Nastavit"
+msgstr "Nastavení pravidel"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:198
 #: NameSuite/name_processor/views/tool_rename_tab.py:168
@@ -19687,26 +19197,20 @@ msgid "Current"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:205
-#, fuzzy
 msgid "Correction"
-msgstr "Výběr nástroje"
+msgstr "Oprava"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:212
-#, fuzzy
-#| msgid "Configure"
 msgid "Conf"
-msgstr "Nastavit"
+msgstr "Jistota"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:213
-#, fuzzy
-#| msgid "Year only"
 msgid "Ref Year"
-msgstr "Pouze rok"
+msgstr "Referenční rok"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:216
-#, fuzzy
 msgid "Explanation"
-msgstr "Příbuzní"
+msgstr "Vysvětlení"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:255
 msgid "Audit Complete!"
@@ -19721,26 +19225,20 @@ msgid "No issues found."
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:75
-#, fuzzy
-#| msgid "Search results"
 msgid "Search and Replace Options"
-msgstr "Výsledky hledání"
+msgstr "Možnosti hledání a nahrazování"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:82
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Source Name:"
-msgstr "Rejtřík pramenů"
+msgstr "Původní jméno:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:84
 msgid "e.g. Иоанн"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:87
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Target Name:"
-msgstr "Alternativní jméno"
+msgstr "Cílové jméno:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:89
 msgid "e.g. Иван"
@@ -19755,19 +19253,16 @@ msgid "Exact Match"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:95
-#, fuzzy
 msgid "Substring"
-msgstr "Vybrat..."
+msgstr "Podřetězec"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:96
 msgid "Regular Expression"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:100
-#, fuzzy
-#| msgid "Indexes pages"
 msgid "Scan for Names"
-msgstr "Indexové stránky"
+msgstr "Vyhledat jména"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:105
 msgid "Preserve original name as alternative"
@@ -19842,10 +19337,8 @@ msgid "Default (Top to Bottom)"
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:936
-#, fuzzy
-#| msgid "Select the type of graph"
 msgid "Select the graph direction."
-msgstr "Zvolte typ grafu"
+msgstr "Zvolte směr grafu."
 
 #: NetworkChart/NetworkChart.py:939
 msgid "URL Style"
@@ -19887,10 +19380,8 @@ msgid ""
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:957
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Enter Font Name"
-msgstr "Alternativní jméno"
+msgstr "Zadejte název písma"
 
 #: NetworkChart/NetworkChart.py:959
 msgid ""
@@ -19914,10 +19405,8 @@ msgid "Enter Chart Title"
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:971
-#, fuzzy
-#| msgid "The title of the web site"
 msgid "Set the title of the chart."
-msgstr "Název webové stránky"
+msgstr "Nastavte název grafu."
 
 #: NetworkChart/NetworkChart.py:976
 msgid "Default (svg)"
@@ -20186,9 +19675,8 @@ msgid "Any"
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:1176
-#, fuzzy
 msgid "Default (None)"
-msgstr "Vybrat poznámku"
+msgstr "Výchozí (žádné)"
 
 #: NetworkChart/NetworkChart.py:1181
 msgid ""
@@ -20245,10 +19733,8 @@ msgid "Add yellow color background to central person."
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:1234
-#, fuzzy
-#| msgid "Use tabbed panels instead of sections"
 msgid "Use database handle instead of GrampID id in URLs."
-msgstr "Použít tabelované panely místo sekcí"
+msgstr "Použít v URL interní identifikátor objektu místo ID Gramps."
 
 #: NetworkChart/NetworkChart.py:1236
 msgid ""
@@ -20293,9 +19779,8 @@ msgid "Close the Note Cleanup Tool"
 msgstr ""
 
 #: NoteCleanup/NoteCleanup.py:123
-#, fuzzy
 msgid "Save All"
-msgstr "Vybrat soubor"
+msgstr "Uložit vše"
 
 #: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
@@ -20379,20 +19864,17 @@ msgid "Save Note"
 msgstr ""
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of ancestors"
-msgstr "Počet stránek"
+msgstr "Počet předků"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:5
 msgid "Shows the number of ancestors of the current person"
 msgstr ""
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of %s's ancestors"
-msgstr "Počet stránek"
+msgstr "Počet předků – %s"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:55
 msgid "Found"
@@ -20415,15 +19897,13 @@ msgid ""
 msgstr ""
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
-#, fuzzy
-#| msgid "Select the number of descending generations"
 msgid "Shows the number of descendants of the current person"
-msgstr "Zvolte počet generací potomků"
+msgstr "Zobrazí počet potomků aktuální osoby"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
 msgid "Number of %s's descendants"
-msgstr ""
+msgstr "Počet potomků – %s"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
 msgid "Seen"
@@ -20449,20 +19929,16 @@ msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr ""
 
 #: Overview/Overview.gpr.py:29
-#, fuzzy
-#| msgid "Person page"
 msgid "Person Overview"
-msgstr "Stránka osoby"
+msgstr "Přehled osoby"
 
 #: Overview/Overview.gpr.py:30
 msgid "Gramplet showing an overview of events for a person"
 msgstr ""
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
-#, fuzzy
-#| msgid "Person page"
 msgid "Overview"
-msgstr "Stránka osoby"
+msgstr "Přehled"
 
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
@@ -20470,10 +19946,8 @@ msgstr ""
 
 #: PDFForms/PDFForms.gpr.py:24 PDFForms/generatepdfform.py:57
 #: PDFForms/generatepdfform.py:63
-#, fuzzy
-#| msgid "General Data"
 msgid "Generate PDF Forms"
-msgstr "Obecná data"
+msgstr "Generovat formuláře PDF"
 
 #: PDFForms/PDFForms.gpr.py:26
 msgid ""
@@ -20524,10 +19998,8 @@ msgid "(Rows only affect multi-row sections such as census household lists.)"
 msgstr ""
 
 #: PDFForms/generatepdfform.py:200
-#, fuzzy
-#| msgid "General Data"
 msgid "Generations:"
-msgstr "Obecná data"
+msgstr "Generace:"
 
 #: PDFForms/generatepdfform.py:213
 msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
@@ -20562,16 +20034,12 @@ msgid "Form not found"
 msgstr ""
 
 #: PDFForms/generatepdfform.py:306
-#, fuzzy
-#| msgid "Generation "
 msgid "Generation failed"
-msgstr "Generace "
+msgstr "Generování se nezdařilo"
 
 #: PDFForms/generatepdfform.py:317
-#, fuzzy
-#| msgid "General Data"
 msgid "PDF generated"
-msgstr "Obecná data"
+msgstr "PDF vygenerováno"
 
 #: PDFForms/importformpdf.py:180
 msgid "Form addon required"
@@ -20614,10 +20082,9 @@ msgid ""
 msgstr ""
 
 #: PDFForms/importpdf.py:195
-#, fuzzy, python-format
-#| msgid "Unable to copy web site template files from \"%(path)s\""
+#, python-format
 msgid "Could not open PDF file: %s"
-msgstr "Nelze zkopírovat soubory šablony WWW stránek z \"%(path)s\""
+msgstr "Nelze otevřít soubor PDF: %s"
 
 #: PDFForms/importpdf.py:399
 msgid "Add media reference: PDF import"
@@ -20643,10 +20110,8 @@ msgid "PDF import error"
 msgstr ""
 
 #: PDFForms/importpdf.py:503
-#, fuzzy
-#| msgid "No data available in table"
 msgid "Form importer unavailable"
-msgstr "Tabulka neobsahuje žádná data"
+msgstr "Importér formulářů není dostupný"
 
 #: PDFForms/importpdf.py:504
 msgid "importformpdf.py is missing from the PDFForms addon directory."
@@ -20686,10 +20151,9 @@ msgid "Pedigree Chart for %s"
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:585
-#, fuzzy, python-format
-#| msgid "Pages"
+#, python-format
 msgid "Page %d"
-msgstr "Stránky"
+msgstr "Strana %d"
 
 #: PedigreeChart/PedigreeChart.py:714
 msgid "Show Mother/Father captions"
@@ -20705,7 +20169,7 @@ msgstr "Zobrazit čísla stran"
 
 #: PedigreeChart/PedigreeChart.py:719
 msgid "Add a footer on every page with the page number and date printed."
-msgstr "Na každou stranu přidat zápatí s vytlačeným číslem strany a datem."
+msgstr "Na každou stranu přidat zápatí s vytištěným číslem strany a datem."
 
 #: PedigreeChart/PedigreeChart.py:740
 msgid "The basic style used for the title display."
@@ -20716,10 +20180,8 @@ msgid "Style used for names (only for PDF document and PostScript)."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:758
-#, fuzzy
-#| msgid "The style used for names."
 msgid "Style used for labels and captions."
-msgstr "Styl použitý pro jména."
+msgstr "Styl použitý pro štítky a popisky."
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -20739,8 +20201,6 @@ msgid "Primary name"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:181
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Alternate name"
 msgstr "Alternativní jméno"
 
@@ -20749,9 +20209,8 @@ msgid " This is the primary birth event."
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:200
-#, fuzzy
 msgid " This is the primary death event."
-msgstr "Přidat novou událost"
+msgstr " Toto je hlavní událost úmrtí."
 
 #: PersonEverything/PersonEverything.py:239
 msgid "Parent Family"
@@ -20780,17 +20239,13 @@ msgid "Street, City, County, State, Postal Code, Country, Phone number"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:449
-#, fuzzy
-#| msgid "Media Index"
 msgid "Media Reference"
-msgstr "Rejstřík médií"
+msgstr "Odkaz na médium"
 
 #: PersonEverything/PersonEverything.py:456
 #: PersonEverything/PersonEverything.py:733
-#, fuzzy
-#| msgid "Description: "
 msgid "Description and Path"
-msgstr "Description: "
+msgstr "Popis a cesta"
 
 #: PersonEverything/PersonEverything.py:485
 msgid "Referenced Region"
@@ -20812,51 +20267,37 @@ msgid "Note type"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:554
-#, fuzzy
-#| msgid "Print place pages"
 msgid "Parent Place"
-msgstr "Tisknout stránky míst"
+msgstr "Nadřazené místo"
 
 #: PersonEverything/PersonEverything.py:569
 #: PersonEverything/PersonEverything.py:573
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Alternate Location"
-msgstr "Alternativní jméno"
+msgstr "Alternativní místo"
 
 #: PersonEverything/PersonEverything.py:608
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Alternative Name"
 msgstr "Alternativní jméno"
 
 #: PersonEverything/PersonEverything.py:619
-#, fuzzy
-#| msgid "Latitude :"
 msgid "Latitude, Longitude"
-msgstr "Zeměpisná šířka :"
+msgstr "Zeměpisná šířka, zeměpisná délka"
 
 #: PersonEverything/PersonEverything.py:649
-#, fuzzy
 msgid "Repository type"
-msgstr "Archivy"
+msgstr "Typ archivu"
 
 #: PersonEverything/PersonEverything.py:671
-#, fuzzy
 msgid "Repository reference"
-msgstr "Archivy"
+msgstr "Odkaz na archiv"
 
 #: PersonEverything/PersonEverything.py:672
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media type"
 msgstr "Typ média"
 
 #: PersonEverything/PersonEverything.py:680
-#, fuzzy
-#| msgid "Original: "
 msgid "Origin type"
-msgstr "Původ: "
+msgstr "Typ původu"
 
 #: PersonEverything/PersonEverything.py:687
 msgid "Prefix, surname, connector"
@@ -20879,20 +20320,16 @@ msgid "No source information found"
 msgstr ""
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Person Relationship Filter"
-msgstr "Vztah k otci"
+msgstr "Filtr vztahů osob"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
 msgid "Gramplet providing a person filter on relationships"
 msgstr ""
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship Filter"
-msgstr "Vztah k otci"
+msgstr "Filtr vztahů"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:82
 msgid "Children of name match"
@@ -20945,10 +20382,8 @@ msgid "Replace existing references to the person being assigned without asking"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:147
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Face detection"
-msgstr "Výběr stránek"
+msgstr "Detekce obličejů"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:150
 msgid "Minimum face width (px)"
@@ -20967,33 +20402,26 @@ msgid "Sensitivity (1 min .. 20 max)"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:297
-#, fuzzy
-#| msgid "Persons"
 msgid "Add Person"
-msgstr "Osoby"
+msgstr "Přidat osobu"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:298
 msgid "Clear Reference"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:299
-#, fuzzy
 msgid "Remove Selection"
-msgstr "Výběr nástroje"
+msgstr "Odstranit výběr"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:300
 msgid "Edit referenced Person"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:301
-#, fuzzy
-#| msgid "Zoom in"
 msgid "Zoom In"
 msgstr "Přiblížit"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:302
-#, fuzzy
-#| msgid "Zoom out"
 msgid "Zoom Out"
 msgstr "Oddálit"
 
@@ -21014,9 +20442,8 @@ msgid "Set as active person"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:504 RelID/relation_tab.py:633
-#, fuzzy
 msgid "_Select"
-msgstr "Vybrat soubor"
+msgstr "_Vybrat"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:785
 #, python-brace-format
@@ -21024,9 +20451,8 @@ msgid "Replace to {0}"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:886
-#, fuzzy
 msgid "Detecting faces..."
-msgstr "Vybrat..."
+msgstr "Detekují se obličeje..."
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:911
 msgid "Detection finished"
@@ -21083,10 +20509,8 @@ msgid "Fetching index list..."
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
-#, fuzzy
-#| msgid "No matching records found"
 msgid "Fetching records..."
-msgstr "Nebyly nalezeny odpovídající záznamy"
+msgstr "Načítají se záznamy..."
 
 #: PhpGedView/phpgedviewconnector.py:327
 msgid "Logging in..."
@@ -21109,9 +20533,8 @@ msgid "done."
 msgstr "hotovo."
 
 #: PhpGedView/phpgedviewconnector.py:347
-#, fuzzy
 msgid "Connecting..."
-msgstr "Vybrat..."
+msgstr "Připojuje se..."
 
 #: PhpGedView/phpgedviewconnector.py:349
 msgid "Get version..."
@@ -21123,10 +20546,8 @@ msgid "Version %s"
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:353
-#, fuzzy
-#| msgid "Preparing file ..."
 msgid "Reading file list..."
-msgstr "Připravuji soubor ..."
+msgstr "Načítá se seznam souborů..."
 
 #: PhpGedView/phpgedviewconnector.py:366
 msgid "Error: Invalid URL"
@@ -21166,10 +20587,8 @@ msgid "Check this box if you want to keep the original Latitude and Longitude."
 msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:295
-#, fuzzy
-#| msgid "Suppress Gramps ID"
 msgid "The Gramps ID.."
-msgstr "Potlačit Gramps ID"
+msgstr "ID Gramps."
 
 #: PlaceCleanup/placecleanup.glade:322
 msgid "Check this box if you want to keep the original Gramps ID."
@@ -21213,16 +20632,12 @@ msgid "Cancel the operation, no changes are made to your Place."
 msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:595
-#, fuzzy
-#| msgid "Store web pages in archive"
 msgid "Store the values in your Place."
-msgstr "Uložit WWW stránky v archivu"
+msgstr "Uložit hodnoty do vašeho místa."
 
 #: PlaceCleanup/placecleanup.glade:677
-#, fuzzy
-#| msgid "Web Link"
 msgid "Keep Web Links"
-msgstr "Webový odkaz"
+msgstr "Zachovat webové odkazy"
 
 #: PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
@@ -21330,8 +20745,6 @@ msgid "Select one of these places to continue the cleanup process."
 msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:1034
-#, fuzzy
-#| msgid "Search results"
 msgid "Search result places"
 msgstr "Výsledky hledání"
 
@@ -21395,9 +20808,8 @@ msgid "Find GeoNames"
 msgstr ""
 
 #: PlaceCleanup/placecleanup.py:303
-#, fuzzy
 msgid "Need to set GeoNames ID"
-msgstr "Zda zobrazit stránky pro místa"
+msgstr "Je nutné nastavit ID GeoNames"
 
 #: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
@@ -21418,10 +20830,9 @@ msgid ""
 msgstr ""
 
 #: PlaceCleanup/placecleanup.py:353
-#, fuzzy, python-format
-#| msgid "No matching records found"
+#, python-format
 msgid "%s matches were found"
-msgstr "Nebyly nalezeny odpovídající záznamy"
+msgstr "Počet nalezených shod: %s"
 
 #: PlaceCleanup/placecleanup.py:354
 msgid ""
@@ -21497,10 +20908,8 @@ msgid ""
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
-#, fuzzy
-#| msgid "Pages selection"
 msgid "PlaceCompletion"
-msgstr "Výběr stránek"
+msgstr "Doplňování míst"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
@@ -21528,10 +20937,8 @@ msgid "PlaceCompletion is unable to create %s %s"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:340
-#, fuzzy
-#| msgid "Places Index"
 msgid "Places tool"
-msgstr "Rejstřík míst"
+msgstr "Nástroj pro místa"
 
 #: PlaceCompletion/PlaceCompletion.py:410
 msgid "Missing regex groups in match lat/lon"
@@ -21564,20 +20971,16 @@ msgid "Loading lat/lon file in Memory..."
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:502
-#, fuzzy
-#| msgid "Examples"
 msgid "Examining places"
-msgstr "Příklady"
+msgstr "Kontrola míst"
 
 #: PlaceCompletion/PlaceCompletion.py:690
 msgid "Set Tag"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:692
-#, fuzzy
-#| msgid "Print place pages"
 msgid "Doing Place changes"
-msgstr "Tisknout stránky míst"
+msgstr "Provádění změn míst"
 
 #: PlaceCompletion/PlaceCompletion.py:736
 msgid "No place record was modified."
@@ -21605,16 +21008,12 @@ msgid "The file you want to access is not a regular file."
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:831
-#, fuzzy
-#| msgid "The title of the web site"
 msgid "The file does not exist."
-msgstr "Název webové stránky"
+msgstr "Soubor neexistuje."
 
 #: PlaceCompletion/PlaceCompletion.py:863
-#, fuzzy
-#| msgid "Preparing file ..."
 msgid "Problem reading file"
-msgstr "Připravuji soubor ..."
+msgstr "Problém při čtení souboru"
 
 #: PlaceCompletion/PlaceCompletion.py:975
 #: PlaceCompletion/PlaceCompletion.py:987
@@ -21667,10 +21066,8 @@ msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1182
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Don't search"
-msgstr "Vyhledat osobu"
+msgstr "Nevyhledávat"
 
 #: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city search"
@@ -21713,10 +21110,8 @@ msgid "All Places"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1340
-#, fuzzy
-#| msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgid "No Latitude/Longitude given"
-msgstr " GPS koordináty, zem. šířka/délka/nadm. výška"
+msgstr "Chybí zeměpisná šířka nebo délka"
 
 #: PlaceCompletion/placecompletion.glade:85
 msgid "_Google Maps"
@@ -21747,10 +21142,8 @@ msgid "C_enter latitude:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:383
-#, fuzzy
-#| msgid "Longitude :"
 msgid "Center longitude:"
-msgstr "Zeměpisná délka :"
+msgstr "Zeměpisná délka středu:"
 
 #: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
@@ -21765,13 +21158,10 @@ msgid "1. Look up latitude and longitude:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:554
-#, fuzzy
-#| msgid "Search:"
 msgid "Search in:"
-msgstr "Hledat:"
+msgstr "Hledat v:"
 
 #: PlaceCompletion/placecompletion.glade:566
-#, fuzzy
 msgid "Select A File"
 msgstr "Vybrat soubor"
 
@@ -21889,8 +21279,6 @@ msgid "No place is active"
 msgstr ""
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
-#, fuzzy
-#| msgid "Search:"
 msgid "Search for:"
 msgstr "Hledat:"
 
@@ -21933,20 +21321,16 @@ msgid "Show help"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
-#, fuzzy
-#| msgid "Places Index"
 msgid "PlaceUpdate"
-msgstr "Rejstřík míst"
+msgstr "Aktualizace míst"
 
 #: PlaceUpdate/PlaceUpdate.gpr.py:5
 msgid "Gramplet to manipulate multiple places"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:56
-#, fuzzy
-#| msgid "Whether to show pages for the places"
 msgid "Set properties for multiple places"
-msgstr "Zda zobrazit stránky pro místa"
+msgstr "Nastavit vlastnosti více míst"
 
 #: PlaceUpdate/PlaceUpdate.py:96
 msgid ""
@@ -22002,10 +21386,8 @@ msgid "New text:"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:209
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Clear selections"
-msgstr "Výběr stránek"
+msgstr "Vymazat výběry"
 
 #: PlaceUpdate/PlaceUpdate.py:213
 msgid "Apply to selected places"
@@ -22065,16 +21447,12 @@ msgid "Hide"
 msgstr ""
 
 #: PluginManager/PluginManager.py:460
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show hidden items"
-msgstr "Zobrazit duplicity"
+msgstr "Zobrazit skryté položky"
 
 #: PluginManager/PluginManager.py:467
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show Built-in items"
-msgstr "Zobrazit duplicity"
+msgstr "Zobrazit vestavěné položky"
 
 #: PluginManager/PluginManager.py:474
 msgid "* indicates 3rd party addon"
@@ -22144,10 +21522,8 @@ msgid "Migration completed!"
 msgstr ""
 
 #: PostgreSQLEnhanced/migration.py:438
-#, fuzzy
-#| msgid "No matching surname."
 msgid "Starting upgrade..."
-msgstr "Žádné odpovídající příjmení"
+msgstr "Zahajuje se upgrade..."
 
 #: PostgreSQLEnhanced/migration.py:470
 #, python-format
@@ -22155,10 +21531,8 @@ msgid "Upgrading %s objects..."
 msgstr ""
 
 #: PostgreSQLEnhanced/migration.py:478
-#, fuzzy
-#| msgid "Preparing file ..."
 msgid "Creating indexes..."
-msgstr "Připravuji soubor ..."
+msgstr "Vytvářejí se indexy..."
 
 #: PostgreSQLEnhanced/migration.py:489
 msgid "Upgrade completed!"
@@ -22819,10 +22193,8 @@ msgid "Edit tags"
 msgstr ""
 
 #: QuiltView/QuiltView.py:1810
-#, fuzzy
-#| msgid "Print the notes type"
 msgid "Printing the tree"
-msgstr "Tisknout typ poznámek"
+msgstr "Tisk rodokmenu"
 
 #: QuiltView/QuiltView.py:1814
 #, python-format
@@ -22849,10 +22221,8 @@ msgstr ""
 
 #: QuiltView/QuiltView.py:1884 RemoveTagTool/RemoveTagTool.py:89
 #: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
-#, fuzzy
-#| msgid "General Data"
 msgid "General options"
-msgstr "Obecná data"
+msgstr "Obecné možnosti"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:11
 msgid "RU Web Connect Pack"
@@ -22919,14 +22289,12 @@ msgid "Filter rule"
 msgstr ""
 
 #: RelID/relation_tab.py:319
-#, fuzzy
 msgid "Select the filter rule"
-msgstr "Vybrat poznámku"
+msgstr "Vyberte pravidlo filtru"
 
 #: RelID/relation_tab.py:321
-#, fuzzy
 msgid "Deep generations"
-msgstr "Nastavení"
+msgstr "Hloubka v generacích"
 
 #: RelID/relation_tab.py:322
 msgid "How deep should we go?"
@@ -22961,16 +22329,12 @@ msgid "Centrality"
 msgstr ""
 
 #: RelID/relation_tab.py:352 RelID/relation_tab.py:603
-#, fuzzy
-#| msgid "Restore"
 msgid "Unique Ancestors"
-msgstr "Obnovit"
+msgstr "Jedineční předkové"
 
 #: RelID/relation_tab.py:353 RelID/relation_tab.py:603
-#, fuzzy
-#| msgid "Surnames Index"
 msgid "Surname Diversity"
-msgstr "Rejstřík příjmení"
+msgstr "Rozmanitost příjmení"
 
 #: RelID/relation_tab.py:367
 msgid "Quit"
@@ -23020,10 +22384,8 @@ msgid "Please, select a folder"
 msgstr ""
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Foldername need"
-msgstr "Alternativní jméno"
+msgstr "Je nutný název složky"
 
 #: RelID/relation_tab.py:643
 msgid "Foldername will be used for saving the content."
@@ -23038,16 +22400,12 @@ msgid "Did you set a foldername?"
 msgstr ""
 
 #: RelID/relation_tab.py:676
-#, fuzzy
-#| msgid "Unable to copy web site template files from \"%(path)s\""
 msgid "Failed to save data."
-msgstr "Nelze zkopírovat soubory šablony WWW stránek z \"%(path)s\""
+msgstr "Data se nepodařilo uložit."
 
 #: RelID/relation_tab.py:689
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationships Map and Tab"
-msgstr "Vztah k otci"
+msgstr "Mapa a tabulka vztahů"
 
 #: RelID/relation_tab.py:772
 msgid "Enable family network metrics"
@@ -23059,7 +22417,6 @@ msgstr ""
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
-#, fuzzy
 msgid "Related Relatives"
 msgstr "Příbuzní"
 
@@ -23174,9 +22531,8 @@ msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
-#, fuzzy
 msgid "Repositories Report Options"
-msgstr "Archivy"
+msgstr "Možnosti sestavy archivů"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:27
 #: RepositoriesReport/RepositoriesReport.gpr.py:46
@@ -23186,9 +22542,8 @@ msgstr ""
 #: RepositoriesReport/RepositoriesReport.gpr.py:45
 #: RepositoriesReport/RepositoriesReport.py:80
 #: RepositoriesReport/RepositoriesReportAlt.py:139
-#, fuzzy
 msgid "Repositories Report"
-msgstr "Archivy"
+msgstr "Sestava archivů"
 
 #: RepositoriesReport/RepositoriesReport.py:189
 #: RepositoriesReport/RepositoriesReportAlt.py:523
@@ -23214,10 +22569,8 @@ msgid "Data:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:383
-#, fuzzy
-#| msgid "Pages"
 msgid "Page:"
-msgstr "Stránky"
+msgstr "Strana:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:424
 msgid "Selection with a filter"
@@ -23228,101 +22581,76 @@ msgid "Include repository's urls"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:437
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether to include urls on repository."
-msgstr "Zda zahrnovat stránky archivů či nikoli."
+msgstr "Zda zahrnout URL archivu."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:440
-#, fuzzy
-#| msgid "Include records marked private"
 msgid "Include repository's address"
-msgstr "Zahrnout záznamy označené jako důvěrné"
+msgstr "Zahrnout adresu archivu"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:441
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether to include addresses on repository."
-msgstr "Zda zahrnovat stránky archivů či nikoli."
+msgstr "Zda zahrnout adresy archivu."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Include source's author"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:445
-#, fuzzy
-#| msgid "Whether to include a birth column"
 msgid "Whether to include author."
-msgstr "Zda zahrnout sloupec narození"
+msgstr "Zda zahrnout autora."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:448
-#, fuzzy
-#| msgid "Include records marked private"
 msgid "Include source's abbreviation"
-msgstr "Zahrnout záznamy označené jako důvěrné"
+msgstr "Zahrnout zkratku pramene"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:449
-#, fuzzy
-#| msgid "Whether to include a birth column"
 msgid "Whether to include abbreviation."
-msgstr "Zda zahrnout sloupec narození"
+msgstr "Zda zahrnout zkratku."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Include source's publication information"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:453
-#, fuzzy
-#| msgid "Whether to include a birth column"
 msgid "Whether to include publication information."
-msgstr "Zda zahrnout sloupec narození"
+msgstr "Zda zahrnout údaje o vydání."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Include source's data"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:457
-#, fuzzy
-#| msgid "Whether to include a death column"
 msgid "Whether to include keys and values."
-msgstr "Zda zahrnout sloupec úmrtí"
+msgstr "Zda zahrnout klíče a hodnoty."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:461
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether to include notes on repositories and sources."
-msgstr "Zda zahrnovat stránky archivů či nikoli."
+msgstr "Zda zahrnout poznámky k archivům a pramenům."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:465
-#, fuzzy
-#| msgid "Whether to include a death column"
 msgid "Whether to include media."
-msgstr "Zda zahrnout sloupec úmrtí"
+msgstr "Zda zahrnout média."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Include citations"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:469
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include citations on sources."
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zda zahrnout citace pramenů."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:473
-#, fuzzy
 msgid "Whether to include repositories and sources marked as private."
-msgstr "Zda zahrnout mediální objekty do WWW stránek"
+msgstr "Zda zahrnout archivy a prameny označené jako soukromé."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:476
 msgid "Display empty values"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:477
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether to include key records with empty values."
-msgstr "Zda zahrnovat stránky archivů či nikoli."
+msgstr "Zda zahrnout záznamy klíčů s prázdnými hodnotami."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:553
 msgid "The style used for child section."
@@ -23410,33 +22738,24 @@ msgid "Gramplet for search objects in database."
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:104
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Sort by object type"
-msgstr "Rejtřík pramenů"
+msgstr "Řadit podle typu objektu"
 
 #: SearchGramplet/SearchGramplet.py:138
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Menu to set search objects"
-msgstr "Vyhledat osobu"
+msgstr "Nabídka pro nastavení hledaných objektů"
 
 #: SearchGramplet/SearchGramplet.py:140
-#, fuzzy
-#| msgid "Used for person"
 msgid "Select objects to search"
-msgstr "Použito pro osobu"
+msgstr "Vybrat objekty k hledání"
 
 #: SearchGramplet/SearchGramplet.py:154
-#, fuzzy
 msgid "SearchGramplet configuration menu"
-msgstr "Nastavení"
+msgstr "Konfigurační nabídka SearchGramplet"
 
 #: SearchGramplet/SearchGramplet.py:261
-#, fuzzy
-#| msgid "No matching surname."
 msgid "No matches..."
-msgstr "Žádné odpovídající příjmení"
+msgstr "Žádné shody..."
 
 #: SearchGramplet/SearchGramplet.py:353
 msgid "Start type to search"
@@ -23454,22 +22773,17 @@ msgid "Birth: %s"
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Death: %s"
-msgstr "Aktualizace cest k médiím"
+msgstr "Úmrtí: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
-#, fuzzy
-#| msgid "Used for person"
 msgid "Set as Active person"
-msgstr "Použito pro osobu"
+msgstr "Nastavit jako aktivní osobu"
 
 #: SearchGramplet/SearchGramplet.py:920
-#, fuzzy
-#| msgid "Used for person"
 msgid "Set as Home person"
-msgstr "Použito pro osobu"
+msgstr "Nastavit jako výchozí osobu"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.py:122
@@ -23516,10 +22830,8 @@ msgid "Remove Attribute"
 msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.py:194
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Removing attributes..."
-msgstr "Odstraňuji '%s'..."
+msgstr "Odstraňování atributů..."
 
 #: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
@@ -23584,16 +22896,12 @@ msgid "If checked, all objects without a date will also be set private."
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "Vyberte filtr pro omezení osob"
+msgstr "Vyberte filtr pro omezení událostí"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict medias"
-msgstr "Vyberte filtr pro omezení osob"
+msgstr "Vyberte filtr pro omezení médií"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
 msgid "Internet type filter"
@@ -23620,28 +22928,20 @@ msgid "BirthIndex"
 msgstr ""
 
 #: SourceIndex/SourceIndex.gpr.py:40 SourceIndex/SourceIndex.gpr.py:41
-#, fuzzy
-#| msgid "Media Index"
 msgid "MarriageIndex"
-msgstr "Rejstřík médií"
+msgstr "Rejstřík sňatků"
 
 #: SourceIndex/SourceIndex.gpr.py:56 SourceIndex/SourceIndex.gpr.py:57
-#, fuzzy
-#| msgid "Media Index"
 msgid "DeathIndex"
-msgstr "Rejstřík médií"
+msgstr "Rejstřík úmrtí"
 
 #: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
-#, fuzzy
-#| msgid "Persons Index"
 msgid "CensusIndex"
-msgstr "Rejstřík osob"
+msgstr "Rejstřík sčítání lidu"
 
 #: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
-#, fuzzy
-#| msgid "Sources Index"
 msgid "SourceIndex"
-msgstr "Rejtřík pramenů"
+msgstr "Rejstřík pramenů"
 
 #: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
 msgid "birth"
@@ -23663,10 +22963,8 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:149
-#, fuzzy
-#| msgid "Web site title"
 msgid "The source title"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "Název pramene"
 
 #: SourceIndex/birth.glade:164
 msgid "The volume or page of this source"
@@ -23699,10 +22997,8 @@ msgid "Other:"
 msgstr ""
 
 #: SourceIndex/birth.glade:351
-#, fuzzy
-#| msgid "Web site title"
 msgid "Repository title"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "Název archivu"
 
 #: SourceIndex/birth.glade:388 SourceIndex/census.glade:973
 #: SourceIndex/death.glade:589 SourceIndex/marriage.glade:234
@@ -23807,10 +23103,8 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
-#, fuzzy
-#| msgid "Original: "
 msgid "Origine:"
-msgstr "Původ: "
+msgstr "Původ:"
 
 #: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
@@ -23838,19 +23132,16 @@ msgstr ""
 #: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
 #: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
 #: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-#, fuzzy
 msgid "First name:"
-msgstr "Bez příjmení"
+msgstr "Křestní jméno:"
 
 #: SourceIndex/census.glade:319 SourceIndex/death.glade:1003
 msgid "Birth date:"
 msgstr ""
 
 #: SourceIndex/census.glade:364
-#, fuzzy
-#| msgid "Media Path Update"
 msgid "Death date:"
-msgstr "Aktualizace cest k médiím"
+msgstr "Datum úmrtí:"
 
 #: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
 msgid "Birth place:"
@@ -23940,10 +23231,8 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/index.glade:7
-#, fuzzy
-#| msgid "Indexes"
 msgid "index"
-msgstr "Rejstříky"
+msgstr "Rejstřík"
 
 #: SourceIndex/index.glade:50
 msgid "_File"
@@ -24002,9 +23291,8 @@ msgid "New birth or baptism"
 msgstr ""
 
 #: SourceIndex/index.glade:341
-#, fuzzy
 msgid "add birth act"
-msgstr "chybí událost narození"
+msgstr "Přidat zápis narození"
 
 #: SourceIndex/index.glade:373
 msgid "New marriage"
@@ -24019,9 +23307,8 @@ msgid "New death or burial"
 msgstr ""
 
 #: SourceIndex/index.glade:463
-#, fuzzy
 msgid "add death act"
-msgstr "Přidat novou událost"
+msgstr "Přidat zápis úmrtí"
 
 #: SourceIndex/index.glade:495
 msgid "New census"
@@ -24036,10 +23323,8 @@ msgid "Select a birth source"
 msgstr ""
 
 #: SourceIndex/index.glade:617
-#, fuzzy
-#| msgid "Select an image to begin..."
 msgid "Select a marriage source"
-msgstr "Vybrat obrázek kterým se začne..."
+msgstr "Vybrat pramen ke sňatku"
 
 #: SourceIndex/index.glade:678
 msgid "Select a death source"
@@ -24054,14 +23339,12 @@ msgid "Select a repository storing a source"
 msgstr ""
 
 #: SourceIndex/index.glade:829
-#, fuzzy
 msgid "repositories"
 msgstr "Archivy"
 
 #: SourceIndex/index.glade:869
-#, fuzzy
 msgid "Selected view"
-msgstr "Vybrat událost"
+msgstr "Vybraný pohled"
 
 #: SourceIndex/index.glade:889
 msgid ""
@@ -24162,10 +23445,8 @@ msgid "Sources and Citations Report"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
-#, fuzzy
-#| msgid "Provide a short description for this image."
 msgid "Provides a source and Citations Report with notes"
-msgstr "Poskytněte krátký popis tohoto obrázku."
+msgstr "Poskytuje sestavu pramenů a citací s poznámkami"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
@@ -24236,20 +23517,16 @@ msgid " %s"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:413
-#, fuzzy
-#| msgid "The title of the web site"
 msgid "Title of the Report"
-msgstr "Název webové stránky"
+msgstr "Název sestavy"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:414
 msgid "Title string for the report."
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:417
-#, fuzzy
-#| msgid "The title of the web site"
 msgid "Subtitle of the Report"
-msgstr "Název webové stránky"
+msgstr "Podtitul sestavy"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
@@ -24264,16 +23541,12 @@ msgid "Select sources using a filter"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:443
-#, fuzzy
-#| msgid "Persons"
 msgid "Show persons"
-msgstr "Osoby"
+msgstr "Zobrazit osoby"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
-#, fuzzy
-#| msgid "Whether to show the last modification time in the pages footer"
 msgid "Whether to show events and persons mentioned in the note"
-msgstr "Zda zobrazit čas poslední změny v patičce stránek"
+msgstr "Zda zobrazit události a osoby uvedené v poznámce"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:495
 msgid "The style used for the subtitle of the report."
@@ -24312,16 +23585,12 @@ msgid "January 1"
 msgstr ""
 
 #: Sqlite/ExportSql.py:1721
-#, fuzzy
-#| msgid "Search:"
 msgid "March 1"
-msgstr "Hledat:"
+msgstr "1. března"
 
 #: Sqlite/ExportSql.py:1722
-#, fuzzy
-#| msgid "Search:"
 msgid "March 25"
-msgstr "Hledat:"
+msgstr "25. března"
 
 #: Sqlite/ExportSql.py:1723
 msgid "September 1"
@@ -24365,10 +23634,8 @@ msgstr ""
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
-#, fuzzy
-#| msgid "Surnames Index"
 msgid "Surname Mapping"
-msgstr "Rejstřík příjmení"
+msgstr "Mapování příjmení"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:4
 msgid "Gramplet for editing the grouping of surnames"
@@ -24523,10 +23790,8 @@ msgstr ""
 
 #: TMGimporter/libtmg.py:2319 TMGimporter/libtmg.py:2352
 #: TMGimporter/libtmg.py:2434 TMGimporter/libtmg.py:2469
-#, fuzzy
-#| msgid "Export notes"
 msgid "TMG import failed"
-msgstr "Exportovat poznámky"
+msgstr "Import TMG se nezdařil"
 
 #: TMGimporter/libtmg.py:2320
 msgid ""
@@ -24638,10 +23903,8 @@ msgid "Show these events"
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:113
-#, fuzzy
-#| msgid "(sort by name)"
 msgid "Sort by "
-msgstr "(seřadit dle jména)"
+msgstr "Řadit podle "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:114
 msgid "Sort in ascending order?"
@@ -24656,10 +23919,8 @@ msgid "January"
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
-#, fuzzy
-#| msgid "Search:"
 msgid "March"
-msgstr "Hledat:"
+msgstr "Březen"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "April"
@@ -24698,10 +23959,8 @@ msgid "November"
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:247
-#, fuzzy
-#| msgid "Person page"
 msgid "Person Name"
-msgstr "Stránka osoby"
+msgstr "Jméno osoby"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:249
 msgid "Event Year"
@@ -24725,10 +23984,8 @@ msgid " and "
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:435
-#, fuzzy
-#| msgid "Other participants"
 msgid "unknown participant"
-msgstr "Ostatní účastníci"
+msgstr "neznámý účastník"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:442
 msgid "unknown location"
@@ -25111,10 +24368,8 @@ msgstr ""
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:31
 #: ThumbnailGenerator/ThumbnailGenerator.py:53
-#, fuzzy
-#| msgid "Thumbnail View Area"
 msgid "Thumbnail Generator"
-msgstr "Oblast Pohledu náhledů"
+msgstr "Generátor náhledů"
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:32
 msgid "Generates thumbnails for media files"
@@ -25187,20 +24442,16 @@ msgid "What to show"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:891
-#, fuzzy
-#| msgid "Suppress Gramps ID"
 msgid "Show GrampsID"
-msgstr "Potlačit Gramps ID"
+msgstr "Zobrazit ID Gramps"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:892
 msgid "Show GrampsID on top right of the box"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:895
-#, fuzzy
-#| msgid "Maximize"
 msgid "Optimize"
-msgstr "Maximalizovat"
+msgstr "Optimalizovat"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:896
 msgid "Use as little space in horizontal direction as possible"
@@ -25223,10 +24474,8 @@ msgid "Box background color for female person"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:915
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of pixel per year"
-msgstr "Počet stránek"
+msgstr "Počet pixelů na rok"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:916
 msgid "How many pixel height is one year?"
@@ -25299,10 +24548,8 @@ msgid "Order by timeline"
 msgstr ""
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1439
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show lifespan"
-msgstr "Zobrazit duplicity"
+msgstr "Zobrazit délku života"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
@@ -25474,10 +24721,8 @@ msgid "place: "
 msgstr ""
 
 #: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Media Type"
 msgid "Note Type"
-msgstr "Typ média"
+msgstr "Typ poznámky"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
@@ -25528,43 +24773,32 @@ msgid "Family Relation Types"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:104
-#, fuzzy
-#| msgid "Include references in indexes"
 msgid "Child reference Types"
-msgstr "Zahrnout odkazy v indexech"
+msgstr "Typy odkazů na děti"
 
 #: TypeCleanup/type_cleanup.py:105
 msgid "Name Origin Types"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:106
-#, fuzzy
-#| msgid "Media Type"
 msgid "Name Types"
-msgstr "Typ média"
+msgstr "Typy jmen"
 
 #: TypeCleanup/type_cleanup.py:107
-#, fuzzy
-#| msgid "Media Type"
 msgid "Note Types"
-msgstr "Typ média"
+msgstr "Typy poznámek"
 
 #: TypeCleanup/type_cleanup.py:108
-#, fuzzy
-#| msgid "Print place pages"
 msgid "Place Types"
-msgstr "Tisknout stránky míst"
+msgstr "Typy míst"
 
 #: TypeCleanup/type_cleanup.py:109
-#, fuzzy
 msgid "Repository Types"
-msgstr "Archivy"
+msgstr "Typy archivů"
 
 #: TypeCleanup/type_cleanup.py:111
-#, fuzzy
-#| msgid "Media Type"
 msgid "Source Media Types"
-msgstr "Typ média"
+msgstr "Typy médií pramenů"
 
 #: TypeCleanup/type_cleanup.py:112
 msgid "URL Types"
@@ -25670,10 +24904,8 @@ msgid "Search: google.com.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:60
-#, fuzzy
-#| msgid "Search results"
 msgid "Search: roots.in.ua"
-msgstr "Výsledky hledání"
+msgstr "Hledat: roots.in.ua"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:11
 msgid "UK Web Connect Pack"
@@ -25722,10 +24954,8 @@ msgid ""
 msgstr ""
 
 #: WebSearch/WebSearch.py:477
-#, fuzzy
-#| msgid "Contents of the page"
 msgid "Save Coordinates to the Place"
-msgstr "Obsah stránky"
+msgstr "Uložit souřadnice do místa"
 
 #: WebSearch/WebSearch.py:618
 msgid "AI provider is disabled"
@@ -25752,10 +24982,8 @@ msgid "Keys"
 msgstr ""
 
 #: WebSearch/WebSearch.py:1632
-#, fuzzy
-#| msgid "Web site title"
 msgid "Website URL"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "URL webové stránky"
 
 #: WebSearch/WebSearch.py:1635
 msgid "Add link to note"
@@ -25766,10 +24994,8 @@ msgid "Add link to attribute"
 msgstr ""
 
 #: WebSearch/WebSearch.py:1639
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show QR-code"
-msgstr "Zobrazit duplicity"
+msgstr "Zobrazit QR kód"
 
 #: WebSearch/WebSearch.py:1641
 msgid "Copy link to clipboard"
@@ -25792,10 +25018,8 @@ msgid "Edit Note with the Link"
 msgstr ""
 
 #: WebSearch/WebSearch.py:1658
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Edit Internet link"
-msgstr "Výběr stránek"
+msgstr "Upravit internetový odkaz"
 
 #: WebSearch/WebSearch.py:1661
 msgid "🔍 AI Suggestions"
@@ -25855,10 +25079,9 @@ msgid "Attribute has been successfully added"
 msgstr ""
 
 #: WebSearch/WebSearch.py:2460
-#, fuzzy, python-brace-format
-#| msgid "Web site title"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "Název: {title}"
 
 #: WebSearch/WebSearch.py:2464
 #, python-brace-format
@@ -25897,15 +25120,14 @@ msgid "Value: %s"
 msgstr ""
 
 #: WebSearch/activity_row_generator.py:133
-#, fuzzy, python-format
+#, python-format
 msgid "Loaded from file: %s"
-msgstr "Vybrat poznámku"
+msgstr "Načteno ze souboru: %s"
 
 #: WebSearch/activity_row_generator.py:136
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Domain: %s"
-msgstr "Aktualizace cest k médiím"
+msgstr "Doména: %s"
 
 #: WebSearch/activity_row_generator.py:141
 #, python-format
@@ -25913,16 +25135,14 @@ msgid "Object: %s"
 msgstr "Objekt: %s"
 
 #: WebSearch/activity_row_generator.py:145
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Pattern: %s"
-msgstr "Aktualizace cest k médiím"
+msgstr "Vzor: %s"
 
 #: WebSearch/activity_row_generator.py:148
-#, fuzzy, python-format
-#| msgid "Suppress Gramps ID"
+#, python-format
 msgid "Object Gramps ID: %s"
-msgstr "Potlačit Gramps ID"
+msgstr "ID objektu v Gramps: %s"
 
 #: WebSearch/activity_row_generator.py:152
 #, python-format
@@ -25942,10 +25162,8 @@ msgid "Link saved to Attribute"
 msgstr ""
 
 #: WebSearch/activity_row_generator.py:165
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Place history loaded"
-msgstr "Kontrolují se názvy míst"
+msgstr "Historie místa načtena"
 
 #: WebSearch/activity_row_generator.py:166
 msgid "Domain skipped"
@@ -25964,10 +25182,8 @@ msgid "Attribute updated"
 msgstr ""
 
 #: WebSearch/activity_row_generator.py:170
-#, fuzzy
-#| msgid "Media Type"
 msgid "Note updated"
-msgstr "Typ média"
+msgstr "Poznámka aktualizována"
 
 #: WebSearch/constants.py:392
 msgid "Column - Icons"
@@ -26198,15 +25414,12 @@ msgid "🧩 WebSearch Gramplet version: `%s`"
 msgstr ""
 
 #: WebSearch/internet_links_loader.py:78 WebSearch/internet_links_loader.py:79
-#, fuzzy
 msgid "No title"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "Bez názvu"
 
 #: WebSearch/markdown_place_history_formatter.py:52
-#, fuzzy
-#| msgid "No data available in table"
 msgid "No data available."
-msgstr "Tabulka neobsahuje žádná data"
+msgstr "Nejsou k dispozici žádná data."
 
 #: WebSearch/markdown_place_history_formatter.py:57
 msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
@@ -26276,10 +25489,8 @@ msgid "Leave alone"
 msgstr ""
 
 #: WebSearch/settings_ui_manager.py:118
-#, fuzzy
-#| msgid "General Data"
 msgid "Separate"
-msgstr "Obecná data"
+msgstr "Oddělit"
 
 #: WebSearch/settings_ui_manager.py:128
 msgid "URL Compactness Level"
@@ -26386,20 +25597,17 @@ msgid "Gramplet showing all surnames as a word cloud"
 msgstr ""
 
 #: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Place Word Cloud"
-msgstr "Kontrolují se názvy míst"
+msgstr "Mrak názvů míst"
 
 #: WordClouds/WordClouds.gpr.py:57
 msgid "Gramplet showing all places as a word cloud"
 msgstr ""
 
 #: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of %s"
-msgstr "Počet stránek"
+msgstr "Počet (%s)"
 
 #: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
 msgid "Color (low)"
@@ -26410,10 +25618,8 @@ msgid "Color (high)"
 msgstr ""
 
 #: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
-#, fuzzy
-#| msgid "No color"
 msgid "Hover color"
-msgstr "Bez barev"
+msgstr "Barva při najetí myší"
 
 #: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
 msgid "Layout quality"
@@ -26433,10 +25639,8 @@ msgid "Click given name to view people with that given name"
 msgstr ""
 
 #: WordClouds/placewordcloudgramplet.py:53
-#, fuzzy
-#| msgid "Include references in indexes"
 msgid "Click place name to view references"
-msgstr "Zahrnout odkazy v indexech"
+msgstr "Klikněte na název místa pro zobrazení odkazů"
 
 #: WordClouds/surnamewordcloudgramplet.py:49
 msgid "Click surname to view people with that surname"
@@ -26481,10 +25685,8 @@ msgid "No file loaded..."
 msgstr ""
 
 #: lxml/etreeGramplet.py:203 lxml/etreeGramplet.py:209
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of additions and modifications back"
-msgstr "Počet stránek"
+msgstr "Počet posledních přidání a změn"
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Print more informations on console"
@@ -26535,40 +25737,31 @@ msgid ""
 msgstr ""
 
 #: lxml/etreeGramplet.py:557
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet štítků : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:559
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\n"
 msgstr ""
 "Počet štítků : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 
 #: lxml/etreeGramplet.py:561
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of  events : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet štítků : \n"
-"\t\t\t%s\n"
+"Počet událostí : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:564
 #, python-format
@@ -26578,100 +25771,76 @@ msgid ""
 msgstr ""
 
 #: lxml/etreeGramplet.py:566
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet štítků : \n"
-"\t\t\t%s\n"
+"Počet osob : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:567
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of families : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet štítků : \n"
-"\t\t\t%s\n"
+"Počet rodin : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:568
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of sources : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet štítků : \n"
-"\t\t\t%s\n"
+"Počet pramenů : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:570
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of citations : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet štítků : \n"
-"\t\t\t%s\n"
+"Počet citací : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:573
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of places : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet štítků : \n"
-"\t\t\t%s\n"
+"Počet míst : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:574
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of media objects : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet štítků : \n"
-"\t\t\t%s\n"
+"Počet mediálních objektů : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:575
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of repositories : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet štítků : \n"
-"\t\t\t%s\n"
+"Počet archivů : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:576
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of notes : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet štítků : \n"
-"\t\t\t%s\n"
+"Počet poznámek : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:581
 #, python-format
@@ -26712,16 +25881,12 @@ msgid "Please, try to install \"python3 lxml\" package."
 msgstr ""
 
 #: lxml/lxmlGramplet.py:263 lxml/lxmlGramplet.py:281 lxml/lxmlGramplet.py:757
-#, fuzzy
-#| msgid "Text Options"
 msgid "xmllint options"
-msgstr "Možnosti textu"
+msgstr "Možnosti xmllint"
 
 #: lxml/lxmlGramplet.py:272 lxml/lxmlGramplet.py:290
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "debug places"
-msgstr "Zobrazit duplicity"
+msgstr "Ladění míst"
 
 #: lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:291
 msgid "debug xml"
@@ -26764,16 +25929,12 @@ msgid "Cannot parse \"%(file)s\" via etree"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:453
-#, fuzzy
-#| msgid "File ready"
 msgid "File issue"
-msgstr "Soubor připraven"
+msgstr "Problém se souborem"
 
 #: lxml/lxmlGramplet.py:492
-#, fuzzy
-#| msgid "Preparing file ..."
 msgid "Parsing file..."
-msgstr "Připravuji soubor ..."
+msgstr "Analyzuje se soubor..."
 
 #: lxml/lxmlGramplet.py:577
 #, python-format
@@ -26803,10 +25964,8 @@ msgid "0"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:660
-#, fuzzy
-#| msgid "File ready"
 msgid "File parsed with"
-msgstr "Soubor připraven"
+msgstr "Soubor analyzován pomocí"
 
 #: lxml/lxmlGramplet.py:662
 msgid " by Gramps "
@@ -26834,31 +25993,28 @@ msgid "\t{number} surname; no frequency yet"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:668 lxml/lxmlGramplet.py:675
-#, fuzzy, python-brace-format
-#| msgid "Number of pages"
+#, python-brace-format
 msgid "\t{number} place"
 msgid_plural "\t{number} places"
-msgstr[0] "Počet stránek"
-msgstr[1] "Počet stránek"
-msgstr[2] "Počet stránek"
+msgstr[0] "\t{number} místo"
+msgstr[1] "\t{number} místa"
+msgstr[2] "\t{number} míst"
 
 #: lxml/lxmlGramplet.py:669 lxml/lxmlGramplet.py:679
-#, fuzzy, python-brace-format
-#| msgid "Number of pages"
+#, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes"
-msgstr[0] "Počet stránek"
-msgstr[1] "Počet stránek"
-msgstr[2] "Počet stránek"
+msgstr[0] "\t{number} poznámka"
+msgstr[1] "\t{number} poznámky"
+msgstr[2] "\t{number} poznámek"
 
 #: lxml/lxmlGramplet.py:683
-#, fuzzy, python-brace-format
-#| msgid "Used for source"
+#, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources"
-msgstr[0] "Použito pro pramen"
-msgstr[1] "Použito pro pramen"
-msgstr[2] "Použito pro pramen"
+msgstr[0] "\t{number} pramen"
+msgstr[1] "\t{number} prameny"
+msgstr[2] "\t{number} pramenů"
 
 #: lxml/lxmlGramplet.py:702 lxml/lxmlGramplet.py:927
 msgid "Gallery.html"
@@ -26890,10 +26046,8 @@ msgid "Content generated by Gramps"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:799
-#, fuzzy
-#| msgid "Used for source"
 msgid "List of sources"
-msgstr "Použito pro pramen"
+msgstr "Seznam pramenů"
 
 #: lxml/lxmlGramplet.py:818
 msgid "Australia"
