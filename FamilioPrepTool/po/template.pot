@@ -123,7 +123,7 @@ msgstr ""
 #: FamilioPrepTool/FamilioPrepTool.py:209
 #, python-format
 msgid ""
-"Added '%s' attributes: %d\n"
+"Added '%(attr_type)s' attributes: %(count)d\n"
 "\n"
 msgstr ""
 
@@ -144,5 +144,5 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"Done. _UID added: %d, marriage events added: %d\n"
+"Done. _UID added: %(uid_count)d, marriage events added: %(marriage_count)d\n"
 msgstr ""

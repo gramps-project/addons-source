@@ -27,6 +27,8 @@
 import re
 import uuid
 
+from gi.repository import GLib
+
 #-------------------------------------------------
 #
 # GRAMPS modules
@@ -150,6 +152,13 @@ class FamilioPrepTool(PluginWindows.ToolManagedWindowBatch):
     def initial_frame(self):
         return _("_UID attribute")
 
+    def _show_results_tab(self):
+        """Make the Results tab the active one"""
+        try:
+            self.set_current_frame(_("Results"))
+        except Exception:
+            pass
+
     def run(self):
         opt = self.options.menu
 
@@ -163,6 +172,7 @@ class FamilioPrepTool(PluginWindows.ToolManagedWindowBatch):
         fallback_str = index_to_str.get(fallback_idx, "marriage")
 
         self.add_results_frame(_("Results"))
+        self._show_results_tab()
 
         # Remember the currently active person so we can restore the
         # selection after request_rebuild() (otherwise Gramps resets it
@@ -223,8 +233,10 @@ class FamilioPrepTool(PluginWindows.ToolManagedWindowBatch):
                         self.db.commit_person(person, self.trans)
                         uid_count += 1
 
-                    self.results_write(_("Added '%s' attributes: %d\n\n") %
-                                        (uid_attr_type_str, uid_count))
+                    self.results_write(
+                        _("Added '%(attr_type)s' attributes: %(count)d\n\n") %
+                        {'attr_type': uid_attr_type_str, 'count': uid_count}
+                    )
 
             # ========== 2. Marriage events ==========
             if add_marriages:
@@ -289,6 +301,8 @@ class FamilioPrepTool(PluginWindows.ToolManagedWindowBatch):
                 pass
 
         self.results_write(
-            _("\nDone. _UID added: %d, marriage events added: %d\n") %
-            (uid_count, marriage_count)
+            _("\nDone. _UID added: %(uid_count)d, "
+              "marriage events added: %(marriage_count)d\n") %
+            {'uid_count': uid_count, 'marriage_count': marriage_count}
         )
+        self._show_results_tab()
