@@ -15,13 +15,14 @@
 # Morgan Antonsson <morgan.antonsson@gmail.com>, 2025.
 # Eric Bjurvald <epg.bjurvald@gmail.com>, 2026.
 # SimplyRAR <simply.rar@gmail.com>, 2026.
+# Pär Ekholm <pehlm@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-26 09:44-0700\n"
-"PO-Revision-Date: 2026-09-30 15:23+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"PO-Revision-Date: 2026-10-27 21:51+0000\n"
+"Last-Translator: Pär Ekholm <pehlm@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -29,7 +30,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -15762,27 +15763,23 @@ msgid "Python evaluation"
 msgstr "Utvärdering av Python"
 
 #: GOQLFilter/goql.py:523
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error applying filter: %s"
-msgstr "Fel: inloggning misslyckades"
+msgstr "Fel vid tillämpning av filter: %s"
 
 #: GOQLFilter/goql.py:526
 #, python-format
 msgid "Showing %(shown)d of %(total)d (%(method)s)"
-msgstr ""
+msgstr "Visar %(shown)d av %(total)d (%(method)s)"
 
 #: GOQLFilter/goql.py:541
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error resetting filter: %s"
-msgstr "Fel vid skapande av notis"
+msgstr "Fel vid återställning av filter: %s"
 
 #: GOQLFilter/goql.py:548
-#, fuzzy
-#| msgid "Enter Python expressions"
 msgid "Enter an expression first"
-msgstr "Skriv ett python uttryck"
+msgstr "Ange ett uttryck först"
 
 #: GOQLFilter/goql.py:560
 #, python-brace-format
@@ -15798,6 +15795,8 @@ msgid ""
 "Matches people for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matchar personer för vilka det givna gramps-object-query-language where-"
+"expression utvärderas till sant"
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
 msgid "Families matching the <GOQL expression>"
@@ -15808,6 +15807,8 @@ msgid ""
 "Matches families for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matchar familjer för vilka det givna gramps-object-query-language where-"
+"expression utvärderas till sant"
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
@@ -15818,6 +15819,8 @@ msgid ""
 "Matches events for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matchar händelser för vilka det givna gramps-object-query-language where-"
+"expression utvärderas till sant"
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
@@ -15828,6 +15831,8 @@ msgid ""
 "Matches places for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matchar platser för vilka det givna gramps-object-query-language where-"
+"expression utvärderas till sant"
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
@@ -15838,6 +15843,8 @@ msgid ""
 "Matches repositories for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matchar arkivplatser för vilka det givna gramps-object-query-language where-"
+"expression utvärderas till sant"
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
 msgid "Sources matching the <GOQL expression>"
@@ -15848,6 +15855,8 @@ msgid ""
 "Matches sources for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matchar källor för vilka det givna gramps-object-query-language where-"
+"expression utvärderas till sant"
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
@@ -15858,6 +15867,8 @@ msgid ""
 "Matches citations for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matchar citeringar för vilka det givna gramps-object-query-language where-"
+"expression utvärderas till sant"
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
@@ -15868,6 +15879,8 @@ msgid ""
 "Matches media for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matchar media för vilka det givna gramps-object-query-language where-"
+"expression utvärderas till sant"
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
@@ -15878,6 +15891,8 @@ msgid ""
 "Matches notes for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matchar anteckningar för vilka det givna gramps-object-query-language where-"
+"expression utvärderas till sant"
 
 #: GOQLFilter/whereexprrule.py:212
 msgid "GOQL expression"
@@ -15888,12 +15903,12 @@ msgid ""
 "Matches objects for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matchar objekt för vilka det givna gramps-object-query-language where-"
+"expression utvärderas till sant"
 
 #: GWizardFileMerge/GWizardFileMerge.gpr.py:19
-#, fuzzy
-#| msgid "Command Line Merge"
 msgid "GWizard File Merge"
-msgstr "Lägg ihop via kommandoraden"
+msgstr "GWizard-filsammanslagning"
 
 #: GWizardFileMerge/GWizardFileMerge.gpr.py:21
 msgid ""
@@ -15901,79 +15916,69 @@ msgid ""
 "Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
 "differences person by person."
 msgstr ""
+"Verktyg för släktträdsbearbetning som gör det möjligt att jämföra en annan "
+"släktforskningsfil (GEDCOM, Gramps XML, ...) sida vid sida med det öppna "
+"släktträdet, samt att slå samman valda skillnader person för person."
 
 #: GWizardFileMerge/gwizard.py:120
-#, fuzzy
-#| msgid "Deep Connections"
 msgid "Configure Connection"
-msgstr "Långa släktskap"
+msgstr "Konfigurera anslutning"
 
 #: GWizardFileMerge/gwizard.py:121
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Load Data"
-msgstr "Laddar informationen"
+msgstr "Läs in data"
 
 #: GWizardFileMerge/gwizard.py:122
-#, fuzzy
-#| msgid "Edit Starting Person"
 msgid "Find Matching Persons"
-msgstr "Redigera startperson"
+msgstr "Hitta matchande personer"
 
 #: GWizardFileMerge/gwizard.py:123
-#, fuzzy
-#| msgid "Differences"
 msgid "Compare Differences"
-msgstr "Skillnader"
+msgstr "Jämför skillnader"
 
 #: GWizardFileMerge/gwizard.py:124
-#, fuzzy
-#| msgid "Apply changes"
 msgid "Apply Changes"
 msgstr "Tillämpa ändringar"
 
 #: GWizardFileMerge/gwizard.py:137
 msgid "Configure file path or authenticate with online service."
-msgstr ""
+msgstr "Konfigurera filsökväg eller autentisera mot en onlinetjänst."
 
 #: GWizardFileMerge/gwizard.py:138
 msgid "Load/parse the external genealogy data into memory."
-msgstr ""
+msgstr "Läs in/tolka den externa släktforskningsdatan till minnet."
 
 #: GWizardFileMerge/gwizard.py:139
 msgid "Search for potential matches in your database."
-msgstr ""
+msgstr "Sök efter potentiella matchningar i din databas."
 
 #: GWizardFileMerge/gwizard.py:140
 msgid "Compare fields side-by-side between the source and target."
-msgstr ""
+msgstr "Jämför fält sida vid sida mellan källan och målet."
 
 #: GWizardFileMerge/gwizard.py:141
 msgid "Merge selected changes or add new records to the database."
-msgstr ""
+msgstr "Slå samman valda ändringar eller lägg till nya poster i databasen."
 
 #: GWizardFileMerge/gwizardcompare.py:167
 #: GWizardFileMerge/gwizardcompare.py:187
 msgid "GWizard Compare"
-msgstr ""
+msgstr "GWizard-jämförelse"
 
 #: GWizardFileMerge/gwizardcompare.py:173
 msgid "No source database available for comparison"
-msgstr ""
+msgstr "Ingen källdatabas tillgänglig för jämförelse"
 
 #: GWizardFileMerge/gwizardcompare.py:208
 #: GWizardFileMerge/gwizardmergedialog.py:586
-#, fuzzy
-#| msgid "Importing GEDCOM..."
 msgid "Incoming GEDCOM"
-msgstr "Importerar GEDCOM..."
+msgstr "Inkommande GEDCOM"
 
 #: GWizardFileMerge/gwizardcompare.py:213
 #: GWizardFileMerge/gwizardmergedialog.py:593
-#, fuzzy, python-format
-#| msgid "Importing GEDCOM..."
+#, python-format
 msgid "Incoming GEDCOM: %s"
-msgstr "Importerar GEDCOM..."
+msgstr "Inkommande GEDCOM: %s"
 
 #: GWizardFileMerge/gwizardcompare.py:215
 #: GWizardFileMerge/gwizardmergedialog.py:597
