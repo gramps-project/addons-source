@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,14 +12,132 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Data Entry Gramplet"
+msgstr "Gramplet pro zadávání údajů"
+
+msgid "Gramplet for quick data entry"
+msgstr "Gramplet pro rychlé zadávání údajů"
+
+msgid "Active person"
+msgstr "Aktivní osoba"
+
+msgid "Family:"
+msgstr "Rodina:"
+
 msgid "Sources?"
 msgstr "Prameny?"
 
+msgid "Surname, Given"
+msgstr "Příjmení, křestní jméno"
+
+msgid "Save"
+msgstr "Uložit"
+
+msgid "Abandon"
+msgstr "Zahodit změny"
+
+msgid "New person"
+msgstr "Nová osoba"
+
+msgid "Add relation"
+msgstr "Přidat vztah"
+
+msgid "No relation to active person"
+msgstr "Bez vazby na aktivní osobu"
+
+msgid "Add as a Parent"
+msgstr "Přidat jako rodiče"
+
+msgid "Add as a Mother"
+msgstr "Přidat jako matku"
+
+msgid "Add as a Father"
+msgstr "Přidat jako otce"
+
+msgid "Add as a Spouse"
+msgstr "Přidat jako manžela/manželku"
+
+msgid "Add as a Wife"
+msgstr "Přidat jako manželku"
+
+msgid "Add as a Husband"
+msgstr "Přidat jako manžela"
+
+msgid "Add as a Sibling"
+msgstr "Přidat jako sourozence"
+
+msgid "Add as a Child"
+msgstr "Přidat jako dítě"
+
+msgid "Copy Active Data"
+msgstr "Kopírovat údaje aktivní osoby"
+
 msgid "No Family Tree is open."
 msgstr "Není otevřen žádný rodinný strom."
+
+msgid "Please open a Family Tree to edit data."
+msgstr "Chcete-li upravovat údaje, otevřete rodokmen."
+
+#, python-format
+msgid "Gramplet Data Edit: %s"
+msgstr "Úprava údajů v Grampletu: %s"
+
+msgid "Please open a Family Tree before adding a person."
+msgstr "Před přidáním osoby otevřete rodokmen."
+
+msgid "Please provide a name."
+msgstr "Zadejte jméno."
+
+msgid "Can't add new person."
+msgstr "Nelze přidat novou osobu."
+
+msgid "Please set an active person."
+msgstr "Vyberte aktivní osobu."
+
+msgid "Can't add new person as a parent."
+msgstr "Nelze přidat novou osobu jako rodiče."
+
+msgid "Please set the new person's gender."
+msgstr "Zadejte pohlaví nové osoby."
+
+msgid "Can't add new person as a mother."
+msgstr "Nelze přidat novou osobu jako matku."
+
+msgid "Can't add new person as a father."
+msgstr "Nelze přidat novou osobu jako otce."
+
+msgid "Can't add new person as a spouse."
+msgstr "Nelze přidat novou osobu jako manžela/manželku."
+
+msgid "Can't add new person as a wife."
+msgstr "Nelze přidat novou osobu jako manželku."
+
+msgid "Can't add new person as a husband."
+msgstr "Nelze přidat novou osobu jako manžela."
+
+msgid "Can't add new person as a sibling."
+msgstr "Nelze přidat novou osobu jako sourozence."
+
+msgid "Can't add new person as a child."
+msgstr "Nelze přidat novou osobu jako dítě."
+
+msgid "Please set Active person."
+msgstr "Vyberte aktivní osobu."
+
+msgid "Can't add new person as a spouse to no one."
+msgstr "Bez aktivní osoby nelze přidat novou osobu jako manžela/manželku."
+
+msgid "Please set gender on Active or new person."
+msgstr "Zadejte pohlaví aktivní nebo nové osoby."
+
+msgid "Same genders on Active and new person."
+msgstr "Aktivní i nová osoba mají stejné pohlaví."
+
+msgid "Please set gender on Active person."
+msgstr "Zadejte pohlaví aktivní osoby."

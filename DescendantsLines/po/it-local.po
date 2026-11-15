@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 13:30-0700\n"
-"PO-Revision-Date: 2026-09-10 08:51+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 msgid "Descendants Lines"
 msgstr "Linee dei discendenti"
@@ -218,6 +218,15 @@ msgstr ""
 "c=pseudonimo, t=titolo, s=suffisso, g=soprannome famiglia\n"
 "Consultare il manuale Wiki > Resoconti > parte 2"
 
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+"[event, list]$e(formating)\n"
+"Vedi Manuale wiki > Resoconti > parte 2\n"
+"formattazione: date=d(ymdMo) luoghi=D(elcuspnoitxy) note=n tipo abbreviato=t"
+
 msgid "Replace"
 msgstr "Sostituzioni"
 
@@ -231,12 +240,47 @@ msgstr ""
 msgid "Spouse and Family"
 msgstr "Coniuge e famiglia"
 
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "Bordo verticale dal discendente alla barra del coniuge"
+
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr ""
 "La lunghezza del bordo verticale, dal discendente alla barra del coniuge."
 
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "Bordo verticale dalla barra del coniuge al coniuge"
+
 msgid "The length of the vertical edge from spouse-bar to spouse."
 msgstr "La lunghezza del bordo verticale, dalla barra del coniuge al coniuge."
+
+msgid "Vertical space spouse-bar to other spouse"
+msgstr "Spazio verticale dalla barra del coniuge all'altro coniuge"
+
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr ""
+"Lo spazio da aggiungere tra una barra del coniuge e un altro coniuge in caso "
+"di più famiglie con lo stesso discendente."
+
+msgid "Horizontal space descendant to spouse"
+msgstr "Spazio orizzontale dal discendente al coniuge"
+
+msgid "The space to add between the descendant and the spouse."
+msgstr "Lo spazio da aggiungere tra il discendente e il coniuge."
+
+msgid "Horizonal space family to family"
+msgstr "Spazio orizzontale tra famiglie"
+
+msgid ""
+"The space to add between the more extern descendant (or spouse) of a family "
+"and the more extern descendant (or spouse) of the next family."
+msgstr ""
+"Lo spazio da aggiungere tra il discendente (o coniuge) più esterno di una "
+"famiglia e il discendente (o coniuge) più esterno della famiglia successiva."
+
+msgid "Horizontal distance spouse to family edge"
+msgstr "Distanza orizzontale dal coniuge al bordo della famiglia"
 
 msgid ""
 "If this value is 0, the children bar is centered under the spouse. The "
@@ -247,11 +291,37 @@ msgstr ""
 "coniuge. Maggiore è il valore, più il centro viene spostato a sinistra, "
 "verso il discendente."
 
+msgid "OL_PAD"
+msgstr "OL_PAD"
+
+msgid "The number of ??? pad"
+msgstr "Il numero di ??? pad"
+
+msgid "Vertical edge spouse-bar to child-bar"
+msgstr "Bordo verticale dalla barra del coniuge alla barra dei figli"
+
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr ""
+"La lunghezza del bordo verticale dalla barra del coniuge alla barra dei "
+"figli."
+
 msgid "Children distance"
 msgstr "Distanza tra i figli"
 
 msgid "The horizontal distance between two children of the same family."
 msgstr "La distanza orizzontale tra due figli della stessa famiglia."
+
+msgid "Vertical edge child to child-bar"
+msgstr "Bordo verticale dal figlio alla barra dei figli"
+
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "La lunghezza del bordo verticale dal figlio alla barra dei figli."
+
+msgid "MIN_C_WIDTH"
+msgstr "MIN_C_WIDTH"
+
+msgid "The number of ??? min width"
+msgstr "Il numero di ??? larghezza minima"
 
 msgid "Space around text"
 msgstr "Spazio intorno al testo"

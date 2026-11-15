@@ -1,0 +1,445 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "File exists. Overwrite?"
+msgstr "Soubor existuje. Přepsat jej?"
+
+msgid "created"
+msgstr "created"
+
+msgid "last_written"
+msgstr "last_written"
+
+msgid "Main"
+msgstr "Hlavní"
+
+msgid "Orthogonal (right angles in connectors)"
+msgstr "Pravoúhlé (pravé úhly ve spojnicích)"
+
+msgid "Straight (no right angles in connectors)"
+msgstr "Přímé (bez pravých úhlů ve spojnicích)"
+
+msgid "Curved (curved and straight connectors)"
+msgstr "Zakřivené (zakřivené a přímé spojnice)"
+
+msgid "Default (Orthogonal)"
+msgstr "Výchozí (pravoúhlé)"
+
+msgid "Select the graph line connector format."
+msgstr "Vyberte formát spojovacích čar grafu."
+
+msgid "Top to Bottom"
+msgstr "Shora dolů"
+
+msgid "Left to Right"
+msgstr "Zleva doprava"
+
+msgid "Bottom to Top"
+msgstr "Zdola nahoru"
+
+msgid "Right to Left"
+msgstr "Zprava doleva"
+
+msgid "Default (Top to Bottom)"
+msgstr "Výchozí (shora dolů)"
+
+msgid "Select the graph direction."
+msgstr "Zvolte směr grafu."
+
+msgid "URL Style"
+msgstr "Styl URL"
+
+msgid "Include URLs from database."
+msgstr "Zahrnout URL z databáze."
+
+msgid "Dynamic URL = Prefix + GrampID + Suffix"
+msgstr "Dynamická URL = předpona + ID Gramps + přípona"
+
+msgid "Static URL = Prefix"
+msgstr "Statická URL = předpona"
+
+msgid "Don't include URLs"
+msgstr "Nezahrnovat URL"
+
+msgid "Default (include)"
+msgstr "Výchozí (zahrnout)"
+
+msgid "Select URL style."
+msgstr "Vyberte styl URL."
+
+msgid "URL Prefix,Suffix"
+msgstr "Předpona,přípona URL"
+
+msgid ""
+"Enter the Prefix,Suffix (use comma)\n"
+"for dynamically generated URLs.\n"
+"URL = Prefix + GrampsID + Suffix."
+msgstr ""
+"Zadejte předponu,příponu (použijte čárku)\n"
+"pro dynamicky vytvářené URL.\n"
+"URL = předpona + ID Gramps + přípona."
+
+msgid "Enter Font Name"
+msgstr "Zadejte název písma"
+
+msgid ""
+"Enter the primary font style for the chart.\n"
+"Must already be installed.\n"
+"White Rabbit can be obtained from\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+msgstr ""
+"Zadejte hlavní písmo grafu.\n"
+"Musí již být nainstalované.\n"
+"Písmo White Rabbit lze získat na adrese\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+
+msgid "Spacing (inch)"
+msgstr "Rozestup (palce)"
+
+msgid ""
+"Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
+msgstr "Zadejte rozestup mezi „generacemi“ v palcích (0.1-5.0)."
+
+msgid "Enter Chart Title"
+msgstr "Zadejte název grafu"
+
+msgid "Set the title of the chart."
+msgstr "Nastavte název grafu."
+
+msgid "Default (svg)"
+msgstr "Výchozí (svg)"
+
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+"svg – soubor Scalable Vector Graphics.\n"
+"pdf – formát Adobe Portable Document Format.\n"
+
+msgid "The destination folder for generated files."
+msgstr "Cílová složka vytvořených souborů."
+
+msgid "network"
+msgstr "sit"
+
+msgid "The filename for the generated svg network chart."
+msgstr "Název souboru vytvořeného síťového grafu svg."
+
+msgid "Different node shapes/edges for gender."
+msgstr "Odlišné tvary a obrysy uzlů podle pohlaví."
+
+msgid "Node differences for gender."
+msgstr "Odlišné uzly podle pohlaví."
+
+msgid "Male Background"
+msgstr "Pozadí mužů"
+
+msgid "RGB-color for male box background."
+msgstr "Barva RGB pozadí rámečků mužů."
+
+msgid "Male Background Alpha"
+msgstr "Alfa pozadí mužů"
+
+msgid "Alpha for Male box background (transparent=0, solid=255)."
+msgstr "Alfa pozadí rámečků mužů (průhledné=0, neprůhledné=255)."
+
+msgid "Male Box Edge"
+msgstr "Obrys rámečků mužů"
+
+msgid "RGB-color for Male box edge."
+msgstr "Barva RGB obrysů rámečků mužů."
+
+msgid "Female Background"
+msgstr "Pozadí žen"
+
+msgid "RGB-color for Female box background."
+msgstr "Barva RGB pozadí rámečků žen."
+
+msgid "Female Background Alpha"
+msgstr "Alfa pozadí žen"
+
+msgid "Alpha for Female box background (transparent=0, solid=255)."
+msgstr "Alfa pozadí rámečků žen (průhledné=0, neprůhledné=255)."
+
+msgid "Female Box Edge"
+msgstr "Obrys rámečků žen"
+
+msgid "RGB-color for Female box edge."
+msgstr "Barva RGB obrysů rámečků žen."
+
+msgid "Other Background"
+msgstr "Pozadí ostatních"
+
+msgid "RGB-color for other box background."
+msgstr "Barva RGB pozadí ostatních rámečků."
+
+msgid "Other Background Alpha"
+msgstr "Alfa pozadí ostatních"
+
+msgid "Alpha for Other box background (transparent=0, solid=255)."
+msgstr "Alfa pozadí ostatních rámečků (průhledné=0, neprůhledné=255)."
+
+msgid "Family Connector Line"
+msgstr "Rodinná spojnice"
+
+msgid "RGB-color for family connector line."
+msgstr "Barva RGB rodinné spojnice."
+
+msgid "Marriage Connector Line"
+msgstr "Manželská spojnice"
+
+msgid "RGB-color for marriage connector line."
+msgstr "Barva RGB manželské spojnice."
+
+msgid "Highlight Connector Line"
+msgstr "Zvýrazněná spojnice"
+
+msgid ""
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
+msgstr ""
+"Barva RGB zvýrazněné cesty mezi dvěma osobami. Pokud se graf obrátí, změňte "
+"pořadí osob."
+
+msgid "Trim Box Edge"
+msgstr "Obrys rámečku při ořezání"
+
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "Barva RGB obrysu rámečku, u něhož byly ořezány větve."
+
+msgid "Remove color background on all nodes."
+msgstr "Odstranit barevné pozadí všech uzlů."
+
+msgid "Removes color background for individuals (nodes) on chart."
+msgstr "Odstraní barevné pozadí osob (uzlů) v grafu."
+
+msgid ""
+"Enter year to start\n"
+"rounding birthday\n"
+"to year only"
+msgstr ""
+"Zadejte rok, po kterém se\n"
+"datum narození omezí\n"
+"pouze na rok"
+
+msgid ""
+"Birthdays after this year are represented by the year only.  Invalid entries "
+"will be ignored."
+msgstr ""
+"Data narození po tomto roce budou uvedena pouze jako rok. Neplatné hodnoty "
+"se ignorují."
+
+msgid "Round birthday to year after year entered (above)."
+msgstr "U narození po zadaném roce (výše) uvést pouze rok."
+
+msgid "Represent birthday by year only."
+msgstr "Uvádět datum narození pouze jako rok."
+
+msgid ""
+"Enter year to start\n"
+"rounding marriage\n"
+"date to year only"
+msgstr ""
+"Zadejte rok, po kterém se\n"
+"datum sňatku omezí\n"
+"pouze na rok"
+
+msgid ""
+"Marriages after this year are represented bythe year only. Invalid entries "
+"will be ignored."
+msgstr ""
+"Sňatky po tomto roce budou uvedeny pouze jako rok. Neplatné hodnoty se "
+"ignorují."
+
+msgid "Round marriage to year after year entered (above)."
+msgstr "U sňatků po zadaném roce (výše) uvést pouze rok."
+
+msgid "Represent marriage by year only."
+msgstr "Uvádět datum sňatku pouze jako rok."
+
+msgid ""
+"Attempts to remove middle names.  Only works for entries with birth year in "
+"the record."
+msgstr ""
+"Pokusí se odstranit další křestní jména. Funguje pouze u záznamů s rokem "
+"narození."
+
+msgid "Remove middle names."
+msgstr "Odstranit další křestní jména."
+
+msgid "Allow inclusion of private records in chart."
+msgstr "Povolit zahrnutí soukromých záznamů do grafu."
+
+msgid "Trim"
+msgstr "Ořezání"
+
+msgid "Trim descendants"
+msgstr "Ořezat potomky"
+
+msgid "All descendants (children) of selected individuals will not be shown."
+msgstr "Všichni potomci (děti) vybraných osob se skryjí."
+
+msgid "Enable trimming of descendants."
+msgstr "Povolit ořezání potomků."
+
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"Před povolením ořezání potomků \n"
+"z rodokmenu musíte zadat platné osoby."
+
+msgid "Trim ancestors"
+msgstr "Ořezat předky"
+
+msgid "All ancestors (parents) of selected individuals will not be shown."
+msgstr "Všichni předci (rodiče) vybraných osob se skryjí."
+
+msgid "Enable trimming of ancestors."
+msgstr "Povolit ořezání předků."
+
+msgid "Enable trimming of ancestors from tree."
+msgstr "Povolit ořezání předků z rodokmenu."
+
+msgid "Enable trim groups."
+msgstr "Povolit ořezání skupin."
+
+msgid ""
+"Remove groups less than Min Group Size.  Automatic\n"
+"for databases with more than 1500 individuals."
+msgstr ""
+"Odstranit skupiny menší než minimální velikost skupiny. Automaticky\n"
+"u databází s více než 1500 osobami."
+
+msgid "Min Group Size"
+msgstr "Minimální velikost skupiny"
+
+msgid ""
+"Enter the minimum size group to display.\n"
+"Value may be 2 or greater."
+msgstr ""
+"Zadejte nejmenší velikost zobrazované skupiny.\n"
+"Hodnota musí být 2 nebo větší."
+
+msgid ""
+"Select Start and\n"
+"End Individuals in\n"
+"displayed path(s).\n"
+"Select two"
+msgstr ""
+"Vyberte počáteční\n"
+"a koncovou osobu\n"
+"zobrazovaných cest.\n"
+"Vyberte dvě osoby"
+
+msgid ""
+"Starting and ending person for displayed path(s).\n"
+"Select two people"
+msgstr ""
+"Počáteční a koncová osoba zobrazovaných cest.\n"
+"Vyberte dvě osoby"
+
+msgid "Highlight path(s)"
+msgstr "Zvýraznit cesty"
+
+msgid "Direct"
+msgstr "Přímé"
+
+msgid "Any"
+msgstr "Libovolné"
+
+msgid "Default (None)"
+msgstr "Výchozí (žádné)"
+
+msgid ""
+"None - Don't highlight paths.\n"
+"Direct - Highlight direct descendant/ancestor paths.\n"
+"Any - Highlight any path(s) including direct or indirect."
+msgstr ""
+"Žádný – nezvýrazňovat cesty.\n"
+"Přímé – zvýraznit cesty přímých potomků/předků.\n"
+"Libovolné – zvýraznit libovolné cesty, přímé i nepřímé."
+
+msgid "Show only path(s)"
+msgstr "Zobrazit pouze cesty"
+
+msgid "Default (none)"
+msgstr "Výchozí (Žádný)"
+
+msgid ""
+"None - Don't show paths only.\n"
+"Direct - Show only direct descendant/ancestor paths.\n"
+"Any - Show only path(s) direct or indirect."
+msgstr ""
+"Žádný – neomezovat zobrazení pouze na cesty.\n"
+"Přímé – zobrazit pouze cesty přímých potomků/předků.\n"
+"Libovolné – zobrazit pouze přímé nebo nepřímé cesty."
+
+msgid "Select person at center of selection radius in graph."
+msgstr "Vyberte osobu ve středu poloměru výběru v grafu."
+
+msgid ""
+"Max connections\n"
+"from center"
+msgstr ""
+"Maximum spojení\n"
+"od středu"
+
+msgid ""
+"Enter the maximum number of connections allowed from\n"
+"the center person.  Value may be 1 or greater."
+msgstr ""
+"Zadejte největší povolený počet spojení\n"
+"od středové osoby. Hodnota musí být 1 nebo větší."
+
+msgid "Limit graph to max connections from center."
+msgstr "Omezit graf na největší počet spojení od středu."
+
+msgid "Display up to max connections from central person."
+msgstr ""
+"Zobrazit osoby vzdálené od středové osoby nejvýše o zadaný počet spojení."
+
+msgid "Highlight central person in graph."
+msgstr "Zvýraznit středovou osobu v grafu."
+
+msgid "Add yellow color background to central person."
+msgstr "Přidat středové osobě žluté pozadí."
+
+msgid "Use database handle instead of GrampID id in URLs."
+msgstr "Použít v URL interní identifikátor objektu místo ID Gramps."
+
+msgid ""
+"Use database handle instead of the gramps id for URLs.\n"
+"The handle should never change whereas gramps ids can."
+msgstr ""
+"Pro URL použít databázový identifikátor handle místo ID Gramps.\n"
+"Handle by se neměl nikdy měnit, zatímco ID Gramps se měnit může."
+
+msgid "Confirm overwrite file."
+msgstr "Potvrzovat přepsání souboru."
+
+msgid "Enable/disable confirmation of file overwrite."
+msgstr "Povolit nebo zakázat potvrzování přepsání souboru."
+
+msgid "Network Chart"
+msgstr "Síťový graf"
+
+msgid "Generates a family network chart."
+msgstr "Vytvoří graf rodinné sítě."

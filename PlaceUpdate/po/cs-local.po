@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 13:31-0700\n"
-"PO-Revision-Date: 2026-09-15 13:51+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,17 +12,70 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Set properties for multiple places"
+msgstr "Nastavit vlastnosti více míst"
+
+msgid ""
+"This gramplet allows setting properties for multiple places at the same time"
+msgstr "Tento gramplet umožňuje nastavit vlastnosti více míst současně"
+
 msgid "New enclosing place"
 msgstr "Nové nadřazené místo"
+
+msgid "Timespan:"
+msgstr "Časové rozmezí:"
 
 msgid "Set timespan for enclosing places"
 msgstr "Nastavte časové období pro nadřazená místa"
 
 msgid "Clear original enclosing places"
 msgstr "Vymazat původní nadřazená místa"
+
+msgid "Clear tags"
+msgstr "Vymazat štítky"
+
+msgid "Generate hierarchy"
+msgstr "Vytvořit hierarchii"
+
+msgid "use spaces as separator"
+msgstr "Použít mezery jako oddělovač"
+
+msgid "reverse hierarchy"
+msgstr "Obrátit hierarchii"
+
+msgid "Replace text"
+msgstr "Nahradit text"
+
+msgid "Use regex"
+msgstr "Použít regulární výraz"
+
+msgid "Old text:"
+msgstr "Původní text:"
+
+msgid "New text:"
+msgstr "Nový text:"
+
+msgid "Clear selections"
+msgstr "Vymazat výběry"
+
+msgid "Apply to selected places"
+msgstr "Použít na vybraná místa"
+
+msgid "Setting place properties"
+msgstr "Nastavení vlastností míst"
+
+#, python-brace-format
+msgid "Regex operation failed: {}"
+msgstr "Operace s regulárním výrazem selhala: {}"
+
+msgid "PlaceUpdate"
+msgstr "Aktualizace míst"
+
+msgid "Gramplet to manipulate multiple places"
+msgstr "Gramplet pro úpravy více míst"

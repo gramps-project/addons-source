@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,11 +12,104 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Map tiles"
+msgstr "Mapové dlaždice"
+
+msgid ""
+"Set the size of the heatmap points.\n"
+"Default: 15"
+msgstr ""
+"Nastavte velikost bodů teplotní mapy.\n"
+"Výchozí: 15"
+
+msgid "File path"
+msgstr "Adresář souboru"
+
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
+msgstr ""
+"Pro název souboru jsou povoleny pouze anglická písmena A-Z, a-z a čísla 0-9 "
+"stejně jako znaky mezera, podtržítko a pomlčka. Název souboru musí také "
+"začínat a končit alfanumerickým znakem. Přípona souboru '.html' je přidána "
+"sestavou."
+
+msgid "File name"
+msgstr "Název souboru"
+
+msgid "Enable custom start position"
+msgstr "Povolit vlastní výchozí polohu"
+
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr ""
+"Po zapnutí se mapa otevře ve vámi nastavené výchozí poloze a s nastaveným "
+"přiblížením."
+
+msgid "Start latitude"
+msgstr "Výchozí zeměpisná šířka"
+
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"Nastavte zeměpisnou šířku vlastní výchozí polohy\n"
+"Výchozí: 50.0"
+
 msgid "Start longitude"
 msgstr "Počáteční zeměpisná délka"
+
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"Nastavte zeměpisnou délku vlastní výchozí polohy\n"
+"Výchozí: 10.0"
+
+msgid "Start zoom"
+msgstr "Výchozí přiblížení"
+
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"Nastavte hodnotu výchozího přiblížení\n"
+"Výchozí: 5"
+
+msgid "Path does not exist."
+msgstr "Cesta neexistuje."
+
+msgid "Invalid filename."
+msgstr "Neplatný název souboru."
+
+msgid "INFO"
+msgstr "INFORMACE"
+
+msgid "Create a heatmap web report."
+msgstr "Vytvoří webovou sestavu s teplotní mapou."
+
+msgid "Stamen Terrain"
+msgstr "Stamen Terrain"
+
+msgid "Stamen Terrain (Background only)"
+msgstr "Stamen Terrain (pouze podklad)"
+
+msgid "Stamen Toner"
+msgstr "Stamen Toner"
+
+msgid "Stamen Watercolor"
+msgstr "Stamen Watercolor"
+
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"

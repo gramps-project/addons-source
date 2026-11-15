@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,11 +12,91 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Ancestry Table"
+msgstr "Tabulka předků"
+
+msgid "Produces a table of ancestry about a person"
+msgstr "Vytvoří tabulku předků osoby"
+
+#, python-format
+msgid "Person %(name)s is not in the Database"
+msgstr "Osoba %(name)s není v databázi"
+
+#, python-format
+msgid "Ancestry Table Report for %(name)s"
+msgstr "Tabulková sestava předků – %(name)s"
+
+#, python-format
+msgid "Generation %(gen_number)d"
+msgstr "Generace %(gen_number)d"
+
+#, python-format
+msgid "Number of Ancestors for %(name)s"
+msgstr "Počet předků – %(name)s"
+
+msgid "Generation"
+msgstr "Generace"
+
+msgid "To start a new page after each generation."
+msgstr "Začít novou stránku po každé generaci."
+
+msgid "Number of ancestors per generation"
+msgstr "Počet předků v jednotlivých generacích"
+
 msgid "Add a page with tne number of ancestors per generation."
 msgstr "Přidejte stránku s počtem předků v každé generaci."
+
+msgid "Mask the name of the calendar in the dates"
+msgstr "Skrýt název kalendáře v datech"
+
+msgid ""
+"By default, except for gregorian dates, Gramps shows the name of the "
+"calendar in the dates."
+msgstr ""
+"Ve výchozím nastavení Gramps zobrazuje u dat název kalendáře, kromě "
+"gregoriánských dat."
+
+msgid "The style used for the title of the report."
+msgstr "Styl použitý pro nadpis sestavy."
+
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr "Styl použitý pro číslo Sosa v otcovské větvi."
+
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr "Styl použitý pro číslo Sosa v mateřské větvi."
+
+msgid "The style used for the data of the males."
+msgstr "Styl použitý pro údaje mužů."
+
+msgid "The style used for the data of the females."
+msgstr "Styl použitý pro údaje žen."
+
+msgid "The style used for the marriage."
+msgstr "Styl použitý pro údaje o sňatku."
+
+msgid ""
+"The style used for an empty row.\n"
+"To enlarge the height of the empty row, just increse the size of the police."
+msgstr ""
+"Styl použitý pro prázdný řádek.\n"
+"Výšku prázdného řádku zvětšíte pouhým zvětšením velikosti písma."
+
+msgid ""
+"The style used for the header table of the number of ancestors per "
+"generation."
+msgstr ""
+"Styl použitý pro záhlaví tabulky počtů předků v jednotlivých generacích."
+
+msgid "The style used for the number of ancestors per generation."
+msgstr "Styl použitý pro počty předků v jednotlivých generacích."
+
+msgid ""
+"The style used for the total line of the number of ancestors per generation."
+msgstr ""
+"Styl použitý pro řádek celkového počtu předků v jednotlivých generacích."

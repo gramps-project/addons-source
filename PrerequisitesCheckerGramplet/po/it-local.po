@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-01 09:23-0700\n"
-"PO-Revision-Date: 2026-07-31 16:24+0000\n"
-"Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,149 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Prerequisites Checker"
+msgstr "Controllo dei prerequisiti"
+
+msgid "Prerequisites Checker Gramplet"
+msgstr "Gramplet Controllo dei prerequisiti"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
+"\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
+"blob/master/README.md\">prerequisites</a> installed.\n"
+msgstr ""
+"Gramplet diagnostico per verificare se <a href=\"https://gramps-project.org/"
+"\">Gramps</a> ha installati tutti i <a href=\"https://github.com/gramps-"
+"project/gramps/blob/master/README.md\">prerequisiti</a>.\n"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
+"installed."
+msgstr ""
+"Gramplet diagnostico per verificare se Gramps ha installati tutti i "
+"prerequisiti."
+
+msgid ""
+"\n"
+"<u><b>REQUIRED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>NECESSARI</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
+" (Requires the minimum version or greater.)</i>:\n"
+msgstr ""
+"<i>L'installazione dei seguenti pacchetti è <b>ASSOLUTAMENTE NECESSARIA</b>\n"
+" (È richiesta la versione minima o successiva.)</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>RECOMMENDED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>CONSIGLIATI</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
+"as necessary for Geography and Charts</i>:\n"
+msgstr ""
+"<i>L'installazione dei seguenti pacchetti è <b>FORTEMENTE CONSIGLIATA</b> "
+"perché necessaria per Geografia e Grafici</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Optional</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Facoltativi</b></u>\n"
+
+msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
+msgstr "<i>L'installazione dei seguenti pacchetti è <b>facoltativa</b></i>:\n"
+
+msgid "Gtkspell enables spell checking in the notes.\n"
+msgstr "Gtkspell attiva il controllo ortografico nelle note.\n"
+
+msgid ""
+"Python Image Library (PIL) is needed for cropping images and LaTeX output."
+msgstr ""
+"La Python Image Library (PIL) è necessaria per ritagliare le immagini e per "
+"l'output LaTeX."
+
+msgid ""
+"\n"
+"<u><b>Development & Translation Requirements</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Requisiti per sviluppo e traduzione</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
+"intend to translate or do any development (addons etc.)</i>:\n"
+msgstr ""
+"<i>L'installazione dei seguenti pacchetti è <b>CONSIGLIATA</b> se intendi "
+"tradurre o fare sviluppo (addon ecc.)</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Optional packages required by Third-party Addons</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Pacchetti facoltativi richiesti da addon di terze parti</b></u>\n"
+
+msgid ""
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
+msgstr ""
+"<i>Prerequisiti necessari al funzionamento dei seguenti <a href=\"https://"
+"gramps-project.org/wiki/index.php?title=Third-party_Addons\">addon di terze "
+"parti</a> elencati</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Diagnostic checks</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Controlli diagnostici</b></u>\n"
+
+msgid "Check for potential issues.\n"
+msgstr "Controlla possibili problemi.\n"
+
+msgid ""
+"\n"
+"Environment settings:\n"
+msgstr ""
+"\n"
+"Impostazioni dell'ambiente:\n"
+
+msgid ""
+"\n"
+"\n"
+"<u><b>Locales available:</b></u>\n"
+msgstr ""
+"\n"
+"\n"
+"<u><b>Localizzazioni disponibili:</b></u>\n"
+
+msgid ""
+"\n"
+"<u><b>Back Up Your Genealogy Files.</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Fai una copia di sicurezza dei tuoi file genealogici.</b></u>\n"
+
+msgid ""
+"If you have a reason to be checking Prerequisites, it is the right time to "
+"back up your genealogy files, and then test your backups!\n"
+"\n"
+msgstr ""
+"Se hai un motivo per controllare i prerequisiti, è il momento giusto per "
+"fare una copia di sicurezza dei tuoi file genealogici, e poi per verificare "
+"le copie!\n"
+"\n"
 
 msgid ""
 "<i><a href=\"https://gramps-project.org/wiki/index.php?"
@@ -30,11 +172,152 @@ msgstr ""
 "all'esportazione per poter esportare tutti i dati. </i>\n"
 "\n"
 
+msgid ""
+" • Backups can be made at any time and, at a minimum, on the first day of "
+"every month. But preferrably more often.\n"
+msgstr ""
+" • Le copie di sicurezza si possono fare in qualsiasi momento e, come "
+"minimo, il primo giorno di ogni mese. Ma è meglio farle più spesso.\n"
+
+msgid ""
+" • It is strongly recommended to backup each of your Family Trees before any "
+"upgrade.\n"
+msgstr ""
+" • È fortemente consigliato fare una copia di sicurezza di ciascun albero "
+"genealogico prima di qualsiasi aggiornamento.\n"
+
+msgid ""
+" • Test your backups by creating a new Family Tree and then importing the "
+"backup."
+msgstr ""
+" • Verifica le copie di sicurezza creando un nuovo albero genealogico e "
+"importandovi la copia."
+
+msgid ", is the most current version.\n"
+msgstr ", è la versione più recente.\n"
+
+#, python-format
+msgid ""
+"You have Gramps %s. Please make a backup and then upgrade.\n"
+"%s"
+msgstr ""
+"Hai Gramps %s. Fai una copia di sicurezza e poi aggiorna.\n"
+"%s"
+
+#, python-format
+msgid ""
+"You have Gramps %s installed; an unreleased development version. Thank you "
+"for contributing and testing; please report any issues. Backups are your "
+"friend.\n"
+msgstr ""
+"Hai installato Gramps %s, una versione di sviluppo non ancora rilasciata. "
+"Grazie per il contributo e i test; segnala qualsiasi problema. Le copie di "
+"sicurezza sono tue amiche.\n"
+
+#, python-format
+msgid "You have Gramps %s. Congratulations, you have the current version.\n"
+msgstr "Hai Gramps %s. Congratulazioni, hai la versione più recente.\n"
+
+msgid " (Requires version "
+msgstr " (Richiede la versione "
+
+msgid " or greater installed.)\n"
+msgstr " o successiva installata.)\n"
+
+msgid " (Passed: version "
+msgstr " (Superato: versione "
+
+msgid "unknown version"
+msgstr "versione sconosciuta"
+
+msgid "DISPLAY not set"
+msgstr "DISPLAY non impostato"
+
+msgid " or greater.)\n"
+msgstr " o successiva.)\n"
+
+msgid " (Requires "
+msgstr " (Richiede "
+
+msgid " • Berkeley Database library (bsddb3: "
+msgstr " • Libreria del database Berkeley (bsddb3: "
+
+msgid ""
+")\n"
+"\tRequires  BerkeleyDB or Python-bsddb3 Python adapter and the Berkeley "
+"database"
+msgstr ""
+")\n"
+"\tRichiede  BerkeleyDB o l'adattatore Python Python-bsddb3 e il database "
+"Berkeley"
+
+msgid " • SQLite Database library (sqlite3: "
+msgstr " • Libreria del database SQLite (sqlite3: "
+
+msgid " • xdg-utils (Manual check see instructions link)"
+msgstr " • xdg-utils (controllo manuale, vedi il collegamento alle istruzioni)"
+
+msgid " • librsvg2 (Manual check see instructions link)"
+msgstr " • librsvg2 (controllo manuale, vedi il collegamento alle istruzioni)"
+
+msgid ""
+" • language-pack-gnome-xx (Manual check see instructions link) for your "
+"Language <show locale here TBD>"
+msgstr ""
+" • language-pack-gnome-xx (controllo manuale, vedi il collegamento alle "
+"istruzioni) per la tua lingua <show locale here TBD>"
+
+msgid " or greater installed.)"
+msgstr " o successiva installata.)"
+
+msgid " or greater)"
+msgstr " o successiva)"
+
+msgid "Graphviz not in system PATH"
+msgstr "Graphviz non è nel PATH di sistema"
+
+msgid "Ghostscript not in system PATH"
+msgstr "Ghostscript non è nel PATH di sistema"
+
+msgid " (Passed: version 0.5.x is installed.)"
+msgstr " (Superato: è installata la versione 0.5.x.)"
+
+msgid " (Requires version 0.5.x)"
+msgstr " (Richiede la versione 0.5.x)"
+
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
 msgstr " • python-fontconfig not trovato, (richiesta versione 0.5.x)"
 
 msgid " • python-fontconfig installed, version unavailable"
 msgstr " • python-fontconfig installato, versione non disponibile"
+
+msgid " or greater installed.) (enchant module: "
+msgstr " o successiva installata.) (modulo enchant: "
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (Superato: installata la versione %s o successiva. Se non si "
+"usa Microsoft Windows)"
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (Richiede installata la versione %s o successiva. Se non si "
+"usa Microsoft Windows)"
+
+msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
+msgstr ""
+"Eseguibile exiv2 non installato, impossibile ottenere la versione di "
+"libexiv2."
+
+#, python-format
+msgid "GExiv2 : %s (Exiv2 library : %s)"
+msgstr "GExiv2 : %s (libreria Exiv2 : %s)"
 
 msgid "found another font"
 msgstr "trovato un altro tipo di carattere"
@@ -47,5 +330,98 @@ msgstr ""
 "href=\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> "
 "fornisce un risultato molto leggibile.\n"
 
+msgid "not installed"
+msgstr "non installato"
+
+msgid "     and one of either: (pydotplus: "
+msgstr "     e uno tra: (pydotplus: "
+
+msgid ") or (pygraphviz: "
+msgstr ") o (pygraphviz: "
+
+msgid "Installed(MS-Windows)"
+msgstr "Installato (MS-Windows)"
+
+msgid "Installed(Linux/Mac)"
+msgstr "Installato (Linux/Mac)"
+
 msgid "not installed "
 msgstr "non installato "
+
+msgid "not found."
+msgstr "non trovato."
+
+msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
+msgstr "Standard. Superato: programma installato - 32 bit su Windows a 64 bit."
+
+msgid ") (Requires the gramps addon listed under 'Plugin lib')"
+msgstr ") (Richiede l'addon di Gramps elencato in 'Plugin lib')"
+
+msgid "DBF installed"
+msgstr "DBF installato"
+
+msgid ".)(Requires version "
+msgstr ".)(Richiede la versione "
+
+msgid " installed.)(Passed: version "
+msgstr " installata.)(Superato: versione "
+
+#, python-format
+msgid "(OpenCV facedetection: %s)"
+msgstr "(Rilevamento volti OpenCV: %s)"
+
+msgid " (lxml: not found. Requires version "
+msgstr " (lxml: non trovato. Richiede la versione "
+
+msgid " • Requires: MongoDB TBD / pymongo TBD"
+msgstr " • Richiede: MongoDB TBD / pymongo TBD"
+
+#, python-format
+msgid " • Operating System: %s"
+msgstr " • Sistema operativo: %s"
+
+msgid ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
+"a></b></u>\n"
+msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Impostazioni di "
+"localizzazione:</a></b></u>\n"
+
+msgid "not set"
+msgstr "non impostato"
+
+msgid "not tested"
+msgstr "non verificato"
+
+msgid ""
+"\n"
+"Installed Locales\\Translations (If only English is listed please re-install "
+"Gramps again and make sure to select all the Translations and Dictionaries)\n"
+"\n"
+msgstr ""
+"\n"
+"Localizzazioni\\traduzioni installate (se è elencato solo l'inglese, "
+"reinstalla Gramps e assicurati di selezionare tutte le traduzioni e i "
+"dizionari)\n"
+"\n"
+
+msgid ""
+"\n"
+"Gramps Environment variables:\n"
+msgstr ""
+"\n"
+"Variabili d'ambiente di Gramps:\n"
+
+msgid "found"
+msgstr "trovato"
+
+msgid ""
+"Sphinx is a tool that builds the Gramps development documentation and man "
+"pages\n"
+msgstr ""
+"Sphinx è uno strumento che genera la documentazione per lo sviluppo di "
+"Gramps e le pagine man\n"

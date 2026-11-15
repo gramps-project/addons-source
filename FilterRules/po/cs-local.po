@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,17 +12,161 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "People related to <filter>"
+msgstr "Příbuzní osob odpovídajících <filtru>"
+
+msgid "Matches people who are related to anybody matched by a person filter"
+msgstr "Vyhledá osoby příbuzné s kteroukoli osobou odpovídající filtru osob"
+
+msgid "Retrieving all sub-filter matches"
+msgstr "Načítání všech shod pomocného filtru"
+
+msgid "People separated less than <N> degrees of <person>"
+msgstr "Osoby oddělené méně než <N> stupni od <osoby>"
+
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr "Pravidlo filtru, které vyhledá příbuzné podle stupňů odloučení"
+
+msgid "Role:"
+msgstr "Role:"
+
+msgid "Persons with events matching the <event filter> with role"
+msgstr "Osoby s rolí v událostech odpovídajících <filtru událostí>"
+
+msgid "People from event with role"
+msgstr "Osoby s rolí v události"
+
+msgid "Matches people of event filter with role"
+msgstr "Vybere osoby podle filtru událostí a role"
+
+msgid "Source matching parameters"
+msgstr "Pramen odpovídající parametrům"
+
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr "Vyhledá prameny s hodnotami obsahujícími zvolené parametry"
+
+msgid "People with multiple parent records"
+msgstr "Osoby s více záznamy rodičů"
+
+msgid "Matches people who have more than one set of parents"
+msgstr "Vyhledá osoby, které mají více než jednu sadu rodičů"
+
+msgid "Parents of <filter> family match"
+msgstr "Rodiče rodin odpovídajících <filtru>"
+
+msgid "Match associations of <person filter>"
+msgstr "Vyhledat asociace osob odpovídajících <filtru osob>"
+
+msgid "Does NOT match with selected Role"
+msgstr "Neshoduje se s vybranou rolí"
+
+msgid "Finds the items that don't have event Roles of the selected type."
+msgstr "Najde položky, které nemají role událostí vybraného typu."
+
+msgid "Inverse"
+msgstr "Inverze"
+
+msgid "People with events with the <role>"
+msgstr "Osoby s <rolí> v událostech"
+
+msgid "Matches people with an event with a selected role"
+msgstr "Vyhledá osoby s událostí s vybranou rolí"
+
+msgid "Families with events with the <role>"
+msgstr "Rodiny s <rolí> v událostech"
+
+msgid "Matches families with an event with a selected role"
+msgstr "Vyhledá rodiny s událostí s vybranou rolí"
+
+msgid "Events of families matching a <family filter>"
+msgstr "Události rodin odpovídajících <filtru rodin>"
+
+msgid "Families matching <event filter>"
+msgstr "Rodiny odpovídající <filtru událostí>"
+
+msgid "Matches families that are matched by an event filter"
+msgstr "Vyhledá rodiny odpovídající filtru událostí"
+
+msgid "Matches families matched by an event filter"
+msgstr "Vyhledá rodiny odpovídající filtru událostí"
+
+msgid "Number of degrees of separation from person."
+msgstr "Počet stupňů odloučení od osoby."
+
+msgid "Degrees:"
+msgstr "Stupně:"
+
+msgid "People with <count> of <event>"
+msgstr "Osoby s počtem <počet> událostí <událost>"
+
+msgid "Matches persons which have events of given type and number."
+msgstr "Vyhledá osoby s událostmi daného typu a počtu."
+
+msgid "Include Children"
+msgstr "Zahrnout děti"
+
 msgid "Include the children in the matching families."
-msgstr "Zahrnout děti do odpovídajících rodin."
+msgstr "Zahrnout děti z odpovídajících rodin."
+
+msgid "Include Parents"
+msgstr "Zahrnout rodiče"
 
 msgid "Include the parents in the matching families."
-msgstr "Zahrnout rodiče do odpovídajících rodin."
+msgstr "Zahrnout rodiče z odpovídajících rodin."
 
 msgid "Family Filter name:"
 msgstr "Název filtru rodin:"
+
+msgid "People who are part of families matching <filter>"
+msgstr "Osoby patřící do rodin odpovídajících <filtru>"
+
+msgid "Filter people by their age at death"
+msgstr "Filtrovat osoby podle věku při úmrtí"
+
+msgid "Filter rule that matches people by their age at death"
+msgstr "Pravidlo filtru, které vyhledá osoby podle věku při úmrtí"
+
+msgid "Multiple Parents Filter"
+msgstr "Filtr více sad rodičů"
+
+msgid "People with events with a selected role"
+msgstr "Osoby s vybranou rolí v událostech"
+
+msgid "Families with events with a selected role"
+msgstr "Rodiny s událostmi s vybranou rolí"
+
+msgid "The active Person"
+msgstr "Aktivní osoba"
+
+msgid "Parents of family filter"
+msgstr "Rodiče rodin odpovídajících filtru"
+
+msgid "Matches parent of family filter"
+msgstr "Vyhledá rodiče rodin odpovídajících filtru"
+
+msgid "Matches sources with a particular value"
+msgstr "Vyhledá prameny s určitou hodnotou"
+
+msgid "Events from people with role"
+msgstr "Události osob s danou rolí"
+
+msgid "Matches event of people filter with role"
+msgstr "Vyhledá události osob odpovídajících filtru osob s danou rolí"
+
+msgid "Active person"
+msgstr "Aktivní osoba"
+
+msgid "Matches the active person"
+msgstr "Vyhledá aktivní osobu"
+
+msgid "Age in years at person's death."
+msgstr "Věk osoby při úmrtí v letech."
+
+msgid "Age:"
+msgstr "Věk:"

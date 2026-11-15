@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
 "PO-Revision-Date: 2026-08-07 07:57+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
@@ -26,6 +26,16 @@ msgstr ""
 
 msgid "Deep Connections"
 msgstr "Derin Bağlantılar"
+
+msgid "sibling"
+msgstr "kardeş"
+
+msgid "mentioned in note"
+msgstr "Notta belirtilenler"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (birlik)"
 
 msgid "⏸ Pause"
 msgstr "⏸ Duraklat"
@@ -62,25 +72,6 @@ msgstr ""
 "Arama Derinliği: {depth} | İşlenen Kişi Sayısı: {processed} | Kuyruk Boyutu: "
 "{queue_size}"
 
-msgid "mentioned in note"
-msgstr "Notta belirtilenler"
-
-msgid "Note on Family"
-msgstr "Aile ile ilgili not"
-
-msgid "sibling"
-msgstr "kardeş"
-
-msgid "Note on Parent Family"
-msgstr "Ebeveyn Ailesi ile ilgili not"
-
-#, python-format
-msgid "%s (association)"
-msgstr "%s (birlik)"
-
-msgid "Note on Person"
-msgstr "Kişi ile ilgili not"
-
 #, python-format
 msgid ""
 "\n"
@@ -88,6 +79,24 @@ msgid ""
 msgstr ""
 "\n"
 "   %s > "
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Şu ilişki bulundu #%d: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Duraklatıldı.\n"
+"Ek ilişkiler aramak için Devam et tuşuna basın.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Duraklatıldı - Daha fazla ilişki aramak için Devam et tuşuna basın"
 
 msgid "Error: No Home Person set"
 msgstr "Hata: Ana Kişi ayarlanmadı"
@@ -114,24 +123,6 @@ msgstr "  <b>%s</b> (Aktif Kişi)...\n"
 
 msgid "Searching for connections..."
 msgstr "Bağlantılar aranıyor..."
-
-#, python-format
-msgid ""
-"Found relation #%d: \n"
-"   "
-msgstr ""
-"Şu ilişki bulundu #%d: \n"
-"   "
-
-msgid ""
-"Paused.\n"
-"Press Continue to search for additional relations.\n"
-msgstr ""
-"Duraklatıldı.\n"
-"Ek ilişkiler aramak için Devam et tuşuna basın.\n"
-
-msgid "Paused - Press Continue to search for more relations"
-msgstr "Duraklatıldı - Daha fazla ilişki aramak için Devam et tuşuna basın"
 
 #, python-format
 msgid ""

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -96,7 +96,11 @@ msgid "Indexes"
 msgstr "Rejstříky"
 
 msgid "(filtered from _MAX_ total entries)"
-msgstr "(filtrováno z _MAX_ položek celkem)"
+msgstr "(filtrováno; celkový počet položek: _MAX_)"
+
+#, python-format
+msgid "(m. %s)"
+msgstr "(sň. %s)"
 
 msgid "(sort by name)"
 msgstr "(seřadit dle jména)"
@@ -128,6 +132,9 @@ msgstr "Klikněte na mapu pro zobrazení na celou obrazovku"
 msgid "Configure"
 msgstr "Nastavit"
 
+msgid "DynamicWeb_report#Help"
+msgstr "DynamicWeb_report#Help"
+
 msgid "Examples"
 msgstr "Příklady"
 
@@ -142,6 +149,12 @@ msgstr "Přezdívka rodiny"
 
 msgid "File ready"
 msgstr "Soubor připraven"
+
+msgid "Include dates columns on the index pages"
+msgstr "Zahrnout sloupce s daty na stránkách rejstříků"
+
+msgid "Include a column for media path on the index pages"
+msgstr "Zahrnout sloupec s cestou k médiu na stránkách rejstříků"
 
 msgid "Include a map in the individuals and family pages"
 msgstr "Zahrnout mapu na stránkách osob a rodin"
@@ -204,6 +217,9 @@ msgstr "Vztah k otci"
 msgid "Relationship to Mother"
 msgstr "Vztah k matce"
 
+msgid "Repositories Index"
+msgstr "Rejstřík archivů"
+
 msgid "Restore"
 msgstr "Obnovit"
 
@@ -215,6 +231,9 @@ msgstr "Zobrazit čas poslední úpravy"
 
 msgid "SVG tree children distribution"
 msgstr "Rozdělení dětí v SVG stromu"
+
+msgid "SVG tree configuration"
+msgstr "Nastavení SVG stromu"
 
 msgid "SVG tree graph shape"
 msgstr "Tvar grafu SVG stromu"
@@ -256,7 +275,7 @@ msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr "Několik shod.<br>Upřesněte vyhledávání nebo vyberte ze seznamu níže."
 
 msgid "Show _MENU_ entries"
-msgstr "Zobrazi položky _MENU_"
+msgstr "Zobrazit položky: _MENU_"
 
 msgid "Show duplicates"
 msgstr "Zobrazit duplicity"
@@ -265,7 +284,10 @@ msgid "Showing 0 to 0 of 0 entries"
 msgstr "Zobrazuji 0 až 0 z 0 záznamů"
 
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
-msgstr "Zobrazuji _START_ až _END_ z _TOTAL_ záznamů"
+msgstr "Zobrazený rozsah: _START_ až _END_; celkem položek: _TOTAL_"
+
+msgid "Sort by:"
+msgstr "Řadit podle:"
 
 msgid "Sources Index"
 msgstr "Rejstřík pramenů"
@@ -280,10 +302,25 @@ msgid "U"
 msgstr "N"
 
 msgid "Use tabbed panels instead of sections"
-msgstr "Použít tabelované panely místo sekcí"
+msgstr "Použít panely s kartami místo sekcí"
 
 msgid "Use the search box above in order to find a person."
 msgstr "Použijte vyhledávací políčko výše k vyhledání osoby."
+
+msgid "Use a table format for the surnames index"
+msgstr "Použít tabulkový formát rejstříku příjmení"
+
+msgid "Use a table format for the persons index"
+msgstr "Použít tabulkový formát rejstříku osob"
+
+msgid "Use a table format for the families index"
+msgstr "Použít tabulkový formát rejstříku rodin"
+
+msgid "Use a table format for the sources index"
+msgstr "Použít tabulkový formát pro rejstřík pramenů"
+
+msgid "Use a table format for the places index"
+msgstr "Použít tabulkový formát rejstříku míst"
 
 msgid "Used for family"
 msgstr "Použito pro rodinu"
@@ -310,8 +347,14 @@ msgstr ""
 "Zda použít zvláštní barvu pro osoby, které se v SVG stromě objevují "
 "několikrát"
 
+msgid "Without name"
+msgstr "Bez jména"
+
 msgid "Without surname"
 msgstr "Bez příjmení"
+
+msgid "Without title"
+msgstr "Bez názvu"
 
 msgid "Zoom in"
 msgstr "Přiblížit"
@@ -356,11 +399,45 @@ msgstr "DynamicWebReport ignoruje odkaz typu '%(class)s'"
 
 #, python-format
 msgid "Family of %(father)s"
-msgstr "Rodina %(father)s"
+msgstr "Rodina – %(father)s"
 
 #, python-format
 msgid "Family of %(mother)s"
-msgstr "Rodina %(mother)s"
+msgstr "Rodina – %(mother)s"
+
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+"V této poznámce jsou zpracována následující speciální slova:\n"
+"__SEARCH_FORM__ je nahrazeno vyhledávacím formulářem.\n"
+"__NB_INDIVIDUALS__ je nahrazeno počtem osob.\n"
+"__NB_FAMILIES__ je nahrazeno počtem rodin.\n"
+"__NB_MEDIA__ je nahrazeno počtem mediálních objektů.\n"
+"__NB_SOURCES__ je nahrazeno počtem pramenů.\n"
+"__NB_REPOSITORIES__ je nahrazeno počtem archivů.\n"
+"__NB_PLACES__ je nahrazeno počtem míst.\n"
+"__MEDIA_<gid>__ je nahrazeno médiem s Gramps ID <gid>.\n"
+"__THUMB_<gid>__ je nahrazeno náhledem na médium s Gramps ID <gid>.\n"
+"__EXPORT_DATE__ je nahrazeno aktuálním datem.\n"
+"__GRAMPS_VERSION__ je nahrazeno verzí Gramps.\n"
+"__GRAMPS_HOMEPAGE__ je nahrazeno odkazem na domovskou stránku Gramps.\n"
+"URL začínající \"relative://relative.<link>\" jsou nahrazena relativním URL "
+"\"<link>\".\n"
 
 msgid "Store web pages in archive"
 msgstr "Uložit WWW stránky v archivu"
@@ -378,14 +455,13 @@ msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
 msgstr "Jméno archivního souboru (s příponou \".zip\" nebo \".tgz\")"
 
 msgid "Web site title"
-msgstr "Hlavička nadpisu na WWW"
+msgstr "Název webu"
 
 msgid "The title of the web site"
-msgstr "Název webové stránky"
+msgstr "Název webu"
 
 msgid "Select filter to restrict people that appear on web site"
-msgstr ""
-"Vyberte filtr pro omezení osob, které se objeví v na webových stránkách"
+msgstr "Vyberte filtr pro omezení osob, které se objeví na webových stránkách"
 
 msgid "Name format (short)"
 msgstr "Formát jména (krátký)"
@@ -414,7 +490,7 @@ msgstr "Zahrnout pouze celá jména"
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
-msgstr "Umožní omezit informace na osoby, které nezemřely dávno"
+msgstr "Umožní omezit informace o osobách, které nezemřely dávno"
 
 msgid "Export notes"
 msgstr "Exportovat poznámky"
@@ -437,6 +513,27 @@ msgstr "Zda exportovat adresy do WWW stránek"
 msgid "Whether or not to include the Repository Pages."
 msgstr "Zda zahrnovat stránky archivů či nikoli."
 
+msgid "Include images and media"
+msgstr "Zahrnout obrázky a mediální objekty"
+
+msgid "Whether to include images and media in the web pages"
+msgstr "Zda zahrnout obrázky a mediální objekty do WWW stránek"
+
+msgid "Copy, rename files with an internal Gramps identifier"
+msgstr "Kopírovat a přejmenovat soubory pomocí interního identifikátoru Gramps"
+
+msgid "Copy, keep file names unchanged"
+msgstr "Kopírovat a ponechat názvy souborů beze změny"
+
+msgid "Do not copy, reference existing files"
+msgstr "Nekopírovat, odkazovat na existující soubory"
+
+msgid "Images and media"
+msgstr "Obrázky a mediální objekty"
+
+msgid "Whether to make a copy of the media"
+msgstr "Zda se mají vytvořit kopie médií"
+
 msgid "Print the notes type"
 msgstr "Tisknout typ poznámek"
 
@@ -451,6 +548,12 @@ msgstr "Zda zobrazit stránky pro místa"
 
 msgid "Choose your choice of map service for creating the Place Map Pages"
 msgstr "Zvolte mapovou službu pro vytváření stránek map míst"
+
+msgid "Google map API key"
+msgstr "Klíč API pro mapu Google"
+
+msgid "The API key used for the Google map"
+msgstr "Klíč API používaný pro mapu Google"
 
 msgid "Whether or not to include family pages"
 msgstr "Zda zahrnout stránky rodin"
@@ -467,7 +570,7 @@ msgid "Whether to enable page configuration"
 msgstr "Zda zapnout nastavení stránky"
 
 msgid "Whether to use tabbed panels for the different sections of the pages."
-msgstr "Zda použít tabelované panely pro různé sekce stránek."
+msgstr "Zda použít panely s kartami pro různé sekce stránek."
 
 msgid "Whether to show the last modification time in the pages footer"
 msgstr "Zda zobrazit čas poslední změny v patičce stránek"
@@ -475,14 +578,72 @@ msgstr "Zda zobrazit čas poslední změny v patičce stránek"
 msgid "Whether to insert sources author in the sources title"
 msgstr "Zda vložit autora pramene do názvu pramene"
 
+msgid "Whether to hide the Gramps ID"
+msgstr "Zda skrýt ID Gramps"
+
+msgid "List"
+msgstr "Seznam"
+
+msgid "Table"
+msgstr "Tabulka"
+
+msgid "Default format for the surnames index"
+msgstr "Výchozí formát rejstříku příjmení"
+
+msgid "The default format for the surnames index"
+msgstr "Výchozí formát rejstříku příjmení"
+
+msgid "Default format for the persons index"
+msgstr "Výchozí formát rejstříku osob"
+
+msgid "The default format for the persons index"
+msgstr "Výchozí formát rejstříku osob"
+
+msgid "Default format for the families index"
+msgstr "Výchozí formát rejstříku rodin"
+
+msgid "The default format for the families index"
+msgstr "Výchozí formát rejstříku rodin"
+
+msgid "Default format for the sources index"
+msgstr "Výchozí formát rejstříku pramenů"
+
+msgid "The default format for the sources index"
+msgstr "Výchozí formát rejstříku pramenů"
+
+msgid "Default format for the places index"
+msgstr "Výchozí formát rejstříku míst"
+
+msgid "The default format for the places index"
+msgstr "Výchozí formát rejstříku míst"
+
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr ""
+"Zda zahrnout sloupce s daty narození, úmrtí a sňatku na stránkách rejstříků"
+
+msgid "Generate a families index page"
+msgstr "Vytvořit stránku rejstříku rodin"
+
+msgid "Whether to generate an index page for families"
+msgstr "Zda vytvořit stránku rejstříku rodin"
+
+msgid "Whether to include a column showing the media path"
+msgstr "Zda zahrnout sloupec s cestou k médiu"
+
 msgid ""
 "Whether to include the references to the items in the index pages. For "
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"Zda vložit odkazy na položky v indexových stránkách. Například ve stránce "
-"rejstříku médií jména jednotlivců, rodiny, místa, pramene odkazující na "
-"médium."
+"Zda zahrnout odkazy na položky na stránkách rejstříků. Například v rejstříku "
+"médií jména osob, rodin, míst a pramenů, které na médium odkazují."
+
+msgid "Default number of entries in the indexes"
+msgstr "Výchozí počet položek v rejstřících"
+
+msgid "The default number of entries shown in one index page"
+msgstr "Výchozí počet položek zobrazených na jedné stránce rejstříku"
 
 msgid "Maximum number of generations"
 msgstr "Maximální počet generací"
@@ -510,17 +671,20 @@ msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
 msgstr "Zvolte barevné schéma pozadí pro osoby v grafu SVG stromu"
 
+msgid "Theme"
+msgstr "Motiv"
+
 msgid "Pages"
 msgstr "Stránky"
 
 msgid "A note to be used as the page header"
-msgstr "Záznam použitý jako hlavička stránky"
+msgstr "Poznámka použitá jako hlavička stránky"
 
 msgid "HTML user brand name / icon"
-msgstr "Užitalská HTML značka / ikona"
+msgstr "Uživatelská HTML značka / ikona"
 
 msgid "A note to be used as the brand name or image in the menu"
-msgstr "Záznam použitý jako značka nebo obrázek v menu"
+msgstr "Poznámka použitá jako značka nebo obrázek v menu"
 
 msgid "Custom pages"
 msgstr "Vlastní stránky"
@@ -538,7 +702,7 @@ msgid "Note for custom page %(index)i"
 msgstr "Poznámka pro vlastní stránku %(index)i"
 
 msgid "A note to be used for the custom page content.\n"
-msgstr "Záznam použitý pro obsah vlastní stránky.\n"
+msgstr "Poznámka použitá pro obsah vlastní stránky.\n"
 
 #, python-format
 msgid "Menu for the custom page %(index)i"

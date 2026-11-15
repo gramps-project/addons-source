@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 12:17-0700\n"
-"PO-Revision-Date: 2026-08-17 17:58+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,11 +12,77 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Ancestor Tree Expanded"
+msgstr "Rozšířený strom předků"
+
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+"Rozšířený graf předků zobrazující přímé předky, sourozence, bratrance, "
+"sestřenice a partnery."
+
+#, python-format
+msgid "Ancestor Tree Expanded for %s"
+msgstr "Rozšířený strom předků – %s"
+
+msgid "Tree Truncated"
+msgstr "Strom byl zkrácen"
+
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+"Vytvořený strom dosáhl bezpečnostního limitu 400 osob a byl zkrácen.\n"
+"\n"
+"Chcete-li zobrazit všechny větve, snižte počet generací nebo vypněte některé "
+"možnosti."
+
+msgid "Include descendants of the center person"
+msgstr "Zahrnout potomky výchozí osoby"
+
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "Zda zobrazit děti a celé potomkovské linie výchozí osoby"
+
+msgid "Include siblings of ancestors"
+msgstr "Zahrnout sourozence předků"
+
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "Zda se mají zobrazovat sourozenci přímých předků"
+
+msgid "Include cousins (collateral descendants)"
+msgstr "Zahrnout bratrance a sestřenice (potomky ve vedlejších liniích)"
+
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr ""
+"Zda se mají zobrazovat bratranci, sestřenice a potomci sourozenců předků"
+
 msgid "Descendant Generations"
 msgstr "Generací potomků"
+
+msgid "The number of descendant generations to include"
+msgstr "Zvolte počet generací potomků"
+
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "Zda přizpůsobit velikost stránky velikosti stromu."
+
+msgid "Use random colors for family lines"
+msgstr "Použít náhodné barvy rodinných linií"
+
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr "Spojovací čáry každé rodiny kreslit odlišnou barvou."
+
+msgid "The bold style used for the names."
+msgstr "Tučný styl použitý pro jména."

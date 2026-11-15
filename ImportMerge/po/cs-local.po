@@ -1,0 +1,227 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Import and Merge tool"
+msgstr "Nástroj pro import a sloučení"
+
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr ""
+"Porovnává databázi Gramps XML s aktuální databází a umožňuje sloučit rozdíly."
+
+msgid "Import and merge a Gramps XML"
+msgstr "Importovat a sloučit Gramps XML"
+
+msgid "Missing"
+msgstr "Chybí"
+
+msgid "Delete original"
+msgstr "Odstranit původní záznam"
+
+msgid "Ignore"
+msgstr "Ignorovat"
+
+msgid "Add Import"
+msgstr "Přidat importovaný záznam"
+
+msgid "Merge into original"
+msgstr "Sloučit do původního záznamu"
+
+msgid "Merge into import"
+msgstr "Sloučit do importovaného záznamu"
+
+msgid "Replace with import"
+msgstr "Nahradit importovaným záznamem"
+
+msgid "Keep original"
+msgstr "Ponechat původní"
+
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"Pomocí tlačítek níže nastavte u každého rozdílu 'Akci'. Rodokmen se nezmění, "
+"dokud nestisknete 'Hotovo' a změny nepotvrdíte."
+
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"Tato položka bude z rodokmenu odstraněna. Také odkazované položky byly "
+"označeny k odstranění."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"Tato položka se v rodokmenu nezmění. Také odkazované položky byly označeny "
+"akcí Ignorovat."
+
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"Tato položka bude přidána do rodokmenu. Také odkazované položky byly "
+"označeny k přidání."
+
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Tato položka bude sloučena se zachováním údajů z vašeho rodokmenu. Také "
+"odkazované položky byly označeny ke sloučení nebo přidání."
+
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Tato položka bude sloučena s použitím údajů z importu. Také odkazované "
+"položky byly označeny ke sloučení nebo přidání."
+
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"Údaje z importu zcela nahradí údaje ve vašem rodokmenu. Také odkazované "
+"položky byly označeny k nahrazení nebo odstranění."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"Tato položka se v rodokmenu nezmění. Také odkazované položky byly označeny k "
+"zachování."
+
+msgid "Import Failure"
+msgstr "Import se nezdařil"
+
+msgid "Your Tree and import are the same."
+msgstr "Váš rodokmen a import jsou shodné."
+
+msgid "your tree "
+msgstr "váš rodokmen – "
+
+msgid "imported "
+msgstr "import – "
+
+msgid "Original"
+msgstr "Původní"
+
+msgid "Imported"
+msgstr "Import"
+
+msgid "Result  "
+msgstr "Výsledek  "
+
+msgid "Import and Merge"
+msgstr "Import a sloučení"
+
+msgid "Replace"
+msgstr "Nahradit"
+
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"Hvězdička '*' označuje automaticky označenou akci, otazník '?' označuje "
+"konflikt mezi automatickými označeními."
+
+msgid "Import file"
+msgstr "Soubor k importu"
+
+msgid "Select the difference you wish to examine."
+msgstr "Vyberte rozdíl, který chcete prozkoumat."
+
+msgid "Object Name/Description"
+msgstr "Název/popis objektu"
+
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"Podrobnosti datové položky: položka v aktuálním rodokmenu, importovaná "
+"položka a výsledek (je-li vybrán)."
+
+msgid "Object and item"
+msgstr "Objekt a položka"
+
+msgid "Differences"
+msgstr "Rozdíly"
+
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "Toto tlačítko ignoruje rozdíl a rodokmen se nezmění."
+
+msgid "Unmark"
+msgstr "Zrušit označení"
+
+msgid "This button will add the imported data as a new object to your tree."
+msgstr ""
+"Toto tlačítko přidá importovaná data jako nový objekt do vašeho stromu."
+
+msgid "Done"
+msgstr "Hotovo"
+
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr "Toto tlačítko otevře dialog, kde můžete změny dokončit nebo zahodit."
+
+msgid "Merge Original"
+msgstr "Sloučit do původních dat"
+
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr ""
+"Toto tlačítko sloučí importované údaje s vaším rodokmenem a použije jako "
+"základ údaje z rodokmenu."
+
+msgid "This button will replace your tree data with the imported data."
+msgstr "Toto tlačítko nahradí data vašeho rodokmenu importovanými daty."
+
+msgid "Merge Import"
+msgstr "Sloučit do importovaného"
+
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr ""
+"Toto tlačítko sloučí importované údaje s vaším rodokmenem a použije jako "
+"základ údaje z importu."
+
+msgid "Edit Import"
+msgstr "Upravit importované"
+
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"Toto tlačítko upraví importované údaje. Stále je bude nutné sloučit, přidat "
+"nebo jimi nahradit původní údaje."
+
+msgid "Show more details"
+msgstr "Zobrazit více podrobností"
+
+msgid "Automark Families"
+msgstr "Automaticky označovat rodiny"
+
+msgid "Automark Parent Families"
+msgstr "Automaticky označovat rodičovské rodiny"

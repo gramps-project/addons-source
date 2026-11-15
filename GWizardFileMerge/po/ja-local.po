@@ -1,0 +1,292 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-18 11:34-0700\n"
+"PO-Revision-Date: 2026-10-29 15:51+0000\n"
+"Last-Translator: coolvitto <cool.vitto@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.11.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Untitled source"
+msgstr "無題のソース"
+
+#, python-format
+msgid "page %s"
+msgstr "ページ %s"
+
+#, python-format
+msgid "via %s"
+msgstr "経由 %s"
+
+msgid "none"
+msgstr "なし"
+
+#, python-format
+msgid "Sources: %s"
+msgstr "ソース: %s"
+
+msgid "GWizard Merge"
+msgstr "GWizard 結合"
+
+msgid "No source database available for merge"
+msgstr "マージに利用できるソースデータベースがありません"
+
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr "参照元の人物は既に存在しません: %s"
+
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr "対象者はもはや存在しません: %s"
+
+#, python-format
+msgid "%s: %s"
+msgstr "%s : %s"
+
+msgid "→"
+msgstr "→"
+
+msgid "New person"
+msgstr "新しい人"
+
+msgid "Incoming GEDCOM"
+msgstr "GEDCOM の取り込み"
+
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr "GEDCOM の取り込み: %s"
+
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr "現在の家系図: %s"
+
+msgid "Current Family Tree"
+msgstr "現在の家系図"
+
+msgid "Individual Details"
+msgstr "個人の詳細"
+
+msgid "Given Name"
+msgstr "名"
+
+msgid "Surname Prefix"
+msgstr "姓の接頭辞"
+
+msgid "Name Sources"
+msgstr "名前のソース"
+
+msgid "Person Sources"
+msgstr "人物のソース"
+
+msgid "Family Relations"
+msgstr "家族関係"
+
+msgid "Events & Other Records"
+msgstr "イベントおよびその他の記録"
+
+msgid "=>"
+msgstr "=>"
+
+#, python-format
+msgid "Move %s to current family tree"
+msgstr "%s を現在の家系図に移動"
+
+msgid "✓"
+msgstr "✓"
+
+#, python-format
+msgid "%d Citations"
+msgstr "%d 件の引用"
+
+#, python-format
+msgid "%d Sources"
+msgstr "%d ソース"
+
+#, python-format
+msgid "%d Notes"
+msgstr "%d 件のメモ"
+
+#, python-format
+msgid "%d Media Records"
+msgstr "%d 件のメディアレコード"
+
+#, python-format
+msgid "%d Repositories"
+msgstr "%d 件のリポジトリ"
+
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+"マージされるデータには、ご自身の家系図に存在しない外部オブジェクトへの参照が"
+"含まれています：\n"
+"\n"
+"%s\n"
+"\n"
+"リンク切れを防ぐため、これらの欠落している参照は、選択した詳細情報とともにイ"
+"ンポートする必要があります。これらの欠落している参照をインポートすることを確"
+"認しますか？"
+
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+"%d 件のソースは、すでにあなたの家系図に含まれているため、再利用されます (タイ"
+"トル、著者、出版情報に基づいて照合されます）。"
+msgstr[1] ""
+"%d 件のソースは、すでにあなたの家系図に含まれているため、再利用されます (タイ"
+"トル、著者、出版情報に基づいて照合されます）。"
+
+msgid "Confirm Importing Missing References"
+msgstr "欠落している参照のインポートを確認する"
+
+msgid "Configure Connection"
+msgstr "接続の設定"
+
+msgid "Load Data"
+msgstr "データの読み込み"
+
+msgid "Find Matching Persons"
+msgstr "一致する人物を検索"
+
+msgid "Compare Differences"
+msgstr "相違点を比較"
+
+msgid "Apply Changes"
+msgstr "変更を適用"
+
+msgid "Configure file path or authenticate with online service."
+msgstr "ファイルのパスを設定するか、オンラインサービスで認証を行ってください。"
+
+msgid "Load/parse the external genealogy data into memory."
+msgstr "外部の系図データをメモリに読み込み、解析する。"
+
+msgid "Search for potential matches in your database."
+msgstr "データベース内で該当する可能性のあるデータを検索します。"
+
+msgid "Compare fields side-by-side between the source and target."
+msgstr "ソースとターゲットのフィールドを並べて比較します。"
+
+msgid "Merge selected changes or add new records to the database."
+msgstr "選択した変更をマージするか、データベースに新しいレコードを追加します。"
+
+msgid "GWizard Compare"
+msgstr "GWizard の比較"
+
+msgid "No source database available for comparison"
+msgstr "比較用のソースデータベースがありません"
+
+msgid "Populate Failed"
+msgstr "取り込みに失敗しました"
+
+msgid "Merge..."
+msgstr "統合..."
+
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr "選択したペアについて、フィールドごとのマージダイアログを開く"
+
+msgid "Add as New..."
+msgstr "新規として追加..."
+
+msgid "Add the selected incoming person as a new person"
+msgstr "選択した着信相手を新しい連絡先として追加する"
+
+msgid "Record"
+msgstr "レコード"
+
+msgid "Born"
+msgstr "生まれ"
+
+msgid "Died"
+msgstr "死去"
+
+msgid "Not a Match"
+msgstr "一致しない"
+
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+"これらは別の人物です: ペアを解除して、新しく参加する人を新規として追加できる"
+"ようにしてください"
+
+#, python-format
+msgid "Differences: %d of %d"
+msgstr "相違点: %d / %d"
+
+msgid "(none)"
+msgstr "(なし)"
+
+#, python-format
+msgid "Gender: %s"
+msgstr "性別: %s"
+
+#, python-format
+msgid "ID: %s"
+msgstr "ID: %s"
+
+#, python-format
+msgid "FamilySearch: %s"
+msgstr "FamilySearch : %s"
+
+msgid "Add as New failed"
+msgstr "新規追加に失敗"
+
+msgid "Genealogy files"
+msgstr "系図ファイル"
+
+msgid "Select File to Compare"
+msgstr "比較するファイルの選択"
+
+msgid "The selected file is missing."
+msgstr "選択したファイルが見つかりません。"
+
+msgid "Could not read the selected file."
+msgstr "選択したファイルを読み込めませんでした。"
+
+msgid "Loading Data Merge"
+msgstr "データ結合の読み込み"
+
+msgid "Reading the selected file..."
+msgstr "選択したファイルを読み込み中..."
+
+msgid "Load Failed"
+msgstr "読み込みに失敗"
+
+msgid "Building the comparison window..."
+msgstr "比較ウィンドウを作成中..."
+
+msgid "GWizard Data Merge"
+msgstr "GWizard データ統合"
+
+msgid "GWizard File Merge"
+msgstr "GWizard ファイル統合"
+
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+"開いている家系図と別の系図ファイル（GEDCOM、Gramps XMLなど）を並べて比較し、"
+"選択した相違点を人物ごとに統合するための家系図処理ツール。"

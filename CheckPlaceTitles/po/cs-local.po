@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-02-23 12:29+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,14 +12,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Check Place Titles"
+msgstr "Zkontrolovat názvy míst"
+
+msgid "Check place titles"
+msgstr "Zkontrolovat názvy míst"
+
+msgid "Check Place title"
+msgstr "Zkontrolovat název místa"
 
 msgid "Checking Place Titles"
 msgstr "Kontrolují se názvy míst"
 
 msgid "Looking for place fields"
 msgstr "Hledají se pole míst"
+
+msgid "Differences"
+msgstr "Rozdíly"
+
+msgid "No need modifications"
+msgstr "Úpravy nejsou potřeba"
+
+msgid "No changes need."
+msgstr "Žádné změny nejsou potřeba."
+
+msgid "Legacy place"
+msgstr "Místo ze starší verze"
+
+msgid "Modify Place titles"
+msgstr "Upravit názvy míst"
+
+msgid "Place titles"
+msgstr "Názvy míst"
+
+msgid "Remove content of place title field if it does not match"
+msgstr "Odstranit obsah pole názvu místa, pokud se neshoduje"
+
+msgid "Copy content of place title field to a new note."
+msgstr "Zkopírovat obsah pole názvu místa do nové poznámky."
+
+msgid "Attach a tag on selected places."
+msgstr "Připojit štítek k vybraným místům."
+
+msgid "column"
+msgstr "sloupec"

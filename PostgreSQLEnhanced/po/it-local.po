@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-04-14 18:01+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,11 +12,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
 msgstr "L'oggetto {obj_type}:{handle} è stato modificato da un altro utente"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "Per il rilevamento dei duplicati è necessaria l'estensione pg_trgm"
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"Per il supporto PostgreSQL Enhanced è necessario psycopg3. Installalo con: "
+"pip install 'psycopg[binary]'"
 
 #, python-format
 msgid ""
@@ -26,11 +36,22 @@ msgstr ""
 "La versione psycopg3 %(installed)s è troppo vecchia. E' necessaria la "
 "versione %(required)s o più recente."
 
+msgid "Database Backend"
+msgstr "Backend del database"
+
+msgid "Database module"
+msgstr "Modulo del database"
+
 msgid "JSONB support"
 msgstr "Supporto JSONB"
 
 msgid "Version warning"
 msgstr "Avviso versione"
+
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+"PostgreSQL %(version)s è inferiore alla versione consigliata %(recommended)s"
 
 msgid "Extensions"
 msgstr "Estensioni"
@@ -44,6 +65,14 @@ msgstr "%(persons)d persone, %(families)d famiglie, %(events)d eventi"
 
 msgid "Migration manager not initialized"
 msgstr "Gestore della migrazione non inizializzato"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "Le query avanzate richiedono il supporto JSONB"
+
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr ""
+"La ricerca a testo completo richiede il supporto JSONB o funzionalità di "
+"ricerca"
 
 msgid "Starting migration..."
 msgstr "Inizio della migrazione..."
@@ -77,3 +106,14 @@ msgstr "PostgreSQL migliorato"
 
 msgid "PostgreSQL _Enhanced Database"
 msgstr "Database PostgreSQL _Enhanced"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"Backend PostgreSQL avanzato con archiviazione JSONB, supporto per database a "
+"grafo (Apache AGE), similarità vettoriale (pgvector) e funzionalità di IA/"
+"ML. Per utenti esperti. Richiede PostgreSQL 15+ con estensioni. Compatibile "
+"con Gramps Web."

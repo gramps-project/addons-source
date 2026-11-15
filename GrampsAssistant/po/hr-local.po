@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-03 09:03-0700\n"
-"PO-Revision-Date: 2026-05-17 15:49+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-10-25 15:51+0000\n"
+"Last-Translator: Milo Ivir <milotype@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -13,7 +13,61 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
+
+msgid "Gramps Assistant settings"
+msgstr "Postavke Gramps pomoćnika"
+
+msgid "Clear conversation and context"
+msgstr "Isprazni razgovor i kontekst"
+
+msgid "Open the Gramps Assistant wiki page"
+msgstr "Otvori wiki stranicu Gramps pomoćnika"
 
 msgid "Send"
 msgstr "Pošalji"
+
+msgid "Gramps Assistant:"
+msgstr "Gramps pomoćnik:"
+
+msgid "Done.\n"
+msgstr "Gotovo.\n"
+
+msgid "Simplify tools (recommended for smaller/local models)"
+msgstr "Pojednostavi alate (preporučuje se za manje/lokalne modele)"
+
+msgid "Use Local Model"
+msgstr "Koristi lokalni model"
+
+msgid "model name (leave blank for LM Studio / llama.cpp)"
+msgstr "ime modela (ostavi prazno za LM Studio / llama.cpp)"
+
+msgid "Model:"
+msgstr "Model:"
+
+msgid "Use Foundational Model"
+msgstr "Koristi temeljni model"
+
+msgid "e.g. OPENAI_API_KEY"
+msgstr "npr. OPENAI_API_KEY"
+
+msgid "Name of the environment variable holding your API key."
+msgstr "Ime varijable okruženja koja sadrži tvoj API ključ."
+
+msgid "API key env var:"
+msgstr "API ključ varijable okruženja:"
+
+msgid "Backend:"
+msgstr "Pozadinski sustav:"
+
+msgid "Base URL:"
+msgstr "Osnovni URL:"
+
+msgid "Model name:"
+msgstr "Ime modela:"
+
+msgid "Gramps Assistant"
+msgstr "Gramps pomoćnik"
+
+msgid "AI assistant for querying your Gramps family tree"
+msgstr "Pomoćnik s umjetnom inteligencijom za ispitivanje Gramps rodoslova"

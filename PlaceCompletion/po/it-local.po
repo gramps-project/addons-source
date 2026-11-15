@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,28 +12,242 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "PlaceCompletion"
+msgstr "PlaceCompletion"
+
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr ""
+"Fornisce un elenco consultabile dei luoghi selezionati, con la possibilità "
+"di completare/analizzare/impostare i campi degli attributi."
+
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr ""
+"Completamento dei luoghi tramite analisi, ricerca in file e impostazione in "
+"blocco degli attributi dei luoghi"
+
+msgid "Error in PlaceCompletion.py"
+msgstr "Errore in PlaceCompletion.py"
+
+msgid "Non existing group used in get"
+msgstr "Gruppo inesistente usato in get"
+
+#, python-format
+msgid "PlaceCompletion is unable to create %s %s"
+msgstr "PlaceCompletion non riesce a creare %s %s"
+
+msgid "Places tool"
+msgstr "Strumento per i luoghi"
+
+msgid "Missing regex groups in match lat/lon"
+msgstr "Gruppi regex mancanti nella corrispondenza lat/lon"
+
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+"I gruppi regex %(lat)s e %(lon)s devono essere presenti nella corrispondenza "
+"lat/lon. Uscita"
+
+msgid "Non valid regex for match lat/lon"
+msgstr "Regex non valida per la corrispondenza lat/lon"
+
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr "Espressione regolare non valida per trovare lat/lon. Uscita."
+
+msgid "Finding Places and appropriate changes"
+msgstr "Ricerca dei luoghi e delle modifiche appropriate"
+
+msgid "Filtering"
+msgstr "Filtraggio"
+
+msgid "Loading lat/lon file in Memory..."
+msgstr "Caricamento del file lat/lon in memoria..."
+
+msgid "Examining places"
+msgstr "Esame dei luoghi"
+
+msgid "Set Tag"
+msgstr "Imposta etichetta"
+
+msgid "Doing Place changes"
+msgstr "Modifica dei luoghi in corso"
+
+msgid "No place record was modified."
+msgstr "Nessun record di luogo è stato modificato."
+
+msgid "1 place record was modified."
+msgstr "È stato modificato 1 record di luogo."
+
+#, python-format
+msgid "%d place records were modified."
+msgstr "Sono stati modificati %d record di luogo."
+
+msgid "Change places"
+msgstr "Modifica i luoghi"
 
 msgid "The selected file is a directory, not a file."
 msgstr "Il file selezionato è una directory, non un file."
 
+msgid "The file you want to access is not a regular file."
+msgstr "Il file a cui vuoi accedere non è un file normale."
+
 msgid "The file does not exist."
 msgstr "Il file non esiste."
+
+msgid "Problem reading file"
+msgstr "Problema nella lettura del file"
+
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "valore di lat o lon non valido, %(lat)s, %(lon)s"
+
+msgid "No lat/lon conversion"
+msgstr "Nessuna conversione lat/lon"
+
+msgid "All in degree notation"
+msgstr "Tutto in notazione in gradi"
+
+msgid "All in decimal notation"
+msgstr "Tutto in notazione decimale"
+
+msgid "Correct -50° in 50°S"
+msgstr "Correggi -50° in 50°S"
+
+msgid "No changes"
+msgstr "Nessuna modifica"
+
+msgid "City[, State]"
+msgstr "Città[, regione]"
+
+msgid "City,PostalCode,Country"
+msgstr "Città,CAP,stato"
+
+msgid "City[(Street;Locality;Parish)],PostalCode,Country"
+msgstr "Città[(via;località;parrocchia)],CAP,stato"
+
+msgid "TitleStart [, City] [, State]"
+msgstr "InizioTitolo [, città] [, regione]"
+
+msgid "TitleStart [, City] [, County] [, State] [, Country]"
+msgstr "InizioTitolo [, città] [, provincia] [, regione] [, stato]"
+
+msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
+msgstr "InizioTitolo [, città] [, CAP] [, provincia] [, regione] [, stato]"
+
+msgid "Don't search"
+msgstr "Non cercare"
+
+msgid "GeoNames country file, city search"
+msgstr "File nazionale GeoNames, ricerca per città"
+
+msgid "GeoNames country file, city localized variants search"
+msgstr "File nazionale GeoNames, ricerca per varianti locali della città"
+
+msgid "GeoNames country file, county/city search"
+msgstr "File nazionale GeoNames, ricerca per provincia/città"
+
+msgid "GeoNames country file, title begin, general search"
+msgstr "File nazionale GeoNames, inizio del titolo, ricerca generale"
+
+msgid "GeoNames USA state file, city search"
+msgstr "File degli stati USA di GeoNames, ricerca per città"
+
+msgid "GNS Geonet country file, city search"
+msgstr "File nazionale GNS Geonet, ricerca per città"
+
+msgid "GNS Geonet country file, county/city search"
+msgstr "File nazionale GNS Geonet, ricerca per provincia/città"
+
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "File nazionale GNS Geonet, inizio del titolo, ricerca generale"
+
+msgid "Wikipedia CSV Dump"
+msgstr "Dump CSV di Wikipedia"
 
 msgid "All Places"
 msgstr "Tutti i luoghi"
 
+msgid "No Latitude/Longitude given"
+msgstr "Nessuna latitudine/longitudine indicata"
+
 msgid "_Google Maps"
 msgstr "_Google Maps"
+
+msgid "Apply all suggested changes"
+msgstr "Applica tutte le modifiche suggerite"
+
+msgid "Selection of the Places you want to complete:"
+msgstr "Selezione dei luoghi da completare:"
 
 msgid "Parish:"
 msgstr "Parrocchia:"
 
+msgid "Place _filter:"
+msgstr "_Filtro luoghi:"
+
 msgid "Count_ry:"
 msgstr "Sta_to:"
+
+msgid "C_enter latitude:"
+msgstr "Latitudine del c_entro:"
+
+msgid "Center longitude:"
+msgstr "Longitudine del centro:"
+
+msgid "Places in a rectangle:"
+msgstr "Luoghi in un rettangolo:"
 
 msgid "Height:"
 msgstr "Altezza:"
 
+msgid "1. Look up latitude and longitude:"
+msgstr "1. Cerca latitudine e longitudine:"
+
+msgid "Search in:"
+msgstr "Cerca in:"
+
 msgid "Select A File"
 msgstr "Selezione file"
+
+msgid "Parse as:"
+msgstr "Analizza come:"
+
+msgid "2. Conversion of existing title or position:"
+msgstr "2. Conversione del titolo o della posizione esistenti:"
+
+msgid "Change title into:"
+msgstr "Cambia il titolo in:"
+
+msgid "Convert lat/lon as:"
+msgstr "Converti lat/lon come:"
+
+msgid ""
+"Or define a simple\n"
+"title format:"
+msgstr ""
+"Oppure definisci un semplice\n"
+"formato del titolo:"
+
+msgid ""
+"Available variables: city, street, locality, parish, county, state, country, "
+"postal_code"
+msgstr ""
+"Variabili disponibili: city, street, locality, parish, county, state, "
+"country, postal_code"
+
+msgid ""
+"Delete to delete a row, Double-click on the row to edit place with changes "
+"pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
+"to do all changes automatically"
+msgstr ""
+"Canc per eliminare una riga, doppio clic sulla riga per modificare il luogo "
+"con le modifiche già inserite, \n"
+"Tab su una riga o il pulsante Google Maps per vedere il luogo su una mappa. "
+"Applica per eseguire automaticamente tutte le modifiche"

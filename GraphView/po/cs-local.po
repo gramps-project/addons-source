@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,14 +12,131 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Graph View"
+msgstr "Grafický pohled"
+
+msgid "Show IDs"
+msgstr "Zobrazit ID"
+
+msgid "Show avatars"
+msgstr "Zobrazit avatary"
+
+msgid "Highlight the home person"
+msgstr "Zvýraznit výchozí osobu"
+
+msgid "Show full dates"
+msgstr "Zobrazit úplná data"
+
+msgid "Show places"
+msgstr "Zobrazit místa"
+
+msgid "Vertical: Top to Bottom"
+msgstr "Svisle: shora dolů"
+
+msgid "Vertical: Bottom to Top"
+msgstr "Svisle: zdola nahoru"
+
+msgid "Horizontal: Left to Right"
+msgstr "Vodorovně: zleva doprava"
+
+msgid "Horizontal: Right to Left"
+msgstr "Vodorovně: zprava doleva"
+
+msgid "Time Direction"
+msgstr "Směr času"
+
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr "Omezit počet zobrazených osob (0 znamená bez omezení)"
+
+msgid "Person theme"
+msgstr "Motiv osoby"
+
+msgid "Path color to home person"
+msgstr "Barva cesty k výchozí osobě"
+
+msgid "Font:"
+msgstr "Písmo:"
+
+msgid "Avatars style"
+msgstr "Styl avatarů"
+
+msgid "PNG files"
+msgstr "Soubory PNG"
+
+msgid "Male avatar:"
+msgstr "Avatar muže:"
+
+msgid "Choose male avatar"
+msgstr "Vyberte avatar muže"
+
+msgid "Female avatar:"
+msgstr "Avatar ženy:"
+
+msgid "Choose female avatar"
+msgstr "Vyberte avatar ženy"
+
+msgid "Unknown avatar:"
+msgstr "Avatar pro neznámé pohlaví:"
+
+msgid "Choose Unknown avatar"
+msgstr "Vyberte avatar pro neznámé pohlaví"
+
+msgid "Other avatar:"
+msgstr "Avatar pro jiné pohlaví:"
+
+msgid "Choose Other avatar"
+msgstr "Vyberte avatar pro jiné pohlaví"
+
+msgid "Active person border size"
+msgstr "Tloušťka obrysu aktivní osoby"
+
+msgid "Person border size"
+msgstr "Tloušťka obrysu osoby"
+
+msgid "Themes"
+msgstr "Motivy"
+
+msgid "Show animation"
+msgstr "Zobrazit animace"
+
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "Rychlost animace (1..5; 5 je nejpomalejší)"
+
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr "Počet animací (0..8; 0 je vypne)"
+
+msgid "Animation"
+msgstr "Animace"
+
+msgid "Search in all database"
+msgstr "Hledat v celé databázi"
+
+msgid "Also apply search by all database."
+msgstr "Vyhledávat také v celé databázi."
+
+msgid "Show person images"
+msgstr "Zobrazit obrázky osob"
+
+msgid "Show persons thumbnails in search result list."
+msgstr "Zobrazit náhledy obrázků osob v seznamu výsledků hledání."
+
+msgid "Show bookmarked first"
+msgstr "Zobrazit osoby ze záložek jako první"
+
+msgid "Show bookmarked persons first in search result list."
+msgstr "Zobrazit osoby ze záložek jako první v seznamu výsledků hledání."
+
 msgid "Search"
 msgstr "Vyhledávání"
+
+msgid "Select a dot file name"
+msgstr "Vybrat název souboru dot"
 
 msgid "Zoom in"
 msgstr "Přiblížit"
@@ -27,8 +144,238 @@ msgstr "Přiblížit"
 msgid "Zoom out"
 msgstr "Oddálit"
 
+msgid "Zoom to original"
+msgstr "Obnovit původní přiblížení"
+
+msgid "Zoom to best fit"
+msgstr "Přizpůsobit přiblížení"
+
+msgid "Go to active person"
+msgstr "Přejít na aktivní osobu"
+
+msgid "Go to bookmark"
+msgstr "Přejít na záložku"
+
+msgid "Center view on selected bookmark"
+msgstr "Vystředit pohled na vybranou záložku"
+
+msgid "Bookmarks for current graph"
+msgstr "Záložky současného grafu"
+
+msgid "Other Bookmarks"
+msgstr "Další záložky"
+
+msgid "Vertical spacing between generations"
+msgstr "Svislé rozestupy mezi generacemi"
+
+msgid "Horizontal spacing between generations"
+msgstr "Vodorovné rozestupy mezi generacemi"
+
+msgid "Spacings"
+msgstr "Rozestupy"
+
+msgid "All connected"
+msgstr "Všechny propojené osoby"
+
+msgid ""
+"Show all connected persons limited by generation restrictions.\n"
+"Works slow, so don't set large generation values."
+msgstr ""
+"Zobrazit všechny propojené osoby v mezích omezení generací.\n"
+"Pracuje pomalu, proto nenastavujte vysoké počty generací."
+
+msgid "Add active person"
+msgstr "Přidat aktivní osobu"
+
 msgid "Call the bookmark editor"
 msgstr "Vyvolat editor záložek"
 
+msgid ""
+"You don't have any bookmarks yet...\n"
+"Try to add some frequently used persons to speedup navigation."
+msgstr ""
+"Zatím nemáte žádné záložky...\n"
+"Zkuste přidat často používané osoby pro rychlejší navigaci."
+
+msgid "No bookmarks for this graph..."
+msgstr "Žádné záložky pro tento graf..."
+
+msgid "No other bookmarks..."
+msgstr "Žádné další záložky..."
+
+#, python-format
+msgid "found: %s"
+msgstr "Nalezeno: %s"
+
+#, python-format
+msgid ""
+"Add active person to bookmarks\n"
+"%s"
+msgstr ""
+"Přidat aktivní osobu do záložek\n"
+"%s"
+
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+"Osoba <b><i>%s</i></b> není v současném pohledu.\n"
+"Chcete ji nastavit jako aktivní a znovu sestavit pohled?"
+
+msgid "Change active person?"
+msgstr "Změnit aktivní osobu?"
+
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"Tento graf by obsahoval alespoň {people_count} osob, což překračuje limit "
+"{people_limit} osob. Z důvodů výkonu alespoň {people_missing} osob nebude "
+"zobrazeno. Tento limit můžete změnit v konfiguraci pohledu."
+
+msgid "Incomplete graph"
+msgstr "Neúplný graf"
+
+msgid "Image on right side"
+msgstr "Obrázek vpravo"
+
+msgid "Image on left side"
+msgstr "Obrázek vlevo"
+
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+msgid "<b>Tags:</b>"
+msgstr "<b>Štítky:</b>"
+
+msgid "Lines type"
+msgstr "Typ čar"
+
+msgid "Direct"
+msgstr "Přímé"
+
+msgid "Curves"
+msgstr "Křivky"
+
+msgid "Ortho"
+msgstr "Pravoúhlé"
+
+msgid "Copy"
+msgstr "Zkopírovat"
+
+msgid "No Events for this person"
+msgstr "Tato osoba nemá žádné události"
+
+msgid "Select tags for person"
+msgstr "Vybrat štítky pro osobu"
+
+msgid "Add new family"
+msgstr "Přidat novou rodinu"
+
+msgid "Add parents"
+msgstr "Přidat rodiče"
+
+msgid "Set as home person"
+msgstr "Nastavit jako výchozí osobu"
+
+msgid "Show path to home person"
+msgstr "Zobrazit cestu k výchozí osobě"
+
+msgid "Remove from bookmarks"
+msgstr "Odebrat ze záložek"
+
+msgid "Add to bookmarks"
+msgstr "Přidat do záložek"
+
+msgid "No Events for this family"
+msgstr "Tato rodina nemá žádné události"
+
+msgid "Select tags for family"
+msgstr "Vybrat štítky pro rodinu"
+
+msgid "Add father"
+msgstr "Přidat otce"
+
+msgid "Add mother"
+msgstr "Přidat matku"
+
+msgid "About Graph View"
+msgstr "O grafickém pohledu"
+
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Přidání štítků osobě (%s)"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Přidání štítků rodině (%s)"
+
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "Smazáním osoby [%s] odstraníte její záznam z databáze."
+
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "Odstranit rodinu [%s]?"
+
+msgid "Deleting the family will remove it from the database."
+msgstr "Smazáním rodiny odstraníte její záznam z databáze."
+
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "Odstranit rodinu [%s]"
+
+msgid "Dynamic and interactive graph of relations"
+msgstr "Dynamický a interaktivní graf vztahů"
+
+msgid "Dark (default)"
+msgstr "Tmavý (výchozí)"
+
+msgid "Light"
+msgstr "Světlý"
+
+msgid "Cartoon"
+msgstr "Kreslený"
+
+msgid "Modern"
+msgstr "Moderní"
+
+msgid "Generic (dark)"
+msgstr "Obecný (tmavý)"
+
+msgid "Generic (gray)"
+msgstr "Obecný (šedý)"
+
+msgid "Generic (light)"
+msgstr "Obecný (světlý)"
+
+msgid "Persons from current graph"
+msgstr "Osoby ze současného grafu"
+
+msgid "Other persons from database"
+msgstr "Další osoby z databáze"
+
+msgid "No persons found..."
+msgstr "Nenalezeny žádné osoby..."
+
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+"Hledat osoby v právě zobrazeném grafu a databázi.\n"
+"K aktivaci vyhledávacího pole použijte <Ctrl+F>."
+
 msgid "Search..."
 msgstr "Hledat..."
+
+#, python-format
+msgid "<b>%s:</b>"
+msgstr "<b>%s:</b>"
+
+msgid "Partners"
+msgstr "Partneři"

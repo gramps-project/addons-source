@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
 "PO-Revision-Date: 2026-09-12 15:52+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -23,6 +23,16 @@ msgstr "Gramplet näyttää aktiivi- ja kotihenkilön väliset suhteet syvemmäl
 
 msgid "Deep Connections"
 msgstr "Syväsuhteet"
+
+msgid "sibling"
+msgstr "sisarus"
+
+msgid "mentioned in note"
+msgstr "mainitussa huomautuksessa"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (liitoksen lisätietoja)"
 
 msgid "⏸ Pause"
 msgstr "⏸ Pysäytä"
@@ -59,25 +69,6 @@ msgstr ""
 "Haun syvyys: {depth} | Henkilötä käsitelty: {processed} | Jonon koko: "
 "{queue_size}"
 
-msgid "mentioned in note"
-msgstr "mainitussa huomautuksessa"
-
-msgid "Note on Family"
-msgstr "Perheen lisätietoja"
-
-msgid "sibling"
-msgstr "sisarus"
-
-msgid "Note on Parent Family"
-msgstr "Vanhempien perheen lisätietoja"
-
-#, python-format
-msgid "%s (association)"
-msgstr "%s (liitoksen lisätietoja)"
-
-msgid "Note on Person"
-msgstr "Henkilön lisätietoja"
-
 #, python-format
 msgid ""
 "\n"
@@ -85,6 +76,24 @@ msgid ""
 msgstr ""
 "\n"
 "   %s henkilölle "
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Löydetyt suhteet #%d: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Pysäytetty.\n"
+"Etsi lisää suhteita painamalla Jatka.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Keskeytetty - Paina Jatka etsiäksesi lisää suhteita"
 
 msgid "Error: No Home Person set"
 msgstr "Kotihenkilöä ei ole asetettu."
@@ -111,24 +120,6 @@ msgstr "  <b>%s</b> (aktiivihenkilö)...\n"
 
 msgid "Searching for connections..."
 msgstr "Yhteyksiä etsitään..."
-
-#, python-format
-msgid ""
-"Found relation #%d: \n"
-"   "
-msgstr ""
-"Löydetyt suhteet #%d: \n"
-"   "
-
-msgid ""
-"Paused.\n"
-"Press Continue to search for additional relations.\n"
-msgstr ""
-"Pysäytetty.\n"
-"Etsi lisää suhteita painamalla Jatka.\n"
-
-msgid "Paused - Press Continue to search for more relations"
-msgstr "Keskeytetty - Paina Jatka etsiäksesi lisää suhteita"
 
 #, python-format
 msgid ""

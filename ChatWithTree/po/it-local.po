@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 13:30-0700\n"
-"PO-Revision-Date: 2026-09-10 08:51+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,11 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 #, python-brace-format
 msgid "Tree: '{}'"
 msgstr "Albero: '{}'"
+
+msgid "Chat With Tree Interactive Addon"
+msgstr "Addon interattivo Chat With Tree"
+
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+"Conversa con l'albero con l'aiuto di un modello linguistico di grandi "
+"dimensioni (IA), richiede il modulo litellm"
 
 msgid "Chat With Tree"
 msgstr "Parla con l'albero"
@@ -26,6 +35,10 @@ msgstr "Scrivi un messaggio..."
 
 msgid "Send"
 msgstr "Invia"
+
+msgid "Chat with Tree initialized.                 Type /help for help."
+msgstr ""
+"Chat with Tree inizializzato.                 Digita /help per l'aiuto."
 
 msgid ""
 "The ChatWithTree addon is not yet initialized.                     Please "

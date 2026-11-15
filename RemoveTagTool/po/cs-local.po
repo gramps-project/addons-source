@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-11-17 06:51+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,14 +12,84 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "The Tool requires at least one tag to execute."
+msgstr "Ke spuštění nástroje je potřeba alespoň jeden štítek."
+
+msgid "ERROR"
+msgstr "CHYBA"
+
+msgid "Add/Remove"
+msgstr "Přidat/Odebrat"
+
+msgid "Add or remove tags from objects."
+msgstr "Přidat nebo odebrat štítky objektům."
+
+msgid "Add Tags"
+msgstr "Přidat štítky"
+
+msgid "Remove Tags"
+msgstr "Odebrat štítky"
+
+msgid "General options"
+msgstr "Obecné možnosti"
+
+msgid "Choose a category."
+msgstr "Vyberte kategorii."
+
+msgid "Choose Tag"
+msgstr "Vybrat štítek"
+
+msgid "Choose a tag to remove."
+msgstr "Vyberte štítek, který chcete odebrat."
+
 msgid "Persons"
 msgstr "Osoby"
 
+msgid "Filter options"
+msgstr "Nastavení filtrů"
+
+#, python-format
+msgid "All %s"
+msgstr "Vše: %s"
+
+msgid "Add/Remove Tag Tool"
+msgstr "Nástroj pro přidávání a odstraňování štítků"
+
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"Nástroj nelze spustit. Zkontrolujte, zda databáze obsahuje štítky, filtry a "
+"objekty."
+
+msgid "WARNING"
+msgstr "VAROVÁNÍ"
+
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "V databázi nebyly nalezeny žádné objekty %s."
+
 msgid "Process tags..."
 msgstr "Zpracovat štítky..."
+
+msgid "added"
+msgstr "přidán"
+
+msgid "removed"
+msgstr "odebrán"
+
+#, python-brace-format
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "Štítek '{}' byl {} u objektů (počet: {}, typ: {}).\n"
+
+msgid "INFO"
+msgstr "INFORMACE"
+
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "Přidat nebo odebrat štítek skupinám osob, událostí atd."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
 "PO-Revision-Date: 2026-07-24 05:14+0000\n"
 "Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -22,6 +22,16 @@ msgstr "Gramplet mostrando una relación profunda entre activo y gente inicial"
 
 msgid "Deep Connections"
 msgstr "Conexiones Profundas"
+
+msgid "sibling"
+msgstr "hermano"
+
+msgid "mentioned in note"
+msgstr "mencionado en nota"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (asociación)"
 
 msgid "⏸ Pause"
 msgstr "⏸ Pausa"
@@ -58,25 +68,6 @@ msgstr ""
 "Profundidad de búsqueda: {depth} | Personas procesadas: {processed} | Tamaño "
 "de la cola: {queue_size}"
 
-msgid "mentioned in note"
-msgstr "mencionado en nota"
-
-msgid "Note on Family"
-msgstr "Nota en Familia"
-
-msgid "sibling"
-msgstr "hermano"
-
-msgid "Note on Parent Family"
-msgstr "Nota en Familia Antecesora"
-
-#, python-format
-msgid "%s (association)"
-msgstr "%s (asociación)"
-
-msgid "Note on Person"
-msgstr "Nota sobre persona"
-
 #, python-format
 msgid ""
 "\n"
@@ -84,6 +75,24 @@ msgid ""
 msgstr ""
 "\n"
 "   %s de "
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Relación nº %d encontrada: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Pausado.\n"
+"Presione Continuar para buscar relaciones adicionales.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Pausado - Presione Continuar para buscar más relaciones"
 
 msgid "Error: No Home Person set"
 msgstr "Error: No se ha definido una Persona Inicial"
@@ -110,24 +119,6 @@ msgstr "  <b>%s</b> (Persona Activa)…\n"
 
 msgid "Searching for connections..."
 msgstr "Buscando conexiones..."
-
-#, python-format
-msgid ""
-"Found relation #%d: \n"
-"   "
-msgstr ""
-"Relación nº %d encontrada: \n"
-"   "
-
-msgid ""
-"Paused.\n"
-"Press Continue to search for additional relations.\n"
-msgstr ""
-"Pausado.\n"
-"Presione Continuar para buscar relaciones adicionales.\n"
-
-msgid "Paused - Press Continue to search for more relations"
-msgstr "Pausado - Presione Continuar para buscar más relaciones"
 
 #, python-format
 msgid ""

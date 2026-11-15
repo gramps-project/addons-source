@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 13:30-0700\n"
-"PO-Revision-Date: 2026-10-06 17:51+0000\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"PO-Revision-Date: 2026-10-29 15:51+0000\n"
+"Last-Translator: Avi Markovitz <avma@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
 "Language: he\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.10.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 msgid "Gram.py Script"
 msgstr "Gram.py Script"
@@ -21,8 +21,67 @@ msgstr "Gram.py Script"
 msgid "Run a special Gramps Python script"
 msgstr "הרצת תסריט פיתון מיוחד של גרמפס"
 
+msgid "List All People"
+msgstr "הצגת כל האנשים"
+
+msgid ""
+"Iterate over every person in the database and show their Gramps ID, given "
+"name, surname, and gender in the results table."
+msgstr ""
+"חזרור על אדם במסד הנתונים להצגת מזהה גרמפס שלו, שם פרטית שם משפחה ומגדר "
+"בטבלת התוצאות."
+
+msgid "Filter By Surname"
+msgstr "סינון לפי שם משפחה"
+
+msgid ""
+"List only the people whose surname matches a given value — a starting point "
+"for narrowing any report down by a condition."
+msgstr ""
+"הצגת האנשים ששם משפחתם תואם ערך נתון בלבד – נקודת פתיחה לצמצום דוח כלשהו על "
+"ידי תנאי."
+
 msgid "Family Overview"
 msgstr "סקירת משפחה"
+
+msgid ""
+"List every family together with the father, the mother, and how many "
+"children they have — a quick way to spot families that look incomplete."
+msgstr ""
+"הצגת כל משפחה יחד עם האב, האם ומספר הצאצאים שלהם — דרך מהירה לזהות משפחות "
+"שנראות לא שלמות."
+
+msgid "Gender Breakdown (Pie Chart)"
+msgstr "פלוח מגדר ‏(תרשים עוגה)"
+
+msgid ""
+"Count how many people are male, female, or of unknown gender, then draw a "
+"pie chart of the totals. Check the Chart tab after running."
+msgstr ""
+"ספרית כמה אנשים הם במגדר: זכר, נקבה, לא ידוע, הצגת סיכום התוצאות בתרשים "
+"עוגה. לאחר ההרצה יש לבדוק את לשונית התרשים."
+
+msgid "Age At Death Histogram"
+msgstr "תרשים שכיחויות גיל בעת פטירה"
+
+msgid "Active Person Summary"
+msgstr "אדם פעיל: תקציר"
+
+msgid ""
+"Show a compact family summary for the currently active person: their record, "
+"parents, spouse, and children."
+msgstr ""
+"הצגת תקציר משפחה צמום עבור האדם הפעיל הנוכחי: הרשומות שלהם, הוריהם,בני זוגם "
+"וצאצאיהם."
+
+msgid "Report On Selected People"
+msgstr "דיווח על אנשים שנבחרו"
+
+msgid "Custom Filter Example"
+msgstr "דוגמת מסנן מותאם אישית"
+
+msgid "Delete Unused Repositories (Delete Example)"
+msgstr "מחיקת מאגרים שלא בשימוש (דוגמת מחיקה)"
 
 msgid "Load query from a .script file"
 msgstr "טעינת שאילתה מ.תסריט קובץ"
@@ -59,6 +118,14 @@ msgstr "טבלה"
 
 msgid "Chart"
 msgstr "תרשים"
+
+msgid "Untitled"
+msgstr "ללא כותרת"
+
+msgid ""
+"If you continue without saving, the changes you have made to this script "
+"will be lost."
+msgstr "המשך מבלי לשמור, השינויים שבוצעו בתסריט זה יאבדו."
 
 msgid "Gram.py Script Edited Data"
 msgstr "Gram.py תסריט ערוכים נתונים"

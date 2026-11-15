@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,18 +12,139 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Zápis do {target_path} selhal: {message}"
+
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr "Nezdařilo se vytvořit strukturu adresáře: %s"
 
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "Nepodařilo se zkopírovat webové soubory: %s"
+
+msgid "Ancestral Collapsible Tree Options"
+msgstr "Nastavení sbalitelného stromu předků"
+
+msgid "Include Generations"
+msgstr "Počet zahrnutých generací"
+
+msgid "Male Background Color"
+msgstr "Barva pozadí mužů"
+
+msgid "RGB-color for male box background."
+msgstr "Barva RGB pozadí rámečků mužů."
+
+msgid "Male Expandable Background Color"
+msgstr "Barva pozadí rozbalitelných rámečků mužů"
+
+msgid "RGB-color for male expandable box background."
+msgstr "Barva RGB pozadí rozbalitelných rámečků mužů."
+
+msgid "Female Background"
+msgstr "Pozadí žen"
+
+msgid "RGB-color for female box background."
+msgstr "Barva RGB pozadí rámečků žen."
+
+msgid "Female Expandable Background"
+msgstr "Pozadí rozbalitelných rámečků žen"
+
+msgid "RGB-color for female expandable box background."
+msgstr "Barva RGB pozadí rozbalitelných rámečků žen."
+
+msgid "The destination path for generated files."
+msgstr "Cílová cesta vytvořených souborů."
+
+msgid "The destination file name for html content."
+msgstr "Název cílového souboru s obsahem HTML."
+
+msgid "Ancestral Fan Chart"
+msgstr "Vějířový graf předků"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"Vytvoří webovou stránku s grafickým znázorněním předků (SVG) jako vějířovým "
+"grafem z javascriptové knihovny D3.js."
+
+#, python-format
+msgctxt "spouse"
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Viz %(reference)s : %(spouse)s"
+
+msgid "Generating report..."
+msgstr "Vytváření sestavy..."
+
+msgid "Descendant Indented Tree"
+msgstr "Strom potomků s odsazením"
+
+msgid "Invalid Destination Directory"
+msgstr "Neplatný cílový adresář"
+
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"Cílový adresář %s neexistuje\n"
+"Chcete se jej pokusit vytvořit?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "Nepodařilo se vytvořit {target_path}: {message}"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Cílový soubor %s již existuje.\n"
+"Chcete jej přepsat?"
+
+msgid "Default View"
+msgstr "Výchozí zobrazení"
+
+msgid "Expand All"
+msgstr "Rozbalit vše"
+
+msgid "Include contraction level"
+msgstr "Úroveň počátečního sbalení"
+
+msgid "The number of descendant levels to contract on initial display."
+msgstr "Počet úrovní potomků, které se mají sbalit při počátečním zobrazení."
+
+msgid "The font size in pixels for each node."
+msgstr "Velikost písma jednotlivých uzlů v pixelech."
+
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Zda se mají ve zprávě zobrazovat duplicitní rodinné stromy."
+
+msgid "Expanded Row Background Color"
+msgstr "Barva pozadí rozbaleného řádku"
+
+msgid "RGB-color for expanded row background."
+msgstr "Barva RGB pozadí rozbaleného řádku."
+
+msgid "Expandable Background Color"
+msgstr "Barva pozadí rozbalitelného řádku"
+
+msgid "RGB-color for expandable row background."
+msgstr "Barva RGB pozadí rozbalitelného řádku."
+
+msgid "Non-Expandable Background Color"
+msgstr "Barva pozadí nerozbalitelného řádku"
+
+msgid "RGB-color for non-expandable row background."
+msgstr "Barva RGB pozadí nerozbalitelného řádku."
 
 msgid "Include records marked private"
 msgstr "Zahrnout záznamy označené jako důvěrné"
@@ -37,5 +158,168 @@ msgstr "Zahrnout pouze příjmení"
 msgid "Include Full Name Only"
 msgstr "Zahrnout pouze celá jména"
 
+msgid "How to handle living people."
+msgstr "Jak zacházet se žijícími osobami."
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "Zda zahrnout osoby, které mohly nedávno zemřít."
+
+msgid "Navigation"
+msgstr "Navigace"
+
+msgid "Contraction/Expansion mechanism"
+msgstr "Způsob sbalení a rozbalení"
+
+msgid "Entire node."
+msgstr "Celý uzel."
+
+msgid "Arrow images at start of node."
+msgstr "Obrázky šipek na začátku uzlu."
+
+msgid "Plus/Minus images at start of node."
+msgstr "Obrázky plus/minus na začátku uzlu."
+
+msgid "Where to click to expand/contract nodes."
+msgstr "Kam kliknout pro rozbalení nebo sbalení uzlů."
+
+msgid "Auto-generate HREF links for nodes"
+msgstr "Automaticky vytvářet odkazy HREF pro uzly"
+
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr "Zda automaticky vytvářet odkazy HTML pro každý uzel sestavy."
+
+msgid "URL prefix path."
+msgstr "Předpona cesty URL."
+
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr "Předpona URL pro každý automaticky vytvořený odkaz HREF."
+
+msgid "URL file extension"
+msgstr "Přípona souboru URL"
+
+msgid "No file extension."
+msgstr "Bez přípony souboru."
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "URL file name delimeter"
+msgstr "Oddělovač v názvu souboru URL"
+
+msgid "Remove all whitespace."
+msgstr "Odstranit všechny bílé znaky."
+
+msgid "Replace whitespace with dash(-)."
+msgstr "Nahradit bílé znaky spojovníkem (-)."
+
+msgid "Replace whitespace with underscore(_)"
+msgstr "Nahradit bílé znaky podtržítkem (_)"
+
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "Čím v názvu souboru nahradit bílé znaky."
+
+msgid "Generations to generate HREF links"
+msgstr "Počet generací pro vytváření odkazů HREF"
+
 msgid "The number of generations to generate HREF links."
 msgstr "Počet generací, pro které se mají vygenerovat odkazy HREF."
+
+msgid "Exclude persons who died before (years)"
+msgstr "Vynechat osoby zemřelé před dosažením věku (roky)"
+
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr ""
+"Zda vytvářet odkazy pro osoby zemřelé v útlém věku; hodnota -1 nevylučuje "
+"nikoho."
+
+msgid "Exclude center person"
+msgstr "Vynechat odkazy pro středovou osobu"
+
+msgid "Whether or not to generate links for center person."
+msgstr "Zda generovat odkazy na výchozí osobu, či nikoli."
+
+msgid "Exclude Spouses"
+msgstr "Vynechat odkazy pro partnery"
+
+msgid "Whether or not to generate links for spouses."
+msgstr "Zda generovat odkazy na partnery, či nikoli."
+
+msgid "Biography Content"
+msgstr "Obsah životopisu"
+
+msgid "Show biography tooltips"
+msgstr "Zobrazit životopis v bublinové nápovědě"
+
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr ""
+"Zda při najetí ukazatelem na uzel zobrazit životopis v bublinové nápovědě."
+
+msgid "Text Color"
+msgstr "Barva textu"
+
+msgid "RGB-color for biography text."
+msgstr "Barva RGB textu životopisu."
+
+msgid "RGB-color for biography tooltip."
+msgstr "Barva RGB bublinové nápovědy s životopisem."
+
+msgid "Header Font size"
+msgstr "Velikost písma záhlaví"
+
+msgid "The font size in pixels for biography header text."
+msgstr "Velikost písma záhlaví životopisu v pixelech."
+
+msgid "Body Font size"
+msgstr "Velikost písma hlavního textu"
+
+msgid "The font size in pixels for biography body text."
+msgstr "Velikost písma hlavního textu životopisu v pixelech."
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Vytvoří webovou stránku s grafickým znázorněním potomků (SVG) jako "
+"sbalitelným odsazeným stromem z javascriptové knihovny D3.js."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Nastavení vějířového grafu předků"
+
+msgid "Paternal Background Color"
+msgstr "Barva pozadí otcovské větve"
+
+msgid "RGB-color for paternal box background."
+msgstr "Barva RGB pozadí rámečků otcovské větve."
+
+msgid "Maternal Background"
+msgstr "Pozadí mateřské větve"
+
+msgid "RGB-color for maternal box background."
+msgstr "Barva RGB pozadí rámečků mateřské větve."
+
+msgid "Ancestral Collapsible Tree"
+msgstr "Sbalitelný strom předků"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Vytvoří webovou stránku s grafickým znázorněním předků (SVG) jako "
+"sbalitelným stromem z javascriptové knihovny D3.js."

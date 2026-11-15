@@ -1,0 +1,273 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-18 11:34-0700\n"
+"PO-Revision-Date: 2026-10-25 15:51+0000\n"
+"Last-Translator: Milo Ivir <milotype@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/hr/>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.dev0\n"
+
+msgid "Untitled source"
+msgstr "Izvor bez naslova"
+
+#, python-format
+msgid "page %s"
+msgstr "stranica %s"
+
+#, python-format
+msgid "via %s"
+msgstr "preko %s"
+
+msgid "none"
+msgstr "bez"
+
+#, python-format
+msgid "Sources: %s"
+msgstr "Izvori: %s"
+
+msgid "GWizard Merge"
+msgstr "Spajanje GWizard-om"
+
+msgid "No source database available for merge"
+msgstr "Izvorna baza podataka za spajanje nije dostupna"
+
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr "Izvorna osoba više ne postoji: %s"
+
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr "Ciljana osoba više ne postoji: %s"
+
+#, python-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+msgid "→"
+msgstr "→"
+
+msgid "New person"
+msgstr "Nova osoba"
+
+msgid "Incoming GEDCOM"
+msgstr "Dolazna GEDCOM datoteka"
+
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr "Dolazna GEDCOM datoteka: %s"
+
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr "Trenutačni rodoslov: %s"
+
+msgid "Current Family Tree"
+msgstr "Trenutačni rodoslov"
+
+msgid "Individual Details"
+msgstr "Detalji osobe"
+
+msgid "Given Name"
+msgstr "Ime"
+
+msgid "Surname Prefix"
+msgstr "Prefiks prezimena"
+
+msgid "Name Sources"
+msgstr "Izvori imena"
+
+msgid "Person Sources"
+msgstr "Izvori osoba"
+
+msgid "Family Relations"
+msgstr "Obiteljske veze"
+
+msgid "Events & Other Records"
+msgstr "Događaji i drugi zapisi"
+
+msgid "=>"
+msgstr "=>"
+
+#, python-format
+msgid "Move %s to current family tree"
+msgstr "Premjesti %s u trenutačni rodoslov"
+
+msgid "✓"
+msgstr "✓"
+
+#, python-format
+msgid "%d Citations"
+msgstr "%d Citati"
+
+#, python-format
+msgid "%d Sources"
+msgstr "%d Izvori"
+
+#, python-format
+msgid "%d Notes"
+msgstr "%d Zabilješke"
+
+#, python-format
+msgid "%d Media Records"
+msgstr "%d Medijski zapisi"
+
+#, python-format
+msgid "%d Repositories"
+msgstr "%d Spremišta"
+
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+"Podaci koji se spajaju sadrže reference na eksterne objekte koji ne postoje "
+"u tvom rodoslovu:\n"
+"\n"
+"%s\n"
+"\n"
+"Za sprečavanje pokvarenih poveznica, ove se nedostajuće reference moraju "
+"uvesti zajedno s odabranim detaljima. Potvrđuješ li uvoz ovih nedostajućih "
+"referenci?"
+
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+"%d izvor koji se već nalazi u tvom rodoslovu će se ponovo koristiti "
+"(podudara se po naslovu, autoru i podacima publikacije)."
+msgstr[1] ""
+"%d izvora koji se već nalaze u tvom rodoslovu će se ponovo koristiti "
+"(podudaraju se po naslovu, autoru i podacima publikacije)."
+msgstr[2] ""
+"%d izvora koji se već nalaze u tvom rodoslovu će se ponovo koristiti "
+"(podudaraju se po naslovu, autoru i podacima publikacije)."
+
+msgid "Confirm Importing Missing References"
+msgstr "Potvrdi uvoz nedostajućih referenci"
+
+msgid "Configure Connection"
+msgstr "Konfiguriraj vezu"
+
+msgid "Load Data"
+msgstr "Učitaj podatke"
+
+msgid "Find Matching Persons"
+msgstr "Pronađi odgovarajuću osobu"
+
+msgid "Compare Differences"
+msgstr "Usporedi razlike"
+
+msgid "Apply Changes"
+msgstr "Primijeni promjene"
+
+msgid "Search for potential matches in your database."
+msgstr "Traži potencijalna poklapanja u svojoj bazi podataka."
+
+msgid "GWizard Compare"
+msgstr "GWizard usporedba"
+
+msgid "No source database available for comparison"
+msgstr "Nema izvorne baze podataka za usporedbu"
+
+msgid "Populate Failed"
+msgstr "Popunjavanje neuspjelo"
+
+msgid "Merge..."
+msgstr "Spoji …"
+
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr "Otvori dijalog za spajanje polja za odabrani par"
+
+msgid "Add as New..."
+msgstr "Dodaj kao novu …"
+
+msgid "Add the selected incoming person as a new person"
+msgstr "Dodaj odabranu dolaznu osobu kao novu osobu"
+
+msgid "Record"
+msgstr "Zapis"
+
+msgid "Born"
+msgstr "Rođen/a"
+
+msgid "Died"
+msgstr "Umro/la"
+
+msgid "Not a Match"
+msgstr "Ne podudara se"
+
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+"To su različite osobe: raspari ih kako bi se dolazna osoba mogla dodati kao "
+"nova"
+
+#, python-format
+msgid "Differences: %d of %d"
+msgstr "Razlike: %d od %d"
+
+msgid "(none)"
+msgstr "(bez)"
+
+#, python-format
+msgid "Gender: %s"
+msgstr "Spol: %s"
+
+#, python-format
+msgid "ID: %s"
+msgstr "ID: %s"
+
+#, python-format
+msgid "FamilySearch: %s"
+msgstr "FamilySearch: %s"
+
+msgid "Add as New failed"
+msgstr "Dodaj kao novu neuspjelo"
+
+msgid "Genealogy files"
+msgstr "Genealoške datoteke"
+
+msgid "Select File to Compare"
+msgstr "Odaberi datoteku za usporedbu"
+
+msgid "The selected file is missing."
+msgstr "Odabrana datoteka nedostaje."
+
+msgid "Could not read the selected file."
+msgstr "Nije bilo moguće čitati odabranu datoteku."
+
+msgid "Loading Data Merge"
+msgstr "Učitavanje spoja podataka"
+
+msgid "Reading the selected file..."
+msgstr "Čitanje odabrane datoteke …"
+
+msgid "Load Failed"
+msgstr "Učitavanje neuspjelo"
+
+msgid "Building the comparison window..."
+msgstr "Izrada prozora usporedbe …"
+
+msgid "GWizard Data Merge"
+msgstr "Spajanje podataka GWizard-om"
+
+msgid "GWizard File Merge"
+msgstr "GWizard spajanje datoteka"

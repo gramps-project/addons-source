@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,17 +12,203 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "Otcovská linie (mužský předek)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "Mateřská linie (ženský předek)"
+
+msgid "Dark theme"
+msgstr "Tmavý motiv"
+
+msgid "Light theme"
+msgstr "Světlý motiv"
+
+msgid "Continue Descendant Tree"
+msgstr "Pokračovat ve stromu potomků"
+
+msgid "Alternate Descendant Tree"
+msgstr "Alternativní strom potomků"
+
+msgid "Descendant SpaceTree"
+msgstr "Strom potomků SpaceTree"
+
+msgid "Total descendants"
+msgstr "Celkový počet potomků"
+
+msgid "Marriages/Families:<ul>"
+msgstr "Sňatky/rodiny:<ul>"
+
+msgid "Invalid Destination Directory"
+msgstr "Neplatný cílový adresář"
+
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"Cílový adresář %s neexistuje\n"
+"Chcete se jej pokusit vytvořit."
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "Nepodařilo se vytvořit %s: %s"
+
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "Nepodařilo se přečíst soubor předlohy %s: %s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"Cílový soubor %s již existuje.\n"
+"Chcete jej přepsat?"
+
 msgid "Failed writing file: "
 msgstr "Selhalo zapisování souboru: "
+
+msgid "Descendants of"
+msgstr "Potomci osoby:"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "Jak používat prohlížeč DescendantSpaceTree"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"Pro nejlepší zobrazení maximalizujte okno prohlížeče na celou obrazovku.  "
+"Změna velikosti vrátí graf k výchozí osobě sestavy."
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr "Kliknutím na uzel se zaměříte na potomka a rozbalíte jeho děti."
+
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr "Kliknutím a tažením kdekoli v prohlížeči posunete strom potomků."
+
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr ""
+"Kliknutím na tlačítko obnovení ___HELP_RESET_BUTTON___ se vrátíte k "
+"počátečnímu potomkovi."
+
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+"Osobu vyhledáte zadáním textu do vyhledávacího pole.  Pro hledání jsou "
+"potřeba alespoň tři znaky.  Kliknutím na některý návrh rychle přejdete k "
+"dané osobě.  Osoba se ve výsledcích může objevit vícekrát; znaménko plus (+) "
+"za jménem označuje výskyt osoby jako manžela/manželky."
+
+msgid ""
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
+msgstr ""
+"Potomek a jeho manželé/manželky jsou uvedeni ve stejném uzlu.  Děti ze všech "
+"rodin potomka jsou seskupeny dohromady."
+
+msgid ""
+"Persons born after a specified date may not display their birth or death "
+"dates."
+msgstr ""
+"U osob narozených po zadaném datu se nemusí zobrazovat data narození nebo "
+"úmrtí."
+
+msgid ""
+"Person nodes are colored to indicate the number of children, the deeper tint "
+"of the coloring, the greater number of children."
+msgstr ""
+"Barva uzlů osob znázorňuje počet dětí; čím sytější je barva, tím větší je "
+"počet dětí."
+
+msgid ""
+"The currently selected descendant and all of the ancestors of that person "
+"are highlighted in yellow."
+msgstr "Aktuálně vybraný potomek a všichni jeho předci jsou zvýrazněni žlutě."
+
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
+msgid ""
+"A person may occur in different branches.  This is usually because of inter-"
+"family marriages (such as that of cousins.)  In this case, a button will "
+"also appear for that person,  ___NAV_BUTTON_CONTINUE___ or "
+"___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
+"expand descendants of this person. "
+msgstr ""
+"Osoba se může vyskytovat v různých větvích.  Obvykle je to způsobeno sňatky "
+"mezi příbuznými (například bratranci a sestřenicemi).  V takovém případě se "
+"u osoby zobrazí také tlačítko  ___NAV_BUTTON_CONTINUE___ nebo "
+"___NAV_BUTTON_ALT___  pro přechod do druhé větve.  Potomci této osoby se "
+"rozbalí pouze v jedné větvi. "
+
+msgid ""
+"The following open source projects are used in building this viewer, see "
+"source code LICENSE*.txt files for complete licenses and required notices."
+msgstr ""
+"Při tvorbě tohoto prohlížeče se používají následující projekty s otevřeným "
+"zdrojovým kódem; úplné licence a povinná upozornění naleznete v souborech "
+"LICENSE*.txt ve zdrojovém kódu."
 
 msgid "Search. . ."
 msgstr "Hledat..."
 
+msgid "Include Generations"
+msgstr "Počet zahrnutých generací"
+
+msgid "Branch to expand when duplicated"
+msgstr "Větev k rozbalení při opakovaném výskytu"
+
+msgid ""
+"When a descendant appears more than once, prefer the selected lineage to "
+"expand descendancy line"
+msgstr ""
+"Pokud se potomek vyskytuje vícekrát, upřednostnit pro rozbalení jeho "
+"potomstva zvolenou linii"
+
+msgid "Maximum display birth year"
+msgstr "Nejzazší zobrazovaný rok narození"
+
+msgid "Birth/death dates will not be displayed after this year"
+msgstr "Data narození/úmrtí po tomto roce se nezobrazí"
+
+msgid "Theme preference"
+msgstr "Preferovaný motiv"
+
+msgid "Theme color preference for Space Tree"
+msgstr "Upřednostňovaný barevný motiv pro Space Tree"
+
+msgid "The destination path for generated files."
+msgstr "Cílová cesta vytvořených souborů."
+
 msgid "Destination File"
 msgstr "Cílový soubor"
+
+msgid "The destination file name for the report."
+msgstr "Název cílového souboru sestavy."
+
+msgid "Open generated HTML file with default browser."
+msgstr "Otevřít vytvořený soubor HTML ve výchozím prohlížeči."
+
+msgid "Descendant Space Tree"
+msgstr "Strom potomků SpaceTree"
+
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"Vytvoří webovou stránku s interaktivním grafem potomků zobrazeným jako Space "
+"Tree pro přehledné prohlížení i při velkém počtu potomků nebo generací."

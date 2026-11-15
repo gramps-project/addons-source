@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Year of Birth of Center Person"
+msgstr "Rok narození výchozí osoby sestavy"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr "Rok narození výchozí osoby sestavy. Pokud není znám, odhadněte jej"
+
+msgid "Destination directory"
+msgstr "Cílový adresář"
+
+msgid "Path for generated files"
+msgstr "Cesta k vytvářeným souborům"
+
+msgid "The destination file name for html content."
+msgstr "Název cílového souboru s obsahem HTML."
+
+msgid "Default Age"
+msgstr "Výchozí věk"
+
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr "Výchozí věk rodiče při narození dítěte s neznámým rokem narození"
+
+msgid "What to show"
+msgstr "Co zobrazit"
+
+msgid "Show GrampsID"
+msgstr "Zobrazit ID Gramps"
+
+msgid "Show GrampsID on top right of the box"
+msgstr "Zobrazit ID Gramps vpravo nahoře v rámečku"
+
+msgid "Optimize"
+msgstr "Optimalizovat"
+
+msgid "Use as little space in horizontal direction as possible"
+msgstr "Využít co nejméně místa ve vodorovném směru"
+
+msgid "Male Box Color"
+msgstr "Barva rámečku muže"
+
+msgid "Box background color for male person"
+msgstr "Barva pozadí rámečku osoby mužského pohlaví"
+
+msgid "Female Box Color"
+msgstr "Barva rámečku ženy"
+
+msgid "Box background color for female person"
+msgstr "Barva pozadí rámečku osoby ženského pohlaví"
+
+msgid "Number of pixel per year"
+msgstr "Počet pixelů na rok"
+
+msgid "How many pixel height is one year?"
+msgstr "Kolika pixelům výšky odpovídá jeden rok?"
+
+msgid "Offset X Coordinate"
+msgstr "Posun souřadnice X"
+
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr "Kolik pixelů zůstane nevyužito vedle rámečků nejvíce vlevo a vpravo?"
+
+msgid "Offset Y Coordinate"
+msgstr "Posun souřadnice Y"
+
+msgid "How many pixel are unused above first box?"
+msgstr "Kolik pixelů zůstane nevyužito nad prvním rámečkem?"
+
+msgid "Width of a box in pixel"
+msgstr "Šířka rámečku v pixelech"
+
+msgid "Width of the box of a person in pixel"
+msgstr "Šířka rámečku osoby v pixelech"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "Vodorovná mezera mezi rámečky v pixelech"
+
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "Minimální vodorovná mezera mezi dvěma rámečky v pixelech"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "Délka svislé části čáry v pixelech"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"Rámečky rodiče a dítěte jsou spojeny čarami. Toto je délka svislé části čar "
+"v pixelech"
+
+msgid "Number of pixel between left border and scale"
+msgstr "Počet pixelů mezi levým okrajem a stupnicí"
+
+msgid "Timeline Pedigree Report"
+msgstr "Sestava časového vývodu z předků"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+"Vytvoří webovou stránku HTML, která pomocí JavaScriptu zobrazí blokové "
+"schéma vývodu z předků svisle uspořádané podle data narození"

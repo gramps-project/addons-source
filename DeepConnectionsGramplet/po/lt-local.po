@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
 "PO-Revision-Date: 2026-01-04 20:01+0000\n"
 "Last-Translator: openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
@@ -20,9 +20,6 @@ msgstr ""
 
 msgid "mentioned in note"
 msgstr "paminėtas pastaboje"
-
-msgid "Note on Family"
-msgstr "Pastaba šeimoje"
 
 msgid "No Active Person set."
 msgstr "Nenustatytas aktyvus asmuo."

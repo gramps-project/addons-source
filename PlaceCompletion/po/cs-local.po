@@ -1,0 +1,260 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "PlaceCompletion"
+msgstr "Doplňování míst"
+
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr ""
+"Poskytuje procházetelný seznam vybraných míst s možností doplnit, rozebrat a "
+"nastavit pole atributů."
+
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr ""
+"Doplnění míst rozborem, hledáním v souboru a hromadným nastavením atributů "
+"míst"
+
+msgid "Error in PlaceCompletion.py"
+msgstr "Chyba v PlaceCompletion.py"
+
+msgid "Non existing group used in get"
+msgstr "Při načítání byla použita neexistující skupina"
+
+#, python-format
+msgid "PlaceCompletion is unable to create %s %s"
+msgstr "PlaceCompletion nemůže vytvořit %s %s"
+
+msgid "Places tool"
+msgstr "Nástroj pro místa"
+
+msgid "Missing regex groups in match lat/lon"
+msgstr ""
+"Chybějící skupiny regulárního výrazu pro hledání zeměpisné šířky a délky"
+
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+"Výraz pro hledání zeměpisné šířky a délky musí obsahovat skupiny %(lat)s a "
+"%(lon)s. Ukončuji"
+
+msgid "Non valid regex for match lat/lon"
+msgstr "Neplatný regulární výraz pro hledání zeměpisné šířky a délky"
+
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr ""
+"Pro hledání zeměpisné šířky a délky byl zadán neplatný regulární výraz. "
+"Ukončuji."
+
+msgid "Finding Places and appropriate changes"
+msgstr "Hledání míst a odpovídajících změn"
+
+msgid "Filtering"
+msgstr "Filtrování"
+
+msgid "Loading lat/lon file in Memory..."
+msgstr "Načítání souboru zeměpisných šířek a délek do paměti..."
+
+msgid "Examining places"
+msgstr "Kontrola míst"
+
+msgid "Set Tag"
+msgstr "Nastavit štítek"
+
+msgid "Doing Place changes"
+msgstr "Provádění změn míst"
+
+msgid "No place record was modified."
+msgstr "Žádný záznam místa nebyl změněn."
+
+msgid "1 place record was modified."
+msgstr "Byl změněn 1 záznam místa."
+
+#, python-format
+msgid "%d place records were modified."
+msgstr "Počet změněných záznamů míst: %d."
+
+msgid "Change places"
+msgstr "Změnit místa"
+
+msgid "The selected file is a directory, not a file."
+msgstr "Vybraný soubor je adresář, nikoli soubor."
+
+msgid "The file you want to access is not a regular file."
+msgstr "Soubor, ke kterému chcete přistoupit, není běžný soubor."
+
+msgid "The file does not exist."
+msgstr "Soubor neexistuje."
+
+msgid "Problem reading file"
+msgstr "Problém při čtení souboru"
+
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "neplatná hodnota zeměpisné šířky nebo délky, %(lat)s, %(lon)s"
+
+msgid "No lat/lon conversion"
+msgstr "Bez převodu zeměpisné šířky a délky"
+
+msgid "All in degree notation"
+msgstr "Vše ve stupňovém zápisu"
+
+msgid "All in decimal notation"
+msgstr "Vše v desetinném zápisu"
+
+msgid "Correct -50° in 50°S"
+msgstr "Opravit -50° na 50°S"
+
+msgid "No changes"
+msgstr "Beze změn"
+
+msgid "City[, State]"
+msgstr "Město[, stát]"
+
+msgid "City,PostalCode,Country"
+msgstr "Město,PSČ,země"
+
+msgid "City[(Street;Locality;Parish)],PostalCode,Country"
+msgstr "Město[(ulice;lokalita;farnost)],PSČ,země"
+
+msgid "TitleStart [, City] [, State]"
+msgstr "Začátek názvu [, město] [, stát]"
+
+msgid "TitleStart [, City] [, County] [, State] [, Country]"
+msgstr "Začátek názvu [, město] [, okres] [, stát] [, země]"
+
+msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
+msgstr "Začátek názvu [, město] [, PSČ] [, okres] [, stát] [, země]"
+
+msgid "Don't search"
+msgstr "Nevyhledávat"
+
+msgid "GeoNames country file, city search"
+msgstr "Soubor země z GeoNames, hledání města"
+
+msgid "GeoNames country file, city localized variants search"
+msgstr "Soubor země z GeoNames, hledání jazykových variant názvu města"
+
+msgid "GeoNames country file, county/city search"
+msgstr "Soubor země z GeoNames, hledání okresu/města"
+
+msgid "GeoNames country file, title begin, general search"
+msgstr "Soubor země z GeoNames, obecné hledání podle začátku názvu"
+
+msgid "GeoNames USA state file, city search"
+msgstr "Soubor státu USA z GeoNames, hledání města"
+
+msgid "GNS Geonet country file, city search"
+msgstr "Soubor země z GNS Geonet, hledání města"
+
+msgid "GNS Geonet country file, county/city search"
+msgstr "Soubor země z GNS Geonet, hledání okresu/města"
+
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "Soubor země z GNS Geonet, obecné hledání podle začátku názvu"
+
+msgid "Wikipedia CSV Dump"
+msgstr "CSV export Wikipedie"
+
+msgid "All Places"
+msgstr "Všechna místa"
+
+msgid "No Latitude/Longitude given"
+msgstr "Chybí zeměpisná šířka nebo délka"
+
+msgid "_Google Maps"
+msgstr "Mapy _Google"
+
+msgid "Apply all suggested changes"
+msgstr "Použít všechny navržené změny"
+
+msgid "Selection of the Places you want to complete:"
+msgstr "Výběr míst, která chcete doplnit:"
+
+msgid "Parish:"
+msgstr "Farnost:"
+
+msgid "Place _filter:"
+msgstr "_Filtr míst:"
+
+msgid "Count_ry:"
+msgstr "Ze_mě:"
+
+msgid "C_enter latitude:"
+msgstr "Zeměpisná šířka stř_edu:"
+
+msgid "Center longitude:"
+msgstr "Zeměpisná délka středu:"
+
+msgid "Places in a rectangle:"
+msgstr "Místa v obdélníku:"
+
+msgid "Height:"
+msgstr "Výška:"
+
+msgid "1. Look up latitude and longitude:"
+msgstr "1. Vyhledání zeměpisné šířky a délky:"
+
+msgid "Search in:"
+msgstr "Hledat v:"
+
+msgid "Select A File"
+msgstr "Vybrat soubor"
+
+msgid "Parse as:"
+msgstr "Rozebrat jako:"
+
+msgid "2. Conversion of existing title or position:"
+msgstr "2. Převod stávajícího názvu nebo polohy:"
+
+msgid "Change title into:"
+msgstr "Změnit název na:"
+
+msgid "Convert lat/lon as:"
+msgstr "Převést zeměpisnou šířku a délku na:"
+
+msgid ""
+"Or define a simple\n"
+"title format:"
+msgstr ""
+"Nebo definujte jednoduchý\n"
+"formát názvu:"
+
+msgid ""
+"Available variables: city, street, locality, parish, county, state, country, "
+"postal_code"
+msgstr ""
+"Dostupné proměnné: city, street, locality, parish, county, state, country, "
+"postal_code"
+
+msgid ""
+"Delete to delete a row, Double-click on the row to edit place with changes "
+"pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
+"to do all changes automatically"
+msgstr ""
+"Klávesou Delete odstraníte řádek, dvojklikem na řádek upravíte místo s "
+"předvyplněnými změnami, \n"
+"klávesou Tab na řádku nebo tlačítkem Mapy Google zobrazíte místo na mapě. "
+"Tlačítkem Použít provedete všechny změny automaticky"

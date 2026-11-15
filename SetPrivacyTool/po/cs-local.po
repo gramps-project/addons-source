@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 12:29+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,14 +12,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Set Privacy Tool"
+msgstr "Nástroj pro nastavení soukromí"
+
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "Nastaveno jako soukromé: %d %s\n"
+
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "Není soukromé: %d %s\n"
+
+msgid "Set persons private.."
+msgstr "Nastavování osob jako soukromých.."
+
+msgid "Set events private.."
+msgstr "Nastavování událostí jako soukromých.."
+
+msgid "Set media private.."
+msgstr "Nastavování médií jako soukromých.."
+
+msgid "Set adresses private.."
+msgstr "Nastavování adres jako soukromých.."
+
+msgid "Set internet objects private.."
+msgstr "Nastavování internetových objektů jako soukromých.."
+
+msgid ""
+"The time range in years from today you want to set objects private.\n"
+"'0 years' = remove privacy from all objects."
+msgstr ""
+"Časové rozmezí v letech ode dneška, pro které chcete objekty označit jako "
+"soukromé.\n"
+"'0 let' = zrušit soukromí všech objektů."
+
+msgid "Always private if no date."
+msgstr "Bez data vždy soukromé."
+
+msgid "If checked, all objects without a date will also be set private."
+msgstr ""
+"Pokud je zaškrtnuto, budou jako soukromé označeny také všechny objekty bez "
+"data."
 
 msgid "Select filter to restrict people"
 msgstr "Vyberte filtr pro omezení osob"
 
 msgid "Persons"
 msgstr "Osoby"
+
+msgid "Select filter to restrict events"
+msgstr "Vyberte filtr pro omezení událostí"
+
+msgid "Select filter to restrict medias"
+msgstr "Vyberte filtr pro omezení médií"
+
+msgid "Internet type filter"
+msgstr "Filtr typu internetového odkazu"
+
+msgid "E-Mail"
+msgstr "E-mail"
+
+msgid "Set all objects of the last <number> of years private."
+msgstr "Označit všechny objekty z posledních <number> let jako soukromé."

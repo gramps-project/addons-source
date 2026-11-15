@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-09-10 08:51+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 msgid "Dynamic Web Report"
 msgstr "Resoconto web dinamico"
@@ -25,6 +25,10 @@ msgstr "Albero grafico SVG"
 
 msgid "Indexes pages"
 msgstr "Pagine degli indici"
+
+#, python-format
+msgid "Custom page %(index)i"
+msgstr "Pagina personalizzata %(index)i"
 
 msgid "Ascending tree"
 msgstr "Albero degli ascendenti"
@@ -76,6 +80,9 @@ msgid ""
 msgstr ""
 "La configurazione delle pagine non è valida: molte pagine hanno lo stesso "
 "contenuto"
+
+msgid "DynWeb|Home"
+msgstr "Pagina iniziale"
 
 msgid "Tree"
 msgstr "Albero"
@@ -149,6 +156,9 @@ msgstr ""
 msgid "Include a map in the individuals and family pages"
 msgstr "Includi una mappa nelle pagine delle persone e della famiglia"
 
+msgid "Include half and/ or step-siblings on the individual pages"
+msgstr "Includi fratellastri e/o fratelli unilaterali nelle pagine individuali"
+
 msgid "Include references in indexes"
 msgstr "Includi riferimenti negli indici"
 
@@ -212,11 +222,23 @@ msgstr "Ripristina"
 msgid "Restore default settings"
 msgstr "Ripristina le impostazioni predefinite"
 
+msgid "Show last modification time"
+msgstr "Mostra l'ora dell'ultima modifica"
+
+msgid "SVG tree children distribution"
+msgstr "Distribuzione dei figli nell'albero SVG"
+
 msgid "SVG tree configuration"
 msgstr "Configurazione albero SVG"
 
+msgid "SVG tree graph shape"
+msgstr "Forma del grafico dell'albero SVG"
+
 msgid "SVG tree graph type"
 msgstr "Tipo di grafico dell'albero SVG"
+
+msgid "SVG tree parents distribution"
+msgstr "Distribuzione dei genitori nell'albero SVG"
 
 msgid "Save tree as file"
 msgstr "Salva albero come file"
@@ -226,6 +248,9 @@ msgstr "Cerca:"
 
 msgid "Select the background color scheme"
 msgstr "Seleziona lo schema di colore di sfondo"
+
+msgid "Select the children distribution (fan charts only)"
+msgstr "Seleziona la distribuzione dei figli (solo grafici a ventaglio)"
 
 msgid "Select the number of ascending generations"
 msgstr "Seleziona il numero di generazioni di ascendenti"
@@ -253,14 +278,29 @@ msgstr "Mostra _MENU_ voci"
 msgid "Show duplicates"
 msgstr "Mostra i duplicati"
 
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Visualizzazione da 0 a 0 di 0 voci"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Visualizzazione da _START_ a _END_ di _TOTAL_ voci"
+
 msgid "Sort by:"
 msgstr "Ordina per:"
 
 msgid "Sources Index"
 msgstr "Indice delle fonti"
 
+msgid "Suppress Gramps ID"
+msgstr "Nascondi l'ID Gramps"
+
 msgid "Surnames Index"
 msgstr "Indice dei cognomi"
+
+msgid "U"
+msgstr "S"
+
+msgid "Use tabbed panels instead of sections"
+msgstr "Usa pannelli a schede invece delle sezioni"
 
 msgid "Use the search box above in order to find a person."
 msgstr "Usa la casella di ricerca qui sopra per trovare una persona."
@@ -353,12 +393,53 @@ msgstr ""
 "Impossibile aggiungere il file \"%(file)s\" all'archivio \"%(archive)s\""
 
 #, python-format
+msgid "DynamicWebReport ignoring link type '%(class)s'"
+msgstr "DynamicWebReport ignora il tipo di collegamento '%(class)s'"
+
+#, python-format
 msgid "Family of %(father)s"
 msgstr "Famiglia di %(father)s"
 
 #, python-format
 msgid "Family of %(mother)s"
 msgstr "Famiglia di %(mother)s"
+
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+"In questa nota vengono elaborate le seguenti parole speciali:\n"
+"__SEARCH_FORM__ viene sostituita da un modulo di ricerca.\n"
+"__NB_INDIVIDUALS__ viene sostituita dal numero di persone.\n"
+"__NB_FAMILIES__ viene sostituita dal numero di famiglie.\n"
+"__NB_MEDIA__ viene sostituita dal numero di oggetti multimediali.\n"
+"__NB_SOURCES__ viene sostituita dal numero di fonti.\n"
+"__NB_REPOSITORIES__ viene sostituita dal numero di depositi.\n"
+"__NB_PLACES__ viene sostituita dal numero di luoghi.\n"
+"__MEDIA_<gid>__ viene sostituita dall'oggetto multimediale con ID Gramps "
+"<gid>.\n"
+"__THUMB_<gid>__ viene sostituita dalla miniatura dell'oggetto multimediale "
+"con ID Gramps <gid>.\n"
+"__EXPORT_DATE__ viene sostituita dalla data attuale.\n"
+"__GRAMPS_VERSION__ viene sostituita dalla versione di Gramps.\n"
+"__GRAMPS_HOMEPAGE__ viene sostituita dal collegamento alla pagina principale "
+"di Gramps.\n"
+"Gli URL che iniziano con \"relative://relative.<link>\" vengono sostituiti "
+"dall'URL relativo \"<link>\".\n"
 
 msgid "Store web pages in archive"
 msgstr "Metti le pagine web nell'archivio"
@@ -450,6 +531,15 @@ msgstr ""
 msgid "Copy, keep file names unchanged"
 msgstr "Copia, mantenendo invariati i nomi dei file"
 
+msgid "Do not copy, reference existing files"
+msgstr "Non copiare, fai riferimento ai file esistenti"
+
+msgid "Images and media"
+msgstr "Immagini e oggetti multimediali"
+
+msgid "Whether to make a copy of the media"
+msgstr "Indica se fare una copia degli oggetti multimediali"
+
 msgid "Print the notes type"
 msgstr "Stampa il tipo di note"
 
@@ -475,6 +565,12 @@ msgstr "La chiave dell'API usata per Google map"
 
 msgid "Whether or not to include family pages"
 msgstr "Indica se includere o meno le pagine delle famiglie"
+
+msgid ""
+"Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr ""
+"Indica se includere fratellastri e/o fratelli unilaterali insieme ai "
+"genitori e ai fratelli"
 
 msgid "Enable page configuration"
 msgstr "Abilita la configurazione della pagina"
@@ -607,11 +703,33 @@ msgstr "Pagine"
 msgid "A note to be used as the page header"
 msgstr "Una nota da usare come intestazione della pagina"
 
+msgid "HTML user brand name / icon"
+msgstr "Nome o icona del marchio HTML dell'utente"
+
+msgid "A note to be used as the brand name or image in the menu"
+msgstr "Una nota da usare come nome o immagine del marchio nel menu"
+
 msgid "Custom pages"
 msgstr "Pagine personalizzate"
 
+#, python-format
+msgid "Title for the custom page %(index)i"
+msgstr "Titolo della pagina personalizzata %(index)i"
+
+#, python-format
+msgid "Name for the custom page %(index)i"
+msgstr "Nome della pagina personalizzata %(index)i"
+
+#, python-format
+msgid "Note for custom page %(index)i"
+msgstr "Nota per la pagina personalizzata %(index)i"
+
 msgid "A note to be used for the custom page content.\n"
 msgstr "Una nota da usare per il contenuto personalizzato della pagina.\n"
+
+#, python-format
+msgid "Menu for the custom page %(index)i"
+msgstr "Menu per la pagina personalizzata %(index)i"
 
 msgid "Whether to print a menu for the custom page"
 msgstr "Indica se stampare un menu per le pagine personalizzate"

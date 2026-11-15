@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -25,7 +25,12 @@ msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
 msgstr ""
-"Vytvoří rodinný list se všemi informacemi o osobě jejích partnerech a dětech."
+"Vytvoří rodinný list se všemi informacemi o osobě, jejích partnerech a "
+"dětech."
+
+#, python-format
+msgid "→ %s"
+msgstr "→ %s"
 
 #, python-format
 msgid "Address (%(date)s): %(location)s"
@@ -37,10 +42,10 @@ msgstr "Adresa: %(location)s"
 
 #, python-format
 msgid "; %(type)s: %(value)s"
-msgstr ";%(type)s: %(value)s"
+msgstr "; %(type)s: %(value)s"
 
 msgid "Source references:"
-msgstr "Odkazy na zdroje:"
+msgstr "Odkazy na prameny:"
 
 #, python-format
 msgid ", page %s"
@@ -67,7 +72,7 @@ msgstr "%(placeholder)s"
 
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
-msgstr "%(placeholder)s %(partial)s"
+msgstr "%(placeholder)s (%(partial)s)"
 
 #, python-format
 msgid "in %(place)s"
@@ -76,11 +81,17 @@ msgstr "%(place)s"
 msgid "Center person"
 msgstr "Ústřední osoba"
 
+msgid "The person whose partners and children are printed"
+msgstr "Osoba, jejíž partneři a děti se vytisknou"
+
 msgid "Print sheets for"
 msgstr "Vytisknout listy pro"
 
 msgid "Center person only"
 msgstr "Pouze ústřední osoba"
+
+msgid "Center person and descendants in side branches"
+msgstr "Ústřední osoba a potomci ve vedlejších větvích"
 
 msgid "Center person and all descendants"
 msgstr "Ústřední osoba se všemi potomky"
@@ -100,13 +111,13 @@ msgid "Whether to include call name, and how."
 msgstr "Zda zahrnout volací jméno a jakým způsobem."
 
 msgid "Print placeholders for missing information"
-msgstr "Zobrazit prázdné pole při chybějících udajích"
+msgstr "Tisknout prázdná pole pro chybějící údaje"
 
 msgid "The basic style used for the text display"
 msgstr "Základní styl použitý na zobrazení textu"
 
 msgid "The style used for the page key on the top"
-msgstr "Styl použitý pro klávesu stránky nahoře"
+msgstr "Styl použitý pro identifikační klíč v záhlaví stránky"
 
 msgid "The style used for names"
 msgstr "Styl použitý pro jména"
@@ -115,4 +126,4 @@ msgid "The style used for numbers"
 msgstr "Styl použitý pro čísla"
 
 msgid "The style used for footnotes (notes and source references)"
-msgstr "Styl použitý pro poznámky pod čarou (poznámky a odkazy na zdroje)"
+msgstr "Styl použitý pro poznámky pod čarou (poznámky a odkazy na prameny)"

@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-26 11:05-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Children of name match"
+msgstr "Děti osob s odpovídajícím jménem"
+
+msgid "Matches children of anybody with a given name"
+msgstr "Vyhledá děti kohokoli se zadaným jménem"
+
+msgid "Sibling 1"
+msgstr "Sourozenec 1"
+
+msgid "Sibling 2"
+msgstr "Sourozenec 2"
+
+msgid "Child 1"
+msgstr "Dítě 1"
+
+msgid "Child 2"
+msgstr "Dítě 2"
+
+msgid "Probably Alive"
+msgstr "Pravděpodobně žijící"
+
+#, python-format
+msgid "example: '%(msg1)s' or '%(msg2)s'"
+msgstr "příklad: '%(msg1)s' nebo '%(msg2)s'"
+
+msgid "Person Relationship Filter"
+msgstr "Filtr vztahů osob"
+
+msgid "Gramplet providing a person filter on relationships"
+msgstr "Gramplet poskytující filtr osob podle vztahů"
+
+msgid "Relationship Filter"
+msgstr "Filtr vztahů"

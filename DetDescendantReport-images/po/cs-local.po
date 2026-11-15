@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,18 +12,74 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Detailed Descendant Report With All Images"
+msgstr "Podrobná sestava potomků se všemi obrázky"
+
+msgid ""
+"Produces a detailed descendant report with all images and optional todo list."
+msgstr ""
+"Vytváří podrobnou sestavu potomků se všemi obrázky a volitelným seznamem "
+"úkolů."
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr "%(event_name)s: %(event_text)s"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
 #, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
+msgid "List children"
+msgstr "Vypsat děti"
+
+msgid "Add descendant reference in child list"
+msgstr "Přidat odkazy na potomky v seznamu dětí"
+
+msgid "Include TODO notes"
+msgstr "Zahrnout poznámky s úkoly"
+
 msgid "Whether to include TODO notes."
 msgstr "Zda zahrnout poznámky úkolů."
 
+msgid "The style used for the title of the page."
+msgstr "Styl použitý pro nadpis stránky."
+
+msgid "The style used for the children list."
+msgstr "Styl použitý pro seznam dětí."
+
 msgid "The style used for the first personal entry."
 msgstr "Styl použitý pro první osobní záznam."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "Styl nadpisu dalších údajů a nadpisů manželů/manželek."
+
+msgid "The style used for additional detail data."
+msgstr "Styl použitý pro další podrobné údaje."
+
+msgid "The style used for image labels."
+msgstr "Styl použitý pro popisky obrázků."
+
+msgid "A style used for image captions."
+msgstr "Styl použitý pro titulky obrázků."

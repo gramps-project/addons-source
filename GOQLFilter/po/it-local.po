@@ -1,0 +1,227 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-04 08:52-0700\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "GOQL expression"
+msgstr "Espressione GOQL"
+
+msgid ""
+"Matches objects for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Abbina gli oggetti per cui l'espressione where in gramps-object-query-"
+"language indicata risulta vera"
+
+msgid "People matching the <GOQL expression>"
+msgstr "Persone che corrispondono all'<espressione GOQL>"
+
+msgid "Families matching the <GOQL expression>"
+msgstr "Famiglie che corrispondono all'<espressione GOQL>"
+
+msgid "Events matching the <GOQL expression>"
+msgstr "Eventi che corrispondono all'<espressione GOQL>"
+
+msgid "Places matching the <GOQL expression>"
+msgstr "Luoghi che corrispondono all'<espressione GOQL>"
+
+msgid "Repositories matching the <GOQL expression>"
+msgstr "Depositi che corrispondono all'<espressione GOQL>"
+
+msgid "Sources matching the <GOQL expression>"
+msgstr "Fonti che corrispondono all'<espressione GOQL>"
+
+msgid "Citations matching the <GOQL expression>"
+msgstr "Citazioni che corrispondono all'<espressione GOQL>"
+
+msgid "Media matching the <GOQL expression>"
+msgstr "Media che corrispondono all'<espressione GOQL>"
+
+msgid "Notes matching the <GOQL expression>"
+msgstr "Note che corrispondono all'<espressione GOQL>"
+
+msgid "Person GOQL Filter"
+msgstr "Filtro GOQL persone"
+
+msgid "Gramplet providing a gramps-object-query-language person filter"
+msgstr ""
+"Gramplet che fornisce un filtro persone in gramps-object-query-language"
+
+msgid "GOQL Filter"
+msgstr "Filtro GOQL"
+
+msgid "Family GOQL Filter"
+msgstr "Filtro GOQL famiglie"
+
+msgid "Gramplet providing a gramps-object-query-language family filter"
+msgstr ""
+"Gramplet che fornisce un filtro famiglie in gramps-object-query-language"
+
+msgid "Event GOQL Filter"
+msgstr "Filtro GOQL eventi"
+
+msgid "Gramplet providing a gramps-object-query-language event filter"
+msgstr "Gramplet che fornisce un filtro eventi in gramps-object-query-language"
+
+msgid "Place GOQL Filter"
+msgstr "Filtro GOQL luoghi"
+
+msgid "Gramplet providing a gramps-object-query-language place filter"
+msgstr "Gramplet che fornisce un filtro luoghi in gramps-object-query-language"
+
+msgid "Repository GOQL Filter"
+msgstr "Filtro GOQL depositi"
+
+msgid "Gramplet providing a gramps-object-query-language repository filter"
+msgstr ""
+"Gramplet che fornisce un filtro depositi in gramps-object-query-language"
+
+msgid "Source GOQL Filter"
+msgstr "Filtro GOQL fonti"
+
+msgid "Gramplet providing a gramps-object-query-language source filter"
+msgstr "Gramplet che fornisce un filtro fonti in gramps-object-query-language"
+
+msgid "Citation GOQL Filter"
+msgstr "Filtro GOQL citazioni"
+
+msgid "Gramplet providing a gramps-object-query-language citation filter"
+msgstr ""
+"Gramplet che fornisce un filtro citazioni in gramps-object-query-language"
+
+msgid "Media GOQL Filter"
+msgstr "Filtro GOQL media"
+
+msgid "Gramplet providing a gramps-object-query-language media filter"
+msgstr "Gramplet che fornisce un filtro media in gramps-object-query-language"
+
+msgid "Note GOQL Filter"
+msgstr "Filtro GOQL note"
+
+msgid "Gramplet providing a gramps-object-query-language note filter"
+msgstr "Gramplet che fornisce un filtro note in gramps-object-query-language"
+
+msgid "A gramps-object-query-language where-expression, e.g.\n"
+msgstr "Un'espressione where in gramps-object-query-language, ad es.\n"
+
+msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
+msgstr "Invio inserisce un a capo; Ctrl+Invio esegue Trova.\n"
+
+msgid "Up/Down at the first/last line recalls previous expressions.\n"
+msgstr "Su/Giù sulla prima/ultima riga richiama le espressioni precedenti.\n"
+
+msgid "Tab always completes -- it never inserts a tab character."
+msgstr "Tab completa sempre -- non inserisce mai un carattere di tabulazione."
+
+#, python-format
+msgid "%s filter"
+msgstr "Filtro %s"
+
+msgid "This resets the filter parameters to empty state."
+msgstr "Riporta i parametri del filtro allo stato vuoto."
+
+msgid "This opens a dialog to save the current expression as a named filter."
+msgstr ""
+"Apre una finestra per salvare l'espressione attuale come filtro con nome."
+
+msgid "Open this gramplet's help page in a browser."
+msgstr "Apri nel browser la pagina di aiuto di questo gramplet."
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid "Python evaluation"
+msgstr "Valutazione Python"
+
+#, python-format
+msgid "Error applying filter: %s"
+msgstr "Errore nell'applicazione del filtro: %s"
+
+#, python-format
+msgid "Showing %(shown)d of %(total)d (%(method)s)"
+msgstr "Visualizzati %(shown)d di %(total)d (%(method)s)"
+
+#, python-format
+msgid "Error resetting filter: %s"
+msgstr "Errore nel ripristino del filtro: %s"
+
+msgid "Enter an expression first"
+msgstr "Inserisci prima un'espressione"
+
+#, python-brace-format
+msgid "Created by the GOQL Filter gramplet on {today}"
+msgstr "Creato dal gramplet Filtro GOQL il {today}"
+
+msgid ""
+"Matches people for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Abbina le persone per cui l'espressione where in gramps-object-query-"
+"language indicata risulta vera"
+
+msgid ""
+"Matches families for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Abbina le famiglie per cui l'espressione where in gramps-object-query-"
+"language indicata risulta vera"
+
+msgid ""
+"Matches events for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Abbina gli eventi per cui l'espressione where in gramps-object-query-"
+"language indicata risulta vera"
+
+msgid ""
+"Matches places for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Abbina i luoghi per cui l'espressione where in gramps-object-query-language "
+"indicata risulta vera"
+
+msgid ""
+"Matches repositories for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Abbina i depositi per cui l'espressione where in gramps-object-query-"
+"language indicata risulta vera"
+
+msgid ""
+"Matches sources for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Abbina le fonti per cui l'espressione where in gramps-object-query-language "
+"indicata risulta vera"
+
+msgid ""
+"Matches citations for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Abbina le citazioni per cui l'espressione where in gramps-object-query-"
+"language indicata risulta vera"
+
+msgid ""
+"Matches media for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Abbina i media per cui l'espressione where in gramps-object-query-language "
+"indicata risulta vera"
+
+msgid ""
+"Matches notes for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Abbina le note per cui l'espressione where in gramps-object-query-language "
+"indicata risulta vera"

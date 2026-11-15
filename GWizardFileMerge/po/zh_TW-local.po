@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-18 11:34-0700\n"
+"PO-Revision-Date: 2026-10-20 04:57+0000\n"
+"Last-Translator: Arnie97 <arnie97@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.11.dev0\n"
+
+msgid "none"
+msgstr "無"
+
+#, python-format
+msgid "Sources: %s"
+msgstr "來源：%s"
+
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr "來源人物 %s 已不存在"
+
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr "目標人物 %s 已不存在"
+
+#, python-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+msgid "→"
+msgstr "→"
+
+msgid "New person"
+msgstr "新增人物"
+
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr "正在匯入 GEDCOM：%s"
+
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr "當前家族樹：%s"
+
+msgid "Current Family Tree"
+msgstr "當前家族樹"
+
+msgid "Name Sources"
+msgstr "姓名來源"
+
+msgid "Person Sources"
+msgstr "人物來源"
+
+msgid "=>"
+msgstr "=>"
+
+#, python-format
+msgid "Move %s to current family tree"
+msgstr "將 %s 移動到當前家族樹"
+
+msgid "✓"
+msgstr "✓"
+
+#, python-format
+msgid "%d Citations"
+msgstr "%d 條引用"
+
+#, python-format
+msgid "%d Sources"
+msgstr "%d 條來源"
+
+#, python-format
+msgid "%d Notes"
+msgstr "%d 條備註"
+
+#, python-format
+msgid "%d Media Records"
+msgstr "%d 份媒體資料"
+
+msgid "Not a Match"
+msgstr "項目不匹配"
+
+#, python-format
+msgid "Differences: %d of %d"
+msgstr "差異：%d / %d"
+
+msgid "(none)"
+msgstr "（無）"
+
+#, python-format
+msgid "Gender: %s"
+msgstr "性別：%s"
+
+#, python-format
+msgid "ID: %s"
+msgstr "ID：%s"
+
+#, python-format
+msgid "FamilySearch: %s"
+msgstr "FamilySearch: %s"
+
+msgid "The selected file is missing."
+msgstr "選取的檔案不存在。"
+
+msgid "Could not read the selected file."
+msgstr "無法讀取所選檔案。"

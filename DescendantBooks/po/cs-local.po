@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,14 +12,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#, python-format
+msgid "sp. see  %(reference)s : %(spouse)s"
+msgstr "manžel/manželka, viz %(reference)s: %(spouse)s"
+
+#, python-format
+msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
+msgstr "viz sestava: %(report)s, odkaz: %(reference)s: %(person)s a %(spouse)s"
+
+msgid "Descendants Report"
+msgstr "Sestava potomků"
+
+#, python-format
+msgid "Writing %s reports..."
+msgstr "Vytváření sestav (počet: %s)..."
+
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. Potomci – {name}"
+
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr "{report_count:d}. {name}"
+
+msgid "Select filter to restrict people that appear in the report"
+msgstr "Vyberte filtr pro omezení osob, které se objeví v sestavě"
+
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Zda se mají ve zprávě zobrazovat duplicitní rodinné stromy."
+
+msgid "The style used for the title of the page."
+msgstr "Styl použitý pro nadpis stránky."
 
 msgid "The style used for the table of contents header."
 msgstr "Styl použitý pro záhlaví obsahu."
@@ -27,21 +56,202 @@ msgstr "Styl použitý pro záhlaví obsahu."
 msgid "The style used for the table of contents detail."
 msgstr "Styl použitý pro detaily obsahu."
 
+msgid "Detailed Descendants Report"
+msgstr "Podrobná sestava potomků"
+
+#, python-format
+msgid "Generating %s report references..."
+msgstr "Vytváření odkazů na sestavy (počet: %s)..."
+
+#, python-format
+msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgstr "%(report_count)s. Sestava potomků – %(person_name)s"
+
+msgid "Index of Places"
+msgstr "Rejstřík míst"
+
+msgid "Index of Dates"
+msgstr "Rejstřík dat"
+
+msgid "Index of Names"
+msgstr "Rejstřík jmen"
+
+msgid "Report, Generation, Person, Name"
+msgstr "Sestava, Generace, Osoba, Jméno"
+
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "Viz sestava: {report}, generace: {generation}, osoba: {person}"
+
+#, python-format
+msgid "Report appearances for %s"
+msgstr "Výskyty v sestavě – %s"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr ""
+"Manžel/manželka osoby v sestavě: {report}, generace: {generation}, osoba: "
+"{person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Sestava: {report}, generace: {generation}, osoba: {person}"
+
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(event_name)s – %(name)s "
+
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(event_name)s – %(name)s a %(mate)s "
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid ". Ref: %(repno)s %(gen)s %(per)s "
+msgstr ". Odkaz: %(repno)s %(gen)s %(per)s "
+
+#, python-format
+msgid "%(event_name)s:"
+msgstr "%(event_name)s:"
+
+#, python-format
+msgid " %(event_text)s"
+msgstr " %(event_text)s"
+
+#, python-brace-format
+msgid "Ref: {number}. {name}"
+msgstr "Odkaz: {number}. {name}"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
 #, python-format
 msgid "%(type)s:"
 msgstr "%(type)s:"
 
+#, python-format
+msgid " %(value)s%(endnotes)s"
+msgstr " %(value)s%(endnotes)s"
+
+msgid "List children"
+msgstr "Vypsat děti"
+
+msgid "Add descendant reference in child list"
+msgstr "Přidat odkazy na potomky v seznamu dětí"
+
+msgid "Include Index of Names"
+msgstr "Zahrnout rejstřík jmen"
+
 msgid "Whether to include the index of Names at the end of the report."
 msgstr "Zda zahrnout rejstřík jmen na konec zprávy."
+
+msgid "Include index of Dates"
+msgstr "Zahrnout rejstřík dat"
 
 msgid "Whether to include the index of Dates at the end of the report."
 msgstr "Zda zahrnout rejstřík dat na konci zprávy."
 
+msgid "Include index of Places"
+msgstr "Zahrnout rejstřík míst"
+
 msgid "Whether to include the index of Places at the end of the report."
 msgstr "Zda zahrnout rejstřík míst na konci zprávy."
+
+msgid "Include the 'Report appearances' section with each person"
+msgstr "U každé osoby zahrnout oddíl 'Výskyty v sestavě'"
+
+msgid ""
+"The 'Report appearances' section shows other places in the report where the "
+"person is mentioned."
+msgstr ""
+"Oddíl 'Výskyty v sestavě' uvádí další místa v sestavě, kde je osoba zmíněna."
+
+msgid "The style used for the children list."
+msgstr "Styl použitý pro seznam dětí."
+
+msgid "The basic style used for Note header."
+msgstr "Základní styl nadpisu poznámky."
 
 msgid "The style used for the first personal entry."
 msgstr "Styl použitý pro první osobní záznam."
 
+msgid "The style used for the More About header and for headers of mates."
+msgstr "Styl nadpisu dalších údajů a nadpisů manželů/manželek."
+
+msgid "The style used for additional detail data."
+msgstr "Styl použitý pro další podrobné údaje."
+
+msgid "The style used for note detail data."
+msgstr "Styl použitý pro podrobné údaje poznámky."
+
 msgid "The style used for the date in the Index of Dates."
 msgstr "Styl použitý pro datum v rejstříku dat."
+
+msgid "The style used for the events in the Index of Dates."
+msgstr "Styl událostí v rejstříku dat."
+
+msgid "The style used for the header in the Index of Names."
+msgstr "Styl nadpisu v rejstříku jmen."
+
+msgid "The style used for the references in the Index of Names."
+msgstr "Styl odkazů v rejstříku jmen."
+
+msgid "The style used for the header in the Index of Places."
+msgstr "Styl nadpisu v rejstříku míst."
+
+msgid "The style used for the references in the Index of Places."
+msgstr "Styl odkazů v rejstříku míst."
+
+msgid "Descendant Book"
+msgstr "Kniha potomků"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr "Vytváří jednu nebo více sestav potomků na základě zadaného filtru."
+
+msgid "Detailed Descendant Book"
+msgstr "Podrobná kniha potomků"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Vytváří jednu nebo více podrobných sestav potomků na základě zadaného filtru."
+
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Hloubková redukce seznamu předků (počet osob: %s)..."
+
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Redukce seznamu předků (počet osob: %s)..."
+
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Získávání předků (počet osob: %s)..."
+
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Ověřování potomků (počet osob: %s)..."
+
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Získávání chybějících potomků (počet osob: %s)..."
+
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Ověřování potomků po redukci seznamu (počet osob: %s)..."
+
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Získávání chybějících potomků (počet osob: %s) ..."

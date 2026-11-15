@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2026-05-12 12:11+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,20 +12,422 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "BirthIndex"
+msgstr "Rejstřík narození"
+
+msgid "MarriageIndex"
+msgstr "Rejstřík sňatků"
+
+msgid "DeathIndex"
+msgstr "Rejstřík úmrtí"
+
+msgid "CensusIndex"
+msgstr "Rejstřík sčítání lidu"
+
+msgid "SourceIndex"
+msgstr "Rejstřík pramenů"
+
 msgid "Sources Index"
 msgstr "Rejstřík pramenů"
 
+msgid "*** Error: Must install either ElementTree or lxml."
+msgstr "*** Chyba: Je nutné nainstalovat ElementTree nebo lxml."
+
+msgid "must install either ElementTree or lxml"
+msgstr "je nutné nainstalovat ElementTree nebo lxml"
+
+msgid "index"
+msgstr "Rejstřík"
+
+msgid "_File"
+msgstr "_Soubor"
+
+msgid "Import CSV"
+msgstr "Importovat CSV"
+
+msgid "Display all"
+msgstr "Zobrazit vše"
+
+msgid "Display only births"
+msgstr "Zobrazit jen narození"
+
+msgid "Births/Baptisms"
+msgstr "Narození/křty"
+
+msgid "Display only marriages"
+msgstr "Zobrazit jen sňatky"
+
+msgid "Marriages/Families"
+msgstr "Sňatky/rodiny"
+
+msgid "Display only deaths"
+msgstr "Zobrazit jen úmrtí"
+
+msgid "Deaths/Burials"
+msgstr "Úmrtí/pohřbení"
+
+msgid "Display only censuses"
+msgstr "Zobrazit jen sčítání lidu"
+
+msgid "Censuses"
+msgstr "Sčítání lidu"
+
+msgid "About this utility."
+msgstr "O tomto nástroji."
+
+msgid "About dialog"
+msgstr "Dialog O nástroji"
+
+msgid "New birth or baptism"
+msgstr "Nový záznam o narození nebo křtu"
+
+msgid "add birth act"
+msgstr "Přidat zápis narození"
+
+msgid "New marriage"
+msgstr "Nový záznam o sňatku"
+
+msgid "add marriage act"
+msgstr "přidat záznam o sňatku"
+
+msgid "New death or burial"
+msgstr "Nový záznam o úmrtí nebo pohřbení"
+
+msgid "add death act"
+msgstr "Přidat zápis úmrtí"
+
+msgid "New census"
+msgstr "Nový záznam ze sčítání lidu"
+
+msgid "add census"
+msgstr "přidat záznam ze sčítání lidu"
+
+msgid "Select a birth source"
+msgstr "Vybrat pramen o narození"
+
+msgid "birth"
+msgstr "narození"
+
+msgid "Select a marriage source"
+msgstr "Vybrat pramen ke sňatku"
+
+msgid "Select a death source"
+msgstr "Vybrat pramen o úmrtí"
+
+msgid "Select a census source"
+msgstr "Vybrat pramen ze sčítání lidu"
+
+msgid "census"
+msgstr "sčítání lidu"
+
+msgid "Select a repository storing a source"
+msgstr "Vybrat archiv uchovávající pramen"
+
+msgid "repositories"
+msgstr "Archivy"
+
+msgid "Selected view"
+msgstr "Vybraný pohled"
+
+msgid ""
+"Records transcriptions ... births/deaths/marriages/censuses with common "
+"fields: id, repository, person name, birth date and place, parents."
+msgstr ""
+"Přepisy záznamů ... narození/úmrtí/sňatky/sčítání lidu se společnými poli: "
+"ID, archiv, jméno osoby, datum a místo narození, rodiče."
+
+msgid "witness"
+msgstr "svědek"
+
+msgid "<b>Witness</b>"
+msgstr "<b>Svědek</b>"
+
+msgid "Names:"
+msgstr "Příjmení:"
+
+msgid "First names:"
+msgstr "Křestní jména:"
+
+msgid "Age:"
+msgstr "Věk:"
+
 msgid "Origin:"
 msgstr "Původ:"
+
+msgid "Occupation:"
+msgstr "Povolání:"
+
+msgid "Live:"
+msgstr "Bydliště:"
+
+msgid "Info:"
+msgstr "Informace:"
+
+msgid "Birth act:"
+msgstr "Záznam o narození:"
+
+msgid "Reference:"
+msgstr "Odkaz:"
+
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+"Svazek\n"
+"    Strana:"
+
+msgid "The source title"
+msgstr "Název pramene"
+
+msgid "The volume or page of this source"
+msgstr "Svazek nebo strana tohoto pramene"
+
+msgid "select the gender/sex"
+msgstr "vyberte pohlaví"
+
+msgid "The names of the main person written into the source"
+msgstr "Příjmení hlavní osoby zapsané v prameni"
+
+msgid "The first names of the main person written into the source"
+msgstr "Křestní jména hlavní osoby zapsaná v prameni"
+
+msgid "Other:"
+msgstr "Jiné:"
+
+msgid "Repository title"
+msgstr "Název archivu"
+
+msgid "<b>Image</b>"
+msgstr "<b>Obrázek</b>"
+
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>Archiv</i></b>"
+
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"Jména\n"
+"manžela/manželky:"
+
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"Datum\n"
+"sňatku:"
+
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"Datum\n"
+"úmrtí:"
+
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+"<b>Svědek\n"
+"Kmotr\n"
+"Kmotra:</b>"
 
 msgid "Call number:"
 msgstr "Signatura:"
 
 msgid "The call number into the repository"
 msgstr "Signatura v archivu"
+
+msgid "<b><i>Data person</i></b>"
+msgstr "<b><i>Údaje o osobě</i></b>"
+
+msgid "<b><i>Data margin</i></b>"
+msgstr "<b><i>Okrajové údaje</i></b>"
+
+msgid "<b><i>Data father</i></b>"
+msgstr "<b><i>Údaje o otci</i></b>"
+
+msgid "<b><i>Data mother</i></b>"
+msgstr "<b><i>Údaje o matce</i></b>"
+
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+"svědek1, příjmení, křestní jméno, věk, povolání;\n"
+"svědek2, příjmení, křestní jméno, věk, povolání;\n"
+"kmotr, příjmení, křestní jméno, věk, povolání;\n"
+"atd. ..."
+
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"Místo\n"
+"sňatku:"
+
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Místo\n"
+"úmrtí:"
+
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Místo\n"
+"narození:"
+
+msgid "Origine:"
+msgstr "Původ:"
+
+msgid "<b><i>Citation</i></b>"
+msgstr "<b><i>Citace</i></b>"
+
+msgid "<b><i>Source</i></b>"
+msgstr "<b><i>Pramen</i></b>"
+
+msgid "Death act:"
+msgstr "Záznam o úmrtí:"
+
+msgid "Volume:"
+msgstr "Svazek:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>Záznam o úmrtí</b>"
+
+msgid "First name:"
+msgstr "Křestní jméno:"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Archiv</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>Údaje o osobě</b>"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Svědek:</b>"
+
+msgid "Birth date:"
+msgstr "Datum narození:"
+
+msgid "Birth place:"
+msgstr "Místo narození:"
+
+msgid "Note:"
+msgstr "Poznámka:"
+
+msgid "Spouse name:"
+msgstr "Jméno manžela/manželky:"
+
+msgid "Marriage date:"
+msgstr "Datum sňatku:"
+
+msgid "Marriage place:"
+msgstr "Místo sňatku:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>Údaje o matce</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>Údaje o otci</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Manžel/manželka</b> "
+
+msgid "alive"
+msgstr "naživu"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"svědek1, příjmení, křestní jméno, věk, povolání; svědek2, příjmení, křestní "
+"jméno, věk, povolání atd. ..."
+
+msgid "<b>Census</b>"
+msgstr "<b>Sčítání lidu</b>"
+
+msgid "Death date:"
+msgstr "Datum úmrtí:"
+
+msgid "Death place:"
+msgstr "Místo úmrtí:"
+
+msgid "Family status:"
+msgstr "Rodinný stav:"
+
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "pořadí, osoba, příjmení, křestní jméno, věk, stav, povolání atd. ..."
+
+msgid "Marriage act:"
+msgstr "Záznam o sňatku:"
+
+msgid "m. date:"
+msgstr "datum sň.:"
+
+msgid "m. place:"
+msgstr "místo sň.:"
+
+msgid "d.contract:"
+msgstr "datum sml.:"
+
+msgid "dates banns:"
+msgstr "data ohlášek:"
+
+msgid "p.contract:"
+msgstr "místo sml.:"
+
+msgid "places banns:"
+msgstr "místa ohlášek:"
+
+msgid "<b>Data union</b>"
+msgstr "<b>Údaje o svazku</b>"
+
+msgid "<b>Marriage act</b>"
+msgstr "<b>Záznam o sňatku</b>"
+
+msgid ""
+"<b>Data father\n"
+"spouse1</b>"
+msgstr ""
+"<b>Údaje o otci\n"
+"manžela/manželky 1</b>"
+
+msgid ""
+"<b>Data mother\n"
+"spouse1</b>"
+msgstr ""
+"<b>Údaje o matce\n"
+"manžela/manželky 1</b>"
+
+msgid ""
+"<b>Data mother\n"
+"spouse2</b>"
+msgstr ""
+"<b>Údaje o matce\n"
+"manžela/manželky 2</b>"
+
+msgid ""
+"<b>Data father\n"
+"spouse2</b>"
+msgstr ""
+"<b>Údaje o otci\n"
+"manžela/manželky 2</b>"
+
+msgid "<b>Data spouse1</b>"
+msgstr "<b>Údaje o manželovi/manželce 1</b>"
+
+msgid "<b>Data spouse2</b>"
+msgstr "<b>Údaje o manželovi/manželce 2</b>"

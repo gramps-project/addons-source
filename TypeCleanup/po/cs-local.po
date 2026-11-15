@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Event Roles"
+msgstr "Role u událostí"
+
+msgid "Event Types"
+msgstr "Typy událostí"
+
+msgid "Family Relation Types"
+msgstr "Typy rodinných vztahů"
+
+msgid "Child reference Types"
+msgstr "Typy odkazů na děti"
+
+msgid "Name Origin Types"
+msgstr "Typy původu příjmení"
+
+msgid "Name Types"
+msgstr "Typy jmen"
+
+msgid "Note Types"
+msgstr "Typy poznámek"
+
+msgid "Place Types"
+msgstr "Typy míst"
+
+msgid "Repository Types"
+msgstr "Typy archivů"
+
+msgid "Source Media Types"
+msgstr "Typy médií pramenů"
+
+msgid "URL Types"
+msgstr "Typy URL"
+
+msgid "Types Cleanup Tool"
+msgstr "Nástroj pro vyčištění typů"
+
+msgid ""
+"Remove the selected type from the db.\n"
+"This does not change any referenced objects."
+msgstr ""
+"Odstranit vybraný typ z databáze.\n"
+"Tím se nezmění žádné odkazující objekty."
+
+msgid ""
+"Select a new name for the current type, prior to renaming the type in the "
+"referenced objects."
+msgstr ""
+"Vyberte nový název současného typu, než typ přejmenujete v odkazujících "
+"objektech."
+
+msgid "Rename"
+msgstr "Přejmenovat"
+
+msgid "Rename the selected type in all referenced objects."
+msgstr "Přejmenovat vybraný typ ve všech odkazujících objektech."
+
+msgid "Close the Type Cleanup Tool"
+msgstr "Zavřít nástroj pro vyčištění typů"
+
+msgid "Types"
+msgstr "Typy"
+
+msgid "Type Cleanup Tool"
+msgstr "Nástroj pro vyčištění typů"
+
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "Změna typu z %(old_type)s na %(new_type)s."
+
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"Odstraněním tohoto vlastního typu jej odeberete z rozbalovacích seznamů pro "
+"výběr typu\n"
+"a z dalších spuštění tohoto nástroje.\n"
+"\n"
+"Z odkazujících položek v databázi se však neodstraní.\n"
+"Pokud jej chcete změnit v odkazujících položkách, použijte 'Přejmenovat'."
+
+msgid "Type Cleanup"
+msgstr "Vyčištění typů"
+
+msgid "Clean up (remove) custom types"
+msgstr "Vyčistit (odstranit) vlastní typy"

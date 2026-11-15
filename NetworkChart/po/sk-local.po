@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-02 18:04+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-08 12:51+0000\n"
+"Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 
 msgid "File exists. Overwrite?"
 msgstr "Súbor existuje. Prepísať ho?"
@@ -148,7 +148,7 @@ msgid "Male Background"
 msgstr "Pozadie muža"
 
 msgid "RGB-color for male box background."
-msgstr "RGB-farba pre pozadie rámika pre mužov."
+msgstr "Farba RGB pre pozadie rámika pre mužov."
 
 msgid "Male Background Alpha"
 msgstr "Priehľadnosť pozadia muža"
@@ -160,13 +160,13 @@ msgid "Male Box Edge"
 msgstr "Okraj rámika muža"
 
 msgid "RGB-color for Male box edge."
-msgstr "RGB-farba pre okraj rámika muža."
+msgstr "Farba RGB pre okraj rámika muža."
 
 msgid "Female Background"
 msgstr "Pozadie pre ženy"
 
 msgid "RGB-color for Female box background."
-msgstr "RGB-farba pre pozadie rámika ženy."
+msgstr "Farba RGB pre pozadie rámika ženy."
 
 msgid "Female Background Alpha"
 msgstr "Priehľadnosť pozadia ženy"
@@ -178,13 +178,13 @@ msgid "Female Box Edge"
 msgstr "Okraj rámika ženy"
 
 msgid "RGB-color for Female box edge."
-msgstr "RGB-farba pre okraj rámika ženy."
+msgstr "Farba RGB pre okraj rámika ženy."
 
 msgid "Other Background"
 msgstr "Iné pozadie"
 
 msgid "RGB-color for other box background."
-msgstr "RGB-farba pre pozadie ostatných rámikov."
+msgstr "Farba RGB pre pozadie ostatných rámikov."
 
 msgid "Other Background Alpha"
 msgstr "Priehľadnosť iného pozadia"
@@ -196,13 +196,13 @@ msgid "Family Connector Line"
 msgstr "Spojovacia čiara rodiny"
 
 msgid "RGB-color for family connector line."
-msgstr "RGB-farba pre spojovaciu čiaru rodiny."
+msgstr "Farba RGB pre spojovaciu čiaru rodiny."
 
 msgid "Marriage Connector Line"
 msgstr "Spojovacia čiara manželstva"
 
 msgid "RGB-color for marriage connector line."
-msgstr "RGB-farba pre spojovaciu čiaru manželstva."
+msgstr "Farba RGB pre spojovaciu čiaru manželstva."
 
 msgid "Highlight Connector Line"
 msgstr "Zvýrazniť spojovaciu čiaru"
@@ -211,14 +211,14 @@ msgid ""
 "RGB-color for the highlighted path between two individuals.  If the "
 "graph.inverts, reverse the order to change."
 msgstr ""
-"RGB-farba pre zvýraznenú cestu medzi dvoma jedincami.  Ak sa diagram "
+"Farba RGB pre zvýraznenú cestu medzi dvoma jedincami.  Ak sa diagram "
 "invertuje, obráťte poradie na zmenu."
 
 msgid "Trim Box Edge"
 msgstr "Okraj orezaného rámika"
 
 msgid "RGB-color for box edge that has been trimmed."
-msgstr "RGB-farba pre okraj rámika, ktorý bol orezaný."
+msgstr "Farba RGB pre okraj rámika, ktorý bol orezaný."
 
 msgid "Remove color background on all nodes."
 msgstr "Odstrániť farebné pozadie na všetkých uzloch."

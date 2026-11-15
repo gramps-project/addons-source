@@ -1,0 +1,232 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-04 08:52-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "GOQL expression"
+msgstr "Výraz GOQL"
+
+msgid ""
+"Matches objects for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Vybere objekty, pro které se zadaný podmínkový výraz jazyka gramps-object-"
+"query-language vyhodnotí jako pravdivý"
+
+msgid "People matching the <GOQL expression>"
+msgstr "Osoby odpovídající <výrazu GOQL>"
+
+msgid "Families matching the <GOQL expression>"
+msgstr "Rodiny odpovídající <výrazu GOQL>"
+
+msgid "Events matching the <GOQL expression>"
+msgstr "Události odpovídající <výrazu GOQL>"
+
+msgid "Places matching the <GOQL expression>"
+msgstr "Místa odpovídající <výrazu GOQL>"
+
+msgid "Repositories matching the <GOQL expression>"
+msgstr "Archivy odpovídající <výrazu GOQL>"
+
+msgid "Sources matching the <GOQL expression>"
+msgstr "Prameny odpovídající <výrazu GOQL>"
+
+msgid "Citations matching the <GOQL expression>"
+msgstr "Citace odpovídající <výrazu GOQL>"
+
+msgid "Media matching the <GOQL expression>"
+msgstr "Média odpovídající <výrazu GOQL>"
+
+msgid "Notes matching the <GOQL expression>"
+msgstr "Poznámky odpovídající <výrazu GOQL>"
+
+msgid "Person GOQL Filter"
+msgstr "Filtr GOQL pro osoby"
+
+msgid "Gramplet providing a gramps-object-query-language person filter"
+msgstr "Gramplet poskytující filtr osob v jazyce gramps-object-query-language"
+
+msgid "GOQL Filter"
+msgstr "Filtr GOQL"
+
+msgid "Family GOQL Filter"
+msgstr "Filtr GOQL pro rodiny"
+
+msgid "Gramplet providing a gramps-object-query-language family filter"
+msgstr "Gramplet poskytující filtr rodin v jazyce gramps-object-query-language"
+
+msgid "Event GOQL Filter"
+msgstr "Filtr událostí GOQL"
+
+msgid "Gramplet providing a gramps-object-query-language event filter"
+msgstr ""
+"Gramplet poskytující filtr událostí v jazyce gramps-object-query-language"
+
+msgid "Place GOQL Filter"
+msgstr "Filtr GOQL pro místa"
+
+msgid "Gramplet providing a gramps-object-query-language place filter"
+msgstr "Gramplet poskytující filtr míst v jazyce gramps-object-query-language"
+
+msgid "Repository GOQL Filter"
+msgstr "Filtr GOQL pro archivy"
+
+msgid "Gramplet providing a gramps-object-query-language repository filter"
+msgstr ""
+"Gramplet poskytující filtr archivů v jazyce gramps-object-query-language"
+
+msgid "Source GOQL Filter"
+msgstr "Filtr GOQL pro prameny"
+
+msgid "Gramplet providing a gramps-object-query-language source filter"
+msgstr ""
+"Gramplet poskytující filtr pramenů v jazyce gramps-object-query-language"
+
+msgid "Citation GOQL Filter"
+msgstr "Filtr GOQL pro citace"
+
+msgid "Gramplet providing a gramps-object-query-language citation filter"
+msgstr ""
+"Gramplet poskytující filtr citací v jazyce gramps-object-query-language"
+
+msgid "Media GOQL Filter"
+msgstr "Filtr GOQL pro média"
+
+msgid "Gramplet providing a gramps-object-query-language media filter"
+msgstr "Gramplet poskytující filtr médií v jazyce gramps-object-query-language"
+
+msgid "Note GOQL Filter"
+msgstr "Filtr GOQL pro poznámky"
+
+msgid "Gramplet providing a gramps-object-query-language note filter"
+msgstr ""
+"Gramplet poskytující filtr poznámek v jazyce gramps-object-query-language"
+
+msgid "A gramps-object-query-language where-expression, e.g.\n"
+msgstr "Podmínkový výraz jazyka gramps-object-query-language, např.\n"
+
+msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
+msgstr "Enter vloží nový řádek; Ctrl+Enter spustí hledání.\n"
+
+msgid "Up/Down at the first/last line recalls previous expressions.\n"
+msgstr ""
+"Šipky nahoru/dolů na prvním/posledním řádku vyvolají předchozí výrazy.\n"
+
+msgid "Tab always completes -- it never inserts a tab character."
+msgstr "Tab vždy doplňuje — nikdy nevkládá znak tabulátoru."
+
+#, python-format
+msgid "%s filter"
+msgstr "Filtr – %s"
+
+msgid "This resets the filter parameters to empty state."
+msgstr "Vymaže parametry filtru."
+
+msgid "This opens a dialog to save the current expression as a named filter."
+msgstr "Otevře dialog pro uložení aktuálního výrazu jako pojmenovaného filtru."
+
+msgid "Open this gramplet's help page in a browser."
+msgstr "Otevřít stránku nápovědy tohoto Grampletu v prohlížeči."
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid "Python evaluation"
+msgstr "Vyhodnocení v Pythonu"
+
+#, python-format
+msgid "Error applying filter: %s"
+msgstr "Chyba při použití filtru: %s"
+
+#, python-format
+msgid "Showing %(shown)d of %(total)d (%(method)s)"
+msgstr "Zobrazeno %(shown)d z %(total)d (%(method)s)"
+
+#, python-format
+msgid "Error resetting filter: %s"
+msgstr "Chyba při vymazání filtru: %s"
+
+msgid "Enter an expression first"
+msgstr "Nejprve zadejte výraz"
+
+#, python-brace-format
+msgid "Created by the GOQL Filter gramplet on {today}"
+msgstr "Vytvořeno Grampletem Filtr GOQL dne {today}"
+
+msgid ""
+"Matches people for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Vybere osoby, pro které se zadaný podmínkový výraz jazyka gramps-object-"
+"query-language vyhodnotí jako pravdivý"
+
+msgid ""
+"Matches families for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Vybere rodiny, pro které se zadaný podmínkový výraz jazyka gramps-object-"
+"query-language vyhodnotí jako pravdivý"
+
+msgid ""
+"Matches events for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Vybere události, pro které se zadaný podmínkový výraz jazyka gramps-object-"
+"query-language vyhodnotí jako pravdivý"
+
+msgid ""
+"Matches places for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Vybere místa, pro které se zadaný podmínkový výraz jazyka gramps-object-"
+"query-language vyhodnotí jako pravdivý"
+
+msgid ""
+"Matches repositories for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Vybere archivy, pro které se zadaný podmínkový výraz jazyka gramps-object-"
+"query-language vyhodnotí jako pravdivý"
+
+msgid ""
+"Matches sources for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Vybere prameny, pro které se zadaný podmínkový výraz jazyka gramps-object-"
+"query-language vyhodnotí jako pravdivý"
+
+msgid ""
+"Matches citations for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Vybere citace, pro které se zadaný podmínkový výraz jazyka gramps-object-"
+"query-language vyhodnotí jako pravdivý"
+
+msgid ""
+"Matches media for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Vybere média, pro které se zadaný podmínkový výraz jazyka gramps-object-"
+"query-language vyhodnotí jako pravdivý"
+
+msgid ""
+"Matches notes for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Vybere poznámky, pro které se zadaný podmínkový výraz jazyka gramps-object-"
+"query-language vyhodnotí jako pravdivý"

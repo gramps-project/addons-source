@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 13:30-0700\n"
-"PO-Revision-Date: 2026-09-30 15:23+0000\n"
-"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
+"PO-Revision-Date: 2026-10-29 15:51+0000\n"
+"Last-Translator: coolvitto <cool.vitto@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -25,6 +25,16 @@ msgstr "アクティブな人とホームパーソンの間の深い関係を表
 
 msgid "Deep Connections"
 msgstr "ディープコネクション"
+
+msgid "sibling"
+msgstr "兄弟姉妹"
+
+msgid "mentioned in note"
+msgstr "メモ内で言及"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (関連付け)"
 
 msgid "⏸ Pause"
 msgstr "⏸ 一時停止"
@@ -60,25 +70,6 @@ msgid ""
 msgstr ""
 "検索深度: {depth} | 処理済み人物: {processed} | キューサイズ: {queue_size}"
 
-msgid "mentioned in note"
-msgstr "メモ内で言及"
-
-msgid "Note on Family"
-msgstr "家族に関するメモ"
-
-msgid "sibling"
-msgstr "兄弟姉妹"
-
-msgid "Note on Parent Family"
-msgstr "親家族に関するメモ"
-
-#, python-format
-msgid "%s (association)"
-msgstr "%s (関連付け)"
-
-msgid "Note on Person"
-msgstr "人物に関するメモ"
-
 #, python-format
 msgid ""
 "\n"
@@ -86,6 +77,24 @@ msgid ""
 msgstr ""
 "\n"
 "   %s の "
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"関係 #%d を発見: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"一時停止中。\n"
+"続行を押して追加の関係を検索します。\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "一時停止中 - 続行を押してより多くの関係を検索"
 
 msgid "Error: No Home Person set"
 msgstr "エラー: ホームパーソンが設定されていません"
@@ -112,24 +121,6 @@ msgstr "  <b>%s</b> (アクティブな人)...\n"
 
 msgid "Searching for connections..."
 msgstr "接続を検索中..."
-
-#, python-format
-msgid ""
-"Found relation #%d: \n"
-"   "
-msgstr ""
-"関係 #%d を発見: \n"
-"   "
-
-msgid ""
-"Paused.\n"
-"Press Continue to search for additional relations.\n"
-msgstr ""
-"一時停止中。\n"
-"続行を押して追加の関係を検索します。\n"
-
-msgid "Paused - Press Continue to search for more relations"
-msgstr "一時停止中 - 続行を押してより多くの関係を検索"
 
 #, python-format
 msgid ""

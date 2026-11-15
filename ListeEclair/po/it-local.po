@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 msgid "Liste Eclair"
 msgstr "Lista Eclair"
+
+msgid "Type de Liste"
+msgstr "Tipo di lista"
+
+msgid "Tiny Tafel"
+msgstr "Tiny Tafel"
+
+msgid "cousingenweb"
+msgstr "cousingenweb"
+
+msgid "Type de liste"
+msgstr "Tipo di lista"
 
 msgid "Include private data"
 msgstr "Includi i dati privati"
@@ -25,3 +37,6 @@ msgstr "Lo stile usato per la lista eclair."
 
 msgid "The style used for place title."
 msgstr "Lo stile usato per ogni titolo di luogo."
+
+msgid "Produit une liste eclair"
+msgstr "Produce una liste éclair"

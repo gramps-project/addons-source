@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "short for born|b."
+msgstr "n."
+
+msgid "short for died|d."
+msgstr "d."
+
+msgid "short for baptized|bap."
+msgstr "batt."
+
+msgid "short for christened|chr."
+msgstr "crist."
+
+msgid "short for buried|bur."
+msgstr "sep."
+
+msgid "short for cremated|crem."
+msgstr "crem."
+
+msgid "Timeline pedigree"
+msgstr "Albero genealogico cronologico"
+
+msgid "Order by timeline"
+msgstr "Ordina in base alla linea temporale"
+
+msgid "Show lifespan"
+msgstr "Mostra l'arco della vita"
 
 msgid "Descendant Generations"
 msgstr "Generazioni discendenti"
@@ -25,3 +52,19 @@ msgstr[1] "%d generazioni"
 
 msgid "Ancestor Generations"
 msgstr "Generazioni di ascendenti"
+
+msgid "About Timeline Pedigree View"
+msgstr "Informazioni sulla vista albero genealogico cronologico"
+
+msgid "Timeline Pedigree"
+msgstr "Albero genealogico cronologico"
+
+msgid "Ancestry"
+msgstr "Ascendenza"
+
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"La vista mostra un albero genealogico cronologico con gli ascendenti e i "
+"discendenti della persona selezionata"

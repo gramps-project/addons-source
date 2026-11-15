@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 13:30-0700\n"
-"PO-Revision-Date: 2026-10-07 16:52+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
+"PO-Revision-Date: 2026-10-25 15:51+0000\n"
+"Last-Translator: Milo Ivir <milotype@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.10.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Duboke veze – Gramplet"
@@ -23,6 +23,16 @@ msgstr "Gramplet prikazuje duboku vezu između aktivne i glavne osobe"
 
 msgid "Deep Connections"
 msgstr "Duboke veze"
+
+msgid "sibling"
+msgstr "brat/sestra"
+
+msgid "mentioned in note"
+msgstr "naveden/a u zabilješci"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (veza)"
 
 msgid "⏸ Pause"
 msgstr "⏸ Zaustavi"
@@ -51,25 +61,6 @@ msgstr "Izbriši sve rezultate i resetiraj"
 msgid "Ready to search"
 msgstr "Spremno za pretragu"
 
-msgid "mentioned in note"
-msgstr "naveden/a u zabilješki"
-
-msgid "Note on Family"
-msgstr "Zabilješka o obitelji"
-
-msgid "sibling"
-msgstr "brat/sestra"
-
-msgid "Note on Parent Family"
-msgstr "Zabilješka o obitelji roditelja"
-
-#, python-format
-msgid "%s (association)"
-msgstr "%s (veza)"
-
-msgid "Note on Person"
-msgstr "Zabilješka o osobi"
-
 #, python-format
 msgid ""
 "\n"
@@ -77,6 +68,24 @@ msgid ""
 msgstr ""
 "\n"
 "   %s od "
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Pronađena je veza broj %d: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Zaustavljeno.\n"
+"Za traženje dodatnih veza pritisni gumb „Nastavi”.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Zaustavljeno – Za traženje dodatnih srodstva pritisni gumb „Nastavi”"
 
 msgid "Error: No Home Person set"
 msgstr "Greška: Nije postavljena početna osoba"
@@ -103,24 +112,6 @@ msgstr "  <b>%s</b> (aktivna osoba) …\n"
 
 msgid "Searching for connections..."
 msgstr "Traženje veza …"
-
-#, python-format
-msgid ""
-"Found relation #%d: \n"
-"   "
-msgstr ""
-"Pronađena je veza broj %d: \n"
-"   "
-
-msgid ""
-"Paused.\n"
-"Press Continue to search for additional relations.\n"
-msgstr ""
-"Zaustavljeno.\n"
-"Za traženje dodatnih veza pritisni gumb „Nastavi”.\n"
-
-msgid "Paused - Press Continue to search for more relations"
-msgstr "Zaustavljeno – Za traženje dodatnih srodstva pritisni gumb „Nastavi”"
 
 #, python-format
 msgid ""

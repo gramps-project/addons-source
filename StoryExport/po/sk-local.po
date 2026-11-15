@@ -1,0 +1,322 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 09:39-0700\n"
+"PO-Revision-Date: 2026-11-08 12:51+0000\n"
+"Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+
+msgid "Select the person whose story to generate, then try again."
+msgstr "Vyberte osobu, ktorej príbeh chcete vygenerovať, a skúste to znova."
+
+msgid "Couldn't generate the story"
+msgstr "Príbeh sa nepodarilo vygenerovať"
+
+msgid "Story saved"
+msgstr "Príbeh bol uložený"
+
+#, python-format
+msgid ""
+"%(count)d slides saved to %(path)s.\n"
+"\n"
+"Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+msgstr ""
+"%(count)d snímok uložených do %(path)s.\n"
+"\n"
+"Otvorte v Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+
+msgid "_Open in Browser"
+msgstr "_Otvorenie v prehliadači"
+
+msgid "Story"
+msgstr "Príbeh"
+
+msgid "Generate Story"
+msgstr "Generovanie príbehu"
+
+msgid "Generate the story of:"
+msgstr "Vygenerovať príbeh:"
+
+#, python-format
+msgid "Family: %s"
+msgstr "Rodina: %s"
+
+msgid "Include families"
+msgstr "Zahrnúť rodiny"
+
+msgid ""
+"Also draw on this person's own families: a spouse's and children's births "
+"and deaths, and their parents' and siblings'."
+msgstr ""
+"Tiež zahrnúť vlastné rodiny tejto osoby: narodenie a úmrtie manžela/manželky "
+"a detí, ako aj ich rodičov a súrodencov."
+
+msgid "Include each person's own birth and death in this family's story:"
+msgstr ""
+"Zahrnúť vlastné narodenie a úmrtie každej osoby do príbehu tejto rodiny:"
+
+msgid "Include living people (and photos they appear in)"
+msgstr "Zahrnúť žijúce osoby (a fotografie, na ktorých sa vyskytujú)"
+
+msgid "Stories (*.story.zip)"
+msgstr "Príbehy (*.story.zip)"
+
+msgid ""
+"This family is marked private. To generate its story, check \"Include data "
+"marked private\"."
+msgstr ""
+"Táto rodina je označená ako súkromná. Na vygenerovanie jej príbehu "
+"začiarknite „Zahrnúť údaje označené ako súkromné“."
+
+#, python-format
+msgid ""
+"%s is marked private. To generate their story, check \"Include data marked "
+"private\"."
+msgstr ""
+"%s je označená ako súkromná. Na vygenerovanie ich príbehu začiarknite "
+"„Zahrnúť údaje označené ako súkromné“."
+
+#, python-format
+msgid ""
+"%s is probably living. To generate their story, check \"Include living "
+"people\"."
+msgstr ""
+"%s pravdepodobne žije. Na vygenerovanie ich príbehu začiarknite „Zahrnúť "
+"žijúce osoby“."
+
+#, python-format
+msgid "%(who)s was born"
+msgstr "%(who)s sa narodil/a"
+
+#, python-format
+msgid "%(who)s was stillborn"
+msgstr "%(who)s sa narodil/a mŕtvy/a"
+
+#, python-format
+msgid "%(who)s was baptized"
+msgstr "%(who)s bol/a krstený/á"
+
+#, python-format
+msgid "%(who)s was christened"
+msgstr "%(who)s bol/a pokrstený/á"
+
+#, python-format
+msgid "%(who)s was blessed"
+msgstr "%(who)s bol/a požehnaný/á"
+
+#, python-format
+msgid "%(who)s was confirmed"
+msgstr "%(who)s bol/a birmovaný/á"
+
+#, python-format
+msgid "%(who)s took First Communion"
+msgstr "%(who)s prijal/a prvé sväté prijímanie"
+
+#, python-format
+msgid "%(who)s celebrated their Bar Mitzvah"
+msgstr "%(who)s slávil/a ich bar micvu"
+
+#, python-format
+msgid "%(who)s celebrated their Bas Mitzvah"
+msgstr "%(who)s slávil/a ich bat micvu"
+
+#, python-format
+msgid "%(who)s was adopted"
+msgstr "%(who)s bol/a adoptovaný/á"
+
+#, python-format
+msgid "%(who)s graduated"
+msgstr "'%(who)s absolvoval/a"
+
+#, python-format
+msgid "%(who)s was awarded a degree"
+msgstr "%(who)s získal/a titul"
+
+#, python-format
+msgid "%(who)s emigrated"
+msgstr "%(who)s emigroval/a"
+
+#, python-format
+msgid "%(who)s immigrated"
+msgstr "%(who)s imigroval/a"
+
+#, python-format
+msgid "%(who)s was naturalized"
+msgstr "%(who)s bol/a naturalizovaný/á"
+
+#, python-format
+msgid "%(who)s was ordained"
+msgstr "%(who)s bol/a vysvätený/á"
+
+#, python-format
+msgid "%(who)s was elected"
+msgstr "%(who)s bol/a zvolený/á"
+
+#, python-format
+msgid "%(who)s retired"
+msgstr "%(who)s odišiel/odišla do dôchodku"
+
+#, python-format
+msgid "%(who)s died"
+msgstr "%(who)s zomrel/a"
+
+#, python-format
+msgid "%(who)s was buried"
+msgstr "%(who)s bol/a pochovaný/á"
+
+#, python-format
+msgid "%(who)s was cremated"
+msgstr "%(who)s bol/a spopolnený/á"
+
+#, python-format
+msgid "%(who)s had their estate probated"
+msgstr "%(who)s mal/a dedičské konanie o ich majetku"
+
+#, python-format
+msgid "%(who)s were married"
+msgstr "%(who)s sa zosobášili"
+
+#, python-format
+msgid "%(who)s had their banns read"
+msgstr "%(who)s mali vyhlásené ohlášky"
+
+#, python-format
+msgid "%(who)s signed a marriage contract"
+msgstr "%(who)s uzavreli manželskú dohodu"
+
+#, python-format
+msgid "%(who)s took out a marriage license"
+msgstr "%(who)s získali povolenie na sobáš"
+
+#, python-format
+msgid "%(who)s agreed a marriage settlement"
+msgstr "%(who)s uzavreli manželskú dohodu o majetku"
+
+#, python-format
+msgid "%(who)s were engaged"
+msgstr "%(who)s sa zasnúbili"
+
+#, python-format
+msgid "%(who)s were divorced"
+msgstr "%(who)s sa rozviedli"
+
+#, python-format
+msgid "%(who)s filed for divorce"
+msgstr "%(who)s podal/a žiadosť o rozvod"
+
+#, python-format
+msgid "%(who)s had their marriage annulled"
+msgstr "%(who)s mali ich manželstvo anulované"
+
+#, python-format
+msgid "%(who)s were recorded in the census"
+msgstr "%(who)s boli zaznamenaní v sčítaní ľudu"
+
+#, python-format
+msgid "%(who)s lived"
+msgstr "%(who)s žili"
+
+#, python-format
+msgid "%(names)s and %(last)s"
+msgstr "%(names)s a %(last)s"
+
+#, python-format
+msgid "%(type)s (%(role)s)"
+msgstr "%(type)s (%(role)s)"
+
+#, python-format
+msgid "%(type)s of %(who)s"
+msgstr "%(type)s osoby %(who)s"
+
+#, python-format
+msgid "%(who)s took part in this %(type)s as %(role)s"
+msgstr "%(who)s sa zúčastnil/a tejto udalosti %(type)s ako %(role)s"
+
+#, python-format
+msgid "%(moment)s on %(date)s"
+msgstr "%(moment)s dňa %(date)s"
+
+#, python-format
+msgid "%(moment)s in %(date)s"
+msgstr "%(moment)s v %(date)s"
+
+#, python-format
+msgid "%(moment)s %(date)s"
+msgstr "%(moment)s %(date)s"
+
+#, python-format
+msgid "%(moment)s in %(place)s"
+msgstr "%(moment)s v %(place)s"
+
+#, python-format
+msgid "%d moment"
+msgid_plural "%d moments"
+msgstr[0] "%d moment"
+msgstr[1] "%d momenty"
+msgstr[2] "%d momentov"
+
+msgid "This person isn't included with the chosen privacy settings."
+msgstr "Táto osoba nie je zahrnutá podľa zvolených nastavení súkromia."
+
+#, python-format
+msgid "%s has no events to build a story from."
+msgstr "%s nemá žiadne udalosti, z ktorých by sa dal vytvoriť príbeh."
+
+#, python-format
+msgid "The Story of %s"
+msgstr "Príbeh osoby %s"
+
+#, python-format
+msgid "%(moments)s from %(name)s's recorded life."
+msgstr "%(moments)s zo zaznamenaného života osoby %(name)s."
+
+msgid "This family isn't included with the chosen privacy settings."
+msgstr "Táto rodina nie je zahrnutá podľa zvolených nastavení súkromia."
+
+msgid "this family"
+msgstr "táto rodina"
+
+msgid ""
+"This family has no events to build a story from: not on the family itself, "
+"and no births or deaths recorded for its members."
+msgstr ""
+"Táto rodina nemá žiadne udalosti, z ktorých by sa dal vytvoriť príbeh: ani "
+"samotná rodina, ani jej členovia nemajú zaznamenané žiadne narodenie či "
+"úmrtie."
+
+#, python-format
+msgid "%(moments)s from the life of %(couple)s and %(children)s."
+msgstr "%(moments)s zo života páru %(couple)s a %(children)s."
+
+#, python-format
+msgid "their child"
+msgid_plural "their %(count)d children"
+msgstr[0] "ich dieťa"
+msgstr[1] "ich %(count)d deti"
+msgstr[2] "ich %(count)d detí"
+
+#, python-format
+msgid "%(moments)s from the life of %(couple)s."
+msgstr "%(moments)s zo života páru %(couple)s."
+
+#, python-format
+msgid "Family %s"
+msgstr "Rodina %s"
+
+msgid ""
+"Generates the story of a person or a family (.story.zip): a slideshow of "
+"their events with dates, places and photos, for the Gramps Connect Story "
+"Viewer"
+msgstr ""
+"Vygeneruje príbeh osoby alebo rodiny (.story.zip): prezentáciu ich udalostí "
+"s dátumami, miestami a fotografiami pre Gramps Connect Story Viewer"

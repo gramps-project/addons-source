@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Quilt Chart"
+msgstr "Schéma Quilt"
+
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr "Pohled zobrazuje rodokmen jako schéma Quilt"
+
+msgid "Quilt chart"
+msgstr "Schéma Quilt"
+
+msgid "Select the name for which you want to see."
+msgstr "Vyberte jméno, které chcete zobrazit."
+
+msgid "Clear the entry field in the name selection box."
+msgstr "Vymazat vstupní pole ve výběru jména."
+
+msgid "Nothing is selected"
+msgstr "Není nic vybráno"
+
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"Počet osob vybraných filtrem: %(filter)d, zobrazených v rodokmenu: "
+"%(count)d, celkem v databázi: %(total)d."
+
+msgid "Loading individuals"
+msgstr "Načítání osob"
+
+msgid "Loading the data"
+msgstr "Načítání údajů"
+
+msgid "About Quilt View"
+msgstr "O pohledu Quilt"
+
+msgid "Edit tags"
+msgstr "Upravit štítky"
+
+msgid "Set as home person"
+msgstr "Nastavit jako výchozí osobu"
+
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Přidání štítků osobě (%s)"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Přidání štítků rodině (%s)"
+
+msgid "Printing the tree"
+msgstr "Tisk rodokmenu"
+
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "Počet stránek k tisku: %(pages)s (formát %(format)s)"
+
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Zaměřit se na vybranou osobu.\n"
+"Nová poloha osoby bude poblíž levého horního rohu."
+
+msgid "The path color"
+msgstr "Barva cesty"
+
+msgid "The selected person color"
+msgstr "Barva vybrané osoby"
+
+msgid "The path transparency"
+msgstr "Průhlednost cesty"
+
+msgid "General options"
+msgstr "Obecné možnosti"

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 13:30-0700\n"
-"PO-Revision-Date: 2026-09-27 07:51+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
+"PO-Revision-Date: 2026-11-08 12:51+0000\n"
+"Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet Hlboké vzťahy"
@@ -22,6 +22,16 @@ msgstr "Gramplet zobrazujúci hlboký vzťah medzi aktívnymi a domovskými osob
 
 msgid "Deep Connections"
 msgstr "Hlbšie vzťahy"
+
+msgid "sibling"
+msgstr "súrodenec"
+
+msgid "mentioned in note"
+msgstr "spomenutý/á v poznámke"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (asociácia)"
 
 msgid "⏸ Pause"
 msgstr "⏸ Pozastaviť"
@@ -58,25 +68,6 @@ msgstr ""
 "Hĺbka vyhľadávania: {depth} | Spracovaných osôb: {processed} | Veľkosť "
 "fronty: {queue_size}"
 
-msgid "mentioned in note"
-msgstr "spomenutý/á v poznámke"
-
-msgid "Note on Family"
-msgstr "Poznámka k rodine"
-
-msgid "sibling"
-msgstr "súrodenec"
-
-msgid "Note on Parent Family"
-msgstr "Poznámka k rodičovskej rodine"
-
-#, python-format
-msgid "%s (association)"
-msgstr "%s (asociácia)"
-
-msgid "Note on Person"
-msgstr "Poznámka k osobe"
-
 #, python-format
 msgid ""
 "\n"
@@ -84,6 +75,24 @@ msgid ""
 msgstr ""
 "\n"
 "   %s osoby "
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Nájdený vzťah #%d: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Pozastavené.\n"
+"Pre hľadanie dodatočných vzťahov stlačte Pokračovať.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Pozastavené - Pre hľadanie ďalšich vzťahov stlačte Pokračovať."
 
 msgid "Error: No Home Person set"
 msgstr "Chyba: Nie je nastavená domovská osoba"
@@ -110,24 +119,6 @@ msgstr "  <b>%s</b> (Aktívna osoba)...\n"
 
 msgid "Searching for connections..."
 msgstr "Vyhľadávanie prepojení..."
-
-#, python-format
-msgid ""
-"Found relation #%d: \n"
-"   "
-msgstr ""
-"Nájdený vzťah #%d: \n"
-"   "
-
-msgid ""
-"Paused.\n"
-"Press Continue to search for additional relations.\n"
-msgstr ""
-"Pozastavené.\n"
-"Pre hľadanie dodatočných vzťahov stlačte Pokračovať.\n"
-
-msgid "Paused - Press Continue to search for more relations"
-msgstr "Pozastavené - Pre hľadanie ďalšich vzťahov stlačte Pokračovať."
 
 #, python-format
 msgid ""

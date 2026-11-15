@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-12-05 07:00+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -25,13 +25,46 @@ msgid "Calculated Date Estimates"
 msgstr "Vypočtená odhadovaná data"
 
 msgid "Source to remove and/or add"
-msgstr "Pramen o odebrání a/nebo přidání"
+msgstr "Pramen k odstranění a/nebo přidání"
+
+msgid "Remove previously added events, notes, and source"
+msgstr "Odstranit dříve přidané události, poznámky a pramen"
+
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"Odstraní vypočtené události, poznámky a pramen ihned po stisknutí tlačítka "
+"Spustit"
+
+msgid "Do not add birth events"
+msgstr "Nepřidávat události narození"
+
+msgid "Add birth events without dates"
+msgstr "Přidat události narození bez dat"
+
+msgid "Add birth events with dates"
+msgstr "Přidat události narození s daty"
+
+msgid "Add a birth events with or without estimated dates"
+msgstr "Přidat události narození s odhadovanými daty nebo bez nich"
+
+msgid "Do not add death events"
+msgstr "Nepřidávat události úmrtí"
+
+msgid "Add death events without dates"
+msgstr "Přidat události úmrtí bez dat"
+
+msgid "Add death events with dates"
+msgstr "Přidat události úmrtí s daty"
+
+msgid "Add death events with or without estimated dates"
+msgstr "Přidat události úmrtí s odhadovanými daty nebo bez nich"
 
 msgid "Maximum age"
 msgstr "Maximální věk"
 
 msgid "Maximum age that one can live to"
-msgstr "Maximální věk, který může osoba žít"
+msgstr "Maximální věk, jehož se lze dožít"
 
 msgid "Maximum age difference between siblings"
 msgstr "Maximální věkový rozdíl mezi sourozenci"
@@ -39,15 +72,111 @@ msgstr "Maximální věkový rozdíl mezi sourozenci"
 msgid "Average years between two generations"
 msgstr "Průměrný počet let mezi dvěma generacemi"
 
+msgid "Estimated Dates"
+msgstr "Odhadovaná data"
+
+msgid "Approximate (about)"
+msgstr "Přibližná (okolo)"
+
+msgid "Extremes (after and before)"
+msgstr "Mezní (po a před)"
+
+msgid "Dates on events are either about or after/before"
+msgstr "Data událostí jsou buď přibližná (okolo), nebo mezní (po/před)"
+
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+"Nástroj Vypočítat odhadovaná data slouží k přidávání a odstraňování událostí "
+"narození a úmrtí u osob, kterým tyto události chybějí.\n"
+"\n"
+"Použití:\n"
+"1. Přejděte na kartu Nastavení\n"
+"2. Zaškrtněte možnost [ ] Odstranit, chcete-li odstranit předchozí odhady\n"
+"3. V možnostech přidání dat zvolte, zda přidávat události s daty nebo bez "
+"nich\n"
+"4. Klikněte na Spustit\n"
+"5. Vyberte osoby, ke kterým chcete události přidat\n"
+"6. Vytvořte události kliknutím na tlačítko 'Přidat vybrané události'\n"
+"\n"
+"POZNÁMKY: Pokud chcete událost zachovat trvale, odpojte ji od pramene. Jinak "
+"bude při příštím automatickém odstranění těchto událostí odstraněna.\n"
+"\n"
+"Abyste přidali všechny možné události, může být nutné spustit nástroj "
+"opakovaně (bez odstraňování předchozích událostí)."
+
 msgid "Calculate Estimated Dates"
-msgstr "Vypočítat odhadovaný datum"
+msgstr "Vypočítat odhadovaná data"
+
+msgid "Select None"
+msgstr "Zrušit výběr"
+
+msgid "Toggle Selection"
+msgstr "Obrátit výběr"
+
+msgid "Add Selected Events"
+msgstr "Přidat vybrané události"
+
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "Odstranit události, poznámky a pramen a znovu vybrat data"
+
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+"Opravdu chcete odstranit předchozí události, poznámky a pramen a znovu "
+"vybrat data?"
+
+msgid "Remove and Run Select Again"
+msgstr "Odstranit a znovu spustit výběr"
+
+msgid "Reselect Data"
+msgstr "Znovu vybrat údaje"
+
+msgid "Are you sure you want to reselect data?"
+msgstr "Opravdu chcete znovu vybrat údaje?"
+
+msgid "Run Select Again"
+msgstr "Znovu spustit výběr"
+
+msgid "Evidence"
+msgstr "Podklad"
+
+msgid "Relative"
+msgstr "Příbuzná osoba"
 
 msgid "Processing...\n"
 msgstr "Zpracovávání...\n"
 
+msgid "Removing old estimations... "
+msgstr "Odstraňují se staré odhady... "
+
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Odstraňuji '%s'..."
+
+msgid "done!\n"
+msgstr "Hotovo!\n"
+
+#, python-format
+msgid "Skipped %d people due to errors (see log).\n"
+msgstr "Počet osob přeskočených kvůli chybám (viz protokol): %d\n"
 
 msgid ""
 "Selecting... \n"
@@ -56,6 +185,18 @@ msgstr ""
 "Výběr... \n"
 "\n"
 
+msgid "Add birth and death events"
+msgstr "Přidat události narození a úmrtí"
+
+msgid "Add birth event"
+msgstr "Přidat událost narození"
+
+msgid "Add death event"
+msgstr "Přidat událost úmrtí"
+
+msgid "No events to be added."
+msgstr "Nejsou žádné události k přidání."
+
 msgid "Selecting... "
 msgstr "Výběr... "
 
@@ -63,18 +204,43 @@ msgstr "Výběr... "
 msgid "Adding events '%s'..."
 msgstr "Přidání událostí '%s'..."
 
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr ""
+"Přidána událost narození na základě údaje %(evidence)s od osoby %(name)s"
+
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "Událost narození byla přidána na základě %s"
+
 msgid "Estimated birth date"
-msgstr "Odhadovaný datum narození"
+msgstr "Odhadované datum narození"
+
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr ""
+"Přidána událost úmrtí na základě údaje %(evidence)s od osoby %(person)s"
+
+#, python-format
+msgid "Added death event based on %s"
+msgstr "Událost úmrtí byla přidána na základě %s"
 
 msgid "Estimated death date"
-msgstr "Odhadovaný datum úmrtí"
+msgstr "Odhadované datum úmrtí"
+
+msgid " Done! Committing..."
+msgstr " Hotovo! Ukládá se..."
 
 #, python-format
 msgid "Added %d events."
 msgstr "Počet přidaných událostí: %d."
 
+#, python-format
+msgid " (Skipped %d rows due to errors; see log.)"
+msgstr " (Počet řádků přeskočených kvůli chybám: %d; viz protokol.)"
+
 msgid "Estimated date"
-msgstr "Odhadovaná data"
+msgstr "Odhadované datum"
 
 msgid "Calculates estimated dates for birth and death."
-msgstr "Vypočítá odhadovaný datum narození a úmrtí."
+msgstr "Vypočítá odhadovaná data narození a úmrtí."

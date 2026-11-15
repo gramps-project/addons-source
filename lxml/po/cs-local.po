@@ -1,0 +1,366 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "lxml"
+msgstr "lxml"
+
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "Gramplet pro testování lxml a XSLT"
+
+msgid "etree"
+msgstr "etree"
+
+msgid "Gramplet for testing etree with Gramps XML"
+msgstr "Gramplet pro testování etree se soubory Gramps XML"
+
+msgid "Invalid timestamp"
+msgstr "Neplatné časové razítko"
+
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
+"Vyberte soubor Gramps XML a\n"
+" klikněte na tlačítko Spustit."
+
+msgid "No file loaded..."
+msgstr "Není načten žádný soubor..."
+
+msgid "Number of additions and modifications back"
+msgstr "Počet posledních přidání a změn"
+
+msgid "Print more informations on console"
+msgstr "Vypsat více informací do konzole"
+
+msgid "Is it a compressed .gramps?"
+msgstr "Je to komprimovaný soubor .gramps?"
+
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "Nelze rozbalit \"%s\""
+
+msgid "Is it a .gramps?"
+msgstr "Je to soubor .gramps?"
+
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "Nelze zkopírovat \"%s\""
+
+msgid "Sorry, no support for your OS yet!"
+msgstr "Váš operační systém zatím není podporován!"
+
+msgid "Parsing issue"
+msgstr "Chyba při parsování"
+
+#, python-format
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Nelze parsovat obsah souboru \"%(file)s\""
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of records and relations : \t%s\n"
+"\n"
+msgstr ""
+"\n"
+"XML: Počet záznamů a vztahů: \t%s\n"
+"\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Počet štítků : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%06s\n"
+msgstr ""
+"Počet štítků : \n"
+"\t\t\t%06s\n"
+
+#, python-format
+msgid ""
+"Number of  events : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Počet událostí : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
+msgstr ""
+"Počet osob: \n"
+"\t\t\t%06s\t|\t(%06s) a počet příjmení: (%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Počet osob : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of families : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Počet rodin : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of sources : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Počet pramenů : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of citations : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Počet citací : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of places : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Počet míst : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of media objects : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Počet mediálních objektů : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of repositories : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Počet archivů : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of notes : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Počet poznámek : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of additional records and relations: \t%s\n"
+msgstr ""
+"\n"
+"XML: Počet dalších záznamů a vztahů: \t%s\n"
+
+msgid "Where is gzip?"
+msgstr "Kde je gzip?"
+
+msgid "\"gzip\" is missing"
+msgstr "Chybí \"gzip\""
+
+msgid "Missing python3 lxml"
+msgstr "Chybí lxml pro Python 3"
+
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr "Zkuste nainstalovat balíček lxml pro Python 3."
+
+msgid "xmllint options"
+msgstr "Možnosti xmllint"
+
+msgid "debug places"
+msgstr "Ladění míst"
+
+msgid "debug xml"
+msgstr "Ladit XML"
+
+msgid "XSD validation (lxml)"
+msgstr "Validace XSD (lxml)"
+
+#, python-format
+msgid "xmllint: skip DTD validation for \"%(file)s\""
+msgstr "xmllint: přeskočit validaci DTD souboru \"%(file)s\""
+
+#, python-format
+msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
+msgstr "xmllint: přeskočit validaci RelaxNG souboru \"%(file)s\""
+
+msgid "Custom \"test.xml\" file"
+msgstr "Vlastní soubor \"test.xml\""
+
+msgid "Please try to fix \"test.xml\""
+msgstr "Zkuste opravit \"test.xml\""
+
+msgid "RelaxNG validation"
+msgstr "Validace RelaxNG"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
+msgstr "Nelze validovat \"%(file)s\" podle schématu RelaxNG"
+
+msgid "File issue"
+msgstr "Problém se souborem"
+
+#, python-format
+msgid "Cannot parse \"%(file)s\" via etree"
+msgstr "Nelze parsovat \"%(file)s\" pomocí etree"
+
+msgid "Parsing file..."
+msgstr "Analyzuje se soubor..."
+
+#, python-format
+msgid " - (%(lang)s)"
+msgstr " - (%(lang)s)"
+
+#, python-format
+msgid " - (? or %(lang)s)"
+msgstr " - (? nebo %(lang)s)"
+
+msgid "Missing header"
+msgstr "Chybí hlavička"
+
+msgid ""
+"Not a valid .gramps.\n"
+"Cannot run the gramplet...\n"
+"Please, try to use a .gramps\n"
+"generated by Gramps 6.x."
+msgstr ""
+"Není to platný soubor .gramps.\n"
+"Gramplet nelze spustit...\n"
+"Zkuste použít soubor .gramps\n"
+"vytvořený programem Gramps 6.x."
+
+msgid "0"
+msgstr "0"
+
+msgid "File parsed with"
+msgstr "Soubor analyzován pomocí"
+
+msgid "File was generated on "
+msgstr "Soubor byl vytvořen dne "
+
+msgid " by Gramps "
+msgstr " programem Gramps "
+
+msgid "Period: "
+msgstr "Období: "
+
+#, python-brace-format
+msgid "\t{number} surname"
+msgid_plural "\t{number} surnames; no frequency yet"
+msgstr[0] "\t{number} příjmení"
+msgstr[1] "\t{number} příjmení; četnost zatím není k dispozici"
+msgstr[2] "\t{number} příjmení; četnost zatím není k dispozici"
+
+#, python-brace-format
+msgid "\t{number} surname; no frequency yet"
+msgstr "\tPočet příjmení: {number}; četnost zatím není k dispozici"
+
+#, python-brace-format
+msgid "\t{number} place"
+msgid_plural "\t{number} places"
+msgstr[0] "\t{number} místo"
+msgstr[1] "\t{number} místa"
+msgstr[2] "\t{number} míst"
+
+#, python-brace-format
+msgid "\t{number} note"
+msgid_plural "\t{number} notes"
+msgstr[0] "\t{number} poznámka"
+msgstr[1] "\t{number} poznámky"
+msgstr[2] "\t{number} poznámek"
+
+#, python-brace-format
+msgid "\t{number} source"
+msgid_plural "\t{number} sources"
+msgstr[0] "\t{number} pramen"
+msgstr[1] "\t{number} prameny"
+msgstr[2] "\t{number} pramenů"
+
+msgid "Gallery.html"
+msgstr "Galerie.html"
+
+#, python-format
+msgid "1. Has generated a media index on \"%(file)s\".\n"
+msgstr "1. Rejstřík médií byl vytvořen v souboru \"%(file)s\".\n"
+
+msgid "XML SyntaxError"
+msgstr "Chyba syntaxe XML"
+
+msgid "Matches XSD schema."
+msgstr "Odpovídá schématu XSD."
+
+msgid "xmllint: skip DTD validation"
+msgstr "xmllint: přeskočit validaci DTD"
+
+msgid "I am looking at ..."
+msgstr "Prohlížím ..."
+
+msgid "Content generated by Gramps"
+msgstr "Obsah vytvořený programem Gramps"
+
+msgid "List of sources"
+msgstr "Seznam pramenů"
+
+msgid "Australia"
+msgstr "Austrálie"
+
+msgid "Brazil"
+msgstr "Brazílie"
+
+msgid "India"
+msgstr "Indie"
+
+msgid "Norway"
+msgstr "Norsko"
+
+msgid "Portugal"
+msgstr "Portugalsko"
+
+#, python-format
+msgid "2. Has generated \"%s\".\n"
+msgstr "2. Soubor \"%s\" byl vytvořen.\n"
+
+#, python-format
+msgid ""
+"Try to open\n"
+" \"%s\"\n"
+" into your preferred web navigator ..."
+msgstr ""
+"Zkuste otevřít\n"
+" \"%s\"\n"
+" ve svém oblíbeném webovém prohlížeči ..."

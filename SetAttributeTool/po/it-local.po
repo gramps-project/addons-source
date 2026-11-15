@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,16 +12,61 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 msgid "Select filter to restrict people"
 msgstr "Seleziona filtro per restringere le persone"
 
+msgid "Attribute type to add or edit"
+msgstr "Tipo di attributo da aggiungere o modificare"
+
+msgid "Attribute value to add or edit"
+msgstr "Valore dell'attributo da aggiungere o modificare"
+
+msgid "Remove attribute type and value set"
+msgstr "Rimuovi il tipo e il valore di attributo impostati"
+
+msgid "Set Attribute"
+msgstr "Imposta attributo"
+
 msgid "Processing...\n"
 msgstr "Elaborazione in corso...\n"
+
+msgid "Setting attributes..."
+msgstr "Impostazione degli attributi..."
+
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr ""
+"Impostazione degli attributi '%s' su '%s'...\n"
+"\n"
+
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Impostati %d attributi '%s' su '%s'\n"
+
+msgid "Remove Attribute"
+msgstr "Rimuovi attributo"
 
 msgid "Removing attributes..."
 msgstr "Rimozione degli attributi..."
 
+#, python-format
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Rimozione di %d attributi '%s' con valore '%s'\n"
+
 msgid "Done!\n"
 msgstr "Fatto!\n"
+
+msgid "Set an attribute to a given value."
+msgstr "Imposta un attributo su un valore dato."

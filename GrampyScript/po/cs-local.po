@@ -1,0 +1,224 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Gram.py Script"
+msgstr "Skript Gram.py"
+
+msgid "Run a special Gramps Python script"
+msgstr "Spustit speciální skript v Pythonu pro Gramps"
+
+msgid "List All People"
+msgstr "Vypsat všechny osoby"
+
+msgid ""
+"Iterate over every person in the database and show their Gramps ID, given "
+"name, surname, and gender in the results table."
+msgstr ""
+"Projde všechny osoby v databázi a v tabulce výsledků zobrazí jejich ID "
+"Gramps, křestní jméno, příjmení a pohlaví."
+
+msgid "Filter By Surname"
+msgstr "Filtrovat podle příjmení"
+
+msgid ""
+"List only the people whose surname matches a given value — a starting point "
+"for narrowing any report down by a condition."
+msgstr ""
+"Seznam pouze těch osob, jejichž příjmení odpovídá dané hodnotě — výchozí bod "
+"pro zúžení jakéhokoli reportu podle podmínky."
+
+msgid "Family Overview"
+msgstr "Přehled rodiny"
+
+msgid ""
+"List every family together with the father, the mother, and how many "
+"children they have — a quick way to spot families that look incomplete."
+msgstr ""
+"Vypíše všechny rodiny společně s otcem, matkou a počtem jejich dětí — rychlý "
+"způsob, jak najít rodiny, které vypadají neúplně."
+
+msgid "Gender Breakdown (Pie Chart)"
+msgstr "Rozdělení podle pohlaví (výsečový graf)"
+
+msgid ""
+"Count how many people are male, female, or of unknown gender, then draw a "
+"pie chart of the totals. Check the Chart tab after running."
+msgstr ""
+"Spočítá muže, ženy a osoby neznámého pohlaví a poté z těchto počtů vykreslí "
+"výsečový graf. Po spuštění se podívejte na kartu Graf."
+
+msgid "Age At Death Histogram"
+msgstr "Histogram věku při úmrtí"
+
+msgid ""
+"For everyone with both a birth and a death event recorded, compute their age "
+"in whole years and draw a histogram of the distribution. Check the Chart tab "
+"after running."
+msgstr ""
+"U každého, kdo má zaznamenanou událost narození i úmrtí, vypočítá věk v "
+"celých letech a vykreslí histogram jeho rozdělení. Po spuštění se podívejte "
+"na kartu Graf."
+
+msgid "Mark Unsourced People As Private"
+msgstr "Označit osoby bez citací jako soukromé"
+
+msgid ""
+"Batch-edit example: find every person who has no citations attached and flag "
+"them as private, wrapped in begin_changes()/end_changes() so the edits "
+"happen inside a single, undoable transaction."
+msgstr ""
+"Ukázka hromadné úpravy: najde všechny osoby bez připojených citací a označí "
+"je jako soukromé. Úpravy jsou uzavřeny mezi begin_changes()/end_changes(), "
+"takže proběhnou v jediné transakci, kterou lze vrátit zpět."
+
+msgid "CSV-Ready People Report"
+msgstr "Sestava osob připravená pro CSV"
+
+msgid ""
+"Build a simple tabular report — ID, name, gender, birth year — for every "
+"person. Once it runs, use Data > Save as CSV or Copy to clipboard to export "
+"the Table tab's contents."
+msgstr ""
+"Vytvoří jednoduchou tabulkovou sestavu — ID, jméno, pohlaví, rok narození — "
+"pro každou osobu. Po spuštění použijte Data > Uložit jako CSV nebo Kopírovat "
+"do schránky k exportu obsahu karty Tabulka."
+
+msgid "Active Person Summary"
+msgstr "Souhrn aktivní osoby"
+
+msgid ""
+"Show a compact family summary for the currently active person: their record, "
+"parents, spouse, and children."
+msgstr ""
+"Zobrazí stručný rodinný souhrn pro aktuálně aktivní osobu: její záznam, "
+"rodiče, manžela/manželku a děti."
+
+msgid "Report On Selected People"
+msgstr "Sestava vybraných osob"
+
+msgid ""
+"List just the people currently selected (highlighted) in the People view. "
+"Select some rows in the People view before running this script."
+msgstr ""
+"Vypíše pouze osoby aktuálně vybrané (zvýrazněné) v pohledu Osoby. Před "
+"spuštěním tohoto skriptu vyberte v pohledu Osoby několik řádků."
+
+msgid "Find People Missing A Birth Date"
+msgstr "Nalezení osob s chybějícím datem narození"
+
+msgid ""
+"Data-quality check: list every person who has no recorded birth event, so "
+"you can prioritize research on those records."
+msgstr ""
+"Kontrola kvality údajů: vypíše všechny osoby bez zaznamenané události "
+"narození, abyste mohli upřednostnit bádání o těchto záznamech."
+
+msgid "Births Per Decade (Import Example)"
+msgstr "Narození podle desetiletí (ukázka importu)"
+
+msgid ""
+"Counts births by decade, using a decade() function imported from "
+"script_helpers.py in this same folder — a template for sharing helper code "
+"between your own scripts with a plain 'import' statement."
+msgstr ""
+"Počítá narození podle desetiletí pomocí funkce decade() importované ze "
+"souboru script_helpers.py ve stejné složce — vzor pro sdílení pomocného kódu "
+"mezi vlastními skripty pomocí běžného příkazu 'import'."
+
+msgid "Custom Filter Example"
+msgstr "Příklad vlastního filtru"
+
+msgid ""
+"Runs one of your own custom filters (from the Filters gramplet/editor) by "
+"name using custom_filter(). Change 'example filter' to the name of a filter "
+"you've already created; if the name doesn't match one, a warning shows up in "
+"the Output tab instead."
+msgstr ""
+"Pomocí custom_filter() spustí podle názvu jeden z vašich vlastních filtrů (z "
+"Grampletu nebo editoru filtrů). Nahraďte 'example filter' názvem filtru, "
+"který jste již vytvořili; pokud se název s žádným neshoduje, zobrazí se "
+"místo toho na kartě Výstup upozornění."
+
+msgid "Delete Unused Repositories (Delete Example)"
+msgstr "Odstranění nepoužívaných archivů (ukázka odstranění)"
+
+msgid ""
+"Demonstrates delete(): removes any Repository record that nothing else in "
+"the tree refers to. Most trees have no unused repositories, so this is "
+"unlikely to actually delete anything — it's meant to show the pattern, "
+"wrapped in begin_changes()/end_changes() as a single undoable transaction."
+msgstr ""
+"Demonstruje použití funkce delete(): odstraňuje jakýkoli záznam archivu, na "
+"který nic jiného ve stromu neodkazuje. Většina stromů nemá nepoužívané "
+"archivy, takže je nepravděpodobné, že by se něco skutečně smazalo — je to "
+"určeno k ukázání vzoru, zabaleného v begin_changes()/end_changes() jako "
+"jediné vratné transakce."
+
+msgid "Load query from a .script file"
+msgstr "Načíst dotaz ze souboru .script"
+
+msgid "Save query to a .script file"
+msgstr "Uložit dotaz do souboru .script"
+
+msgid "Save"
+msgstr "Uložit"
+
+msgid "Download results as a CSV file"
+msgstr "Stáhnout výsledky jako soubor CSV"
+
+msgid "Open..."
+msgstr "Otevřít..."
+
+msgid "Save as..."
+msgstr "Uložit jako..."
+
+msgid "Save as CSV"
+msgstr "Uložit jako CSV"
+
+msgid "Copy to clipboard"
+msgstr "Kopírovat do schránky"
+
+msgid "Execute <Alt+Enter>"
+msgstr "Spustit <Alt+Enter>"
+
+msgid "Execute the script"
+msgstr "Spustit skript"
+
+msgid "Table"
+msgstr "Tabulka"
+
+msgid "Chart"
+msgstr "Graf"
+
+msgid "Ready... (Tab for completions)"
+msgstr "Připraveno... (Tab pro doplňování)"
+
+msgid "Untitled"
+msgstr "Bez názvu"
+
+msgid ""
+"If you continue without saving, the changes you have made to this script "
+"will be lost."
+msgstr ""
+"Pokud budete pokračovat bez uložení, změny provedené v tomto skriptu budou "
+"ztraceny."
+
+msgid "Gram.py Script Edited Data"
+msgstr "Údaje upravené skriptem Gram.py"

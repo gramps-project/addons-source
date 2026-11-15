@@ -1,0 +1,291 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-18 11:34-0700\n"
+"PO-Revision-Date: 2026-10-27 21:51+0000\n"
+"Last-Translator: Pedro Albuquerque "
+"<pedroalbuquerque@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.11.dev0\n"
+
+msgid "Untitled source"
+msgstr "Fonte sem título"
+
+#, python-format
+msgid "page %s"
+msgstr "página %s"
+
+#, python-format
+msgid "via %s"
+msgstr "por meio de %s"
+
+msgid "none"
+msgstr "nada"
+
+#, python-format
+msgid "Sources: %s"
+msgstr "Fontes: %s"
+
+msgid "GWizard Merge"
+msgstr "União GWizard"
+
+msgid "No source database available for merge"
+msgstr "Não há base de dados fonte disponível para unir"
+
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr "O indivíduo-fonte já não existe: %s"
+
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr "O indivíduo-destino já não existe: %s"
+
+#, python-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+msgid "→"
+msgstr "→"
+
+msgid "New person"
+msgstr "Novo indivíduo"
+
+msgid "Incoming GEDCOM"
+msgstr "GEDCOM a receber"
+
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr "GEDCOM a receber: %s"
+
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr "Árvore de família actual: %s"
+
+msgid "Current Family Tree"
+msgstr "Árvore de família actual"
+
+msgid "Individual Details"
+msgstr "Detalhes individuais"
+
+msgid "Given Name"
+msgstr "Nome próprio"
+
+msgid "Surname Prefix"
+msgstr "Prefixo do apelido"
+
+msgid "Name Sources"
+msgstr "Fontes de nomes"
+
+msgid "Person Sources"
+msgstr "Fontes de indivíduos"
+
+msgid "Family Relations"
+msgstr "Relações familiares"
+
+msgid "Events & Other Records"
+msgstr "Eventos e outros registos"
+
+msgid "=>"
+msgstr "=>"
+
+#, python-format
+msgid "Move %s to current family tree"
+msgstr "Mover %s para a árvore actual"
+
+msgid "✓"
+msgstr "✓"
+
+#, python-format
+msgid "%d Citations"
+msgstr "%d citações"
+
+#, python-format
+msgid "%d Sources"
+msgstr "%d fontes"
+
+#, python-format
+msgid "%d Notes"
+msgstr "%d notas"
+
+#, python-format
+msgid "%d Media Records"
+msgstr "%d multimédia"
+
+#, python-format
+msgid "%d Repositories"
+msgstr "%d repositórios"
+
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+"Os dados a unir contêm referências a objectos externos que não existem na "
+"sua árvore genealógica:\n"
+"\n"
+"%s\n"
+"\n"
+"Para evitar ligações inválidas, estas referências têm de ser importadas com "
+"os dados que seleccionou. Confirma esta importação?"
+
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+"A fonte %d já na árvore genealógica será reutilizada (comparada com título, "
+"autor e informações de publicação)."
+msgstr[1] ""
+"As fontes %d já na árvore genealógica serão reutilizadas (comparadas com "
+"título, autor e informações de publicação)."
+
+msgid "Confirm Importing Missing References"
+msgstr "Confirme a importação de referências em falta"
+
+msgid "Configure Connection"
+msgstr "Configurar ligação"
+
+msgid "Load Data"
+msgstr "Carregar dados"
+
+msgid "Find Matching Persons"
+msgstr "Localizar indivíduos parecidos"
+
+msgid "Compare Differences"
+msgstr "Comparar diferenças"
+
+msgid "Apply Changes"
+msgstr "Aplicar alterações"
+
+msgid "Configure file path or authenticate with online service."
+msgstr ""
+"Configure o caminho do ficheiro ou autentique-se através do serviço em linha."
+
+msgid "Load/parse the external genealogy data into memory."
+msgstr "Carregar/analisar os dados genealógicos externos na memória."
+
+msgid "Search for potential matches in your database."
+msgstr "Procurar possíveis correspondências na sua base de dados."
+
+msgid "Compare fields side-by-side between the source and target."
+msgstr "Comparar os campos lado a lado entre a fonte e o destino."
+
+msgid "Merge selected changes or add new records to the database."
+msgstr ""
+"Unir as alterações seleccionadas ou adicionar novos registos à base de dados."
+
+msgid "GWizard Compare"
+msgstr "Comparação GWizard"
+
+msgid "No source database available for comparison"
+msgstr "Não há uma base de dados disponível para comparação"
+
+msgid "Populate Failed"
+msgstr "Falha ao povoar"
+
+msgid "Merge..."
+msgstr "Unir..."
+
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr "Abrir o diálogo de união campo a campo para o par seleccionado"
+
+msgid "Add as New..."
+msgstr "Adicionar como novo..."
+
+msgid "Add the selected incoming person as a new person"
+msgstr "Adicionar o indivíduo seleccionado como novo indivíduo"
+
+msgid "Record"
+msgstr "Registo"
+
+msgid "Born"
+msgstr "Nascido"
+
+msgid "Died"
+msgstr "Falecido"
+
+msgid "Not a Match"
+msgstr "Não corresponde"
+
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+"São pessoas diferentes: desassocie-as para que o indivíduo a receber possa "
+"ser adicionado como novo"
+
+#, python-format
+msgid "Differences: %d of %d"
+msgstr "Diferenças: %d de %d"
+
+msgid "(none)"
+msgstr "(nenhum)"
+
+#, python-format
+msgid "Gender: %s"
+msgstr "Sexo:%s"
+
+#, python-format
+msgid "ID: %s"
+msgstr "N-Id: %s"
+
+#, python-format
+msgid "FamilySearch: %s"
+msgstr "FamilySearch: %s"
+
+msgid "Add as New failed"
+msgstr "Falha ao adicionar como novo"
+
+msgid "Genealogy files"
+msgstr "Ficheiros de genealogia"
+
+msgid "Select File to Compare"
+msgstr "Seleccione o ficheiro a comparar"
+
+msgid "The selected file is missing."
+msgstr "O ficheiro seleccionado não existe."
+
+msgid "Could not read the selected file."
+msgstr "Impossível ler o ficheiro seleccionado."
+
+msgid "Loading Data Merge"
+msgstr "A carregar a união de dados"
+
+msgid "Reading the selected file..."
+msgstr "A ler o ficheiro seleccionado..."
+
+msgid "Load Failed"
+msgstr "Falha ao carregar"
+
+msgid "Building the comparison window..."
+msgstr "A construir a janela de comparação..."
+
+msgid "GWizard Data Merge"
+msgstr "União de dados GWizard"
+
+msgid "GWizard File Merge"
+msgstr "União de ficheiros GWizard"
+
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+"Ferramenta para comparar com outro ficheiro de genealogia (GEDCOM, Gramps "
+"XML, ...) e unir as diferenças seleccionadas, indivíduo a indivíduo."

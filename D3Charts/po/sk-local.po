@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-09-27 07:51+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-08 12:51+0000\n"
+"Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -36,25 +36,25 @@ msgid "Male Background Color"
 msgstr "Pozadie pre mužov"
 
 msgid "RGB-color for male box background."
-msgstr "RGB-farba pre pozadie rámika pre mužov."
+msgstr "Farba RGB pre pozadie rámika pre mužov."
 
 msgid "Male Expandable Background Color"
 msgstr "Farba rozbaľovacieho pozadia pre mužov"
 
 msgid "RGB-color for male expandable box background."
-msgstr "RGB-farba pozadia rozšíriteľného rámika pre mužov."
+msgstr "Farba RGB pozadia rozšíriteľného rámika pre mužov."
 
 msgid "Female Background"
 msgstr "Pozadie pre ženy"
 
 msgid "RGB-color for female box background."
-msgstr "RGB-farba pozadia rámika pre ženy."
+msgstr "Farba RGB pozadia rámika pre ženy."
 
 msgid "Female Expandable Background"
 msgstr "Farba rozbaľovacieho pozadia pre ženy"
 
 msgid "RGB-color for female expandable box background."
-msgstr "RGB-farba pozadia rozšíriteľného rámika pre ženy."
+msgstr "Farba RGB pozadia rozšíriteľného rámika pre ženy."
 
 msgid "The destination path for generated files."
 msgstr "Cieľová cesta pre vygenerované súbory."
@@ -125,22 +125,22 @@ msgid "Whether to show duplicate family trees in the report."
 msgstr "Či sa majú v správe zobraziť duplicitné rodostromy."
 
 msgid "Expanded Row Background Color"
-msgstr "Farba pozadia pre rozbalený riadok"
+msgstr "Farba pozadia pre rozšírený riadok"
 
 msgid "RGB-color for expanded row background."
-msgstr "RGB-farba pre pozadie rozbaleného riadku."
+msgstr "Farba RGB pre pozadie rozšíreného riadku."
 
 msgid "Expandable Background Color"
 msgstr "Farba rozbaliteľného pozadia"
 
 msgid "RGB-color for expandable row background."
-msgstr "RGB-farba pre pozadie rozbaliteľného riadku."
+msgstr "Farba RGB pre pozadie rozšíriteľného riadku."
 
 msgid "Non-Expandable Background Color"
 msgstr "Farba pozadia pre nerozbaliteľné"
 
 msgid "RGB-color for non-expandable row background."
-msgstr "RGB-farba pre pozadie nerozbaliteľného riadku."
+msgstr "Farba RGB pre pozadie nerozšíriteľného riadku."
 
 msgid "Include records marked private"
 msgstr "Zahrnúť záznamy označené ako súkromné"
@@ -269,10 +269,10 @@ msgid "Text Color"
 msgstr "Farba textu"
 
 msgid "RGB-color for biography text."
-msgstr "RGB-farba pre text biografie."
+msgstr "Farba RGB pre text biografie."
 
 msgid "RGB-color for biography tooltip."
-msgstr "RGB-farba pre nápovedu k biografii."
+msgstr "Farba RGB pre nápovedu k biografii."
 
 msgid "Header Font size"
 msgstr "Veľkosť písma záhlavia"
@@ -302,13 +302,13 @@ msgid "Paternal Background Color"
 msgstr "Farba pozadia otcovskej línie"
 
 msgid "RGB-color for paternal box background."
-msgstr "RGB-farba pre pozadie rámika otcovskej línie."
+msgstr "Farba RGB pre pozadie rámika otcovskej línie."
 
 msgid "Maternal Background"
 msgstr "Pozadie materskej línie"
 
 msgid "RGB-color for maternal box background."
-msgstr "RGB -farba pre pozadie rámika materskej línie."
+msgstr "Farba RGB pre pozadie rámika materskej línie."
 
 msgid "Ancestral Collapsible Tree"
 msgstr "Zbaliteľný strom predkov"

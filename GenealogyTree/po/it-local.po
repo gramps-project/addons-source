@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Albero degli ascendenti con genealogytree di LaTeX"
+
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Albero dei discendenti con genealogytree di LaTeX"
+
+msgid "Grandparent Tree"
+msgstr "Albero dei nonni"
+
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Albero dei nonni con genealogytree di LaTeX"
+
+msgid "Sandclock Tree"
+msgstr "Albero a clessidra"
+
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "Albero a clessidra con genealogytree di LaTeX"
+
+msgid "Sandclock Tree for a Family"
+msgstr "Albero a clessidra per una famiglia"
+
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "Albero a clessidra per una famiglia con genealogytree di LaTeX"
 
 msgid "The center family for the report"
 msgstr "La famiglia centrale del resoconto"
+
+msgid "Generations up"
+msgstr "Generazioni verso l'alto"
+
+msgid "Generations down"
+msgstr "Generazioni verso il basso"
 
 msgid "Include siblings"
 msgstr "Includi i fratelli e le sorelle"
@@ -28,3 +58,35 @@ msgstr "Includi immagini"
 
 msgid "Include images of people in the nodes."
 msgstr "Include immagini di persone nei nodi."
+
+msgid "Compact tree layout"
+msgstr "Disposizione compatta dell'albero"
+
+msgid ""
+"Use the genealogytree 'database pole reduced' template, which packs more "
+"generations per page. Useful for large sandclock trees that otherwise clip "
+"off the rendered page."
+msgstr ""
+"Usa il modello 'database pole reduced' di genealogytree, che inserisce più "
+"generazioni per pagina. Utile per alberi a clessidra grandi che altrimenti "
+"uscirebbero dalla pagina."
+
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "La persona %s non ha sia un nonno paterno sia uno materno"
+
+msgid "Grandparent family spacing"
+msgstr "Spaziatura delle famiglie dei nonni"
+
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Spaziatura aggiuntiva delle famiglie dei nonni (mm)"
+
+msgid "First spouse left"
+msgstr "Primo coniuge a sinistra"
+
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+"Metti sempre a sinistra il primo di più coniugi. Può aiutare a ridurre gli "
+"incroci delle linee in caso di più matrimoni."

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,14 +12,80 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "INFO"
+msgstr "INFORMACE"
+
+msgid "You have to select an image to generate this report."
+msgstr "Pro vytvoření této sestavy musíte vybrat obrázek."
+
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"Pro vytvoření této sestavy musíte vybrat vlastní poznámku nebo zrušit "
+"zaškrtnutí volby 'Zahrnout vlastní poznámku'."
+
+msgid "This report only supports PDF as output file format."
+msgstr "Tato sestava podporuje jako výstupní formát souboru pouze PDF."
+
 msgid "General:"
-msgstr "Hlavní"
+msgstr "Obecné:"
 
 msgid "Image type:"
 msgstr "Typ obrázku:"
+
+msgid "Heading"
+msgstr "Nadpis"
+
+msgid "Select a media file for this report"
+msgstr "Vyberte mediální soubor pro tuto sestavu"
+
+msgid "Custom note"
+msgstr "Vlastní poznámka"
+
+msgid "Select a note for this report"
+msgstr "Vyberte poznámku pro tuto sestavu"
+
+msgid "Include custom note"
+msgstr "Zahrnout vlastní poznámku"
+
+msgid "The custom note will be included"
+msgstr "Bude zahrnuta vlastní poznámka"
+
+msgid "Include referenced people"
+msgstr "Zahrnout odkazované osoby"
+
+msgid "Referenced people will be included"
+msgstr "Budou zahrnuty odkazované osoby"
+
+msgid "Include media data"
+msgstr "Zahrnout údaje o médiu"
+
+msgid "Tags, notes and attributes will be included"
+msgstr "Budou zahrnuty štítky, poznámky a atributy"
+
+msgid "Media width"
+msgstr "Šířka média"
+
+#, no-python-format
+msgid "Maximum media width in % of available page width."
+msgstr "Maximální šířka média v % dostupné šířky stránky."
+
+msgid "Media height"
+msgstr "Výška média"
+
+#, no-python-format
+msgid "Maximum media height in % of available page height."
+msgstr "Maximální výška média v % dostupné výšky stránky."
+
+msgid "Media Report"
+msgstr "Sestava médií"
+
+msgid "Generates report including images, image data and notes."
+msgstr "Generuje sestavu obsahující obrázky, údaje o obrázcích a poznámky."

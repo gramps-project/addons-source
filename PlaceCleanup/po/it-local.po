@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,19 +12,342 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Place Cleanup"
+msgstr "Pulizia dei luoghi"
+
+msgid ""
+"Place Cleanup Gramplet assists in merging places, as well as completing "
+"places from the GeoNames web database"
+msgstr ""
+"Il gramplet Pulizia dei luoghi aiuta a fondere i luoghi e a completarli con "
+"i dati del database web GeoNames"
+
+msgid ""
+"No\n"
+"Matches"
+msgstr ""
+"Nessuna\n"
+"corrispondenza"
 
 msgid "Find"
 msgstr "Trova"
 
+#, python-format
+msgid ""
+"%s\n"
+"Local\n"
+"Matches"
+msgstr ""
+"%s\n"
+"corrispondenze\n"
+"locali"
+
+msgid "Find GeoNames"
+msgstr "Cerca in GeoNames"
+
+msgid "Need to set GeoNames ID"
+msgstr "Occorre impostare l'ID GeoNames"
+
+msgid "Use the Help button for more information"
+msgstr "Usa il pulsante Aiuto per maggiori informazioni"
+
+msgid ""
+"Try changing the Title, or use the \"Edit\" button to finish this level of "
+"the place manually."
+msgstr ""
+"Prova a cambiare il titolo, oppure usa il pulsante \"Modifica\" per "
+"completare manualmente questo livello del luogo."
+
+#, python-format
+msgid ""
+"%s\n"
+"GeoNames\n"
+"Matches"
+msgstr ""
+"%s\n"
+"corrispondenze\n"
+"GeoNames"
+
+#, python-format
+msgid "%s matches were found"
+msgstr "Sono state trovate %s corrispondenze"
+
+msgid ""
+"Only 10 matches are shown.\n"
+"To see additional results, press the search button again.\n"
+"Or try changing the Title with more detail, such as a country."
+msgstr ""
+"Vengono mostrate solo 10 corrispondenze.\n"
+"Per vedere altri risultati, premi di nuovo il pulsante di ricerca.\n"
+"Oppure prova a cambiare il titolo con più dettagli, ad esempio uno stato."
+
+msgid "Problem getting data from web"
+msgstr "Problema nel recupero dei dati dal web"
+
+msgid "Web request Timeout, you can try again..."
+msgstr "Timeout della richiesta web, puoi riprovare..."
+
+msgid "Problem getting data from GeoNames"
+msgstr "Problema nel recupero dei dati da GeoNames"
+
+msgid ""
+"One of the places you are merging encloses the other!\n"
+"Please choose another place."
+msgstr ""
+"Uno dei luoghi che stai fondendo racchiude l'altro!\n"
+"Scegli un altro luogo."
+
+msgid ""
+"The place you chose is enclosed in the place you are workin on!\n"
+"Please cancel and choose another place."
+msgstr ""
+"Il luogo che hai scelto è racchiuso nel luogo su cui stai lavorando!\n"
+"Annulla e scegli un altro luogo."
+
+msgid "GeoNames web site"
+msgstr "Sito web di GeoNames"
+
+msgid "GeoNames author"
+msgstr "Autore di GeoNames"
+
+msgid "GeoNames was founded by Marc Wick. You can reach him at "
+msgstr "GeoNames è stato fondato da Marc Wick. Puoi contattarlo all'indirizzo "
+
+msgid ""
+"GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Switzerland.\n"
+"This work is licensed under a "
+msgstr ""
+"GeoNames è un progetto di Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Svizzera.\n"
+"Quest'opera è distribuita con licenza "
+
+msgid "Creative Commons Attribution 3.0 License"
+msgstr "Creative Commons Attribuzione 3.0"
+
+#, python-format
+msgid "Add Souce/Repo/Note (%s)"
+msgstr "Aggiungi fonte/deposito/nota (%s)"
+
+msgid "This Place is not used!"
+msgstr "Questo luogo non è utilizzato!"
+
+msgid ""
+"You should delete it, or, if it contains useful notes or other data, use the "
+"Find to merge it into a valid place."
+msgstr ""
+"Dovresti eliminarlo oppure, se contiene note utili o altri dati, usare Trova "
+"per fonderlo in un luogo valido."
+
+msgid "City, County, State, Country"
+msgstr "Città, provincia, regione, stato"
+
 msgid "Primary Name"
 msgstr "Nome primario"
+
+msgid "The current Primary name."
+msgstr "Il nome principale attuale."
 
 msgid "The postal code for the place, if any."
 msgstr "Il codice postale del luogo, se c'è."
 
+msgid "What type of place this is. Eg 'Country', 'City', ... ."
+msgstr "Il tipo di luogo. Ad es. 'Stato', 'Città', ... ."
+
+msgid "Check this box if you want to keep the original Postal code."
+msgstr "Spunta questa casella se vuoi mantenere il CAP originale."
+
+msgid "Check this box if you want to keep the original Place Type."
+msgstr "Spunta questa casella se vuoi mantenere il tipo di luogo originale."
+
+msgid "Orig"
+msgstr "Orig"
+
+msgid "Check this box if you want to keep the original Latitude and Longitude."
+msgstr ""
+"Spunta questa casella se vuoi mantenere la latitudine e la longitudine "
+"originali."
+
+msgid "The Gramps ID.."
+msgstr "L'ID Gramps.."
+
+msgid "Check this box if you want to keep the original Gramps ID."
+msgstr "Spunta questa casella se vuoi mantenere l'ID Gramps originale."
+
+msgid ""
+"Alterative Names\n"
+"Select one or more rows and press 'Keep' button to toggle the 'include into "
+"place' status ."
+msgstr ""
+"Nomi alternativi\n"
+"Seleziona una o più righe e premi il pulsante 'Mantieni' per attivare o "
+"disattivare lo stato 'includi nel luogo' ."
+
+msgid "Inc"
+msgstr "Incl"
+
+msgid "Lang"
+msgstr "Lingua"
+
+msgid ""
+"Select one or more rows and use this button to keep the alternative names."
+msgstr ""
+"Seleziona una o più righe e usa questo pulsante per mantenere i nomi "
+"alternativi."
+
+msgid "Select one row and use this button to make the row the primary name."
+msgstr ""
+"Seleziona una riga e usa questo pulsante per renderla il nome principale."
+
+msgid "Discard"
+msgstr "Scarta"
+
+msgid ""
+"Select one or more rows and use this button to discard the alternative names."
+msgstr ""
+"Seleziona una o più righe e usa questo pulsante per scartare i nomi "
+"alternativi."
+
+msgid "Cancel the operation, no changes are made to your Place."
+msgstr "Annulla l'operazione, il luogo non viene modificato."
+
+msgid "Store the values in your Place."
+msgstr "Memorizza i valori nel luogo."
+
+msgid "Keep Web Links"
+msgstr "Mantieni i collegamenti web"
+
+msgid "Puts web links (typically wikipedia) into your place."
+msgstr "Inserisce nel luogo i collegamenti web (di solito wikipedia)."
+
+msgid "Add citation and source to Place"
+msgstr "Aggiungi citazione e fonte al luogo"
+
+msgid "This Adds a Citation to your place, citing GeoNames."
+msgstr "Aggiunge al luogo una citazione che cita GeoNames."
+
+msgid "GeoNames User ID"
+msgstr "ID utente GeoNames"
+
+msgid "Enter you Geonames user ID here."
+msgstr "Inserisci qui il tuo ID utente GeoNames."
+
+msgid "Alternative Names Languages to keep"
+msgstr "Lingue dei nomi alternativi da mantenere"
+
+msgid ""
+"Enter the two or three letter codes for the languages you wish to keep, "
+"seperated by spaces.\n"
+"For example \"en fr ru\".\n"
+"These languages will initially be checked off on the Names result display.\n"
+"If you often see an un-checked name in a specific language you want, add the "
+"language code here."
+msgstr ""
+"Inserisci i codici di due o tre lettere delle lingue che vuoi mantenere, "
+"separati da spazi.\n"
+"Ad esempio \"en fr ru\".\n"
+"Queste lingue saranno inizialmente spuntate nella visualizzazione dei nomi "
+"trovati.\n"
+"Se vedi spesso non spuntato un nome in una lingua che ti interessa, aggiungi "
+"qui il codice della lingua."
+
+msgid "Currently Enclosed Places"
+msgstr "Luoghi attualmente racchiusi"
+
+msgid ""
+"When cleaning a place that is already enclosed, this affects what is done.\n"
+"If '<b>Keep current Enclosure</b>' is selected, no changes to the enclosing "
+"place is made.\n"
+"If '<b>Replace with GeoNames Enclosure</b>' is selected, the enclosed place "
+"is changed to the next level GeoNames place.  This may result in some unused "
+"places remaining in your database."
+msgstr ""
+"Quando si ripulisce un luogo già racchiuso, questa opzione determina cosa "
+"viene fatto.\n"
+"Se è selezionato '<b>Mantieni il luogo contenitore attuale</b>', il luogo "
+"contenitore non viene modificato.\n"
+"Se è selezionato '<b>Sostituisci con il luogo contenitore di GeoNames</b>', "
+"il luogo racchiuso viene collegato al luogo GeoNames del livello "
+"successivo.  Nel database potrebbero quindi restare alcuni luoghi "
+"inutilizzati."
+
+msgid "Keep current Enclosure"
+msgstr "Mantieni il luogo contenitore attuale"
+
+msgid "Replace with GeoNames Enclosure"
+msgstr "Sostituisci con il luogo contenitore di GeoNames"
+
+msgid ""
+"Current Place title.\n"
+"You can edit this to help find other places, particularly to reduce the "
+"number of results."
+msgstr ""
+"Titolo attuale del luogo.\n"
+"Puoi modificarlo per trovare altri luoghi, in particolare per ridurre il "
+"numero di risultati."
+
+msgid "Search your local places and GeoNames for a match."
+msgstr "Cerca una corrispondenza tra i luoghi locali e in GeoNames."
+
+msgid ""
+"Continue to merge (for local places), or to complete a place (for GeoNames)."
+msgstr ""
+"Continua per fondere (per i luoghi locali) o per completare un luogo (per "
+"GeoNames)."
+
+msgid ""
+"Split up Title, Edit manually, and enclose with next level of hierarchy.  "
+"For use when the initial component of the Title is too detailed to be found "
+"in the gazetteer."
+msgstr ""
+"Suddivide il titolo, lo modifica manualmente e lo collega al livello "
+"successivo della gerarchia.  Da usare quando la prima parte del titolo è "
+"troppo dettagliata per essere trovata nel dizionario geografico."
+
 msgid "Next Place"
 msgstr "Luogo successivo"
 
+msgid "Find an incomplete place."
+msgstr "Trova un luogo incompleto."
+
 msgid "Set preferences"
 msgstr "Imposta le preferenze"
+
+msgid "Select one of these places to continue the cleanup process."
+msgstr "Seleziona uno di questi luoghi per proseguire con la pulizia."
+
+msgid "Search result places"
+msgstr "Luoghi trovati"
+
+msgid ""
+"Checking the 'Populated' checkbox causes the GeoNames search to include "
+"'Populted places', places where people live and work."
+msgstr ""
+"Spuntando la casella 'Abitati' la ricerca in GeoNames include i 'luoghi "
+"abitati', cioè i luoghi in cui le persone vivono e lavorano."
+
+msgid "Populated"
+msgstr "Abitati"
+
+msgid ""
+"Checking the 'Admin' checkbox cause the GeoNames search to include "
+"adminstrative subdivisions in the search (countries, states, counties etc.)."
+msgstr ""
+"Spuntando la casella 'Amministrativi' la ricerca in GeoNames include le "
+"suddivisioni amministrative (stati, regioni, province ecc.)."
+
+msgid ""
+"Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
+"variety of other places in the search (churches, burial grounds, buildings "
+"etc.)."
+msgstr ""
+"Spuntando la casella 'Punti' la ricerca in GeoNames include molti altri tipi "
+"di luoghi (chiese, cimiteri, edifici ecc.)."
+
+msgid "Admin"
+msgstr "Amministrativi"
+
+msgid "Spot"
+msgstr "Punti"

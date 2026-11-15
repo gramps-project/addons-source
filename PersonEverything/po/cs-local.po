@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-04-17 16:23+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,11 +12,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#, python-format
+msgid "All information about %s"
+msgstr "Všechny údaje – %s"
+
+msgid "Primary name"
+msgstr "Hlavní jméno"
+
+msgid "Alternate name"
+msgstr "Alternativní jméno"
+
+msgid " This is the primary birth event."
+msgstr " Toto je hlavní událost narození."
+
+msgid " This is the primary death event."
+msgstr " Toto je hlavní událost úmrtí."
 
 msgid "Relationship to Father"
 msgstr "Vztah k otci"
@@ -24,8 +40,93 @@ msgstr "Vztah k otci"
 msgid "Relationship to Mother"
 msgstr "Vztah k matce"
 
+msgid "Parent Family"
+msgstr "Rodičovská rodina"
+
+msgid ""
+"Details of any children and events etc. would be in a similar report for the "
+"father or mother."
+msgstr ""
+"Podrobnosti o dětech, událostech apod. by byly v obdobné sestavě pro otce "
+"nebo matku."
+
+msgid "Temple and status"
+msgstr "Chrám a stav"
+
+msgid "LDS Ordinance family"
+msgstr "Rodina obřadu SPD"
+
+msgid "LDS "
+msgstr "SPD "
+
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr "Ulice, město, okres, stát, PSČ, země, telefonní číslo"
+
+msgid "Media Reference"
+msgstr "Odkaz na médium"
+
+msgid "Description and Path"
+msgstr "Popis a cesta"
+
+msgid "Referenced Region"
+msgstr "Odkazovaná oblast"
+
+msgid "Mime type"
+msgstr "Typ MIME"
+
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
 msgstr ""
 "Křestní jméno (jména): Titul, Křestní jméno, Přípona, Volací jméno, "
 "Přezdívka, Rodinná přezdívka"
+
+msgid "Note type"
+msgstr "Typ poznámky"
+
+msgid "Parent Place"
+msgstr "Nadřazené místo"
+
+msgid "Alternate Location"
+msgstr "Alternativní místo"
+
+msgid "Alternative Name"
+msgstr "Alternativní jméno"
+
+msgid "Latitude, Longitude"
+msgstr "Zeměpisná šířka, zeměpisná délka"
+
+msgid "Repository type"
+msgstr "Typ archivu"
+
+msgid "Repository reference"
+msgstr "Odkaz na archiv"
+
+msgid "Media type"
+msgstr "Typ média"
+
+msgid "Origin type"
+msgstr "Typ původu"
+
+msgid "Prefix, surname, connector"
+msgstr "Předpona, příjmení, spojka"
+
+msgid "{This is the primary surname}"
+msgstr "{Toto je hlavní příjmení}"
+
+msgid "Tag name"
+msgstr "Název štítku"
+
+msgid "Tag colour and priority"
+msgstr "Barva a priorita štítku"
+
+msgid "No source information found"
+msgstr "Nebyly nalezeny údaje o pramenech"
+
+msgid "The style used for the title of the page."
+msgstr "Styl použitý pro nadpis stránky."
+
+msgid "PersonEverything Report"
+msgstr "Sestava všech údajů o osobě"
+
+msgid "Produces a report containing everything about the active person"
+msgstr "Vytvoří sestavu obsahující všechny údaje o aktivní osobě"

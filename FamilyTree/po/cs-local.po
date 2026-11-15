@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-04-26 15:09+0000\n"
-"Last-Translator: Jiri Svanda <svanda.jiri@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -41,7 +41,7 @@ msgid "died"
 msgstr "úmrtí"
 
 msgid "buried"
-msgstr "pohřeb"
+msgstr "pohřbení"
 
 msgid "cremated"
 msgstr "kremace"
@@ -73,7 +73,7 @@ msgstr "%(placeholder)s"
 
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
-msgstr "%(placeholder)s %(partial)s"
+msgstr "%(placeholder)s (%(partial)s)"
 
 #, python-format
 msgid "in %(place)s"
@@ -89,8 +89,14 @@ msgstr "Ústřední rodina pro strom"
 msgid "Ancestor Generations"
 msgstr "Generací předků"
 
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Počet generací předků zahrnutých do stromu"
+
 msgid "Descendant Generations"
 msgstr "Generací potomků"
+
+msgid "The number of descendant generations to include in the tree"
+msgstr "Zvolte počet generací potomků"
 
 msgid "Kekule number of husband"
 msgstr "Kekuléovo číslo manžela"
@@ -100,7 +106,7 @@ msgid ""
 "numbers"
 msgstr ""
 "Kekuléovo číslo manžela (ústřední rodina). Nastavte hodnotu 0, aby se "
-"Kekuléova čísla nezobrazovaly"
+"Kekuléova čísla nezobrazovala"
 
 msgid "Scale to fit on a single page"
 msgstr "Přizpůsobit na jednu stránku"
@@ -128,6 +134,12 @@ msgstr "Mužská linie a nemanželské děti"
 
 msgid "Female line"
 msgstr "Ženská linie"
+
+msgid "Shuffle colors"
+msgstr "Promíchat barvy"
+
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Zda se mají barvy promíchat, nebo seřadit podle duhy."
 
 msgid "Replace first name with call name"
 msgstr "Nahradit křestní jméno volacím jménem"
@@ -162,7 +174,7 @@ msgid "Fall back to baptism if birth event missing"
 msgstr "Použít křest, pokud chybí narození"
 
 msgid "Fall back to burial or cremation if death event missing"
-msgstr "Použít pohřeb nebo kremaci, pokud chybí úmrtí"
+msgstr "Použít pohřbení nebo kremaci, pokud chybí úmrtí"
 
 msgid "Protect private items"
 msgstr "Chránit soukromé údaje"
@@ -177,7 +189,7 @@ msgid "The style used for names."
 msgstr "Styl použitý pro jména."
 
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "Styl použitý po údaje (narození, úmrtí, svatba, rozvod)."
+msgstr "Styl použitý pro údaje (narození, úmrtí, svatba, rozvod)."
 
 msgid "Produces a graphical family tree."
 msgstr "Vytvoří grafický rodinný strom."

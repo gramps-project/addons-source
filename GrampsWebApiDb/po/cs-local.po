@@ -1,0 +1,201 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Generate Gramps Web API key"
+msgstr "Vygenerovat klíč Gramps Web API"
+
+msgid "Server URL"
+msgstr "URL serveru"
+
+msgid "e.g. https://your-server/api"
+msgstr "např. https://your-server/api"
+
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "Generate API Key"
+msgstr "Vygenerovat klíč API"
+
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+"Zadejte URL serveru, uživatelské jméno a heslo a potom klikněte na "
+"Vygenerovat klíč API."
+
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
+
+msgid "Copy"
+msgstr "Zkopírovat"
+
+msgid "Create Synced Family Tree for this key"
+msgstr "Vytvořit synchronizovaný rodokmen pro tento klíč"
+
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"Pro tuto relaci už existuje %s. Kliknutím na Vytvořit synchronizovaný "
+"rodokmen jej použijete přímo, nebo vyplňte formulář výše a vygenerujte jiný "
+"klíč."
+
+msgid "Please fill in the server URL, username, and password."
+msgstr "Vyplňte URL serveru, uživatelské jméno a heslo."
+
+msgid "Generating API key…"
+msgstr "Generuje se klíč API…"
+
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr ""
+"Přihlášení se nezdařilo (HTTP %d): zkontrolujte uživatelské jméno a heslo."
+
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr "Server vrátil chybu (HTTP %d %s): zkontrolujte URL serveru."
+
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr "Server není dostupný: zkontrolujte URL serveru. (%s)"
+
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "Neočekávaná odpověď serveru: %s"
+
+#, python-format
+msgid "Error: %s"
+msgstr "Chyba: %s"
+
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"Hotovo. Pro tuto relaci Gramps je nyní nastaven %s — restart není potřeba. "
+"Zkopírujte níže uvedený klíč a nastavte jej také v prostředí shellu pro "
+"příští spuštění."
+
+msgid "Looking up account identity…"
+msgstr "Zjišťování identity účtu…"
+
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"Rodokmen s názvem \"%s\" již existuje. Místo vytváření dalšího jej otevřete "
+"pomocí Rodokmeny -> Spravovat rodokmeny."
+
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "Chyba při vytváření rodokmenu: %s"
+
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr ""
+"Byl vytvořen rodokmen \"%s\". Synchronizaci zahájíte jeho otevřením pomocí "
+"Rodokmeny -> Spravovat rodokmeny."
+
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+"Z URL serveru Gramps Web API, uživatelského jména a hesla vytvoří hodnotu "
+"GRAMPS_WEB_API_KEY pro GrampsWebApiDb a volitelně pro ni vytvoří "
+"odpovídající, správně pojmenovaný rodokmen GrampsWebApiDb."
+
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+"Účet přihlašovaný pomocí GRAMPS_WEB_API_KEY nemá na serveru oprávnění k této "
+"operaci (HTTP 403 Forbidden). Vygenerujte klíč pro účet s dostatečnými "
+"oprávněními nebo požádejte správce serveru, aby tomuto účtu přístup udělil."
+
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+"Tento rodokmen se jmenuje \"%(actual)s\", ale GRAMPS_WEB_API_KEY se nyní "
+"přihlašuje jako \"%(expected)s\". Pokud má rodokmen zrcadlit tento účet, "
+"přejmenujte jej na \"%(expected_typeable)s\" (Rodokmeny -> Spravovat "
+"rodokmeny), nebo otevřete/vytvořte rodokmen, který už tento název má — "
+"opětovné použití tohoto rodokmenu by smísilo jeho stávající místní údaje s "
+"údaji druhého účtu."
+
+#, python-format
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY is missing server "
+"permission(s) this addon requires: %(missing)s. Grant it at least the "
+"\"%(role)s\" role on the server (or ask an administrator to), then reopen "
+"this Family Tree. Opening it as-is would leave the local mirror silently "
+"incomplete or unable to save changes back."
+msgstr ""
+"Účtu přihlašovanému pomocí GRAMPS_WEB_API_KEY chybí oprávnění serveru "
+"vyžadovaná tímto rozšířením: %(missing)s. Udělte mu na serveru alespoň roli "
+"\"%(role)s\" (nebo o to požádejte správce) a poté tento rodokmen znovu "
+"otevřete. Při otevření v současném stavu by místní kopie zůstala bez "
+"upozornění neúplná nebo by nemohla ukládat změny zpět."
+
+#, python-format
+msgid ""
+"This server runs Gramps %(actual)s, but this addon needs a server running "
+"Gramps %(required)s or newer: older servers serialize their transaction "
+"history in a format it cannot read. Upgrade the Gramps installation behind "
+"the Gramps Web API server (or ask its administrator to)."
+msgstr ""
+"Tento server používá Gramps %(actual)s, ale rozšíření potřebuje server s "
+"Gramps %(required)s nebo novějším: starší servery ukládají historii "
+"transakcí ve formátu, který rozšíření nedokáže přečíst. Aktualizujte "
+"instalaci Gramps používanou serverem Gramps Web API (nebo o to požádejte "
+"jeho správce)."
+
+msgid "Retry local change after server conflict"
+msgstr "Zopakovat místní změnu po konfliktu se serverem"
+
+msgid "Clear local mirror before full resync"
+msgstr "Vymazat místní kopii před úplnou opětovnou synchronizací"
+
+msgid "GrampsWebApiDb"
+msgstr "GrampsWebApiDb"
+
+msgid "Gramps _Web API Database"
+msgstr "Databáze Gramps _Web API"
+
+msgid ""
+"Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
+"database, mirrored locally for speed."
+msgstr ""
+"Používat server Gramps Web API (např. gramps-connect nebo Gramps Web) jako "
+"živou databázi s místní kopií pro rychlejší práci."

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,11 +12,62 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "DNA Matches"
+msgstr "Shody DNA"
+
+msgid "Gramplet to display a list of DNA matches"
+msgstr "Gramplet zobrazující seznam shod DNA"
+
 msgid "Pers."
 msgstr "Osob."
+
+msgid "Rel."
+msgstr "Vztah"
+
+msgid "S. DNA"
+msgstr "Sdíl. DNA"
+
+msgid "S. Seg."
+msgstr "Sdíl. seg."
+
+msgid "L. Seg"
+msgstr "Nejv. seg."
+
+msgid "Src(s)"
+msgstr "Prameny"
+
+msgid "Shared DNA"
+msgstr "Sdílená DNA"
+
+msgid "Shared Segments"
+msgstr "Sdílené segmenty"
+
+msgid "Largest Segment"
+msgstr "Největší segment"
+
+msgid "Source(s)"
+msgstr "Pramen(y)"
+
+msgid "Double-click on a row to navigate to the matched person."
+msgstr "Dvojklikem na řádek přejdete ke shodné osobě."
+
+msgid "Right click to edit selected association."
+msgstr "Pravým tlačítkem myši upravíte vybranou asociaci."
+
+msgid "LEGEND"
+msgstr "VYSVĚTLIVKY"
+
+msgid "="
+msgstr "="
+
+msgid "Not specified"
+msgstr "Neuvedeno"
+
+msgid "cM"
+msgstr "cM"

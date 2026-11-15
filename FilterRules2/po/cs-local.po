@@ -1,0 +1,90 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Y-chromosomal inheritance of <filter>"
+msgstr "Dědičnost chromozomu Y výsledků <filtru>"
+
+msgid ""
+"Matches recorded descendants of a filter result following Y-chromosomal "
+"inheritance patterns."
+msgstr ""
+"Vyhledá zaznamenané potomky výsledků filtru podle schématu dědičnosti "
+"chromozomu Y."
+
+msgid "X-chromosomal ancestors of <person>"
+msgstr "Předci osoby <osoba> podle dědičnosti chromozomu X"
+
+msgid ""
+"Matches ancestors of <person> following a X-chromosomal inheritance pattern."
+msgstr "Vyhledá předky osoby <osoba> podle schématu dědičnosti chromozomu X."
+
+msgid "X-chromosomal descendants of <person>"
+msgstr "Potomci osoby <osoba> podle dědičnosti chromozomu X"
+
+msgid ""
+"Matches descendants of <person> following a X-chromosomal inheritance "
+"pattern."
+msgstr "Vyhledá potomky osoby <osoba> podle schématu dědičnosti chromozomu X."
+
+msgid "Patrilineal progenitor of <person>"
+msgstr "Praotec v otcovské linii osoby <osoba>"
+
+msgid "Matches the earliest recorded patrilineal ancestor father."
+msgstr "Vyhledá nejvzdálenějšího zaznamenaného předka v přímé otcovské linii."
+
+msgid "Mitochondrial inheritance of <filter>"
+msgstr "Mitochondriální dědičnost výsledků <filtru>"
+
+msgid ""
+"Matches recorded descendants of a filter result following mitochondrial "
+"inheritance patterns."
+msgstr ""
+"Vyhledá zaznamenané potomky výsledků filtru podle schématu mitochondriální "
+"dědičnosti."
+
+msgid "Matrilineal progenitrix of <person>"
+msgstr "Pramáti v mateřské linii osoby <osoba>"
+
+msgid "Matches the earliest recorded matrilineal ancestor mother."
+msgstr "Vyhledá nejvzdálenější zaznamenanou předkyni v přímé mateřské linii."
+
+msgid ""
+"Matches all descendants of <person> following a X-chromosomal inheritance "
+"pattern."
+msgstr ""
+"Vyhledá všechny potomky osoby <osoba> podle schématu dědičnosti chromozomu X."
+
+msgid "Mitochondrial inheritance of <person>"
+msgstr "Mitochondriální dědičnost osoby <osoba>"
+
+msgid ""
+"Matches recorded descendants of person following mitochondrial inheritance "
+"patterns."
+msgstr ""
+"Vyhledá zaznamenané potomky osoby podle schématu mitochondriální dědičnosti."
+
+msgid "Y-chromosomal inheritance of <person>"
+msgstr "Dědičnost chromozomu Y osoby <osoba>"
+
+msgid ""
+"Matches recorded descendants of person following Y-chromosomal inheritance "
+"patterns."
+msgstr ""
+"Vyhledá zaznamenané potomky osoby podle schématu dědičnosti chromozomu Y."

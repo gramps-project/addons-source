@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,16 +12,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Set properties for multiple places"
+msgstr "Imposta le proprietà di più luoghi"
+
+msgid ""
+"This gramplet allows setting properties for multiple places at the same time"
+msgstr ""
+"Questo gramplet permette di impostare le proprietà di più luoghi "
+"contemporaneamente"
+
+msgid "New enclosing place"
+msgstr "Nuovo luogo contenitore"
+
+msgid "Timespan:"
+msgstr "Periodo:"
+
+msgid "Set timespan for enclosing places"
+msgstr "Imposta il periodo per i luoghi contenitori"
+
+msgid "Clear original enclosing places"
+msgstr "Rimuovi i luoghi contenitori originali"
 
 msgid "Clear tags"
 msgstr "Pulisci etichette"
 
+msgid "Generate hierarchy"
+msgstr "Genera la gerarchia"
+
+msgid "use spaces as separator"
+msgstr "usa gli spazi come separatore"
+
+msgid "reverse hierarchy"
+msgstr "inverti la gerarchia"
+
 msgid "Replace text"
 msgstr "Sostituisci testo"
+
+msgid "Use regex"
+msgstr "Usa regex"
+
+msgid "Old text:"
+msgstr "Vecchio testo:"
 
 msgid "New text:"
 msgstr "Nuovo testo:"
 
+msgid "Clear selections"
+msgstr "Cancella le selezioni"
+
 msgid "Apply to selected places"
 msgstr "Applica ai luoghi selezionati"
+
+msgid "Setting place properties"
+msgstr "Impostazione delle proprietà dei luoghi"
+
+#, python-brace-format
+msgid "Regex operation failed: {}"
+msgstr "Operazione regex non riuscita: {}"
+
+msgid "PlaceUpdate"
+msgstr "PlaceUpdate"
+
+msgid "Gramplet to manipulate multiple places"
+msgstr "Gramplet per modificare più luoghi"

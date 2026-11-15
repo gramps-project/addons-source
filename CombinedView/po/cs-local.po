@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-12-05 07:00+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,11 +12,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s; místo: %(place)s"
+
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
+
+msgid "Add existing child to family"
+msgstr "Přidat stávající dítě do rodiny"
 
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
@@ -29,3 +40,36 @@ msgstr "%(event_type)s: %(date)s"
 #, python-format
 msgid "%(event_type)s: %(place)s"
 msgstr "%(event_type)s: %(place)s"
+
+msgid "Click to make this event active"
+msgstr "Kliknutím nastavíte tuto událost jako aktivní"
+
+msgid "Click to visit this link"
+msgstr "Kliknutím otevřete tento odkaz"
+
+msgid ": "
+msgstr ": "
+
+msgid "Combined"
+msgstr "Kombinovaný"
+
+msgid "A view showing relationships and events for a person"
+msgstr "Pohled zobrazující vztahy a události osoby"
+
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Je potřeba nastavit 'výchozí osobu', na kterou se má přejít. Zvolte pohled "
+"Osoby, vyberte osobu, kterou chcete nastavit jako 'výchozí osobu', a "
+"potvrďte volbu pomocí nabídky Úpravy -> Nastavit výchozí osobu."
+
+msgid "Edit the active event"
+msgstr "Upravit aktivní událost"
+
+msgid "Show Tags"
+msgstr "Zobrazit štítky"
+
+msgid "Vertical Details"
+msgstr "Svislé uspořádání podrobností"

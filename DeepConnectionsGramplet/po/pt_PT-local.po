@@ -2,9 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 13:30-0700\n"
-"PO-Revision-Date: 2026-09-25 18:51+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
+"PO-Revision-Date: 2026-10-27 21:51+0000\n"
+"Last-Translator: Pedro Albuquerque "
+"<pedroalbuquerque@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet Ligações profundas"
@@ -24,6 +25,16 @@ msgstr ""
 
 msgid "Deep Connections"
 msgstr "Ligações profundas"
+
+msgid "sibling"
+msgstr "irmão"
+
+msgid "mentioned in note"
+msgstr "mencionado na nota"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (associação)"
 
 msgid "⏸ Pause"
 msgstr "⏸ Pausa"
@@ -60,25 +71,6 @@ msgstr ""
 "Profundidade da procura: {depth} | Indivíduos processados: {processed} | "
 "Tamanho da fila: {queue_size}"
 
-msgid "mentioned in note"
-msgstr "mencionado na nota"
-
-msgid "Note on Family"
-msgstr "Nota da família"
-
-msgid "sibling"
-msgstr "irmão"
-
-msgid "Note on Parent Family"
-msgstr "Nota da família-mãe"
-
-#, python-format
-msgid "%s (association)"
-msgstr "%s (associação)"
-
-msgid "Note on Person"
-msgstr "Nota do indivíduo"
-
 #, python-format
 msgid ""
 "\n"
@@ -86,6 +78,24 @@ msgid ""
 msgstr ""
 "\n"
 "   %s de "
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Encontrada relação n.º%d: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Em pausa.\n"
+"Clique em Continuar para procurar mais relações.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Em pausa. - Clique em Continuar para procurar mais parentescos"
 
 msgid "Error: No Home Person set"
 msgstr "Erro: sem indivíduo principal"
@@ -112,24 +122,6 @@ msgstr "  <b>%s</b> (indivíduo activo)...\n"
 
 msgid "Searching for connections..."
 msgstr "A procurar ligações..."
-
-#, python-format
-msgid ""
-"Found relation #%d: \n"
-"   "
-msgstr ""
-"Encontrada relação n.º%d: \n"
-"   "
-
-msgid ""
-"Paused.\n"
-"Press Continue to search for additional relations.\n"
-msgstr ""
-"Em pausa.\n"
-"Clique em Continuar para procurar mais relações.\n"
-
-msgid "Paused - Press Continue to search for more relations"
-msgstr "Em pausa. - Clique em Continuar para procurar mais parentescos"
 
 #, python-format
 msgid ""

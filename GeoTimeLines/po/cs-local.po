@@ -1,0 +1,121 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "TimeLines Map"
+msgstr "Mapa časových os"
+
+msgid "Choose View Format"
+msgstr "Vybrat formát pohledu"
+
+msgid "Almost done"
+msgstr "Téměř hotovo"
+
+msgid "Gathering data"
+msgstr "Shromažďování údajů"
+
+#, python-format
+msgid "Number of Persons: %s"
+msgstr "Počet osob: %s"
+
+msgid ""
+"Stagger the map markers\n"
+"to differentiate different\n"
+"markers at the same location"
+msgstr ""
+"Posunout značky na mapě,\n"
+"aby bylo možné odlišit různé\n"
+"značky na stejném místě"
+
+msgid ""
+"Stagger Radius (hectometers)\n"
+"as measured along the equator\n"
+"(includes latitude distortion)"
+msgstr ""
+"Poloměr posunu (hektometry)\n"
+"měřený podél rovníku\n"
+"(zahrnuje zkreslení podle zeměpisné šířky)"
+
+msgid ""
+"Display markers for unknown ancestors\n"
+"based on earliest descendant location"
+msgstr ""
+"Zobrazit značky neznámých předků\n"
+"podle nejranějšího místa potomka"
+
+msgid ""
+"Days to keep lines on the map after\n"
+"an event"
+msgstr ""
+"Počet dní, po které mají čáry zůstat na mapě po\n"
+"události"
+
+msgid "Use custom map icons"
+msgstr "Použít vlastní ikony mapy"
+
+msgid ""
+"If there is no birth event for a person, their age\n"
+"is assumed to be this at their first event"
+msgstr ""
+"Pokud osoba nemá událost narození, předpokládá se\n"
+"při její první události tento věk"
+
+msgid ""
+"If there is no death event for a person, they will\n"
+"be assumed dead at this age"
+msgstr ""
+"Pokud osoba nemá událost úmrtí, předpokládá se,\n"
+"že zemřela v tomto věku"
+
+msgid "Number of steps"
+msgstr "Počet kroků"
+
+msgid "Type of steps"
+msgstr "Typ kroků"
+
+msgid "Steps per millisecond"
+msgstr "Kroky za milisekundu"
+
+msgid "Initial map view on Gramps startup"
+msgstr "Počáteční zobrazení mapy při spuštění Gramps"
+
+msgid ""
+"Initial map view after startup and\n"
+"after changing the active person"
+msgstr ""
+"Počáteční zobrazení mapy po spuštění a\n"
+"po změně aktivní osoby"
+
+msgid "Show map travel lines on startup"
+msgstr "Při spuštění zobrazit čáry cest na mapě"
+
+msgid "Show time ticks on navigation bar on startup"
+msgstr "Při spuštění zobrazit časové značky na navigační liště"
+
+msgid "TimeLines Map options"
+msgstr "Možnosti mapy časových os"
+
+msgid ""
+"A view showing all the places visited by a person or persons on various date."
+msgstr ""
+"Pohled zobrazující všechna místa navštívená jednou nebo více osobami v "
+"různých datech."
+
+msgid "TimeLines map"
+msgstr "Mapa časových os"

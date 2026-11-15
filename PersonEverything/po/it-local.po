@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 #, python-format
 msgid "All information about %s"
@@ -23,6 +23,9 @@ msgstr "Nome principale"
 
 msgid "Alternate name"
 msgstr "Nome alternativo"
+
+msgid " This is the primary birth event."
+msgstr " Questo è l'evento di nascita principale."
 
 msgid " This is the primary death event."
 msgstr " Questo è l'evento decesso primario."
@@ -36,8 +39,36 @@ msgstr "Relazione con la madre"
 msgid "Parent Family"
 msgstr "Famiglia genitore"
 
+msgid ""
+"Details of any children and events etc. would be in a similar report for the "
+"father or mother."
+msgstr ""
+"I dettagli su eventuali figli, eventi ecc. si troverebbero in un resoconto "
+"simile per il padre o la madre."
+
+msgid "Temple and status"
+msgstr "Tempio e stato"
+
+msgid "LDS Ordinance family"
+msgstr "Famiglia dell'ordinanza LDS"
+
+msgid "LDS "
+msgstr "LDS "
+
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr "Via, città, provincia, regione, CAP, stato, numero di telefono"
+
+msgid "Media Reference"
+msgstr "Riferimento multimediale"
+
 msgid "Description and Path"
 msgstr "Descrizione e percorso"
+
+msgid "Referenced Region"
+msgstr "Regione referenziata"
+
+msgid "Mime type"
+msgstr "Tipo MIME"
 
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
@@ -47,8 +78,23 @@ msgstr ""
 msgid "Note type"
 msgstr "Tipo di nota"
 
+msgid "Parent Place"
+msgstr "Luogo superiore"
+
+msgid "Alternate Location"
+msgstr "Posizione alternativa"
+
+msgid "Alternative Name"
+msgstr "Nome alternativo"
+
 msgid "Latitude, Longitude"
 msgstr "Latitudine, longitudine"
+
+msgid "Repository type"
+msgstr "Tipo di deposito"
+
+msgid "Repository reference"
+msgstr "Riferimento al deposito"
 
 msgid "Media type"
 msgstr "Tipo di oggetto multimediale"
@@ -56,5 +102,26 @@ msgstr "Tipo di oggetto multimediale"
 msgid "Origin type"
 msgstr "Tipo di origine"
 
+msgid "Prefix, surname, connector"
+msgstr "Prefisso, cognome, connettore"
+
+msgid "{This is the primary surname}"
+msgstr "{Questo è il cognome principale}"
+
+msgid "Tag name"
+msgstr "Nome dell'etichetta"
+
+msgid "Tag colour and priority"
+msgstr "Colore e priorità dell'etichetta"
+
+msgid "No source information found"
+msgstr "Nessuna informazione sulla fonte trovata"
+
 msgid "The style used for the title of the page."
 msgstr "Lo stile usato per il titolo della pagina."
+
+msgid "PersonEverything Report"
+msgstr "Resoconto PersonEverything"
+
+msgid "Produces a report containing everything about the active person"
+msgstr "Produce un resoconto con tutte le informazioni sulla persona attiva"

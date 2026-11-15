@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:11-0700\n"
-"PO-Revision-Date: 2026-09-10 08:51+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,62 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Context"
+msgstr "Contesto"
+
+msgid ""
+"A chart placing a person in the context of their immediate family: the "
+"couple in the centre, each partner's parents above them, their children "
+"below, and each partner's siblings in a column to their own side, eldest at "
+"the top. Click any box to re-centre the chart on that person; the name in "
+"bold marks the way back to the home person."
+msgstr ""
+"Un grafico che colloca una persona nel contesto della sua famiglia stretta: "
+"la coppia al centro, i genitori di ciascun partner sopra di loro, i figli "
+"sotto e i fratelli e le sorelle di ciascun partner in una colonna dalla "
+"propria parte, il maggiore in alto. Fai clic su un riquadro per centrare di "
+"nuovo il grafico su quella persona; il nome in grassetto indica la strada "
+"per tornare alla persona principale."
+
+msgid "Show the previous family"
+msgstr "Mostra la famiglia precedente"
+
+msgid "Show the next family"
+msgstr "Mostra la famiglia successiva"
+
+msgid "No person is active."
+msgstr "Nessuna persona attiva."
+
+#, python-format
+msgid "Family %(current)d of %(total)d"
+msgstr "Famiglia %(current)d di %(total)d"
+
+#, python-format
+msgid "family %d lies toward the home person"
+msgstr "la famiglia %d si trova in direzione della persona principale"
+
+msgid "<b>Bold</b> marks the way to the home person"
+msgstr "Il <b>grassetto</b> indica la strada verso la persona principale"
 
 msgid "Show siblings"
 msgstr "Mostra i fratelli e le sorelle"
+
+msgid "About Context View"
+msgstr "Informazioni su Vista contesto"
+
+msgid "Show tag colour"
+msgstr "Mostra il colore dell'etichetta"
+
+msgid "Details in each box"
+msgstr "Dettagli in ogni riquadro"
+
+msgid "Name only"
+msgstr "Solo il nome"
+
+msgid "Name and dates"
+msgstr "Nome e date"
+
+msgid "Name, dates and places"
+msgstr "Nome, date e luoghi"

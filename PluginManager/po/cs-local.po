@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,11 +12,82 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Plugin Manager Enhanced"
+msgstr "Rozšířený správce zásuvných modulů"
+
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "Správce rozšíření a zásuvných modulů s několika dalšími možnostmi"
+
+msgid "Plugin Manager - Enhanced"
+msgstr "Správce zásuvných modulů – rozšířený"
+
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"Zadejte hledaná slova pro filtrování rozšíření.\n"
+"Všechna slova musí být obsažena někde v řádku nebo\n"
+"v názvu souboru rozšíření, aby bylo zahrnuto do výsledků.\n"
+"Na velikosti písmen ani pořadí slov nezáleží."
+
 msgid "Search..."
 msgstr "Hledat..."
+
+msgid "Restart..."
+msgstr "Restartovat..."
+
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr "Restartujte Gramps, aby mohly být bezpečně dokončeny změny rozšíření."
+
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr "Chyba při odstraňování adresáře '%s'; odinstalace se možná nezdařila"
+
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"Položky označené '*' pocházejí od autorů třetích stran,\n"
+"<s>přeškrtnuté</s> položky jsou skryté"
+
+msgid "Hide"
+msgstr "Skrýt"
+
+msgid "Show hidden items"
+msgstr "Zobrazit skryté položky"
+
+msgid "Show Built-in items"
+msgstr "Zobrazit vestavěné položky"
+
+msgid "* indicates 3rd party addon"
+msgstr "* označuje rozšíření třetí strany"
+
+msgid "Plugins"
+msgstr "Zásuvné moduly"
+
+msgid "Unhide"
+msgstr "Zobrazit"
+
+msgid "Uninstall"
+msgstr "Odinstalovat"
+
+msgid "*Available"
+msgstr "*Dostupné"
+
+msgid "Built-in"
+msgstr "Vestavěné"
+
+msgid "*Installed"
+msgstr "*Nainstalované"
+
+msgid "Update Available"
+msgstr "Je dostupná aktualizace"

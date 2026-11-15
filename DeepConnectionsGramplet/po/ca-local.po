@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
 "PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
@@ -25,24 +25,15 @@ msgstr ""
 msgid "Deep Connections"
 msgstr "Connexions profundes"
 
-msgid "mentioned in note"
-msgstr "esmentat a la nota"
-
-msgid "Note on Family"
-msgstr "Nota sobre la família"
-
 msgid "sibling"
 msgstr "germà"
 
-msgid "Note on Parent Family"
-msgstr "Nota sobre la família dels pares"
+msgid "mentioned in note"
+msgstr "esmentat a la nota"
 
 #, python-format
 msgid "%s (association)"
 msgstr "%s (associació)"
-
-msgid "Note on Person"
-msgstr "Nota sobre la Persona"
 
 #, python-format
 msgid ""
@@ -51,20 +42,6 @@ msgid ""
 msgstr ""
 "\n"
 "   %s de "
-
-msgid "No Active Person set."
-msgstr "No s'ha fixat Persona Activa."
-
-msgid "Looking for relationship between\n"
-msgstr "S'està cercant la relació entre\n"
-
-#, python-format
-msgid "  <b>%s</b> (Home Person) and\n"
-msgstr "  <b>%s</b> (Persona activa) i\n"
-
-#, python-format
-msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "  <b>%s</b> (Persona activa)...\n"
 
 #, python-format
 msgid ""
@@ -80,3 +57,17 @@ msgid ""
 msgstr ""
 "En pausa.\n"
 "Premi Continuar per buscar parentescs addicionals.\n"
+
+msgid "No Active Person set."
+msgstr "No s'ha fixat Persona Activa."
+
+msgid "Looking for relationship between\n"
+msgstr "S'està cercant la relació entre\n"
+
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (Persona activa) i\n"
+
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (Persona activa)...\n"

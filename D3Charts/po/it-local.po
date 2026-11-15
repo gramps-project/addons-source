@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-31 16:24+0000\n"
-"Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -41,6 +41,9 @@ msgstr "Colore RGB per lo sfondo dei riquadri maschili."
 msgid "Male Expandable Background Color"
 msgstr "Colore di sfondo espandibile per i maschi"
 
+msgid "RGB-color for male expandable box background."
+msgstr "Colore RGB per lo sfondo dei riquadri espandibili maschili."
+
 msgid "Female Background"
 msgstr "Colore di fondo delle donne"
 
@@ -49,6 +52,9 @@ msgstr "Colore RGB per lo sfondo dei riquadri femminili."
 
 msgid "Female Expandable Background"
 msgstr "Colore di sfondo espandibile per le femmine"
+
+msgid "RGB-color for female expandable box background."
+msgstr "Colore RGB per lo sfondo dei riquadri espandibili femminili."
 
 msgid "The destination path for generated files."
 msgstr "Il percorso di destinazione per i file generati."
@@ -165,6 +171,12 @@ msgstr "Meccanismo di Contrazione/Espansione"
 
 msgid "Entire node."
 msgstr "Nodo intero."
+
+msgid "Arrow images at start of node."
+msgstr "Immagini a freccia all'inizio del nodo."
+
+msgid "Plus/Minus images at start of node."
+msgstr "Immagini più/meno all'inizio del nodo."
 
 msgid "Where to click to expand/contract nodes."
 msgstr "Dove cliccare per espandere/contrarre nodi."
@@ -285,6 +297,15 @@ msgstr "Dimensione dei caratteri del corpo del testo"
 msgid "The font size in pixels for biography body text."
 msgstr ""
 "La dimensione in pixel dei caratteri del testo del corpo della biografia."
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Genera una pagina web con una rappresentazione grafica dei discendenti (SVG) "
+"sotto forma di albero rientrato comprimibile, realizzato con la libreria "
+"JavaScript D3.js."
 
 msgid "Ancestral Fan Chart Options"
 msgstr "Opzioni grafico a ventaglio ascendenza"

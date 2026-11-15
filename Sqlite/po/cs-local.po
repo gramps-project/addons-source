@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "January 1"
+msgstr "1. ledna"
+
+msgid "March 1"
+msgstr "1. března"
+
+msgid "March 25"
+msgstr "25. března"
+
+msgid "September 1"
+msgstr "1. září"
+
+msgid "Flowed"
+msgstr "Volně zalamovaný"
+
+msgid "Preformatted"
+msgstr "Předformátovaný"
+
+#, python-format
+msgid "Export Complete: %d second"
+msgid_plural "Export Complete: %d seconds"
+msgstr[0] "Export dokončen: %d sekunda"
+msgstr[1] "Export dokončen: %d sekundy"
+msgstr[2] "Export dokončen: %d sekund"
+
+msgid "SQLite Import"
+msgstr "Import SQLite"
+
+msgid "SQLite is a common local database format"
+msgstr "SQLite je běžný formát místních databází"
+
+msgid "SQLite Export"
+msgstr "Export SQLite"
+
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Import dokončen: %d sekunda"
+msgstr[1] "Import dokončen: %d sekundy"
+msgstr[2] "Import dokončen: %d sekund"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "PhpGedView"
+msgstr "PhpGedView"
+
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "Scarica un file GEDCOM da un server phpGedView."
+
+msgid "Fetching index list..."
+msgstr "Recupero dell'elenco dell'indice..."
 
 msgid "Fetching records..."
 msgstr "Recupero di informazioni..."
+
+msgid "Logging in..."
+msgstr "Accesso in corso..."
+
+msgid "Fetching GEDCOM..."
+msgstr "Recupero del GEDCOM..."
+
+msgid "Importing GEDCOM..."
+msgstr "Importazione del GEDCOM..."
+
+msgid "Error: login failed"
+msgstr "Errore: accesso non riuscito"
 
 msgid "done."
 msgstr "fatto."
@@ -23,5 +44,30 @@ msgstr "fatto."
 msgid "Connecting..."
 msgstr "Connessione..."
 
+msgid "Get version..."
+msgstr "Lettura della versione..."
+
+#, python-format
+msgid "Version %s"
+msgstr "Versione %s"
+
+msgid "Reading file list..."
+msgstr "Lettura dell'elenco dei file..."
+
+msgid "Error: Invalid URL"
+msgstr "Errore: URL non valido"
+
 msgid "- default -"
 msgstr "- predefinito -"
+
+msgid "phpGedView import"
+msgstr "Importazione da phpGedView"
+
+msgid "http://"
+msgstr "http://"
+
+msgid "Username:"
+msgstr "Nome utente:"
+
+msgid "Password:"
+msgstr "Password:"

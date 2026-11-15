@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
 "PO-Revision-Date: 2026-08-12 22:56+0000\n"
 "Last-Translator: Artur <wy66m6xm@anonaddy.me>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
@@ -28,6 +28,16 @@ msgstr "Gramplet pokazujący głębokie powiązania między osobą aktywną a do
 msgid "Deep Connections"
 msgstr "Głębokie połączenia"
 
+msgid "sibling"
+msgstr "rodzeństwo"
+
+msgid "mentioned in note"
+msgstr "wspomniane w notatce"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (powiązanie)"
+
 msgid "Pause the current search"
 msgstr "Wstrzymaj bieżące wyszukiwanie"
 
@@ -43,25 +53,6 @@ msgstr "🗑 Wyczyść"
 msgid "Clear all results and reset"
 msgstr "Wyczyść wszystkie wyniki i zresetuj"
 
-msgid "mentioned in note"
-msgstr "wspomniane w notatce"
-
-msgid "Note on Family"
-msgstr "Notatka o rodzinie"
-
-msgid "sibling"
-msgstr "rodzeństwo"
-
-msgid "Note on Parent Family"
-msgstr "Notatka o rodzinie rodziców"
-
-#, python-format
-msgid "%s (association)"
-msgstr "%s (powiązanie)"
-
-msgid "Note on Person"
-msgstr "Notatka o osobie"
-
 #, python-format
 msgid ""
 "\n"
@@ -69,6 +60,21 @@ msgid ""
 msgstr ""
 "\n"
 "   %s z "
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Znaleziono relację #%d: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Pauza.\n"
+"Wciśnij Kontynuuj aby wyszukać dodatkowe relacje.\n"
 
 msgid "No Active Person set."
 msgstr "Nie wybrano aktywnej osoby."
@@ -86,21 +92,6 @@ msgstr "  <b>%s</b> (Osoba domowa) i\n"
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "Aktywna osoba: <b>%s</b>\n"
-
-#, python-format
-msgid ""
-"Found relation #%d: \n"
-"   "
-msgstr ""
-"Znaleziono relację #%d: \n"
-"   "
-
-msgid ""
-"Paused.\n"
-"Press Continue to search for additional relations.\n"
-msgstr ""
-"Pauza.\n"
-"Wciśnij Kontynuuj aby wyszukać dodatkowe relacje.\n"
 
 #, python-brace-format
 msgid "Error during search: {}"

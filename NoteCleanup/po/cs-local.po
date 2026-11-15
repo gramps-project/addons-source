@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,11 +12,118 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Note Cleanup"
+msgstr "Vyčištění poznámek"
+
+msgid "Clean up Notes that contain HTML markup"
+msgstr "Vyčistit poznámky obsahující značky HTML"
+
+msgid "Note Cleanup Tool"
+msgstr "Nástroj pro vyčištění poznámek"
+
+msgid "Cleaned Notes"
+msgstr "Vyčištěné poznámky"
+
+msgid "Links Only"
+msgstr "Pouze odkazy"
+
+msgid "Issues"
+msgstr "Problémy"
+
+msgid "Close the Note Cleanup Tool"
+msgstr "Zavřít nástroj pro vyčištění poznámek"
+
+msgid "Save All"
+msgstr "Uložit vše"
+
+msgid "Save All Changes"
+msgstr "Uložit všechny změny"
+
 msgid "Search"
 msgstr "Vyhledávání"
+
+msgid "Search for Untidy Notes"
+msgstr "Vyhledat poznámky k vyčištění"
+
+msgid "Generate Test Notes"
+msgstr "Vygenerovat testovací poznámky"
+
+msgid ""
+"Generate Test notes in range N99996-N99999.\n"
+"These are added to your database, so you may want to work with a test "
+"database or delete them later."
+msgstr ""
+"Vygenerovat testovací poznámky v rozsahu N99996-N99999.\n"
+"Přidají se do vaší databáze, proto můžete raději použít testovací databázi "
+"nebo je později odstranit."
+
+msgid "Export the results to a text file"
+msgstr "Exportovat výsledky do textového souboru"
+
+msgid ""
+"Please back up your database before running this tool.\n"
+"\n"
+"Start the tool by pressing the 'Search' button, then review the results.\n"
+"When satisifed press the 'Save All' button to save your work.\n"
+"You may export a summary list of the notes that were found using the "
+"'Export' button."
+msgstr ""
+"Před spuštěním tohoto nástroje zálohujte databázi.\n"
+"\n"
+"Spusťte nástroj tlačítkem 'Vyhledávání' a poté zkontrolujte výsledky.\n"
+"Až budete spokojeni, uložte svou práci tlačítkem 'Uložit vše'.\n"
+"Pomocí tlačítka 'Export' můžete exportovat souhrnný seznam nalezených "
+"poznámek."
+
+msgid "Clean up Notes"
+msgstr "Vyčistit poznámky"
+
+msgid "Cleanup Test Notes"
+msgstr "Vyčištění testovacích poznámek"
+
+msgid "Add Test Note"
+msgstr "Přidat testovací poznámku"
+
+msgid "Export results to a text file"
+msgstr "Exportovat výsledky do textového souboru"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Chyba při zápisu přehledu: %s"
+
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown Before cleanup in this box."
+msgstr ""
+"\n"
+"\n"
+"V tomto poli se zobrazují poznámky vybrané v levém panelu před vyčištěním."
+
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown After cleanup in this box.\n"
+"If you wish to make changes, you can make them here and use the style "
+"controls in the toolbar above."
+msgstr ""
+"\n"
+"\n"
+"V tomto poli se zobrazují poznámky vybrané v levém panelu po vyčištění.\n"
+"Pokud chcete provést změny, můžete je udělat zde a použít ovládací prvky "
+"formátování na panelu nástrojů výše."
+
+msgid "Saving Notes"
+msgstr "Ukládání poznámek"
+
+msgid "Saving Cleaned Notes"
+msgstr "Ukládání vyčištěných poznámek"
+
+msgid "Scanning Notes"
+msgstr "Prohledávání poznámek"

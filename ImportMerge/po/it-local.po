@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Import and Merge tool"
+msgstr "Strumento di importazione e fusione"
+
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr ""
+"Confronta un database Gramps XML con quello attuale e permette di fondere le "
+"differenze."
+
+msgid "Import and merge a Gramps XML"
+msgstr "Importa e fondi un file Gramps XML"
 
 msgid "Missing"
 msgstr "Mancante"
@@ -26,8 +39,25 @@ msgstr "Ignora"
 msgid "Add Import"
 msgstr "Aggiungi importazione"
 
+msgid "Merge into original"
+msgstr "Fondi nell'originale"
+
+msgid "Merge into import"
+msgstr "Fondi nell'importazione"
+
+msgid "Replace with import"
+msgstr "Sostituisci con l'importazione"
+
 msgid "Keep original"
 msgstr "Mantieni originale"
+
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"Usa i pulsanti qui sotto per impostare l''Azione' per ogni differenza.  Non "
+"verrà apportata alcuna modifica all'albero finché non premi 'Fatto' e "
+"confermi."
 
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
@@ -108,6 +138,13 @@ msgstr "Importa e fondi"
 msgid "Replace"
 msgstr "Sostituzioni"
 
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"Un '*' indica che l'azione è stata contrassegnata automaticamente, un '?' "
+"indica un conflitto tra contrassegni automatici."
+
 msgid "Import file"
 msgstr "Importa file"
 
@@ -117,6 +154,13 @@ msgstr "Seleziona le differenze che vuoi esaminare."
 msgid "Object Name/Description"
 msgstr "Nome/descrizione oggetto"
 
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"Dettagli del dato, con l'elemento dell'albero attuale, l'elemento "
+"dell'albero importato e il risultato (quando scelto)."
+
 msgid "Object and item"
 msgstr "Oggetto ed elemento"
 
@@ -125,6 +169,9 @@ msgstr "Differenze"
 
 msgid "This button will ignore the difference, no changes to your tree."
 msgstr "Questo pulsante ignora la differenza, nessuna modifica al tuo albero."
+
+msgid "Unmark"
+msgstr "Togli il contrassegno"
 
 msgid "This button will add the imported data as a new object to your tree."
 msgstr ""
@@ -154,8 +201,31 @@ msgid "This button will replace your tree data with the imported data."
 msgstr ""
 "Questo pulsante sostituisce i dati del tuo albero con i dati importati."
 
+msgid "Merge Import"
+msgstr "Fondi l'importazione"
+
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr ""
+"Questo pulsante fonderà i dati importati nel tuo albero usando i dati "
+"importati come base."
+
 msgid "Edit Import"
 msgstr "Modifica importazione"
 
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"Questo pulsante modificherà i dati importati.  I dati dovranno comunque "
+"essere fusi, aggiunti o sostituiti."
+
 msgid "Show more details"
 msgstr "Mostra altri dettagli"
+
+msgid "Automark Families"
+msgstr "Contrassegna automaticamente le famiglie"
+
+msgid "Automark Parent Families"
+msgstr "Contrassegna automaticamente le famiglie dei genitori"

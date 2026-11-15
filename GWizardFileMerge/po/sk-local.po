@@ -1,0 +1,293 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-18 11:34-0700\n"
+"PO-Revision-Date: 2026-11-08 12:51+0000\n"
+"Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+
+msgid "Untitled source"
+msgstr "Zdroj bez názvu"
+
+#, python-format
+msgid "page %s"
+msgstr "strana %s"
+
+#, python-format
+msgid "via %s"
+msgstr "cez %s"
+
+msgid "none"
+msgstr "žiadne"
+
+#, python-format
+msgid "Sources: %s"
+msgstr "Zdroje: %s"
+
+msgid "GWizard Merge"
+msgstr "Zlúčenie GWizard"
+
+msgid "No source database available for merge"
+msgstr "Na zlúčenie nie je k dispozícii zdrojová databáza"
+
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr "Zdrojová osoba už neexistuje: %s"
+
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr "Cieľová osoba už neexistuje: %s"
+
+#, python-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+msgid "→"
+msgstr "→"
+
+msgid "New person"
+msgstr "Nová osoba"
+
+msgid "Incoming GEDCOM"
+msgstr "Vstupný GEDCOM"
+
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr "Vstupný GEDCOM: %s"
+
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr "Aktuálny rodostrom: %s"
+
+msgid "Current Family Tree"
+msgstr "Aktuálny rodostrom"
+
+msgid "Individual Details"
+msgstr "Podrobnosti o osobe"
+
+msgid "Given Name"
+msgstr "Dané (krstné) meno"
+
+msgid "Surname Prefix"
+msgstr "Predpona priezviska"
+
+msgid "Name Sources"
+msgstr "Zdroje mena"
+
+msgid "Person Sources"
+msgstr "Zdroje osoby"
+
+msgid "Family Relations"
+msgstr "Rodinné vzťahy"
+
+msgid "Events & Other Records"
+msgstr "Udalosti a iné záznamy"
+
+msgid "=>"
+msgstr "=>"
+
+#, python-format
+msgid "Move %s to current family tree"
+msgstr "Presunúť %s do aktuálneho rodostromu"
+
+msgid "✓"
+msgstr "✓"
+
+#, python-format
+msgid "%d Citations"
+msgstr "Počet citácií: %d"
+
+#, python-format
+msgid "%d Sources"
+msgstr "Počet zdrojov: %d"
+
+#, python-format
+msgid "%d Notes"
+msgstr "Počet poznámok: %d"
+
+#, python-format
+msgid "%d Media Records"
+msgstr "Počet mediálnych záznamov: %d"
+
+#, python-format
+msgid "%d Repositories"
+msgstr "Počet repozitárov: %d"
+
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+"Údaje, ktoré sa zlučujú, obsahujú odkazy na externé objekty, ktoré vo vašom "
+"rodostrome neexistujú:\n"
+"\n"
+"%s\n"
+"\n"
+"Aby sa predišlo nefunkčným odkazom, tieto chýbajúce odkazy musia byť "
+"importované spolu s vybranými detailami. Potvrdzujete import týchto "
+"chýbajúcich odkazov?"
+
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+"%d zdroj, ktorý je už vo vašom rodostromel, bude znovu použitý (zhoda podľa "
+"názvu, autora a publikačných informácií)."
+msgstr[1] ""
+"%d zdroje, ktoré sú už vo vašom rodostrome, budú znovu použité (zhoda podľa "
+"názvu, autora a publikačných informácií)."
+msgstr[2] ""
+"%d zdrojov, ktoré sú už vo vašom rodostrome, bude znovu použitých (zhoda "
+"podľa názvu, autora a publikačných informácií)."
+
+msgid "Confirm Importing Missing References"
+msgstr "Potvrdenie importovania chýbajúcich odkazov"
+
+msgid "Configure Connection"
+msgstr "Konfigurácia pripojenia"
+
+msgid "Load Data"
+msgstr "Načítanie údajov"
+
+msgid "Find Matching Persons"
+msgstr "Vyhľadanie zodpovedajúcich osôb"
+
+msgid "Compare Differences"
+msgstr "Porovnanie rozdielov"
+
+msgid "Apply Changes"
+msgstr "Aplikovanie zmien"
+
+msgid "Configure file path or authenticate with online service."
+msgstr "Konfigurujte cestu k súboru alebo sa autentifikujte u online služby."
+
+msgid "Load/parse the external genealogy data into memory."
+msgstr "Načítajte/spracujte externé genealogické údaje do pamäte."
+
+msgid "Search for potential matches in your database."
+msgstr "Hľadajte potenciálne zhody vo svojej databáze."
+
+msgid "Compare fields side-by-side between the source and target."
+msgstr "Porovnajte vedľa seba polia medzi zdrojom a cieľom."
+
+msgid "Merge selected changes or add new records to the database."
+msgstr "Zlúčte vybrané zmeny alebo pridajte nové záznamy do databázy."
+
+msgid "GWizard Compare"
+msgstr "Porovnanie GWizard"
+
+msgid "No source database available for comparison"
+msgstr "Na porovnanie nie je k dispozícii zdrojová databáza"
+
+msgid "Populate Failed"
+msgstr "Naplnenie zlyhalo"
+
+msgid "Merge..."
+msgstr "Zlúčiť..."
+
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr "Otvorí dialóg zlúčenia po jednotlivých poliach pre vybranú dvojicu"
+
+msgid "Add as New..."
+msgstr "Pridať ako novú..."
+
+msgid "Add the selected incoming person as a new person"
+msgstr "Pridá vybranú vstupnú osobu ako novú osobu"
+
+msgid "Record"
+msgstr "Záznam"
+
+msgid "Born"
+msgstr "Narodenie"
+
+msgid "Died"
+msgstr "Úmrtie"
+
+msgid "Not a Match"
+msgstr "Nie je zhoda"
+
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+"Ide o rôznych ľudí: zrušte ich spárovanie, aby bolo možné vstupnú osobu "
+"pridať ako novú"
+
+#, python-format
+msgid "Differences: %d of %d"
+msgstr "Rozdiely: %d z %d"
+
+msgid "(none)"
+msgstr "(žiadne)"
+
+#, python-format
+msgid "Gender: %s"
+msgstr "Pohlavie: %s"
+
+#, python-format
+msgid "ID: %s"
+msgstr "ID: %s"
+
+#, python-format
+msgid "FamilySearch: %s"
+msgstr "FamilySearch: %s"
+
+msgid "Add as New failed"
+msgstr "Pridanie ako novej osoby zlyhalo"
+
+msgid "Genealogy files"
+msgstr "Genealogické súbory"
+
+msgid "Select File to Compare"
+msgstr "Vyberte súbor na porovnanie"
+
+msgid "The selected file is missing."
+msgstr "Vybraný súbor chýba."
+
+msgid "Could not read the selected file."
+msgstr "Vybraný súbor se nepodarilo prečítať."
+
+msgid "Loading Data Merge"
+msgstr "Načítavanie zlúčenia údajov"
+
+msgid "Reading the selected file..."
+msgstr "Čítanie vybraného súboru..."
+
+msgid "Load Failed"
+msgstr "Načítanie zlyhalo"
+
+msgid "Building the comparison window..."
+msgstr "Vytváranie okna porovnania..."
+
+msgid "GWizard Data Merge"
+msgstr "Zlúčenie údajov GWizard"
+
+msgid "GWizard File Merge"
+msgstr "GWizard Zlúčenie súborov"
+
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+"Nástroj na spracovanie rodostromu, ktorý umožňuje porovnať iný genealogický "
+"súbor (GEDCOM, Gramps XML, ...) vedľa otvoreného rodostromu a zlúčiť vybrané "
+"rozdiely po jednotlivých osobách."

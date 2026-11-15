@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:11-0700\n"
-"PO-Revision-Date: 2026-10-07 16:52+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"PO-Revision-Date: 2026-10-25 15:51+0000\n"
+"Last-Translator: Milo Ivir <milotype@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -13,14 +13,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.10.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
+
+msgid "Context"
+msgstr "Kontekst"
+
+msgid ""
+"A chart placing a person in the context of their immediate family: the "
+"couple in the centre, each partner's parents above them, their children "
+"below, and each partner's siblings in a column to their own side, eldest at "
+"the top. Click any box to re-centre the chart on that person; the name in "
+"bold marks the way back to the home person."
+msgstr ""
+"Grafički prikaz koji osobu smješta u kontekst njezine uže obitelji: bračni "
+"par se nalazi u sredini, roditelji svakog partnera iznad njih, njihova djeca "
+"ispod, a braća i sestre svakog partnera u stupcu s njegove strane, poredani "
+"od najstarijeg na vrhu. Klikom na bilo koji okvir se prikaz ponovo centrira "
+"na tu osobu, a ime napisano podebljanim slovima označava poveznicu za "
+"povratak na početnu osobu."
+
+msgid "Show the previous family"
+msgstr "Prikaži prethodnu obitelj"
+
+msgid "Show the next family"
+msgstr "Prikaži sljedeću obitelj"
 
 msgid "No person is active."
 msgstr "Nijedna osoba nije aktivna."
 
 #, python-format
+msgid "Family %(current)d of %(total)d"
+msgstr "Obitelj %(current)d od %(total)d"
+
+#, python-format
 msgid "family %d lies toward the home person"
 msgstr "obitelj %d leži u smjeru početne osobe"
 
+msgid "<b>Bold</b> marks the way to the home person"
+msgstr "<b>Podebljano</b> označava put do početne osobe"
+
 msgid "Show siblings"
-msgstr "Prikaži braću/sestre"
+msgstr "Prikaži braću"
+
+msgid "About Context View"
+msgstr "O dodatku Prikaz konteksta"
+
+msgid "Show tag colour"
+msgstr "Prikaži boju oznaka"
+
+msgid "Details in each box"
+msgstr "Detalji u svakom okviru"
+
+msgid "Name only"
+msgstr "Samo ime"
+
+msgid "Name and dates"
+msgstr "Ime i datumi"
+
+msgid "Name, dates and places"
+msgstr "Ime, datumi i mjesta"

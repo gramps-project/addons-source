@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
 "PO-Revision-Date: 2025-11-17 06:51+0000\n"
 "Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -24,24 +24,15 @@ msgstr "Грамплет, що показує глибокий звʼязок м
 msgid "Deep Connections"
 msgstr "Глибокі Звʼязки"
 
-msgid "mentioned in note"
-msgstr "згадується в примітці"
-
-msgid "Note on Family"
-msgstr "Примітка до родини"
-
 msgid "sibling"
 msgstr "брат/сестра"
 
-msgid "Note on Parent Family"
-msgstr "Примітка до батьківської сімʼї"
+msgid "mentioned in note"
+msgstr "згадується в примітці"
 
 #, python-format
 msgid "%s (association)"
 msgstr "%s (асоціація)"
-
-msgid "Note on Person"
-msgstr "Записка про особу"
 
 #, python-format
 msgid ""
@@ -50,20 +41,6 @@ msgid ""
 msgstr ""
 "\n"
 "   %s з "
-
-msgid "No Active Person set."
-msgstr "Не вибрано активну Особу."
-
-msgid "Looking for relationship between\n"
-msgstr "Пошук зв'язку між\n"
-
-#, python-format
-msgid "  <b>%s</b> (Home Person) and\n"
-msgstr "  <b>%s</b> (Головна Особа) та\n"
-
-#, python-format
-msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "  <b>%s</b> (Активна Особа)...\n"
 
 #, python-format
 msgid ""
@@ -79,3 +56,17 @@ msgid ""
 msgstr ""
 "Призупинено.\n"
 "Натисніть «Продовжити» для пошуку додаткових звʼязків.\n"
+
+msgid "No Active Person set."
+msgstr "Не вибрано активну Особу."
+
+msgid "Looking for relationship between\n"
+msgstr "Пошук зв'язку між\n"
+
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (Головна Особа) та\n"
+
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (Активна Особа)...\n"

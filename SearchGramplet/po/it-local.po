@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,20 +12,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 msgid "Search"
 msgstr "Ricerca"
 
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet per cercare oggetti nel database."
+
 msgid "Show bookmarked first"
 msgstr "Mostra prima quelle nei segnalibri"
+
+msgid "Sort by object type"
+msgstr "Ordina per tipo di oggetto"
 
 msgid "Persons"
 msgstr "Persone"
 
+msgid "Menu to set search objects"
+msgstr "Menu per impostare gli oggetti da cercare"
+
+msgid "Select objects to search"
+msgstr "Seleziona gli oggetti da cercare"
+
+msgid "SearchGramplet configuration menu"
+msgstr "Menu di configurazione di SearchGramplet"
+
 #, python-format
 msgid "found: %s"
 msgstr "trovato: %s"
+
+msgid "No matches..."
+msgstr "Nessuna corrispondenza..."
+
+msgid "Start type to search"
+msgstr "Inizia a digitare per cercare"
+
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+"Inizia a digitare per cercare gli oggetti.\n"
+"Per mostrare tutti gli oggetti inserisci solo il simbolo «*»."
 
 msgid "Search..."
 msgstr "Cerca..."
@@ -37,5 +65,15 @@ msgid "Add to bookmarks"
 msgstr "Aggiungi nei segnalibri"
 
 #, python-format
+msgid "Birth: %s"
+msgstr "Nascita: %s"
+
+#, python-format
 msgid "Death: %s"
 msgstr "Decesso: %s"
+
+msgid "Set as Active person"
+msgstr "Imposta come persona attiva"
+
+msgid "Set as Home person"
+msgstr "Imposta come persona principale"

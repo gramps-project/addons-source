@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 13:30-0700\n"
-"PO-Revision-Date: 2026-09-10 08:51+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Sincronizzazione Web di Gramps"
@@ -20,11 +20,134 @@ msgstr "Sincronizzazione Web di Gramps"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Sincronizza un database locale con un'istanza web di Gramps."
 
+msgid "_Try again"
+msgstr "_Riprova"
+
+msgid "C_onnect"
+msgstr "C_onnetti"
+
+msgid "Forget this server?"
+msgstr "Dimenticare questo server?"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"Verranno rimossi l'indirizzo, il nome utente e la password memorizzati per "
+"questo server, insieme alla registrazione dell'ultima sincronizzazione di "
+"questo albero genealogico con esso. La prossima sincronizzazione confronterà "
+"i due alberi da zero."
+
+msgid "Forget"
+msgstr "Dimentica"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr ""
+"Queste credenziali sono state usate l'ultima volta con un albero genealogico "
+"diverso. Controlla il server prima di continuare."
+
+msgid "Change server…"
+msgstr "Cambia server…"
+
+msgid "Server URL:"
+msgstr "URL del server:"
+
+msgid "Username:"
+msgstr "Nome utente:"
+
+msgid "Password:"
+msgstr "Password:"
+
+msgid "Remember password"
+msgstr "Ricorda la password"
+
+msgid "Forget this server"
+msgstr "Dimentica questo server"
+
+msgid "About this tool"
+msgstr "Informazioni su questo strumento"
+
+msgid "Open the online manual"
+msgstr "Apri il manuale online"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"Questo strumento permette di sincronizzare l'albero genealogico aperto con "
+"un albero genealogico remoto servito da Gramps Web.\n"
+"\n"
+"Lo strumento presuppone che i due alberi derivino l'uno dall'altro, cioè che "
+"uno dei due sia stato creato da un'esportazione Gramps XML (non GEDCOM!) "
+"dell'altro.\n"
+"\n"
+"Dopo una sincronizzazione riuscita, i due alberi saranno identici. Le "
+"modifiche vengono propagate in base ai timestamp. Ti verrà chiesta una "
+"conferma prima di qualsiasi modifica all'albero locale o remoto.\n"
+"\n"
+"Se invece vuoi fondere due alberi molto diversi con la possibilità di "
+"apportare modifiche manuali, usa lo strumento Import Merge."
+
 msgid "Error:"
 msgstr "Errore:"
 
+msgid "Warning:"
+msgstr "Attenzione:"
+
+msgid "Sync mode:"
+msgstr "Modalità di sincronizzazione:"
+
 msgid "Copy"
 msgstr "Copia"
+
+msgid "Synchronization complete"
+msgstr "Sincronizzazione completata"
+
+msgid "Synchronization failed"
+msgstr "Sincronizzazione non riuscita"
+
+#, python-format
+msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
+msgstr "Gramps Web Sync %(addon)s, Web API %(api)s"
+
+#, python-format
+msgid "Gramps Web Sync %s"
+msgstr "Gramps Web Sync %s"
+
+msgid ""
+"This URL uses http, so your password will be sent in clear text. Use only "
+"for local testing."
+msgstr ""
+"Questo URL usa http, quindi la password verrà inviata in chiaro. Da usare "
+"solo per test locali."
+
+#, python-format
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
+msgstr ""
+"Impossibile usare il portachiavi di sistema. Il confinamento di Snap blocca "
+"l'accesso finché non esegui: %s"
+
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr ""
+"Impossibile usare il portachiavi di sistema. Dovrai inserire la password "
+"ogni volta."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr "Autenticazione non riuscita. Verifica nome utente e password."
@@ -63,6 +186,55 @@ msgstr ""
 msgid "Unexpected error while applying changes."
 msgstr "Errore inatteso nell'applicazione delle modifiche."
 
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr ""
+"L'albero genealogico è stato modificato mentre si controllavano le "
+"modifiche. Non è stato applicato nulla. Esegui di nuovo il confronto."
+
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s, but synchronization needs "
+"%(needed)s or newer. Please update the server."
+msgstr ""
+"Su questo server è in esecuzione Gramps Web API %(found)s, ma la "
+"sincronizzazione richiede la versione %(needed)s o successiva. Aggiorna il "
+"server."
+
+#, python-format
+msgid ""
+"This server did not report a Gramps Web API version, so it is too old to "
+"synchronize with. Version %s or newer is needed."
+msgstr ""
+"Questo server non ha indicato una versione di Gramps Web API, quindi è "
+"troppo vecchio per la sincronizzazione. È necessaria la versione %s o "
+"successiva."
+
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s. This version of Gramps works with "
+"Gramps Web API %(major)s, so synchronizing with this server needs a newer "
+"version of Gramps."
+msgstr ""
+"Su questo server è in esecuzione Gramps Web API %(found)s. Questa versione "
+"di Gramps funziona con Gramps Web API %(major)s, quindi per sincronizzarsi "
+"con questo server serve una versione più recente di Gramps."
+
+msgid ""
+"This server is not configured to use a background task queue. "
+"Synchronization needs one: without it, applying changes times out before the "
+"server has finished. Please enable it on the server."
+msgstr ""
+"Questo server non è configurato per usare una coda di attività in "
+"background. La sincronizzazione ne ha bisogno: senza, l'applicazione delle "
+"modifiche va in timeout prima che il server abbia finito. Attivala sul "
+"server."
+
+#, python-format
+msgid "The server could not apply the changes: %s"
+msgstr "Il server non è riuscito ad applicare le modifiche: %s"
+
 #, python-format
 msgid "Server error %s. Please check your connection."
 msgstr "Errore del server %s. Controlla la connessione."
@@ -71,8 +243,23 @@ msgstr "Errore del server %s. Controlla la connessione."
 msgid "Unexpected error: %s"
 msgstr "Errore inaspettato: %s"
 
+msgid "Signing in…"
+msgstr "Accesso in corso…"
+
+msgid "Downloading the remote family tree…"
+msgstr "Scaricamento dell'albero genealogico remoto…"
+
+msgid "Comparing the two family trees…"
+msgstr "Confronto dei due alberi genealogici…"
+
 msgid "Checking which media files are missing…"
 msgstr "Verifica dei file multimediali mancanti…"
+
+msgid "Applied the changes to this computer."
+msgstr "Modifiche applicate a questo computer."
+
+msgid "Sending the changes to the server…"
+msgstr "Invio delle modifiche al server…"
 
 msgid "Downloading media files…"
 msgstr "Scaricamento dei file multimediali…"
@@ -80,8 +267,96 @@ msgstr "Scaricamento dei file multimediali…"
 msgid "Uploading media files…"
 msgstr "Caricamento dei file multimediali…"
 
+msgid "Connect"
+msgstr "Connetti"
+
+msgid "Apply changes"
+msgstr "Applica le modifiche"
+
 msgid "Transfer media files"
 msgstr "Trasferisci file multimediali"
+
+msgid "Bidirectional synchronization"
+msgstr "Sincronizzazione bidirezionale"
+
+msgid "Reset the server to match this computer"
+msgstr "Allinea il server a questo computer"
+
+msgid "Reset this computer to match the server"
+msgstr "Allinea questo computer al server"
+
+msgid ""
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
+msgstr ""
+"Le modifiche di entrambe le parti vengono combinate. Gli oggetti modificati "
+"in entrambi i posti vengono fusi."
+
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr ""
+"Il server viene allineato a questo computer. Tutto ciò che è stato "
+"modificato solo sul server viene scartato."
+
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr ""
+"Questo computer viene allineato al server. Tutto ciò che è stato modificato "
+"solo qui viene scartato."
+
+#, python-format
+msgid "Will change on this computer (%s object)"
+msgid_plural "Will change on this computer (%s objects)"
+msgstr[0] "Cambierà su questo computer (%s oggetto)"
+msgstr[1] "Cambierà su questo computer (%s oggetti)"
+
+#, python-format
+msgid "Will change on the server (%s object)"
+msgid_plural "Will change on the server (%s objects)"
+msgstr[0] "Cambierà sul server (%s oggetto)"
+msgstr[1] "Cambierà sul server (%s oggetti)"
+
+#, python-format
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "Aggiungi %s oggetto"
+msgstr[1] "Aggiungi %s oggetti"
+
+#, python-format
+msgid "Update %s object"
+msgid_plural "Update %s objects"
+msgstr[0] "Aggiorna %s oggetto"
+msgstr[1] "Aggiorna %s oggetti"
+
+#, python-format
+msgid "Merge %s object"
+msgid_plural "Merge %s objects"
+msgstr[0] "Fondi %s oggetto"
+msgstr[1] "Fondi %s oggetti"
+
+#, python-format
+msgid "Delete %s object"
+msgid_plural "Delete %s objects"
+msgstr[0] "Elimina %s oggetto"
+msgstr[1] "Elimina %s oggetti"
+
+#, python-format
+msgid "%s object will be deleted on this computer."
+msgid_plural "%s objects will be deleted on this computer."
+msgstr[0] "%s oggetto verrà eliminato su questo computer."
+msgstr[1] "%s oggetti verranno eliminati su questo computer."
+
+#, python-format
+msgid "%s object will be deleted on the server."
+msgid_plural "%s objects will be deleted on the server."
+msgstr[0] "%s oggetto verrà eliminato sul server."
+msgstr[1] "%s oggetti verranno eliminati sul server."
+
+#, python-format
+msgid "%(down)s to download, %(up)s to upload"
+msgstr "%(down)s da scaricare, %(up)s da caricare"
 
 #, python-format
 msgid "Also transfer %(total)s media file (%(counts)s)"
@@ -99,5 +374,77 @@ msgstr[1] ""
 "%s file multimediali mancano da entrambe le parti, e non possono essere "
 "trasferiti."
 
+#, python-format
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] "Applicata %s modifica."
+msgstr[1] "Applicate %s modifiche."
+
+msgid "Both trees are already in sync."
+msgstr "I due alberi sono già sincronizzati."
+
 msgid "Media files are in sync."
 msgstr "I file multimediali sono sincronizzati."
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "Scaricato con successo %s file multimediale."
+msgstr[1] "Scaricati con successo %s file multimediali."
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "Si è verificato %s errore durante lo scaricamento."
+msgstr[1] "Si sono verificati %s errori durante lo scaricamento."
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "Caricato con successo %s file multimediale."
+msgstr[1] "Caricati con successo %s file multimediali."
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "Si è verificato %s errore durante il caricamento."
+msgstr[1] "Si sono verificati %s errori durante il caricamento."
+
+msgid "No server configured"
+msgstr "Nessun server configurato"
+
+#, python-format
+msgid "%(user)s on %(server)s"
+msgstr "%(user)s su %(server)s"
+
+#, python-format
+msgid "%(where)s — %(synced)s"
+msgstr "%(where)s — %(synced)s"
+
+msgid "Never synced"
+msgstr "Mai sincronizzato"
+
+msgid "Last synced just now"
+msgstr "Ultima sincronizzazione: proprio adesso"
+
+#, python-format
+msgid "Last synced %s minute ago"
+msgid_plural "Last synced %s minutes ago"
+msgstr[0] "Ultima sincronizzazione %s minuto fa"
+msgstr[1] "Ultima sincronizzazione %s minuti fa"
+
+#, python-format
+msgid "Last synced %s hour ago"
+msgid_plural "Last synced %s hours ago"
+msgstr[0] "Ultima sincronizzazione %s ora fa"
+msgstr[1] "Ultima sincronizzazione %s ore fa"
+
+#, python-format
+msgid "Last synced %s day ago"
+msgid_plural "Last synced %s days ago"
+msgstr[0] "Ultima sincronizzazione %s giorno fa"
+msgstr[1] "Ultima sincronizzazione %s giorni fa"
+
+#, python-format
+msgid "Last synced on %s"
+msgstr "Ultima sincronizzazione il %s"

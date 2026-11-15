@@ -1,0 +1,322 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 09:39-0700\n"
+"PO-Revision-Date: 2026-10-29 15:51+0000\n"
+"Last-Translator: coolvitto <cool.vitto@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.11.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Select the person whose story to generate, then try again."
+msgstr "ストーリーを生成する人物を選択してから、もう一度試してください。"
+
+msgid "Couldn't generate the story"
+msgstr "ストーリーを生成できませんでした"
+
+msgid "Story saved"
+msgstr "ストーリーを保存しました"
+
+#, python-format
+msgid ""
+"%(count)d slides saved to %(path)s.\n"
+"\n"
+"Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+msgstr ""
+"%(count)d 枚のスライドを %(path)s に保存しました。\n"
+"\n"
+"Gramps Connect Story Viewer で開く: https://dsblank.github.io/gramps-connect-"
+"stories/"
+
+msgid "_Open in Browser"
+msgstr "ブラウザで開く(_O)"
+
+msgid "Story"
+msgstr "ストーリー"
+
+msgid "Generate Story"
+msgstr "ストーリーを生成"
+
+msgid "Generate the story of:"
+msgstr "ストーリーを生成する対象："
+
+#, python-format
+msgid "Family: %s"
+msgstr "家族：%s"
+
+msgid "Include families"
+msgstr "家族を含める"
+
+msgid ""
+"Also draw on this person's own families: a spouse's and children's births "
+"and deaths, and their parents' and siblings'."
+msgstr ""
+"この人物自身の家族からも取り込みます：配偶者と子どもの出生・死亡、およびその"
+"両親と兄弟姉妹の情報です。"
+
+msgid "Include each person's own birth and death in this family's story:"
+msgstr "この家族のストーリーに各人物自身の出生と死亡を含める："
+
+msgid "Include living people (and photos they appear in)"
+msgstr "存命の人物を含める（およびその人物が写っている写真）"
+
+msgid "Stories (*.story.zip)"
+msgstr "ストーリー (*.story.zip)"
+
+msgid ""
+"This family is marked private. To generate its story, check \"Include data "
+"marked private\"."
+msgstr ""
+"この家族は非公開に設定されています。ストーリーを生成するには、「非公開データ"
+"を含める」をオンにしてください。"
+
+#, python-format
+msgid ""
+"%s is marked private. To generate their story, check \"Include data marked "
+"private\"."
+msgstr ""
+"%s は非公開に設定されています。ストーリーを生成するには、「非公開データを含め"
+"る」をオンにしてください。"
+
+#, python-format
+msgid ""
+"%s is probably living. To generate their story, check \"Include living "
+"people\"."
+msgstr ""
+"%s はおそらく存命です。ストーリーを生成するには、「存命の人物を含める」をオン"
+"にしてください。"
+
+#, python-format
+msgid "%(who)s was born"
+msgstr "%(who)s が誕生しました"
+
+#, python-format
+msgid "%(who)s was stillborn"
+msgstr "%(who)s は死産でした"
+
+#, python-format
+msgid "%(who)s was baptized"
+msgstr "%(who)s は洗礼を受けました"
+
+#, python-format
+msgid "%(who)s was christened"
+msgstr "%(who)s は洗礼命名を受けました"
+
+#, python-format
+msgid "%(who)s was blessed"
+msgstr "%(who)s は祝福を受けました"
+
+#, python-format
+msgid "%(who)s was confirmed"
+msgstr "%(who)s は堅信を受けました"
+
+#, python-format
+msgid "%(who)s took First Communion"
+msgstr "%(who)s は初聖体を受けました"
+
+#, python-format
+msgid "%(who)s celebrated their Bar Mitzvah"
+msgstr "%(who)s はバル・ミツワーを行いました"
+
+#, python-format
+msgid "%(who)s celebrated their Bas Mitzvah"
+msgstr "%(who)s はバト・ミツワーを行いました"
+
+#, python-format
+msgid "%(who)s was adopted"
+msgstr "%(who)s は養子縁組しました"
+
+#, python-format
+msgid "%(who)s graduated"
+msgstr "%(who)s は卒業しました"
+
+#, python-format
+msgid "%(who)s was awarded a degree"
+msgstr "\"%(who)s は学位を取得しました"
+
+#, python-format
+msgid "%(who)s emigrated"
+msgstr "%(who)s は移住（出国）しました"
+
+#, python-format
+msgid "%(who)s immigrated"
+msgstr "%(who)s は移住（入国）しました"
+
+#, python-format
+msgid "%(who)s was naturalized"
+msgstr "%(who)s は帰化しました"
+
+#, python-format
+msgid "%(who)s was ordained"
+msgstr "%(who)s は聖職に叙任されました"
+
+#, python-format
+msgid "%(who)s was elected"
+msgstr "%(who)s は選出されました"
+
+#, python-format
+msgid "%(who)s retired"
+msgstr "%(who)s は退職しました"
+
+#, python-format
+msgid "%(who)s died"
+msgstr "%(who)s が死去しました"
+
+#, python-format
+msgid "%(who)s was buried"
+msgstr "%(who)s は埋葬されました"
+
+#, python-format
+msgid "%(who)s was cremated"
+msgstr "%(who)s は火葬されました"
+
+#, python-format
+msgid "%(who)s had their estate probated"
+msgstr "%(who)s の遺産が検認されました"
+
+#, python-format
+msgid "%(who)s were married"
+msgstr "%(who)s は結婚しました"
+
+#, python-format
+msgid "%(who)s had their banns read"
+msgstr "%(who)s の婚姻予告が読み上げられました"
+
+#, python-format
+msgid "%(who)s signed a marriage contract"
+msgstr "%(who)s は婚姻契約を結びました"
+
+#, python-format
+msgid "%(who)s took out a marriage license"
+msgstr "%(who)s は結婚許可証を取得しました"
+
+#, python-format
+msgid "%(who)s agreed a marriage settlement"
+msgstr "%(who)s は婚姻財産契約に合意しました"
+
+#, python-format
+msgid "%(who)s were engaged"
+msgstr "%(who)s は婚約しました"
+
+#, python-format
+msgid "%(who)s were divorced"
+msgstr "%(who)s は離婚しました"
+
+#, python-format
+msgid "%(who)s filed for divorce"
+msgstr "%(who)s は離婚を申請しました"
+
+#, python-format
+msgid "%(who)s had their marriage annulled"
+msgstr "%(who)s の婚姻は無効とされました"
+
+#, python-format
+msgid "%(who)s were recorded in the census"
+msgstr "%(who)s は国勢調査に記録されました"
+
+#, python-format
+msgid "%(who)s lived"
+msgstr "%(who)s は住んでいました"
+
+#, python-format
+msgid "%(names)s and %(last)s"
+msgstr "%(names)s と %(last)s"
+
+#, python-format
+msgid "%(type)s (%(role)s)"
+msgstr "%(type)s（%(role)s）"
+
+#, python-format
+msgid "%(type)s of %(who)s"
+msgstr "%(who)s の %(type)s"
+
+#, python-format
+msgid "%(who)s took part in this %(type)s as %(role)s"
+msgstr "%(who)s は %(role)s としてこの %(type)s に参加しました"
+
+#, python-format
+msgid "%(moment)s on %(date)s"
+msgstr "%(date)s の %(moment)s"
+
+#, python-format
+msgid "%(moment)s in %(date)s"
+msgstr "%(date)s における %(moment)s"
+
+#, python-format
+msgid "%(moment)s %(date)s"
+msgstr "%(moment)s（%(date)s）"
+
+#, python-format
+msgid "%(moment)s in %(place)s"
+msgstr "%(place)s での %(moment)s"
+
+#, python-format
+msgid "%d moment"
+msgid_plural "%d moments"
+msgstr[0] "%d つの場面"
+msgstr[1] "%d つの場面"
+
+msgid "This person isn't included with the chosen privacy settings."
+msgstr "この人物は、選択されたプライバシー設定では含まれません。"
+
+#, python-format
+msgid "%s has no events to build a story from."
+msgstr "%s にはストーリーを組み立てるための出来事がありません。"
+
+#, python-format
+msgid "The Story of %s"
+msgstr "%s のストーリー"
+
+#, python-format
+msgid "%(moments)s from %(name)s's recorded life."
+msgstr "%(name)s の記録された人生からの %(moments)s。"
+
+msgid "This family isn't included with the chosen privacy settings."
+msgstr "この家族は、選択されたプライバシー設定では含まれません。"
+
+msgid "this family"
+msgstr "この家族"
+
+msgid ""
+"This family has no events to build a story from: not on the family itself, "
+"and no births or deaths recorded for its members."
+msgstr ""
+"この家族にはストーリーを組み立てるための出来事がありません：家族自体に出来事"
+"がなく、構成員の出生・死亡も記録されていません。"
+
+#, python-format
+msgid "%(moments)s from the life of %(couple)s and %(children)s."
+msgstr "%(couple)s と %(children)s の人生からの %(moments)s。"
+
+#, python-format
+msgid "their child"
+msgid_plural "their %(count)d children"
+msgstr[0] "その子ども"
+msgstr[1] "その %(count)d 子ども"
+
+#, python-format
+msgid "%(moments)s from the life of %(couple)s."
+msgstr "%(couple)s の人生からの %(moments)s。"
+
+#, python-format
+msgid "Family %s"
+msgstr "家族 %s"
+
+msgid ""
+"Generates the story of a person or a family (.story.zip): a slideshow of "
+"their events with dates, places and photos, for the Gramps Connect Story "
+"Viewer"
+msgstr ""
+"人物または家族のストーリー（.story.zip）を生成します。出来事を日付・場所・写"
+"真とともにスライドショーにしたもので、Gramps Connect Story Viewer で表示でき"
+"ます"

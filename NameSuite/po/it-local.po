@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,168 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Audit Given and Patronymic Names"
+msgstr "Verifica nomi e patronimici"
+
+msgid ""
+"Tools to rename given name, audit and infer patronymic (East Slavic) names."
+msgstr ""
+"Strumenti per rinominare i nomi, verificare e dedurre i patronimici (slavi "
+"orientali)."
+
+msgid "Patronymic Suggestion"
+msgstr "Suggerimento di patronimico"
+
+msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
+msgstr ""
+"Suggerisce i patronimici (slavi orientali) in tempo reale durante la "
+"navigazione."
+
+msgid "Use"
+msgstr "Usa"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"Rilevato patronimico mancante.\n"
+"Suggerito: {0}\n"
+"In base al padre: {1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "Vai a una persona per controllare lo stato del patronimico."
+
+msgid "No active person selected."
+msgstr "Nessuna persona attiva selezionata."
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr ""
+"Il patronimico non può essere dedotto per sesso non binario o sconosciuto."
+
+msgid "Individual already has a recorded patronymic."
+msgstr "La persona ha già un patronimico registrato."
+
+msgid "No attached father found in database family records."
+msgstr "Nessun padre collegato trovato nei record di famiglia del database."
+
+msgid "Father lacks a recorded first name."
+msgstr "Il padre non ha un nome registrato."
+
+msgid "Could not generate valid morphology patterns."
+msgstr "Impossibile generare schemi morfologici validi."
+
+msgid "Patronymic applied successfully!"
+msgstr "Patronimico applicato correttamente!"
+
+msgid "Apply Suggestion"
+msgstr "Applica il suggerimento"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "Deduci i patronimici slavi orientali"
+
+msgid "Rename Given Names"
+msgstr "Rinomina i nomi"
+
+msgid "Audit Patronymics"
+msgstr "Verifica i patronimici"
+
+msgid "Auditing Settings"
+msgstr "Impostazioni della verifica"
+
+msgid "All Records"
+msgstr "Tutti i record"
+
+msgid "Males Only"
+msgstr "Solo maschi"
+
+msgid "Females Only"
+msgstr "Solo femmine"
+
+msgid "Configure Rules..."
+msgstr "Configura le regole..."
+
+msgid "Match Pre-Revolutionary Orthography"
+msgstr "Considera l'ortografia prerivoluzionaria"
+
+msgid "Audit Database"
+msgstr "Verifica il database"
+
+msgid "Select All Safe Corrections"
+msgstr "Seleziona tutte le correzioni sicure"
+
+msgid "Apply Selected Corrections"
+msgstr "Applica le correzioni selezionate"
+
+msgid "Configure Rules"
+msgstr "Configura le regole"
+
+msgid "Individual"
+msgstr "Persona"
+
+msgid "Current"
+msgstr "Attuale"
+
+msgid "Correction"
+msgstr "Correzione"
+
+msgid "Conf"
+msgstr "Affidabilità"
+
+msgid "Ref Year"
+msgstr "Anno di riferimento"
+
+msgid "Explanation"
+msgstr "Spiegazione"
+
+msgid "Audit Complete!"
+msgstr "Verifica completata!"
+
+msgid "No Results"
+msgstr "Nessun risultato"
+
+msgid "No issues found."
+msgstr "Nessun problema trovato."
+
+msgid "Search and Replace Options"
+msgstr "Opzioni di ricerca e sostituzione"
+
+msgid "Source Name:"
+msgstr "Nome di origine:"
+
+msgid "e.g. Иоанн"
+msgstr "ad es. Иоанн"
+
+msgid "Target Name:"
+msgstr "Nome di destinazione:"
+
+msgid "e.g. Иван"
+msgstr "ad es. Иван"
+
+msgid "Match Mode:"
+msgstr "Modalità di corrispondenza:"
+
+msgid "Exact Match"
+msgstr "Corrispondenza esatta"
+
+msgid "Substring"
+msgstr "Sottostringa"
+
+msgid "Regular Expression"
+msgstr "Espressione regolare"
+
+msgid "Scan for Names"
+msgstr "Cerca nomi"
+
+msgid "Preserve original name as alternative"
+msgstr "Conserva il nome originale come alternativo"
 
 msgid "Select All"
 msgstr "Selezionare tutto"
+
+msgid "Proposed"
+msgstr "Proposto"

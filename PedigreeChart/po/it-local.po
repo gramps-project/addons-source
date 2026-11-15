@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,14 +12,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Pedigree Chart"
+msgstr "Tavola genealogica"
+
+msgid "Alternate version of the traditional pedigree chart."
+msgstr "Versione alternativa della tradizionale tavola genealogica."
+
+#, python-format
+msgid "Pedigree Chart for %s"
+msgstr "Tavola genealogica di %s"
 
 #, python-format
 msgid "Page %d"
 msgstr "Pagina %d"
 
+msgid "Show Mother/Father captions"
+msgstr "Mostra le didascalie madre/padre"
+
+msgid "Show the title of mother or father beside each ancestor's box."
+msgstr ""
+"Mostra il titolo di madre o padre accanto al riquadro di ogni ascendente."
+
 msgid "Show page numbers"
 msgstr "Mostra i numeri delle pagine"
+
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
+"Aggiungi su ogni pagina un piè di pagina con il numero di pagina e la data "
+"di stampa."
+
+msgid "The basic style used for the title display."
+msgstr "Lo stile di base usato per la visualizzazione del titolo."
+
+msgid "Style used for names (only for PDF document and PostScript)."
+msgstr "Stile usato per i nomi (solo per documenti PDF e PostScript)."
 
 msgid "Style used for labels and captions."
 msgstr "Lo stile usato per etichette e didascalie."

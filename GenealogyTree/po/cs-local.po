@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,11 +12,88 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Strom předků pomocí balíčku genealogytree pro LaTeX"
+
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Strom potomků pomocí balíčku genealogytree pro LaTeX"
+
+msgid "Grandparent Tree"
+msgstr "Strom prarodičů"
+
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Strom prarodičů pomocí balíčku genealogytree pro LaTeX"
+
+msgid "Sandclock Tree"
+msgstr "Strom ve tvaru přesýpacích hodin"
+
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr ""
+"Strom ve tvaru přesýpacích hodin pomocí balíčku genealogytree pro LaTeX"
+
+msgid "Sandclock Tree for a Family"
+msgstr "Strom rodiny ve tvaru přesýpacích hodin"
+
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr ""
+"Strom rodiny ve tvaru přesýpacích hodin pomocí balíčku genealogytree pro "
+"LaTeX"
+
+msgid "The center family for the report"
+msgstr "Výchozí rodina sestavy"
+
+msgid "Generations up"
+msgstr "Generace nahoru"
+
+msgid "Generations down"
+msgstr "Generace dolů"
+
+msgid "Include siblings"
+msgstr "Zahrnout sourozence"
+
+msgid "Include siblings of ancestors."
+msgstr "Zahrnout sourozence předků."
+
+msgid "Include images"
+msgstr "Zahrnout obrázky"
+
 msgid "Include images of people in the nodes."
 msgstr "Zahrnout obrázky osob do uzlů."
+
+msgid "Compact tree layout"
+msgstr "Kompaktní rozvržení stromu"
+
+msgid ""
+"Use the genealogytree 'database pole reduced' template, which packs more "
+"generations per page. Useful for large sandclock trees that otherwise clip "
+"off the rendered page."
+msgstr ""
+"Použít šablonu genealogytree 'database pole reduced', která umístí více "
+"generací na stránku. Vhodné pro velké stromy ve tvaru přesýpacích hodin, "
+"které by jinak přesahovaly vykreslenou stránku."
+
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "Osoba %s nemá známého prarodiče z otcovy i matčiny strany"
+
+msgid "Grandparent family spacing"
+msgstr "Rozestupy rodin prarodičů"
+
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Dodatečné rozestupy rodin prarodičů (mm)"
+
+msgid "First spouse left"
+msgstr "První partner vlevo"
+
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+"Při více partnerech vždy umístit prvního vlevo. To může omezit křížení čar "
+"při více manželstvích."

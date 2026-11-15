@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 msgid "lxml"
 msgstr "lxml"
@@ -25,6 +25,16 @@ msgstr "etree"
 
 msgid "Gramplet for testing etree with Gramps XML"
 msgstr "Gramplet per il test di etree con Gramps XML"
+
+msgid "Invalid timestamp"
+msgstr "Timestamp non valido"
+
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
+"Seleziona un file Gramps XML e\n"
+" fai clic sul pulsante Esegui."
 
 msgid "No file loaded..."
 msgstr "Nessun file caricato..."
@@ -201,6 +211,12 @@ msgstr "Prova a installare il pacchetto \"python3 lxml\"."
 msgid "xmllint options"
 msgstr "Opzioni xmllint"
 
+msgid "debug places"
+msgstr "debug luoghi"
+
+msgid "debug xml"
+msgstr "debug xml"
+
 msgid "XSD validation (lxml)"
 msgstr "Validazione XSD (lxml)"
 
@@ -309,6 +325,9 @@ msgstr "1. Ha generato un indice degli oggetti multimediali in \"%(file)s\".\n"
 
 msgid "XML SyntaxError"
 msgstr "Errore di sintassi XML"
+
+msgid "Matches XSD schema."
+msgstr "Corrisponde allo schema XSD."
 
 msgid "xmllint: skip DTD validation"
 msgstr "xmllint: salta validazione DTD"

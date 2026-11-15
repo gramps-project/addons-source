@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 13:30-0700\n"
-"PO-Revision-Date: 2026-09-06 12:53+0000\n"
-"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"POT-Creation-Date: 2026-11-02 09:25-0800\n"
+"PO-Revision-Date: 2026-10-20 04:57+0000\n"
+"Last-Translator: Arnie97 <arnie97@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/gramps-project/addons/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "深層關係 Gramplet"
@@ -22,6 +22,16 @@ msgstr "顯示目前人物與首頁人物之間深層關係的 Gramplet"
 
 msgid "Deep Connections"
 msgstr "深度關聯"
+
+msgid "sibling"
+msgstr "兄弟姊妹"
+
+msgid "mentioned in note"
+msgstr "在備註中提及"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s（關聯）"
 
 msgid "⏸ Pause"
 msgstr "⏸ 暫停"
@@ -56,25 +66,6 @@ msgid ""
 "{queue_size}"
 msgstr "搜尋深度：{depth} | 已處理人物：{processed} | 佇列大小：{queue_size}"
 
-msgid "mentioned in note"
-msgstr "在備註中提及"
-
-msgid "Note on Family"
-msgstr "家庭的備註"
-
-msgid "sibling"
-msgstr "兄弟姊妹"
-
-msgid "Note on Parent Family"
-msgstr "父母家庭的備註"
-
-#, python-format
-msgid "%s (association)"
-msgstr "%s（關聯）"
-
-msgid "Note on Person"
-msgstr "人物的備註"
-
 #, python-format
 msgid ""
 "\n"
@@ -82,6 +73,24 @@ msgid ""
 msgstr ""
 "\n"
 "   %s，對象是 "
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"找到關係 #%d： \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"已暫停。\n"
+"按下「繼續」以搜尋其他關係。\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "已暫停 - 按「繼續」搜尋更多親屬關係"
 
 msgid "Error: No Home Person set"
 msgstr "錯誤：尚未設定首頁人物"
@@ -108,24 +117,6 @@ msgstr "  <b>%s</b> (目前人物)...\n"
 
 msgid "Searching for connections..."
 msgstr "正在搜尋關聯..."
-
-#, python-format
-msgid ""
-"Found relation #%d: \n"
-"   "
-msgstr ""
-"找到關係 #%d： \n"
-"   "
-
-msgid ""
-"Paused.\n"
-"Press Continue to search for additional relations.\n"
-msgstr ""
-"已暫停。\n"
-"按下「繼續」以搜尋其他關係。\n"
-
-msgid "Paused - Press Continue to search for more relations"
-msgstr "已暫停 - 按「繼續」搜尋更多親屬關係"
 
 #, python-format
 msgid ""

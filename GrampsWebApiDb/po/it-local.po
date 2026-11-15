@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 10:02-0700\n"
-"PO-Revision-Date: 2026-07-31 16:24+0000\n"
-"Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,187 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Generate Gramps Web API key"
+msgstr "Genera chiave Gramps Web API"
+
+msgid "Server URL"
+msgstr "URL del server"
+
+msgid "e.g. https://your-server/api"
+msgstr "ad es. https://your-server/api"
+
+msgid "Username"
+msgstr "Nome utente"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Generate API Key"
+msgstr "Genera chiave API"
+
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+"Inserisci URL del server, nome utente e password, quindi fai clic su Genera "
+"chiave API."
+
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
 
 msgid "Copy"
 msgstr "Copia"
+
+msgid "Create Synced Family Tree for this key"
+msgstr "Crea un albero genealogico sincronizzato per questa chiave"
+
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"Trovata una %s esistente per questa sessione. Fai clic su Crea un albero "
+"genealogico sincronizzato per questa chiave per usarla direttamente, oppure "
+"compila il modulo qui sopra per generare una chiave diversa."
+
+msgid "Please fill in the server URL, username, and password."
+msgstr "Compila URL del server, nome utente e password."
+
+msgid "Generating API key…"
+msgstr "Generazione della chiave API…"
+
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr "Accesso non riuscito (HTTP %d): verifica nome utente e password."
+
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr ""
+"Il server ha restituito un errore (HTTP %d %s): verifica l'URL del server."
+
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr "Impossibile raggiungere il server: verifica l'URL del server. (%s)"
+
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "Risposta inattesa dal server: %s"
+
+#, python-format
+msgid "Error: %s"
+msgstr "Errore: %s"
+
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"Fatto. %s è ora impostata per questa sessione di Gramps -- non serve "
+"riavviare. Copia la chiave qui sotto per impostarla anche nell'ambiente "
+"della shell per la prossima volta."
+
+msgid "Looking up account identity…"
+msgstr "Ricerca dell'identità dell'account…"
+
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"Esiste già un albero genealogico chiamato \"%s\". Aprilo da Alberi "
+"genealogici -> Gestione alberi genealogici invece di crearne un altro."
+
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "Errore nella creazione dell'albero genealogico: %s"
+
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr ""
+"Creato l'albero genealogico \"%s\". Aprilo da Alberi genealogici -> Gestione "
+"alberi genealogici per iniziare la sincronizzazione."
+
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+"Trasforma URL del server Gramps Web API, nome utente e password in un valore "
+"GRAMPS_WEB_API_KEY per GrampsWebApiDb e, facoltativamente, crea un albero "
+"genealogico GrampsWebApiDb corrispondente con il nome corretto."
+
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+"L'account autenticato tramite GRAMPS_WEB_API_KEY non ha sul server i "
+"permessi per questa operazione (HTTP 403 Forbidden). Genera una chiave per "
+"un account con permessi sufficienti, oppure chiedi all'amministratore del "
+"server di concedere l'accesso a questo."
+
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+"Questo albero genealogico si chiama \"%(actual)s\", ma GRAMPS_WEB_API_KEY al "
+"momento autentica come \"%(expected)s\". Rinomina questo albero genealogico "
+"in \"%(expected_typeable)s\" (Alberi genealogici -> Gestione alberi "
+"genealogici) se deve rispecchiare quell'account, oppure apri o crea l'albero "
+"genealogico che ha già quel nome -- riutilizzare questo mescolerebbe i suoi "
+"dati locali con quelli dell'altro account."
+
+#, python-format
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY is missing server "
+"permission(s) this addon requires: %(missing)s. Grant it at least the "
+"\"%(role)s\" role on the server (or ask an administrator to), then reopen "
+"this Family Tree. Opening it as-is would leave the local mirror silently "
+"incomplete or unable to save changes back."
+msgstr ""
+"All'account autenticato tramite GRAMPS_WEB_API_KEY mancano sul server i "
+"permessi richiesti da questo addon: %(missing)s. Assegnagli almeno il ruolo "
+"\"%(role)s\" sul server (o chiedilo a un amministratore), quindi riapri "
+"questo albero genealogico. Aprirlo così com'è lascerebbe la copia locale "
+"incompleta senza avvisi, o non in grado di salvare le modifiche."
+
+#, python-format
+msgid ""
+"This server runs Gramps %(actual)s, but this addon needs a server running "
+"Gramps %(required)s or newer: older servers serialize their transaction "
+"history in a format it cannot read. Upgrade the Gramps installation behind "
+"the Gramps Web API server (or ask its administrator to)."
+msgstr ""
+"Su questo server è in esecuzione Gramps %(actual)s, ma questo addon richiede "
+"un server con Gramps %(required)s o successivo: i server più vecchi salvano "
+"la cronologia delle transazioni in un formato che non riesce a leggere. "
+"Aggiorna l'installazione di Gramps del server Gramps Web API (o chiedilo al "
+"suo amministratore)."
+
+msgid "Retry local change after server conflict"
+msgstr "Ripeti la modifica locale dopo un conflitto con il server"
+
+msgid "Clear local mirror before full resync"
+msgstr "Svuota la copia locale prima della risincronizzazione completa"
+
+msgid "GrampsWebApiDb"
+msgstr "GrampsWebApiDb"
+
+msgid "Gramps _Web API Database"
+msgstr "Database Gramps _Web API"
+
+msgid ""
+"Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
+"database, mirrored locally for speed."
+msgstr ""
+"Usa un server Gramps Web API (ad es. gramps-connect o Gramps Web) come "
+"database attivo, con una copia locale per la velocità."

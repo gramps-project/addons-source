@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "The place was not found. You may clarify the search keywords."
+msgstr ""
+"Il luogo non è stato trovato. Puoi precisare le parole chiave di ricerca."
+
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr "Ricerca delle coordinate non riuscita a causa di un errore imprevisto."
+
+msgid "The place was not found."
+msgstr "Il luogo non è stato trovato."
 
 msgid "The place was not identified."
 msgstr "Il luogo non è stato identificato."
+
+msgid "Coordinates were not given."
+msgstr "Le coordinate non sono state indicate."
+
+msgid "Failed to interpret the input format."
+msgstr "Impossibile interpretare il formato inserito."
+
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "Voce del database [{id}] {name}:"
+
+msgid "Nothing has been searched yet"
+msgstr "Non è stato ancora cercato nulla"
+
+msgid "No place is active"
+msgstr "Nessun luogo attivo"
+
+msgid "Place Coordinate Gramplet view"
+msgstr "Vista del gramplet Coordinate del luogo"
+
+msgid "View for the place coordinate gramplet."
+msgstr "Vista per il gramplet Coordinate del luogo."
+
+msgid "Place and Coordinates"
+msgstr "Luogo e coordinate"
+
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Gramplet che semplifica l'impostazione delle coordinate di un luogo"
+
+msgid "Place Coordinates"
+msgstr "Coordinate del luogo"
+
+msgid "Place Coordinate Gramplet"
+msgstr "Gramplet Coordinate del luogo"
+
+msgid "Map Menu"
+msgstr "Menu della mappa"
+
+msgid "Add city as place"
+msgstr "Aggiungi la città come luogo"
+
+msgid "Add addess as place"
+msgstr "Aggiungi l'indirizzo come luogo"
 
 msgid "Search for:"
 msgstr "Cerca:"
@@ -23,5 +76,30 @@ msgstr "Cerca:"
 msgid "Found place:"
 msgstr "Luogo trovato:"
 
+msgid "No DB entry is selected"
+msgstr "Nessuna voce del database selezionata"
+
 msgid "Postal-Code:"
 msgstr "CAP:"
+
+msgid "Show found place externally in Google Maps"
+msgstr "Mostra il luogo trovato all'esterno in Google Maps"
+
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"Prendi l'ultima posizione cliccata\n"
+"sulla mappa di Geografia"
+
+msgid "Search location from DB"
+msgstr "Cerca la posizione nel database"
+
+msgid "Apply geo location to Database"
+msgstr "Applica la posizione geografica al database"
+
+msgid "Go"
+msgstr "Vai"
+
+msgid "Show help"
+msgstr "Mostra l'aiuto"

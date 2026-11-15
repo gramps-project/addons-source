@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-11-17 06:51+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,14 +12,127 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Display relations and distances with the home person"
+msgstr "Zobrazit příbuzenské vztahy a vzdálenosti vůči výchozí osobě"
+
+msgid "Will display relational informations with the home person"
+msgstr "Zobrazí informace o příbuzenství vůči výchozí osobě"
+
+msgid "Relation and distances with root"
+msgstr "Příbuzenství a vzdálenosti vůči kořenové osobě"
+
 msgid "Select filter to restrict people"
 msgstr "Vyberte filtr pro omezení osob"
 
+msgid "Filter rule"
+msgstr "Pravidlo filtru"
+
+msgid "Select the filter rule"
+msgstr "Vyberte pravidlo filtru"
+
+msgid "Deep generations"
+msgstr "Hloubka v generacích"
+
+msgid "How deep should we go?"
+msgstr "Do jaké hloubky se má postupovat?"
+
+msgid "Rel_id"
+msgstr "ID vztahu"
+
+msgid "up"
+msgstr "nahoru"
+
+msgid "down"
+msgstr "dolů"
+
+msgid "Common MRA"
+msgstr "Společný MRA"
+
+msgid "Period"
+msgstr "Období"
+
+msgid "Shared Subtree"
+msgstr "Sdílený podstrom"
+
+msgid "Centrality"
+msgstr "Centralita"
+
+msgid "Unique Ancestors"
+msgstr "Jedineční předkové"
+
+msgid "Surname Diversity"
+msgstr "Rozmanitost příjmení"
+
+msgid "Save"
+msgstr "Uložit"
+
+msgid "Quit"
+msgstr "Ukončit"
+
+msgid "No default person set."
+msgstr "Není nastavena výchozí osoba."
+
+msgid "Please wait, filtering..."
+msgstr "Čekejte, probíhá filtrování..."
+
+msgid "Network Metrics"
+msgstr "Metriky sítě"
+
+msgid "Enabled"
+msgstr "Povoleno"
+
+msgid "Enable or disable family network metrics"
+msgstr "Povolit nebo zakázat metriky rodinné sítě"
+
+msgid "Generating relation map..."
+msgstr "Vytváření mapy příbuzenství..."
+
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"Filtrování\tAktuální shoda\t\tČas průchodu\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
+msgid "Folder Chooser"
+msgstr "Výběr složky"
+
+msgid "_Select"
+msgstr "_Vybrat"
+
+msgid "Please, select a folder"
+msgstr "Vyberte složku"
+
+msgid "Foldername need"
+msgstr "Je nutný název složky"
+
 msgid "Foldername will be used for saving the content."
 msgstr "Název složky bude použit pro uložení obsahu."
+
+msgid "Did you set a foldername?"
+msgstr "Zadali jste název složky?"
+
+msgid "Cannot set a valid location."
+msgstr "Nelze nastavit platné umístění."
+
+msgid "Failed to save data."
+msgstr "Data se nepodařilo uložit."
+
+msgid "Relationships Map and Tab"
+msgstr "Mapa a tabulka vztahů"
+
+msgid "Enable family network metrics"
+msgstr "Povolit metriky rodinné sítě"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "Zda se mají počítat a zobrazovat metriky rodinné sítě."

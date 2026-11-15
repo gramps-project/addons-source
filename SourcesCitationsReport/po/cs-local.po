@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 15:11-0500\n"
-"PO-Revision-Date: 2025-11-17 06:51+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,11 +12,122 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Sources and Citations Report"
+msgstr "Sestava pramenů a citací"
+
+msgid "Provides a source and Citations Report with notes"
+msgstr "Poskytuje sestavu pramenů a citací s poznámkami"
+
+#, python-format
+msgid "Key: %s"
+msgstr "Klíč: %s"
+
+msgid "Citations:"
+msgstr "Citace:"
+
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#, python-format
+msgid "  %s"
+msgstr "  %s"
+
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#, python-format
+msgid "   Type: %s"
+msgstr "   Typ: %s"
+
+#, python-format
+msgid "   N-ID: %s"
+msgstr "   N-ID: %s"
+
+#, python-format
+msgid "   %s"
+msgstr "   %s"
+
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+msgid "   Spouses: "
+msgstr "   Manželé: "
+
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#, python-format
+msgid "and %s "
+msgstr "a %s "
+
+#, python-format
+msgid " %s"
+msgstr " %s"
+
+msgid "Title of the Report"
+msgstr "Název sestavy"
+
+msgid "Title string for the report."
+msgstr "Text nadpisu sestavy."
+
+msgid "Subtitle of the Report"
+msgstr "Podtitul sestavy"
+
+msgid "Subtitle string for the report."
+msgstr "Text podnadpisu sestavy."
+
 msgid "researcher name"
 msgstr "jméno badatele"
+
+msgid "Select sources using a filter"
+msgstr "Vybrat prameny pomocí filtru"
+
+msgid "Show persons"
+msgstr "Zobrazit osoby"
+
+msgid "Whether to show events and persons mentioned in the note"
+msgstr "Zda zobrazit události a osoby uvedené v poznámce"
+
+msgid "The style used for the title of the report."
+msgstr "Styl použitý pro nadpis sestavy."
+
+msgid "The style used for the subtitle of the report."
+msgstr "Styl použitý pro podnadpis sestavy."
+
+msgid "The style used for the footer of the report."
+msgstr "Styl použitý pro zápatí sestavy."
+
+msgid "The style used for source title."
+msgstr "Styl použitý pro nadpis pramene."
+
+msgid "The style used for source subtitle."
+msgstr "Styl použitý pro podnadpis pramene."
+
+msgid "The style used for Source details."
+msgstr "Styl použitý pro podrobnosti pramene."
+
+msgid "The style used for citation title."
+msgstr "Styl použitý pro nadpis citace."
+
+msgid "The style used for a column title."
+msgstr "Styl použitý pro nadpis sloupce."
+
+msgid "The style used for each section."
+msgstr "Styl použitý pro jednotlivé oddíly."
+
+msgid "The style used for event and person details."
+msgstr "Styl použitý pro podrobnosti událostí a osob."

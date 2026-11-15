@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,14 +12,333 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Descendants Lines"
+msgstr "Linie potomků"
+
+msgid "Produces descendants lines of a person"
+msgstr "Vytváří linie potomků osoby"
+
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "Formát SVG není pro doplňkový dokument podporován!"
+
+msgid "Output format"
+msgstr "Výstupní formát"
+
+msgid "PNG format"
+msgstr "Formát PNG"
+
+msgid "SVG format"
+msgstr "Formát SVG"
+
+msgid "PDF format"
+msgstr "Formát PDF"
+
+msgid "PS format"
+msgstr "Formát PS"
+
+msgid "The output format to be used"
+msgstr "Použitý výstupní formát"
+
+msgid "The destination file for the content."
+msgstr "Cílový soubor s obsahem."
+
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "Počet generací zahrnutých do grafu. (0 znamená bez omezení)"
+
+msgid "Use d'Aboville descendant numbering system"
+msgstr "Použít číslování potomků v systému d'Aboville"
+
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "V grafu před jméno přidat číslo potomka podle systému d'Aboville."
+
+msgid "Include an image"
+msgstr "Zahrnout obrázek"
+
 msgid "Whether to include an image if one is available."
 msgstr "Zda zahrnout obrázek, pokud je k dispozici."
 
+msgid "Max Image height"
+msgstr "Maximální výška obrázku"
+
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr "Maximální výška obrázku v pixelech, 0 = neměnit měřítko podle výšky."
+
+msgid "Max Image width"
+msgstr "Maximální šířka obrázku"
+
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "Maximální šířka obrázku v pixelech, 0 = neměnit měřítko podle šířky."
+
+msgid "Image Location"
+msgstr "Umístění obrázku"
+
+msgid "Above text"
+msgstr "Nad textem"
+
+msgid "Left of text"
+msgstr "Vlevo od textu"
+
+msgid "Position of image relative to text"
+msgstr "Umístění obrázku vzhledem k textu"
+
+msgid "Colour Name by Gender"
+msgstr "Zbarvit jméno podle pohlaví"
+
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "Barvou jména v grafu vyznačit pohlaví osoby."
+
+msgid "Use alternate events, if Primary event is not found"
+msgstr "Použít náhradní události, pokud hlavní událost chybí"
+
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"Pro narození (křest – typy Baptism a Christening)\n"
+"   sňatek (svolení ke sňatku, zasnoubení)\n"
+"   rozvod (anulování, žádost o rozvod),\n"
+"   úmrtí (pohřbení, kremace, ověření závěti)."
+
+msgid "Sort Events by Date"
+msgstr "Seřadit události podle data"
+
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr ""
+"Seřadit události podle data (jinak použít pořadí uvedené výše v části "
+"'Formáty zobrazení')."
+
+msgid "Text style"
+msgstr "Styl textu"
+
+msgid "Center-aligned text"
+msgstr "Text zarovnaný na střed"
+
+msgid "Left-aligned text"
+msgstr "Text zarovnaný vlevo"
+
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "Zarovnání textu v bloku každé osoby v grafu"
+
+msgid "Max Note Length"
+msgstr "Maximální délka poznámky"
+
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"Maximální délka pole poznámky události v textovém bloku, '$e(n)'\n"
+" 0 = bez omezení "
+
+msgid "Font Name"
+msgstr "Název písma"
+
+msgid ""
+"Name of the Font to use. On Windows enter the file name of the .ttf at /"
+"Windows/Fonts"
+msgstr ""
+"Název použitého písma. V systému Windows zadejte název souboru .ttf z /"
+"Windows/Fonts"
+
+msgid "Font base size"
+msgstr "Základní velikost písma"
+
+msgid "Box around Person's block"
+msgstr "Rámeček kolem bloku osoby"
+
+msgid "Draw a thin black box around each person' text block."
+msgstr "Kolem textového bloku každé osoby nakreslit tenký černý rámeček."
+
+msgid "All Person's blocks have the same height"
+msgstr "Stejná výška všech bloků osob"
+
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr "Všechny bloky osob mají stejnou výšku odpovídající nejvyššímu bloku."
+
+msgid "All Person's blocks have the same width"
+msgstr "Stejná šířka všech bloků osob"
+
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr "Všechny bloky osob mají stejnou šířku odpovídající nejširšímu bloku."
+
+msgid "Colour blocks by Generation"
+msgstr "Zbarvit bloky podle generací"
+
+msgid "Colour the background of text blocks by generation."
+msgstr "Zbarvit pozadí textových bloků podle generací."
+
+msgid "Descend block colour intensity"
+msgstr "Intenzita barvy bloku potomka"
+
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr "Intenzita barvy pozadí bloku potomka, 0 = slabá, 255 = sytá barva"
+
+msgid "Spouse block colour intensity"
+msgstr "Intenzita barvy bloku manžela/manželky"
+
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr ""
+"Intenzita barvy pozadí bloku manžela/manželky, 0 = slabá, 255 = sytá barva"
+
+msgid "Display Formats"
+msgstr "Formáty zobrazení"
+
 msgid "Name Display Format"
 msgstr "Formát zobrazení jména"
+
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f = křestní jména (první i další), l = příjmení, n = přezdívka,\n"
+"c = běžně používané křestní jméno, t = titul, s = přípona, g = rodinná "
+"přezdívka\n"
+"Viz wiki příručka > Sestavy > část 2"
+
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+"[event, list]$e(formating)\n"
+"Viz wiki příručka > Sestavy > část 2\n"
+"formátování: data=d(ymdMo) místa=D(elcuspnoitxy) poznámky=n zkrácený_typ=t"
+
+msgid "Replace"
+msgstr "Nahradit"
+
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"např.\n"
+"United States of America/USA"
+
+msgid "Spouse and Family"
+msgstr "Manžel/manželka a rodina"
+
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "Svislá spojnice od potomka k partnerské spojnici"
+
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr "Délka svislé spojnice od potomka k partnerské spojnici."
+
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "Svislá spojnice od partnerské spojnice k manželovi/manželce"
+
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "Délka svislé spojnice od partnerské spojnice k manželovi/manželce."
+
+msgid "Vertical space spouse-bar to other spouse"
+msgstr "Svislý odstup partnerské spojnice od dalšího manžela/manželky"
+
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr ""
+"Odstup mezi partnerskou spojnicí a dalším manželem/manželkou, pokud má "
+"tentýž potomek více rodin."
+
+msgid "Horizontal space descendant to spouse"
+msgstr "Vodorovný odstup potomka od manžela/manželky"
+
+msgid "The space to add between the descendant and the spouse."
+msgstr "Odstup mezi potomkem a manželem/manželkou."
+
+msgid "Horizonal space family to family"
+msgstr "Vodorovný odstup mezi rodinami"
+
+msgid ""
+"The space to add between the more extern descendant (or spouse) of a family "
+"and the more extern descendant (or spouse) of the next family."
+msgstr ""
+"Odstup mezi nejvzdálenějším potomkem (nebo manželem/manželkou) jedné rodiny "
+"a nejvzdálenějším potomkem (nebo manželem/manželkou) následující rodiny."
+
+msgid "Horizontal distance spouse to family edge"
+msgstr "Vodorovná vzdálenost manžela/manželky od okraje rodiny"
+
+msgid ""
+"If this value is 0, the children bar is centered under the spouse. The "
+"bigger the value, more the center is moved to the left towards the "
+"descendant."
+msgstr ""
+"Je-li hodnota 0, spojnice dětí je vystředěná pod manželem/manželkou. Čím je "
+"hodnota větší, tím více se střed posouvá doleva směrem k potomkovi."
+
+msgid "Vertical edge spouse-bar to child-bar"
+msgstr "Svislá spojnice od partnerské spojnice ke spojnici dětí"
+
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "Délka svislé spojnice od partnerské spojnice ke spojnici dětí."
+
+msgid "Children distance"
+msgstr "Odstup dětí"
+
+msgid "The horizontal distance between two children of the same family."
+msgstr "Vodorovná vzdálenost mezi dvěma dětmi stejné rodiny."
+
+msgid "Vertical edge child to child-bar"
+msgstr "Svislá spojnice od dítěte ke spojnici dětí"
+
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "Délka svislé spojnice od dítěte ke spojnici dětí."
+
+msgid "Space around text"
+msgstr "Odstup kolem textu"
+
+msgid "The space to add around the text block of a person."
+msgstr "Odstup kolem textového bloku osoby."
+
+msgid "Space between lines of text"
+msgstr "Odstup mezi řádky textu"
+
+msgid "The space to add between a line and the next in a person text block."
+msgstr "Odstup mezi sousedními řádky textového bloku osoby."
+
+msgid "Header and Footer"
+msgstr "Záhlaví a zápatí"
+
+msgid "The text that will be written in the header of the document"
+msgstr "Text, který se zobrazí v záhlaví dokumentu"
+
+msgid "The text that will be written in the footer of the document"
+msgstr "Text, který se zobrazí v zápatí dokumentu"
+
+msgid "Title and footer coefficient"
+msgstr "Koeficient velikosti titulku a zápatí"
+
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr "Číslo, kterým se násobí základní velikost textu v titulku a zápatí"
+
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "Chránit osoby, obrázky a události označené jako soukromé"
+
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr "Označení soukromí se kontroluje jen u těchto typů objektů Gramps"
+
+msgid "Privacy text"
+msgstr "Text pro soukromé údaje"
+
+msgid "Text to display in block, when a Person is marked private"
+msgstr "Text zobrazený v bloku osoby označené jako soukromá"
+
+msgid "The default style."
+msgstr "Výchozí styl."

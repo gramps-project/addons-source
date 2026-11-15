@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,20 +12,120 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "No Source"
+msgstr "Bez pramene"
+
+msgid "onclick"
+msgstr "onclick"
+
+msgid "onmouseover"
+msgstr "onmouseover"
+
+msgid "Ancestor"
+msgstr "Předek"
+
+msgid "Descendant"
+msgstr "Potomek"
+
+msgid "Fan"
+msgstr "Vějíř"
+
+msgid "Growth Spiral"
+msgstr "Růstová spirála"
+
+msgid "Mandelbrot Tree"
+msgstr "Mandelbrotův strom"
+
+msgid "Pythagoras Tree"
+msgstr "Pythagorův strom"
+
+msgid "right to left"
+msgstr "zprava doleva"
+
+msgid "left to right"
+msgstr "zleva doprava"
+
+msgid "top to bottom"
+msgstr "shora dolů"
+
+msgid "bottom to top"
+msgstr "zdola nahoru"
+
+msgid "role"
+msgstr "role"
+
 msgid "description"
 msgstr "popis"
+
+msgid "witnesses"
+msgstr "witnesses"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Zápis do {target_path} selhal: {message}"
+
+msgid "No central person selected"
+msgstr "Není vybrána ústřední osoba"
+
+msgid "Unknown time direction"
+msgstr "Neznámý směr času"
+
+msgid "author"
+msgstr "author"
+
+msgid "publication_info"
+msgstr "publication_info"
+
+msgid "abbreviation"
+msgstr "abbreviation"
+
+msgid "volume"
+msgstr "volume"
+
+msgid "the chart type runs out of bounds"
+msgstr "typ grafu překračuje povolené meze"
 
 msgid "Search"
 msgstr "Vyhledávání"
 
+msgid "DenominoViso Options"
+msgstr "Nastavení DenominoViso"
+
+msgid "The destination file for the html-content."
+msgstr "Cílový soubor s obsahem HTML."
+
+msgid "Central Person"
+msgstr "Ústřední osoba"
+
+msgid "The central person for the tree"
+msgstr "Ústřední osoba stromu"
+
+msgid "Title of the webpage"
+msgstr "Název webové stránky"
+
+msgid "Any string you wish."
+msgstr "Libovolný text."
+
+msgid "Display mode"
+msgstr "Režim zobrazení"
+
+msgid "Either plot ancestor or descendants graph."
+msgstr "Vykreslit graf předků, nebo potomků."
+
+msgid "Display type"
+msgstr "Typ zobrazení"
+
 msgid "The type of graph to create."
 msgstr "Typ grafu, který se má vytvořit."
+
+msgid "Direction of time"
+msgstr "Směr času"
 
 msgid "Direction in which time increases."
 msgstr "Směr, kterým plyne čas."
@@ -45,27 +145,258 @@ msgstr "Výška stromu v pixelech."
 msgid "Closing remarks"
 msgstr "Závěrečné poznámky"
 
+msgid ""
+"List of strings, free text added at the bottom, for example for a copyright "
+"notice."
+msgstr ""
+"Seznam textových řetězců přidaných na konec stránky, například oznámení o "
+"autorských právech."
+
+msgid "Include Options"
+msgstr "Nastavení zahrnutí údajů"
+
+msgid "Include private records"
+msgstr "Zahrnout soukromé záznamy"
+
 msgid "Whether to leave out private data."
 msgstr "Zda vynechat soukromá data."
+
+msgid "Include Events"
+msgstr "Zahrnout události"
 
 msgid "Whether to include a person's events."
 msgstr "Zda zahrnout události osoby."
 
+msgid "Include birth children"
+msgstr "Zahrnout narození dětí"
+
 msgid "Whether to include the birth of children in the list of events."
 msgstr "Zda zahrnout narození dětí do seznamu událostí."
+
+msgid "Include death relatives"
+msgstr "Zahrnout úmrtí příbuzných"
 
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
 msgstr "Zda zahrnout úmrtí příbuzných během života osoby."
 
+msgid "Include witness note"
+msgstr "Zahrnout poznámku svědka"
+
+msgid ""
+"Whether to include the note belonging to a witness (if the event_format "
+"contains <witnesses>)"
+msgstr ""
+"Zda zahrnout poznámku náležející svědkovi (pokud event_format obsahuje "
+"<witnesses>)"
+
+msgid "Whether to include a person's attributes"
+msgstr "Zda zahrnout atributy osoby"
+
 msgid "Whether to include a person's addresses."
 msgstr "Zda zahrnout adresy osoby."
+
+msgid "Include Note"
+msgstr "Zahrnout poznámku"
 
 msgid "Whether to include a person's note."
 msgstr "Zda zahrnout poznámku osoby."
 
+msgid "Include URL"
+msgstr "Zahrnout URL"
+
 msgid "Whether to include a person's internet address."
 msgstr "Zda zahrnout internetovou adresu osoby."
 
+msgid "Include URL description"
+msgstr "Zahrnout popis URL"
+
+msgid "Whether to include the description of the first URL"
+msgstr "Zda zahrnout popis první adresy URL"
+
+msgid "Include Sources"
+msgstr "Zahrnout prameny"
+
 msgid "Whether to include a person's sources."
-msgstr "Zda zahrnout zdroje osoby."
+msgstr "Zda zahrnout prameny osoby."
+
+msgid "Image Options"
+msgstr "Nastavení obrázků"
+
+msgid "Include Photos/Images from Gallery"
+msgstr "Zahrnout fotografie/obrázky z galerie"
+
+msgid "Whether to include images"
+msgstr "Zda zahrnout obrázky"
+
+msgid "Copy Image"
+msgstr "Kopírovat obrázky"
+
+msgid "Copy the images to a designated directory."
+msgstr "Zkopírovat obrázky do určeného adresáře."
+
+msgid "Images with Attribute"
+msgstr "Obrázky s atributem"
+
+msgid "Determine images with which attributes to in/exclude"
+msgstr "Určit, obrázky s kterými atributy se zahrnou či vyloučí"
+
+msgid "Include Image source references"
+msgstr "Zahrnout odkazy na prameny obrázků"
+
+msgid "Whether to include references for images"
+msgstr "Zda zahrnout odkazy k obrázkům"
+
+msgid "Source reference attribute"
+msgstr "Atribut s odkazem na pramen"
+
+msgid "Image attribute that should be used as source reference"
+msgstr "Atribut obrázku, který se má použít jako odkaz na pramen"
+
+msgid "Style Options"
+msgstr "Nastavení stylu"
+
+msgid "Color of active person:"
+msgstr "Barva aktivní osoby:"
+
+msgid "RGB-color of geometric shape of the activated person."
+msgstr "Barva RGB geometrického tvaru aktivované osoby."
+
+msgid "Color of found persons:"
+msgstr "Barva nalezených osob:"
+
+msgid "RGB-color of geometric shape of the persons found."
+msgstr "Barva RGB geometrického tvaru nalezených osob."
+
+msgid "Color of male persons:"
+msgstr "Barva mužů:"
+
+msgid "RGB-color of geometric shape of the male persons."
+msgstr "Barva RGB geometrického tvaru mužů."
+
+msgid "Colour of female persons:"
+msgstr "Barva žen:"
+
+msgid "RGB-color of geometric shape of the female persons."
+msgstr "Barva RGB geometrického tvaru žen."
+
+msgid "Width of rectangle (hrd):"
+msgstr "Šířka obdélníku (hrd):"
+
+msgid ""
+"The width of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"Šířka obdélníku osoby v běžném typu grafu vyjádřená jako podíl vodorovného "
+"rozestupu obdélníků."
+
+msgid "Height of rectangle (hrd):"
+msgstr "Výška obdélníku (hrd):"
+
+msgid ""
+"The height of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"Výška obdélníku osoby v běžném typu grafu vyjádřená jako podíl vodorovného "
+"rozestupu obdélníků."
+
+msgid "Vertical distance of rectangles (hrd):"
+msgstr "Svislý rozestup obdélníků (hrd):"
+
+msgid ""
+"The vertical distance of person rectangles of the regular chart type "
+"expressed as fraction of the horizontal rectangle distance."
+msgstr ""
+"Svislý rozestup obdélníků osob v běžném typu grafu vyjádřený jako podíl "
+"vodorovného rozestupu obdélníků."
+
+msgid "Extra style settings:"
+msgstr "Další nastavení stylu:"
+
+msgid "Whatever css style settings are needed."
+msgstr "Libovolná potřebná nastavení stylu CSS."
+
+msgid "Mouse event handler"
+msgstr "Obsluha událostí myši"
+
+msgid "Mouse handler used to interact with visitor of webpage."
+msgstr "Obsluha myši používaná k interakci s návštěvníkem webové stránky."
+
+msgid "Birth relationship linestyle"
+msgstr "Styl čáry rodičovského vztahu"
+
+msgid ""
+"List of lists where each sublist is a list with information about the dash "
+"pattern of lines connecting children to parents."
+msgstr ""
+"Seznam seznamů, kde každý podseznam obsahuje informace o vzoru čárkování čar "
+"spojujících děti s rodiči."
+
+msgid "Source confidence color"
+msgstr "Barva jistoty pramene"
+
+msgid ""
+"List of lists where each sublist is a list with information on the color to "
+"use for a certain confidence level."
+msgstr ""
+"Seznam seznamů, kde každý podseznam obsahuje informace o barvě pro určitou "
+"úroveň jistoty."
+
+msgid "Event format"
+msgstr "Formát události"
+
+msgid "at"
+msgstr "v"
+
+msgid "Source format"
+msgstr "Formát pramene"
+
+msgid "restricted to:"
+msgstr "omezit na:"
+
+msgid "to directory:"
+msgstr "do adresáře:"
+
+msgid "Save images in ..."
+msgstr "Uložit obrázky do..."
+
+msgid "should be"
+msgstr "má být"
+
+msgid "Included"
+msgstr "Zahrnuto"
+
+msgid "Excluded"
+msgstr "Vyloučeno"
+
+msgid "Name HTML-wrapper file"
+msgstr "Název souboru obalové stránky HTML"
+
+msgid "Save HTML-wrapper file as ..."
+msgstr "Uložit soubor obalové stránky HTML jako ..."
+
+msgid "Give a filename ..."
+msgstr "Zadejte název souboru ..."
+
+msgid "Relation type"
+msgstr "Typ vztahu"
+
+msgid "Use dashed linestyle"
+msgstr "Použít čárkovanou čáru"
+
+msgid "Dash length"
+msgstr "Délka čárky"
+
+msgid "Inter-dash length"
+msgstr "Délka mezery mezi čárkami"
+
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Vytváří webovou stránku (HTML) s grafickým zobrazením předků či potomků "
+"(SVG), kde se podrobnosti o osobách zobrazují při událostech myši."

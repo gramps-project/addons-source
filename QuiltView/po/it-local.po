@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Quilt Chart"
+msgstr "Grafico a trapunta"
+
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr ""
+"La vista mostra un albero genealogico sotto forma di grafico a trapunta"
+
+msgid "Quilt chart"
+msgstr "Grafico a trapunta"
+
+msgid "Select the name for which you want to see."
+msgstr "Seleziona il nome che vuoi vedere."
+
+msgid "Clear the entry field in the name selection box."
+msgstr "Svuota il campo nella casella di selezione del nome."
 
 msgid "Nothing is selected"
 msgstr "Non è stato selezionato nulla"
@@ -30,6 +46,9 @@ msgstr "Caricamento degli individui"
 
 msgid "Loading the data"
 msgstr "Caricamento dei dati"
+
+msgid "About Quilt View"
+msgstr "Informazioni sulla vista a trapunta"
 
 msgid "Edit tags"
 msgstr "Modifica etichette"
@@ -51,6 +70,22 @@ msgstr "Stampa dell'albero"
 #, python-format
 msgid "Need to print %(pages)s pages (%(format)s format)"
 msgstr "È necessario stampare %(pages)s pagine (formato %(format)s)"
+
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Centra sulla persona selezionata.\n"
+"La nuova posizione della persona sarà vicino all'angolo in alto a sinistra."
+
+msgid "The path color"
+msgstr "Il colore del percorso"
+
+msgid "The selected person color"
+msgstr "Il colore della persona selezionata"
+
+msgid "The path transparency"
+msgstr "La trasparenza del percorso"
 
 msgid "General options"
 msgstr "Opzioni generali"

@@ -1,0 +1,321 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 09:39-0700\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.12.dev0\n"
+
+msgid "Select the person whose story to generate, then try again."
+msgstr "Seleziona la persona di cui generare la storia, poi riprova."
+
+msgid "Couldn't generate the story"
+msgstr "Impossibile generare la storia"
+
+msgid "Story saved"
+msgstr "Storia salvata"
+
+#, python-format
+msgid ""
+"%(count)d slides saved to %(path)s.\n"
+"\n"
+"Open it in the Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+msgstr ""
+"%(count)d diapositive salvate in %(path)s.\n"
+"\n"
+"Aprila con Gramps Connect Story Viewer: https://dsblank.github.io/gramps-"
+"connect-stories/"
+
+msgid "_Open in Browser"
+msgstr "_Apri nel browser"
+
+msgid "Story"
+msgstr "Storia"
+
+msgid "Generate Story"
+msgstr "Genera storia"
+
+msgid "Generate the story of:"
+msgstr "Genera la storia di:"
+
+#, python-format
+msgid "Family: %s"
+msgstr "Famiglia: %s"
+
+msgid "Include families"
+msgstr "Includi le famiglie"
+
+msgid ""
+"Also draw on this person's own families: a spouse's and children's births "
+"and deaths, and their parents' and siblings'."
+msgstr ""
+"Usa anche le famiglie della persona: nascite e morti di coniuge e figli, e "
+"di genitori, fratelli e sorelle."
+
+msgid "Include each person's own birth and death in this family's story:"
+msgstr "Includi nella storia di questa famiglia la nascita e la morte di:"
+
+msgid "Include living people (and photos they appear in)"
+msgstr "Includi le persone viventi (e le foto in cui compaiono)"
+
+msgid "Stories (*.story.zip)"
+msgstr "Storie (*.story.zip)"
+
+msgid ""
+"This family is marked private. To generate its story, check \"Include data "
+"marked private\"."
+msgstr ""
+"Questa famiglia è marcata come privata. Per generarne la storia, seleziona "
+"\"Includere i dati marcati come privati\"."
+
+#, python-format
+msgid ""
+"%s is marked private. To generate their story, check \"Include data marked "
+"private\"."
+msgstr ""
+"%s è una persona marcata come privata. Per generarne la storia, seleziona "
+"\"Includere i dati marcati come privati\"."
+
+#, python-format
+msgid ""
+"%s is probably living. To generate their story, check \"Include living "
+"people\"."
+msgstr ""
+"%s è probabilmente una persona vivente. Per generarne la storia, seleziona "
+"\"Includi le persone viventi\"."
+
+#, python-format
+msgid "%(who)s was born"
+msgstr "%(who)s nasce"
+
+#, python-format
+msgid "%(who)s was stillborn"
+msgstr "%(who)s nasce senza vita"
+
+#, python-format
+msgid "%(who)s was baptized"
+msgstr "%(who)s riceve il battesimo"
+
+#, python-format
+msgid "%(who)s was christened"
+msgstr "%(who)s riceve il battesimo"
+
+#, python-format
+msgid "%(who)s was blessed"
+msgstr "%(who)s riceve la benedizione"
+
+#, python-format
+msgid "%(who)s was confirmed"
+msgstr "%(who)s riceve la cresima"
+
+#, python-format
+msgid "%(who)s took First Communion"
+msgstr "%(who)s riceve la prima comunione"
+
+#, python-format
+msgid "%(who)s celebrated their Bar Mitzvah"
+msgstr "%(who)s celebra il proprio Bar Mitzvah"
+
+#, python-format
+msgid "%(who)s celebrated their Bas Mitzvah"
+msgstr "%(who)s celebra il proprio Bas Mitzvah"
+
+#, python-format
+msgid "%(who)s was adopted"
+msgstr "Adozione di %(who)s"
+
+#, python-format
+msgid "%(who)s graduated"
+msgstr "%(who)s conclude gli studi"
+
+#, python-format
+msgid "%(who)s was awarded a degree"
+msgstr "%(who)s consegue un titolo di studio"
+
+#, python-format
+msgid "%(who)s emigrated"
+msgstr "%(who)s emigra"
+
+#, python-format
+msgid "%(who)s immigrated"
+msgstr "%(who)s immigra"
+
+#, python-format
+msgid "%(who)s was naturalized"
+msgstr "%(who)s ottiene la naturalizzazione"
+
+#, python-format
+msgid "%(who)s was ordained"
+msgstr "%(who)s riceve l'ordinazione"
+
+#, python-format
+msgid "%(who)s was elected"
+msgstr "%(who)s vince un'elezione"
+
+#, python-format
+msgid "%(who)s retired"
+msgstr "%(who)s va in pensione"
+
+#, python-format
+msgid "%(who)s died"
+msgstr "%(who)s muore"
+
+#, python-format
+msgid "%(who)s was buried"
+msgstr "%(who)s riceve sepoltura"
+
+#, python-format
+msgid "%(who)s was cremated"
+msgstr "La salma di %(who)s viene cremata"
+
+#, python-format
+msgid "%(who)s had their estate probated"
+msgstr "Il testamento di %(who)s viene omologato"
+
+#, python-format
+msgid "%(who)s were married"
+msgstr "%(who)s si sposano"
+
+#, python-format
+msgid "%(who)s had their banns read"
+msgstr "%(who)s fanno le pubblicazioni di matrimonio"
+
+#, python-format
+msgid "%(who)s signed a marriage contract"
+msgstr "%(who)s firmano un contratto matrimoniale"
+
+#, python-format
+msgid "%(who)s took out a marriage license"
+msgstr "%(who)s ottengono la licenza matrimoniale"
+
+#, python-format
+msgid "%(who)s agreed a marriage settlement"
+msgstr "%(who)s stipulano un accordo matrimoniale"
+
+#, python-format
+msgid "%(who)s were engaged"
+msgstr "%(who)s si fidanzano"
+
+#, python-format
+msgid "%(who)s were divorced"
+msgstr "%(who)s divorziano"
+
+#, python-format
+msgid "%(who)s filed for divorce"
+msgstr "%(who)s presentano domanda di divorzio"
+
+#, python-format
+msgid "%(who)s had their marriage annulled"
+msgstr "%(who)s ottengono l'annullamento del matrimonio"
+
+#, python-format
+msgid "%(who)s were recorded in the census"
+msgstr "%(who)s compaiono nel censimento"
+
+#, python-format
+msgid "%(who)s lived"
+msgstr "%(who)s risiedono"
+
+#, python-format
+msgid "%(names)s and %(last)s"
+msgstr "%(names)s e %(last)s"
+
+#, python-format
+msgid "%(type)s (%(role)s)"
+msgstr "%(type)s (%(role)s)"
+
+#, python-format
+msgid "%(type)s of %(who)s"
+msgstr "%(type)s di %(who)s"
+
+#, python-format
+msgid "%(who)s took part in this %(type)s as %(role)s"
+msgstr "%(who)s partecipa a questo evento (%(type)s) con il ruolo di %(role)s"
+
+#, python-format
+msgid "%(moment)s on %(date)s"
+msgstr "%(moment)s il %(date)s"
+
+#, python-format
+msgid "%(moment)s in %(date)s"
+msgstr "%(moment)s nel %(date)s"
+
+#, python-format
+msgid "%(moment)s %(date)s"
+msgstr "%(moment)s %(date)s"
+
+#, python-format
+msgid "%(moment)s in %(place)s"
+msgstr "%(moment)s in quel di %(place)s"
+
+#, python-format
+msgid "%d moment"
+msgid_plural "%d moments"
+msgstr[0] "%d momento"
+msgstr[1] "%d momenti"
+
+msgid "This person isn't included with the chosen privacy settings."
+msgstr ""
+"Questa persona non è inclusa con le impostazioni di riservatezza scelte."
+
+#, python-format
+msgid "%s has no events to build a story from."
+msgstr "%s non ha eventi da cui costruire una storia."
+
+#, python-format
+msgid "The Story of %s"
+msgstr "La storia di %s"
+
+#, python-format
+msgid "%(moments)s from %(name)s's recorded life."
+msgstr "%(moments)s della vita documentata di %(name)s."
+
+msgid "This family isn't included with the chosen privacy settings."
+msgstr ""
+"Questa famiglia non è inclusa con le impostazioni di riservatezza scelte."
+
+msgid "this family"
+msgstr "questa famiglia"
+
+msgid ""
+"This family has no events to build a story from: not on the family itself, "
+"and no births or deaths recorded for its members."
+msgstr ""
+"Questa famiglia non ha eventi da cui costruire una storia: nessuno della "
+"famiglia stessa e nessuna nascita o morte registrata per i suoi membri."
+
+#, python-format
+msgid "%(moments)s from the life of %(couple)s and %(children)s."
+msgstr "%(moments)s della vita di %(couple)s e %(children)s."
+
+#, python-format
+msgid "their child"
+msgid_plural "their %(count)d children"
+msgstr[0] "del loro figlio"
+msgstr[1] "dei loro %(count)d figli"
+
+#, python-format
+msgid "%(moments)s from the life of %(couple)s."
+msgstr "%(moments)s della vita di %(couple)s."
+
+#, python-format
+msgid "Family %s"
+msgstr "Famiglia %s"
+
+msgid ""
+"Generates the story of a person or a family (.story.zip): a slideshow of "
+"their events with dates, places and photos, for the Gramps Connect Story "
+"Viewer"
+msgstr ""
+"Genera la storia di una persona o di una famiglia (.story.zip): una "
+"presentazione dei suoi eventi con date, luoghi e foto, per Gramps Connect "
+"Story Viewer"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 13:31-0700\n"
-"PO-Revision-Date: 2026-09-10 08:51+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 msgid "No title"
 msgstr "Nessun titolo"
@@ -193,6 +193,35 @@ msgstr "Icona - URL visitati (segno di spunta)"
 msgid "Icon - Saved URLs (floppy disk)"
 msgstr "Icona - URL salvati (floppy disk)"
 
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Icona - URL collegati ad attributi UID (badge UID)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Icona - URL da file CSV regionali (bandiera)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Icona - URL da file CSV statici (puntina rossa)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Icona - URL da file CSV comuni (terra)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Icona - URL da file CSV incrociati (frecce casuali)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Icona - URL dalla cartella personalizzata dell'utente (icona del foglio di "
+"calcolo)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Icona - URL dalla scheda 'Attributi' (icona 'A')"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Icona - URL dalla scheda 'Internet' (icona 'I')"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Icona - URL dalla scheda 'Note' (icona 'N')"
+
 msgid "QR-code"
 msgstr "Codice QR"
 
@@ -319,6 +348,14 @@ msgstr ""
 "- **Percorso di sistema:** `{dir|%s}` – contiene il file integrato "
 "attribute_mapping.json"
 
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Percorso definito dall'utente:** `{dir|%s}` – per un file "
+"attribute_mapping.json personalizzato dall'utente"
+
 msgid "  💡 *Tip: click any path above to open it in your file manager.*"
 msgstr ""
 "  💡 *Suggerimento: clic su un qualsiasi percorso qui sopra per aprirlo nel "
@@ -348,9 +385,21 @@ msgstr ""
 "✅ La segnalazione di bug e le richieste di nuove funzionalità sono "
 "completamente **gratuite**."
 
+msgid "GitHub Issues"
+msgstr "Segnalazioni su GitHub"
+
+msgid "Gramps Bug Tracker"
+msgstr "Sistema di segnalazione dei bug di Gramps"
+
 #, python-format
 msgid "🧩 WebSearch Gramplet version: `%s`"
 msgstr "🧩 Versione del Gramplet Ricerca web: `%s`"
+
+msgid "Middle Name Handling"
+msgstr "Gestione dei secondi nomi"
+
+msgid "Leave alone"
+msgstr "Lascia invariato"
 
 msgid "Separate"
 msgstr "Separato"

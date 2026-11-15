@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-11-17 06:51+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-11-05 21:11+0000\n"
+"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,14 +12,80 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "AncestorFill"
+msgstr "Úplnost vývodu z předků"
+
+msgid "Report on the filling of the tree"
+msgstr "Sestava o úplnosti rodokmenu"
+
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "Úplnost vývodu z předků – %s"
+
 msgid "Generation "
 msgstr "Generace "
 
+msgid "Number of Ancestors found "
+msgstr "Počet nalezených předků "
+
+msgid "Percent of Ancestors found "
+msgstr "Podíl nalezených předků "
+
+msgid "Number of unique Ancestors found "
+msgstr "Počet různých nalezených předků "
+
+msgid "Number of theoretical Ancestors "
+msgstr "Teoretický počet předků "
+
+msgid "Pedigree Collapse "
+msgstr "Úbytek předků "
+
 msgid "Total Number of Ancestors found "
 msgstr "Celkový počet nalezených předků "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "Celkový počet různých nalezených předků "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"Poznámka: Tato sestava počítá pouze předky s biologickým vztahem mezi "
+"rodičem a dítětem."
+
+msgid "Filled digit"
+msgstr "Desetinná místa podílu"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"Počet desetinných míst v sestavě pro procentní podíl nalezených předků v "
+"dané generaci"
+
+msgid "Collapsed digit"
+msgstr "Desetinná místa úbytku"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr "Počet desetinných míst v sestavě pro úbytek předků"
+
+msgid "Display theoretical"
+msgstr "Zobrazit teoretický počet"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Zda se má zobrazit teoretický počet předků v jednotlivých generacích"
+
+msgid "The style used for the title of the page."
+msgstr "Styl použitý pro nadpis stránky."

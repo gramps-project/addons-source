@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 13:30-0700\n"
-"PO-Revision-Date: 2026-09-10 08:51+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 16:48+0000\n"
+"Last-Translator: Ezio Cabianca <mrcabez@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 msgid "Check Associations data"
 msgstr "Controlla dati delle associazioni"
 
+msgid "Display all person Associations in a sortable, hotlinked table"
+msgstr ""
+"Mostra tutte le associazioni delle persone in una tabella ordinabile e con "
+"collegamenti attivi"
+
 msgid "Associations state tool"
 msgstr "Strumento per lo stato delle associazioni"
+
+#, python-format
+msgid "Error initializing data: %s"
+msgstr "Errore nell'inizializzazione dei dati: %s"
+
+#, python-format
+msgid "Error processing person %s: %s"
+msgstr "Errore nell'elaborazione della persona %s: %s"
+
+msgid "Processing associations..."
+msgstr "Elaborazione delle associazioni..."
+
+#, python-format
+msgid "Could not create progress dialog: %s"
+msgstr "Impossibile creare la finestra di avanzamento: %s"
+
+#, python-format
+msgid "Processing %d of %d persons"
+msgstr "Elaborazione della persona %d di %d"
+
+#, python-format
+msgid "Error displaying associations: %s"
+msgstr "Errore nella visualizzazione delle associazioni: %s"
+
+msgid "Starting Name"
+msgstr "Nome di partenza"
+
+msgid "Associate"
+msgstr "Associa"
+
+#, python-format
+msgid "Total associations found: %d"
+msgstr "Associazioni totali trovate: %d"
+
+msgid "Edit Starting Person"
+msgstr "Modifica la persona di partenza"
+
+msgid "Edit Associate Person"
+msgstr "Modifica la persona associata"
+
+msgid "Edit Association"
+msgstr "Modifica l'associazione"
+
+msgid "Copy row to clipboard"
+msgstr "Copia la riga negli appunti"
+
+msgid "Create Note from row"
+msgstr "Crea una nota dalla riga"
+
+msgid "Association:"
+msgstr "Associazione:"
+
+msgid "Starting Person"
+msgstr "Persona di partenza"
+
+msgid "Link type"
+msgstr "Tipo di collegamento"
