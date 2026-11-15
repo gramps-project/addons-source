@@ -62,6 +62,7 @@ import os
 import shutil
 import tempfile
 import unittest
+from typing import Any
 from unittest.mock import MagicMock, patch
 
 # -------------------------------------------------------------------------
@@ -99,6 +100,7 @@ from gramps.gen.lib import (
     Source,
     Surname,
 )
+from gramps.gen.types import MediaHandle
 import gwizard_common as gc
 import gwizardmediafix as mf
 from gw_fixmediareferencesdialog import (
@@ -234,19 +236,28 @@ class AmbiguousFindTest(_DbTestCase):
         """Different origins are ambiguous; identical origins are not."""
         self.assertEqual(
             mf.ambiguous_matches(
-                [("a", "C:/x/p.jpg", "p.jpg"), ("b", "D:/y/p.jpg", "p.jpg")]
+                [
+                    (MediaHandle("a"), "C:/x/p.jpg", "p.jpg"),
+                    (MediaHandle("b"), "D:/y/p.jpg", "p.jpg"),
+                ]
             ),
             {"a", "b"},
         )
         self.assertEqual(
             mf.ambiguous_matches(
-                [("a", "old/p.jpg", "p.jpg"), ("b", "old/p.jpg", "p.jpg")]
+                [
+                    (MediaHandle("a"), "old/p.jpg", "p.jpg"),
+                    (MediaHandle("b"), "old/p.jpg", "p.jpg"),
+                ]
             ),
             set(),
         )
         self.assertEqual(
             mf.ambiguous_matches(
-                [("a", r"C:\X\p.jpg", "p.jpg"), ("b", "c:/x/P.JPG", "p.jpg")]
+                [
+                    (MediaHandle("a"), r"C:\X\p.jpg", "p.jpg"),
+                    (MediaHandle("b"), "c:/x/P.JPG", "p.jpg"),
+                ]
             ),
             set(),
         )
@@ -597,7 +608,7 @@ class BasePathChangeTest(_DbTestCase):
         self.new_base = os.path.join(self.tmp, "NewBase")
         os.makedirs(self.new_base)
 
-    def change_base(self, dlg: object, new_base: str) -> None:
+    def change_base(self, dlg: Any, new_base: str) -> None:
         """Type a new base path into a dialog and press Apply."""
         dlg.path_entry.set_text(new_base)
         dlg.cb_set_mediapath()
@@ -985,6 +996,12 @@ class DuplicateScanPerformanceTest(_DbTestCase):
         walked = [c.args[0] for c in walk.call_args_list]
         self.assertNotIn(present, walked)
         self.assertIn(os.path.join(self.tmp, "gone.jpg"), walked)
+
+
+# Test discovery imports every test module before running any, so take the
+# fakes off Gtk again now that the GWizard modules are imported; other Gramps
+# tests need the real widgets.  setUpModule puts them back for this module.
+fakes.uninstall()
 
 
 if __name__ == "__main__":

@@ -281,5 +281,11 @@ class PickFileTest(unittest.TestCase):
         )
 
 
+# Test discovery imports every test module before running any, so take the
+# fakes off Gtk again now that the GWizard modules are imported; other Gramps
+# tests need the real widgets.  setUpModule puts them back for this module.
+fakes.uninstall()
+
+
 if __name__ == "__main__":
     unittest.main()

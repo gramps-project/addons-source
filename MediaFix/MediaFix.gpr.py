@@ -28,7 +28,7 @@ if (5, 2, 0) <= VERSION_TUPLE <= (6, 2, 0):
         authors=["Kevin White"],
         authors_email=["gocaveman@gmail.com"],
         category=TOOL_DBPROC,
-        toolclass="GWizardMediaFixTool",
+        toolclass="GWizardMediaFix",
         optionclass="GWizardMediaFixOptions",
         tool_modes=[TOOL_MODE_GUI],
         help_url="https://gramps-project.org/wiki/index.php/Addon:GWizardMediaFix_Tool",

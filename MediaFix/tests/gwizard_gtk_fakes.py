@@ -24,11 +24,17 @@ The GWizard dialogs subclass Gtk classes and build widgets, which needs a
 display.  These lightweight fakes stand in for the few widgets the tests
 inspect.  Every GWizard test module calls :func:`install` *before* importing
 a GWizard module (so the dialog classes subclass the fakes) and again in
-``setUpModule``, and :func:`uninstall` in ``tearDownModule``, so the real
-``Gtk`` module is not left patched for other Gramps tests in the same run.
+``setUpModule``, and :func:`uninstall` at the end of the module and in
+``tearDownModule``, so the real ``Gtk`` module is not left patched for other
+Gramps tests in the same run (test discovery imports every module first).
 
 This module is not named ``*_test.py`` and so is not collected as a test.
 """
+
+# The fakes copy GTK's method names and signatures; documenting each one or
+# using every argument would add nothing, so those checks are off here.
+# pylint: disable=missing-function-docstring,unused-argument,invalid-name
+# pylint: disable=too-few-public-methods,attribute-defined-outside-init
 
 # -------------------------------------------------------------------------
 #
@@ -46,7 +52,33 @@ from unittest.mock import MagicMock
 # Fake widgets
 #
 # ------------------------------------------------------------
-class _FakeDialog:
+class _LenientMeta(type):
+    """Let ``Gtk.X.new_*(...)`` style constructors build the fake."""
+
+    def __getattr__(cls, name: str) -> Any:
+        if name.startswith("new"):
+            return lambda *args, **kwargs: cls()
+        raise AttributeError(name)
+
+
+class _Lenient(metaclass=_LenientMeta):
+    """Answer any widget method the fake does not define with a MagicMock.
+
+    The fakes model only what the tests inspect (labels, sizes, combo
+    choices). Every other GTK call a dialog makes, such as ``set_relief`` or
+    ``get_style_context().add_class``, returns a recorded MagicMock, so a
+    dialog that uses one more widget method does not break the tests.
+    """
+
+    def __getattr__(self, name: str) -> Any:
+        if name.startswith("__"):
+            raise AttributeError(name)
+        value = MagicMock(name="%s.%s" % (type(self).__name__, name))
+        object.__setattr__(self, name, value)
+        return value
+
+
+class _FakeDialog(_Lenient):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         self.response: Any = None
 
@@ -79,7 +111,7 @@ class _FakeDialog:
         return Gtk.ResponseType.OK
 
 
-class _FakeLabel:
+class _FakeLabel(_Lenient):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         self.selectable = False
         self.can_focus = True
@@ -121,8 +153,14 @@ class _FakeLabel:
     def set_max_width_chars(self, val: int) -> None:
         self.max_width_chars = val
 
+    def get_max_width_chars(self) -> int:
+        return -1 if self.max_width_chars is None else self.max_width_chars
+
     def set_size_request(self, w: int, h: int) -> None:
         self.size_request = (w, h)
+
+    def get_size_request(self) -> tuple[int, int]:
+        return self.size_request or (-1, -1)
 
     def set_hexpand(self, val: bool) -> None:
         self.hexpand = val
@@ -131,7 +169,7 @@ class _FakeLabel:
         self.vexpand = val
 
 
-class _FakeGrid:
+class _FakeGrid(_Lenient):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         self.col_spacing = 0
         self.row_spacing = 0
@@ -154,7 +192,7 @@ class _FakeGrid:
         pass
 
 
-class _FakeEntry:
+class _FakeEntry(_Lenient):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         self._text = ""
         self._callbacks: list[Any] = []
@@ -184,7 +222,7 @@ class _FakeEntry:
             self._callbacks.append(callback)
 
 
-class _FakeRadioButton:
+class _FakeRadioButton(_Lenient):
     def __init__(self, group: Any = None, label: str = "") -> None:
         self._active = False
         self.group = group if group is not None else self
@@ -224,7 +262,7 @@ class _FakeRadioButton:
             self._callbacks.append(callback)
 
 
-class _FakeComboBoxText:
+class _FakeComboBoxText(_Lenient):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         self._active = 0
         self._items: list[str] = []
@@ -253,7 +291,7 @@ class _FakeComboBoxText:
         pass
 
 
-class _FakeButton:
+class _FakeButton(_Lenient):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         self._label = kwargs.get("label", "")
         if args and isinstance(args[0], str):
@@ -296,6 +334,76 @@ class _FakeButton:
         pass
 
 
+class _FakeWidget(_Lenient):
+    """Any other widget (Box, Paned, Image, ...): every method is recorded.
+
+    With the real Gtk loaded, a real container refuses a fake child, so every
+    widget class the GWizard dialogs build is replaced, not only the ones the
+    tests inspect.
+    """
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        self.children: list[Any] = []
+
+    def add(self, child: Any, *args: Any) -> None:
+        self.children.append(child)
+
+    def pack_start(self, child: Any, *args: Any) -> None:
+        self.children.append(child)
+
+    def pack_end(self, child: Any, *args: Any) -> None:
+        self.children.append(child)
+
+
+class _FakeFileChooserDialog(_FakeDialog):
+    """File chooser: answers like a dialog and has no file selected."""
+
+    def get_filename(self) -> str | None:
+        return None
+
+
+class _FakeListStore(list):
+    """A list of rows; ``append`` takes a row such as ``[label, value]``."""
+
+    def __init__(self, *_column_types: Any) -> None:
+        super().__init__()
+
+
+class _FakeComboBox(_Lenient):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        self._model: list[Any] = []
+        self._active = 0
+
+    @classmethod
+    def new_with_model(cls, model: Any) -> _FakeComboBox:
+        combo = cls()
+        combo._model = list(model)
+        return combo
+
+    def set_active(self, val: int) -> None:
+        self._active = val
+
+    def get_active(self) -> int:
+        return self._active
+
+    def get_active_iter(self) -> Any:
+        return self._active if 0 <= self._active < len(self._model) else None
+
+    def get_model(self) -> Any:
+        return self._model
+
+    def connect(self, *args: Any, **kwargs: Any) -> None:
+        pass
+
+
+class _FakeScrolledWindow(_Lenient):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        self.children: list[Any] = []
+
+    def add(self, child: Any) -> None:
+        self.children.append(child)
+
+
 _FAKES: dict[str, Any] = {
     "Dialog": _FakeDialog,
     "Label": _FakeLabel,
@@ -304,6 +412,22 @@ _FAKES: dict[str, Any] = {
     "RadioButton": _FakeRadioButton,
     "ComboBoxText": _FakeComboBoxText,
     "Button": _FakeButton,
+    "ComboBox": _FakeComboBox,
+    "ListStore": _FakeListStore,
+    "ScrolledWindow": _FakeScrolledWindow,
+    "Box": _FakeWidget,
+    "CellRendererText": _FakeWidget,
+    "FileChooserDialog": _FakeFileChooserDialog,
+    "Image": _FakeWidget,
+    "Paned": _FakeWidget,
+    # Gramps' ProgressMeter (used by the media fix) builds a progress bar;
+    # a real one needs a display and crashes a headless test run.
+    "ProgressBar": _FakeWidget,
+    "SizeGroup": _FakeWidget,
+    "TextView": _FakeWidget,
+    # Gramps' ProgressMeter drains events with "while events_pending()"; on a
+    # mocked Gtk that would never end, so report that nothing is pending.
+    "events_pending": lambda: False,
 }
 _originals: dict[str, Any] = {}
 
@@ -323,9 +447,25 @@ def gtk() -> Any:
     return Gtk
 
 
+# Gramps message dialogs run a modal loop; with the real Gtk loaded that
+# would wait for a click.  They are replaced by recording MagicMocks.
+_MESSAGE_DIALOGS = (
+    "ErrorDialog",
+    "MessageHideDialog",
+    "OkDialog",
+    "QuestionDialog",
+    "QuestionDialog2",
+    "WarningDialog",
+)
+_dialog_originals: dict[str, Any] = {}
+
+
 def install() -> Any:
     """
     Put the fake widgets on ``Gtk`` (idempotent).
+
+    Gramps' message dialogs are replaced too, so a test that does not patch
+    one of them cannot block on a modal window when the real Gtk is loaded.
 
     :returns: The ``Gtk`` module.
     """
@@ -335,12 +475,25 @@ def install() -> Any:
         if current is not fake:
             _originals.setdefault(name, current)
             setattr(module, name, fake)
+    # pylint: disable-next=import-outside-toplevel
+    from gramps.gui import dialog
+
+    for name in _MESSAGE_DIALOGS:
+        if name not in _dialog_originals and hasattr(dialog, name):
+            _dialog_originals[name] = getattr(dialog, name)
+            setattr(dialog, name, MagicMock(name=name))
     return module
 
 
 def uninstall() -> None:
-    """Restore the ``Gtk`` attributes that :func:`install` replaced."""
+    """Restore the Gtk attributes and Gramps dialogs that :func:`install` replaced."""
     module = gtk()
     for name, original in _originals.items():
         setattr(module, name, original)
     _originals.clear()
+    # pylint: disable-next=import-outside-toplevel
+    from gramps.gui import dialog
+
+    for name, original in _dialog_originals.items():
+        setattr(dialog, name, original)
+    _dialog_originals.clear()

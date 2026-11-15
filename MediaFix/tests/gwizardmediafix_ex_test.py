@@ -338,7 +338,7 @@ class GWizardMediaFixExTest(unittest.TestCase):
                 "Fuller, Harry Jay - 1910Census",
                 "/x/Fuller, Harry Jay - 1910Census.jpg",
             )
-            db = _MockDB(
+            db: Any = _MockDB(
                 "/b",
                 [med],
                 back,
@@ -359,7 +359,7 @@ class GWizardMediaFixExTest(unittest.TestCase):
             back = dict(self.base_back)
             back["m0"] = list(perm)
             med = _Media("m0", "O00000", "scan", "/x/scan.jpg")
-            db = _MockDB(
+            db: Any = _MockDB(
                 "/b",
                 [med],
                 back,
@@ -395,7 +395,7 @@ class GWizardMediaFixExTest(unittest.TestCase):
         )
         back = dict(self.base_back)
         back["m0"] = [("Citation", "c3"), ("Citation", "c1"), ("Citation", "c2")]
-        db = _MockDB(
+        db: Any = _MockDB(
             str(base),
             [m0, m3],
             back,
@@ -450,7 +450,7 @@ class GWizardMediaFixExTest(unittest.TestCase):
                 "Records not imported into OBJE (multi-media object) Could not import C:\\x",
             )
         }
-        db = _MockDB(
+        db: Any = _MockDB(
             str(base),
             [m0, m3, m4, m5],
             back,
@@ -494,7 +494,7 @@ class GWizardMediaFixExTest(unittest.TestCase):
 
         ma = _Media("ma", "O1", "Smith, J - 1900Census", str(tmp / "a.jpg"))
         mb = _Media("mb", "O2", "Smith, J - 1900Census", str(tmp / "b.jpg"))
-        db = _MockDB(str(tmp), [ma, mb], {})
+        db: Any = _MockDB(str(tmp), [ma, mb], {})
 
         template = "{surname}_{given}-{doc_type}-{year}-{hash}.{ext}"
         name_a = m.sanitize_standard_filename(
@@ -528,7 +528,7 @@ class GWizardMediaFixExTest(unittest.TestCase):
                 "Records not imported into OBJE (multi-media object) Could not import C:\\test.jpg",
             )
         }
-        db = _MockDB(str(tmp), [m5], {"n1": [("Media", "m5")]}, N=notes)
+        db: Any = _MockDB(str(tmp), [m5], {"n1": [("Media", "m5")]}, N=notes)
 
         stale = m.find_stale_import_notes(db)
         self.assertEqual([i[1] for i in stale], ["O00005"])
@@ -542,7 +542,7 @@ class GWizardMediaFixExTest(unittest.TestCase):
     def test_reference_context_caching(self) -> None:
         """resolve_media_reference_context with cache parameter avoids repeated computation."""
         med = _Media("m0", "O00000", "test photo", "/path/photo.jpg")
-        db = _MockDB("/b", [med], {})
+        db: Any = _MockDB("/b", [med], {})
 
         calls: list[int] = []
         orig = m._resolve_media_reference_context_uncached
@@ -558,6 +558,12 @@ class GWizardMediaFixExTest(unittest.TestCase):
             for _ in range(3):
                 m.resolve_media_reference_context(db, med, cache)
             self.assertEqual(len(calls), 1)
+
+
+# Test discovery imports every test module before running any, so take the
+# fakes off Gtk again now that the GWizard modules are imported; other Gramps
+# tests need the real widgets.  setUpModule puts them back for this module.
+fakes.uninstall()
 
 
 if __name__ == "__main__":
