@@ -36,7 +36,7 @@ from gramps.gui.dialog import OkDialog
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.plug.report import Report, MenuReportOptions
 from gramps.gen.display.name import displayer as name_displayer
-from gramps.gen.plug.menu import (MediaOption, NoteOption, BooleanOption,
+from gramps.gen.plug.menu import (NoteOption, BooleanOption,
                                   StringOption, NumberOption)
 from gramps.gen.plug.docgen import (ParagraphStyle, FontStyle, TableStyle,
                                     TableCellStyle, PARA_ALIGN_CENTER,
@@ -188,13 +188,13 @@ class FullMediaReport(Report):
         for handle in handles:
             cit = self._db.get_citation_from_handle(handle)
             src_handle = None
+            txt = ""
             for entry in cit.get_referenced_handles():
                 if entry[0] == "Source":
                     src_handle = entry[1]
                     break
             if src_handle:
                 source = self._db.get_source_from_handle(src_handle)
-                txt = ""
                 if source.get_author():
                     txt += "%s: " % source.get_author()
                 if source.get_title():
