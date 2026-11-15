@@ -21,7 +21,7 @@
 """Tests for the file picker in the Find Missing Media dialog.
 
 Each New Path entry has a folder button.  Choosing a file fills that row and
-every other empty, unlocked row whose missing file has the same name.
+every other empty row whose missing file has the same name.
 """
 
 # -------------------------------------------------------------------------
@@ -190,17 +190,18 @@ class PickFileTest(unittest.TestCase):
             self.target_for(dlg, h_typed)["path_entry"].get_text(), "keep/this.jpg"
         )
 
-    def test_locked_rows_are_not_filled(self) -> None:
-        """A locked record is never filled from someone else's pick."""
+    def test_every_same_name_row_is_filled(self) -> None:
+        """A pick fills every other row missing the same file name."""
         h_first = self.add_media("Old/census.jpg", "First")
-        h_locked = self.add_media("Old/census.jpg", "Locked")
-        gc.lock_media(self.db, self.db.get_media_from_handle(h_locked), commit=True)
+        h_second = self.add_media("Old/census.jpg", "Second")
         picked = self.touch("MediaBase", "census.jpg")
 
         dlg = self.open_dialog()
         self.pick(dlg, self.target_for(dlg, h_first), picked)
 
-        self.assertEqual(self.target_for(dlg, h_locked)["path_entry"].get_text(), "")
+        self.assertEqual(
+            self.target_for(dlg, h_second)["path_entry"].get_text(), "census.jpg"
+        )
 
     def test_cancel_changes_nothing(self) -> None:
         """Cancelling the picker leaves the row empty."""

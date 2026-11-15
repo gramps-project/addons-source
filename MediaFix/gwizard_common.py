@@ -386,27 +386,19 @@ def build_basename_index(base_dir: str, limit: int = 50000) -> dict[str, list[st
 
 # ------------------------------------------------------------
 #
-# GWizard Standard Tags and Locking Helpers
+# GWizard Standard Tags
 #
 # ------------------------------------------------------------
 #
 # These helpers work on ANY Gramps object that carries tags (Media, Citation,
 # Source, Repository, Note, Person, Family, Event, Place), so every GWizard tool
-# (Media Fix, Citation Fix, ...) shares one definition of "locked".
-#
-# A lock is the tag named TAG_LOCKED.  It is looked up by NAME, so renaming
-# the tag in Organize Tags silently unlocks everything that carries it (and the
-# next lock creates a new tag with the standard name).  Tell users to leave the
-# GWizard tag names alone.
+# (Media Fix, Citation Fix, ...) shares one definition of each tag.
 #
 # Tags are created lazily, the first time an object is tagged; checking
-# whether something is locked never changes the database.
+# whether something carries a tag never changes the database.
 #
 TAG_MEDIA_FIXED = "GWizard: MediaFixed"
 TAG_MEDIA_FIXED_COLOR = "#2E8B57"
-
-TAG_LOCKED = "GWizard: Locked"
-TAG_LOCKED_COLOR = "#B22222"
 
 
 def create_gwizard_tag(name: str, color: str = "") -> Tag:
@@ -474,22 +466,18 @@ def ensure_tag(
         return None
 
 
-def ensure_gwizard_tags(
-    db: DbWriteBase, txn: Any = None
-) -> tuple[Tag | None, Tag | None]:
+def ensure_gwizard_tags(db: DbWriteBase, txn: Any = None) -> Tag | None:
     """
-    Ensure both standard GWizard tags exist.
+    Ensure the standard GWizard tag exists.
 
     Not needed for normal use (tags are created when first applied); kept for
-    callers that want the tags visible up front.
+    callers that want the tag visible up front.
 
     :param db: The database.
     :param txn: An open transaction, or ``None``.
-    :returns: ``(MediaFixed tag, Locked tag)``.
+    :returns: The ``MediaFixed`` tag.
     """
-    t_fixed = ensure_tag(db, TAG_MEDIA_FIXED, TAG_MEDIA_FIXED_COLOR, txn=txn)
-    t_locked = ensure_tag(db, TAG_LOCKED, TAG_LOCKED_COLOR, txn=txn)
-    return t_fixed, t_locked
+    return ensure_tag(db, TAG_MEDIA_FIXED, TAG_MEDIA_FIXED_COLOR, txn=txn)
 
 
 def find_tag_handle(db: DbReadBase | None, name: str) -> str | None:
@@ -590,77 +578,6 @@ def add_tag_to(
     return True
 
 
-def remove_tag_from(
-    db: DbWriteBase | None,
-    obj: Any,
-    name: str,
-    txn: Any = None,
-    commit: bool = False,
-) -> bool:
-    """
-    Remove the tag called *name* from *obj*.
-
-    :param db: The database.
-    :param obj: Any tagged Gramps object.
-    :param name: The tag name.
-    :param txn: An open transaction, or ``None``.
-    :param commit: Also commit *obj* (in *txn*, or a new transaction).
-    :returns: True if the tag was removed.
-    """
-    if not db or not obj or not hasattr(obj, "remove_tag"):
-        return False
-    handle = find_tag_handle(db, name)
-    if not handle or handle not in (obj.get_tag_list() or []):
-        return False
-    obj.remove_tag(handle)
-    if commit:
-        _commit_now(db, obj, txn, _("Untag %s") % name)
-    return True
-
-
-def is_locked(db: DbReadBase, obj: Any) -> bool:
-    """
-    Return True if *obj* carries the shared ``GWizard: Locked`` tag.
-
-    Every GWizard tool must check this before changing an object.
-
-    :param db: The database.
-    :param obj: Any tagged Gramps object (or ``None``).
-    :returns: Whether the object is locked.
-    """
-    return has_tag(db, obj, TAG_LOCKED)
-
-
-def lock_object(
-    db: DbWriteBase, obj: Any, txn: Any = None, commit: bool = False
-) -> bool:
-    """
-    Lock *obj* against changes by GWizard tools.
-
-    :param db: The database.
-    :param obj: Any tagged Gramps object.
-    :param txn: An open transaction, or ``None``.
-    :param commit: Also commit *obj*.
-    :returns: True if the object was newly locked.
-    """
-    return add_tag_to(db, obj, TAG_LOCKED, TAG_LOCKED_COLOR, txn=txn, commit=commit)
-
-
-def unlock_object(
-    db: DbWriteBase, obj: Any, txn: Any = None, commit: bool = False
-) -> bool:
-    """
-    Remove the GWizard lock from *obj*.
-
-    :param db: The database.
-    :param obj: Any tagged Gramps object.
-    :param txn: An open transaction, or ``None``.
-    :param commit: Also commit *obj*.
-    :returns: True if the lock was removed.
-    """
-    return remove_tag_from(db, obj, TAG_LOCKED, txn=txn, commit=commit)
-
-
 def add_fixed_tag(
     db: DbWriteBase,
     obj: Any,
@@ -685,12 +602,6 @@ def add_fixed_tag(
     return add_tag_to(db, obj, name, color, txn=txn, commit=commit)
 
 
-# Media-specific names, kept so existing callers and tests keep working.
-def is_media_locked(db: DbReadBase, media: Any) -> bool:
-    """Return True if *media* has the ``GWizard: Locked`` tag (see is_locked)."""
-    return is_locked(db, media)
-
-
 def has_media_fixed_tag(db: DbReadBase, media: Any) -> bool:
     """Return True if *media* has the ``GWizard: MediaFixed`` tag."""
     return has_tag(db, media, TAG_MEDIA_FIXED)
@@ -704,26 +615,6 @@ def add_media_fixed_tag(
 ) -> bool:
     """Add the ``GWizard: MediaFixed`` tag to *media* (see add_fixed_tag)."""
     return add_fixed_tag(db, media, txn=txn, commit=commit)
-
-
-def lock_media(
-    db: DbWriteBase,
-    media: Any,
-    txn: Any = None,
-    commit: bool = False,
-) -> bool:
-    """Lock *media* (see lock_object)."""
-    return lock_object(db, media, txn=txn, commit=commit)
-
-
-def unlock_media(
-    db: DbWriteBase,
-    media: Any,
-    txn: Any = None,
-    commit: bool = False,
-) -> bool:
-    """Unlock *media* (see unlock_object)."""
-    return unlock_object(db, media, txn=txn, commit=commit)
 
 
 # ------------------------------------------------------------
@@ -928,7 +819,7 @@ def undo_logged_run(db: DbWriteBase, log_path: str) -> tuple[int, int, list[str]
       (copies are left in place; only the records are repointed);
     - a record is repointed only if its path is still the one the run stored
       (or already the old one, e.g. after Edit > Undo); a record changed
-      since, or locked, is left alone and reported.
+      since is left alone and reported.
 
     The run is then marked as undone in the log, so the next call reverses
     the run before it.
@@ -970,9 +861,6 @@ def undo_logged_run(db: DbWriteBase, log_path: str) -> tuple[int, int, list[str]
                 continue  # already back (e.g. Edit > Undo was used)
             if path_key(current) != path_key(row.get("new_db_path", "")):
                 problems.append("[%s] %s" % (gid, _("path changed since; left alone")))
-                continue
-            if is_locked(db, media):
-                problems.append("[%s] %s" % (gid, _("locked; left alone")))
                 continue
             media.set_path(old_db)
             commit_object(db, media, trans)

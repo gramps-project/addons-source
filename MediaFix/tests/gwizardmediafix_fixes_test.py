@@ -30,8 +30,7 @@
 
 Batch 2:
 
-3. A shared file is moved once with all its records; a file shared with a
-   locked record stays put without blocking anything else; the Accept-all
+3. A shared file is moved once with all its records; the Accept-all
    preview and the real run agree.
 4. Changing the base media path keeps other relative records pointing at
    their files.
@@ -40,9 +39,6 @@ Batch 2:
 
 Batch 3:
 
-- The GWizard lock and "fixed" tags work on any tagged object (Citation,
-  Source, Repository, Note, ...), shared with Citation Fix; checking a lock
-  never creates tags; tags are committed once.
 - 12: failed actions are reported, not "nothing selected"; a relative path is
   never validated against the working directory.
 - 13: paths and titles are escaped before going into markup.
@@ -518,7 +514,7 @@ class SharedCensusNamingTest(_DbTestCase):
 
 # ------------------------------------------------------------
 #
-# Fix 3: shared files move as a group; locked shares are held
+# Fix 3: shared files move as a group
 #
 # ------------------------------------------------------------
 class SharedFileConsolidationTest(_DbTestCase):
@@ -544,29 +540,29 @@ class SharedFileConsolidationTest(_DbTestCase):
         self.assertTrue(os.path.exists(os.path.join(self.base, p1)))
         self.assertFalse(os.path.exists(shared))
 
-    def test_locked_share_is_held_and_does_not_block_others(self) -> None:
-        """A file shared with a locked record stays; other files still move."""
+    def test_preview_matches_run_for_shared_and_single_files(self) -> None:
+        """The preview plans one move per file, and the run makes exactly those."""
         shared = self.touch("old", "shared.jpg")
-        h_locked = self.add_media(shared, "Locked copy")
-        h_free = self.add_media(shared, "Free copy")
-        gc.lock_media(self.db, self.db.get_media_from_handle(h_locked), commit=True)
+        h_a = self.add_media(shared, "Shared copy A")
+        h_b = self.add_media(shared, "Shared copy B")
         single = self.touch("old", "single.jpg")
         h_single = self.add_media(single, "Single", attr=True)  # kept by step 2
 
         plan = mf.build_accept_all_plan(self.db, self.base, True)
-        self.assertEqual(len(plan["moves"]), 1)
-        self.assertEqual(len(plan["held"]), 1)
-        self.assertIn("Files left in place", mf.format_plan(plan))
+        self.assertNotIn("held", plan)
+        # step 2 merges the shared records first, so each file moves once
+        self.assertEqual(len(plan["moves"]), 2)
+        self.assertNotIn("Files left in place", mf.format_plan(plan))
 
         count, problems = self.tool._auto_consolidate_location(self.db)
-        self.assertEqual(count, len(plan["moves"]))  # preview == run
-        self.assertTrue(any("locked" in p[2] for p in problems))
-        self.assertTrue(os.path.exists(shared))
-        self.assertEqual(self.db.get_media_from_handle(h_free).get_path(), shared)
+        self.assertEqual((count, problems), (2, []))  # preview == run
+        self.assertFalse(os.path.exists(shared))
+        path_a = self.db.get_media_from_handle(h_a).get_path()
+        self.assertEqual(path_a, self.db.get_media_from_handle(h_b).get_path())
+        self.assertFalse(os.path.isabs(path_a))
         self.assertFalse(
             os.path.isabs(self.db.get_media_from_handle(h_single).get_path())
         )
-        self.assertNotEqual(self.db.get_media_from_handle(h_locked).get_path(), "")
 
     def test_dialog_apply_moves_shared_file_once(self) -> None:
         """The grouped dialog row repoints every record that shared the file."""
@@ -636,13 +632,6 @@ class BasePathChangeTest(_DbTestCase):
         resolved = gc.full_media_path(self.db, path)
         self.assertTrue(os.path.samefile(resolved, os.path.join(self.base, "a.jpg")))
 
-    def test_locked_record_reported_not_changed(self) -> None:
-        """A locked record is not rewritten, and the user is told."""
-        gc.lock_media(self.db, self.db.get_media_from_handle(self.h_ok), commit=True)
-        self.change_base(mf.FindMissingMediaDialog(dbstate=self.dbstate), self.new_base)
-        self.assertEqual(self.db.get_media_from_handle(self.h_ok).get_path(), "a.jpg")
-        self.assertIn("Locked record not updated", self.last_message)
-
     def test_unchanged_base_touches_nothing(self) -> None:
         """No base change: other records are not rewritten."""
         dlg = mf.FindMissingMediaDialog(dbstate=self.dbstate)
@@ -653,11 +642,11 @@ class BasePathChangeTest(_DbTestCase):
 
 # ------------------------------------------------------------
 #
-# Batch 3: generic locks shared with Citation Fix
+# Batch 3: generic tags shared with Citation Fix
 #
 # ------------------------------------------------------------
-class GenericLockTest(_DbTestCase):
-    """Lock and fixed-tag helpers work on every tagged object type."""
+class GenericTagTest(_DbTestCase):
+    """The tag helpers work on every tagged object type."""
 
     def add(self, obj: object) -> object:
         """Add *obj* with the matching add_<type> method and return it."""
@@ -665,35 +654,25 @@ class GenericLockTest(_DbTestCase):
             getattr(self.db, "add_%s" % type(obj).__name__.lower())(obj, trans)
         return obj
 
-    def test_lock_round_trip_on_non_media_objects(self) -> None:
-        """Citation, Source, Repository and Note can be locked and unlocked."""
+    def test_checking_a_tag_creates_no_tags(self) -> None:
+        """has_tag on a tree without GWizard tags leaves it untouched."""
+        cit = self.add(Citation())
+        self.assertFalse(gc.has_tag(self.db, cit, gc.TAG_MEDIA_FIXED))
+        self.assertFalse(gc.has_tag(self.db, None, gc.TAG_MEDIA_FIXED))
+        self.assertEqual(self.db.get_number_of_tags(), 0)
+
+    def test_fixed_tag_on_non_media_objects(self) -> None:
+        """Citation, Source, Repository and Note can carry the fixed tag."""
         for obj in (Citation(), Source(), Repository(), Note()):
             with self.subTest(kind=type(obj).__name__):
                 self.add(obj)
-                self.assertFalse(gc.is_locked(self.db, obj))
-                self.assertTrue(gc.lock_object(self.db, obj, commit=True))
-                self.assertFalse(gc.lock_object(self.db, obj, commit=True))
+                self.assertTrue(gc.add_fixed_tag(self.db, obj, commit=True))
+                self.assertFalse(gc.add_fixed_tag(self.db, obj, commit=True))
                 getter = getattr(
                     self.db, "get_%s_from_handle" % type(obj).__name__.lower()
                 )
                 stored = getter(obj.get_handle())
-                self.assertTrue(gc.is_locked(self.db, stored))  # committed
-                self.assertTrue(gc.unlock_object(self.db, stored, commit=True))
-                self.assertFalse(gc.is_locked(self.db, getter(obj.get_handle())))
-
-    def test_media_wrappers_match_generic(self) -> None:
-        """is_media_locked and is_locked agree."""
-        media = self.db.get_media_from_handle(self.add_media("x.jpg"))
-        gc.lock_media(self.db, media, commit=True)
-        self.assertTrue(gc.is_locked(self.db, media))
-        self.assertTrue(gc.is_media_locked(self.db, media))
-
-    def test_checking_a_lock_creates_no_tags(self) -> None:
-        """is_locked on a tree without GWizard tags leaves it untouched."""
-        cit = self.add(Citation())
-        self.assertFalse(gc.is_locked(self.db, cit))
-        self.assertFalse(gc.is_locked(self.db, None))
-        self.assertEqual(self.db.get_number_of_tags(), 0)
+                self.assertTrue(gc.has_tag(self.db, stored, gc.TAG_MEDIA_FIXED))
 
     def test_custom_fixed_tag_for_another_tool(self) -> None:
         """add_fixed_tag accepts a tool-specific tag name."""
@@ -730,16 +709,21 @@ class SmallFixesTest(_DbTestCase):
     """Fixes 12, 13 and 14."""
 
     def test_failed_actions_are_reported(self) -> None:
-        """12: all merges blocked by locks -> the errors are shown."""
-        h1 = self.add_media("shared/a.jpg", "One")
+        """12: a failed merge is reported, not "nothing selected"."""
+        self.add_media("shared/a.jpg", "One")
         self.add_media("shared/a.jpg", "Two")
-        gc.lock_media(self.db, self.db.get_media_from_handle(h1), commit=True)
         dlg = FixMediaReferencesDialog(dbstate=self.dbstate)
-        with patch(_DLG) as ok_dialog:
+        with (
+            patch(
+                "gw_fixmediareferencesdialog.MergeMediaQuery",
+                side_effect=RuntimeError("merge refused"),
+            ),
+            patch(_DLG) as ok_dialog,
+        ):
             dlg.cb_apply(MagicMock())
         title, body = ok_dialog.call_args[0][:2]
         self.assertEqual(title, "Nothing was changed")
-        self.assertIn("locked", body)
+        self.assertIn("merge refused", body)
 
     def test_relative_path_not_checked_against_cwd(self) -> None:
         """12: a relative path that exists only in the working directory is refused."""
@@ -888,22 +872,22 @@ class MoveLogUndoTest(_DbTestCase):
         self.assertEqual((files, records, problems), (1, 0, []))
         self.assertTrue(os.path.exists(src))
 
-    def test_changed_or_locked_records_are_left_alone(self) -> None:
-        """Records repointed since, or locked, are reported, not touched."""
-        h_changed, h_locked = self.consolidate(
-            self.touch("old", "a.jpg"), self.touch("old", "b.jpg")
-        )
+    def test_changed_records_are_left_alone(self) -> None:
+        """A record repointed since the run is reported, not touched."""
+        src_b = self.touch("old", "b.jpg")
+        h_changed, h_other = self.consolidate(self.touch("old", "a.jpg"), src_b)
         changed = self.db.get_media_from_handle(h_changed)
         with DbTxn("user edit", self.db) as trans:
             changed.set_path("somewhere/else.jpg")
             self.db.commit_media(changed, trans)
-        gc.lock_media(self.db, self.db.get_media_from_handle(h_locked), commit=True)
         _files, records, problems = gc.undo_logged_run(self.db, self.log)
-        self.assertEqual(records, 0)
-        self.assertEqual(len(problems), 2)
+        self.assertEqual(records, 1)
+        self.assertEqual(len(problems), 1)
         self.assertEqual(
             self.db.get_media_from_handle(h_changed).get_path(), "somewhere/else.jpg"
         )
+        self.assertEqual(self.db.get_media_from_handle(h_other).get_path(), src_b)
+        self.assertTrue(os.path.exists(src_b))
 
     def test_never_overwrites_old_location(self) -> None:
         """If something now occupies the old location, the file stays put."""

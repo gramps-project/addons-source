@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-14 17:20-0500\n"
+"POT-Creation-Date: 2026-11-15 08:44-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,28 +26,28 @@ msgstr ""
 msgid "Fix media references in a Gramps database."
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:253 MediaFix/gwizardmediafix.py:4106
+#: MediaFix/gw_fixmediareferencesdialog.py:251 MediaFix/gwizardmediafix.py:3981
 msgid "Fix Media References"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:271 MediaFix/gwizardmediafix.py:2151
-#: MediaFix/gwizardmediafix.py:2916 MediaFix/gwizardmediafix.py:3215
+#: MediaFix/gw_fixmediareferencesdialog.py:269 MediaFix/gwizardmediafix.py:2085
+#: MediaFix/gwizardmediafix.py:2826 MediaFix/gwizardmediafix.py:3121
 #, python-format
 msgid "Accept hints (%d)"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:276 MediaFix/gwizardmediafix.py:2161
-#: MediaFix/gwizardmediafix.py:2921
+#: MediaFix/gw_fixmediareferencesdialog.py:274 MediaFix/gwizardmediafix.py:2095
+#: MediaFix/gwizardmediafix.py:2831
 msgid "Apply"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:281 MediaFix/gwizardmediafix.py:2166
-#: MediaFix/gwizardmediafix.py:2926 MediaFix/gwizardmediafix.py:3447
-#: MediaFix/gwizardmediafix.py:3511 MediaFix/gwizardmediafix.py:4005
+#: MediaFix/gw_fixmediareferencesdialog.py:279 MediaFix/gwizardmediafix.py:2100
+#: MediaFix/gwizardmediafix.py:2836 MediaFix/gwizardmediafix.py:3342
+#: MediaFix/gwizardmediafix.py:3406 MediaFix/gwizardmediafix.py:3880
 msgid "_Close"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:290
+#: MediaFix/gw_fixmediareferencesdialog.py:288
 msgid ""
 "Review duplicate references where a single media file is shared by multiple "
 "records, or image tags with no data references in the database. You can "
@@ -55,279 +55,254 @@ msgid ""
 "copies, or delete unreferenced records."
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:303
+#: MediaFix/gw_fixmediareferencesdialog.py:301
 msgid "No duplicate or unreferenced media records found."
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:314
+#: MediaFix/gw_fixmediareferencesdialog.py:312
 #, python-format
 msgid ""
 "Total items to fix: %(total)d (duplicate file groups: %(dups)d, unreferenced "
 "image tags: %(unref)d)"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:326
+#: MediaFix/gw_fixmediareferencesdialog.py:324
 msgid "File / Media Records"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:327
+#: MediaFix/gw_fixmediareferencesdialog.py:325
 msgid "References"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:328
+#: MediaFix/gw_fixmediareferencesdialog.py:326
 msgid "Resolution"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:330 MediaFix/gwizardmediafix.py:2233
-#: MediaFix/gwizardmediafix.py:2947
+#: MediaFix/gw_fixmediareferencesdialog.py:328 MediaFix/gwizardmediafix.py:2167
+#: MediaFix/gwizardmediafix.py:2857
 msgid "Hint"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:369
+#: MediaFix/gw_fixmediareferencesdialog.py:367
 msgid "Unreferenced"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:380
+#: MediaFix/gw_fixmediareferencesdialog.py:378
 msgid "0 data references (unreferenced image tag)"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:388
+#: MediaFix/gw_fixmediareferencesdialog.py:386
 msgid "Delete unreferenced record"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:389
+#: MediaFix/gw_fixmediareferencesdialog.py:387
 msgid "Keep unreferenced (no change)"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:401
+#: MediaFix/gw_fixmediareferencesdialog.py:399
 msgid "Unreferenced media object with no notes or other data"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:406
+#: MediaFix/gw_fixmediareferencesdialog.py:404
 msgid ""
 "Unreferenced, but has notes, attributes, tags, citations or a date: keep, or "
 "review manually"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:412
+#: MediaFix/gw_fixmediareferencesdialog.py:410
 #, python-format
 msgid "Permission denied at '%s'"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:428
+#: MediaFix/gw_fixmediareferencesdialog.py:426
 #, python-format
 msgid "Permission denied at: %s"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:431
-#: MediaFix/gw_fixmediareferencesdialog.py:441 MediaFix/gwizardmediafix.py:2264
-#: MediaFix/gwizardmediafix.py:2880 MediaFix/gwizardmediafix.py:2978
-#: MediaFix/gwizardmediafix.py:3700
+#: MediaFix/gw_fixmediareferencesdialog.py:429
+#: MediaFix/gw_fixmediareferencesdialog.py:439 MediaFix/gwizardmediafix.py:2198
+#: MediaFix/gwizardmediafix.py:2793 MediaFix/gwizardmediafix.py:2888
+#: MediaFix/gwizardmediafix.py:3586
 msgid "(unnamed)"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:451
+#: MediaFix/gw_fixmediareferencesdialog.py:449
 #, python-format
 msgid "Merge into keeper [%s]"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:453
+#: MediaFix/gw_fixmediareferencesdialog.py:451
 msgid "Create separate file copies"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:454
+#: MediaFix/gw_fixmediareferencesdialog.py:452
 msgid "Keep shared (no change)"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:461
+#: MediaFix/gw_fixmediareferencesdialog.py:459
 #, python-format
 msgid "Merge duplicate records into keeper [%(gid)s]"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:508 MediaFix/gwizardmediafix.py:2341
-#: MediaFix/gwizardmediafix.py:3233
+#: MediaFix/gw_fixmediareferencesdialog.py:506 MediaFix/gwizardmediafix.py:2270
+#: MediaFix/gwizardmediafix.py:3137
 msgid "Hints accepted"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:511
+#: MediaFix/gw_fixmediareferencesdialog.py:509
 #, python-format
 msgid "Set the suggested action for %d row. Review and press Apply."
 msgid_plural "Set the suggested action for %d rows. Review and press Apply."
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:554
-msgid "media is locked; cannot delete"
-msgstr ""
-
-#: MediaFix/gw_fixmediareferencesdialog.py:560 MediaFix/gwizardmediafix.py:4229
+#: MediaFix/gw_fixmediareferencesdialog.py:550 MediaFix/gwizardmediafix.py:4092
 msgid "Remove Unreferenced Media"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:585
-msgid "keeper media is locked; cannot merge"
-msgstr ""
-
-#: MediaFix/gw_fixmediareferencesdialog.py:602
-msgid "media is locked; cannot merge"
-msgstr ""
-
-#: MediaFix/gw_fixmediareferencesdialog.py:629
+#: MediaFix/gw_fixmediareferencesdialog.py:603
 msgid "Split Media References"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:641
-msgid "media is locked; cannot modify path"
-msgstr ""
-
-#: MediaFix/gw_fixmediareferencesdialog.py:686
+#: MediaFix/gw_fixmediareferencesdialog.py:649
 #, python-format
 msgid "The file-move log could not be written: %s"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:695
+#: MediaFix/gw_fixmediareferencesdialog.py:658
 msgid "Nothing was changed"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:701 MediaFix/gwizardmediafix.py:2651
-#: MediaFix/gwizardmediafix.py:3382
+#: MediaFix/gw_fixmediareferencesdialog.py:664 MediaFix/gwizardmediafix.py:2576
+#: MediaFix/gwizardmediafix.py:3277
 msgid "Nothing to apply"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:704
+#: MediaFix/gw_fixmediareferencesdialog.py:667
 msgid ""
 "No actions selected. Choose 'Merge', 'Create copies', or 'Delete' for one or "
 "more records first."
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:713
+#: MediaFix/gw_fixmediareferencesdialog.py:676
 #, python-format
 msgid "Merged %d duplicate media records."
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:715
+#: MediaFix/gw_fixmediareferencesdialog.py:678
 #, python-format
 msgid "Created %d separate media files."
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:718
+#: MediaFix/gw_fixmediareferencesdialog.py:681
 #, python-format
 msgid "Deleted %d unreferenced media records."
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:725
+#: MediaFix/gw_fixmediareferencesdialog.py:688
 msgid "Media References Resolved"
 msgstr ""
 
-#: MediaFix/gw_fixmediareferencesdialog.py:726
+#: MediaFix/gw_fixmediareferencesdialog.py:689
 msgid "Close and reopen this dialog to rescan."
 msgstr ""
 
-#: MediaFix/gwizard_common.py:469
+#: MediaFix/gwizard_common.py:461
 msgid "Create GWizard Tag"
 msgstr ""
 
-#: MediaFix/gwizard_common.py:589
+#: MediaFix/gwizard_common.py:577
 #, python-format
 msgid "Tag %s"
 msgstr ""
 
-#: MediaFix/gwizard_common.py:617
-#, python-format
-msgid "Untag %s"
-msgstr ""
-
-#: MediaFix/gwizard_common.py:909
+#: MediaFix/gwizard_common.py:800
 #, python-format
 msgid "another file is now at %(old)s; left at %(new)s"
 msgstr ""
 
-#: MediaFix/gwizard_common.py:915
+#: MediaFix/gwizard_common.py:806
 #, python-format
 msgid "file is in neither location: %s"
 msgstr ""
 
-#: MediaFix/gwizard_common.py:949
+#: MediaFix/gwizard_common.py:840
 msgid "Undo GWizard file moves"
 msgstr ""
 
-#: MediaFix/gwizard_common.py:965
+#: MediaFix/gwizard_common.py:856
 msgid "record no longer exists"
 msgstr ""
 
-#: MediaFix/gwizard_common.py:972
+#: MediaFix/gwizard_common.py:863
 msgid "path changed since; left alone"
 msgstr ""
 
-#: MediaFix/gwizard_common.py:975
-msgid "locked; left alone"
-msgstr ""
-
-#: MediaFix/gwizard_common.py:991
+#: MediaFix/gwizard_common.py:879
 #, python-format
 msgid "could not mark the run as undone in the log: %s"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:137
+#: MediaFix/gwizardmediafix.py:135
 #, python-brace-format
 msgid ""
 "Reference ID + Community Standard ({ref_id}_{surname}_{given}-{doc_type}-"
 "{year})"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:142
+#: MediaFix/gwizardmediafix.py:140
 #, python-brace-format
 msgid "Community Standard ({surname}_{given}-{doc_type}-{year})"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:146
+#: MediaFix/gwizardmediafix.py:144
 #, python-brace-format
 msgid "Reference ID + Document Type ({ref_id}_{doc_type}-{year})"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:150
+#: MediaFix/gwizardmediafix.py:148
 #, python-brace-format
 msgid "Media ID + Document Type ({id}_{doc_type}-{year})"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:154
+#: MediaFix/gwizardmediafix.py:152
 #, python-brace-format
 msgid "Media ID + Original Name ({id}_{orig})"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:158
+#: MediaFix/gwizardmediafix.py:156
 #, python-brace-format
 msgid "Sanitized Original Name ({orig})"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:162
+#: MediaFix/gwizardmediafix.py:160
 msgid "Community Standard + content hash (never clashes for different files)"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:969 MediaFix/gwizardmediafix.py:975
-#: MediaFix/gwizardmediafix.py:1252
+#: MediaFix/gwizardmediafix.py:968 MediaFix/gwizardmediafix.py:974
+#: MediaFix/gwizardmediafix.py:1251
 msgid "Top-Level / Global (Unreferenced)"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1453
+#: MediaFix/gwizardmediafix.py:1452
 msgid "Remove stale import notes"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1558
+#: MediaFix/gwizardmediafix.py:1553
 #, python-format
 msgid ""
 "WARNING: the file-move log could not be written (%s), so 'Undo last file "
 "moves' cannot reverse this run."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1568
+#: MediaFix/gwizardmediafix.py:1563
 #, python-format
 msgid ""
 "File operations were logged in %s. Use 'Undo last file moves' to reverse "
 "them (Edit > Undo would only revert the database)."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1588
+#: MediaFix/gwizardmediafix.py:1582
 #, python-format
 msgid ""
 "The base media path changed: %d other record was updated so it still points "
@@ -338,92 +313,75 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:1599
-#, python-format
-msgid "Locked record not updated, now resolving against the new base path: %s"
-msgid_plural ""
-"Locked records not updated, now resolving against the new base path: %s"
-msgstr[0] ""
-msgstr[1] ""
-
-#: MediaFix/gwizardmediafix.py:1706
-msgid "shared with a locked record - not moved"
-msgstr ""
-
-#: MediaFix/gwizardmediafix.py:1877
+#: MediaFix/gwizardmediafix.py:1823
 msgid "PREVIEW - nothing has been changed yet."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1884
+#: MediaFix/gwizardmediafix.py:1830
 #, python-format
 msgid "... and %d more"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1890
+#: MediaFix/gwizardmediafix.py:1836
 #, python-format
 msgid "1. Find missing media - repoint %d record:"
 msgid_plural "1. Find missing media - repoint %d records:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:1901
+#: MediaFix/gwizardmediafix.py:1847
 #, python-format
 msgid ""
 "1. Find missing media - NOT repointed, several different records match the "
 "same file (%d):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1911
+#: MediaFix/gwizardmediafix.py:1857
 #, python-format
 msgid "2. Merge duplicate records - %d file group:"
 msgid_plural "2. Merge duplicate records - %d file groups:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:1923
+#: MediaFix/gwizardmediafix.py:1869
 #, python-format
 msgid "2. Delete empty unreferenced records (%d):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1928
+#: MediaFix/gwizardmediafix.py:1874
 #, python-format
 msgid "2. Unreferenced but has notes/tags/attributes - KEPT (%d):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1933
+#: MediaFix/gwizardmediafix.py:1879
 #, python-format
 msgid "3. Move/rename files: SKIPPED - %s"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1936
+#: MediaFix/gwizardmediafix.py:1882
 #, python-format
 msgid "3. Move/rename files into '%(folder)s' (%(count)d):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1946
-#, python-format
-msgid "3. Files left in place (%d):"
-msgstr ""
-
-#: MediaFix/gwizardmediafix.py:1950
+#: MediaFix/gwizardmediafix.py:1891
 msgid "NEEDS YOUR ATTENTION (cannot be fixed automatically):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1955
+#: MediaFix/gwizardmediafix.py:1896
 #, python-format
 msgid "%d file not found on disk"
 msgid_plural "%d files not found on disk"
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:1965
+#: MediaFix/gwizardmediafix.py:1906
 #, python-format
 msgid "%d file exists but cannot be read (permission denied)"
 msgid_plural "%d files exist but cannot be read (permission denied)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:1975
+#: MediaFix/gwizardmediafix.py:1916
 msgid ""
 "Notes: names in step 3 are recomputed after merging, so shared files may be "
 "named slightly differently. File moves are logged: use 'Undo last file "
@@ -431,53 +389,49 @@ msgid ""
 "leave the files moved."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1988
+#: MediaFix/gwizardmediafix.py:1929
 msgid "Accept all hints - preview"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1994 MediaFix/gwizardmediafix.py:2365
-#: MediaFix/gwizardmediafix.py:2471 MediaFix/gwizardmediafix.py:2513
-#: MediaFix/gwizardmediafix.py:3056 MediaFix/gwizardmediafix.py:4030
-#: MediaFix/gwizardmediafix.py:4367 MediaFix/gwizardmediafix.py:4415
+#: MediaFix/gwizardmediafix.py:1935 MediaFix/gwizardmediafix.py:2294
+#: MediaFix/gwizardmediafix.py:2400 MediaFix/gwizardmediafix.py:2442
+#: MediaFix/gwizardmediafix.py:2964 MediaFix/gwizardmediafix.py:3905
+#: MediaFix/gwizardmediafix.py:4216 MediaFix/gwizardmediafix.py:4264
 msgid "_Cancel"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:1995
+#: MediaFix/gwizardmediafix.py:1936
 msgid "_Accept all"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2043 MediaFix/gwizardmediafix.py:4099
+#: MediaFix/gwizardmediafix.py:1984 MediaFix/gwizardmediafix.py:3974
 msgid "Find Missing Media"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2094
+#: MediaFix/gwizardmediafix.py:2035
 msgid "File not found on disk"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2100
-msgid "Media is locked (GWizard: Locked)"
-msgstr ""
-
-#: MediaFix/gwizardmediafix.py:2108
+#: MediaFix/gwizardmediafix.py:2045
 #, python-format
 msgid "Permission denied: cannot read '%s'"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2113
+#: MediaFix/gwizardmediafix.py:2049
 #, python-format
 msgid "Found in media directory: suggest '%s'"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2144
+#: MediaFix/gwizardmediafix.py:2078
 #, python-format
 msgid "'%s' also matches other missing records: choose the path manually"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2156
+#: MediaFix/gwizardmediafix.py:2090
 msgid "Copy from folder..."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2175
+#: MediaFix/gwizardmediafix.py:2109
 msgid ""
 "Review media records whose files are missing on disk. Type the updated path, "
 "choose the file with the folder button next to it, or click 'Accept hints' "
@@ -485,123 +439,123 @@ msgid ""
 "fills in other records missing a file of the same name."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2187 MediaFix/gwizardmediafix.py:2752
+#: MediaFix/gwizardmediafix.py:2121 MediaFix/gwizardmediafix.py:2677
 msgid "Base media path:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2208 MediaFix/gwizardmediafix.py:2461
-#: MediaFix/gwizardmediafix.py:2784 MediaFix/gwizardmediafix.py:3045
-#: MediaFix/gwizardmediafix.py:3462 MediaFix/gwizardmediafix.py:3754
+#: MediaFix/gwizardmediafix.py:2142 MediaFix/gwizardmediafix.py:2390
+#: MediaFix/gwizardmediafix.py:2709 MediaFix/gwizardmediafix.py:2953
+#: MediaFix/gwizardmediafix.py:3357 MediaFix/gwizardmediafix.py:3639
 msgid "Media Base Path:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2214
+#: MediaFix/gwizardmediafix.py:2148
 msgid "No missing media files found."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2220
+#: MediaFix/gwizardmediafix.py:2154
 #, python-format
 msgid "Total missing media records found: %d"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2229 MediaFix/gwizardmediafix.py:2943
+#: MediaFix/gwizardmediafix.py:2163 MediaFix/gwizardmediafix.py:2853
 msgid "Media"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2230 MediaFix/gwizardmediafix.py:2944
+#: MediaFix/gwizardmediafix.py:2164 MediaFix/gwizardmediafix.py:2854
 msgid "Current Path"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2231
+#: MediaFix/gwizardmediafix.py:2165
 msgid "New Path"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2283
+#: MediaFix/gwizardmediafix.py:2217
 msgid "Choose the file for this media record"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2343
+#: MediaFix/gwizardmediafix.py:2272
 #, python-format
 msgid "Populated paths for %d media records. Review and press Apply."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2360
+#: MediaFix/gwizardmediafix.py:2289
 #, python-format
 msgid "Select the file for %s"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2367
+#: MediaFix/gwizardmediafix.py:2296
 msgid "_Open"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2382
+#: MediaFix/gwizardmediafix.py:2311
 #, python-format
 msgid "Chosen: %s"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2390
+#: MediaFix/gwizardmediafix.py:2319
 #, python-format
 msgid "Also filled %d other record missing a file of this name."
 msgid_plural "Also filled %d other records missing a file of this name."
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:2438
+#: MediaFix/gwizardmediafix.py:2367
 #, python-format
 msgid "Same file as %s"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2443
+#: MediaFix/gwizardmediafix.py:2372
 #, python-format
 msgid ""
 "Same file name as %s, but it was in a different folder: check it is the same "
 "file"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2467 MediaFix/gwizardmediafix.py:3052
+#: MediaFix/gwizardmediafix.py:2396 MediaFix/gwizardmediafix.py:2960
 msgid "Select media directory"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2473 MediaFix/gwizardmediafix.py:3058
+#: MediaFix/gwizardmediafix.py:2402 MediaFix/gwizardmediafix.py:2966
 msgid "_Apply"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2498
+#: MediaFix/gwizardmediafix.py:2427
 msgid "Set a base media path first"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2501
+#: MediaFix/gwizardmediafix.py:2430
 msgid ""
 "Copying needs a destination. Set the base media path above, then try again."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2509
+#: MediaFix/gwizardmediafix.py:2438
 msgid "Select folder containing the missing files"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2515
+#: MediaFix/gwizardmediafix.py:2444
 msgid "_Select"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2528
+#: MediaFix/gwizardmediafix.py:2457
 msgid "Folder not readable"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2529
+#: MediaFix/gwizardmediafix.py:2458
 #, python-format
 msgid "Cannot read '%s'. Copy the files to a folder you own first."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2545
+#: MediaFix/gwizardmediafix.py:2474
 #, python-format
 msgid "Will copy from %s"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2548
+#: MediaFix/gwizardmediafix.py:2477
 msgid "Copies queued"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2550
+#: MediaFix/gwizardmediafix.py:2479
 #, python-format
 msgid ""
 "Queued %d file to copy into the media directory. Review and press Apply."
@@ -610,131 +564,116 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:2583
+#: MediaFix/gwizardmediafix.py:2511
 msgid "Update Missing Media Paths"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2604
-msgid "locked"
-msgstr ""
-
-#: MediaFix/gwizardmediafix.py:2652 MediaFix/gwizardmediafix.py:3383
+#: MediaFix/gwizardmediafix.py:2577 MediaFix/gwizardmediafix.py:3278
 msgid "No paths entered. Press 'Accept hints' or enter paths first."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2657
+#: MediaFix/gwizardmediafix.py:2582
 #, python-format
 msgid "Updated %d media file paths in the database."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2662
+#: MediaFix/gwizardmediafix.py:2587
 #, python-format
 msgid "Copied %d file into the media directory."
 msgid_plural "Copied %d files into the media directory."
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:2670
+#: MediaFix/gwizardmediafix.py:2595
 #, python-format
 msgid ""
 "Skipped %(count)d (not found or copy failed):\n"
 "%(paths)s"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2675
+#: MediaFix/gwizardmediafix.py:2600
 msgid "Media Paths Updated"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2712 MediaFix/gwizardmediafix.py:4115
+#: MediaFix/gwizardmediafix.py:2637 MediaFix/gwizardmediafix.py:3990
 msgid "Consolidate Media Location"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2741
+#: MediaFix/gwizardmediafix.py:2666
 msgid ""
 "Review media records with hardcoded absolute or non-standard paths. Press "
 "'Accept hints' to convert them to relative paths within your media "
 "directory, then press 'Apply'."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2791
+#: MediaFix/gwizardmediafix.py:2716
 msgid "Naming Template:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2812
+#: MediaFix/gwizardmediafix.py:2737
 msgid "Naming style:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2815
+#: MediaFix/gwizardmediafix.py:2740
 msgid "Use naming standard"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2818
+#: MediaFix/gwizardmediafix.py:2743
 msgid "Keep original filename"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2829
+#: MediaFix/gwizardmediafix.py:2754
 msgid "File operation:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2832
+#: MediaFix/gwizardmediafix.py:2757
 msgid "Move files"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2835
+#: MediaFix/gwizardmediafix.py:2760
 msgid "Make a copy"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2868
-#, python-format
-msgid "Shared with locked record %s: will not move"
-msgid_plural "Shared with locked records %s: will not move"
-msgstr[0] ""
-msgstr[1] ""
-
-#: MediaFix/gwizardmediafix.py:2873
-msgid "Locked: will not modify (GWizard: Locked)"
-msgstr ""
-
-#: MediaFix/gwizardmediafix.py:2879
+#: MediaFix/gwizardmediafix.py:2792
 #, python-format
 msgid "%(desc)s (file shared by %(count)d records)"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2903
+#: MediaFix/gwizardmediafix.py:2815
 #, python-format
 msgid ""
 "%d file is used by several media records. It is moved once and all of its "
-"records are updated; a file shared with a locked record is left in place."
+"records are updated."
 msgid_plural ""
 "%d files are used by several media records. Each is moved once and all of "
-"its records are updated; a file shared with a locked record is left in place."
+"its records are updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:2929
+#: MediaFix/gwizardmediafix.py:2839
 msgid "All media paths are already consolidated."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2935
+#: MediaFix/gwizardmediafix.py:2845
 #, python-format
 msgid "Total unconsolidated media paths: %d"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:2945
+#: MediaFix/gwizardmediafix.py:2855
 msgid "Consolidated Path"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3236
+#: MediaFix/gwizardmediafix.py:3140
 #, python-format
 msgid ""
 "Populated consolidated paths for %d media records. Review and press Apply."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3261
+#: MediaFix/gwizardmediafix.py:3165
 msgid "Duplicate Source Files Detected"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3264
+#: MediaFix/gwizardmediafix.py:3168
 #, python-format
 msgid ""
 "Multiple records in this consolidation list share the source file:\n"
@@ -746,345 +685,331 @@ msgid ""
 "Please use 'Fix media references' first."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3296
+#: MediaFix/gwizardmediafix.py:3199
 msgid "Consolidate Media Locations"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3316
-msgid "locked: skipping"
-msgstr ""
-
-#: MediaFix/gwizardmediafix.py:3329
+#: MediaFix/gwizardmediafix.py:3226
 msgid "source file not found"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3376
+#: MediaFix/gwizardmediafix.py:3271
 msgid "Base media path saved"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3377
+#: MediaFix/gwizardmediafix.py:3272
 msgid "The base media path was saved. No records needed changes."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3388
+#: MediaFix/gwizardmediafix.py:3283
 #, python-format
 msgid "Consolidated %d media file paths in the database."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3390
+#: MediaFix/gwizardmediafix.py:3285
 #, python-format
 msgid "Copied %d files to new locations."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3392
+#: MediaFix/gwizardmediafix.py:3287
 #, python-format
 msgid "Moved %d files to new locations."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3399
+#: MediaFix/gwizardmediafix.py:3294
 #, python-format
 msgid "Not changed (%d):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3402
+#: MediaFix/gwizardmediafix.py:3297
 msgid "Media Locations Consolidated"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3437
+#: MediaFix/gwizardmediafix.py:3332
 msgid "GWizard Media Fix Report"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3502 MediaFix/gwizardmediafix.py:4614
+#: MediaFix/gwizardmediafix.py:3397 MediaFix/gwizardmediafix.py:4464
 msgid "Accept All Hints Complete"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3577
+#: MediaFix/gwizardmediafix.py:3471
 msgid "Scanning media"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3721
+#: MediaFix/gwizardmediafix.py:3607
 msgid "n/a (no media base path set)"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3723
+#: MediaFix/gwizardmediafix.py:3609
 msgid "(scan truncated)"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3727
+#: MediaFix/gwizardmediafix.py:3613
 msgid "GWIZARD MEDIA FIX REPORT"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3730
+#: MediaFix/gwizardmediafix.py:3616
 msgid "SUMMARY METRICS:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3731
+#: MediaFix/gwizardmediafix.py:3617
 msgid "Total media records:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3732
+#: MediaFix/gwizardmediafix.py:3618
 msgid "Files in default path:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3733
+#: MediaFix/gwizardmediafix.py:3619
 msgid "Files outside default path:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3734
+#: MediaFix/gwizardmediafix.py:3620
 msgid "Files found on disk:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3735
+#: MediaFix/gwizardmediafix.py:3621
 msgid "Files missing on disk:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3736
+#: MediaFix/gwizardmediafix.py:3622
 msgid "Permission denied files:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3737
+#: MediaFix/gwizardmediafix.py:3623
 msgid "Absolute file paths:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3738
+#: MediaFix/gwizardmediafix.py:3624
 msgid "Non-standard filenames:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3739
+#: MediaFix/gwizardmediafix.py:3625
 msgid "Unreferenced path files:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3740
+#: MediaFix/gwizardmediafix.py:3626
 msgid "Unreferenced image tags:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3742
+#: MediaFix/gwizardmediafix.py:3628
 msgid "Shared media records:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3743
+#: MediaFix/gwizardmediafix.py:3629
 #, python-format
 msgid "%d (info)"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3745
-msgid "Locked media records:"
-msgstr ""
-
-#: MediaFix/gwizardmediafix.py:3746
+#: MediaFix/gwizardmediafix.py:3631
 msgid "Fixed media records:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3747
+#: MediaFix/gwizardmediafix.py:3632
 msgid "Name mismatches:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3749
+#: MediaFix/gwizardmediafix.py:3634
 msgid "Duplicate file references:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3750
+#: MediaFix/gwizardmediafix.py:3635
 #, python-format
 msgid "%(files)d files (%(records)d media records)"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3753
+#: MediaFix/gwizardmediafix.py:3638
 msgid "Naming template:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3760
+#: MediaFix/gwizardmediafix.py:3645
 #, python-format
 msgid "DUPLICATE FILE REFERENCES (%d files shared by multiple records):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3764
+#: MediaFix/gwizardmediafix.py:3649
 msgid "File:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3765
+#: MediaFix/gwizardmediafix.py:3650
 #, python-format
 msgid "Referenced by %d media records:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3774
+#: MediaFix/gwizardmediafix.py:3659
 #, python-format
 msgid ""
 "UNREFERENCED FILES IN DEFAULT PATH (%d files with no database connection):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3783
+#: MediaFix/gwizardmediafix.py:3668
 #, python-format
 msgid "... and %d more files."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3790
+#: MediaFix/gwizardmediafix.py:3675
 #, python-format
 msgid ""
 "SHARED MEDIA RECORDS - one file used from several places (%d items, "
 "informational):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3801 MediaFix/gwizardmediafix.py:3826
-#: MediaFix/gwizardmediafix.py:3841 MediaFix/gwizardmediafix.py:3854
-#: MediaFix/gwizardmediafix.py:3870 MediaFix/gwizardmediafix.py:3877
-#: MediaFix/gwizardmediafix.py:3897
+#: MediaFix/gwizardmediafix.py:3686 MediaFix/gwizardmediafix.py:3711
+#: MediaFix/gwizardmediafix.py:3726 MediaFix/gwizardmediafix.py:3739
+#: MediaFix/gwizardmediafix.py:3755 MediaFix/gwizardmediafix.py:3762
 msgid "Path:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3802
+#: MediaFix/gwizardmediafix.py:3687
 msgid "References:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3807
+#: MediaFix/gwizardmediafix.py:3692
 #, python-format
 msgid "NAME MISMATCHES - description vs linked person (%d items):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3812
+#: MediaFix/gwizardmediafix.py:3697
 msgid "Description says:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3813
+#: MediaFix/gwizardmediafix.py:3698
 msgid "Linked person:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3818
+#: MediaFix/gwizardmediafix.py:3703
 #, python-format
 msgid ""
 "UNREFERENCED IMAGE TAGS / MEDIA RECORDS (%d items with no data references):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3831
+#: MediaFix/gwizardmediafix.py:3716
 msgid ""
 "0 unreferenced image tags found. All media records have data references."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3838
+#: MediaFix/gwizardmediafix.py:3723
 #, python-format
 msgid "FILES OUTSIDE DEFAULT PATH (%d items):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3846
+#: MediaFix/gwizardmediafix.py:3731
 #, python-format
 msgid ""
 "PERMISSION DENIED FILES (%d files inaccessible due to directory permissions):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3855
+#: MediaFix/gwizardmediafix.py:3740
 msgid "Inaccessible at:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3860
+#: MediaFix/gwizardmediafix.py:3745
 msgid ""
 "0 permission errors encountered. All inspected directories are readable."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3867
+#: MediaFix/gwizardmediafix.py:3752
 #, python-format
 msgid "MISSING FILES (%d items):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3874
+#: MediaFix/gwizardmediafix.py:3759
 #, python-format
 msgid "ABSOLUTE PATHS (%d items):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3881
+#: MediaFix/gwizardmediafix.py:3766
 #, python-format
 msgid "NON-STANDARD FILENAMES (%d items):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3885
+#: MediaFix/gwizardmediafix.py:3770
 msgid "Association:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3886
+#: MediaFix/gwizardmediafix.py:3771
 msgid "Current:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3887
+#: MediaFix/gwizardmediafix.py:3772
 msgid "Standard:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3892
-#, python-format
-msgid "LOCKED MEDIA RECORDS (%d items skipped from modifications):"
-msgstr ""
-
-#: MediaFix/gwizardmediafix.py:3958 MediaFix/gwizardmediafix.py:4008
+#: MediaFix/gwizardmediafix.py:3833 MediaFix/gwizardmediafix.py:3883
 msgid "GWizard Media Fix"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3970
+#: MediaFix/gwizardmediafix.py:3845
 msgid ""
 "Comprehensive utility to inspect media files across your database, find "
 "missing files, consolidate storage locations into relative paths, and "
 "enforce standardized filename formats."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3983
+#: MediaFix/gwizardmediafix.py:3858
 msgid "Generate report"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3984
+#: MediaFix/gwizardmediafix.py:3859
 msgid "Find missing media"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3985
+#: MediaFix/gwizardmediafix.py:3860
 msgid "Fix media references"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3986
+#: MediaFix/gwizardmediafix.py:3861
 msgid "Consolidate media location"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3987 MediaFix/gwizardmediafix.py:4400
+#: MediaFix/gwizardmediafix.py:3862 MediaFix/gwizardmediafix.py:4249
 msgid "Clean import notes"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:3988 MediaFix/gwizardmediafix.py:4358
+#: MediaFix/gwizardmediafix.py:3863 MediaFix/gwizardmediafix.py:4207
 msgid "Undo last file moves"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4000
+#: MediaFix/gwizardmediafix.py:3875
 msgid "Accept all hints"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4024
+#: MediaFix/gwizardmediafix.py:3899
 msgid "Save Media Fix Report"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4032
+#: MediaFix/gwizardmediafix.py:3907
 msgid "_Save"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4062
+#: MediaFix/gwizardmediafix.py:3937
 msgid "Report Not Written"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4063
+#: MediaFix/gwizardmediafix.py:3938
 #, python-format
 msgid "Could not write %(path)s: %(err)s"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4183
+#: MediaFix/gwizardmediafix.py:4056
 msgid "Auto Find Missing Media"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4306
+#: MediaFix/gwizardmediafix.py:4155
 msgid "Auto Consolidate Media Locations"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4349
+#: MediaFix/gwizardmediafix.py:4198
 msgid "No file moves to undo"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4350
+#: MediaFix/gwizardmediafix.py:4199
 #, python-format
 msgid "No logged file moves were found in %s."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4360
+#: MediaFix/gwizardmediafix.py:4209
 #, python-format
 msgid ""
 "Reverse the file operations from %(time)s?\n"
@@ -1095,89 +1020,89 @@ msgid ""
 "Records changed since then are left alone."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4366
+#: MediaFix/gwizardmediafix.py:4215
 msgid "_Undo moves"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4373
+#: MediaFix/gwizardmediafix.py:4222
 #, python-format
 msgid ""
 "Files moved back: %(files)d\n"
 "Media records repointed: %(records)d"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4378
+#: MediaFix/gwizardmediafix.py:4227
 #, python-format
 msgid "Needs review (%d):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4380
+#: MediaFix/gwizardmediafix.py:4229
 msgid "File moves undone"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4388
+#: MediaFix/gwizardmediafix.py:4237
 msgid "No stale import notes"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4391
+#: MediaFix/gwizardmediafix.py:4240
 msgid ""
 "No 'Records not imported into OBJE' notes were found on media whose file is "
 "now readable."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4402
+#: MediaFix/gwizardmediafix.py:4251
 #, python-format
 msgid "Delete %(notes)d leftover import-failure note?"
 msgid_plural "Delete %(notes)d leftover import-failure notes?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:4408
+#: MediaFix/gwizardmediafix.py:4257
 #, python-format
 msgid "(media records affected: %(media)d)"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4411
+#: MediaFix/gwizardmediafix.py:4260
 msgid ""
 "They describe files the importer could not find, but those files are "
 "readable now. This can be undone with Edit > Undo."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4414
+#: MediaFix/gwizardmediafix.py:4263
 msgid "_Delete"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4422
+#: MediaFix/gwizardmediafix.py:4271
 msgid "Import notes cleaned"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4425
+#: MediaFix/gwizardmediafix.py:4274
 #, python-format
 msgid "Removed %d note from media."
 msgid_plural "Removed %d notes from media."
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:4433
+#: MediaFix/gwizardmediafix.py:4282
 #, python-format
-msgid "%d note on locked media was left alone."
-msgid_plural "%d notes on locked media were left alone."
+msgid "%d note was left alone: its media record no longer exists."
+msgid_plural "%d notes were left alone: their media records no longer exist."
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:4451
+#: MediaFix/gwizardmediafix.py:4301
 msgid "Planning fixes"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4459
+#: MediaFix/gwizardmediafix.py:4309
 msgid "Nothing to change automatically"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4467
+#: MediaFix/gwizardmediafix.py:4317
 msgid "Applying fixes"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4488
+#: MediaFix/gwizardmediafix.py:4338
 #, python-format
 msgid ""
 "  • Consolidate media location: %(count)d file moved or renamed in "
@@ -1188,15 +1113,15 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:4496
+#: MediaFix/gwizardmediafix.py:4346
 msgid "  • Consolidate media location: skipped (no base media path set)."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4500
+#: MediaFix/gwizardmediafix.py:4350
 msgid "AUTOMATED CHANGES PERFORMED:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4502
+#: MediaFix/gwizardmediafix.py:4352
 #, python-format
 msgid ""
 "  • Find missing media: %d missing path found in media directory and updated."
@@ -1206,28 +1131,28 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:4510
+#: MediaFix/gwizardmediafix.py:4360
 #, python-format
 msgid ""
 "  • Fix media references: duplicate records merged: %(merged)d; unreferenced "
 "image tags deleted: %(deleted)d."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4524
+#: MediaFix/gwizardmediafix.py:4374
 #, python-format
 msgid ""
 "  • Missing files on disk (%(count)d): not found on disk. Locate them with "
 "'Find missing media' (searches '%(folder)s'):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4534
+#: MediaFix/gwizardmediafix.py:4384
 #, python-format
 msgid "      - ... and %d more missing file"
 msgid_plural "      - ... and %d more missing files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:4545
+#: MediaFix/gwizardmediafix.py:4395
 #, python-format
 msgid ""
 "  • Permission denied files (%d): exist but cannot be read (often another "
@@ -1235,41 +1160,41 @@ msgid ""
 "media path, then run this again:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4555
+#: MediaFix/gwizardmediafix.py:4405
 #, python-format
 msgid "      - ... and %d more inaccessible file"
 msgid_plural "      - ... and %d more inaccessible files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:4564
+#: MediaFix/gwizardmediafix.py:4414
 #, python-format
 msgid "  • Reference items needing review (%d):"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4571
+#: MediaFix/gwizardmediafix.py:4421
 #, python-format
 msgid "  • Unconsolidated paths (%d): could not be relocated:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4579
+#: MediaFix/gwizardmediafix.py:4429
 #, python-format
 msgid "      - ... and %d more unconsolidated path"
 msgid_plural "      - ... and %d more unconsolidated paths"
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaFix/gwizardmediafix.py:4587
+#: MediaFix/gwizardmediafix.py:4437
 msgid "CHANGES REQUIRING HUMAN INTERVENTION:"
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4593
+#: MediaFix/gwizardmediafix.py:4443
 msgid ""
 "No human intervention required. All media files and references are fully "
 "resolved."
 msgstr ""
 
-#: MediaFix/gwizardmediafix.py:4603
+#: MediaFix/gwizardmediafix.py:4453
 #, python-format
 msgid ""
 "OPTIONAL CLEANUP: %d stale import note can be removed with 'Clean import "

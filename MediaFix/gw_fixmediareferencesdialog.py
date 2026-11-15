@@ -60,7 +60,6 @@ try:
         path_key,
         unique_destination,
         relocate_file,
-        is_media_locked,
         add_media_fixed_tag,
     )
 except (ImportError, ValueError):
@@ -75,7 +74,6 @@ except (ImportError, ValueError):
         path_key,
         unique_destination,
         relocate_file,
-        is_media_locked,
         add_media_fixed_tag,
     )
 
@@ -521,7 +519,7 @@ class FixMediaReferencesDialog(Gtk.Dialog):
         """
         Merge, split or delete according to each row's chosen action.
 
-        Locked records are never changed; failures are listed in the result.
+        Failures are listed in the result.
 
         :param _button: The button that was clicked.
         """
@@ -546,24 +544,18 @@ class FixMediaReferencesDialog(Gtk.Dialog):
                 if choice == 0:
                     handle = group["keeper"]["handle"]
                     cand = self.dbstate.db.get_media_from_handle(handle)
-                    if cand and is_media_locked(self.dbstate.db, cand):
-                        errors.append(
-                            "[%s] %s"
-                            % (
-                                group["keeper"].get("gramps_id", ""),
-                                _("media is locked; cannot delete"),
+                    if cand:
+                        try:
+                            with DbTxn(
+                                _("Remove Unreferenced Media"), self.dbstate.db
+                            ) as trans:
+                                self.dbstate.db.remove_media(handle, trans)
+                                deleted_count += 1
+                        except Exception as err:
+                            LOG.exception(
+                                "Failed to remove unreferenced media: %s", err
                             )
-                        )
-                        continue
-                    try:
-                        with DbTxn(
-                            _("Remove Unreferenced Media"), self.dbstate.db
-                        ) as trans:
-                            self.dbstate.db.remove_media(handle, trans)
-                            deleted_count += 1
-                    except Exception as err:
-                        LOG.exception("Failed to remove unreferenced media: %s", err)
-                        errors.append(str(err))
+                            errors.append(str(err))
                 continue
 
             if choice == 2:  # Keep shared (no change)
@@ -577,15 +569,6 @@ class FixMediaReferencesDialog(Gtk.Dialog):
                 keeper_media = self.dbstate.db.get_media_from_handle(keeper["handle"])
                 if not keeper_media:
                     continue
-                if is_media_locked(self.dbstate.db, keeper_media):
-                    errors.append(
-                        "[%s] %s"
-                        % (
-                            keeper.get("gramps_id", ""),
-                            _("keeper media is locked; cannot merge"),
-                        )
-                    )
-                    continue
                 for other in records:
                     if other["handle"] == keeper["handle"]:
                         continue
@@ -594,15 +577,6 @@ class FixMediaReferencesDialog(Gtk.Dialog):
                             other["handle"]
                         )
                         if other_media:
-                            if is_media_locked(self.dbstate.db, other_media):
-                                errors.append(
-                                    "[%s] %s"
-                                    % (
-                                        other.get("gramps_id", ""),
-                                        _("media is locked; cannot merge"),
-                                    )
-                                )
-                                continue
                             query = MergeMediaQuery(
                                 self.dbstate, keeper_media, other_media
                             )
@@ -631,17 +605,6 @@ class FixMediaReferencesDialog(Gtk.Dialog):
                         other_media = self.dbstate.db.get_media_from_handle(
                             rec["handle"]
                         )
-                        if other_media and is_media_locked(
-                            self.dbstate.db, other_media
-                        ):
-                            errors.append(
-                                "[%s] %s"
-                                % (
-                                    rec.get("gramps_id", ""),
-                                    _("media is locked; cannot modify path"),
-                                )
-                            )
-                            continue
                         new_rel = f"{base}_{rec['gramps_id']}{ext}"
                         try:
                             expected = media_path_full(self.dbstate.db, new_rel)
@@ -689,7 +652,7 @@ class FixMediaReferencesDialog(Gtk.Dialog):
 
         if merged_count == 0 and copied_count == 0 and deleted_count == 0:
             if errors:
-                # Every selected action failed (e.g. all locked): say why,
+                # Every selected action failed: say why,
                 # instead of claiming nothing was selected.
                 OkDialog(
                     str(_("Nothing was changed")),

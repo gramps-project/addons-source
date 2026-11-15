@@ -86,10 +86,7 @@ from gwizardmediafix import (
     build_accept_all_plan,
 )
 from gwizard_common import (
-    is_media_locked,
     has_media_fixed_tag,
-    lock_media,
-    unlock_media,
     add_media_fixed_tag,
 )
 from gw_fixmediareferencesdialog import (
@@ -309,7 +306,7 @@ class GWizardMediaFixTest(unittest.TestCase):
             m2 = Media()
             m2.set_description("Photo 2")
             m2.set_path("shared/file.jpg")
-            m2_h = self.db.add_media(m2, trans)
+            self.db.add_media(m2, trans)
 
             p1 = Person()
             mr1 = MediaRef()
@@ -344,7 +341,7 @@ class GWizardMediaFixTest(unittest.TestCase):
             e = Event()
             e.set_type(EventType.DEATH)
             e.set_date_object(d)
-            e_h = db_add_e = self.db.add_event(e, trans)
+            e_h = self.db.add_event(e, trans)
             eref = EventRef()
             eref.set_reference_handle(e_h)
             p.add_event_ref(eref)
@@ -352,7 +349,7 @@ class GWizardMediaFixTest(unittest.TestCase):
             mref = MediaRef()
             mref.set_reference_handle(m_handle)
             p.add_media_reference(mref)
-            p_handle = self.db.add_person(p, trans)
+            self.db.add_person(p, trans)
 
         media = self.db.get_media_from_handle(m_handle)
         ctx = resolve_media_reference_context(self.db, media)
@@ -395,7 +392,7 @@ class GWizardMediaFixTest(unittest.TestCase):
             eref = EventRef()
             eref.set_reference_handle(e_handle)
             p.add_event_ref(eref)
-            p_handle = self.db.add_person(p, trans)
+            self.db.add_person(p, trans)
 
         media = self.db.get_media_from_handle(m_handle)
         ctx = resolve_media_reference_context(self.db, media)
@@ -518,7 +515,7 @@ class GWizardMediaFixTest(unittest.TestCase):
             eref = EventRef()
             eref.set_reference_handle(e_h)
             p.add_event_ref(eref)
-            p_h = self.db.add_person(p, trans)
+            self.db.add_person(p, trans)
 
         media = self.db.get_media_from_handle(m_h)
         ctx = resolve_media_reference_context(self.db, media)
@@ -569,7 +566,7 @@ class GWizardMediaFixTest(unittest.TestCase):
             mref = MediaRef()
             mref.set_reference_handle(m_h)
             p.add_media_reference(mref)
-            p_h = self.db.add_person(p, trans)
+            self.db.add_person(p, trans)
 
         media = self.db.get_media_from_handle(m_h)
         ctx = resolve_media_reference_context(self.db, media)
@@ -886,521 +883,6 @@ class GWizardMediaFixTest(unittest.TestCase):
                 mock_relocate.assert_called_once()
                 self.assertTrue(mock_relocate.call_args[1].get("copy", False))
 
-    def test_consolidate_media_location_path_selector_widget(self) -> None:
-        """ConsolidateMediaLocationDialog provides a path selector widget that sets database media path."""
-        custom_path = os.path.join(USER_HOME, "SelectorTestMedia")
-        self.db.set_mediapath(custom_path)
-
-        dlg = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-        self.assertTrue(hasattr(dlg, "path_entry"))
-        self.assertTrue(hasattr(dlg, "path_button"))
-        self.assertEqual(dlg.path_entry.get_text(), custom_path)
-
-        # Changing path_entry directly updates db mediapath and recomputes base_dir
-        new_path = os.path.join(USER_HOME, "NewMediaFolder")
-        dlg.path_entry.set_text(new_path)
-        dlg.cb_set_mediapath()
-        self.assertEqual(self.db.get_mediapath(), new_path)
-        self.assertEqual(dlg.base_dir, os.path.normpath(os.path.abspath(new_path)))
-
-        # Selecting folder from chooser dialog sets path on entry and database
-        chosen_folder = os.path.join(USER_HOME, "ChosenFolder")
-        mock_chooser = MagicMock()
-        mock_chooser.run.return_value = Gtk.ResponseType.OK
-        mock_chooser.get_filename.return_value = chosen_folder
-
-        with patch(
-            "gwizardmediafix.Gtk.FileChooserDialog",
-            return_value=mock_chooser,
-        ):
-            dlg.cb_select_mediapath()
-            self.assertEqual(self.db.get_mediapath(), chosen_folder)
-            self.assertEqual(dlg.path_entry.get_text(), chosen_folder)
-
-    def test_consolidate_media_location_radio_buttons_move_vs_copy(self) -> None:
-        """ConsolidateMediaLocationDialog provides radio buttons for move files vs make a copy."""
-        dlg = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-        self.assertTrue(hasattr(dlg, "radio_move"))
-        self.assertTrue(hasattr(dlg, "radio_copy"))
-        self.assertTrue(dlg.radio_move.get_active())
-        self.assertFalse(dlg.radio_copy.get_active())
-
-        with DbTxn("Create media for move", self.db) as trans:
-            m = Media()
-            m.set_description("Test Move")
-            m.set_path("/path/to/test.jpg")
-            m_h = self.db.add_media(m, trans)
-
-        mock_entry = MagicMock()
-        mock_entry.get_text.return_value = "new_folder/test.jpg"
-        dlg.row_targets = [
-            {
-                "entry": {"handle": m_h, "raw_path": "/path/to/test.jpg"},
-                "path_entry": mock_entry,
-            }
-        ]
-
-        with (
-            patch(
-                "gwizardmediafix.os.path.exists", return_value=True
-            ),
-            patch("gwizardmediafix.os.makedirs"),
-            patch("gwizardmediafix.shutil.move") as mock_move,
-            patch("gwizardmediafix.shutil.copy2") as mock_copy,
-            patch("gwizardmediafix.OkDialog"),
-        ):
-            dlg.cb_apply(MagicMock())
-            mock_move.assert_called_once()
-            mock_copy.assert_not_called()
-
-        dlg.radio_copy.set_active(True)
-        with (
-            patch(
-                "gwizardmediafix.os.path.exists", return_value=True
-            ),
-            patch("gwizardmediafix.os.makedirs"),
-            patch("gwizardmediafix.shutil.move") as mock_move,
-            patch("gwizardmediafix.shutil.copy2") as mock_copy,
-            patch("gwizardmediafix.OkDialog"),
-        ):
-            dlg.cb_apply(MagicMock())
-            mock_copy.assert_called_once()
-            mock_move.assert_not_called()
-
-    def test_find_and_consolidate_quotes_and_spaces(self) -> None:
-        """Find Media and Consolidate operations handle paths enclosed in quotes and containing spaces."""
-        temp_dir = tempfile.mkdtemp()
-        try:
-            # File with spaces on disk
-            real_file = os.path.join(temp_dir, "My Photo File 1920.jpg")
-            with open(real_file, "w") as f:
-                f.write("content")
-
-            with DbTxn("Create media with missing path", self.db) as trans:
-                m = Media()
-                m.set_description("Photo with spaces")
-                m.set_path("missing/old photo.jpg")
-                m_h = self.db.add_media(m, trans)
-
-            dlg_find = FindMissingMediaDialog(dbstate=self.dbstate)
-            self.assertEqual(len(dlg_find.rows), 1)
-
-            # User enters/pastes path enclosed in quotes (e.g. copied from Windows Explorer)
-            quoted_input = f'"{real_file}"'
-            mock_entry = MagicMock()
-            mock_entry.get_text.return_value = quoted_input
-            dlg_find.row_targets = [
-                {"entry": dlg_find.rows[0], "path_entry": mock_entry}
-            ]
-
-            with patch("gwizardmediafix.OkDialog"):
-                dlg_find.cb_apply(MagicMock())
-
-            # Path stored in database must be stripped of quotes
-            updated = self.db.get_media_from_handle(m_h)
-            self.assertEqual(updated.get_path(), real_file)
-            self.assertFalse(updated.get_path().startswith('"'))
-
-            # Report should now find the file on disk instead of reporting it missing
-            report = generate_media_fix_report(self.db)
-            self.assertIn("Files found on disk:       1", report)
-            self.assertIn("Files missing on disk:     0", report)
-
-            # Consolidate media location with spaces and quotes in base path
-            base_dir = os.path.join(temp_dir, "Consolidated Media Base")
-            os.makedirs(base_dir, exist_ok=True)
-            self.db.set_mediapath(f'"{base_dir}"')
-
-            dlg_cons = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-            self.assertEqual(
-                dlg_cons.base_dir, os.path.normpath(os.path.abspath(base_dir))
-            )
-
-            # User accepts hints or inputs path
-            hint_sug = dlg_cons.rows[0]["suggested_path"]
-            self.assertIn("Photo_with_spaces.jpg", hint_sug)
-            self.assertIn("Consolidated Media Base", hint_sug)
-
-            mock_cons_entry = MagicMock()
-            mock_cons_entry.get_text.return_value = f'"{hint_sug}"'
-            dlg_cons.row_targets[0]["path_entry"] = mock_cons_entry
-
-            with patch("gwizardmediafix.OkDialog"):
-                dlg_cons.cb_apply(MagicMock())
-
-            # File should be moved to destination and updated in DB without quotes
-            updated_cons = self.db.get_media_from_handle(m_h)
-            from gwizard_common import to_db_path
-
-            self.assertEqual(
-                os.path.normpath(updated_cons.get_path()),
-                os.path.normpath(to_db_path(hint_sug, base_dir)),
-            )
-            self.assertTrue(os.path.exists(hint_sug))
-        finally:
-            shutil.rmtree(temp_dir, ignore_errors=True)
-
-    def test_consolidate_media_location_path_selector_widget(self) -> None:
-        """ConsolidateMediaLocationDialog provides a path selector widget that sets database media path."""
-        custom_path = os.path.join(USER_HOME, "SelectorTestMedia")
-        self.db.set_mediapath(custom_path)
-
-        dlg = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-        self.assertTrue(hasattr(dlg, "path_entry"))
-        self.assertTrue(hasattr(dlg, "path_button"))
-        self.assertEqual(dlg.path_entry.get_text(), custom_path)
-
-        # Changing path_entry directly stages db mediapath and recomputes base_dir
-        new_path = os.path.join(USER_HOME, "NewMediaFolder")
-        dlg.path_entry.set_text(new_path)
-        dlg.cb_set_mediapath()
-        self.assertEqual(dlg._mediapath_text, new_path)
-        self.assertEqual(dlg.base_dir, os.path.normpath(os.path.abspath(new_path)))
-
-        with patch("gwizardmediafix.OkDialog"):
-            dlg.cb_apply(MagicMock())
-        self.assertEqual(self.db.get_mediapath(), new_path)
-
-        # Selecting folder from chooser dialog sets path on entry
-        chosen_folder = os.path.join(USER_HOME, "ChosenFolder")
-        mock_chooser = MagicMock()
-        mock_chooser.run.return_value = Gtk.ResponseType.OK
-        mock_chooser.get_filename.return_value = chosen_folder
-
-        with patch(
-            "gwizardmediafix.Gtk.FileChooserDialog",
-            return_value=mock_chooser,
-        ):
-            dlg.cb_select_mediapath()
-            self.assertEqual(dlg.path_entry.get_text(), chosen_folder)
-            self.assertEqual(dlg._mediapath_text, chosen_folder)
-            self.assertEqual(
-                dlg.base_dir, os.path.normpath(os.path.abspath(chosen_folder))
-            )
-
-    def test_consolidate_media_location_radio_buttons_move_vs_copy(self) -> None:
-        """ConsolidateMediaLocationDialog provides radio buttons for move files vs make a copy."""
-        dlg = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-        self.assertTrue(hasattr(dlg, "radio_move"))
-        self.assertTrue(hasattr(dlg, "radio_copy"))
-        self.assertTrue(dlg.radio_move.get_active())
-        self.assertFalse(dlg.radio_copy.get_active())
-
-        with tempfile.TemporaryDirectory() as temp_dir:
-            test_file = os.path.join(temp_dir, "test.jpg")
-            with open(test_file, "w") as f:
-                f.write("content")
-
-            with DbTxn("Create media for move", self.db) as trans:
-                m = Media()
-                m.set_description("Test Move")
-                m.set_path(test_file)
-                m_h = self.db.add_media(m, trans)
-
-            mock_entry = MagicMock()
-            mock_entry.get_text.return_value = os.path.join(
-                temp_dir, "dest", "test.jpg"
-            )
-            dlg.row_targets = [
-                {
-                    "entry": {
-                        "handle": m_h,
-                        "raw_path": test_file,
-                        "src_full": test_file,
-                        "gramps_id": "O0001",
-                    },
-                    "path_entry": mock_entry,
-                }
-            ]
-
-            with (
-                patch(
-                    "gwizardmediafix.relocate_file",
-                    return_value=(True, ""),
-                ) as mock_relocate,
-                patch("gwizardmediafix.OkDialog"),
-            ):
-                dlg.cb_apply(MagicMock())
-                mock_relocate.assert_called_once()
-                self.assertFalse(mock_relocate.call_args[1].get("copy", False))
-
-            dlg.radio_copy.set_active(True)
-            with (
-                patch(
-                    "gwizardmediafix.relocate_file",
-                    return_value=(True, ""),
-                ) as mock_relocate,
-                patch("gwizardmediafix.OkDialog"),
-            ):
-                dlg.cb_apply(MagicMock())
-                mock_relocate.assert_called_once()
-                self.assertTrue(mock_relocate.call_args[1].get("copy", False))
-
-    def test_consolidate_media_location_path_selector_widget(self) -> None:
-        """ConsolidateMediaLocationDialog provides a path selector widget that sets database media path."""
-        custom_path = os.path.join(USER_HOME, "SelectorTestMedia")
-        self.db.set_mediapath(custom_path)
-
-        dlg = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-        self.assertTrue(hasattr(dlg, "path_entry"))
-        self.assertTrue(hasattr(dlg, "path_button"))
-        self.assertEqual(dlg.path_entry.get_text(), custom_path)
-
-        # Changing path_entry directly updates db mediapath and recomputes base_dir
-        new_path = os.path.join(USER_HOME, "NewMediaFolder")
-        dlg.path_entry.set_text(new_path)
-        dlg.cb_set_mediapath()
-        self.assertEqual(dlg._mediapath_text, new_path)
-        self.assertEqual(dlg.base_dir, os.path.normpath(os.path.abspath(new_path)))
-
-        with patch("gwizardmediafix.OkDialog"):
-            dlg.cb_apply(MagicMock())
-        self.assertEqual(self.db.get_mediapath(), new_path)
-
-        # Selecting folder from chooser dialog sets path on entry
-        chosen_folder = os.path.join(USER_HOME, "ChosenFolder")
-        mock_chooser = MagicMock()
-        mock_chooser.run.return_value = Gtk.ResponseType.OK
-        mock_chooser.get_filename.return_value = chosen_folder
-
-        with patch(
-            "gwizardmediafix.Gtk.FileChooserDialog",
-            return_value=mock_chooser,
-        ):
-            dlg.cb_select_mediapath()
-            self.assertEqual(dlg.path_entry.get_text(), chosen_folder)
-            self.assertEqual(dlg._mediapath_text, chosen_folder)
-            self.assertEqual(
-                dlg.base_dir, os.path.normpath(os.path.abspath(chosen_folder))
-            )
-
-    def test_consolidate_media_location_radio_buttons_move_vs_copy(self) -> None:
-        """ConsolidateMediaLocationDialog provides radio buttons for move files vs make a copy."""
-        dlg = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-        self.assertTrue(hasattr(dlg, "radio_move"))
-        self.assertTrue(hasattr(dlg, "radio_copy"))
-        self.assertTrue(dlg.radio_move.get_active())
-        self.assertFalse(dlg.radio_copy.get_active())
-
-        with tempfile.TemporaryDirectory() as temp_dir:
-            test_file = os.path.join(temp_dir, "test.jpg")
-            with open(test_file, "w") as f:
-                f.write("content")
-
-            with DbTxn("Create media for move", self.db) as trans:
-                m = Media()
-                m.set_description("Test Move")
-                m.set_path(test_file)
-                m_h = self.db.add_media(m, trans)
-
-            mock_entry = MagicMock()
-            mock_entry.get_text.return_value = os.path.join(
-                temp_dir, "dest", "test.jpg"
-            )
-            dlg.row_targets = [
-                {
-                    "entry": {
-                        "handle": m_h,
-                        "raw_path": test_file,
-                        "src_full": test_file,
-                        "gramps_id": "O0001",
-                    },
-                    "path_entry": mock_entry,
-                }
-            ]
-
-            with (
-                patch(
-                    "gwizardmediafix.relocate_file",
-                    return_value=(True, ""),
-                ) as mock_relocate,
-                patch("gwizardmediafix.OkDialog"),
-            ):
-                dlg.cb_apply(MagicMock())
-                mock_relocate.assert_called_once()
-                self.assertFalse(mock_relocate.call_args[1].get("copy", False))
-
-            dlg.radio_copy.set_active(True)
-            with (
-                patch(
-                    "gwizardmediafix.relocate_file",
-                    return_value=(True, ""),
-                ) as mock_relocate,
-                patch("gwizardmediafix.OkDialog"),
-            ):
-                dlg.cb_apply(MagicMock())
-                mock_relocate.assert_called_once()
-                self.assertTrue(mock_relocate.call_args[1].get("copy", False))
-
-    def test_find_and_consolidate_quotes_and_spaces(self) -> None:
-        """Find Media and Consolidate operations handle paths enclosed in quotes and containing spaces."""
-        temp_dir = tempfile.mkdtemp()
-        try:
-            # File with spaces on disk
-            real_file = os.path.join(temp_dir, "My Photo File 1920.jpg")
-            with open(real_file, "w") as f:
-                f.write("content")
-
-            with DbTxn("Create media with missing path", self.db) as trans:
-                m = Media()
-                m.set_description("Photo with spaces")
-                m.set_path("missing/old photo.jpg")
-                m_h = self.db.add_media(m, trans)
-
-            dlg_find = FindMissingMediaDialog(dbstate=self.dbstate)
-            self.assertEqual(len(dlg_find.rows), 1)
-
-            # User enters/pastes path enclosed in quotes (e.g. copied from Windows Explorer)
-            quoted_input = f'"{real_file}"'
-            mock_entry = MagicMock()
-            mock_entry.get_text.return_value = quoted_input
-            dlg_find.row_targets = [
-                {"entry": dlg_find.rows[0], "path_entry": mock_entry}
-            ]
-
-            with patch("gwizardmediafix.OkDialog"):
-                dlg_find.cb_apply(MagicMock())
-
-            # Path stored in database must be stripped of quotes
-            updated = self.db.get_media_from_handle(m_h)
-            self.assertEqual(updated.get_path(), real_file)
-            self.assertFalse(updated.get_path().startswith('"'))
-
-            # Report should now find the file on disk instead of reporting it missing
-            report = generate_media_fix_report(self.db)
-            self.assertIn("Files found on disk:       1", report)
-            self.assertIn("Files missing on disk:     0", report)
-
-            # Consolidate media location with spaces and quotes in base path
-            base_dir = os.path.join(temp_dir, "Consolidated Media Base")
-            os.makedirs(base_dir, exist_ok=True)
-            self.db.set_mediapath(f'"{base_dir}"')
-
-            dlg_cons = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-            self.assertEqual(
-                dlg_cons.base_dir, os.path.normpath(os.path.abspath(base_dir))
-            )
-
-            # User accepts hints or inputs path
-            hint_sug = dlg_cons.rows[0]["suggested_path"]
-            self.assertIn("Photo_with_spaces.jpg", hint_sug)
-            self.assertIn("Consolidated Media Base", hint_sug)
-
-            mock_cons_entry = MagicMock()
-            mock_cons_entry.get_text.return_value = f'"{hint_sug}"'
-            dlg_cons.row_targets[0]["path_entry"] = mock_cons_entry
-
-            with patch("gwizardmediafix.OkDialog"):
-                dlg_cons.cb_apply(MagicMock())
-
-            # File should be moved to destination and updated in DB without quotes
-            updated_cons = self.db.get_media_from_handle(m_h)
-            from gwizard_common import to_db_path
-
-            self.assertEqual(
-                os.path.normpath(updated_cons.get_path()),
-                os.path.normpath(to_db_path(hint_sug, base_dir)),
-            )
-            self.assertTrue(os.path.exists(hint_sug))
-        finally:
-            shutil.rmtree(temp_dir, ignore_errors=True)
-
-    def test_consolidate_media_location_path_selector_widget(self) -> None:
-        """ConsolidateMediaLocationDialog provides a path selector widget that sets database media path."""
-        custom_path = os.path.join(USER_HOME, "SelectorTestMedia")
-        self.db.set_mediapath(custom_path)
-
-        dlg = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-        self.assertTrue(hasattr(dlg, "path_entry"))
-        self.assertTrue(hasattr(dlg, "path_button"))
-        self.assertEqual(dlg.path_entry.get_text(), custom_path)
-
-        # Changing path_entry directly stages db mediapath and recomputes base_dir
-        new_path = os.path.join(USER_HOME, "NewMediaFolder")
-        dlg.path_entry.set_text(new_path)
-        dlg.cb_set_mediapath()
-        self.assertEqual(dlg._mediapath_text, new_path)
-        self.assertEqual(dlg.base_dir, os.path.normpath(os.path.abspath(new_path)))
-
-        with patch("gwizardmediafix.OkDialog"):
-            dlg.cb_apply(MagicMock())
-        self.assertEqual(self.db.get_mediapath(), new_path)
-
-        # Selecting folder from chooser dialog sets path on entry
-        chosen_folder = os.path.join(USER_HOME, "ChosenFolder")
-        mock_chooser = MagicMock()
-        mock_chooser.run.return_value = Gtk.ResponseType.OK
-        mock_chooser.get_filename.return_value = chosen_folder
-
-        with patch(
-            "gwizardmediafix.Gtk.FileChooserDialog",
-            return_value=mock_chooser,
-        ):
-            dlg.cb_select_mediapath()
-            self.assertEqual(dlg.path_entry.get_text(), chosen_folder)
-            self.assertEqual(dlg._mediapath_text, chosen_folder)
-            self.assertEqual(
-                dlg.base_dir, os.path.normpath(os.path.abspath(chosen_folder))
-            )
-
-    def test_consolidate_media_location_radio_buttons_move_vs_copy(self) -> None:
-        """ConsolidateMediaLocationDialog provides radio buttons for move files vs make a copy."""
-        dlg = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-        self.assertTrue(hasattr(dlg, "radio_move"))
-        self.assertTrue(hasattr(dlg, "radio_copy"))
-        self.assertTrue(dlg.radio_move.get_active())
-        self.assertFalse(dlg.radio_copy.get_active())
-
-        with tempfile.TemporaryDirectory() as temp_dir:
-            test_file = os.path.join(temp_dir, "test.jpg")
-            with open(test_file, "w") as f:
-                f.write("content")
-
-            with DbTxn("Create media for move", self.db) as trans:
-                m = Media()
-                m.set_description("Test Move")
-                m.set_path(test_file)
-                m_h = self.db.add_media(m, trans)
-
-            mock_entry = MagicMock()
-            mock_entry.get_text.return_value = os.path.join(
-                temp_dir, "dest", "test.jpg"
-            )
-            dlg.row_targets = [
-                {
-                    "entry": {
-                        "handle": m_h,
-                        "raw_path": test_file,
-                        "src_full": test_file,
-                        "gramps_id": "O0001",
-                    },
-                    "path_entry": mock_entry,
-                }
-            ]
-
-            with (
-                patch(
-                    "gwizardmediafix.relocate_file",
-                    return_value=(True, ""),
-                ) as mock_relocate,
-                patch("gwizardmediafix.OkDialog"),
-            ):
-                dlg.cb_apply(MagicMock())
-                mock_relocate.assert_called_once()
-                self.assertFalse(mock_relocate.call_args[1].get("copy", False))
-
-            dlg.radio_copy.set_active(True)
-            with (
-                patch(
-                    "gwizardmediafix.relocate_file",
-                    return_value=(True, ""),
-                ) as mock_relocate,
-                patch("gwizardmediafix.OkDialog"),
-            ):
-                dlg.cb_apply(MagicMock())
-                mock_relocate.assert_called_once()
-                self.assertTrue(mock_relocate.call_args[1].get("copy", False))
-
     def test_generate_media_fix_report_includes_base_path(self) -> None:
         """generate_media_fix_report includes Media Base Path in summary metrics."""
         custom_path = os.path.join(USER_HOME, "ReportMetricsMedia")
@@ -1521,7 +1003,7 @@ class GWizardMediaFixTest(unittest.TestCase):
             m2 = Media()
             m2.set_description("Photo 2")
             m2.set_path("shared/sample.jpg")
-            m2_h = self.db.add_media(m2, trans)
+            self.db.add_media(m2, trans)
 
             # Person links to m1
             p = Person()
@@ -1598,7 +1080,7 @@ class GWizardMediaFixTest(unittest.TestCase):
                 m1 = Media()
                 m1.set_description("Photo A")
                 m1.set_path(shared_file)
-                m1_h = self.db.add_media(m1, trans)
+                self.db.add_media(m1, trans)
 
                 m2 = Media()
                 m2.set_description("Photo B")
@@ -1974,8 +1456,8 @@ class GWizardMediaFixTest(unittest.TestCase):
         self.assertTrue(dlg.report_label.selectable)
         self.assertEqual(dlg.report_label.text, sample_report)
 
-    def test_find_missing_media_tagging_and_locking(self) -> None:
-        """FindMissingMediaDialog tags repaired media with GWizard: MediaFixed and skips locked media."""
+    def test_find_missing_media_tagging(self) -> None:
+        """FindMissingMediaDialog tags repaired media with GWizard: MediaFixed."""
         temp_dir = tempfile.mkdtemp()
         try:
             base_dir = os.path.join(temp_dir, "MediaBase")
@@ -1987,59 +1469,37 @@ class GWizardMediaFixTest(unittest.TestCase):
                 f.write("image data")
 
             with DbTxn("Create missing media", self.db) as trans:
-                m_unlocked = Media()
-                m_unlocked.set_description("Unlocked Missing")
-                m_unlocked.set_path("missing/photo.jpg")
-                h_unlocked = self.db.add_media(m_unlocked, trans)
+                m_first = Media()
+                m_first.set_description("First Missing")
+                m_first.set_path("missing/photo.jpg")
+                h_first = self.db.add_media(m_first, trans)
 
-                m_locked = Media()
-                m_locked.set_description("Locked Missing")
-                m_locked.set_path("missing/photo.jpg")
-                h_locked = self.db.add_media(m_locked, trans)
-
-            lock_media(self.db, m_locked, commit=True)
-            self.assertTrue(is_media_locked(self.db, m_locked))
-            self.assertFalse(is_media_locked(self.db, m_unlocked))
+                m_second = Media()
+                m_second.set_description("Second Missing")
+                m_second.set_path("missing/photo.jpg")
+                h_second = self.db.add_media(m_second, trans)
 
             dlg = FindMissingMediaDialog(dbstate=self.dbstate)
             self.assertEqual(len(dlg.rows), 2)
-
-            locked_rows = [r for r in dlg.rows if r.get("locked")]
-            unlocked_rows = [r for r in dlg.rows if not r.get("locked")]
-            self.assertEqual(len(locked_rows), 1)
-            self.assertEqual(len(unlocked_rows), 1)
-            self.assertIn("Locked", locked_rows[0]["hint_text"])
-            self.assertEqual(locked_rows[0]["suggested_path"], "")
+            for row in dlg.rows:
+                self.assertNotIn("locked", row)
+                self.assertEqual(row["suggested_path"], "photo.jpg")
 
             with patch("gwizardmediafix.OkDialog"):
-                # Accept hints should only populate unlocked row
                 dlg.cb_accept_hints(MagicMock())
                 for target_row in dlg.row_targets:
-                    if target_row["entry"].get("locked"):
-                        self.assertEqual(target_row["path_entry"].get_text(), "")
-                    else:
-                        self.assertEqual(
-                            target_row["path_entry"].get_text(), "photo.jpg"
-                        )
-
+                    self.assertEqual(target_row["path_entry"].get_text(), "photo.jpg")
                 dlg.cb_apply(MagicMock())
 
-            # Unlocked media path was updated and received GWizard: MediaFixed tag
-            updated_unlocked = self.db.get_media_from_handle(h_unlocked)
-            self.assertEqual(updated_unlocked.get_path(), "photo.jpg")
-            self.assertTrue(has_media_fixed_tag(self.db, updated_unlocked))
-
-            # Locked media path was not modified
-            updated_locked = self.db.get_media_from_handle(h_locked)
-            self.assertEqual(
-                updated_locked.get_path().replace("\\", "/"), "missing/photo.jpg"
-            )
-            self.assertFalse(has_media_fixed_tag(self.db, updated_locked))
+            for handle in (h_first, h_second):
+                updated = self.db.get_media_from_handle(handle)
+                self.assertEqual(updated.get_path(), "photo.jpg")
+                self.assertTrue(has_media_fixed_tag(self.db, updated))
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
 
-    def test_consolidate_media_location_tagging_and_locking(self) -> None:
-        """ConsolidateMediaLocationDialog tags consolidated media and skips locked media."""
+    def test_consolidate_media_location_tagging(self) -> None:
+        """ConsolidateMediaLocationDialog consolidates and tags every listed record."""
         temp_dir = tempfile.mkdtemp()
         try:
             base_dir = os.path.join(temp_dir, "MediaBase")
@@ -2055,45 +1515,40 @@ class GWizardMediaFixTest(unittest.TestCase):
 
             with DbTxn("Create media for consolidation", self.db) as trans:
                 m1 = Media()
-                m1.set_description("Unlocked Consol")
+                m1.set_description("First Consol")
                 m1.set_path(src1)
                 h1 = self.db.add_media(m1, trans)
 
                 m2 = Media()
-                m2.set_description("Locked Consol")
+                m2.set_description("Second Consol")
                 m2.set_path(src2)
                 h2 = self.db.add_media(m2, trans)
 
-            lock_media(self.db, m2, commit=True)
-            self.assertTrue(is_media_locked(self.db, m2))
-
             dlg = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-            locked_rows = [r for r in dlg.rows if r.get("locked")]
-            unlocked_rows = [r for r in dlg.rows if not r.get("locked")]
-            self.assertEqual(len(locked_rows), 1)
-            self.assertEqual(len(unlocked_rows), 1)
+            self.assertEqual(len(dlg.rows), 2)
+            for row in dlg.rows:
+                self.assertNotIn("locked", row)
+                self.assertNotEqual(row["suggested_path"], "")
 
             with patch("gwizardmediafix.OkDialog"):
                 dlg.cb_accept_hints(MagicMock())
                 for target_row in dlg.row_targets:
-                    if target_row["entry"].get("locked"):
-                        self.assertEqual(target_row["path_entry"].get_text(), "")
-                    else:
-                        self.assertNotEqual(target_row["path_entry"].get_text(), "")
-
+                    self.assertNotEqual(target_row["path_entry"].get_text(), "")
                 dlg.cb_apply(MagicMock())
 
-            updated_m1 = self.db.get_media_from_handle(h1)
-            self.assertTrue(has_media_fixed_tag(self.db, updated_m1))
-
-            updated_m2 = self.db.get_media_from_handle(h2)
-            self.assertEqual(updated_m2.get_path(), src2)
-            self.assertFalse(has_media_fixed_tag(self.db, updated_m2))
+            for handle, src in ((h1, src1), (h2, src2)):
+                updated = self.db.get_media_from_handle(handle)
+                self.assertFalse(os.path.isabs(updated.get_path()))
+                self.assertTrue(
+                    os.path.exists(os.path.join(base_dir, updated.get_path()))
+                )
+                self.assertFalse(os.path.exists(src))
+                self.assertTrue(has_media_fixed_tag(self.db, updated))
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
 
-    def test_auto_find_missing_skips_locked_and_tags_fixed(self) -> None:
-        """_auto_find_missing skips locked media and tags resolved media with GWizard: MediaFixed."""
+    def test_auto_find_missing_tags_fixed(self) -> None:
+        """_auto_find_missing repoints found media and tags it with GWizard: MediaFixed."""
         temp_dir = tempfile.mkdtemp()
         try:
             base_dir = os.path.join(temp_dir, "MediaBase")
@@ -2105,38 +1560,25 @@ class GWizardMediaFixTest(unittest.TestCase):
                 f.write("auto found")
 
             with DbTxn("Create missing media", self.db) as trans:
-                m_unlocked = Media()
-                m_unlocked.set_description("Auto Missing Unlocked")
-                m_unlocked.set_path("old/auto_found.jpg")
-                h_unlocked = self.db.add_media(m_unlocked, trans)
-
-                m_locked = Media()
-                m_locked.set_description("Auto Missing Locked")
-                m_locked.set_path("old/auto_found.jpg")
-                h_locked = self.db.add_media(m_locked, trans)
-
-            lock_media(self.db, m_locked, commit=True)
+                m_missing = Media()
+                m_missing.set_description("Auto Missing")
+                m_missing.set_path("old/auto_found.jpg")
+                h_missing = self.db.add_media(m_missing, trans)
 
             tool_instance = GWizardMediaFix.__new__(GWizardMediaFix)
             tool_instance.dbstate = self.dbstate
 
             resolved, unresolved, denied = tool_instance._auto_find_missing(self.db)
-            self.assertEqual(resolved, 1)
+            self.assertEqual((resolved, unresolved, denied), (1, [], []))
 
-            res_unlocked = self.db.get_media_from_handle(h_unlocked)
-            self.assertEqual(res_unlocked.get_path(), "auto_found.jpg")
-            self.assertTrue(has_media_fixed_tag(self.db, res_unlocked))
-
-            res_locked = self.db.get_media_from_handle(h_locked)
-            self.assertEqual(
-                res_locked.get_path().replace("\\", "/"), "old/auto_found.jpg"
-            )
-            self.assertFalse(has_media_fixed_tag(self.db, res_locked))
+            res = self.db.get_media_from_handle(h_missing)
+            self.assertEqual(res.get_path(), "auto_found.jpg")
+            self.assertTrue(has_media_fixed_tag(self.db, res))
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
 
-    def test_auto_consolidate_location_skips_locked_and_tags_fixed(self) -> None:
-        """_auto_consolidate_location skips locked media and tags consolidated media."""
+    def test_auto_consolidate_location_tags_fixed(self) -> None:
+        """_auto_consolidate_location moves media into the base path and tags it."""
         temp_dir = tempfile.mkdtemp()
         try:
             base_dir = os.path.join(temp_dir, "MediaBase")
@@ -2148,42 +1590,29 @@ class GWizardMediaFixTest(unittest.TestCase):
                 f.write("png data")
 
             with DbTxn("Create media", self.db) as trans:
-                m_unlocked = Media()
-                m_unlocked.set_description("Raw Unlocked")
-                m_unlocked.set_path(src_file)
-                h_unlocked = self.db.add_media(m_unlocked, trans)
+                m_raw = Media()
+                m_raw.set_description("Raw Photo")
+                m_raw.set_path(src_file)
+                h_raw = self.db.add_media(m_raw, trans)
 
             tool_instance = GWizardMediaFix.__new__(GWizardMediaFix)
             tool_instance.dbstate = self.dbstate
 
             count, uncons = tool_instance._auto_consolidate_location(self.db)
-            self.assertEqual(count, 1)
+            self.assertEqual((count, uncons), (1, []))
 
-            res = self.db.get_media_from_handle(h_unlocked)
+            res = self.db.get_media_from_handle(h_raw)
+            self.assertFalse(os.path.isabs(res.get_path()))
+            self.assertTrue(os.path.exists(os.path.join(base_dir, res.get_path())))
             self.assertTrue(has_media_fixed_tag(self.db, res))
 
-            # Now test locked media
-            src_locked = os.path.join(temp_dir, "raw_locked.png")
-            with open(src_locked, "w") as f:
-                f.write("png data locked")
-
-            with DbTxn("Create locked media", self.db) as trans:
-                m_locked = Media()
-                m_locked.set_description("Raw Locked")
-                m_locked.set_path(src_locked)
-                h_locked = self.db.add_media(m_locked, trans)
-
-            lock_media(self.db, m_locked, commit=True)
-            count2, uncons2 = tool_instance._auto_consolidate_location(self.db)
-            self.assertEqual(count2, 0)
-            res_locked = self.db.get_media_from_handle(h_locked)
-            self.assertEqual(res_locked.get_path(), src_locked)
-            self.assertFalse(has_media_fixed_tag(self.db, res_locked))
+            # A second run has nothing left to do
+            self.assertEqual(tool_instance._auto_consolidate_location(self.db), (0, []))
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
 
-    def test_auto_fix_references_skips_locked_and_tags_merged(self) -> None:
-        """_auto_fix_references skips locked media and tags merged keeper."""
+    def test_auto_fix_references_tags_merged(self) -> None:
+        """_auto_fix_references merges duplicates and tags the keeper."""
         temp_dir = tempfile.mkdtemp()
         try:
             shared = os.path.join(temp_dir, "shared.jpg")
@@ -2210,16 +1639,8 @@ class GWizardMediaFixTest(unittest.TestCase):
             tool_instance = GWizardMediaFix.__new__(GWizardMediaFix)
             tool_instance.dbstate = self.dbstate
 
-            # Lock other record: merge must be skipped
-            lock_media(self.db, m2, commit=True)
             merged, deleted, errs = tool_instance._auto_fix_references(self.db)
-            self.assertEqual(merged, 0)
-            self.assertIsNotNone(self.db.get_media_from_handle(h2))
-
-            # Unlock other record: merge succeeds and keeper gets GWizard: MediaFixed tag
-            unlock_media(self.db, m2, commit=True)
-            merged, deleted, errs = tool_instance._auto_fix_references(self.db)
-            self.assertEqual(merged, 1)
+            self.assertEqual((merged, deleted, errs), (1, 0, []))
             with self.assertRaises(HandleError):
                 self.db.get_media_from_handle(h2)
             keeper_res = self.db.get_media_from_handle(h1)
@@ -2227,8 +1648,8 @@ class GWizardMediaFixTest(unittest.TestCase):
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
 
-    def test_build_accept_all_plan_excludes_locked(self) -> None:
-        """build_accept_all_plan excludes locked media records from all actions."""
+    def test_build_accept_all_plan_includes_all_media(self) -> None:
+        """build_accept_all_plan plans a find and a move for every eligible record."""
         temp_dir = tempfile.mkdtemp()
         try:
             base_dir = os.path.join(temp_dir, "MediaBase")
@@ -2245,395 +1666,49 @@ class GWizardMediaFixTest(unittest.TestCase):
             with DbTxn("Create records", self.db) as trans:
                 m_missing = Media()
                 m_missing.set_path("lost/found.jpg")
-                h_m = self.db.add_media(m_missing, trans)
+                h_missing = self.db.add_media(m_missing, trans)
 
                 m_move = Media()
                 m_move.set_path(f2)
-                h_mv = self.db.add_media(m_move, trans)
+                h_move = self.db.add_media(m_move, trans)
 
-            lock_media(self.db, m_missing, commit=True)
-            lock_media(self.db, m_move, commit=True)
+                # Referenced, so step 2 does not plan to delete them
+                person = Person()
+                for handle in (h_missing, h_move):
+                    mref = MediaRef()
+                    mref.set_reference_handle(handle)
+                    person.add_media_reference(mref)
+                self.db.add_person(person, trans)
 
             plan = build_accept_all_plan(self.db, base_dir, base_set=True)
+            self.assertNotIn("held", plan)
+            self.assertEqual(plan["delete"], [])
             find_gids = [x[0] for x in plan["find"]]
             move_gids = [x[0] for x in plan["moves"]]
-            self.assertNotIn(m_missing.get_gramps_id(), find_gids)
-            self.assertNotIn(m_move.get_gramps_id(), move_gids)
+            self.assertIn(m_missing.get_gramps_id(), find_gids)
+            self.assertIn(m_move.get_gramps_id(), move_gids)
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
 
-    def test_report_locked_and_fixed_metrics(self) -> None:
-        """generate_media_fix_report includes locked and fixed media metrics and sections."""
-        with DbTxn("Create locked and fixed media", self.db) as trans:
-            m_lock = Media()
-            m_lock.set_description("Secure Photo")
-            m_lock.set_path("secure.jpg")
-            h_l = self.db.add_media(m_lock, trans)
+    def test_report_fixed_metrics(self) -> None:
+        """generate_media_fix_report counts fixed media and has no lock section."""
+        with DbTxn("Create media", self.db) as trans:
+            m_plain = Media()
+            m_plain.set_description("Plain Photo")
+            m_plain.set_path("plain.jpg")
+            self.db.add_media(m_plain, trans)
 
             m_fix = Media()
             m_fix.set_description("Clean Photo")
             m_fix.set_path("clean.jpg")
-            h_f = self.db.add_media(m_fix, trans)
+            self.db.add_media(m_fix, trans)
 
-        lock_media(self.db, m_lock, commit=True)
         add_media_fixed_tag(self.db, m_fix, commit=True)
 
         report = generate_media_fix_report(self.db)
-        self.assertIn("Locked media records:      1", report)
         self.assertIn("Fixed media records:       1", report)
-        self.assertIn("LOCKED MEDIA RECORDS", report)
-        self.assertIn("Secure Photo", report)
-
-    def test_report_zero_unreferenced_image_tags(self) -> None:
-        """Report explicitly notes when zero unreferenced image tags are found."""
-        with DbTxn("Create referenced media", self.db) as trans:
-            m = Media()
-            m.set_path("referenced/photo.jpg")
-            m_h = self.db.add_media(m, trans)
-
-            p = Person()
-            mref = MediaRef()
-            mref.set_reference_handle(m_h)
-            p.add_media_reference(mref)
-            self.db.add_person(p, trans)
-
-        report = generate_media_fix_report(self.db)
-        self.assertIn("Unreferenced image tags:   0", report)
-        self.assertIn("0 unreferenced image tags found", report)
-
-    def test_fix_media_references_dialog_delete_unreferenced(self) -> None:
-        """FixMediaReferencesDialog detects and deletes unreferenced image tags."""
-        with DbTxn("Create unreferenced media", self.db) as trans:
-            m = Media()
-            m.set_description("Orphan Image Tag")
-            m.set_path("orphan/image.jpg")
-            m_h = self.db.add_media(m, trans)
-
-        dlg = FixMediaReferencesDialog(dbstate=self.dbstate)
-        unref_groups = [g for g in dlg.groups if g.get("type") == "unreferenced"]
-        self.assertEqual(len(unref_groups), 1)
-        self.assertEqual(unref_groups[0]["keeper"]["handle"], m_h)
-
-        # Apply deletion (choice 0)
-        dlg.row_targets[0]["action_combo"].set_active(0)
-        with patch("gw_fixmediareferencesdialog.OkDialog"):
-            dlg.cb_apply(MagicMock())
-
-        # Media record should now be deleted from database
-        with self.assertRaises(HandleError):
-            self.db.get_media_from_handle(m_h)
-
-    def test_check_path_permission_ancestors(self) -> None:
-        """check_path_permission identifies the highest-level directory that cannot be read."""
-        temp_dir = tempfile.mkdtemp()
-        try:
-            restricted_dir = os.path.join(temp_dir, "RestrictedDir")
-            os.makedirs(restricted_dir)
-            test_file = os.path.join(restricted_dir, "nested", "photo.jpg")
-
-            orig_scandir = os.scandir
-
-            def mock_scandir(p: Any) -> Any:
-                if os.path.normcase(str(p)) == os.path.normcase(restricted_dir):
-                    raise PermissionError(13, "Access is denied", restricted_dir)
-                return orig_scandir(p)
-
-            with patch(
-                "gwizardmediafix.os.scandir",
-                side_effect=mock_scandir,
-            ):
-                has_issue, inaccess = check_path_permission(test_file)
-                self.assertTrue(has_issue)
-                self.assertEqual(
-                    os.path.normcase(inaccess or ""),
-                    os.path.normcase(restricted_dir),
-                )
-        finally:
-            shutil.rmtree(temp_dir, ignore_errors=True)
-
-    def test_report_permission_denied_file(self) -> None:
-        """generate_media_fix_report lists permission-denied files with the highest inaccessible directory."""
-        temp_dir = tempfile.mkdtemp()
-        try:
-            restricted_dir = os.path.join(temp_dir, "RestrictedVault")
-            os.makedirs(restricted_dir)
-            test_file = os.path.join(restricted_dir, "secret_photo.jpg")
-
-            with DbTxn("Create media in restricted folder", self.db) as trans:
-                m = Media()
-                m.set_description("Vault Photo")
-                m.set_path(test_file)
-                self.db.add_media(m, trans)
-
-            orig_scandir = os.scandir
-
-            def mock_scandir(p: Any) -> Any:
-                if os.path.normcase(str(p)) == os.path.normcase(restricted_dir):
-                    raise PermissionError(13, "Access is denied", restricted_dir)
-                return orig_scandir(p)
-
-            with patch(
-                "gwizardmediafix.os.scandir",
-                side_effect=mock_scandir,
-            ):
-                report = generate_media_fix_report(self.db)
-                self.assertIn("Permission denied files:   1", report)
-                self.assertIn("PERMISSION DENIED FILES (1 files inaccessible", report)
-                self.assertIn("Inaccessible at:", report)
-                self.assertIn("RestrictedVault", report)
-        finally:
-            shutil.rmtree(temp_dir, ignore_errors=True)
-
-    def test_find_missing_media_hint_permission_denied(self) -> None:
-        """FindMissingMediaDialog displays permission denial in Hint column."""
-        temp_dir = tempfile.mkdtemp()
-        try:
-            no_access_dir = os.path.join(temp_dir, "NoAccessFolder")
-            os.makedirs(no_access_dir)
-            test_file = os.path.join(no_access_dir, "pic.jpg")
-
-            with DbTxn("Create media in no-access folder", self.db) as trans:
-                m = Media()
-                m.set_description("No Access Pic")
-                m.set_path(test_file)
-                self.db.add_media(m, trans)
-
-            orig_scandir = os.scandir
-
-            def mock_scandir(p: Any) -> Any:
-                if os.path.normcase(str(p)) == os.path.normcase(no_access_dir):
-                    raise PermissionError(13, "Access is denied", no_access_dir)
-                return orig_scandir(p)
-
-            with patch(
-                "gwizardmediafix.os.scandir",
-                side_effect=mock_scandir,
-            ):
-                dlg = FindMissingMediaDialog(dbstate=self.dbstate)
-                self.assertEqual(len(dlg.rows), 1)
-                self.assertTrue(dlg.rows[0]["perm_denied"])
-                self.assertIn("Permission denied", dlg.rows[0]["hint_text"])
-                self.assertIn("NoAccessFolder", dlg.rows[0]["hint_text"])
-        finally:
-            shutil.rmtree(temp_dir, ignore_errors=True)
-
-    def test_consolidate_location_blocked_by_duplicate_references(self) -> None:
-        """Consolidate media location requires resolving duplicate references first."""
-        with DbTxn("Create duplicate media references", self.db) as trans:
-            m1 = Media()
-            m1.set_description("Census 1")
-            m1.set_path(r"C:\photos\shared_census.jpg")
-            self.db.add_media(m1, trans)
-
-            m2 = Media()
-            m2.set_description("Census 2")
-            m2.set_path(r"C:\photos\shared_census.jpg")
-            self.db.add_media(m2, trans)
-
-        # 1. Main window button callback blocks consolidation when dups exist
-        tool_instance = GWizardMediaFix.__new__(GWizardMediaFix)
-        tool_instance.dbstate = self.dbstate
-        tool_instance.window = MagicMock()
-
-        with (
-            patch("gwizardmediafix.OkDialog") as mock_dialog,
-            patch(
-                "gwizardmediafix.ConsolidateMediaLocationDialog"
-            ) as mock_dlg_class,
-        ):
-            tool_instance.cb_button(MagicMock(), "consolidate_location")
-            mock_dialog.assert_called_once()
-            self.assertIn(
-                "Resolve Duplicate References First",
-                mock_dialog.call_args[0][0],
-            )
-            mock_dlg_class.assert_not_called()
-
-        # 2. ConsolidateMediaLocationDialog disables action buttons when duplicate files exist
-        dlg = ConsolidateMediaLocationDialog(dbstate=self.dbstate)
-        self.assertTrue(len(dlg.dup_files) > 0)
-        self.assertFalse(dlg.apply_button.get_sensitive())
-        self.assertFalse(dlg.accept_button.get_sensitive())
-
-        with patch("gwizardmediafix.OkDialog") as mock_dialog:
-            dlg.cb_apply(MagicMock())
-            mock_dialog.assert_called_once()
-            self.assertIn("Cannot Consolidate Files", mock_dialog.call_args[0][0])
-
-        # 3. Sanity check in cb_apply: duplicate source files in row_targets blocks move
-        dlg.dup_files = []  # Bypass initial check to test batch conflict detection
-        mock_entry1 = MagicMock()
-        mock_entry1.get_text.return_value = "C:/dest/new1.jpg"
-        mock_entry2 = MagicMock()
-        mock_entry2.get_text.return_value = "C:/dest/new2.jpg"
-        dlg.row_targets = [
-            {
-                "entry": {
-                    "handle": "h1",
-                    "raw_path": r"C:\photos\shared_census.jpg",
-                    "gramps_id": "O1",
-                },
-                "path_entry": mock_entry1,
-            },
-            {
-                "entry": {
-                    "handle": "h2",
-                    "raw_path": r"C:\photos\shared_census.jpg",
-                    "gramps_id": "O2",
-                },
-                "path_entry": mock_entry2,
-            },
-        ]
-
-        with (
-            patch(
-                "gwizardmediafix.find_duplicate_media_groups",
-                return_value=[],
-            ),
-            patch("gwizardmediafix.OkDialog") as mock_dialog,
-        ):
-            dlg.cb_apply(MagicMock())
-            mock_dialog.assert_called_once()
-            self.assertIn(
-                "Duplicate Source Files Detected",
-                mock_dialog.call_args[0][0],
-            )
-
-    def test_auto_all_accept_all_hints(self) -> None:
-        """Accept all hints executes automated fixes and reports items requiring human intervention."""
-        temp_dir = tempfile.mkdtemp()
-        try:
-            base_dir = os.path.join(temp_dir, "MediaBase")
-            os.makedirs(base_dir, exist_ok=True)
-            self.db.set_mediapath(base_dir)
-
-            # 1. Missing file that exists in base_dir
-            found_file = os.path.join(base_dir, "found.jpg")
-            with open(found_file, "w") as f:
-                f.write("content")
-
-            # 2. Source file for consolidation on disk
-            consol_src = os.path.join(temp_dir, "scattered.png")
-            with open(consol_src, "w") as f:
-                f.write("content")
-
-            with DbTxn("Create media records for auto_all", self.db) as trans:
-                # Missing media that can be resolved
-                m_found = Media()
-                m_found.set_description("Found Media")
-                m_found.set_path("lost/found.jpg")
-                h_found = self.db.add_media(m_found, trans)
-
-                p_found = Person()
-                mref_f = MediaRef()
-                mref_f.set_reference_handle(h_found)
-                p_found.add_media_reference(mref_f)
-                self.db.add_person(p_found, trans)
-
-                # Trully missing media that requires human intervention
-                m_unresolved = Media()
-                m_unresolved.set_description("Unresolved Media")
-                m_unresolved.set_path("truly/missing_forever.jpg")
-                h_unres = self.db.add_media(m_unresolved, trans)
-
-                p_unres = Person()
-                mref_u = MediaRef()
-                mref_u.set_reference_handle(h_unres)
-                p_unres.add_media_reference(mref_u)
-                self.db.add_person(p_unres, trans)
-
-                # Unreferenced image tag (file exists on disk, but 0 data references)
-                orphan_file = os.path.join(temp_dir, "orphan.jpg")
-                with open(orphan_file, "w") as f:
-                    f.write("content")
-                m_orphan = Media()
-                m_orphan.set_description("Orphan Media")
-                m_orphan.set_path(orphan_file)
-                h_orphan = self.db.add_media(m_orphan, trans)
-
-                # Duplicate references to consol_src
-                m_dup1 = Media()
-                m_dup1.set_description("Shared Photo 1")
-                m_dup1.set_path(consol_src)
-                h_dup1 = self.db.add_media(m_dup1, trans)
-
-                m_dup2 = Media()
-                m_dup2.set_description("Shared Photo 2")
-                m_dup2.set_path(consol_src)
-                h_dup2 = self.db.add_media(m_dup2, trans)
-
-                # Link person to dup1 so dup1 is chosen as keeper
-                p = Person()
-                mref = MediaRef()
-                mref.set_reference_handle(h_dup1)
-                p.add_media_reference(mref)
-                self.db.add_person(p, trans)
-
-            tool_instance = GWizardMediaFix.__new__(GWizardMediaFix)
-            tool_instance.dbstate = self.dbstate
-            tool_instance.window = MagicMock()
-
-            # Test cancellation: confirm_plan returns False
-            with patch(
-                "gwizardmediafix.confirm_plan",
-                return_value=False,
-            ):
-                tool_instance.cb_auto_all()
-                # Should do nothing
-                self.assertIsNotNone(self.db.get_media_from_handle(h_orphan))
-
-            # Test acceptance: confirm_plan returns True
-            with (
-                patch(
-                    "gwizardmediafix.confirm_plan",
-                    return_value=True,
-                ),
-                patch(
-                    "gwizardmediafix.AcceptAllHintsReportDialog"
-                ) as mock_report_cls,
-            ):
-                tool_instance.cb_auto_all()
-                mock_report_cls.assert_called_once()
-                kwargs = mock_report_cls.call_args[1]
-                report_title = kwargs.get("title", "")
-                report_body = kwargs.get("report_text", "")
-
-                self.assertIn("Accept All Hints Complete", report_title)
-                self.assertIn("AUTOMATED CHANGES PERFORMED:", report_body)
-                self.assertIn(
-                    "Find missing media: 1 missing path(s) found", report_body
-                )
-                self.assertIn(
-                    "Fix media references: 1 duplicate record(s) merged, 1 unreferenced image tag(s) deleted.",
-                    report_body,
-                )
-                self.assertIn("CHANGES REQUIRING HUMAN INTERVENTION:", report_body)
-                self.assertIn("Missing files on disk (1)", report_body)
-                self.assertIn("missing_forever.jpg", report_body)
-
-                # Orphan was deleted
-                with self.assertRaises(HandleError):
-                    self.db.get_media_from_handle(h_orphan)
-
-                # Duplicate was merged into keeper
-                with self.assertRaises(HandleError):
-                    self.db.get_media_from_handle(h_dup2)
-                self.assertIsNotNone(self.db.get_media_from_handle(h_dup1))
-        finally:
-            shutil.rmtree(temp_dir, ignore_errors=True)
-
-    def test_accept_all_hints_report_dialog_selectable_label(self) -> None:
-        """AcceptAllHintsReportDialog uses SelectableLabel so text can be highlighted and copied."""
-        from gwizard_common import SelectableLabel
-
-        sample_report = (
-            "AUTOMATED CHANGES PERFORMED:\n  • Find missing media: 1 path updated."
-        )
-        dlg = AcceptAllHintsReportDialog(report_text=sample_report)
-        self.assertTrue(hasattr(dlg, "report_label"))
-        self.assertIsInstance(dlg.report_label, SelectableLabel)
-        self.assertTrue(dlg.report_label.selectable)
-        self.assertEqual(dlg.report_label.text, sample_report)
+        self.assertNotIn("Locked", report)
+        self.assertNotIn("LOCKED", report)
 
 
 if __name__ == "__main__":
