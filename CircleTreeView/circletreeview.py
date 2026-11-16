@@ -2,7 +2,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2026 vadim Verenich
+# Copyright (C) 2026 Vadim Verenich
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -90,11 +90,20 @@ class Union:
     partners that could not be shown; children hang from the person).
     """
 
-    __slots__ = ("side", "spouse_name", "children", "_spouse", "_ax", "_ay")
+    __slots__ = (
+        "side",
+        "spouse_name",
+        "spouse_handle",
+        "children",
+        "_spouse",
+        "_ax",
+        "_ay",
+    )
 
-    def __init__(self, side, spouse_name=None, children=None):
+    def __init__(self, side, spouse_name=None, children=None, spouse_handle=None):
         self.side = side
         self.spouse_name = spouse_name
+        self.spouse_handle = spouse_handle
         self.children = children if children is not None else []
         self._spouse = None  # layout node of the partner circle
         self._ax = 0.0  # x where the line down to the children starts
@@ -200,7 +209,7 @@ def trim_tree(node, max_gen, current=0):
         if max_gen <= 0 or current < max_gen:
             kids = [trim_tree(c, max_gen, current + 1) for c in u.children]
             kids = [k for k in kids if k]
-        unions.append(Union(u.side, u.spouse_name, kids))
+        unions.append(Union(u.side, u.spouse_name, kids, u.spouse_handle))
     return TNode(node.handle, node.name, unions)
 
 
@@ -324,7 +333,7 @@ class LayoutEngine:
 
             for u in unions:
                 if u.has_partner:
-                    sp = TNode(None, u.spouse_name)
+                    sp = TNode(u.spouse_handle, u.spouse_name)
                     sp._x = partner_x[u.side]
                     sp._y = y
                     sp._gen = gen
@@ -531,8 +540,10 @@ class CircleTreeCanvas(Gtk.DrawingArea):
         if event.button == 1:
             sx, sy = self._to_scene(event.x, event.y)
             r = CFG["node_r"]
+            # Partner circles carry the partner's handle, so clicking on
+            # them makes the partner the active person as well.
             for n in self.nodes:
-                if n._is_spouse or not n.handle:
+                if not n.handle:
                     continue
                 if (n._x - sx) ** 2 + (n._y - sy) ** 2 <= r * r:
                     self.view.change_active(n.handle)
@@ -1011,7 +1022,7 @@ class CircleTreeView(NavigationView):
 
         unions = []
         for group, side in zip(partner_groups[:2], ("R", "L")):
-            unions.append(Union(side, group[1], group[2]))
+            unions.append(Union(side, group[1], group[2], group[0]))
         for group in partner_groups[2:]:
             loose.extend(group[2])
         if loose:
