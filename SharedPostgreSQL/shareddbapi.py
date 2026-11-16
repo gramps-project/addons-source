@@ -93,6 +93,9 @@ _LOG = logging.getLogger(DBLOGNAME)
 SHARED_TABLE_ANALYZE_SCALE_FACTOR = 0
 SHARED_TABLE_ANALYZE_THRESHOLD = 1000
 
+# How many handles _get_raw_data_many() reads with one query.
+RAW_DATA_BATCH_SIZE = 500
+
 
 class SharedDBAPI(DbGeneric):
     """
@@ -1224,6 +1227,27 @@ class SharedDBAPI(DbGeneric):
         row = self.dbapi.fetchone()
         if row:
             return self.serializer.string_to_data(row[0])
+
+    def _get_raw_data_many(self, obj_key, handles):
+        """
+        Yield (handle, raw data) for the objects of this tree with the given
+        handles, leaving out handles that are not found. Reads up to
+        RAW_DATA_BATCH_SIZE objects per query.
+        """
+        table = KEY_TO_NAME_MAP[obj_key]
+        handles = list(dict.fromkeys(handles))
+        for start in range(0, len(handles), RAW_DATA_BATCH_SIZE):
+            batch = handles[start : start + RAW_DATA_BATCH_SIZE]
+            marks = ", ".join("?" * len(batch))
+            self.dbapi.execute(
+                f"SELECT handle, {self.serializer.data_field} FROM {table} "
+                f"WHERE handle IN ({marks}) AND treeid = ?",
+                [*batch, self.dbapi.treeid],
+            )
+            # all rows are fetched before yielding, so callers may query
+            # the database in between
+            for handle, data in self.dbapi.fetchall():
+                yield handle, self.serializer.string_to_data(data)
 
     def _get_raw_from_id_data(self, obj_key, gramps_id):
         table = KEY_TO_NAME_MAP[obj_key]
