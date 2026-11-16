@@ -52,7 +52,11 @@ from storyexport_builder import (
     viewer_page,
 )
 
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 LOG = logging.getLogger(__name__)
 
 SUFFIX = ".story.zip"

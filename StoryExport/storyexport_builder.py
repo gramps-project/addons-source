@@ -44,7 +44,10 @@ from gramps.version import VERSION
 
 from gramps_connect_story import OVERLAY_MAX_EDGE, Story
 
-_trans = glocale.get_addon_translator(__file__)
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
 _ = _trans.gettext
 ngettext = _trans.ngettext
 
