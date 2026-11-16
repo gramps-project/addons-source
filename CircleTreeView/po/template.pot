@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-16 13:08-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: CircleTreeView/circletreeview.py:780 CircleTreeView/circletreeview.py:1161
+msgid "Circle Tree"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:821
+msgid "Generations:"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:824
+msgid "Auto (<=6)"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:830
+msgid "Unlimited"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:839
+msgid "Export PNG"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:842
+msgid "Export SVG"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:845
+msgid "Refresh"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:848
+msgid "Center"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:849
+msgid "Move the chart back to the middle"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:869
+msgid "No database"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:884
+msgid "No active person"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:886
+msgid "Select a person"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:899
+msgid "all"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:906
+#, python-format
+msgid "Descendants of %s"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:912
+#, python-format
+msgid "People: %(s)d / %(t)d · gen: %(g)s · %(w)d×%(h)d"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:1047
+#, python-format
+msgid "Export %s"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:1052
+msgid "_Cancel"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:1054
+msgid "_Save"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:1071
+msgid "Export failed"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:1145
+msgid "Show dates in labels"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:1151
+msgid "Strip patronymics in labels"
+msgstr ""
+
+#: CircleTreeView/circletreeview.py:1157
+msgid "Show spouses"
+msgstr ""
+
+#: CircleTreeView/CircleTreeView.gpr.py:30
+msgid "Circle Tree View"
+msgstr ""
+
+#: CircleTreeView/CircleTreeView.gpr.py:31
+msgid "Charts"
+msgstr ""
+
+#: CircleTreeView/CircleTreeView.gpr.py:33
+msgid ""
+"Descendant tree with circular nodes, spouse infinity mark, auto generation "
+"depth (max 6), SVG/PNG export"
+msgstr ""

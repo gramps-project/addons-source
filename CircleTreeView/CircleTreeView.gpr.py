@@ -33,7 +33,7 @@ register(
         "Descendant tree with circular nodes, spouse infinity mark, "
         "auto generation depth (max 6), SVG/PNG export"
     ),
-    version="1.4.1",
+    version = '1.4.2',
     gramps_target_version="6.1",
     status=STABLE,
     fname="circletreeview.py",
