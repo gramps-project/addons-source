@@ -43,7 +43,17 @@ from typing import Iterator, Tuple
 
 from gramps_object_query_language.query_lang import _CONSTANT_CLASSES
 
-from goql_vocabulary import COMPARISON_OPERATORS, KEYWORDS
+try:
+    from gramps_object_query_language.vocabulary import FUNCTIONS, KEYWORDS, OPERATORS
+
+    # Keywords and literals (and/or/not/in/is/None/True/False/for/if) and
+    # the whitelisted functions (like/regex/Date/exists/count/any/len) are
+    # all colored as keywords -- GOQL's own lists, so new ones show up here.
+    KEYWORDS = frozenset(KEYWORDS) | frozenset(FUNCTIONS)
+    COMPARISON_OPERATORS = frozenset(OPERATORS)
+except ImportError:  # gramps-object-query-language older than 0.5.13
+    KEYWORDS = frozenset({"and", "or", "not", "in", "like", "Date", "exists", "count"})
+    COMPARISON_OPERATORS = frozenset({"==", "!=", "<", "<=", ">", ">="})
 
 # (start_line, start_col, end_line, end_col, category) -- 0-indexed lines,
 # matching Gtk.TextIter's own convention (tokenize's rows are 1-indexed).

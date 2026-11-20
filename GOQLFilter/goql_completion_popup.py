@@ -27,9 +27,9 @@ completion-source-agnostic already -- its own docstring says it's "kept as
 a standalone controller... so it can be driven directly against a plain
 Gtk.TextView", touching its jedi-based backend through exactly one import
 (``from completion import get_completion_items``). That's the only line
-changed here: swapped for ``goql_completion``'s namespace-aware, non-jedi
-source (see that module's docstring for why a where-expression can't reuse
-GrampyScript's actual completion engine, only its popup).
+changed here: swapped for ``goql_completion``, which adapts
+gramps-object-query-language's own completer (a where-expression can't
+reuse GrampyScript's jedi engine, only its popup).
 
 Named differently from GrampyScript's own ``completion_popup.py``/
 ``completion.py`` on purpose -- if both addons are ever installed at once,
@@ -39,7 +39,17 @@ happened to be imported first instead of this file (the same
 namespace-collision hazard as Mantis 12691, just at the addon-to-addon
 level instead of within one addon).
 
-Two further deltas from the vendored original, both because this editor's
+Further deltas from the vendored original, matching gramps-connect's GOQL
+search box (which uses the same GOQL completer):
+
+- Several matches first insert the part they all share, then list them.
+- A pick that ends in what continues it (``date.``, ``address_list[``,
+  ``any(``, ``and ``) goes straight on to listing what comes next.
+- Each row shows a dimmed hint: a field's type, where a relationship
+  leads (``-> Event``), what a collection holds (``[Event]``), or what
+  kind of word it is.
+
+And two because this editor's
 Tab key has no fallback behavior to protect (GrampyScript's Tab inserts 4
 spaces when nothing is completable; this one never inserts anything):
 
@@ -66,7 +76,18 @@ import logging
 
 from gi.repository import Gdk, Gtk
 
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 from goql_completion import get_completion_items
+
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+
+# A pick ending in one of these continues: list what comes next.
+_CONTINUES = (".", "[", "(", " ")
 
 _LOG = logging.getLogger(".GOQLFilter.completion")
 
@@ -224,8 +245,27 @@ class CompletionController:
             )
             self.accept()
             return True
-        self._open_popover()
+        shared = _common_prefix([item["complete"] for item in items])
+        if shared:
+            # Insert what every match shares, then list what's left.
+            self.buffer.insert(self._cursor_iter(), shared)
+            items = self._compute_items() or items
+        self._show(items)
         return True
+
+    def _show(self, items):
+        """Open (or refresh) the popover listing ``items``, even just one --
+        used after an insertion, where the user hasn't asked for a pick."""
+        if not items:
+            self.close()
+            return
+        self.items = items
+        self.selected_index = 0
+        if self.is_open():
+            self._rebuild_listbox()
+            self._reposition()
+        else:
+            self._open_popover()
 
     def refresh(self):
         """Recompute matches for an already-open popover, following the
@@ -249,8 +289,10 @@ class CompletionController:
         self._update_row_selection()
 
     def accept(self):
+        name = ""
         if self.items:
             item = self.items[self.selected_index]
+            name = item.get("name", "")
             self.buffer.insert(self._cursor_iter(), item["complete"])
             offset = item.get("cursor_offset", 0)
             if offset:
@@ -258,6 +300,8 @@ class CompletionController:
                 it.backward_chars(offset)
                 self.buffer.place_cursor(it)
         self.close()
+        if name.endswith(_CONTINUES):
+            self._show(self._compute_items())
 
     def close(self):
         if self.popover is not None:
@@ -296,11 +340,15 @@ class CompletionController:
         for child in self.listbox.get_children():
             self.listbox.remove(child)
         for item in self.items:
-            label = Gtk.Label(label=item["name"], xalign=0)
-            label.set_margin_start(6)
-            label.set_margin_end(6)
+            box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
+            box.set_margin_start(6)
+            box.set_margin_end(6)
+            box.pack_start(Gtk.Label(label=item["name"], xalign=0), True, True, 0)
+            hint = Gtk.Label(label=_detail_text(item), xalign=1)
+            hint.get_style_context().add_class("dim-label")
+            box.pack_end(hint, False, False, 0)
             row = Gtk.ListBoxRow()
-            row.add(label)
+            row.add(box)
             self.listbox.add(row)
         self.listbox.show_all()
         self._update_row_selection()
@@ -334,3 +382,42 @@ class CompletionController:
     def _on_row_activated(self, listbox, row):
         self.selected_index = row.get_index()
         self.accept()
+
+
+def _common_prefix(texts):
+    """The longest prefix every one of ``texts`` shares."""
+    if not texts:
+        return ""
+    prefix = texts[0]
+    for text in texts[1:]:
+        while not text.startswith(prefix):
+            prefix = prefix[:-1]
+    return prefix
+
+
+def _detail_text(item):
+    """The dimmed hint beside a suggestion -- the same hints as
+    gramps-connect's GOQL search box."""
+    kind = item.get("kind")
+    detail = item.get("detail")
+    if kind == "relationship":
+        return "\u2192 %s" % detail
+    if kind == "collection":
+        return "[%s]" % detail if detail else "[\u2026]"
+    if kind == "punctuation":
+        return _("list") if detail == "list" else _("text")
+    if kind == "index":
+        return _("first item")
+    if kind == "field":
+        if isinstance(detail, list):
+            return " | ".join(detail)
+        return detail or ""
+    return {
+        "column": _("column"),
+        "keyword": _("keyword"),
+        "function": _("function"),
+        "operator": _("operator"),
+        "constant_class": _("constants"),
+        "env": _("value"),
+        "variable": _("variable"),
+    }.get(kind, "")
