@@ -100,6 +100,19 @@ class ClassifyTokensTest(unittest.TestCase):
         self.assertEqual(categories_by_text.get("exists"), "keyword")
         self.assertEqual(categories_by_text.get("count"), "keyword")
 
+    def test_goqls_own_keyword_and_function_lists_are_keywords(self):
+        try:
+            import gramps_object_query_language.vocabulary  # noqa: F401
+        except ImportError:
+            self.skipTest("gramps-object-query-language older than 0.5.13")
+        spans = _spans_by_text(
+            "private is not None and regex(surname, 'S') and "
+            "any(e.date.sortval > 0 for e in events if True) and len(events) > 1"
+        )
+        categories_by_text = dict((text, category) for category, text in spans)
+        for word in ("is", "not", "None", "regex", "any", "for", "if", "True", "len"):
+            self.assertEqual(categories_by_text.get(word), "keyword", word)
+
     def test_comparison_operators_are_all_recognized(self):
         for op in ("==", "!=", "<", "<=", ">", ">="):
             spans = _spans_by_text("gender %s 1" % op)
