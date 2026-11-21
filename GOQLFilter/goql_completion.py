@@ -18,98 +18,50 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-"""GOQL-specific completion source for ``goql_completion_popup``'s
+"""GOQL completion source for ``goql_completion_popup``'s
 ``CompletionController``.
 
-Kept free of GTK imports, mirroring ``GrampyScript/completion.py``'s own
-"testable without a display" convention -- ``goql.py`` is responsible for
-turning a ``Gtk.TextBuffer`` cursor position into ``(source, line, column)``.
+The suggestions come from gramps-object-query-language itself
+(``gramps_object_query_language.completion.complete``, 0.5.13 and later),
+which knows the language's whole grammar and vocabulary: what fits at the
+start of a condition, after a field, after a comparison, inside each
+function's arguments, after a dotted path, and which values a field takes
+(``type.value ==`` -> ``EventType.``). This module only adapts its result to
+what the popup expects. An older GOQL without that module turns completion
+off (Tab does nothing) rather than breaking the gramplet; filtering itself
+still works.
 
-Deliberately not jedi-based, unlike GrampyScript's completion engine: a
-where-expression is never executed, has no live namespace of real Python
-objects to introspect, and its grammar is a small closed set (see
-``gramps_object_query_language.query_lang``'s module docstring) -- general
-Python completion would suggest names (arbitrary methods, ``import``, ...)
-that are simply invalid here. This only ever offers two things, matching
-what was actually asked for:
-
-- At the top level (no ``.`` immediately before the word being typed): the
-  current namespace's own vocabulary -- flat column names, relationship
-  names (``birth``, ``father``, ...), collection names (``children``,
-  ``events``, ...), the where-expression keywords (``and``/``or``/``not``/
-  ``in``/``like``/``Date``/``exists``/``count``), the comparison operators
-  (``==``/``!=``/``<``/``<=``/``>``/``>=``) -- included even though most are
-  a single character and so only ever surface with an empty prefix (Tab on
-  its own), not because they're likely to be *typed* out via completion --
-  and the constant class names themselves (``Person``, ``EventType``, ...)
-  so typing far enough to reach one and then ``.`` is a smooth continuation.
-- Right after ``ClassName.``, where ``ClassName`` is one of the constant
-  classes ``query_lang.py`` recognizes on the value side of a comparison
-  (``Person.MALE``, ``EventType.BIRTH``, ...): that class's own ALL_CAPS
-  int constants.
-
-Anything else (e.g. completing a nested JSON field inside
-``primary_name.``) returns no completions -- out of scope for now, not a
-silent failure to fix.
+Kept free of GTK imports -- ``goql.py``/``goql_completion_popup.py`` turn a
+``Gtk.TextBuffer`` cursor position into ``(source, line, column)``.
 """
 
 from __future__ import annotations
 
-import re
-from typing import Any, Dict, List, Set
+import logging
+from typing import Any, Dict, List
 
-# `_RELATIONSHIPS`/`_COLLECTIONS` (query.py) and `_CONSTANT_CLASSES`/
-# `_CONSTANTS` (query_lang.py) are module-private -- there is no public way
-# to *enumerate* every relationship/collection/constant name for a spec
-# (only to resolve one given name, via the public `resolve_collection`/
-# `resolve_column_path`). Reaching into them here is a deliberate, narrow
-# exception for exactly this reason, not an oversight; if
-# gramps-object-query-language grows a public enumeration API, switch to it.
-from gramps_object_query_language.query import _COLLECTIONS, _RELATIONSHIPS
-from gramps_object_query_language.query_lang import (
-    QueryLangError,
-    _CONSTANT_CLASSES,
-    _CONSTANTS,
-    resolve_namespace,
-)
+_LOG = logging.getLogger(".GOQLFilter.completion")
 
-from goql_vocabulary import COMPARISON_OPERATORS, KEYWORDS
-
-_DOTTED_RE = re.compile(r"([A-Za-z_][A-Za-z0-9_]*)\.([A-Za-z0-9_]*)$")
-_WORD_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_]*$")
+try:
+    from gramps_object_query_language.completion import complete
+except ImportError:  # gramps-object-query-language older than 0.5.13
+    complete = None
+    _LOG.warning(
+        "GOQL Filter: Tab completion needs gramps-object-query-language "
+        "0.5.13 or later; upgrade it to turn completion on."
+    )
 
 
-def _text_before_cursor(source: str, line: int, column: int) -> str:
-    """``source`` truncated to the cursor position.
+def _cursor_offset(source: str, line: int, column: int) -> int:
+    """The character offset of ``(line, column)`` in ``source``.
 
-    ``line`` is 1-indexed, ``column`` is a 0-indexed character offset
-    within that line -- the same convention ``CompletionController`` uses
-    (``GrampyScript/completion_popup.py``'s ``_cursor_line_column``,
-    matching ``Gtk.TextIter.get_line() + 1`` / ``get_line_offset()``).
+    ``line`` is 1-indexed, ``column`` a 0-indexed character offset within
+    that line -- ``CompletionController``'s convention
+    (``Gtk.TextIter.get_line() + 1`` / ``get_line_offset()``).
     """
     lines = source.split("\n")
-    index = max(0, min(line - 1, len(lines) - 1)) if lines else 0
-    before_lines = lines[:index]
-    current_line = lines[index] if lines else ""
-    return "\n".join(before_lines + [current_line[:column]])
-
-
-def _top_level_names(namespace: str) -> Set[str]:
-    try:
-        spec = resolve_namespace(namespace)
-    except QueryLangError:
-        return set()
-    names: Set[str] = set(spec.columns)
-    names.update(_RELATIONSHIPS.get(spec.table, {}).keys())
-    names.update(_COLLECTIONS.get(spec.table, {}).keys())
-    names.update(KEYWORDS)
-    names.update(COMPARISON_OPERATORS)
-    names.update(_CONSTANT_CLASSES.keys())
-    return names
-
-
-def _constant_names(class_name: str) -> Set[str]:
-    return set(_CONSTANTS.get(class_name, {}).keys())
+    index = max(0, min(line - 1, len(lines) - 1))
+    return sum(len(text) + 1 for text in lines[:index]) + min(column, len(lines[index]))
 
 
 def get_completion_items(
@@ -118,25 +70,32 @@ def get_completion_items(
     """Candidate completions at ``(line, column)`` in ``source``, for the
     given GOQL ``namespace`` ("Person", "Family", ...).
 
-    Same return shape as ``GrampyScript/completion.py``'s
-    ``get_completion_items`` -- ``{"name": ..., "complete": ..., "cursor_offset":
-    0}`` dicts -- so ``goql_completion_popup.CompletionController`` (adapted
-    from ``GrampyScript/completion_popup.py``) can drive either unchanged.
-    Always flat: no attempt to parse the surrounding expression's grammar,
-    only what immediately precedes the word being completed.
+    Each item is ``{"name", "complete", "cursor_offset", "kind",
+    "detail"}``: ``name`` is the whole word shown in the list, ``complete``
+    the part still to insert at the cursor (the word typed so far is
+    always a prefix of ``name``), ``kind``/``detail`` say what it is (see
+    GOQL's ``complete_from_vocabularies``). A name that continues ends
+    with what follows it -- ``date.``, ``address_list[``, ``any(``, ``and ``.
     """
-    text_before = _text_before_cursor(source, line, column)
-    dotted = _DOTTED_RE.search(text_before)
-    if dotted:
-        class_name, prefix = dotted.group(1), dotted.group(2)
-        names = _constant_names(class_name)
-    else:
-        word = _WORD_RE.search(text_before)
-        prefix = word.group(0) if word else ""
-        names = _top_level_names(namespace)
-
-    matches = sorted(name for name in names if name.startswith(prefix))
-    return [
-        {"name": name, "complete": name[len(prefix) :], "cursor_offset": 0}
-        for name in matches
-    ]
+    if complete is None:
+        return []
+    cursor = _cursor_offset(source, line, column)
+    try:
+        results = complete(namespace, source, cursor)
+    except ValueError:  # QueryLangError: not a GOQL namespace
+        return []
+    items = []
+    for result in results:
+        typed = source[result["start"] : cursor]
+        if not result["name"].startswith(typed):
+            continue
+        items.append(
+            {
+                "name": result["name"],
+                "complete": result["name"][len(typed) :],
+                "cursor_offset": 0,
+                "kind": result["kind"],
+                "detail": result["detail"],
+            }
+        )
+    return items

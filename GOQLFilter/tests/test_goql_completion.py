@@ -18,8 +18,11 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-"""Tests for ``goql_completion.py``'s completion source -- pure logic, no
-GTK, no database, matching the module's own "no display needed" design.
+"""Tests for ``goql_completion.py``, the adapter from
+gramps-object-query-language's own completer to the popup's item shape --
+pure logic, no GTK, no database. GOQL's completer has its own extensive
+tests; these check the adaptation (line/column, the suffix to insert, the
+hint fields) and a few end-to-end results through it.
 
 Run with::
 
@@ -29,96 +32,106 @@ Run with::
 import os
 import sys
 import unittest
+from unittest.mock import patch
 
 ADDON_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ADDON_DIR not in sys.path:
     sys.path.insert(0, ADDON_DIR)
 
 try:
-    from goql_completion import get_completion_items
+    import goql_completion
+    from goql_completion import _cursor_offset, get_completion_items
 except ImportError as exc:
     raise unittest.SkipTest(
         "goql_completion import failed (likely missing "
         "gramps-object-query-language): %s" % exc
     )
 
+if goql_completion.complete is None:
+    raise unittest.SkipTest("gramps-object-query-language older than 0.5.13")
 
-def _names(source, line, column, namespace):
-    return sorted(
-        item["name"] for item in get_completion_items(source, line, column, namespace)
-    )
+
+def _at_end(source, namespace="Person"):
+    lines = source.split("\n")
+    return get_completion_items(source, len(lines), len(lines[-1]), namespace)
+
+
+def _names(items):
+    return [item["name"] for item in items]
 
 
 # ------------------------------------------------------------
 #
-# TopLevelCompletionTest
+# CursorOffsetTest
 #
 # ------------------------------------------------------------
-class TopLevelCompletionTest(unittest.TestCase):
-    def test_person_top_level_includes_columns_relationships_and_keywords(self):
-        names = _names("", 1, 0, "Person")
-        for expected in ("gender", "birth", "death", "families", "and", "or", "not"):
-            self.assertIn(expected, names)
+class CursorOffsetTest(unittest.TestCase):
+    def test_first_line(self):
+        self.assertEqual(_cursor_offset("gender == 1", 1, 6), 6)
 
-    def test_person_top_level_includes_constant_class_names(self):
-        names = _names("", 1, 0, "Person")
-        self.assertIn("Person", names)
-        self.assertIn("EventType", names)
+    def test_later_line_counts_earlier_lines_and_newlines(self):
+        self.assertEqual(_cursor_offset("gender == 1\nand bi", 2, 6), 18)
 
-    def test_top_level_includes_comparison_operators(self):
-        """A blank Tab press shows the comparison operators too -- most are
-        a single character, so they only ever surface with an empty
-        prefix, but they should still be there to see."""
-        names = _names("", 1, 0, "Person")
-        for op in ("==", "!=", "<", "<=", ">", ">="):
-            self.assertIn(op, names)
+    def test_out_of_range_is_clamped(self):
+        self.assertEqual(_cursor_offset("ab\ncd", 9, 99), 5)
 
-    def test_family_namespace_differs_from_person(self):
-        family_names = _names("", 1, 0, "Family")
-        self.assertIn("father", family_names)
-        self.assertIn("mother", family_names)
-        self.assertIn("children", family_names)
-        self.assertNotIn("birth", family_names)
-        self.assertNotIn("death", family_names)
 
-    def test_top_level_prefix_filters_matches(self):
-        names = _names("gen", 1, 3, "Person")
-        self.assertIn("gender", names)
-        self.assertNotIn("birth", names)
+# ------------------------------------------------------------
+#
+# AdapterTest
+#
+# ------------------------------------------------------------
+class AdapterTest(unittest.TestCase):
+    def test_complete_is_the_rest_of_the_name(self):
+        [item] = _at_end("birth.date.so")
+        self.assertEqual(item["name"], "sortval")
+        self.assertEqual(item["complete"], "rtval")
+        self.assertEqual(item["cursor_offset"], 0)
+        self.assertEqual(item["kind"], "field")
+        self.assertEqual(item["detail"], "integer")
+
+    def test_multiline_source(self):
+        items = get_completion_items("gender == 1\nand birth.date.so", 2, 17, "Person")
+        self.assertEqual(_names(items), ["sortval"])
+
+    def test_cursor_mid_text(self):
+        items = get_completion_items("birth.date.so > 0", 1, 13, "Person")
+        self.assertEqual(items[0]["complete"], "rtval")
 
     def test_unknown_namespace_returns_no_completions(self):
-        names = _names("", 1, 0, "NotARealType")
-        self.assertEqual(names, [])
+        self.assertEqual(_at_end("bi", "NoSuchType"), [])
+
+    def test_older_goql_turns_completion_off(self):
+        with patch.object(goql_completion, "complete", None):
+            self.assertEqual(_at_end("bi"), [])
 
 
 # ------------------------------------------------------------
 #
-# DottedConstantCompletionTest
+# ThroughGoqlTest -- a few end-to-end results, to catch an API change
 #
 # ------------------------------------------------------------
-class DottedConstantCompletionTest(unittest.TestCase):
-    def test_person_dot_lists_gender_constants(self):
-        source = "gender == Person."
-        names = _names(source, 1, len(source), "Person")
-        self.assertEqual(names, sorted(["FEMALE", "MALE", "OTHER", "UNKNOWN"]))
+class ThroughGoqlTest(unittest.TestCase):
+    def test_start_of_a_condition_has_no_operators(self):
+        names = _names(_at_end(""))
+        self.assertIn("birth", names)
+        self.assertNotIn("==", names)
 
-    def test_person_dot_prefix_filters_to_matching_constants(self):
-        source = "gender == Person.MA"
-        items = get_completion_items(source, 1, len(source), "Person")
-        self.assertEqual([(i["name"], i["complete"]) for i in items], [("MALE", "LE")])
+    def test_named_values_for_a_coded_field(self):
+        self.assertEqual(_names(_at_end("type.value == ", "Event")), ["EventType."])
+        self.assertEqual(_names(_at_end("gender == Person.M")), ["MALE"])
 
-    def test_unrecognized_class_name_before_dot_returns_no_completions(self):
-        source = "primary_name."
-        names = _names(source, 1, len(source), "Person")
-        self.assertEqual(names, [])
+    def test_a_complete_name_gets_what_follows_it(self):
+        [item] = _at_end("primary_name.date")
+        self.assertEqual(item["name"], "date.")
+        self.assertEqual(item["complete"], ".")
 
-    def test_dotted_completion_ignores_the_active_namespace(self):
-        """`Date.MOD_ABOUT` is valid regardless of which namespace
-        (Person/Family/...) the expression is being written for -- the
-        constant-class table isn't namespace-scoped."""
-        source = "birth.date.modifier == Date."
-        names = _names(source, 1, len(source), "Family")
-        self.assertIn("MOD_ABOUT", names)
+    def test_function_arguments(self):
+        self.assertEqual(_names(_at_end("Date(")), ['"'])
+
+    def test_family_namespace_differs_from_person(self):
+        self.assertIn("father", _names(_at_end("fa", "Family")))
+        self.assertNotIn("father", _names(_at_end("fa", "Person")))
 
 
 if __name__ == "__main__":

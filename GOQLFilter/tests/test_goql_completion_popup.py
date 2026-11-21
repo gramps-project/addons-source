@@ -101,6 +101,65 @@ class TriggerTest(unittest.TestCase):
 
 # ------------------------------------------------------------
 #
+# SharedPrefixAndContinuationTest
+#
+# ------------------------------------------------------------
+class SharedPrefixAndContinuationTest(unittest.TestCase):
+    def test_several_matches_insert_what_they_share_then_list_them(self):
+        controller, buffer = _make_controller()
+        matches = [
+            {"name": "MOD_ABOUT", "complete": "MOD_ABOUT", "cursor_offset": 0},
+            {"name": "MOD_AFTER", "complete": "MOD_AFTER", "cursor_offset": 0},
+        ]
+        controller._compute_items = MagicMock(return_value=matches)
+        controller._show = MagicMock()
+
+        handled = controller.trigger()
+
+        self.assertTrue(handled)
+        buffer.insert.assert_called_once()
+        self.assertEqual(buffer.insert.call_args.args[1], "MOD_A")
+        controller._show.assert_called_once()
+
+    def test_nothing_shared_inserts_nothing(self):
+        controller, buffer = _make_controller()
+        controller._compute_items = MagicMock(
+            return_value=[
+                {"name": "birth.", "complete": "birth.", "cursor_offset": 0},
+                {"name": "gender", "complete": "gender", "cursor_offset": 0},
+            ]
+        )
+        controller._show = MagicMock()
+
+        controller.trigger()
+
+        buffer.insert.assert_not_called()
+        controller._show.assert_called_once()
+
+    def test_a_pick_that_continues_lists_what_comes_next(self):
+        for name in ("date.", "address_list[", "any(", "and "):
+            controller, _buffer = _make_controller()
+            controller.items = [{"name": name, "complete": name[-1], "cursor_offset": 0}]
+            following = [{"name": "x", "complete": "x", "cursor_offset": 0}]
+            controller._compute_items = MagicMock(return_value=following)
+            controller._show = MagicMock()
+
+            controller.accept()
+
+            controller._show.assert_called_once_with(following)
+
+    def test_a_finished_pick_does_not_reopen(self):
+        controller, _buffer = _make_controller()
+        controller.items = [{"name": "sortval", "complete": "rtval", "cursor_offset": 0}]
+        controller._show = MagicMock()
+
+        controller.accept()
+
+        controller._show.assert_not_called()
+
+
+# ------------------------------------------------------------
+#
 # AcceptCloseTest
 #
 # ------------------------------------------------------------
