@@ -27,7 +27,7 @@ register(
         "slideshow of their events with dates, places and photos, for the "
         "Gramps Connect Story Viewer"
     ),
-    version = '1.0.1',
+    version = '1.0.2',
     gramps_target_version="6.1",
     status=STABLE,
     fname="StoryExport.py",
