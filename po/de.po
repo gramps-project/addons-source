@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-14 11:59-0800\n"
-"PO-Revision-Date: 2026-10-27 21:51+0000\n"
+"PO-Revision-Date: 2026-11-16 02:21+0000\n"
 "Last-Translator: Mirko Leonhäuser "
 "<leonhaeuser@users.noreply.hosted.weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
@@ -35,7 +35,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.11.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -2455,16 +2455,12 @@ msgid "sibling"
 msgstr "Geschwister"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:74
-#, fuzzy
-#| msgid "Parents:"
 msgid "parent"
-msgstr "Eltern:"
+msgstr "Elternteil"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:75
-#, fuzzy
-#| msgid "House"
 msgid "spouse"
-msgstr "Haus"
+msgstr "Ehepartner(in)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:76
 msgid "mentioned in note"
@@ -2521,10 +2517,8 @@ msgstr ""
 "Warteschlangengröße: {queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:273
-#, fuzzy
-#| msgid "Reading file list..."
 msgid "Loading family links..."
-msgstr "Lese Dateiliste..."
+msgstr "Familienverknüpfungen werden geladen..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:330
 #, python-format
@@ -6034,7 +6028,7 @@ msgstr "Neue Gesichter erkennen"
 #: FamilioPrepTool/FamilioPrepTool.gpr.py:22
 #: FamilioPrepTool/FamilioPrepTool.py:148
 msgid "Prepare for Familio export"
-msgstr ""
+msgstr "Vorbereitung für den Familio-Export"
 
 #: FamilioPrepTool/FamilioPrepTool.gpr.py:24
 msgid ""
@@ -6042,111 +6036,105 @@ msgid ""
 "and adds missing 'Marriage' events to families, so that GEDCOM export "
 "produces the tags Familio expects."
 msgstr ""
+"Fügt Personen fehlende _UID-Attribute hinzu (ohne bereits vorhandene zu "
+"überschreiben) und fügt Familien fehlende „Heirat“-Ereignisse hinzu, sodass "
+"beim GEDCOM-Export die von Familio erwarteten Tags erzeugt werden."
 
 #: FamilioPrepTool/FamilioPrepTool.py:101
 #: FamilioPrepTool/FamilioPrepTool.py:151
-#, fuzzy
-#| msgid "Set Attribute"
 msgid "_UID attribute"
-msgstr "Attribut festlegen"
+msgstr "_UID-Attribut"
 
 #: FamilioPrepTool/FamilioPrepTool.py:103
 msgid "Add _UID attribute to persons who don't have one"
-msgstr ""
+msgstr "Personen, die noch kein _UID-Attribut haben, dieses hinzufügen"
 
 #: FamilioPrepTool/FamilioPrepTool.py:104
 msgid "Existing _UID attributes are never modified or overwritten"
-msgstr ""
+msgstr "Vorhandene _UID-Attribute werden niemals geändert oder überschrieben"
 
 #: FamilioPrepTool/FamilioPrepTool.py:107
-#, fuzzy
-#| msgid "Attribute updated"
 msgid "Attribute type"
-msgstr "Attribut aktualisiert"
+msgstr "Attributart"
 
 #: FamilioPrepTool/FamilioPrepTool.py:108
-#, fuzzy
-#| msgid "Attribute type to add or edit"
 msgid "Name of the attribute type to add"
-msgstr "Attributtyp zum Hinzufügen oder Bearbeiten"
+msgstr "Name der hinzuzufügenden Attributart"
 
 #: FamilioPrepTool/FamilioPrepTool.py:111
-#, fuzzy
-#| msgid "Value of real estate"
 msgid "Value template"
-msgstr "Wert von Immobilien"
+msgstr "Wertvorlage"
 
 #: FamilioPrepTool/FamilioPrepTool.py:113
 #, python-brace-format
 msgid ""
 "Supported macros: ${GUID} - a new random GUID, ${NAME} - the person's name"
 msgstr ""
+"Unterstützte Makros: ${GUID} – eine neue zufällige GUID, ${NAME} – der Name "
+"der Person"
 
 #: FamilioPrepTool/FamilioPrepTool.py:119
-#, fuzzy
-#| msgid "Marriage act:"
 msgid "Marriage events"
-msgstr "Heiratsakt:"
+msgstr "Heiratsereignisse"
 
 #: FamilioPrepTool/FamilioPrepTool.py:121
-#, fuzzy
-#| msgid "Add missing partner using the Edit Family dialog."
 msgid "Add missing 'Marriage' events to families"
-msgstr "Füge fehlende Partner über den Dialog Familie bearbeiten hinzu."
+msgstr "Fehlende „Heirat“-Ereignisse zu Familien hinzufügen"
 
 #: FamilioPrepTool/FamilioPrepTool.py:123
 msgid ""
 "Gramps only writes the required MARR tags on GEDCOM export if the family has "
 "an explicit 'Marriage' event"
 msgstr ""
+"Gramps schreibt beim GEDCOM-Export die erforderlichen MARR-Tags nur dann, "
+"wenn die Familie über ein explizites Ereignis vom Typ „Heirat“ verfügt"
 
 #: FamilioPrepTool/FamilioPrepTool.py:128
 msgid "Fallback for unknown status (Unknown)"
-msgstr ""
+msgstr "Standardwert für unbekannten Status (Unbekannt)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:129
 msgid "marriage (legally married)"
-msgstr ""
+msgstr "Ehe (gesetzlich verheiratet)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:130
 msgid "not married (unmarried)"
-msgstr ""
+msgstr "nicht verheiratet (unverheiratet)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:131
 msgid "civil (civil union)"
-msgstr ""
+msgstr "zivilrechtlich (Lebenspartnerschaft)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:132
-#, fuzzy
-#| msgid "unknown version"
 msgid "unknown (unknown)"
-msgstr "unbekannte Version"
+msgstr "unbekannt (unbekannt)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:134
 msgid ""
 "This value is written to MARR.TYPE when the family's relationship status in "
 "Gramps is 'Unknown'"
 msgstr ""
+"Dieser Wert wird in MARR.TYPE geschrieben, wenn der Beziehungsstatus der "
+"Familie in Gramps „Unbekannt“ lautet"
 
 #: FamilioPrepTool/FamilioPrepTool.py:189
 msgid "Prepare Familio export"
-msgstr ""
+msgstr "Familio-Export vorbereiten"
 
 #: FamilioPrepTool/FamilioPrepTool.py:194
 msgid "No attribute type set for _UID, skipping this step.\n"
 msgstr ""
+"Für _UID wurde keine Attributart festgelegt, daher wird dieser Schritt "
+"übersprungen.\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:203
-#, fuzzy, python-format
-#| msgid "Setting attributes..."
+#, python-format
 msgid "Adding attribute '%s'...\n"
-msgstr "Attribute festlegen..."
+msgstr "Attribut „%s“ wird hinzugefügt...\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:204
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Processing people..."
-msgstr "Verarbeitung...\n"
+msgstr "Personen bearbeiten..."
 
 #: FamilioPrepTool/FamilioPrepTool.py:235
 #, python-format
@@ -6154,23 +6142,21 @@ msgid ""
 "Added '%(attr_type)s' attributes: %(count)d\n"
 "\n"
 msgstr ""
+"Attribute der Art „%(attr_type)s“ hinzugefügt: %(count)d\n"
+"\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:251
-#, fuzzy
-#| msgid "Adding events '%s'..."
 msgid "Adding 'Marriage' events...\n"
-msgstr "Hinzufügen der Ereignisse '%s'..."
+msgstr "„Ehe“-Ereignisse hinzufügen...\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:252
-#, fuzzy
-#| msgid "Parsing file..."
 msgid "Processing families..."
-msgstr "Analysiere Datei..."
+msgstr "Familien werden verarbeitet..."
 
 #: FamilioPrepTool/FamilioPrepTool.py:289
 #, python-format
 msgid "Added new 'Marriage' events: %d\n"
-msgstr ""
+msgstr "Neue „Heirat“-Ereignisse hinzugefügt: %d\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:302
 #, python-format
@@ -6178,6 +6164,9 @@ msgid ""
 "\n"
 "Done. _UID added: %(uid_count)d, marriage events added: %(marriage_count)d\n"
 msgstr ""
+"\n"
+"Fertig. _UID hinzugefügt: %(uid_count)d, Heiratsereignisse hinzugefügt: %"
+"(marriage_count)d\n"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
@@ -19058,7 +19047,7 @@ msgstr "Hintergrundfarbe für Elemente außerhalb der Lebensspanne"
 
 #: HistContext/HistContext.py:150
 msgid "Show person events in sorted order"
-msgstr ""
+msgstr "Personenereignisse in sortierter Reihenfolge anzeigen"
 
 #: HistContext/HistContext.py:155
 msgid "Select from files"
@@ -19073,13 +19062,11 @@ msgid " in line: "
 msgstr " in der Reihe: "
 
 #: HistContext/HistContext.py:445
-#, fuzzy
-#| msgid ""
-#| ": line does not contain four sections separated by semicolons in : \""
 msgid ""
 ": line does not contain four or five sections separated by semicolons in : \""
 msgstr ""
-": Zeile enthält nicht vier durch Semikolon getrennte Abschnitte in : \""
+": Zeile enthält nicht vier oder fünf durch Semikolon getrennte Abschnitte in "
+": \""
 
 #: HistContext/HistContext.py:548
 msgid "Cannot open URL: "
