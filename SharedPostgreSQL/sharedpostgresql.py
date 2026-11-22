@@ -52,6 +52,11 @@ psycopg2.paramstyle = "format"
 # Connection.execute_prepared()).
 REPLAN_INTERVAL = 1000
 
+# Tables, columns and collations this process has seen in a database, as
+# (host, port, dbname, kind, name) tuples. They are never dropped, so each
+# is checked once per process rather than on every open.
+_EXISTING = set()
+
 
 # -------------------------------------------------------------------------
 #
@@ -248,6 +253,9 @@ class Connection:
         :type locale: A GrampsLocale object.
         """
         collation = locale.get_collation()
+        key = self._existence_key("collation", collation)
+        if key in _EXISTING:
+            return
         # Use pg_collation to check existence rather than IF NOT EXISTS, which
         # requires PostgreSQL 12+.
         self.execute("SELECT 1 FROM pg_collation WHERE collname = %s", [collation])
@@ -256,6 +264,17 @@ class Connection:
                 "CREATE COLLATION \"%s\" (LOCALE = '%s')"
                 % (collation, locale.collation)
             )
+        self._remember_existing(key)
+
+    def _existence_key(self, kind, *name):
+        info = self.__connection.info
+        return (info.host, info.port, info.dbname, kind) + name
+
+    def _remember_existing(self, key):
+        # DDL inside a transaction may still be rolled back
+        status = self.__connection.info.transaction_status
+        if status == psycopg2.extensions.TRANSACTION_STATUS_IDLE:
+            _EXISTING.add(key)
 
     def execute(self, *args, **kwargs):
         sql = _translate_sql(args[0])
@@ -332,11 +351,17 @@ class Connection:
         self.__cursor.execute("ROLLBACK;")
 
     def table_exists(self, table):
+        key = self._existence_key("table", table)
+        if key in _EXISTING:
+            return True
         self.__cursor.execute(
             "SELECT COUNT(*) " "FROM information_schema.tables " "WHERE table_name=%s;",
             [table],
         )
-        return self.fetchone()[0] != 0
+        if self.fetchone()[0] == 0:
+            return False
+        self._remember_existing(key)
+        return True
 
     def column_exists(self, table, column):
         """
@@ -348,12 +373,18 @@ class Connection:
         :returns: True if the column exists, False otherwise.
         :rtype: bool
         """
+        key = self._existence_key("column", table, column)
+        if key in _EXISTING:
+            return True
         self.__cursor.execute(
             "SELECT COUNT(*) FROM information_schema.columns "
             "WHERE table_name = %s AND column_name = %s",
             (table, column),
         )
-        return self.fetchone()[0] != 0
+        if self.fetchone()[0] == 0:
+            return False
+        self._remember_existing(key)
+        return True
 
     def drop_column(self, table_name, column_name):
         pass  # we never delete columns on shared databases!
