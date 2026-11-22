@@ -80,8 +80,71 @@ class SharedDBAPI(DbGeneric):
     Database backends class for DB-API 2.0 databases
     """
 
+    # True while load() runs. Gramps Web opens the tree on every request,
+    # so load() reads all metadata with one query (see _opening_metadata())
+    # and leaves the surname list and gender stats to be read on first
+    # access (see the surname_list and genderStats properties).
+    _opening = False
+    # (metadata column, {setting: stored value}) read during load()
+    _metadata_rows = None
+    _surname_list = None
+    _gender_stats = None
+
     def _initialize(self, directory, username, password):
         raise NotImplementedError
+
+    def load(self, *args, **kwargs):
+        self._opening = True
+        try:
+            return super().load(*args, **kwargs)
+        finally:
+            self._opening = False
+            self._metadata_rows = None
+
+    def _gramps_upgrade(self, *args, **kwargs):
+        # an upgrade reads and writes the tree like any later caller
+        self._opening = False
+        self._metadata_rows = None
+        return super()._gramps_upgrade(*args, **kwargs)
+
+    def _opening_metadata(self, field):
+        """
+        Return {setting: stored value} of the given metadata column for this
+        tree, read once while load() runs.
+        """
+        if self._metadata_rows is None or self._metadata_rows[0] != field:
+            self.dbapi.execute(
+                f"SELECT setting, {field} FROM metadata WHERE treeid = ?",
+                [self.dbapi.treeid],
+            )
+            self._metadata_rows = (field, dict(self.dbapi.fetchall()))
+        return self._metadata_rows[1]
+
+    @property
+    def surname_list(self):
+        """The sorted surnames of this tree, read on first access."""
+        if self._surname_list is None:
+            self._surname_list = self._read_surname_list()
+        return self._surname_list
+
+    @surname_list.setter
+    def surname_list(self, value):
+        # the list load() assigns is read on first access instead
+        self._surname_list = None if self._opening else value
+
+    @property
+    def genderStats(self):
+        """The GenderStats of this tree, read on first access."""
+        if self._gender_stats is None:
+            self._gender_stats = GenderStats(self._read_gender_stats())
+        return self._gender_stats
+
+    @genderStats.setter
+    def genderStats(self, value):
+        # The stats load() assigns are read on first access instead. Gramps
+        # Web may make a read-only open writable afterwards; saving the
+        # stats then reads them first, so the stored ones are kept.
+        self._gender_stats = None if self._opening else value
 
     def use_json_data(self):
         """
@@ -98,6 +161,10 @@ class SharedDBAPI(DbGeneric):
             return True
         # if the column exists and the tree does too, it could be
         # that this specific tree is not converted yet.
+        if self._opening:
+            # load() reads the JSON metadata right after this anyway
+            metadata = self._opening_metadata("json_data")
+            return metadata.get("version") is not None
         return self.dbapi._schema_version_exists()
 
     def upgrade_table_for_json_data(self, table_name):
@@ -447,11 +514,15 @@ class SharedDBAPI(DbGeneric):
         However, it is just used as a value, and not altered, so
         its use here is ok.
         """
-        self.dbapi.execute(
-            f"SELECT {self.serializer.metadata_field} FROM metadata WHERE setting = ? AND treeid = ?",
-            [key, self.dbapi.treeid],
-        )
-        row = self.dbapi.fetchone()
+        if self._opening:
+            metadata = self._opening_metadata(self.serializer.metadata_field)
+            row = (metadata[key],) if key in metadata else None
+        else:
+            self.dbapi.execute(
+                f"SELECT {self.serializer.metadata_field} FROM metadata WHERE setting = ? AND treeid = ?",
+                [key, self.dbapi.treeid],
+            )
+            row = self.dbapi.fetchone()
         if row:
             return self.serializer.metadata_to_object(row[0])
         elif default == "_":
@@ -466,6 +537,7 @@ class SharedDBAPI(DbGeneric):
 
         Note: if use_txn, then begin/commit txn
         """
+        self._metadata_rows = None
         if use_txn:
             self._txn_begin()
         self.dbapi.execute(
@@ -1228,6 +1300,12 @@ class SharedDBAPI(DbGeneric):
         Returns a dictionary of
         {given_name: (male_count, female_count, unknown_count)}
         """
+        if self._opening:
+            # what load() reads here is discarded, see genderStats
+            return {}
+        return self._read_gender_stats()
+
+    def _read_gender_stats(self):
         self.dbapi.execute(
             "SELECT given_name, female, male, unknown FROM gender_stats WHERE treeid = ?",
             [self.dbapi.treeid],
@@ -1302,6 +1380,12 @@ class SharedDBAPI(DbGeneric):
         """
         Return the list of locale-sorted surnames contained in the database.
         """
+        if self._opening:
+            # what load() reads here is discarded, see surname_list
+            return []
+        return self._read_surname_list()
+
+    def _read_surname_list(self):
         self.dbapi.execute(
             "SELECT DISTINCT surname FROM person WHERE treeid = ? ORDER BY surname",
             [self.dbapi.treeid],
