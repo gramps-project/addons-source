@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-01 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: AgentBridge/AgentBridge.gpr.py:28 AgentBridge/AgentBridge.gpr.py:41
+msgid "Agent Bridge"
+msgstr ""
+
+#: AgentBridge/AgentBridge.gpr.py:29
+msgid ""
+"Embeds a control bridge in Gramps so an AI agent can drive the live "
+"application through a watched directory or an MCP server. Executes submitted "
+"Python on the GTK main thread. For developers and power users; runs arbitrary "
+"code at your privileges."
+msgstr ""
+
+#: AgentBridge/AgentBridge.py:122
+msgid "Agent Bridge starting..."
+msgstr ""
+
+#: AgentBridge/AgentBridge.py:127
+#, python-format
+msgid "Agent Bridge error: %s"
+msgstr ""
+
+#: AgentBridge/AgentBridge.py:144
+msgid "(no tree)"
+msgstr ""
+
+#: AgentBridge/AgentBridge.py:151
+msgid "Agent Bridge active.\n"
+msgstr ""
+
+#: AgentBridge/AgentBridge.py:152
+#, python-format
+msgid "Watching: %s\n"
+msgstr ""
+
+#: AgentBridge/AgentBridge.py:153
+#, python-format
+msgid "Tree: %s\n"
+msgstr ""
+
+#: AgentBridge/AgentBridge.py:154
+#, python-format
+msgid "Requests served: %d"
+msgstr ""
