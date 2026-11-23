@@ -858,12 +858,9 @@ the standard sections) is in the manual:
 ## Support Your Addon Through Bug Tracker
 Create a user account on the
 [Gramps Mantis Bug Tracker (BT)](https://gramps-project.org/bugs/view_all_bug_page.php),
-and please check it regularly.  There is no automated notification of issues
-(or possible feature requests) related to your addon when reported by users. 
-
-Users tend to not understand coding and they make assumptions. So be kind
-and guiding if a report is ambiguous or inaccurate. A negative remark from
-an addon developer or anyone can be very discouraging.
+so that reported bugs can be assigned to you. You will be notified when an issue is assigned
+to you, or if you are at-mentioned by someone. Otherwise, you can periodically check the bug
+tracker for issues or feature requests related to your addon.
 
 ## Maintain Your Addon as Gramps Evolves
 
