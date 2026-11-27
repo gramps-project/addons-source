@@ -22,8 +22,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-14 11:59-0800\n"
-"PO-Revision-Date: 2026-11-27 08:51+0000\n"
-"Last-Translator: Jonatan Nyberg <nickwick@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-11-27 17:12+0000\n"
+"Last-Translator: Pär Ekholm <pehlm@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -2577,7 +2577,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:180
 msgid "No Source"
-msgstr "Ny källa"
+msgstr "Ingen källa"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onclick"
@@ -7591,7 +7591,7 @@ msgstr "Linneväv (yard)"
 
 #: Form/form_ca.xml.h:183
 msgid "43. Linnen - Yds."
-msgstr "43. Linneväv (yard)"
+msgstr "43. Linneväv (yard)."
 
 #: Form/form_ca.xml.h:184
 msgid "FlannelYds"
@@ -7599,7 +7599,7 @@ msgstr "Flanell (yard)"
 
 #: Form/form_ca.xml.h:185
 msgid "44. Flannel - Yds."
-msgstr "44. Flanell (yard)"
+msgstr "44. Flanell (yard)."
 
 #: Form/form_ca.xml.h:186
 msgid "Bulls"
@@ -7657,7 +7657,7 @@ msgstr "Smör (lb)"
 
 #: Form/form_ca.xml.h:199
 msgid "51. Butter - Lbs."
-msgstr "51. Smör (lb)"
+msgstr "51. Smör (lb)."
 
 #: Form/form_ca.xml.h:200
 msgid "CheeseLbs"
@@ -7665,7 +7665,7 @@ msgstr "Ost (lb)"
 
 #: Form/form_ca.xml.h:201
 msgid "52. Cheese - Lbs."
-msgstr "52. Ost (lb)"
+msgstr "52. Ost (lb)."
 
 #: Form/form_ca.xml.h:202
 msgid "Beef"
@@ -7673,7 +7673,7 @@ msgstr "Nötkött"
 
 #: Form/form_ca.xml.h:203
 msgid "53. Beef - Barrels or Cwts."
-msgstr "53. Nötkött (fat eller hundredweight, cwt)"
+msgstr "53. Nötkött (fat eller hundredweight, cwt)."
 
 #: Form/form_ca.xml.h:204
 msgid "Pork"
@@ -7681,7 +7681,7 @@ msgstr "Fläskkött"
 
 #: Form/form_ca.xml.h:205
 msgid "54. Pork - Barrels or Cwts."
-msgstr "54. Fläskkött (fat eller hundredweight, cwt)"
+msgstr "54. Fläskkött (fat eller hundredweight, cwt)."
 
 #: Form/form_ca.xml.h:206
 msgid "Fish"
@@ -9312,7 +9312,7 @@ msgstr "Civilstånd"
 #: Form/form_dk.xml.h:170 Form/form_dk.xml.h:193 Form/form_dk.xml.h:214
 #: Form/form_dk.xml.h:235 Form/form_dk.xml.h:259 Form/form_dk.xml.h:294
 msgid "Gift"
-msgstr "Gift"
+msgstr "Gåva"
 
 #: Form/form_dk.xml.h:13 Form/form_dk.xml.h:30 Form/form_dk.xml.h:47
 #: Form/form_dk.xml.h:62 Form/form_dk.xml.h:79 Form/form_dk.xml.h:96
@@ -10102,7 +10102,7 @@ msgstr "Antal levande barn"
 #: Form/form_gb.xml.h:255 Form/form_gb.xml.h:390
 msgid "Total number under sixteen years of age. If none write \"None.\""
 msgstr ""
-"Sammanlagt antal barn under 16 år. Skriv ”None” om det inte finns några."
+"Sammanlagt antal barn under 16 år. Skriv ”Inga” om det inte finns några."
 
 #: Form/form_gb.xml.h:256 Form/form_gb.xml.h:391
 msgid "Ages of living children"
@@ -10339,7 +10339,7 @@ msgstr "Iriska"
 msgid ""
 "\"Irish\" or \"Irish & English\", in other cases no entry should be made"
 msgstr ""
-"Ange ”iriska” eller ”iriska och engelska”. Lämna fältet tomt i övriga fall."
+"Ange ”iriska” eller ”iriska och engelska”. Lämna fältet tomt i övriga fall"
 
 #: Form/form_gb.xml.h:593 Form/form_gb.xml.h:625
 msgid ""
@@ -11553,7 +11553,7 @@ msgstr "Tobak (lb)"
 
 #: Form/form_us.xml.h:379
 msgid "Ginned Cotton, bales of 400 lbs."
-msgstr "Rensad bomull (balar om 400 lb)"
+msgstr "Rensad bomull (balar om 400 lb)."
 
 #: Form/form_us.xml.h:380
 msgid "Wool, pounds of"
@@ -12734,7 +12734,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:915
 msgid "Worked last week? (Y/N)"
-msgstr "Arbetade förra veckan (Y/N)?"
+msgstr "Arbetade förra veckan (J/N)"
 
 #: Form/form_us.xml.h:916
 msgid ""
@@ -13281,7 +13281,7 @@ msgstr "Döv utan talförmåga"
 #: Form/form_us.xml.h:1085
 msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
 msgstr ""
-"Lemskadad, rörelsehindrad, sängliggande eller med annan funktionsnedsättning"
+"Lemskadad, rörelsehindrad, sängliggande eller med annan funktionsnedsättning."
 
 #: Form/form_us.xml.h:1087
 msgid "Can not read"
@@ -15539,11 +15539,11 @@ msgstr ""
 msgid "What military service have you had? (Branch, Years, Nation or State)"
 msgstr ""
 "Vilken militärtjänst har du gjort? Ange försvarsgren, år och land eller "
-"delstat."
+"delstat"
 
 #: Form/form_us.xml.h:2539
 msgid "Do you claim exemption from draft (specify grounds)"
-msgstr "Begär du befrielse från värnplikten? Ange skälen."
+msgstr "Begär du befrielse från värnplikten? Ange skälen"
 
 #: Form/form_us.xml.h:2540
 msgid "Race "
@@ -15687,7 +15687,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2569
 msgid "Who will always know your address (Name & Address)"
-msgstr "Vem känner alltid till din adress? Ange namn och adress."
+msgstr "Vem känner alltid till din adress? Ange namn och adress"
 
 #: Form/form_us.xml.h:2570
 msgid ""
@@ -25148,7 +25148,7 @@ msgid ""
 msgstr ""
 "Skapar en berättelse om en person eller en familj (.story.zip) för visning i "
 "Gramps Connect Story Viewer. Händelserna presenteras som ett bildspel med "
-"datum, platser och foton."
+"datum, platser och foton"
 
 #: StoryExport/StoryExport.py:82
 msgid "Select the person whose story to generate, then try again."
@@ -25576,11 +25576,11 @@ msgstr "{} omvända personkopplingar skapades"
 
 #: SyncAssociations/syncAssociations.py:135
 msgid "All reciprocal associations exist, none created"
-msgstr "Alla omvända personkopplingar finns redan. Inga nya skapades."
+msgstr "Alla omvända personkopplingar finns redan. Inga nya skapades"
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
-msgstr "Det finns inga personkopplingar att skapa omvända kopplingar för."
+msgstr "Det finns inga personkopplingar att skapa omvända kopplingar för"
 
 #: TMGimporter/importtmg.gpr.py:45
 msgid "TMG Project Backup"
