@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-14 11:59-0800\n"
-"PO-Revision-Date: 2026-10-27 21:51+0000\n"
+"PO-Revision-Date: 2026-11-16 02:21+0000\n"
 "Last-Translator: Stephan Paternotte <stephan-"
 "p@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.11.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -2433,16 +2433,12 @@ msgid "sibling"
 msgstr "broer/zus"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:74
-#, fuzzy
-#| msgid "Parents:"
 msgid "parent"
-msgstr "Ouders:"
+msgstr "ouder"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:75
-#, fuzzy
-#| msgid "House"
 msgid "spouse"
-msgstr "Huis"
+msgstr "partner"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:76
 msgid "mentioned in note"
@@ -2499,10 +2495,8 @@ msgstr ""
 "{queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:273
-#, fuzzy
-#| msgid "Reading file list..."
 msgid "Loading family links..."
-msgstr "Bestandslijst lezen..."
+msgstr "Familieverbanden laden…"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:330
 #, python-format
@@ -5994,7 +5988,7 @@ msgstr "Detecteer nieuwe gezichten"
 #: FamilioPrepTool/FamilioPrepTool.gpr.py:22
 #: FamilioPrepTool/FamilioPrepTool.py:148
 msgid "Prepare for Familio export"
-msgstr ""
+msgstr "Familio-export voorbereiden"
 
 #: FamilioPrepTool/FamilioPrepTool.gpr.py:24
 msgid ""
@@ -6002,113 +5996,103 @@ msgid ""
 "and adds missing 'Marriage' events to families, so that GEDCOM export "
 "produces the tags Familio expects."
 msgstr ""
+"Voegt een ontbrekend _UID-attribuut toe aan personen (zonder bestaande te "
+"overschrijven) en voegt ontbrekende 'Huwelijks'-gebeurtenissen toe aan "
+"gezinnen, waarmee de GEDCOM-export de labels produceert die Familio verwacht."
 
 #: FamilioPrepTool/FamilioPrepTool.py:101
 #: FamilioPrepTool/FamilioPrepTool.py:151
-#, fuzzy
-#| msgid "Set Attribute"
 msgid "_UID attribute"
-msgstr "Kenmerk instellen"
+msgstr "_UID-attribuut"
 
 #: FamilioPrepTool/FamilioPrepTool.py:103
 msgid "Add _UID attribute to persons who don't have one"
-msgstr ""
+msgstr "Voeg het _UID-attribuut toe aan personen die er geen hebben"
 
 #: FamilioPrepTool/FamilioPrepTool.py:104
 msgid "Existing _UID attributes are never modified or overwritten"
-msgstr ""
+msgstr "Bestaande _UID-attributen worden nooit gewijzigd of overschreven"
 
 #: FamilioPrepTool/FamilioPrepTool.py:107
-#, fuzzy
-#| msgid "Attribute updated"
 msgid "Attribute type"
-msgstr "Kenmerk bijgewerkt"
+msgstr "Type attribuut"
 
 #: FamilioPrepTool/FamilioPrepTool.py:108
-#, fuzzy
-#| msgid "Attribute type to add or edit"
 msgid "Name of the attribute type to add"
-msgstr "Kenmerktype om toe te voegen of te bewerken"
+msgstr "Naam van het toe te voegen attribuuttype"
 
 #: FamilioPrepTool/FamilioPrepTool.py:111
-#, fuzzy
-#| msgid "Value of real estate"
 msgid "Value template"
-msgstr "Waarde van onroerend goed"
+msgstr "Waarde-sjabloon"
 
 #: FamilioPrepTool/FamilioPrepTool.py:113
 #, python-brace-format
 msgid ""
 "Supported macros: ${GUID} - a new random GUID, ${NAME} - the person's name"
 msgstr ""
+"Ondersteunde macros: ${GUID} - een nieuwe willekeurige GUID, ${NAME} - de "
+"naam van de persoon"
 
 #: FamilioPrepTool/FamilioPrepTool.py:119
-#, fuzzy
-#| msgid "Marriage act:"
 msgid "Marriage events"
-msgstr "Huwelijksmoment:"
+msgstr "Huwelijksgebeurtenissen"
 
 #: FamilioPrepTool/FamilioPrepTool.py:121
-#, fuzzy
-#| msgid "Add missing partner using the Edit Family dialog."
 msgid "Add missing 'Marriage' events to families"
-msgstr ""
-"Voeg een ontbrekende partner toe met behulp van het dialoogvenster Familie "
-"bewerken."
+msgstr "Ontbrekende 'Huwelijk'-gebeurtenissen aan gezinnen toevoegen"
 
 #: FamilioPrepTool/FamilioPrepTool.py:123
 msgid ""
 "Gramps only writes the required MARR tags on GEDCOM export if the family has "
 "an explicit 'Marriage' event"
 msgstr ""
+"Gramps schrijft de vereiste MARR-labels alleen bij een GEDCOM-export als het "
+"gezin een expliciete 'Huwelijk'-gebeurtenis heeft"
 
 #: FamilioPrepTool/FamilioPrepTool.py:128
 msgid "Fallback for unknown status (Unknown)"
-msgstr ""
+msgstr "Terugval voor onbekende status (Onbekend)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:129
 msgid "marriage (legally married)"
-msgstr ""
+msgstr "huwelijk (wettelijk getrouwd)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:130
 msgid "not married (unmarried)"
-msgstr ""
+msgstr "niet getrouwd (ongehuwd)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:131
 msgid "civil (civil union)"
-msgstr ""
+msgstr "burgerlijk (burgerlijk verbonden)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:132
-#, fuzzy
-#| msgid "unknown version"
 msgid "unknown (unknown)"
-msgstr "onbekende versie"
+msgstr "onbekend (onbekend)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:134
 msgid ""
 "This value is written to MARR.TYPE when the family's relationship status in "
 "Gramps is 'Unknown'"
 msgstr ""
+"Deze waarde wordt naar MARR.TYPE geschreven wanneer de relatiestatus van het "
+"gezin in Gramps 'Onbekend' is"
 
 #: FamilioPrepTool/FamilioPrepTool.py:189
 msgid "Prepare Familio export"
-msgstr ""
+msgstr "Familio-export voorbereiden"
 
 #: FamilioPrepTool/FamilioPrepTool.py:194
 msgid "No attribute type set for _UID, skipping this step.\n"
-msgstr ""
+msgstr "Geen attribuuttype ingesteld voor _UID, deze stap overslaan.\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:203
-#, fuzzy, python-format
-#| msgid "Setting attributes..."
+#, python-format
 msgid "Adding attribute '%s'...\n"
-msgstr "Attributen instellen..."
+msgstr "Kenmerk '%s' toevoegen…\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:204
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Processing people..."
-msgstr "Wordt verwerkt...\n"
+msgstr "Personen verwerken…"
 
 #: FamilioPrepTool/FamilioPrepTool.py:235
 #, python-format
@@ -6116,23 +6100,21 @@ msgid ""
 "Added '%(attr_type)s' attributes: %(count)d\n"
 "\n"
 msgstr ""
+"Kenmerken '%(attr_type)s' toegevoegd: %(count)d\n"
+"\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:251
-#, fuzzy
-#| msgid "Adding events '%s'..."
 msgid "Adding 'Marriage' events...\n"
-msgstr "Gebeurtenissen toevoegen '%s'..."
+msgstr "'Huwelijk'-gebeurtenissen toevoegen…\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:252
-#, fuzzy
-#| msgid "Parsing file..."
 msgid "Processing families..."
-msgstr "Bestand parseren..."
+msgstr "Gezinnen verwerken…"
 
 #: FamilioPrepTool/FamilioPrepTool.py:289
 #, python-format
 msgid "Added new 'Marriage' events: %d\n"
-msgstr ""
+msgstr "Nieuwe 'Huwelijk'-gebeurtenissen toegevoegd: %d\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:302
 #, python-format
@@ -6140,6 +6122,9 @@ msgid ""
 "\n"
 "Done. _UID added: %(uid_count)d, marriage events added: %(marriage_count)d\n"
 msgstr ""
+"\n"
+"Klaar. _UID toegevoegd: %(uid_count)d, huwelijksgebeurtenissen toegevoegd: %"
+"(marriage_count)d\n"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
@@ -18936,7 +18921,7 @@ msgstr "Achtergrondkleur van items buiten levensduur"
 
 #: HistContext/HistContext.py:150
 msgid "Show person events in sorted order"
-msgstr ""
+msgstr "Persoonsgebeurtenissen in volgorde weergeven"
 
 #: HistContext/HistContext.py:155
 msgid "Select from files"
@@ -18951,12 +18936,10 @@ msgid " in line: "
 msgstr " in regel: "
 
 #: HistContext/HistContext.py:445
-#, fuzzy
-#| msgid ""
-#| ": line does not contain four sections separated by semicolons in : \""
 msgid ""
 ": line does not contain four or five sections separated by semicolons in : \""
-msgstr ": regel bevat geen vier secties gescheiden door puntkomma's in : \""
+msgstr ""
+": regel bevat geen vier of vijf secties gescheiden door puntkomma's in : \""
 
 #: HistContext/HistContext.py:548
 msgid "Cannot open URL: "
