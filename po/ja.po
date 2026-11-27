@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-14 11:59-0800\n"
-"PO-Revision-Date: 2026-10-29 15:51+0000\n"
+"PO-Revision-Date: 2026-11-16 21:09+0000\n"
 "Last-Translator: coolvitto <cool.vitto@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.11.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -2380,16 +2380,12 @@ msgid "sibling"
 msgstr "兄弟姉妹"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:74
-#, fuzzy
-#| msgid "Add parents"
 msgid "parent"
-msgstr "親を追加"
+msgstr "親"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:75
-#, fuzzy
-#| msgid "House"
 msgid "spouse"
-msgstr "住宅"
+msgstr "配偶者"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:76
 msgid "mentioned in note"
@@ -2445,10 +2441,8 @@ msgstr ""
 "検索深度: {depth} | 処理済み人物: {processed} | キューサイズ: {queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:273
-#, fuzzy
-#| msgid "Reading file list..."
 msgid "Loading family links..."
-msgstr "ファイルリストを読み取り中..."
+msgstr "ファミリーリンクを読み込み中..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:330
 #, python-format
@@ -5815,7 +5809,7 @@ msgstr "新しい顔を検出"
 #: FamilioPrepTool/FamilioPrepTool.gpr.py:22
 #: FamilioPrepTool/FamilioPrepTool.py:148
 msgid "Prepare for Familio export"
-msgstr ""
+msgstr "Familioエクスポートの準備"
 
 #: FamilioPrepTool/FamilioPrepTool.gpr.py:24
 msgid ""
@@ -5823,112 +5817,101 @@ msgid ""
 "and adds missing 'Marriage' events to families, so that GEDCOM export "
 "produces the tags Familio expects."
 msgstr ""
+"人物に不足している_UID属性を追加し（既存のものは上書きしません）、家族に不足"
+"している「結婚」イベントを追加します。これにより、GEDCOMエクスポートでFamilio"
+"が期待するタグが生成されます。"
 
 #: FamilioPrepTool/FamilioPrepTool.py:101
 #: FamilioPrepTool/FamilioPrepTool.py:151
-#, fuzzy
-#| msgid "Set Attribute"
 msgid "_UID attribute"
-msgstr "属性を設定"
+msgstr "UID 属性(_U)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:103
 msgid "Add _UID attribute to persons who don't have one"
-msgstr ""
+msgstr "_UID属性を持たない人物に_UID属性を追加する"
 
 #: FamilioPrepTool/FamilioPrepTool.py:104
 msgid "Existing _UID attributes are never modified or overwritten"
-msgstr ""
+msgstr "既存の_UID属性は変更も上書きもされません"
 
 #: FamilioPrepTool/FamilioPrepTool.py:107
-#, fuzzy
-#| msgid "Attribute updated"
 msgid "Attribute type"
-msgstr "属性が更新されました"
+msgstr "属性の種類"
 
 #: FamilioPrepTool/FamilioPrepTool.py:108
-#, fuzzy
-#| msgid "Attribute type to add or edit"
 msgid "Name of the attribute type to add"
-msgstr "追加または編集する属性タイプ"
+msgstr "追加する属性の種類の名前"
 
 #: FamilioPrepTool/FamilioPrepTool.py:111
-#, fuzzy
-#| msgid "Value of real estate"
 msgid "Value template"
-msgstr "不動産価値"
+msgstr "値のテンプレート"
 
 #: FamilioPrepTool/FamilioPrepTool.py:113
 #, python-brace-format
 msgid ""
 "Supported macros: ${GUID} - a new random GUID, ${NAME} - the person's name"
-msgstr ""
+msgstr "サポートされるマクロ: ${GUID} - 新しいランダムGUID、${NAME} - 人物の名前"
 
 #: FamilioPrepTool/FamilioPrepTool.py:119
-#, fuzzy
-#| msgid "Marriage act:"
 msgid "Marriage events"
-msgstr "結婚記録:"
+msgstr "結婚イベント"
 
 #: FamilioPrepTool/FamilioPrepTool.py:121
-#, fuzzy
-#| msgid "Add missing partner using the Edit Family dialog."
 msgid "Add missing 'Marriage' events to families"
-msgstr ""
-"ファミリの編集ダイアログを使用して、不足しているパートナーを追加します。"
+msgstr "不足している「結婚」イベントを家族に追加"
 
 #: FamilioPrepTool/FamilioPrepTool.py:123
 msgid ""
 "Gramps only writes the required MARR tags on GEDCOM export if the family has "
 "an explicit 'Marriage' event"
 msgstr ""
+"Grampsは、家族に明示的な「結婚」イベントがある場合にのみ、GEDCOMエクスポート"
+"時に必要なMARRタグを書き出します"
 
 #: FamilioPrepTool/FamilioPrepTool.py:128
 msgid "Fallback for unknown status (Unknown)"
-msgstr ""
+msgstr "不明なステータス（不明）のフォールバック"
 
 #: FamilioPrepTool/FamilioPrepTool.py:129
 msgid "marriage (legally married)"
-msgstr ""
+msgstr "婚姻（法的に結婚）"
 
 #: FamilioPrepTool/FamilioPrepTool.py:130
 msgid "not married (unmarried)"
-msgstr ""
+msgstr "未婚（結婚していない）"
 
 #: FamilioPrepTool/FamilioPrepTool.py:131
 msgid "civil (civil union)"
-msgstr ""
+msgstr "シビルユニオン（民事上の結合）"
 
 #: FamilioPrepTool/FamilioPrepTool.py:132
-#, fuzzy
-#| msgid "unknown version"
 msgid "unknown (unknown)"
-msgstr "不明なバージョン"
+msgstr "不明 (不明)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:134
 msgid ""
 "This value is written to MARR.TYPE when the family's relationship status in "
 "Gramps is 'Unknown'"
 msgstr ""
+"Grampsでの家族の関係ステータスが「不明」の場合、この値がMARR.TYPEに書き込まれ"
+"ます"
 
 #: FamilioPrepTool/FamilioPrepTool.py:189
 msgid "Prepare Familio export"
-msgstr ""
+msgstr "Familioエクスポートの準備"
 
 #: FamilioPrepTool/FamilioPrepTool.py:194
 msgid "No attribute type set for _UID, skipping this step.\n"
-msgstr ""
+msgstr "_UIDに属性タイプが設定されていないため、このステップをスキップします。\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:203
-#, fuzzy, python-format
-#| msgid "Setting attributes..."
+#, python-format
 msgid "Adding attribute '%s'...\n"
-msgstr "属性を設定中..."
+msgstr "属性を追加中 '%s'...\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:204
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Processing people..."
-msgstr "処理中...\n"
+msgstr "人物の処理中..."
 
 #: FamilioPrepTool/FamilioPrepTool.py:235
 #, python-format
@@ -5936,23 +5919,21 @@ msgid ""
 "Added '%(attr_type)s' attributes: %(count)d\n"
 "\n"
 msgstr ""
+"'%(attr_type)s'属性を追加しました: %(count)d\n"
+"\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:251
-#, fuzzy
-#| msgid "Adding events '%s'..."
 msgid "Adding 'Marriage' events...\n"
-msgstr "イベント '%s' を追加中..."
+msgstr "'結婚'イベントを追加中...\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:252
-#, fuzzy
-#| msgid "Parsing file..."
 msgid "Processing families..."
-msgstr "ファイルを解析中..."
+msgstr "家族の処理中..."
 
 #: FamilioPrepTool/FamilioPrepTool.py:289
 #, python-format
 msgid "Added new 'Marriage' events: %d\n"
-msgstr ""
+msgstr "新しい「結婚」イベントを追加しました: %d\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:302
 #, python-format
@@ -5960,6 +5941,8 @@ msgid ""
 "\n"
 "Done. _UID added: %(uid_count)d, marriage events added: %(marriage_count)d\n"
 msgstr ""
+"\n"
+"完了。_UID追加: %(uid_count)d、結婚イベント追加: %(marriage_count)d\n"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
@@ -18583,7 +18566,7 @@ msgstr "生涯外の項目の背景色"
 
 #: HistContext/HistContext.py:150
 msgid "Show person events in sorted order"
-msgstr ""
+msgstr "人物のイベントを並べ替えた順序で表示する"
 
 #: HistContext/HistContext.py:155
 msgid "Select from files"
@@ -18598,12 +18581,11 @@ msgid " in line: "
 msgstr " 行内: "
 
 #: HistContext/HistContext.py:445
-#, fuzzy
-#| msgid ""
-#| ": line does not contain four sections separated by semicolons in : \""
 msgid ""
 ": line does not contain four or five sections separated by semicolons in : \""
-msgstr ": 行にセミコロンで区切られた4つのセクションが含まれていません: \""
+msgstr ""
+": 行には、セミコロンで区切られた 4 つまたは 5 つのセクションが含まれていませ"
+"ん: \""
 
 #: HistContext/HistContext.py:548
 msgid "Cannot open URL: "
