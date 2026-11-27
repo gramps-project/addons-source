@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-14 11:59-0800\n"
-"PO-Revision-Date: 2026-11-05 21:11+0000\n"
-"Last-Translator: Michal Várady <majkl82@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-11-16 02:21+0000\n"
+"Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.11.2.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -1379,7 +1379,7 @@ msgstr "Svislé uspořádání podrobností"
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:78
 msgid "Order"
-msgstr ""
+msgstr "Pořadí"
 
 #: CombinedView/navigationview.py:346
 msgid ""
@@ -1991,6 +1991,9 @@ msgid ""
 "{0}\n"
 "{1} cMs"
 msgstr ""
+"\n"
+"{0}\n"
+"{1} cM"
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
@@ -2398,14 +2401,12 @@ msgid "sibling"
 msgstr "sourozenec"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:74
-#, fuzzy
-#| msgid "Add parents"
 msgid "parent"
-msgstr "Přidat rodiče"
+msgstr "rodič"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:75
 msgid "spouse"
-msgstr ""
+msgstr "manžel/-ka"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:76
 msgid "mentioned in note"
@@ -2462,10 +2463,8 @@ msgstr ""
 "{queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:273
-#, fuzzy
-#| msgid "Reading file list..."
 msgid "Loading family links..."
-msgstr "Načítá se seznam souborů..."
+msgstr "Načítají se rodinné vazby..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:330
 #, python-format
@@ -5862,7 +5861,7 @@ msgstr "Rozpoznat nové obličeje"
 #: FamilioPrepTool/FamilioPrepTool.gpr.py:22
 #: FamilioPrepTool/FamilioPrepTool.py:148
 msgid "Prepare for Familio export"
-msgstr ""
+msgstr "Připravit export pro Familio"
 
 #: FamilioPrepTool/FamilioPrepTool.gpr.py:24
 msgid ""
@@ -5893,88 +5892,79 @@ msgid "Attribute type"
 msgstr "Atribut aktualizován"
 
 #: FamilioPrepTool/FamilioPrepTool.py:108
-#, fuzzy
-#| msgid "Attribute type to add or edit"
 msgid "Name of the attribute type to add"
-msgstr "Typ atributu, který se má přidat nebo upravit"
+msgstr "Název typu atributu, který se má přidat"
 
 #: FamilioPrepTool/FamilioPrepTool.py:111
-#, fuzzy
-#| msgid "Web site template"
 msgid "Value template"
-msgstr "Šablona pro WWW stránky"
+msgstr "Šablona hodnoty"
 
 #: FamilioPrepTool/FamilioPrepTool.py:113
 #, python-brace-format
 msgid ""
 "Supported macros: ${GUID} - a new random GUID, ${NAME} - the person's name"
-msgstr ""
+msgstr "Podporovaná makra: ${GUID} - nový náhodný GUID, ${NAME} - jméno osoby"
 
 #: FamilioPrepTool/FamilioPrepTool.py:119
-#, fuzzy
-#| msgid "Marriage act:"
 msgid "Marriage events"
-msgstr "Záznam o sňatku:"
+msgstr "Události sňatku"
 
 #: FamilioPrepTool/FamilioPrepTool.py:121
-#, fuzzy
-#| msgid "Add missing partner using the Edit Family dialog."
 msgid "Add missing 'Marriage' events to families"
-msgstr "Přidejte chybějícího partnera v dialogu pro úpravu rodiny."
+msgstr "Přidat chybějící události „Sňatek“ k rodinám"
 
 #: FamilioPrepTool/FamilioPrepTool.py:123
 msgid ""
 "Gramps only writes the required MARR tags on GEDCOM export if the family has "
 "an explicit 'Marriage' event"
 msgstr ""
+"Gramps zapisuje požadované štítky MARR při exportu GEDCOM pouze tehdy, pokud "
+"má rodina explicitní událost „Sňatek“"
 
 #: FamilioPrepTool/FamilioPrepTool.py:128
 msgid "Fallback for unknown status (Unknown)"
-msgstr ""
+msgstr "Náhradní hodnota pro neznámý stav (Neznámý)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:129
 msgid "marriage (legally married)"
-msgstr ""
+msgstr "sňatek (zákonně oddaní)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:130
 msgid "not married (unmarried)"
-msgstr ""
+msgstr "neoddáni (svobodní)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:131
 msgid "civil (civil union)"
-msgstr ""
+msgstr "civilní (registrované partnerství)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:132
-#, fuzzy
-#| msgid "unknown version"
 msgid "unknown (unknown)"
-msgstr "neznámá verze"
+msgstr "neznámý (neznámý)"
 
 #: FamilioPrepTool/FamilioPrepTool.py:134
 msgid ""
 "This value is written to MARR.TYPE when the family's relationship status in "
 "Gramps is 'Unknown'"
 msgstr ""
+"Tato hodnota se zapíše do MARR.TYPE, když je stav vztahu rodiny v Gramps "
+"nastaven na „Neznámý“"
 
 #: FamilioPrepTool/FamilioPrepTool.py:189
 msgid "Prepare Familio export"
-msgstr ""
+msgstr "Připravit export Familio"
 
 #: FamilioPrepTool/FamilioPrepTool.py:194
 msgid "No attribute type set for _UID, skipping this step.\n"
-msgstr ""
+msgstr "Není nastaven typ atributu pro _UID, tento krok se přeskočí.\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:203
-#, fuzzy, python-format
-#| msgid "Setting attributes..."
+#, python-format
 msgid "Adding attribute '%s'...\n"
-msgstr "Nastavování atributů..."
+msgstr "Přidává se atribut „%s“...\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:204
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Processing people..."
-msgstr "Zpracovávání...\n"
+msgstr "Zpracovávají se osoby..."
 
 #: FamilioPrepTool/FamilioPrepTool.py:235
 #, python-format
@@ -5982,23 +5972,21 @@ msgid ""
 "Added '%(attr_type)s' attributes: %(count)d\n"
 "\n"
 msgstr ""
+"Přidány atributy „%(attr_type)s“: %(count)d\n"
+"\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:251
-#, fuzzy
-#| msgid "Adding events '%s'..."
 msgid "Adding 'Marriage' events...\n"
-msgstr "Přidání událostí '%s'..."
+msgstr "Přidávají se události „Sňatek“...\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:252
-#, fuzzy
-#| msgid "Parsing file..."
 msgid "Processing families..."
-msgstr "Analyzuje se soubor..."
+msgstr "Zpracovávají se rodiny..."
 
 #: FamilioPrepTool/FamilioPrepTool.py:289
 #, python-format
 msgid "Added new 'Marriage' events: %d\n"
-msgstr ""
+msgstr "Přidány nové události „Sňatek“: %d\n"
 
 #: FamilioPrepTool/FamilioPrepTool.py:302
 #, python-format
@@ -6006,6 +5994,9 @@ msgid ""
 "\n"
 "Done. _UID added: %(uid_count)d, marriage events added: %(marriage_count)d\n"
 msgstr ""
+"\n"
+"Hotovo. Přidáno _UID: %(uid_count)d, přidány události sňatku: %"
+"(marriage_count)d\n"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
@@ -6876,7 +6867,7 @@ msgstr "Záhlaví"
 
 #: Form/form.py:81
 msgid "Form"
-msgstr ""
+msgstr "Formulář"
 
 #: Form/form.py:173
 msgid "XML syntax error in Form definition file"
@@ -18837,7 +18828,7 @@ msgstr "Barva pozadí položek mimo dobu života"
 
 #: HistContext/HistContext.py:150
 msgid "Show person events in sorted order"
-msgstr ""
+msgstr "Zobrazit události osoby v seřazeném pořadí"
 
 #: HistContext/HistContext.py:155
 msgid "Select from files"
@@ -18852,12 +18843,9 @@ msgid " in line: "
 msgstr " na řádku: "
 
 #: HistContext/HistContext.py:445
-#, fuzzy
-#| msgid ""
-#| ": line does not contain four sections separated by semicolons in : \""
 msgid ""
 ": line does not contain four or five sections separated by semicolons in : \""
-msgstr ": řádek neobsahuje čtyři oddíly oddělené středníky v: \""
+msgstr ": řádek neobsahuje čtyři nebo pět oddílů oddělených středníky v: \""
 
 #: HistContext/HistContext.py:548
 msgid "Cannot open URL: "
