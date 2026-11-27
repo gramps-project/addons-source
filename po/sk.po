@@ -6,15 +6,15 @@
 # Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
 # Jozef Riha, 2017.
 # Milan <mobrcian@hotmail.com>, 2025, 2026.
-# Jozef Gaal <preklady@mayday.sk>, 2025.
+# Jozef Gaal <preklady@mayday.sk>, 2025, 2026.
 # Milan <milan@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-14 11:59-0800\n"
-"PO-Revision-Date: 2026-11-21 03:07+0000\n"
-"Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-11-27 21:53+0000\n"
+"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -443,7 +443,7 @@ msgstr "Nástroj na generovanie avatarov"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
-msgstr "Nástroj na pridávanie obrázkov avatarov do vášho rodostromu"
+msgstr "Nástroj na pridávanie obrázkov avatarov do vášho rodokmeňa"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
@@ -23061,14 +23061,13 @@ msgstr ""
 "<u><b>Voliteľné balíčky požadované doplnkami tretích strán</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:281
-#, fuzzy
 msgid ""
 "<i>Prerequistes required for the following <a href=\"https://gramps-"
 "project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
 "to work</i>:\n"
 msgstr ""
 "<i>Náležitosti potrebné pre nasledujúce <a href=\"https://gramps-project.org/"
-"wiki/index.php?title=Third-party_Addons\">Third-party Addons</a>, aby "
+"wiki/index.php?title=Third-party_Addons\">doplnky tretích strán</a>, aby "
 "fungovali</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:305
@@ -23447,17 +23446,16 @@ msgid " • Operating System: %s"
 msgstr " • Operačný systém: %s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2088
-#, fuzzy
 msgid ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=Gramps_5.0_Wiki_Manual_-"
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
-"title=Gramps_5.0_Wiki_Manual_-"
-"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
-"a></b></u>\n"
+"<u><b><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Nastavenia "
+"lokalizácie:</a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2096
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2097
