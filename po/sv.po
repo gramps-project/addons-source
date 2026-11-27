@@ -17,13 +17,14 @@
 # SimplyRAR <simply.rar@gmail.com>, 2026.
 # Pär Ekholm <pehlm@users.noreply.hosted.weblate.org>, 2026.
 # Jonatan Nyberg <nickwick@users.noreply.hosted.weblate.org>, 2026.
+# SimplyRAR <simply.rar@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-14 11:59-0800\n"
 "PO-Revision-Date: 2026-11-27 17:12+0000\n"
-"Last-Translator: Pär Ekholm <pehlm@users.noreply.hosted.weblate.org>\n"
+"Last-Translator: SimplyRAR <simply.rar@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -15925,7 +15926,7 @@ msgstr ""
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
-msgstr "Händelse-GOQL-filter"
+msgstr "GOQL händelsefilter"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
