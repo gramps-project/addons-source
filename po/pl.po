@@ -10,13 +10,14 @@
 # Krystian Safjan <ksafjan@gmail.com>, 2025.
 # Artur <wy66m6xm@anonaddy.me>, 2025, 2026.
 # Marcin Stefański <m_stefanski@icloud.com>, 2025.
+# Szymon John <jonek@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-14 11:59-0800\n"
-"PO-Revision-Date: 2026-08-12 22:56+0000\n"
-"Last-Translator: Artur <wy66m6xm@anonaddy.me>\n"
+"PO-Revision-Date: 2026-11-27 17:12+0000\n"
+"Last-Translator: Szymon John <jonek@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -25,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.12.dev0\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
@@ -174,35 +175,28 @@ msgid "Generation %(gen_number)d"
 msgstr "Pokolenia w górę"
 
 #: AncestryTableReport/AncestryTableReport.py:360
-#, fuzzy, python-format
-#| msgid "Number of Ancestors found "
+#, python-format
 msgid "Number of Ancestors for %(name)s"
-msgstr "Liczba znalezionych przodków "
+msgstr "Liczba przodków osoby %(name)s"
 
 #: AncestryTableReport/AncestryTableReport.py:370
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-#, fuzzy
-#| msgid "General Data"
 msgid "Generation"
-msgstr "Dane ogólne"
+msgstr "Pokolenie"
 
 #: AncestryTableReport/AncestryTableReport.py:472
 msgid "To start a new page after each generation."
 msgstr "Rozpocznij nową stronę po każdym pokoleniu."
 
 #: AncestryTableReport/AncestryTableReport.py:475
-#, fuzzy
-#| msgid "Number of Ancestors found "
 msgid "Number of ancestors per generation"
-msgstr "Liczba znalezionych przodków "
+msgstr "Liczba przodków na pokolenie"
 
 #: AncestryTableReport/AncestryTableReport.py:476
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Add a page with tne number of ancestors per generation."
-msgstr "Czy wyświetlać teoretyczną liczbę przodków według generacji?"
+msgstr "Dodaj stronę z liczbą przodków na pokolenie."
 
 #: AncestryTableReport/AncestryTableReport.py:495
 #, fuzzy
